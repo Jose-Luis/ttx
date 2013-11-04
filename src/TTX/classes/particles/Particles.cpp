@@ -12,7 +12,7 @@ void Particles::updateRender(RenderManager& theRenderManager)
       sf::Transform anTransform;
       LayerID anLayerID = getParticleLayer(*it);
 
-      anTransform.translate(anPosition.getX(),anPosition.getY());
+      anTransform.translate(anPosition.getX() * getXFactor(), anPosition.getY() * getYFactor());
       anTransform.rotate(it->getAngle());
       anTransform.scale(it->getSize(),it->getSize());
 

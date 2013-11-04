@@ -73,7 +73,10 @@ void GameStateOne::doInit(void)
    //Others
    mApp.mWindow.setView(mView);
    mApp.mWindow.setVerticalSyncEnabled(true);
-   mParticles.init("resources/Particles.xml");
+   mParticles.setSize(1024);
+   mParticles.setXFactor(16);
+   mParticles.setYFactor(16);
+   mParticles.initFromFile("resources/Particles.xml");
    MapLoader anMapLoader("resources/map1.tmx");
    anMapLoader.loadTiles(mRenderManager);
    anMapLoader.loadShapes(mWorld);
@@ -148,7 +151,7 @@ void GameStateOne::updateFixed(void)
    mSystems["B2System"]->updateFixed();
    mSystems["AnimationSystem"]->updateFixed();
    mSystems["RenderSystem"]->updateFixed();
-   mParticles.update(UPDATE_RATE);
+   mParticles.update(SPU);
    mParticles.updateRender(mRenderManager);
 }
 //------------------------------------------------------------------------------

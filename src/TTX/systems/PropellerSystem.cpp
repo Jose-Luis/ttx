@@ -15,23 +15,7 @@ PropellerSystem::PropellerSystem(IActionState& theState, Particles& theParticles
    ISystem("PropellerSystem",theState),
    mParticles(theParticles)
 {
-   // mpe::Emitter emitter1("ShipPropeller");
-   // emitter1.setTexRect(sf::Rect<int>(16,64,8,8));
-   // emitter1.setShape(mpe::Emitter::CIRCLE);
-   // emitter1.setRangeFocusWidth(0.3,0.3);
-   // emitter1.setRangeFocusHeight(0.3,0.3);
-   // emitter1.setRangeParticlePOW(0.0,0.0);
-   // emitter1.setRangeParticleTOL(1024,2048);
-   // emitter1.setDispersion(mpe::Emitter::STATIC);
-   // emitter1.setRangeFocusTOL(1000000,10000000);
-   // emitter1.setRangeFocusTOL(mpe::REAL_INFINITY,mpe::REAL_INFINITY);
-   // //emitter1.setRangeFocusNP(mpe::MAX_INTEGER,mpe::MAX_INTEGER);
-   // emitter1.setRangeFocusNP(300000,300000);
-   // emitter1.setRangeFocusPPS(0,0);
-   // emitter1.setRangeParticleScale(0.8,2.4);
-   // emitter1.setRangeParticleAV(0,0);
-   // mParticles.addEmitter(emitter1);
-
+  
    std::shared_ptr<DisolveAffector> anAffector;
    anAffector = DisolveAffector::create(32);
    mParticles.addAffector(anAffector); 

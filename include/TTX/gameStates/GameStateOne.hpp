@@ -89,8 +89,7 @@ class GameStateOne : public IActionState
       /**
        * UpdateVariable is responsible for handling all State variable update
        * needs for this State when it is the active State.
-       * @param[in] theElapsedTime since the last Draw was called
-       */
+       * @param[in] theElapsedTime since the last Draw was called */
       virtual void updateVariable(float theElapsedTime);
 
       /**
