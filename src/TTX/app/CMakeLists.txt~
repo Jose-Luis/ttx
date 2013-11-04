@@ -1,0 +1,10 @@
+set(TTXAPP_FILES 
+   ${INCROOT}/app/TTXApp.hpp
+   ${SRCROOT}/app/TTXApp.cpp)
+add_library( TTXapp ${TTXAPP_FILES})
+target_link_libraries(
+   TTXapp 
+      ${SFML_LIBRARIES}
+      ${GQE_LIBRARIES}
+      gameStates
+)

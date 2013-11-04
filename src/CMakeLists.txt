@@ -1,0 +1,64 @@
+#set(HEADER_FILES
+   #${INCROOT}/prototypes/components/B2Proto.hpp
+   #${INCROOT}/prototypes/components/RenderProto.hpp
+   #${INCROOT}/prototypes/SimpleBullet.hpp
+   #${INCROOT}/prototypes/Player.hpp
+   #${INCROOT}/prototypes/Box.hpp
+   #${INCROOT}/prototypes/Ground.hpp
+   #${INCROOT}/prototypes/BasicShip.hpp
+   #${INCROOT}/prototypes/Rombo.hpp
+   #${INCROOT}/classes/objects/Weapon.hpp
+   #${INCROOT}/classes/objects/Propeller.hpp
+   #${INCROOT}/classes/objects/IWeapon.hpp
+   #${INCROOT}/classes/objects/PhisicBody.hpp
+   #${INCROOT}/classes/render/Animation.hpp
+   #${INCROOT}/classes/render/RenderManager.hpp
+   #${INCROOT}/classes/render/Layer.hpp
+   #${INCROOT}/classes/particles/Affectors.hpp
+   #${INCROOT}/classes/particles/Particles.hpp
+   #${INCROOT}/classes/mapLoader/MapLoader.hpp
+   #${INCROOT}/systems/PlayerSystem.hpp
+   #${INCROOT}/systems/B2System.hpp
+   #${INCROOT}/systems/ISystem.hpp
+   #${INCROOT}/systems/AnimationSystem.hpp
+   #${INCROOT}/systems/PropellerSystem.hpp
+   #${INCROOT}/systems/RenderSystem.hpp
+   #${INCROOT}/gameStates/IActionState.hpp
+   #${INCROOT}/gameStates/GameStateOne.hpp
+   #${INCROOT}/app/TTXApp.hpp)
+#set(SOURCE_FILES
+   #${SRCROOT}/gameStates/IActionState.cpp
+   #${SRCROOT}/gameStates/GameStateOne.cpp
+   #${SRCROOT}/prototypes/components/B2Proto.cpp
+   #${SRCROOT}/prototypes/components/RenderProto.cpp
+   #${SRCROOT}/prototypes/SimpleBullet.cpp
+   #${SRCROOT}/prototypes/Player.cpp
+   #${SRCROOT}/prototypes/Box.cpp
+   #${SRCROOT}/prototypes/Ground.cpp
+   #${SRCROOT}/prototypes/BasicShip.cpp
+   #${SRCROOT}/prototypes/Rombo.cpp
+   #${SRCROOT}/classes/objects/Weapon.cpp
+   #${SRCROOT}/classes/objects/Propeller.cpp
+   #${SRCROOT}/classes/mapLoader/MapLoader.cpp
+   #${SRCROOT}/systems/PlayerSystem.cpp
+   #${SRCROOT}/systems/B2System.cpp
+   ##${SRCROOT}/systems/ParticleSystem.cpp
+   #${SRCROOT}/systems/ISystem.cpp
+   #${SRCROOT}/systems/AnimationSystem.cpp
+   #${SRCROOT}/systems/PropellerSystem.cpp
+   #${SRCROOT}/systems/RenderSystem.cpp
+   #${SRCROOT}/app/TTXApp.cpp
+   #${SRCROOT}/main.cpp)
+
+
+#add_executable(TTX ${HEADER_FILES} ${SOURCE_FILES})
+
+#target_link_libraries(TTX
+   #${SFML_LIBRARIES}
+   #${GQE_LIBRARIES}
+   #${TINYXML2_LIBRARIES}
+   #${GT_LIBRARY}
+   #${BOX2D_LIBRARY}
+   #${MPE_LIBRARY})
+
+add_subdirectory(TTX)

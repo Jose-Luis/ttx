@@ -1,0 +1,13 @@
+set(PARTICLES_FILES 
+   ${INCROOT}/classes/particles/Particles.hpp
+   ${INCROOT}/classes/particles/Affectors.hpp
+   ${SRCROOT}/classes/particles/Particles.cpp
+   ${SRCROOT}/classes/particles/Affectors.cpp)
+
+add_library( particles ${PARTICLES_FILES})
+
+target_link_libraries(
+   particles 
+      ${SFML_LIBRARIES}
+      ${MPE_LIBRARY}
+)
