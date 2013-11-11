@@ -75,6 +75,7 @@ void B2System::updateFixed()
       }  
       anIter++;
    }
+   
 }
 
 void B2System::updateVariable(float theElapsedTime)

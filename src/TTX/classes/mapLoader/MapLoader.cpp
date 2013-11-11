@@ -185,9 +185,13 @@ void MapLoader::loadShapes (b2World& theWorld)
       anCharPoint = anCharPtr + 1;
       anPointsArray[i].y = (atof(anCharPoint) + anY0) /16;
 
+      b2FixtureDef anChainFixture;
       b2ChainShape anChainShape;
+      anChainFixture.filter.categoryBits = ObjectCategories::SCENE;
+      anChainFixture.filter.maskBits = ObjectCategories::ALL;
+      anChainFixture.shape = & anChainShape;
       anChainShape.CreateChain(anPointsArray,nPoints);
-      anScene->CreateFixture(&anChainShape,0.0f);
+      anScene->CreateFixture(&anChainFixture);
 
       anObject = anObject->NextSiblingElement("object");
       

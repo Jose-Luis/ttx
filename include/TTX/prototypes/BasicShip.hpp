@@ -31,16 +31,18 @@ public:
         anFixture1.density = 10.0f;
         anFixture1.friction = 0.5;
         anFixture1.restitution = 0;
+        anFixture1.filter.categoryBits = ObjectCategories::FRIENDLY_SHIP;
+        anFixture1.filter.maskBits = ObjectCategories::SCENE;
 
         b2FixtureDef anFixture2;
         mShape2.SetAsBox(0.125,0.25, b2Vec2(0.75,0),0);
         anFixture2.shape = &mShape2;
-        anFixture2.filter.groupIndex = -1;
+        anFixture2.filter.maskBits = ObjectCategories::SCENE;
 
         b2FixtureDef anFixture3;
         mShape3.SetAsBox(0.125,0.25, b2Vec2(-0.75,0),0);
         anFixture3.shape = &mShape3;
-        anFixture3.filter.groupIndex = -1;
+        anFixture3.filter.maskBits = ObjectCategories::SCENE;
 
         Propeller anPropeller;
         anPropeller.setEmitterID("ShipPropeller");

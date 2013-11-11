@@ -13,6 +13,7 @@ target_link_libraries(
       objects
       mapLoader
       particles
+      collision
       ${SFML_LIBRARIES}
       ${GQE_LIBRARIES}
 )

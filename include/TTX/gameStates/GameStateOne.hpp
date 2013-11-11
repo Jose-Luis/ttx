@@ -108,6 +108,7 @@ class GameStateOne : public IActionState
    private:
 
       sf::View mView;
+      b2ContactListener* mCollisionListener;
 
 
    /*#ifndef  NDEBUG

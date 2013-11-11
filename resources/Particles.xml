@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<emitters>
+  <emitter id="ShipPropeller" shape="CIRCLE" dispersion="STATIC">
+    <textRect x="16" y="64" width="8" height="8"/>
+    <ranges>
+      <focusTOL min="10000" max="100000"/>
+      <focusWidth min="0.3" max="0.3"/>
+      <focusHeight min="0.3" max="0.3"/>
+      <focusNP min="65536" max="65536"/>
+      <focusPPS min="10" max="100"/>
+      <particleTOL min="100" max="2000"/>
+      <particleSize min="8" max="24"/>
+      <particleAngle min="0" max="2"/>
+      <particleLV min="0" max="10"/>
+      <particleAV min="0" max="2"/>
+    </ranges>
+  </emitter>
+</emitters>
+ 

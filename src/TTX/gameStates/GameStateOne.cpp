@@ -5,6 +5,7 @@
  * @date 2013-04-22 Created
  */
 #include <TTX/gameStates/GameStateOne.hpp>
+#include <TTX/classes/physics/CollisionListener.hpp>
 //------------------------------------------------------------------------------
 //       Class:  GameStateOne
 //      Method:  constructor
@@ -80,6 +81,8 @@ void GameStateOne::doInit(void)
    MapLoader anMapLoader("resources/map1.tmx");
    anMapLoader.loadTiles(mRenderManager);
    anMapLoader.loadShapes(mWorld);
+   mCollisionListener = new CollisionListener();
+   mWorld.SetContactListener(mCollisionListener);
 }
 //------------------------------------------------------------------------------
 //       Class:  GameStateOne

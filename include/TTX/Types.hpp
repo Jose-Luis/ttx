@@ -48,5 +48,15 @@ enum Layers
     PART_1, PART_2,
     FORE_1, FORE_2
 };
+
+enum ObjectCategories
+{
+   FRIENDLY_SHIP = 0x0001,
+   FRIENDLY_BULLET = 0x0002,
+   SCENE = 0x0004,
+   ENEMY_SHIP = 0x0008,
+   ENEMY_BULLET = 0x0010,
+   ALL = 0xFFFF
+};
 #endif   // ----- #ifndef TYPES_INC  -----
 

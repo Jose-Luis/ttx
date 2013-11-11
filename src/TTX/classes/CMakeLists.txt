@@ -1,3 +1,4 @@
+add_subdirectory(physics)
 add_subdirectory(objects)
 add_subdirectory(mapLoader)
 add_subdirectory(render)

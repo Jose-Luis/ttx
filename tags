@@ -8,6 +8,7 @@ A	ext_libs/include/SFML/Window/Keyboard.hpp	/^        A = 0,        \/\/\/< The 
 ACTION_GROUP_HPP_INCLUDED	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	12;"	kind:d
 AFFECTORS_INC	include/TTX/classes/particles/Affectors.hpp	9;"	kind:d
 AFFECTOR_INC	ext_libs/include/MPE/classes/Affector.hpp	7;"	kind:d
+ALL	include/TTX/Types.hpp	/^   ALL = 0xFFFF$/;"	kind:e	enum:ObjectCategories
 ANGLE_INC	ext_libs/include/GT/Angle.hpp	7;"	kind:d
 ANIMATION_SYSTEM_HPP_INCLUDED	ext_libs/include/GQE/Entity/systems/AnimationSystem.hpp	9;"	kind:d
 ANIMATION_YL97FCUT	include/TTX/classes/render/Animation.hpp	9;"	kind:d
@@ -292,6 +293,8 @@ BasicShip::mShape1	include/TTX/prototypes/BasicShip.hpp	/^    b2PolygonShape  mS
 BasicShip::mShape2	include/TTX/prototypes/BasicShip.hpp	/^    b2PolygonShape  mShape1,mShape2,mShape3;$/;"	kind:m	class:BasicShip	access:private
 BasicShip::mShape3	include/TTX/prototypes/BasicShip.hpp	/^    b2PolygonShape  mShape1,mShape2,mShape3;$/;"	kind:m	class:BasicShip	access:private
 BeginContact	ext_libs/include/Box2D/Dynamics/b2WorldCallbacks.h	/^	virtual void BeginContact(b2Contact* contact) { B2_NOT_USED(contact); }$/;"	kind:f	class:b2ContactListener	access:public	signature:(b2Contact* contact)
+BeginContact	include/TTX/classes/physics/CollisionListener.hpp	/^   void BeginContact(b2Contact* theContact);$/;"	kind:p	class:CollisionListener	access:public	signature:(b2Contact* theContact)
+BeginContact	src/TTX/classes/physics/CollisionListener.cpp	/^void CollisionListener::BeginContact(b2Contact* theContact)$/;"	kind:f	class:CollisionListener	signature:(b2Contact* theContact)
 Binary	ext_libs/include/SFML/Network/Ftp.hpp	/^        Binary, \/\/\/< Binary mode (file is transfered as a sequence of bytes)$/;"	kind:e	enum:sf::Ftp::TransferMode
 Black	ext_libs/include/SFML/Graphics/Color.hpp	/^    static const Color Black;       \/\/\/< Black predefined color$/;"	kind:m	class:sf::Color	access:public
 BlendAdd	ext_libs/include/SFML/Graphics/BlendMode.hpp	/^    BlendAdd,      \/\/\/< Pixel = Source + Dest$/;"	kind:e	enum:sf::BlendMode
@@ -380,6 +383,11 @@ ClosingDataConnection	ext_libs/include/SFML/Network/Ftp.hpp	/^            Closin
 ClosingType	ext_libs/include/TinyXML2/tinyxml2.h	/^    int ClosingType() const {$/;"	kind:f	class:tinyxml2::XMLElement	access:public	signature:() const
 CollapseWhitespace	ext_libs/include/TinyXML2/tinyxml2.h	/^    void CollapseWhitespace();$/;"	kind:p	class:tinyxml2::StrPair	access:private	signature:()
 Collide	ext_libs/include/Box2D/Dynamics/b2ContactManager.h	/^	void Collide();$/;"	kind:p	class:b2ContactManager	access:public	signature:()
+CollisionListener	include/TTX/classes/physics/CollisionListener.hpp	/^class CollisionListener :public b2ContactListener$/;"	kind:c	inherits:b2ContactListener
+CollisionListener::BeginContact	include/TTX/classes/physics/CollisionListener.hpp	/^   void BeginContact(b2Contact* theContact);$/;"	kind:p	class:CollisionListener	access:public	signature:(b2Contact* theContact)
+CollisionListener::BeginContact	src/TTX/classes/physics/CollisionListener.cpp	/^void CollisionListener::BeginContact(b2Contact* theContact)$/;"	kind:f	class:CollisionListener	signature:(b2Contact* theContact)
+CollisionListener::EndContact	include/TTX/classes/physics/CollisionListener.hpp	/^   void EndContact(b2Contact* theContact);$/;"	kind:p	class:CollisionListener	access:public	signature:(b2Contact* theContact)
+CollisionListener::EndContact	src/TTX/classes/physics/CollisionListener.cpp	/^void CollisionListener::EndContact(b2Contact* theContact)$/;"	kind:f	class:CollisionListener	signature:(b2Contact* theContact)
 Color	ext_libs/include/MPE/Config.hpp	/^struct Color$/;"	kind:s	namespace:mpe
 Color	ext_libs/include/SFML/Graphics/Color.hpp	/^    Color();$/;"	kind:p	class:sf::Color	access:public	signature:()
 Color	ext_libs/include/SFML/Graphics/Color.hpp	/^    Color(Uint8 red, Uint8 green, Uint8 blue, Uint8 alpha = 255);$/;"	kind:p	class:sf::Color	access:public	signature:(Uint8 red, Uint8 green, Uint8 blue, Uint8 alpha = 255)
@@ -545,6 +553,8 @@ ELOGM_IF	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	205;"	kind:d
 ELOG_IF	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	199;"	kind:d
 ELOG_IF	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	207;"	kind:d
 EMITTER_INC	ext_libs/include/MPE/classes/Emitter.hpp	9;"	kind:d
+ENEMY_BULLET	include/TTX/Types.hpp	/^   ENEMY_BULLET = 0x0010,$/;"	kind:e	enum:ObjectCategories
+ENEMY_SHIP	include/TTX/Types.hpp	/^   ENEMY_SHIP = 0x0008,$/;"	kind:e	enum:ObjectCategories
 ENTITY_HPP_INCLUDED	ext_libs/include/GQE/Entity.hpp	14;"	kind:d
 ENTITY_RANGE	ext_libs/include/TinyXML2/tinyxml2.h	/^        ENTITY_RANGE = 64,$/;"	kind:e	enum:tinyxml2::XMLPrinter::__anon19
 ENTITY_TYPES_HPP_INCLUDED	ext_libs/include/GQE/Entity/Entity_types.hpp	14;"	kind:d
@@ -563,6 +573,8 @@ EnableMotor	ext_libs/include/Box2D/Dynamics/Joints/b2RevoluteJoint.h	/^	void Ena
 EnableMotor	ext_libs/include/Box2D/Dynamics/Joints/b2WheelJoint.h	/^	void EnableMotor(bool flag);$/;"	kind:p	class:b2WheelJoint	access:public	signature:(bool flag)
 End	ext_libs/include/SFML/Window/Keyboard.hpp	/^        End,          \/\/\/< The End key$/;"	kind:e	enum:sf::Keyboard::Key
 EndContact	ext_libs/include/Box2D/Dynamics/b2WorldCallbacks.h	/^	virtual void EndContact(b2Contact* contact) { B2_NOT_USED(contact); }$/;"	kind:f	class:b2ContactListener	access:public	signature:(b2Contact* contact)
+EndContact	include/TTX/classes/physics/CollisionListener.hpp	/^   void EndContact(b2Contact* theContact);$/;"	kind:p	class:CollisionListener	access:public	signature:(b2Contact* theContact)
+EndContact	src/TTX/classes/physics/CollisionListener.cpp	/^void CollisionListener::EndContact(b2Contact* theContact)$/;"	kind:f	class:CollisionListener	signature:(b2Contact* theContact)
 EnsureCapacity	ext_libs/include/TinyXML2/tinyxml2.h	/^    void EnsureCapacity( int cap ) {$/;"	kind:f	class:tinyxml2::DynArray	access:private	signature:( int cap )
 EnteringPassiveMode	ext_libs/include/SFML/Network/Ftp.hpp	/^            EnteringPassiveMode   = 227, \/\/\/< Entering passive mode$/;"	kind:e	enum:sf::Ftp::Response::Status
 Equal	ext_libs/include/SFML/Window/Keyboard.hpp	/^        Equal,        \/\/\/< The = key$/;"	kind:e	enum:sf::Keyboard::Key
@@ -600,6 +612,7 @@ F7	ext_libs/include/SFML/Window/Keyboard.hpp	/^        F7,           \/\/\/< The
 F8	ext_libs/include/SFML/Window/Keyboard.hpp	/^        F8,           \/\/\/< The F8 key$/;"	kind:e	enum:sf::Keyboard::Key
 F9	ext_libs/include/SFML/Window/Keyboard.hpp	/^        F9,           \/\/\/< The F9 key$/;"	kind:e	enum:sf::Keyboard::Key
 FATAL_LEVEL	ext_libs/include/GQE/Core/Core_types.hpp	31;"	kind:d
+FIXED	ext_libs/include/MPE/Config.hpp	/^const bool FIXED = true;$/;"	kind:m	namespace:mpe
 FLOG	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	235;"	kind:d
 FLOG	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	269;"	kind:d
 FLOGM	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	221;"	kind:d
@@ -611,6 +624,8 @@ FLOG_IF	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	272;"	kind:d
 FOCUS_INC	ext_libs/include/MPE/classes/Focus.hpp	7;"	kind:d
 FORE_1	include/TTX/Types.hpp	/^    FORE_1, FORE_2$/;"	kind:e	enum:Layers
 FORE_2	include/TTX/Types.hpp	/^    FORE_1, FORE_2$/;"	kind:e	enum:Layers
+FRIENDLY_BULLET	include/TTX/Types.hpp	/^   FRIENDLY_BULLET = 0x0002,$/;"	kind:e	enum:ObjectCategories
+FRIENDLY_SHIP	include/TTX/Types.hpp	/^   FRIENDLY_SHIP = 0x0001,$/;"	kind:e	enum:ObjectCategories
 FatalLogger	ext_libs/include/GQE/Core/loggers/FatalLogger.hpp	/^      FatalLogger(SeverityType theSeverity,$/;"	kind:p	class:GQE::FatalLogger	access:public	signature:(SeverityType theSeverity, const char* theSourceFile, int theSourceLine, int theExitCode)
 FatalLogger	ext_libs/include/GQE/Core/loggers/FatalLogger.hpp	/^  class GQE_API FatalLogger : public StringLogger$/;"	kind:c	namespace:GQE	inherits:StringLogger
 FieldTable	ext_libs/include/SFML/Network/Http.hpp	/^        typedef std::map<std::string, std::string> FieldTable;$/;"	kind:t	class:sf::Http::Request	access:private
@@ -1371,6 +1386,7 @@ GameStateOne::handleCleanup	include/TTX/gameStates/GameStateOne.hpp	/^      virt
 GameStateOne::handleCleanup	src/TTX/gameStates/GameStateOne.cpp	/^void GameStateOne::handleCleanup(void)$/;"	kind:f	class:GameStateOne	signature:(void)
 GameStateOne::handleEvents	include/TTX/gameStates/GameStateOne.hpp	/^      virtual void handleEvents(sf::Event theEvent);$/;"	kind:p	class:GameStateOne	access:public	signature:(sf::Event theEvent)
 GameStateOne::handleEvents	src/TTX/gameStates/GameStateOne.cpp	/^void GameStateOne::handleEvents(sf::Event theEvent)$/;"	kind:f	class:GameStateOne	signature:(sf::Event theEvent)
+GameStateOne::mCollisionListener	include/TTX/gameStates/GameStateOne.hpp	/^      b2ContactListener* mCollisionListener;$/;"	kind:m	class:GameStateOne	access:private
 GameStateOne::mView	include/TTX/gameStates/GameStateOne.hpp	/^      sf::View mView;$/;"	kind:m	class:GameStateOne	access:private
 GameStateOne::reInit	include/TTX/gameStates/GameStateOne.hpp	/^      virtual void reInit(void);$/;"	kind:p	class:GameStateOne	access:public	signature:(void)
 GameStateOne::reInit	src/TTX/gameStates/GameStateOne.cpp	/^void GameStateOne::reInit(void)$/;"	kind:f	class:GameStateOne	signature:(void)
@@ -2088,6 +2104,7 @@ NEEDS_FLUSH	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_FLUSH = 0x100,$
 NEEDS_NEWLINE_NORMALIZATION	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_NEWLINE_NORMALIZATION		= 0x02,$/;"	kind:e	enum:tinyxml2::StrPair::__anon14
 NOMINMAX	ext_libs/include/GQE/Config.hpp	44;"	kind:d
 NOMINMAX	ext_libs/include/SFML/Config.hpp	44;"	kind:d
+NON_FIXED	ext_libs/include/MPE/Config.hpp	/^const bool NON_FIXED = false;$/;"	kind:m	namespace:mpe
 NO_GROUP	ext_libs/include/MPE/Config.hpp	/^const GroupID NO_GROUP = 0x00;$/;"	kind:m	namespace:mpe
 NO_LOG_LEVEL	ext_libs/include/GQE/Core/Core_types.hpp	32;"	kind:d
 Name	ext_libs/include/TinyXML2/tinyxml2.h	/^    const char* Name() const		{$/;"	kind:f	class:tinyxml2::XMLElement	access:public	signature:() const
@@ -2151,6 +2168,7 @@ O	ext_libs/include/SFML/Window/Keyboard.hpp	/^        O,            \/\/\/< The 
 OBJT_1	include/TTX/Types.hpp	/^    OBJT_1, OBJT_2,$/;"	kind:e	enum:Layers
 OBJT_2	include/TTX/Types.hpp	/^    OBJT_1, OBJT_2,$/;"	kind:e	enum:Layers
 OPEN	ext_libs/include/TinyXML2/tinyxml2.h	/^        OPEN,		\/\/ <foo>$/;"	kind:e	enum:tinyxml2::XMLElement::__anon18
+ObjectCategories	include/TTX/Types.hpp	/^enum ObjectCategories$/;"	kind:g
 ObjectSystem	trashCode/ObjectSystemOld.cpp	/^ObjectSystem::ObjectSystem(GQE::IApp& theApp):$/;"	kind:f	class:ObjectSystem	signature:(GQE::IApp& theApp)
 ObjectSystem	trashCode/ObjectSystemOld.cpp	/^ObjectSystem::ObjectSystem(GQE::IApp& theApp,b2World theWorld):$/;"	kind:f	class:ObjectSystem	signature:(GQE::IApp& theApp,b2World theWorld)
 ObjectSystem::ObjectSystem	trashCode/ObjectSystemOld.cpp	/^ObjectSystem::ObjectSystem(GQE::IApp& theApp):$/;"	kind:f	class:ObjectSystem	signature:(GQE::IApp& theApp)
@@ -2553,6 +2571,7 @@ RootElement	ext_libs/include/TinyXML2/tinyxml2.h	/^    const XMLElement* RootEle
 Row	ext_libs/include/SFML/Graphics/Font.hpp	/^        Row(unsigned int rowTop, unsigned int rowHeight) : width(0), top(rowTop), height(rowHeight) {}$/;"	kind:f	struct:sf::Font::Row	access:public	signature:(unsigned int rowTop, unsigned int rowHeight)
 Row	ext_libs/include/SFML/Graphics/Font.hpp	/^    struct Row$/;"	kind:s	class:sf::Font	access:private
 S	ext_libs/include/SFML/Window/Keyboard.hpp	/^        S,            \/\/\/< The S key$/;"	kind:e	enum:sf::Keyboard::Key
+SCENE	include/TTX/Types.hpp	/^   SCENE = 0x0004,$/;"	kind:e	enum:ObjectCategories
 SFML_API_EXPORT	ext_libs/include/SFML/Config.hpp	104;"	kind:d
 SFML_API_EXPORT	ext_libs/include/SFML/Config.hpp	110;"	kind:d
 SFML_API_EXPORT	ext_libs/include/SFML/Config.hpp	120;"	kind:d
@@ -2973,6 +2992,7 @@ Synchronize	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	void Synchronize(b2Br
 SynchronizeFixtures	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	void SynchronizeFixtures();$/;"	kind:p	class:b2Body	access:private	signature:()
 SynchronizeTransform	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	void SynchronizeTransform();$/;"	kind:p	class:b2Body	access:private	signature:()
 SynchronizeTransform	ext_libs/include/Box2D/Dynamics/b2Body.h	/^inline void b2Body::SynchronizeTransform()$/;"	kind:f	class:b2Body	signature:()
+System	ext_libs/include/MPE/classes/System.hpp	/^   System();$/;"	kind:p	class:mpe::System	access:public	signature:()
 System	ext_libs/include/MPE/classes/System.hpp	/^   System(size_t theNParticles,bool theFixed=true);$/;"	kind:p	class:mpe::System	access:public	signature:(size_t theNParticles,bool theFixed=true)
 System	ext_libs/include/MPE/classes/System.hpp	/^class System$/;"	kind:c	namespace:mpe
 SystemContainer	include/TTX/Types.hpp	/^typedef std::map<SystemID, ISystem*> SystemContainer;$/;"	kind:t
@@ -3420,20 +3440,20 @@ add	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	/^      void add(const t
 add	ext_libs/include/SFML/Network/SocketSelector.hpp	/^    void add(Socket& socket);$/;"	kind:p	class:sf::SocketSelector	access:public	signature:(Socket& socket)
 addAction	ext_libs/include/GQE/Entity/systems/ActionSystem.hpp	/^      void addAction(IAction* theAction);$/;"	kind:p	class:GQE::ActionSystem	access:public	signature:(IAction* theAction)
 addActiveState	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      void addActiveState(IState* theState);$/;"	kind:p	class:GQE::StateManager	access:public	signature:(IState* theState)
-addAffector	ext_libs/include/MPE/classes/System.hpp	/^   void     addAffector(AffectorPtr theAffector);$/;"	kind:p	class:mpe::System	access:public	signature:(AffectorPtr theAffector)
+addAffector	ext_libs/include/MPE/classes/System.hpp	/^   void addAffector(AffectorPtr theAffector);$/;"	kind:p	class:mpe::System	access:public	signature:(AffectorPtr theAffector)
 addChild	include/TTX/gameStates/IActionState.hpp	/^    void addChild(GQE::Instance* theFather,$/;"	kind:p	class:IActionState	access:public	signature:(GQE::Instance* theFather, GQE::Instance* theChild, GQE::PropertyID theChildName)
 addChild	src/TTX/gameStates/IActionState.cpp	/^void IActionState::addChild(GQE::Instance* theFather,$/;"	kind:f	class:IActionState	signature:(GQE::Instance* theFather, GQE::Instance* theChild, GQE::PropertyID theChildName)
 addCleanup	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      void addCleanup(const EventID theEventID, TCLASS& theEventClass,$/;"	kind:f	class:GQE::StateManager	access:public	signature:(const EventID theEventID, TCLASS& theEventClass, typename TEvent<TCLASS, void>::typeEventFunc theEventFunc)
-addEmitter	ext_libs/include/MPE/classes/System.hpp	/^   void     addEmitter(Emitter& theEmitter);$/;"	kind:p	class:mpe::System	access:public	signature:(Emitter& theEmitter)
+addEmitter	ext_libs/include/MPE/classes/System.hpp	/^   void addEmitter(Emitter& theEmitter);$/;"	kind:p	class:mpe::System	access:public	signature:(Emitter& theEmitter)
 addEntity	ext_libs/include/GQE/Entity/interfaces/ISystem.hpp	/^      const typeEntityID addEntity(IEntity* theEntity);$/;"	kind:p	class:GQE::ISystem	access:public	signature:(IEntity* theEntity)
-addFocus	ext_libs/include/MPE/classes/System.hpp	/^   void     addFocus(FocusPtr theFocus);$/;"	kind:p	class:mpe::System	access:public	signature:(FocusPtr theFocus)
+addFocus	ext_libs/include/MPE/classes/System.hpp	/^   void addFocus(FocusPtr theFocus);$/;"	kind:p	class:mpe::System	access:public	signature:(FocusPtr theFocus)
 addGroups	ext_libs/include/MPE/classes/Focus.hpp	/^   void addGroups(GroupID theGroups);$/;"	kind:p	class:mpe::Focus	access:public	signature:(GroupID theGroups)
 addInactiveState	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      void addInactiveState(IState* theState);$/;"	kind:p	class:GQE::StateManager	access:public	signature:(IState* theState)
 addInstance	include/TTX/gameStates/IActionState.hpp	/^    GQE::Instance* addInstance(GQE::typePrototypeID thePrototype,$/;"	kind:p	class:IActionState	access:public	signature:(GQE::typePrototypeID thePrototype, Position2D thePosition, Position2D theInitialImpulse = Position2D(0,0,0))
 addInstance	src/TTX/gameStates/IActionState.cpp	/^GQE::Instance* IActionState::addInstance(GQE::typePrototypeID thePrototype,$/;"	kind:f	class:IActionState	signature:(GQE::typePrototypeID thePrototype, Position2D thePosition, Position2D theInitialImpulse)
 addLayer	include/TTX/classes/render/RenderManager.hpp	/^   void addLayer(LayerID theID,sf::Texture* theTexture)$/;"	kind:f	class:RenderManager	access:public	signature:(LayerID theID,sf::Texture* theTexture)
 addParticle	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      Particle* addParticle();$/;"	kind:p	class:mpe::ParticleContainer	access:public	signature:()
-addParticle	ext_libs/include/MPE/classes/System.hpp	/^   Particle*  addParticle();$/;"	kind:p	class:mpe::System	access:public	signature:()
+addParticle	ext_libs/include/MPE/classes/System.hpp	/^   Particle* addParticle();$/;"	kind:p	class:mpe::System	access:public	signature:()
 addPlayer	include/TTX/gameStates/IActionState.hpp	/^    void addPlayer(int                  theJoy,$/;"	kind:p	class:IActionState	access:public	signature:(int theJoy, GQE::typePrototypeID thePrototype, Position2D thePosition)
 addPlayer	src/TTX/gameStates/IActionState.cpp	/^void IActionState::addPlayer(int                  theJoy,$/;"	kind:f	class:IActionState	signature:(int theJoy, GQE::typePrototypeID thePrototype, Position2D thePosition)
 addProperties	ext_libs/include/GQE/Entity/interfaces/ISystem.hpp	/^      virtual void addProperties(IEntity* theEntity) = 0;$/;"	kind:p	class:GQE::ISystem	access:public	signature:(IEntity* theEntity)
@@ -5432,7 +5452,7 @@ create	src/TTX/classes/particles/Affectors.cpp	/^std::shared_ptr<DisolveAffector
 createDirectory	ext_libs/include/SFML/Network/Ftp.hpp	/^    Response createDirectory(const std::string& name);$/;"	kind:p	class:sf::Ftp	access:public	signature:(const std::string& name)
 createFcn	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	b2ContactCreateFcn* createFcn;$/;"	kind:m	struct:b2ContactRegister	access:public
 createFocus	ext_libs/include/MPE/classes/Emitter.hpp	/^   FocusPtr createFocus() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
-createFocus	ext_libs/include/MPE/classes/System.hpp	/^   FocusPtr   createFocus(EmitterID theEmitter);$/;"	kind:p	class:mpe::System	access:public	signature:(EmitterID theEmitter)
+createFocus	ext_libs/include/MPE/classes/System.hpp	/^   FocusPtr createFocus(EmitterID theEmitter);$/;"	kind:p	class:mpe::System	access:public	signature:(EmitterID theEmitter)
 createMaskFromColor	ext_libs/include/SFML/Graphics/Image.hpp	/^    void createMaskFromColor(const Color& color, Uint8 alpha = 0);$/;"	kind:p	class:sf::Image	access:public	signature:(const Color& color, Uint8 alpha = 0)
 createParticle	ext_libs/include/MPE/classes/Focus.hpp	/^   Particle createParticle();$/;"	kind:p	class:mpe::Focus	access:private	signature:()
 damping	ext_libs/include/Box2D/Rope/b2Rope.h	/^	float32 damping;$/;"	kind:m	struct:b2RopeDef	access:public
@@ -5869,9 +5889,9 @@ getVolume	ext_libs/include/SFML/Audio/SoundSource.hpp	/^    float getVolume() co
 getWidth	ext_libs/include/MPE/classes/Focus.hpp	/^   Real getWidth() const;$/;"	kind:p	class:mpe::Focus	access:public	signature:() const
 getWorkingDirectory	ext_libs/include/SFML/Network/Ftp.hpp	/^    DirectoryResponse getWorkingDirectory();$/;"	kind:p	class:sf::Ftp	access:public	signature:()
 getX	ext_libs/include/MPE/classes/Vec2.hpp	/^   Real getX()$/;"	kind:f	class:mpe::Vec2	access:public	signature:()
-getXFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real     getXFactor() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
+getXFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real getXFactor() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
 getY	ext_libs/include/MPE/classes/Vec2.hpp	/^   Real getY()$/;"	kind:f	class:mpe::Vec2	access:public	signature:()
-getYFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real     getYFactor() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
+getYFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real getYFactor() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
 glStatesSet	ext_libs/include/SFML/Graphics/RenderTarget.hpp	/^        bool      glStatesSet;    \/\/\/< Are our internal GL states set yet?$/;"	kind:m	struct:sf::RenderTarget::StatesCache	access:public
 glyphs	ext_libs/include/SFML/Graphics/Font.hpp	/^        GlyphTable       glyphs;  \/\/\/< Table mapping code points to their corresponding glyph$/;"	kind:m	struct:sf::Font::Page	access:public
 gravity	ext_libs/include/Box2D/Rope/b2Rope.h	/^	b2Vec2 gravity;$/;"	kind:m	struct:b2RopeDef	access:public
@@ -6218,7 +6238,7 @@ mActionSystem	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	/^      Action
 mActions	ext_libs/include/GQE/Entity/systems/ActionSystem.hpp	/^      std::map<const typeActionID, IAction*> mActions;$/;"	kind:m	class:GQE::ActionSystem	access:private
 mActive	ext_libs/include/GQE/Core/interfaces/ILogger.hpp	/^      bool  mActive;$/;"	kind:m	class:GQE::ILogger	access:private
 mActive	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	/^      std::map<const typeActionID, IAction*> mActive;$/;"	kind:m	class:GQE::ActionGroup	access:private
-mAffectors	ext_libs/include/MPE/classes/System.hpp	/^   std::list<AffectorPtr>        mAffectors;$/;"	kind:m	class:mpe::System	access:protected
+mAffectors	ext_libs/include/MPE/classes/System.hpp	/^   std::list<AffectorPtr>        mAffectors;$/;"	kind:m	class:mpe::System	access:private
 mAge	ext_libs/include/MPE/classes/Mortal.hpp	/^   Real mAge;$/;"	kind:m	class:mpe::Mortal	access:private
 mAlive	ext_libs/include/MPE/classes/Mortal.hpp	/^   bool mAlive;$/;"	kind:m	class:mpe::Mortal	access:private
 mAmuLoaded	include/TTX/classes/objects/Weapon.hpp	/^    int           mAmuLoaded;$/;"	kind:m	class:Weapon	access:private
@@ -6245,6 +6265,7 @@ mCadency	include/TTX/classes/objects/Weapon.hpp	/^    float         mCadency;$/;
 mCleanup	ext_libs/include/GQE/Core/interfaces/IState.hpp	/^      bool                  mCleanup;$/;"	kind:m	class:GQE::IState	access:private
 mCleanup	ext_libs/include/GQE/Entity/classes/Prototype.hpp	/^      std::vector<Instance*> mCleanup;$/;"	kind:m	class:GQE::Prototype	access:private
 mCleanupEvents	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      EventManager          mCleanupEvents;$/;"	kind:m	class:GQE::StateManager	access:private
+mCollisionListener	include/TTX/gameStates/GameStateOne.hpp	/^      b2ContactListener* mCollisionListener;$/;"	kind:m	class:GameStateOne	access:private
 mColor	ext_libs/include/MPE/classes/Particle.hpp	/^   Color     mColor;$/;"	kind:m	class:mpe::Particle	access:private
 mColorFactor	include/TTX/classes/particles/Affectors.hpp	/^   mpe::Real mColorFactor;$/;"	kind:m	class:DisolveAffector	access:private
 mContextSettings	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      sf::ContextSettings       mContextSettings;$/;"	kind:m	class:GQE::IApp	access:public
@@ -6261,7 +6282,7 @@ mElapsedClock	ext_libs/include/GQE/Core/interfaces/IState.hpp	/^      sf::Clock 
 mElapsedTime	ext_libs/include/GQE/Core/interfaces/IState.hpp	/^      float                 mElapsedTime;$/;"	kind:m	class:GQE::IState	access:private
 mEmitter	ext_libs/include/MPE/classes/Focus.hpp	/^   const Emitter&  mEmitter;$/;"	kind:m	class:mpe::Focus	access:private
 mEmitterID	include/TTX/classes/objects/Propeller.hpp	/^      mpe::EmitterID mEmitterID;$/;"	kind:m	class:Propeller	access:protected
-mEmitters	ext_libs/include/MPE/classes/System.hpp	/^   std::map<EmitterID, Emitter>  mEmitters;$/;"	kind:m	class:mpe::System	access:protected
+mEmitters	ext_libs/include/MPE/classes/System.hpp	/^   std::map<EmitterID, Emitter>  mEmitters;$/;"	kind:m	class:mpe::System	access:private
 mEntities	ext_libs/include/GQE/Entity/interfaces/ISystem.hpp	/^      std::map<const Uint32, std::deque<IEntity*> > mEntities;$/;"	kind:m	class:GQE::ISystem	access:protected
 mEntityID	ext_libs/include/GQE/Entity/interfaces/IEntity.hpp	/^      const typeEntityID  mEntityID;$/;"	kind:m	class:GQE::IEntity	access:private
 mEventClass	ext_libs/include/GQE/Core/interfaces/TEvent.hpp	/^      TCLASS&       mEventClass;$/;"	kind:m	class:GQE::TEvent	access:private
@@ -6279,7 +6300,7 @@ mFirstTileID	ext_libs/include/MapLoader/map.hpp	/^      int mWidth, mHeight, mTi
 mFixedSize	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      bool mFixedSize;$/;"	kind:m	class:mpe::ParticleContainer	access:private
 mFixturesDef	include/TTX/prototypes/components/B2Proto.hpp	/^      std::vector<b2FixtureDef> mFixturesDef;$/;"	kind:m	class:B2Proto	access:protected
 mFocus	include/TTX/classes/objects/Propeller.hpp	/^      mpe::FocusPtr  mFocus;$/;"	kind:m	class:Propeller	access:protected
-mFocusses	ext_libs/include/MPE/classes/System.hpp	/^   std::list<FocusPtr>           mFocusses;$/;"	kind:m	class:mpe::System	access:protected
+mFocusses	ext_libs/include/MPE/classes/System.hpp	/^   std::list<FocusPtr>           mFocusses;$/;"	kind:m	class:mpe::System	access:private
 mFrame	include/TTX/classes/render/Animation.hpp	/^      int mFrame;$/;"	kind:m	class:Animation	access:private
 mFrameClock	ext_libs/include/GQE/Core/classes/StatManager.hpp	/^      sf::Clock   mFrameClock;$/;"	kind:m	class:GQE::StatManager	access:private
 mFrames	ext_libs/include/GQE/Core/classes/StatManager.hpp	/^      Uint32      mFrames;$/;"	kind:m	class:GQE::StatManager	access:private
@@ -6329,7 +6350,7 @@ mOn	include/TTX/classes/objects/Propeller.hpp	/^      bool           mOn;$/;"	ki
 mOrder	ext_libs/include/GQE/Entity/interfaces/IEntity.hpp	/^      Uint32              mOrder;$/;"	kind:m	class:GQE::IEntity	access:private
 mPPS	ext_libs/include/MPE/classes/Focus.hpp	/^   Real      mPPS;$/;"	kind:m	class:mpe::Focus	access:private
 mParticles	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      Particle*  mParticles;$/;"	kind:m	class:mpe::ParticleContainer	access:private
-mParticles	ext_libs/include/MPE/classes/System.hpp	/^   ParticleContainer             mParticles;$/;"	kind:m	class:mpe::System	access:protected
+mParticles	ext_libs/include/MPE/classes/System.hpp	/^   ParticleContainer             mParticles;$/;"	kind:m	class:mpe::System	access:private
 mParticles	include/TTX/gameStates/IActionState.hpp	/^    Particles             mParticles;$/;"	kind:m	class:IActionState	access:protected
 mParticles	include/TTX/systems/PropellerSystem.hpp	/^      Particles& mParticles;$/;"	kind:m	class:PropellerSystem	access:private
 mPaused	ext_libs/include/GQE/Core/interfaces/IState.hpp	/^      bool                  mPaused;$/;"	kind:m	class:GQE::IState	access:private
@@ -6425,8 +6446,8 @@ mWindowSettings	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      sf::Window
 mWindowStyle	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      sf::Uint32             mWindowStyle;$/;"	kind:m	class:GQE::IApp	access:public
 mWorld	include/TTX/gameStates/IActionState.hpp	/^    b2World               mWorld;$/;"	kind:m	class:IActionState	access:protected
 mWorld	include/TTX/systems/B2System.hpp	/^      b2World& mWorld;$/;"	kind:m	class:B2System	access:private
-mXFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real mXFactor;$/;"	kind:m	class:mpe::System	access:protected
-mYFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real mYFactor;$/;"	kind:m	class:mpe::System	access:protected
+mXFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real mXFactor;$/;"	kind:m	class:mpe::System	access:private
+mYFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real mYFactor;$/;"	kind:m	class:mpe::System	access:private
 m_C	ext_libs/include/Box2D/Dynamics/Joints/b2MouseJoint.h	/^	b2Vec2 m_C;$/;"	kind:m	class:b2MouseJoint	access:protected
 m_I	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	float32 m_I, m_invI;$/;"	kind:m	class:b2Body	access:private
 m_JvAC	ext_libs/include/Box2D/Dynamics/Joints/b2GearJoint.h	/^	b2Vec2 m_JvAC, m_JvBD;$/;"	kind:m	class:b2GearJoint	access:protected
@@ -7094,6 +7115,7 @@ mpe::Emitter::setShape	ext_libs/include/MPE/classes/Emitter.hpp	/^   void setSha
 mpe::Emitter::setSystem	ext_libs/include/MPE/classes/Emitter.hpp	/^   void setSystem(System* theSystem);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(System* theSystem)
 mpe::Emitter::setTextRect	ext_libs/include/MPE/classes/Emitter.hpp	/^   void setTextRect(TextRect theTextRect);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(TextRect theTextRect)
 mpe::EmitterID	ext_libs/include/MPE/Config.hpp	/^typedef std::string EmitterID;$/;"	kind:t	namespace:mpe
+mpe::FIXED	ext_libs/include/MPE/Config.hpp	/^const bool FIXED = true;$/;"	kind:m	namespace:mpe
 mpe::Focus	ext_libs/include/MPE/classes/Focus.hpp	/^class Focus: public Mortal$/;"	kind:c	namespace:mpe	inherits:Mortal
 mpe::Focus::Focus	ext_libs/include/MPE/classes/Focus.hpp	/^   Focus(const Emitter&  theEmitter);$/;"	kind:p	class:mpe::Focus	access:private	signature:(const Emitter& theEmitter)
 mpe::Focus::addGroups	ext_libs/include/MPE/classes/Focus.hpp	/^   void addGroups(GroupID theGroups);$/;"	kind:p	class:mpe::Focus	access:public	signature:(GroupID theGroups)
@@ -7156,6 +7178,7 @@ mpe::Mortal::mAge	ext_libs/include/MPE/classes/Mortal.hpp	/^   Real mAge;$/;"	ki
 mpe::Mortal::mAlive	ext_libs/include/MPE/classes/Mortal.hpp	/^   bool mAlive;$/;"	kind:m	class:mpe::Mortal	access:private
 mpe::Mortal::mLifetime	ext_libs/include/MPE/classes/Mortal.hpp	/^   Real mLifetime;$/;"	kind:m	class:mpe::Mortal	access:private
 mpe::Mortal::resetLife	ext_libs/include/MPE/classes/Mortal.hpp	/^   inline void resetLife(Real theLifetime)$/;"	kind:f	class:mpe::Mortal	access:public	signature:(Real theLifetime)
+mpe::NON_FIXED	ext_libs/include/MPE/Config.hpp	/^const bool NON_FIXED = false;$/;"	kind:m	namespace:mpe
 mpe::NO_GROUP	ext_libs/include/MPE/Config.hpp	/^const GroupID NO_GROUP = 0x00;$/;"	kind:m	namespace:mpe
 mpe::Particle	ext_libs/include/MPE/classes/Particle.hpp	/^class Particle: public Mortal$/;"	kind:c	namespace:mpe	inherits:Mortal
 mpe::Particle::Particle	ext_libs/include/MPE/classes/Particle.hpp	/^   Particle();$/;"	kind:p	class:mpe::Particle	access:public	signature:()
@@ -7200,35 +7223,38 @@ mpe::ParticleContainer::mMaxSize	ext_libs/include/MPE/classes/ParticleContainer.
 mpe::ParticleContainer::mParticles	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      Particle*  mParticles;$/;"	kind:m	class:mpe::ParticleContainer	access:private
 mpe::ParticleContainer::mSize	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      size_t mSize;$/;"	kind:m	class:mpe::ParticleContainer	access:private
 mpe::ParticleContainer::removeParticle	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      void removeParticle(Particle* theParticle);$/;"	kind:p	class:mpe::ParticleContainer	access:public	signature:(Particle* theParticle)
+mpe::ParticleContainer::setSize	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      bool setSize(size_t theNumberOfParticles);$/;"	kind:p	class:mpe::ParticleContainer	access:public	signature:(size_t theNumberOfParticles)
 mpe::ParticleContainer::size	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      size_t size(){return mSize;};$/;"	kind:f	class:mpe::ParticleContainer	access:public	signature:()
 mpe::ParticleContainer::~ParticleContainer	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      ~ParticleContainer ();$/;"	kind:p	class:mpe::ParticleContainer	access:public	signature:()
 mpe::REAL_INFINITY	ext_libs/include/MPE/Config.hpp	/^const Real REAL_INFINITY = std::numeric_limits<Real>::infinity();$/;"	kind:m	namespace:mpe
 mpe::Real	ext_libs/include/MPE/Config.hpp	/^typedef float Real;$/;"	kind:t	namespace:mpe
 mpe::System	ext_libs/include/MPE/classes/System.hpp	/^class System$/;"	kind:c	namespace:mpe
+mpe::System::System	ext_libs/include/MPE/classes/System.hpp	/^   System();$/;"	kind:p	class:mpe::System	access:public	signature:()
 mpe::System::System	ext_libs/include/MPE/classes/System.hpp	/^   System(size_t theNParticles,bool theFixed=true);$/;"	kind:p	class:mpe::System	access:public	signature:(size_t theNParticles,bool theFixed=true)
-mpe::System::addAffector	ext_libs/include/MPE/classes/System.hpp	/^   void     addAffector(AffectorPtr theAffector);$/;"	kind:p	class:mpe::System	access:public	signature:(AffectorPtr theAffector)
-mpe::System::addEmitter	ext_libs/include/MPE/classes/System.hpp	/^   void     addEmitter(Emitter& theEmitter);$/;"	kind:p	class:mpe::System	access:public	signature:(Emitter& theEmitter)
-mpe::System::addFocus	ext_libs/include/MPE/classes/System.hpp	/^   void     addFocus(FocusPtr theFocus);$/;"	kind:p	class:mpe::System	access:public	signature:(FocusPtr theFocus)
-mpe::System::addParticle	ext_libs/include/MPE/classes/System.hpp	/^   Particle*  addParticle();$/;"	kind:p	class:mpe::System	access:public	signature:()
-mpe::System::createFocus	ext_libs/include/MPE/classes/System.hpp	/^   FocusPtr   createFocus(EmitterID theEmitter);$/;"	kind:p	class:mpe::System	access:public	signature:(EmitterID theEmitter)
+mpe::System::addAffector	ext_libs/include/MPE/classes/System.hpp	/^   void addAffector(AffectorPtr theAffector);$/;"	kind:p	class:mpe::System	access:public	signature:(AffectorPtr theAffector)
+mpe::System::addEmitter	ext_libs/include/MPE/classes/System.hpp	/^   void addEmitter(Emitter& theEmitter);$/;"	kind:p	class:mpe::System	access:public	signature:(Emitter& theEmitter)
+mpe::System::addFocus	ext_libs/include/MPE/classes/System.hpp	/^   void addFocus(FocusPtr theFocus);$/;"	kind:p	class:mpe::System	access:public	signature:(FocusPtr theFocus)
+mpe::System::addParticle	ext_libs/include/MPE/classes/System.hpp	/^   Particle* addParticle();$/;"	kind:p	class:mpe::System	access:public	signature:()
+mpe::System::createFocus	ext_libs/include/MPE/classes/System.hpp	/^   FocusPtr createFocus(EmitterID theEmitter);$/;"	kind:p	class:mpe::System	access:public	signature:(EmitterID theEmitter)
 mpe::System::getEmitter	ext_libs/include/MPE/classes/System.hpp	/^   Emitter& getEmitter(EmitterID theEmitterID);$/;"	kind:p	class:mpe::System	access:public	signature:(EmitterID theEmitterID)
 mpe::System::getParticlesBegin	ext_libs/include/MPE/classes/System.hpp	/^   ParticleContainer::const_iterator getParticlesBegin() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
 mpe::System::getParticlesEnd	ext_libs/include/MPE/classes/System.hpp	/^   ParticleContainer::const_iterator getParticlesEnd() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
 mpe::System::getParticlesSize	ext_libs/include/MPE/classes/System.hpp	/^   Integer getParticlesSize();$/;"	kind:p	class:mpe::System	access:public	signature:()
-mpe::System::getXFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real     getXFactor() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
-mpe::System::getYFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real     getYFactor() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
+mpe::System::getXFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real getXFactor() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
+mpe::System::getYFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real getYFactor() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
 mpe::System::initFromFile	ext_libs/include/MPE/classes/System.hpp	/^   bool initFromFile(std::string theFilename);$/;"	kind:p	class:mpe::System	access:public	signature:(std::string theFilename)
-mpe::System::mAffectors	ext_libs/include/MPE/classes/System.hpp	/^   std::list<AffectorPtr>        mAffectors;$/;"	kind:m	class:mpe::System	access:protected
-mpe::System::mEmitters	ext_libs/include/MPE/classes/System.hpp	/^   std::map<EmitterID, Emitter>  mEmitters;$/;"	kind:m	class:mpe::System	access:protected
-mpe::System::mFocusses	ext_libs/include/MPE/classes/System.hpp	/^   std::list<FocusPtr>           mFocusses;$/;"	kind:m	class:mpe::System	access:protected
-mpe::System::mParticles	ext_libs/include/MPE/classes/System.hpp	/^   ParticleContainer             mParticles;$/;"	kind:m	class:mpe::System	access:protected
-mpe::System::mXFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real mXFactor;$/;"	kind:m	class:mpe::System	access:protected
-mpe::System::mYFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real mYFactor;$/;"	kind:m	class:mpe::System	access:protected
-mpe::System::setXFactor	ext_libs/include/MPE/classes/System.hpp	/^   void     setXFactor(Real theXFactor);$/;"	kind:p	class:mpe::System	access:public	signature:(Real theXFactor)
-mpe::System::setYFactor	ext_libs/include/MPE/classes/System.hpp	/^   void     setYFactor(Real theYFactor);$/;"	kind:p	class:mpe::System	access:public	signature:(Real theYFactor)
-mpe::System::update	ext_libs/include/MPE/classes/System.hpp	/^   void     update(Real theElapsedTime);$/;"	kind:p	class:mpe::System	access:public	signature:(Real theElapsedTime)
-mpe::System::updateFocusses	ext_libs/include/MPE/classes/System.hpp	/^   void updateFocusses (Real theElapsedTime);$/;"	kind:p	class:mpe::System	access:protected	signature:(Real theElapsedTime)
-mpe::System::updateParticles	ext_libs/include/MPE/classes/System.hpp	/^   void updateParticles(Real theElapsedTime);$/;"	kind:p	class:mpe::System	access:protected	signature:(Real theElapsedTime)
+mpe::System::mAffectors	ext_libs/include/MPE/classes/System.hpp	/^   std::list<AffectorPtr>        mAffectors;$/;"	kind:m	class:mpe::System	access:private
+mpe::System::mEmitters	ext_libs/include/MPE/classes/System.hpp	/^   std::map<EmitterID, Emitter>  mEmitters;$/;"	kind:m	class:mpe::System	access:private
+mpe::System::mFocusses	ext_libs/include/MPE/classes/System.hpp	/^   std::list<FocusPtr>           mFocusses;$/;"	kind:m	class:mpe::System	access:private
+mpe::System::mParticles	ext_libs/include/MPE/classes/System.hpp	/^   ParticleContainer             mParticles;$/;"	kind:m	class:mpe::System	access:private
+mpe::System::mXFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real mXFactor;$/;"	kind:m	class:mpe::System	access:private
+mpe::System::mYFactor	ext_libs/include/MPE/classes/System.hpp	/^   Real mYFactor;$/;"	kind:m	class:mpe::System	access:private
+mpe::System::setSize	ext_libs/include/MPE/classes/System.hpp	/^   bool setSize(size_t theNumberOfParticles);$/;"	kind:p	class:mpe::System	access:public	signature:(size_t theNumberOfParticles)
+mpe::System::setXFactor	ext_libs/include/MPE/classes/System.hpp	/^   void setXFactor(Real theXFactor);$/;"	kind:p	class:mpe::System	access:public	signature:(Real theXFactor)
+mpe::System::setYFactor	ext_libs/include/MPE/classes/System.hpp	/^   void setYFactor(Real theYFactor);$/;"	kind:p	class:mpe::System	access:public	signature:(Real theYFactor)
+mpe::System::update	ext_libs/include/MPE/classes/System.hpp	/^   void update(Real theElapsedTime);$/;"	kind:p	class:mpe::System	access:public	signature:(Real theElapsedTime)
+mpe::System::updateFocusses	ext_libs/include/MPE/classes/System.hpp	/^   void updateFocusses (Real theElapsedTime);$/;"	kind:p	class:mpe::System	access:private	signature:(Real theElapsedTime)
+mpe::System::updateParticles	ext_libs/include/MPE/classes/System.hpp	/^   void updateParticles(Real theElapsedTime);$/;"	kind:p	class:mpe::System	access:private	signature:(Real theElapsedTime)
 mpe::TextRect	ext_libs/include/MPE/Config.hpp	/^struct TextRect$/;"	kind:s	namespace:mpe
 mpe::TextRect::height	ext_libs/include/MPE/Config.hpp	/^   Integer x, y, width, height;$/;"	kind:m	struct:mpe::TextRect	access:public
 mpe::TextRect::width	ext_libs/include/MPE/Config.hpp	/^   Integer x, y, width, height;$/;"	kind:m	struct:mpe::TextRect	access:public
@@ -7769,6 +7795,8 @@ setScale	ext_libs/include/SFML/Graphics/Transformable.hpp	/^    void setScale(fl
 setShape	ext_libs/include/MPE/classes/Emitter.hpp	/^   void setShape(Shape theShape);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Shape theShape)
 setShow	ext_libs/include/GQE/Core/classes/StatManager.hpp	/^      void setShow(bool theShow);$/;"	kind:p	class:GQE::StatManager	access:public	signature:(bool theShow)
 setSize	ext_libs/include/MPE/classes/Particle.hpp	/^   void setSize(Real theSize);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theSize)
+setSize	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      bool setSize(size_t theNumberOfParticles);$/;"	kind:p	class:mpe::ParticleContainer	access:public	signature:(size_t theNumberOfParticles)
+setSize	ext_libs/include/MPE/classes/System.hpp	/^   bool setSize(size_t theNumberOfParticles);$/;"	kind:p	class:mpe::System	access:public	signature:(size_t theNumberOfParticles)
 setSize	ext_libs/include/SFML/Graphics/RectangleShape.hpp	/^    void setSize(const Vector2f& size);$/;"	kind:p	class:sf::RectangleShape	access:public	signature:(const Vector2f& size)
 setSize	ext_libs/include/SFML/Graphics/View.hpp	/^    void setSize(const Vector2f& size);$/;"	kind:p	class:sf::View	access:public	signature:(const Vector2f& size)
 setSize	ext_libs/include/SFML/Graphics/View.hpp	/^    void setSize(float width, float height);$/;"	kind:p	class:sf::View	access:public	signature:(float width, float height)
@@ -7799,8 +7827,8 @@ setViewport	ext_libs/include/SFML/Graphics/View.hpp	/^    void setViewport(const
 setVisible	ext_libs/include/SFML/Window/Window.hpp	/^    void setVisible(bool visible);$/;"	kind:p	class:sf::Window	access:public	signature:(bool visible)
 setVolume	ext_libs/include/SFML/Audio/SoundSource.hpp	/^    void setVolume(float volume);$/;"	kind:p	class:sf::SoundSource	access:public	signature:(float volume)
 setWidth	ext_libs/include/MPE/classes/Focus.hpp	/^   void setWidth(Real theWidth);$/;"	kind:p	class:mpe::Focus	access:public	signature:(Real theWidth)
-setXFactor	ext_libs/include/MPE/classes/System.hpp	/^   void     setXFactor(Real theXFactor);$/;"	kind:p	class:mpe::System	access:public	signature:(Real theXFactor)
-setYFactor	ext_libs/include/MPE/classes/System.hpp	/^   void     setYFactor(Real theYFactor);$/;"	kind:p	class:mpe::System	access:public	signature:(Real theYFactor)
+setXFactor	ext_libs/include/MPE/classes/System.hpp	/^   void setXFactor(Real theXFactor);$/;"	kind:p	class:mpe::System	access:public	signature:(Real theXFactor)
+setYFactor	ext_libs/include/MPE/classes/System.hpp	/^   void setYFactor(Real theYFactor);$/;"	kind:p	class:mpe::System	access:public	signature:(Real theYFactor)
 sf	ext_libs/include/GQE/Core/utils/StringUtil.hpp	/^namespace sf$/;"	kind:n
 sf	ext_libs/include/SFML/Audio/Listener.hpp	/^namespace sf$/;"	kind:n
 sf	ext_libs/include/SFML/Audio/Music.hpp	/^namespace sf$/;"	kind:n
@@ -9805,7 +9833,7 @@ update	ext_libs/include/GQE/Core/interfaces/TProperty.hpp	/^      void update()$
 update	ext_libs/include/MPE/classes/Affector.hpp	/^   virtual void update(Real theElapsedtime)$/;"	kind:f	class:mpe::Affector	access:public	signature:(Real theElapsedtime)
 update	ext_libs/include/MPE/classes/Focus.hpp	/^   void update(Real theElapsedTime);$/;"	kind:p	class:mpe::Focus	access:public	signature:(Real theElapsedTime)
 update	ext_libs/include/MPE/classes/Particle.hpp	/^   void update(Real theElapsedTime);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theElapsedTime)
-update	ext_libs/include/MPE/classes/System.hpp	/^   void     update(Real theElapsedTime);$/;"	kind:p	class:mpe::System	access:public	signature:(Real theElapsedTime)
+update	ext_libs/include/MPE/classes/System.hpp	/^   void update(Real theElapsedTime);$/;"	kind:p	class:mpe::System	access:public	signature:(Real theElapsedTime)
 update	ext_libs/include/SFML/Audio/SoundBuffer.hpp	/^    bool update(unsigned int channelCount, unsigned int sampleRate);$/;"	kind:p	class:sf::SoundBuffer	access:private	signature:(unsigned int channelCount, unsigned int sampleRate)
 update	ext_libs/include/SFML/Graphics/Shape.hpp	/^    void update();$/;"	kind:p	class:sf::Shape	access:protected	signature:()
 update	ext_libs/include/SFML/Graphics/Texture.hpp	/^    void update(const Image& image);$/;"	kind:p	class:sf::Texture	access:public	signature:(const Image& image)
@@ -9848,11 +9876,11 @@ updateFixed	trashCode/B2ObjectSystem.hpp	/^      virtual void updateFixed(void);
 updateFixed	trashCode/B2WorldSystem.cpp	/^void B2WorldSystem::updateFixed()$/;"	kind:f	class:B2WorldSystem	signature:()
 updateFixed	trashCode/B2WorldSystem.hpp	/^      virtual void updateFixed(void);$/;"	kind:p	class:B2WorldSystem	access:public	signature:(void)
 updateFixed	trashCode/ObjectSystemOld.cpp	/^void ObjectSystem::updateFixed()$/;"	kind:f	class:ObjectSystem	signature:()
-updateFocusses	ext_libs/include/MPE/classes/System.hpp	/^   void updateFocusses (Real theElapsedTime);$/;"	kind:p	class:mpe::System	access:protected	signature:(Real theElapsedTime)
+updateFocusses	ext_libs/include/MPE/classes/System.hpp	/^   void updateFocusses (Real theElapsedTime);$/;"	kind:p	class:mpe::System	access:private	signature:(Real theElapsedTime)
 updateGeometry	ext_libs/include/SFML/Graphics/Text.hpp	/^    void updateGeometry();$/;"	kind:p	class:sf::Text	access:private	signature:()
 updateOutline	ext_libs/include/SFML/Graphics/Shape.hpp	/^    void updateOutline();$/;"	kind:p	class:sf::Shape	access:private	signature:()
 updateOutlineColors	ext_libs/include/SFML/Graphics/Shape.hpp	/^    void updateOutlineColors();$/;"	kind:p	class:sf::Shape	access:private	signature:()
-updateParticles	ext_libs/include/MPE/classes/System.hpp	/^   void updateParticles(Real theElapsedTime);$/;"	kind:p	class:mpe::System	access:protected	signature:(Real theElapsedTime)
+updateParticles	ext_libs/include/MPE/classes/System.hpp	/^   void updateParticles(Real theElapsedTime);$/;"	kind:p	class:mpe::System	access:private	signature:(Real theElapsedTime)
 updatePositions	ext_libs/include/SFML/Graphics/Sprite.hpp	/^    void updatePositions();$/;"	kind:p	class:sf::Sprite	access:private	signature:()
 updateRender	include/TTX/classes/particles/Particles.hpp	/^   void updateRender(RenderManager& theRenderManager);$/;"	kind:p	class:Particles	access:public	signature:(RenderManager& theRenderManager)
 updateRender	src/TTX/classes/particles/Particles.cpp	/^void Particles::updateRender(RenderManager& theRenderManager)$/;"	kind:f	class:Particles	signature:(RenderManager& theRenderManager)
