@@ -60,6 +60,7 @@ void GameStateOne::doInit(void)
    addSystem(new PropellerSystem(*this,mParticles));
    addSystem(new B2System(*this,mWorld));
    addSystem(new AnimationSystem(*this));
+   addSystem(new HealthSystem(*this));
    //RenderUnits
    mRenderManager.addLayer("Back",anTileTexture);
    mRenderManager.addLayer("Fore",anTileTexture);
@@ -152,6 +153,7 @@ void GameStateOne::updateFixed(void)
    mSystems["PlayerSystem"]->updateFixed();
    mSystems["PropellerSystem"]->updateFixed();
    mSystems["B2System"]->updateFixed();
+   mSystems["HealthSystem"]->updateFixed();
    mSystems["AnimationSystem"]->updateFixed();
    mSystems["RenderSystem"]->updateFixed();
    mParticles.update(SPU);

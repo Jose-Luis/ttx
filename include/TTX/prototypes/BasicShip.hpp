@@ -4,18 +4,21 @@
 
 #include <TTX/prototypes/components/B2Proto.hpp>
 #include <TTX/prototypes/components/RenderProto.hpp>
+#include <TTX/prototypes/components/HealthProto.hpp>
 #include <TTX/classes/objects/Propeller.hpp>
 #include <TTX/classes/objects/Weapon.hpp>
 
-class BasicShip: public B2Proto, public RenderProto
+class BasicShip: public B2Proto, public RenderProto, public HealthProto
 {
 public:
 
     BasicShip():
         GQE::Prototype("pBasicShip"),
         B2Proto("pBasicShip"),
-        RenderProto("pBasicShip")
+        RenderProto("pBasicShip"),
+        HealthProto("pBasicShip")
     {
+
         mBodyDef.type = b2_dynamicBody;
         mBodyDef.linearDamping =8.0f;
         mBodyDef.angularDamping = 32.0f;
@@ -55,6 +58,9 @@ public:
         mProperties.add<Propeller>("pPropeller",anPropeller);
         mProperties.add<Weapon>("wWeapon",anWeapon);
         mProperties.set("rTexRect",sf::Rect<int>(0,96,32,32));
+
+        mProperties.set("Resistance",100.f);
+        mProperties.set("Health",100.f);
 
         mFixturesDef.push_back(anFixture1);
         mFixturesDef.push_back(anFixture2);

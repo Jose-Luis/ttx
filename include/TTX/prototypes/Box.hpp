@@ -3,9 +3,10 @@
 
 #include <TTX/prototypes/components/B2Proto.hpp>
 #include <TTX/prototypes/components/RenderProto.hpp>
+#include <TTX/prototypes/components/HealthProto.hpp>
 #include <TTX/classes/render/Animation.hpp>
 
-class Box: public B2Proto, public RenderProto
+class Box: public B2Proto, public RenderProto, public HealthProto
 {
 
    public:
@@ -13,7 +14,8 @@ class Box: public B2Proto, public RenderProto
       Box():
          GQE::Prototype("pBox"),
          B2Proto("pBox"),
-         RenderProto("pBox")
+         RenderProto("pBox"),
+         HealthProto("pBox")
    {
       b2FixtureDef anFixture1;
       mShape1.SetAsBox(1,1);
@@ -33,6 +35,8 @@ class Box: public B2Proto, public RenderProto
       anAnimation.mFPS = 2;
       mProperties.add<Animation>("rAnimation", anAnimation);
       mSystemIDs.push_back("AnimationSystem");
+      mProperties.set("Resistance", 5.f);
+      mProperties.set("Health", 150.f);
    }
    private:
 

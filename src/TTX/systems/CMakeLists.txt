@@ -5,11 +5,13 @@ set(SYSTEMS_FILES
    ${INCROOT}/systems/PlayerSystem.hpp
    ${INCROOT}/systems/PropellerSystem.hpp
    ${INCROOT}/systems/AnimationSystem.hpp
+   ${INCROOT}/systems/HealthSystem.hpp
    ${SRCROOT}/systems/ISystem.cpp
    ${SRCROOT}/systems/B2System.cpp 
    ${SRCROOT}/systems/RenderSystem.cpp
    ${SRCROOT}/systems/PlayerSystem.cpp
    ${SRCROOT}/systems/PropellerSystem.cpp
+   ${SRCROOT}/systems/HealthSystem.cpp
    ${SRCROOT}/systems/AnimationSystem.cpp)
 
 add_library(systems ${SYSTEMS_FILES}) 

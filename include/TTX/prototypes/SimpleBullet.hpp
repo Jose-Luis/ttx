@@ -3,16 +3,18 @@
 
 #include <TTX/prototypes/components/B2Proto.hpp>
 #include <TTX/prototypes/components/RenderProto.hpp>
+#include <TTX/prototypes/components/HealthProto.hpp>
 #include <TTX/Types.hpp>
 
-class SimpleBullet: public B2Proto, public RenderProto
+class SimpleBullet: public B2Proto, public RenderProto, public HealthProto
 {
 
 public:
     SimpleBullet():
         GQE::Prototype("pSimpleBullet"),
         B2Proto("pSimpleBullet"),
-        RenderProto("pSimpleBullet")
+        RenderProto("pSimpleBullet"),
+        HealthProto("pSimpleBullet")
     {
         b2FixtureDef anFixture1;
         mShape1.m_radius=0.50;
@@ -27,6 +29,8 @@ public:
         mBodyDef.bullet = true;
         mBodyDef.fixedRotation = true;
         mProperties.set("rTexRect",sf::IntRect(24,72,8,8));
+        mProperties.set("Health",1.f);
+        mProperties.set("Resistance",1.f);
         mFixturesDef.push_back(anFixture1);
     }
 private:

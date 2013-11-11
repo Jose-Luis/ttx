@@ -1,17 +1,34 @@
-#include <GQE/Entity/interfaces/IEntity.hpp>
 #include <TTX/classes/physics/CollisionListener.hpp>
 
-void CollisionListener::BeginContact(b2Contact* theContact)
+void CollisionListener::PreSolve(b2Contact* theContact, const b2Manifold* theOldManifold)
 {
-   GQE::IEntity* anCollideEntityA = 
-      static_cast<GQE::IEntity*>(theContact->GetFixtureA()->GetBody()->GetUserData());
-   if(anCollideEntityA)
-      anCollideEntityA->destroy();
-   GQE::IEntity* anCollideEntityB = 
-      static_cast<GQE::IEntity*>(theContact->GetFixtureB()->GetBody()->GetUserData());
-   if(anCollideEntityB)
-      anCollideEntityB->destroy();
 }
+
+void CollisionListener::PostSolve(b2Contact* theContact,const b2ContactImpulse* theImpulse)
+{
+   auto anCollideEntityA = static_cast<GQE::IEntity*>(theContact->GetFixtureA()->GetBody()->GetUserData());
+   auto anCollideEntityB = static_cast<GQE::IEntity*>(theContact->GetFixtureB()->GetBody()->GetUserData());
+
+   float aImpactStrength = theImpulse->normalImpulses[0];
+
+   applyDamage(anCollideEntityA, aImpactStrength);
+   applyDamage(anCollideEntityB, aImpactStrength);
+}
+
+void CollisionListener::BeginContact(b2Contact* theContact)
+{}
 
 void CollisionListener::EndContact(b2Contact* theContact)
 {}
+
+void CollisionListener::applyDamage(GQE::IEntity* theEntity, float theImpactStrength)
+{
+   if (theEntity)
+   {
+
+      float aResistance = theEntity->mProperties.get<float>("Resistance");
+      float aDamage = theImpactStrength / aResistance; 
+      float aHealth = theEntity->mProperties.get<float>("Health");
+      theEntity->mProperties.set<float>("Health", aHealth - aDamage);
+   }
+}

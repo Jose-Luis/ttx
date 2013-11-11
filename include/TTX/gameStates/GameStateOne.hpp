@@ -31,6 +31,7 @@
 #include <TTX/systems/PlayerSystem.hpp>
 #include <TTX/systems/RenderSystem.hpp>
 #include <TTX/systems/AnimationSystem.hpp>
+#include <TTX/systems/HealthSystem.hpp>
 #include <TTX/prototypes/Rombo.hpp>
 #include <TTX/prototypes/Box.hpp>
 #include <TTX/prototypes/Ground.hpp>
