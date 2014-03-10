@@ -30,7 +30,7 @@ void Particles::updateRender(RenderManager& theRenderManager)
 
       for (int i = 0; i < 4;i++)
       {
-         theRenderManager.addVertex(anLayerID,sf::Vertex(anPositions[i], sf::Color{anColor.r,anColor.g,anColor.b,anColor.a} ,anTexCoords[i]));
+         theRenderManager.addVertex(anLayerID,sf::Vertex(anPositions[i], sf::Color(anColor.r,anColor.g,anColor.b,anColor.a) ,anTexCoords[i]));
       }
    }
 }

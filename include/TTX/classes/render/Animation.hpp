@@ -17,6 +17,8 @@ class Animation
       Animation(){};
       Animation( std::vector<sf::IntRect>* theRects):
          mFPS(8),
+         mTime(0),
+         mFrame(0),
          mSize(theRects->size())
    {
       mRects = theRects;
