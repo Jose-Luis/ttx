@@ -1,6 +1,7 @@
 #ifndef  PBOX2_INC
 #define  PBOX2_INC
 
+#include <TTX/Types.hpp>
 #include <TTX/prototypes/components/B2Proto.hpp>
 #include <TTX/prototypes/components/RenderProto.hpp>
 #include <TTX/prototypes/components/HealthProto.hpp>
@@ -23,6 +24,9 @@ class Box: public B2Proto, public RenderProto, public HealthProto
       anFixture1.density = 1;
       anFixture1.friction = 0.5;
       anFixture1.restitution = 0;
+      anFixture1.filter.categoryBits = ObjectCategories::ENEMY_SHIP;
+      anFixture1.filter.maskBits = ObjectCategories::SCENE | ObjectCategories::FRIENDLY_BULLET | ObjectCategories::FRIENDLY_SHIP;
+
       mBodyDef.type = b2_dynamicBody;
       mProperties.set("rTexRect",sf::IntRect(96,0,32,32));
       mFixturesDef.push_back(anFixture1);

@@ -65,6 +65,9 @@ public:
      * @param theSystem
      */
     void addSystem(ISystem* theSystem);
+    /// @brief addSystem 
+    /// @param theSystem
+    ISystem* getSystem(SystemID theSystem);
 
 protected:   //Members
 

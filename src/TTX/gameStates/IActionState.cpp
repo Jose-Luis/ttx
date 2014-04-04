@@ -100,3 +100,13 @@ void IActionState::addChild(GQE::Instance* theFather,
     theFather->mProperties.add<GQE::Instance*>(theChildName,theChild);
     theChild->mProperties.set<GQE::Instance*>("iFather",theFather);
 }
+//------------------------------------------------------------------------------
+//       Class:  IActionState
+//      Method:  addPlayer
+// Description:
+//------------------------------------------------------------------------------
+ISystem* IActionState::getSystem(SystemID theSystem)
+{
+   return mSystem[theSystem];
+}
+

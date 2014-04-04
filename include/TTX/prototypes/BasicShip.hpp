@@ -35,7 +35,7 @@ public:
         anFixture1.friction = 0.5;
         anFixture1.restitution = 0;
         anFixture1.filter.categoryBits = ObjectCategories::FRIENDLY_SHIP;
-        anFixture1.filter.maskBits = ObjectCategories::SCENE;
+        anFixture1.filter.maskBits = ObjectCategories::SCENE | ObjectCategories::ENEMY_SHIP;
 
         b2FixtureDef anFixture2;
         mShape2.SetAsBox(0.125,0.25, b2Vec2(0.75,0),0);
@@ -50,7 +50,7 @@ public:
         Propeller anPropeller;
         anPropeller.setEmitterID("ShipPropeller");
         anPropeller.setLinearPower(8192);
-        anPropeller.setTurnPower(2);
+        anPropeller.setTurnPower(16384);
 
         Weapon anWeapon;
         anWeapon.setPosition(Position2D(-0.75,0,-HALF_PI));

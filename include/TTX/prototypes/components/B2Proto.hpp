@@ -10,12 +10,13 @@
 
 #include <Box2D/Box2D.h>
 #include <GQE/Entity/classes/Prototype.hpp>
+#include <TTX/gameStates/IActionState.hpp>
 
 class B2Proto: virtual public GQE::Prototype
 {
    public:
 
-      B2Proto(GQE::typePrototypeID theID);
+      B2Proto(GQE::typePrototypeID theID,IActionState& theState);
 
    protected:
 

@@ -23,7 +23,7 @@ public:
         anFixture1.friction = 0.5;
         anFixture1.restitution = 1;
         anFixture1.filter.categoryBits = ObjectCategories::FRIENDLY_BULLET;
-        anFixture1.filter.maskBits = ObjectCategories::SCENE; 
+        anFixture1.filter.maskBits = ObjectCategories::SCENE | ObjectCategories::ENEMY_SHIP; 
 
         mBodyDef.type = b2_dynamicBody;
         mBodyDef.bullet = true;

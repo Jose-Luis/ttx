@@ -1,7 +1,7 @@
 #include <TTX/systems/HealthSystem.hpp>
 
 HealthSystem::HealthSystem(IActionState& theState):
-   ISystem("HealthSystem",theState)
+   ISystem("HealthSystem", theState)
 {}
 
 HealthSystem::~HealthSystem()
@@ -9,8 +9,8 @@ HealthSystem::~HealthSystem()
 
 void HealthSystem::addProperties(GQE::IEntity* theEntity)
 {
-   theEntity->mProperties.add<float>("Resistance",0);
-   theEntity->mProperties.add<float>("Health",0);
+   theEntity->mProperties.add<float>("Resistance", 0);
+   theEntity->mProperties.add<float>("Health", 0);
 }
 
 void HealthSystem::handleInit(GQE::IEntity* theEntity)
@@ -24,19 +24,27 @@ void HealthSystem::updateFixed()
 {
    std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;
    anIter = mEntities.begin();
+
    while(anIter != mEntities.end())
    {
       std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();
+
       while(anQueue != anIter->second.end())
       {
          // get the IEntity address first
          GQE::IEntity* anEntity = *anQueue;
 
          auto anHealth = anEntity->mProperties.get<float>("Health");
+
          if(anHealth < 0)
+         {
+            auto anDeadActions = anEntity->mProperties.get
             anEntity->destroy();
+         }
+
          anQueue++;
-      }  
+      }
+
       anIter++;
    }
 }

@@ -7,19 +7,19 @@ ParticleSystem::ParticleSystem(GQE::IState& theState,Particles& theParticles):
    mParticles.setXFactor(16);
    mParticles.setYFactor(16);
    mParticles.setTexture(mApp.mAssetManager.getHandler<sf::Texture>().getReference("resources/Sprites.png"));
-   mpe::Emitter anEmitter("ShipParticle");
-   anEmitter.setTexRect(sf::Rect<int>(0,64,16,16));
-   anEmitter.setShape(mpe::Emitter::CIRCLE);
-   anEmitter.setRangeFocusWidth(0.5,0.5);
-   anEmitter.setRangeFocusHeight(0.5,0.5);
-   anEmitter.setRangeParticlePOW(0.0,0.0);
-   anEmitter.setRangeParticleTOL(1024,2048);
-   anEmitter.setDispersion(mpe::Emitter::STATIC);
-   anEmitter.setRangeFocusTOL(mpe::REAL_INFINITY,mpe::REAL_INFINITY);
-   anEmitter.setRangeFocusNP(mpe::MAX_INTEGER,mpe::MAX_INTEGER);
-   anEmitter.setRangeFocusPPS(0,0);
-   anEmitter.setRangeParticleScale(0.8,2.4);
-   anEmitter.setRangeParticleAV(0,0);
+   /*mpe::Emitter anEmitter("ShipParticle");*/
+   //anEmitter.setTexRect(sf::Rect<int>(0,64,16,16));
+   //anEmitter.setShape(mpe::Emitter::CIRCLE);
+   //anEmitter.setRangeFocusWidth(0.5,0.5);
+   //anEmitter.setRangeFocusHeight(0.5,0.5);
+   //anEmitter.setRangeParticlePOW(0.0,0.0);
+   //anEmitter.setRangeParticleTOL(1024,2048);
+   //anEmitter.setDispersion(mpe::Emitter::STATIC);
+   //anEmitter.setRangeFocusTOL(mpe::REAL_INFINITY,mpe::REAL_INFINITY);
+   //anEmitter.setRangeFocusNP(mpe::MAX_INTEGER,mpe::MAX_INTEGER);
+   //anEmitter.setRangeFocusPPS(0,0);
+   //anEmitter.setRangeParticleScale(0.8,2.4);
+   /*anEmitter.setRangeParticleAV(0,0);*/
    mParticles.addEmitter(emitter1);
 }
 

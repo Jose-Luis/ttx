@@ -97,19 +97,26 @@ void Propeller::switchOn()
 //      Method:  impulse
 // Description:  impluse the body 
 //------------------------------------------------------------------------------
-void Propeller::impulse(b2Vec2 theDirection)
+void Propeller::impulse(MoveData theMoveData)
 {
+   b2Vec2 anDirection(theMoveData.x,theMoveData.y);
+
    if(mOn && mBody)
    {
-      float anPower = theDirection.LengthSquared();
+      float anPower = anDirection.LengthSquared();
       if(anPower)
       {
-         theDirection *= mLinearPower;
-         mBody->ApplyForceToCenter(theDirection);
-         mBody->ApplyTorque(mBody->GetLocalVector(theDirection).x * mTurnPower);
+         if(theMoveData.move)
+         {
+            mBody->ApplyForceToCenter(mLinearPower * anDirection);
+         }
+         if(theMoveData.turn)
+         {
+            mBody->ApplyTorque(mBody->GetLocalVector(anDirection).x * mTurnPower);
+         }
          b2Vec2 anPosition = mBody->GetWorldCenter(); 
-         float  anAngle = mBody->GetAngle() * TODEG;
          mFocus->setPosition(mpe::Vec2(anPosition.x,anPosition.y));
+         float  anAngle = mBody->GetAngle() * TODEG;
          mFocus->setAngle(anAngle);
       }
       mFocus->setPPS(anPower * 32);

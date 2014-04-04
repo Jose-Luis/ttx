@@ -20,7 +20,7 @@ class Propeller
 
       /// @brief impulse 
       /// @param theDirection
-      void impulse(b2Vec2 theDirection);
+      void impulse(MoveData theDirection);
       /// @brief setLinearPower 
       /// @param theLinearPower
       void setLinearPower(float theLinearPower);
