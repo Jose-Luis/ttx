@@ -11,6 +11,7 @@ void HealthSystem::addProperties(GQE::IEntity* theEntity)
 {
    theEntity->mProperties.add<float>("Resistance", 0);
    theEntity->mProperties.add<float>("Health", 0);
+   theEntity->mProperties.add<IDead*>("IDead",nullptr);
 }
 
 void HealthSystem::handleInit(GQE::IEntity* theEntity)
@@ -38,7 +39,8 @@ void HealthSystem::updateFixed()
 
          if(anHealth < 0)
          {
-            auto anDeadActions = anEntity->mProperties.get
+            IDead* anDead = anEntity->mProperties.get<IDead*>("IDead");
+            anDead->execute();
             anEntity->destroy();
          }
 
