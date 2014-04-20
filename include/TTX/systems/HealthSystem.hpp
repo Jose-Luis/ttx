@@ -9,6 +9,7 @@
 #include <GQE/Entity/interfaces/ISystem.hpp>
 #include <GQE/Entity/Entity_types.hpp>
 #include <GQE/Entity/classes/Instance.hpp>
+#include <TTX/classes/actions/IDead.hpp>
 #include <TTX/Types.hpp>
 #include <TTX/systems/ISystem.hpp>
 
