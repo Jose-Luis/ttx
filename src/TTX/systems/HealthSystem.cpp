@@ -38,7 +38,6 @@ void HealthSystem::updateFixed()
 
          if(anHealth < 0)
          {
-            auto anDeadActions = anEntity->mProperties.get
             anEntity->destroy();
          }
 
