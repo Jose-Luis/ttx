@@ -16,9 +16,10 @@
 
 #include <TTX/prototypes/components/FocusProto.hpp>
 
-FocusProto::FocusProto(GQE::typePrototypeID theID,mpe::EmitterID theEmitter):
+FocusProto::FocusProto(GQE::typePrototypeID theID,mpe::EmitterID theEmitter,IActionState& theState):
    GQE::Prototype(theID),
    mEmitter(theEmitter)
 {
    mProperties.add<mpe::EmitterID&>("sEmitterID",mEmitter);
+   addSystem(theState.getSystem("ParticleSystem"));
 }

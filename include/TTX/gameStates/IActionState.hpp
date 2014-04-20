@@ -68,6 +68,9 @@ public:
     /// @brief addSystem 
     /// @param theSystem
     ISystem* getSystem(SystemID theSystem);
+    /// @brief addPrototype 
+    /// @param theProto
+    void addPrototype(GQE::Prototype* theProto);
 
 protected:   //Members
 

@@ -5,5 +5,5 @@ B2Proto::B2Proto(GQE::typePrototypeID theID,IActionState& theState):
 {
    mProperties.add<b2BodyDef*>("b2BodyDef",&mBodyDef);
    mProperties.add<std::vector<b2FixtureDef>*>("b2FixturesDef",&mFixturesDef);
-   this->addSystem(theState.getSystem("B2System"));
+   addSystem(theState.getSystem("B2System"));
 }

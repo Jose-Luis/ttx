@@ -17,6 +17,7 @@ ATTRIBUTE_VALUE_LEAVE_ENTITIES	ext_libs/include/TinyXML2/tinyxml2.h	/^        AT
 ATTRIBUTE_VALUE	ext_libs/include/TinyXML2/tinyxml2.h	/^        ATTRIBUTE_VALUE		            	= NEEDS_ENTITY_PROCESSING | NEEDS_NEWLINE_NORMALIZATION,$/;"	e	enum:tinyxml2::StrPair::__anon14
 Accepted	ext_libs/include/SFML/Network/Http.hpp	/^            Accepted       = 202, \/\/\/< The request has been accepted, but will be processed later by the server$/;"	e	enum:sf::Http::Response::Status
 ActionGroup	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	/^  class GQE_API ActionGroup$/;"	c	namespace:GQE
+ActionProto	include/TTX/prototypes/components/ActionProto.hpp	/^class ActionProto$/;"	c
 ActionSystem	ext_libs/include/GQE/Entity/systems/ActionSystem.hpp	/^  class GQE_API ActionSystem : public ISystem$/;"	c	namespace:GQE
 Add	ext_libs/include/SFML/Window/Keyboard.hpp	/^        Add,          \/\/\/< The + key$/;"	e	enum:sf::Keyboard::Key
 Add	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	void Add(b2Body* body)$/;"	f	class:b2Island
@@ -73,7 +74,7 @@ B2ObjectDefSystem	trashCode/B2ObjectDefSystem.cpp	/^B2ObjectDefSystem::B2ObjectD
 B2ObjectSystem	trashCode/B2ObjectSystem.hpp	/^class B2ObjectSystem: public GQE::ISystem$/;"	c
 B2ObjectSystem	trashCode/B2ObjectSystem.cpp	/^B2ObjectSystem::B2ObjectSystem(GQE::IApp& theApp):$/;"	f	class:B2ObjectSystem
 B2PROTO_INC	include/TTX/prototypes/components/B2Proto.hpp	9;"	d
-B2Proto	include/TTX/prototypes/components/B2Proto.hpp	/^class B2Proto: virtual public GQE::Prototype$/;"	c
+B2Proto	include/TTX/prototypes/components/B2Proto.hpp	/^class B2Proto: public ActionProto, virtual public GQE::Prototype$/;"	c
 B2Proto	src/TTX/prototypes/components/B2Proto.cpp	/^B2Proto::B2Proto(GQE::typePrototypeID theID,IActionState& theState):$/;"	f	class:B2Proto
 B2SYSTEM_INC	include/TTX/systems/B2System.hpp	18;"	d
 B2System	include/TTX/systems/B2System.hpp	/^class B2System: public ISystem$/;"	c
@@ -332,6 +333,7 @@ FLOG_IF	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	264;"	d
 FLOG_IF	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	272;"	d
 FLOG	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	235;"	d
 FLOG	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	269;"	d
+FOCUSPROTO_INC	include/TTX/prototypes/components/FocusProto.hpp	9;"	d
 FOCUS_INC	ext_libs/include/MPE/classes/Focus.hpp	7;"	d
 FORE_1	include/TTX/Types.hpp	/^   FORE_1, FORE_2$/;"	e	enum:Layers
 FORE_2	include/TTX/Types.hpp	/^   FORE_1, FORE_2$/;"	e	enum:Layers
@@ -359,7 +361,8 @@ FlagForFiltering	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^inline v
 FloatAttribute	ext_libs/include/TinyXML2/tinyxml2.h	/^    float	 FloatAttribute( const char* name ) const	{$/;"	f	class:tinyxml2::XMLElement
 FloatRect	ext_libs/include/SFML/Graphics/Rect.hpp	/^typedef Rect<float> FloatRect;$/;"	t	namespace:sf
 FloatValue	ext_libs/include/TinyXML2/tinyxml2.h	/^    float	 FloatValue() const				{$/;"	f	class:tinyxml2::XMLAttribute
-FocusProto	src/TTX/prototypes/components/FocusProto.cpp	/^FocusProto::FocusProto(GQE::typePrototypeID theID,mpe::EmitterID theEmitter):$/;"	f	class:FocusProto
+FocusProto	include/TTX/prototypes/components/FocusProto.hpp	/^class FocusProto: virtual public GQE::Prototype$/;"	c
+FocusProto	src/TTX/prototypes/components/FocusProto.cpp	/^FocusProto::FocusProto(GQE::typePrototypeID theID,mpe::EmitterID theEmitter,IActionState& theState):$/;"	f	class:FocusProto
 FocusPtr	ext_libs/include/MPE/Config.hpp	/^typedef std::shared_ptr<Focus> FocusPtr;$/;"	t	namespace:mpe
 Focus	ext_libs/include/MPE/classes/Focus.hpp	/^class Focus: public Mortal$/;"	c	namespace:mpe
 FontAsset	ext_libs/include/GQE/Core/assets/FontAsset.hpp	/^  class GQE_API FontAsset : public TAsset<sf::Font>$/;"	c	namespace:GQE
@@ -1601,6 +1604,7 @@ addProperties	trashCode/B2ObjectDefSystem.cpp	/^void B2ObjectDefSystem::addPrope
 addProperties	trashCode/B2ObjectSystem.cpp	/^void B2ObjectSystem::addProperties(GQE::IEntity *theEntity)$/;"	f	class:B2ObjectSystem
 addProperties	trashCode/B2WorldSystem.cpp	/^void B2WorldSystem::addProperties(GQE::IEntity *theEntity)$/;"	f	class:B2WorldSystem
 addProperties	trashCode/ObjectSystemOld.cpp	/^void ObjectSystem::addProperties(GQE::IEntity *theEntity)$/;"	f	class:ObjectSystem
+addPrototype	src/TTX/gameStates/IActionState.cpp	/^void IActionState::addPrototype(GQE::Prototype* theProto)$/;"	f	class:IActionState
 addSystem	src/TTX/gameStates/IActionState.cpp	/^void IActionState::addSystem(ISystem* theSystem)$/;"	f	class:IActionState
 addVertex	include/TTX/classes/render/RenderManager.hpp	/^   void addVertex(LayerID theID,const sf::Vertex& theVertex)$/;"	f	class:RenderManager
 add	ext_libs/include/GQE/Core/classes/EventManager.hpp	/^      void add(const EventID theEventID, TCLASS& theEventClass,$/;"	f	class:GQE::EventManager
@@ -2224,6 +2228,7 @@ mElapsedClock	ext_libs/include/GQE/Core/interfaces/IState.hpp	/^      sf::Clock 
 mElapsedTime	ext_libs/include/GQE/Core/interfaces/IState.hpp	/^      float                 mElapsedTime;$/;"	m	class:GQE::IState
 mEmitterID	include/TTX/classes/objects/Propeller.hpp	/^      mpe::EmitterID mEmitterID;$/;"	m	class:Propeller
 mEmitter	ext_libs/include/MPE/classes/Focus.hpp	/^   const Emitter&  mEmitter;$/;"	m	class:mpe::Focus
+mEmitter	include/TTX/prototypes/components/FocusProto.hpp	/^      mpe::EmitterID mEmitter;$/;"	m	class:FocusProto
 mEmitters	ext_libs/include/MPE/classes/System.hpp	/^   std::map<EmitterID, Emitter>  mEmitters;$/;"	m	class:mpe::System
 mEntities	ext_libs/include/GQE/Entity/interfaces/ISystem.hpp	/^      std::map<const Uint32, std::deque<IEntity*> > mEntities;$/;"	m	class:GQE::ISystem
 mEntityID	ext_libs/include/GQE/Entity/interfaces/IEntity.hpp	/^      const typeEntityID  mEntityID;$/;"	m	class:GQE::IEntity
@@ -2345,6 +2350,7 @@ mStack	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      std::vector<IS
 mStatManager	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      StatManager               mStatManager;$/;"	m	class:GQE::IApp
 mStateID	ext_libs/include/GQE/Core/interfaces/IState.hpp	/^      const StateID     mStateID;$/;"	m	class:GQE::IState
 mStateManager	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      StateManager              mStateManager;$/;"	m	class:GQE::IApp
+mState	include/TTX/prototypes/components/ActionProto.hpp	/^    IActionState& mState;$/;"	m	class:ActionProto
 mState	include/TTX/systems/ISystem.hpp	/^    IActionState& mState;$/;"	m	class:ISystem
 mStates	include/TTX/classes/render/Layer.hpp	/^   sf::RenderStates mStates;$/;"	m	struct:Layer
 mStringStream	ext_libs/include/GQE/Core/loggers/StringLogger.hpp	/^      std::ostringstream mStringStream;$/;"	m	class:GQE::StringLogger
