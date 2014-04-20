@@ -43,17 +43,13 @@ GQE::Instance* IActionState::addInstance(GQE::typePrototypeID thePrototype,
 {
     //Getting the prototype and creating the instance.
     GQE::Prototype* anPrototype = mPrototypes.getPrototype(thePrototype);
+    anPrototype->mProperties.set<sf::Vector2f>("vPosition", sf::Vector2f(thePosition.x,thePosition.y));
+    anPrototype->mProperties.set<float>("fAngle",thePosition.angle);
+    anPrototype->mProperties.set<Position2D>("pInitialImpulse", theInitialImpulse);
     GQE::Instance* anInstance = anPrototype->makeInstance();
     //Setting the posiion to the instance.
-    anInstance->mProperties.set<sf::Vector2f>("vPosition", sf::Vector2f(thePosition.x,thePosition.y));
-    anInstance->mProperties.set<float>("fAngle",thePosition.angle);
-    anInstance->mProperties.add<Position2D>("pInitialImpulse", theInitialImpulse);
     //Adding the instance to the systems.
-    for(auto anSystem :  anPrototype->mSystemIDs)
-    {
-        mSystems[anSystem]->addEntity(anInstance);
-    }
-    return anInstance;
+   return anInstance;
 }
 //------------------------------------------------------------------------------
 //       Class:  IActionState
@@ -107,6 +103,19 @@ void IActionState::addChild(GQE::Instance* theFather,
 //------------------------------------------------------------------------------
 ISystem* IActionState::getSystem(SystemID theSystem)
 {
-   return mSystem[theSystem];
+   return mSystems[theSystem];
 }
-
+//------------------------------------------------------------------------------
+//       Class:  IActionState
+//      Method:  addPlayer
+// Description:
+//------------------------------------------------------------------------------
+void IActionState::addPrototype(GQE::Prototype* theProto)
+{
+    for(auto anSystem :  theProto->mSystemIDs)
+    {
+       theProto->addSystem(mSystems[anSystem]);
+       mPrototypes.addPrototype(theProto);
+    }
+ 
+}

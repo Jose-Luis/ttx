@@ -3,5 +3,5 @@
 AnimationProto::AnimationProto(GQE::typePrototypeID thePrototypeID):
    GQE::Prototype(thePrototypeID)
 {
-   mProperties.add
+   this->
 }

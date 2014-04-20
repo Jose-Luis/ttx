@@ -47,13 +47,6 @@ void GameStateOne::doInit(void)
                     GQE::AssetDropAtZero);
    mApp.mAssetManager.loadAllAssets();
    mView.setRotation(0);
-   //Prototypes
-   mPrototypes.addPrototype(new Rombo());
-   mPrototypes.addPrototype(new Box());
-   mPrototypes.addPrototype(new Ground());
-   mPrototypes.addPrototype(new BasicShip());
-   mPrototypes.addPrototype(new SimpleBullet());
-   mPrototypes.addPrototype(new Player());
    //Systems
    addSystem(new RenderSystem(*this,mRenderManager,LENGTHFACTOR));
    addSystem(new PlayerSystem(*this,mView,LENGTHFACTOR));
@@ -61,7 +54,14 @@ void GameStateOne::doInit(void)
    addSystem(new B2System(*this,mWorld));
    addSystem(new AnimationSystem(*this));
    addSystem(new HealthSystem(*this));
-   //RenderUnits
+    //Prototypes
+   addPrototype(new Rombo());
+   addPrototype(new Box());
+   addPrototype(new Ground());
+   addPrototype(new BasicShip());
+   addPrototype(new SimpleBullet());
+   addPrototype(new Player());
+  //RenderUnits
    mRenderManager.addLayer("Back",anTileTexture);
    mRenderManager.addLayer("Fore",anTileTexture);
    mRenderManager.addLayer("Obj1",anSpriteTexture);

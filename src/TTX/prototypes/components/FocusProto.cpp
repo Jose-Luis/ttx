@@ -21,5 +21,6 @@ FocusProto::FocusProto(GQE::typePrototypeID theID,mpe::EmitterID theEmitter,IAct
    mEmitter(theEmitter)
 {
    mProperties.add<mpe::EmitterID&>("sEmitterID",mEmitter);
+   this->
    addSystem(theState.getSystem("ParticleSystem"));
 }
