@@ -40,7 +40,12 @@ void HealthSystem::updateFixed()
          if(anHealth < 0)
          {
             IDead* anDead = anEntity->mProperties.get<IDead*>("IDead");
-            anDead->execute();
+            if(anDead)
+            {
+               sf::Vector2f anPosition = anEntity->mProperties.get<sf::Vector2f>("vPosition");
+               float anAngle = anEntity->mProperties.get<float>("fAngle");
+               anDead->execute(Position2D(anPosition.x,anPosition.y,anAngle),mState);
+            }
             anEntity->destroy();
          }
 

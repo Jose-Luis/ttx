@@ -41,15 +41,13 @@ GQE::Instance* IActionState::addInstance(GQE::typePrototypeID thePrototype,
         Position2D           theInitialImpulse)
 
 {
-    //Getting the prototype and creating the instance.
     GQE::Prototype* anPrototype = mPrototypes.getPrototype(thePrototype);
     anPrototype->mProperties.set<sf::Vector2f>("vPosition", sf::Vector2f(thePosition.x,thePosition.y));
     anPrototype->mProperties.set<float>("fAngle",thePosition.angle);
     anPrototype->mProperties.set<Position2D>("pInitialImpulse", theInitialImpulse);
-    GQE::Instance* anInstance = anPrototype->makeInstance();
-    //Setting the posiion to the instance.
-    //Adding the instance to the systems.
-   return anInstance;
+
+    return anPrototype->makeInstance();
+
 }
 //------------------------------------------------------------------------------
 //       Class:  IActionState
@@ -118,4 +116,17 @@ void IActionState::addPrototype(GQE::Prototype* theProto)
        mPrototypes.addPrototype(theProto);
     }
  
+}
+
+//------------------------------------------------------------------------------
+//       Class:  IActionState
+//      Method:  addParticleFocus
+// Description:
+//------------------------------------------------------------------------------
+void IActionState::addParticleFocus(Position2D thePos,mpe::EmitterID theEmitterID)
+{
+   mpe::FocusPtr anFocus = mParticles.createFocus(theEmitterID);
+   anFocus->setPosition(mpe::Vec2(thePos.x,thePos.y));
+   anFocus->setAngle(thePos.angle);
+   mParticles.addFocus(anFocus);
 }

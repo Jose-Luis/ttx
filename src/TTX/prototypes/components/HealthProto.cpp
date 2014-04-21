@@ -11,6 +11,7 @@ HealthProto::HealthProto(GQE::typePrototypeID theID):
 {
    mProperties.add<float>("Resistance",0);
    mProperties.add<float>("Health",0);
+   mProperties.add<IDead*>("IDead",nullptr);
 
    mSystemIDs.push_back("HealthSystem");
 }

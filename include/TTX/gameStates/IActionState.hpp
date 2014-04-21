@@ -71,6 +71,8 @@ public:
     /// @brief addPrototype 
     /// @param theProto
     void addPrototype(GQE::Prototype* theProto);
+ 
+    void addParticleFocus(Position2D,mpe::EmitterID);
 
 protected:   //Members
 

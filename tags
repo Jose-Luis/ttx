@@ -4,6 +4,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+ACTIONPROTO_H	include/TTX/prototypes/ActionProto.hpp	22;"	d
+ACTIONPROTO_H	include/TTX/prototypes/ActionProto.hpp	60;"	d
 ACTION_GROUP_HPP_INCLUDED	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	12;"	d
 AFFECTORS_INC	include/TTX/classes/particles/Affectors.hpp	9;"	d
 AFFECTOR_INC	ext_libs/include/MPE/classes/Affector.hpp	7;"	d
@@ -17,7 +19,9 @@ ATTRIBUTE_VALUE_LEAVE_ENTITIES	ext_libs/include/TinyXML2/tinyxml2.h	/^        AT
 ATTRIBUTE_VALUE	ext_libs/include/TinyXML2/tinyxml2.h	/^        ATTRIBUTE_VALUE		            	= NEEDS_ENTITY_PROCESSING | NEEDS_NEWLINE_NORMALIZATION,$/;"	e	enum:tinyxml2::StrPair::__anon14
 Accepted	ext_libs/include/SFML/Network/Http.hpp	/^            Accepted       = 202, \/\/\/< The request has been accepted, but will be processed later by the server$/;"	e	enum:sf::Http::Response::Status
 ActionGroup	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	/^  class GQE_API ActionGroup$/;"	c	namespace:GQE
+ActionProto	include/TTX/prototypes/ActionProto.hpp	/^class ActionProto : public GQE::Prototype$/;"	c
 ActionProto	include/TTX/prototypes/components/ActionProto.hpp	/^class ActionProto$/;"	c
+ActionProto	src/TTX/prototypes/ActionProto.cpp	/^ActionProto::ActionProto (GQE::typePrototypeID theID, IActionState& theState ) : $/;"	f	class:ActionProto
 ActionSystem	ext_libs/include/GQE/Entity/systems/ActionSystem.hpp	/^  class GQE_API ActionSystem : public ISystem$/;"	c	namespace:GQE
 Add	ext_libs/include/SFML/Window/Keyboard.hpp	/^        Add,          \/\/\/< The + key$/;"	e	enum:sf::Keyboard::Key
 Add	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	void Add(b2Body* body)$/;"	f	class:b2Island
@@ -74,8 +78,8 @@ B2ObjectDefSystem	trashCode/B2ObjectDefSystem.cpp	/^B2ObjectDefSystem::B2ObjectD
 B2ObjectSystem	trashCode/B2ObjectSystem.hpp	/^class B2ObjectSystem: public GQE::ISystem$/;"	c
 B2ObjectSystem	trashCode/B2ObjectSystem.cpp	/^B2ObjectSystem::B2ObjectSystem(GQE::IApp& theApp):$/;"	f	class:B2ObjectSystem
 B2PROTO_INC	include/TTX/prototypes/components/B2Proto.hpp	9;"	d
-B2Proto	include/TTX/prototypes/components/B2Proto.hpp	/^class B2Proto: public ActionProto, virtual public GQE::Prototype$/;"	c
-B2Proto	src/TTX/prototypes/components/B2Proto.cpp	/^B2Proto::B2Proto(GQE::typePrototypeID theID,IActionState& theState):$/;"	f	class:B2Proto
+B2Proto	include/TTX/prototypes/components/B2Proto.hpp	/^class B2Proto: virtual public GQE::Prototype$/;"	c
+B2Proto	src/TTX/prototypes/components/B2Proto.cpp	/^B2Proto::B2Proto(GQE::typePrototypeID theID):$/;"	f	class:B2Proto
 B2SYSTEM_INC	include/TTX/systems/B2System.hpp	18;"	d
 B2System	include/TTX/systems/B2System.hpp	/^class B2System: public ISystem$/;"	c
 B2System	src/TTX/systems/B2System.cpp	/^B2System::B2System(IActionState& theState,b2World& theWorld):$/;"	f	class:B2System
@@ -137,7 +141,7 @@ BadCommandSequence	ext_libs/include/SFML/Network/Ftp.hpp	/^            BadComman
 BadGateway	ext_libs/include/SFML/Network/Http.hpp	/^            BadGateway          = 502, \/\/\/< The gateway server has received an error from the source server$/;"	e	enum:sf::Http::Response::Status
 BadRequest	ext_libs/include/SFML/Network/Http.hpp	/^            BadRequest          = 400, \/\/\/< The server couldn't understand the request (syntax error)$/;"	e	enum:sf::Http::Response::Status
 BasicShip	include/TTX/prototypes/BasicShip.hpp	/^class BasicShip: public B2Proto, public RenderProto, public HealthProto$/;"	c
-BasicShip	include/TTX/prototypes/BasicShip.hpp	/^    BasicShip():$/;"	f	class:BasicShip
+BasicShip	src/TTX/prototypes/BasicShip.cpp	/^BasicShip::BasicShip():$/;"	f	class:BasicShip
 B	ext_libs/include/SFML/Window/Keyboard.hpp	/^        B,            \/\/\/< The B key$/;"	e	enum:sf::Keyboard::Key
 BeginContact	ext_libs/include/Box2D/Dynamics/b2WorldCallbacks.h	/^	virtual void BeginContact(b2Contact* contact) { B2_NOT_USED(contact); }$/;"	f	class:b2ContactListener
 BeginContact	src/TTX/classes/physics/CollisionListener.cpp	/^void CollisionListener::BeginContact(b2Contact* theContact)$/;"	f	class:CollisionListener
@@ -615,7 +619,7 @@ Ground	include/TTX/prototypes/Ground.hpp	/^      Ground():$/;"	f	class:Ground
 GroupID	ext_libs/include/MPE/Config.hpp	/^typedef unsigned char GroupID;$/;"	t	namespace:mpe
 HALF_PI	include/TTX/Types.hpp	/^const float HALF_PI = 3.14159265359f \/ 2;$/;"	v
 HEALTHPROTO_INC	include/TTX/prototypes/components/HealthProto.hpp	9;"	d
-HEALTHSYSTEM_INC	include/TTX/systems/HealthSystem.hpp	7;"	d
+HEALTHSYSTEM_INC	include/TTX/systems/HealthSystem.hpp	2;"	d
 HasBOM	ext_libs/include/TinyXML2/tinyxml2.h	/^    bool HasBOM() const {$/;"	f	class:tinyxml2::XMLDocument
 Head	ext_libs/include/SFML/Network/Http.hpp	/^            Head  \/\/\/< Request a page's header only$/;"	e	enum:sf::Http::Request::Method
 HealthProto	include/TTX/prototypes/components/HealthProto.hpp	/^class HealthProto: virtual public GQE::Prototype$/;"	c
@@ -634,6 +638,7 @@ IActionState	src/TTX/gameStates/IActionState.cpp	/^IActionState::IActionState(GQ
 IAction	ext_libs/include/GQE/Entity/interfaces/IAction.hpp	/^  class GQE_API IAction$/;"	c	namespace:GQE
 IApp	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^  class GQE_API IApp$/;"	c	namespace:GQE
 IAssetHandler	ext_libs/include/GQE/Core/interfaces/IAssetHandler.hpp	/^  class GQE_API IAssetHandler$/;"	c	namespace:GQE
+IDead	include/TTX/classes/actions/IDead.hpp	/^class IDead $/;"	c
 ID	include/TTX/Types.hpp	/^typedef std::string ID;$/;"	t
 IENTITY_HPP_INCLUDED	ext_libs/include/GQE/Entity/interfaces/IEntity.hpp	17;"	d
 IEVENT_HPP_INCLUDED	ext_libs/include/GQE/Core/interfaces/IEvent.hpp	9;"	d
@@ -1227,6 +1232,7 @@ ShallowClone	ext_libs/include/TinyXML2/tinyxml2.h	/^    virtual XMLNode* Shallow
 ShallowEqual	ext_libs/include/TinyXML2/tinyxml2.h	/^    virtual bool ShallowEqual( const XMLNode* \/*compare*\/ ) const	{$/;"	f	class:tinyxml2::XMLDocument
 Shape	ext_libs/include/SFML/Graphics/Shape.hpp	/^class SFML_GRAPHICS_API Shape : public Drawable, public Transformable$/;"	c	namespace:sf
 Shape	ext_libs/include/MPE/classes/Emitter.hpp	/^   enum Shape {RECTANGLE, CIRCLE};$/;"	g	class:mpe::Emitter
+ShipDead	include/TTX/prototypes/BasicShip.hpp	/^    class ShipDead:public IDead$/;"	c	class:BasicShip
 ShipPropeller	trashCode/ShipPropeller.cpp	/^ShipPropeller::ShipPropeller()$/;"	f	class:ShipPropeller
 SimpleBullet	include/TTX/prototypes/SimpleBullet.hpp	/^class SimpleBullet: public B2Proto, public RenderProto, public HealthProto$/;"	c
 SimpleBullet	include/TTX/prototypes/SimpleBullet.hpp	/^    SimpleBullet():$/;"	f	class:SimpleBullet
@@ -1592,6 +1598,7 @@ addChild	src/TTX/gameStates/IActionState.cpp	/^void IActionState::addChild(GQE::
 addCleanup	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      void addCleanup(const EventID theEventID, TCLASS& theEventClass,$/;"	f	class:GQE::StateManager
 addInstance	src/TTX/gameStates/IActionState.cpp	/^GQE::Instance* IActionState::addInstance(GQE::typePrototypeID thePrototype,$/;"	f	class:IActionState
 addLayer	include/TTX/classes/render/RenderManager.hpp	/^   void addLayer(LayerID theID,sf::Texture* theTexture)$/;"	f	class:RenderManager
+addParticleFocus	src/TTX/gameStates/IActionState.cpp	/^void IActionState::addParticleFocus(Position2D thePos,mpe::EmitterID theEmitterID)$/;"	f	class:IActionState
 addPlayer	src/TTX/gameStates/IActionState.cpp	/^void IActionState::addPlayer(int                  theJoy,$/;"	f	class:IActionState
 addProperties	src/TTX/systems/AnimationSystem.cpp	/^void AnimationSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:AnimationSystem
 addProperties	src/TTX/systems/B2System.cpp	/^void B2System::addProperties(GQE::IEntity *theEntity)$/;"	f	class:B2System
@@ -1990,6 +1997,7 @@ enableMotor	ext_libs/include/Box2D/Dynamics/Joints/b2RevoluteJoint.h	/^	bool ena
 enableMotor	ext_libs/include/Box2D/Dynamics/Joints/b2WheelJoint.h	/^	bool enableMotor;$/;"	m	struct:b2WheelJointDef
 end	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      const_iterator end() const {return mParticles + mSize;}$/;"	f	class:mpe::ParticleContainer
 end	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      iterator end() {return mParticles + mSize;}$/;"	f	class:mpe::ParticleContainer
+execute	src/TTX/prototypes/BasicShip.cpp	/^void BasicShip::ShipDead::execute(Position2D thePosition,IActionState& theActionState)$/;"	f	class:BasicShip::ShipDead
 ex	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec2 ex, ey;$/;"	m	struct:b2Mat22
 ex	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec3 ex, ey, ez;$/;"	m	struct:b2Mat33
 ey	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec2 ex, ey;$/;"	m	struct:b2Mat22
@@ -2180,6 +2188,7 @@ lowerAngle	ext_libs/include/Box2D/Dynamics/Joints/b2RevoluteJoint.h	/^	float32 l
 lowerBound	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2Vec2 lowerBound;	\/\/\/< the lower vertex$/;"	m	struct:b2AABB
 lowerTranslation	ext_libs/include/Box2D/Dynamics/Joints/b2PrismaticJoint.h	/^	float32 lowerTranslation;$/;"	m	struct:b2PrismaticJointDef
 mActionID	ext_libs/include/GQE/Entity/interfaces/IAction.hpp	/^      const typeActionID mActionID;$/;"	m	class:GQE::IAction
+mActionState	include/TTX/prototypes/ActionProto.hpp	/^    IActionState& mActionState; $/;"	m	class:ActionProto
 mActionSystem	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	/^      ActionSystem* mActionSystem;$/;"	m	class:GQE::ActionGroup
 mActions	ext_libs/include/GQE/Entity/systems/ActionSystem.hpp	/^      std::map<const typeActionID, IAction*> mActions;$/;"	m	class:GQE::ActionSystem
 mActive	ext_libs/include/GQE/Core/interfaces/ILogger.hpp	/^      bool  mActive;$/;"	m	class:GQE::ILogger
@@ -2205,6 +2214,7 @@ mAssetID	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      AssetID        
 mAssetManager	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      AssetManager              mAssetManager;$/;"	m	class:GQE::IApp
 mAsset	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      TYPE*                mAsset;$/;"	m	class:GQE::TAsset
 mAssets	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      std::map<const AssetID, AssetData> mAssets;$/;"	m	class:GQE::TAssetHandler
+mBodyDef	include/TTX/prototypes/ActionProto.hpp	/^    b2BodyDef mBodyDef;$/;"	m	class:ActionProto
 mBodyDef	include/TTX/prototypes/components/B2Proto.hpp	/^      b2BodyDef mBodyDef;$/;"	m	class:B2Proto
 mBody	include/TTX/classes/objects/Propeller.hpp	/^      b2Body*        mBody;$/;"	m	class:Propeller
 mCadency	include/TTX/classes/objects/Weapon.hpp	/^    float         mCadency;$/;"	m	class:Weapon
@@ -2245,6 +2255,7 @@ mFactor	include/TTX/systems/RenderSystem.hpp	/^      float mFactor;$/;"	m	class:
 mFileStream	ext_libs/include/GQE/Core/loggers/FileLogger.hpp	/^      std::ofstream     mFileStream;$/;"	m	class:GQE::FileLogger
 mFirstTileID	ext_libs/include/MapLoader/map.hpp	/^      int mWidth, mHeight, mTileWidth, mTileHeight, mSpacing, mMargin, mFirstTileID;$/;"	m	class:Map
 mFixedSize	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      bool mFixedSize;$/;"	m	class:mpe::ParticleContainer
+mFixturesDef	include/TTX/prototypes/ActionProto.hpp	/^    std::vector<b2FixtureDef> mFixturesDef;$/;"	m	class:ActionProto
 mFixturesDef	include/TTX/prototypes/components/B2Proto.hpp	/^      std::vector<b2FixtureDef> mFixturesDef;$/;"	m	class:B2Proto
 mFocus	include/TTX/classes/objects/Propeller.hpp	/^      mpe::FocusPtr  mFocus;$/;"	m	class:Propeller
 mFocusses	ext_libs/include/MPE/classes/System.hpp	/^   std::list<FocusPtr>           mFocusses;$/;"	m	class:mpe::System
@@ -2350,6 +2361,7 @@ mStack	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      std::vector<IS
 mStatManager	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      StatManager               mStatManager;$/;"	m	class:GQE::IApp
 mStateID	ext_libs/include/GQE/Core/interfaces/IState.hpp	/^      const StateID     mStateID;$/;"	m	class:GQE::IState
 mStateManager	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      StateManager              mStateManager;$/;"	m	class:GQE::IApp
+mState	include/TTX/prototypes/ActionProto.hpp	/^    IActionState& mState;$/;"	m	class:ActionProto
 mState	include/TTX/prototypes/components/ActionProto.hpp	/^    IActionState& mState;$/;"	m	class:ActionProto
 mState	include/TTX/systems/ISystem.hpp	/^    IActionState& mState;$/;"	m	class:ISystem
 mStates	include/TTX/classes/render/Layer.hpp	/^   sf::RenderStates mStates;$/;"	m	struct:Layer
@@ -3090,6 +3102,7 @@ r	ext_libs/include/MPE/Config.hpp	/^   Integer r, g, b, a;$/;"	m	struct:mpe::Col
 r	ext_libs/include/SFML/Graphics/Color.hpp	/^    Uint8 r; \/\/\/< Red component$/;"	m	class:sf::Color
 rotate	ext_libs/include/MPE/classes/Vec2.hpp	/^   Vec2& rotate ( Real theAngle )$/;"	f	class:mpe::Vec2
 rows	ext_libs/include/SFML/Graphics/Font.hpp	/^        std::vector<Row> rows;    \/\/\/< List containing the position of all the existing rows$/;"	m	struct:sf::Font::Page
+sDead	include/TTX/prototypes/BasicShip.hpp	/^    static ShipDead sDead;$/;"	m	class:BasicShip
 sRealRandom	ext_libs/include/MPE/classes/Emitter.hpp	/^   static Generator<Real> sRealRandom;$/;"	m	class:mpe::Emitter
 s_blockSizeLookupInitialized	ext_libs/include/Box2D/Common/b2BlockAllocator.h	/^	static bool s_blockSizeLookupInitialized;$/;"	m	class:b2BlockAllocator
 s_blockSizeLookup	ext_libs/include/Box2D/Common/b2BlockAllocator.h	/^	static uint8 s_blockSizeLookup[b2_maxBlockSize + 1];$/;"	m	class:b2BlockAllocator

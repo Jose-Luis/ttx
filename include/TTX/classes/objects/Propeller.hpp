@@ -16,7 +16,7 @@ class Propeller
    public:
 
       Propeller();                   
-      ~Propeller(){};                   
+      ~Propeller();                   
 
       /// @brief impulse 
       /// @param theDirection

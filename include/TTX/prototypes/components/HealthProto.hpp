@@ -10,6 +10,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <GQE/Entity/classes/Prototype.hpp>
+#include <TTX/classes/actions/IDead.hpp>
 
 
 class HealthProto: virtual public GQE::Prototype
