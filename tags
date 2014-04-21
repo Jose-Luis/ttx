@@ -158,8 +158,9 @@ Bold	ext_libs/include/SFML/Graphics/Text.hpp	/^        Bold       = 1 << 0, \/\/
 BoolAttribute	ext_libs/include/TinyXML2/tinyxml2.h	/^    bool	 BoolAttribute( const char* name ) const	{$/;"	f	class:tinyxml2::XMLElement
 BoolType	ext_libs/include/SFML/Network/Packet.hpp	/^    typedef bool (Packet::*BoolType)(std::size_t);$/;"	t	class:sf::Packet
 BoolValue	ext_libs/include/TinyXML2/tinyxml2.h	/^    bool	 BoolValue() const				{$/;"	f	class:tinyxml2::XMLAttribute
+BoxDead	include/TTX/prototypes/Box.hpp	/^    class BoxDead:public IDead$/;"	c	class:Box
 Box	include/TTX/prototypes/Box.hpp	/^class Box: public B2Proto, public RenderProto, public HealthProto$/;"	c
-Box	include/TTX/prototypes/Box.hpp	/^      Box():$/;"	f	class:Box
+Box	src/TTX/prototypes/Box.cpp	/^Box::Box():$/;"	f	class:Box
 Broadcast	ext_libs/include/SFML/Network/IpAddress.hpp	/^    static const IpAddress Broadcast; \/\/\/< The "broadcast" address (for sending UDP messages to everyone on a local network)$/;"	m	class:sf::IpAddress
 BufferCount	ext_libs/include/SFML/Audio/SoundStream.hpp	/^        BufferCount = 3 \/\/\/< Number of audio buffers used by the streaming loop$/;"	e	enum:sf::SoundStream::__anon7
 ButtonCount	ext_libs/include/SFML/Window/Joystick.hpp	/^        ButtonCount = 32, \/\/\/< Maximum number of supported buttons$/;"	e	enum:sf::Joystick::__anon12
@@ -638,6 +639,7 @@ IActionState	src/TTX/gameStates/IActionState.cpp	/^IActionState::IActionState(GQ
 IAction	ext_libs/include/GQE/Entity/interfaces/IAction.hpp	/^  class GQE_API IAction$/;"	c	namespace:GQE
 IApp	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^  class GQE_API IApp$/;"	c	namespace:GQE
 IAssetHandler	ext_libs/include/GQE/Core/interfaces/IAssetHandler.hpp	/^  class GQE_API IAssetHandler$/;"	c	namespace:GQE
+IDEAD_RKHT6JPP	include/TTX/classes/actions/IDead.hpp	3;"	d
 IDead	include/TTX/classes/actions/IDead.hpp	/^class IDead $/;"	c
 ID	include/TTX/Types.hpp	/^typedef std::string ID;$/;"	t
 IENTITY_HPP_INCLUDED	ext_libs/include/GQE/Entity/interfaces/IEntity.hpp	17;"	d
@@ -1998,6 +2000,7 @@ enableMotor	ext_libs/include/Box2D/Dynamics/Joints/b2WheelJoint.h	/^	bool enable
 end	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      const_iterator end() const {return mParticles + mSize;}$/;"	f	class:mpe::ParticleContainer
 end	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      iterator end() {return mParticles + mSize;}$/;"	f	class:mpe::ParticleContainer
 execute	src/TTX/prototypes/BasicShip.cpp	/^void BasicShip::ShipDead::execute(Position2D thePosition,IActionState& theActionState)$/;"	f	class:BasicShip::ShipDead
+execute	src/TTX/prototypes/Box.cpp	/^void Box::BoxDead::execute(Position2D thePos, IActionState& theState)$/;"	f	class:Box::BoxDead
 ex	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec2 ex, ey;$/;"	m	struct:b2Mat22
 ex	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec3 ex, ey, ez;$/;"	m	struct:b2Mat33
 ey	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec2 ex, ey;$/;"	m	struct:b2Mat22
@@ -2203,7 +2206,7 @@ mAngle	ext_libs/include/MPE/classes/Focus.hpp	/^   Real      mAngle;$/;"	m	class
 mAngle	ext_libs/include/MPE/classes/Particle.hpp	/^   Real      mAngle;$/;"	m	class:mpe::Particle
 mAngle	include/TTX/systems/PlayerSystem.hpp	/^      float mAngle;$/;"	m	class:PlayerSystem
 mAngularVelocity	ext_libs/include/MPE/classes/Particle.hpp	/^   Real      mAngularVelocity;$/;"	m	class:mpe::Particle
-mAnimation1	include/TTX/prototypes/Box.hpp	/^      std::vector<sf::IntRect> mAnimation1;  $/;"	m	class:Box
+mAnimation1	include/TTX/prototypes/Box.hpp	/^    std::vector<sf::IntRect> mAnimation1;$/;"	m	class:Box
 mApp	ext_libs/include/GQE/Core/classes/StatManager.hpp	/^      IApp*       mApp;$/;"	m	class:GQE::StatManager
 mApp	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      IApp*                 mApp;$/;"	m	class:GQE::StateManager
 mApp	ext_libs/include/GQE/Core/interfaces/IState.hpp	/^      IApp&                 mApp;$/;"	m	class:GQE::IState
@@ -2217,6 +2220,7 @@ mAssets	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      std::map<
 mBodyDef	include/TTX/prototypes/ActionProto.hpp	/^    b2BodyDef mBodyDef;$/;"	m	class:ActionProto
 mBodyDef	include/TTX/prototypes/components/B2Proto.hpp	/^      b2BodyDef mBodyDef;$/;"	m	class:B2Proto
 mBody	include/TTX/classes/objects/Propeller.hpp	/^      b2Body*        mBody;$/;"	m	class:Propeller
+mBoxDead	include/TTX/prototypes/Box.hpp	/^    BoxDead mBoxDead;$/;"	m	class:Box
 mCadency	include/TTX/classes/objects/Weapon.hpp	/^    float         mCadency;$/;"	m	class:Weapon
 mCleanupEvents	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      EventManager          mCleanupEvents;$/;"	m	class:GQE::StateManager
 mCleanup	ext_libs/include/GQE/Core/interfaces/IState.hpp	/^      bool                  mCleanup;$/;"	m	class:GQE::IState
@@ -2227,6 +2231,7 @@ mColor	ext_libs/include/MPE/classes/Particle.hpp	/^   Color     mColor;$/;"	m	cl
 mContextSettings	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      sf::ContextSettings       mContextSettings;$/;"	m	class:GQE::IApp
 mCos	ext_libs/include/GT/Angle.hpp	/^         Real mCos;$/;"	m	class:gt::Angle
 mDead	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      std::vector<IState*>  mDead;$/;"	m	class:GQE::StateManager
+mDead	include/TTX/prototypes/BasicShip.hpp	/^    ShipDead mDead;$/;"	m	class:BasicShip
 mDefaultFont	ext_libs/include/GQE/Core/classes/StatManager.hpp	/^      sf::Font    mDefaultFont;$/;"	m	class:GQE::StatManager
 mDisabled	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	/^      std::map<const typeActionID, IAction*> mDisabled;$/;"	m	class:GQE::ActionGroup
 mDispersion	ext_libs/include/MPE/classes/Emitter.hpp	/^   Dispersion  mDispersion;    \/\/\/< Type of paricles' dispersion.$/;"	m	class:mpe::Emitter
@@ -2337,7 +2342,7 @@ mScopeName	ext_libs/include/GQE/Core/loggers/ScopeLogger.hpp	/^      const char*
 mSections	ext_libs/include/GQE/Core/classes/ConfigReader.hpp	/^      std::map<const std::string, typeNameValue*> mSections;$/;"	m	class:GQE::ConfigReader
 mSeverity	ext_libs/include/GQE/Core/loggers/ScopeLogger.hpp	/^      SeverityType mSeverity;$/;"	m	class:GQE::ScopeLogger
 mShape1	include/TTX/prototypes/BasicShip.hpp	/^    b2PolygonShape  mShape1,mShape2,mShape3;$/;"	m	class:BasicShip
-mShape1	include/TTX/prototypes/Box.hpp	/^      b2PolygonShape  mShape1;$/;"	m	class:Box
+mShape1	include/TTX/prototypes/Box.hpp	/^    b2PolygonShape  mShape1;$/;"	m	class:Box
 mShape1	include/TTX/prototypes/Ground.hpp	/^      b2PolygonShape mShape1;$/;"	m	class:Ground
 mShape1	include/TTX/prototypes/Rombo.hpp	/^         b2PolygonShape  mShape1;$/;"	m	class:Rombo
 mShape1	include/TTX/prototypes/SimpleBullet.hpp	/^    b2CircleShape mShape1;$/;"	m	class:SimpleBullet
@@ -3102,7 +3107,6 @@ r	ext_libs/include/MPE/Config.hpp	/^   Integer r, g, b, a;$/;"	m	struct:mpe::Col
 r	ext_libs/include/SFML/Graphics/Color.hpp	/^    Uint8 r; \/\/\/< Red component$/;"	m	class:sf::Color
 rotate	ext_libs/include/MPE/classes/Vec2.hpp	/^   Vec2& rotate ( Real theAngle )$/;"	f	class:mpe::Vec2
 rows	ext_libs/include/SFML/Graphics/Font.hpp	/^        std::vector<Row> rows;    \/\/\/< List containing the position of all the existing rows$/;"	m	struct:sf::Font::Page
-sDead	include/TTX/prototypes/BasicShip.hpp	/^    static ShipDead sDead;$/;"	m	class:BasicShip
 sRealRandom	ext_libs/include/MPE/classes/Emitter.hpp	/^   static Generator<Real> sRealRandom;$/;"	m	class:mpe::Emitter
 s_blockSizeLookupInitialized	ext_libs/include/Box2D/Common/b2BlockAllocator.h	/^	static bool s_blockSizeLookupInitialized;$/;"	m	class:b2BlockAllocator
 s_blockSizeLookup	ext_libs/include/Box2D/Common/b2BlockAllocator.h	/^	static uint8 s_blockSizeLookup[b2_maxBlockSize + 1];$/;"	m	class:b2BlockAllocator
@@ -3371,7 +3375,7 @@ z	ext_libs/include/SFML/System/Vector3.hpp	/^    T z; \/\/\/< Z coordinate of th
 ~ParticleSystem	src/TTX/systems/ParticleSystem.cpp	/^ParticleSystem::~ParticleSystem()$/;"	f	class:ParticleSystem
 ~PlayerSystem	src/TTX/systems/PlayerSystem.cpp	/^PlayerSystem::~PlayerSystem()$/;"	f	class:PlayerSystem
 ~PropellerSystem	src/TTX/systems/PropellerSystem.cpp	/^PropellerSystem::~PropellerSystem()$/;"	f	class:PropellerSystem
-~Propeller	include/TTX/classes/objects/Propeller.hpp	/^      ~Propeller(){};                   $/;"	f	class:Propeller
+~Propeller	src/TTX/classes/objects/Propeller.cpp	/^Propeller::~Propeller()$/;"	f	class:Propeller
 ~RenderManager	include/TTX/classes/render/RenderManager.hpp	/^   ~RenderManager (){};$/;"	f	class:RenderManager
 ~RenderSystem	src/TTX/systems/RenderSystem.cpp	/^RenderSystem::~RenderSystem()$/;"	f	class:RenderSystem
 ~TAssetHandler	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual ~TAssetHandler()$/;"	f	class:GQE::TAssetHandler

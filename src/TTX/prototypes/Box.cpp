@@ -28,6 +28,12 @@ Box::Box():
     mProperties.add<Animation>("rAnimation", anAnimation);
     mSystemIDs.push_back("AnimationSystem");
     mProperties.set("Resistance", 5.f);
-    mProperties.set("Health", 150.f);
+    mProperties.set("Health", 50.f);
+    mProperties.set("IDead",static_cast<IDead*>(&mBoxDead));
 }
 
+
+void Box::BoxDead::execute(Position2D thePos, IActionState& theState)
+{
+   theState.addParticleFocus(thePos,"BoxDead");
+}

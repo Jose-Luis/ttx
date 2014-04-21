@@ -26,6 +26,7 @@ private:
 
     b2PolygonShape  mShape1;
     std::vector<sf::IntRect> mAnimation1;
+    BoxDead mBoxDead;
 
 
 

@@ -49,7 +49,7 @@ BasicShip::BasicShip():
 
     mProperties.set("Resistance",100.f);
     mProperties.set("Health",100.f);
-    mProperties.set("IDead",static_cast<IDead*>(&mDead);
+    mProperties.set("IDead",static_cast<IDead*>(&mDead));
 
     mFixturesDef.push_back(anFixture1);
     mFixturesDef.push_back(anFixture2);
