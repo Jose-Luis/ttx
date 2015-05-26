@@ -42,7 +42,7 @@ namespace GQE
        * @param[in] theLoadStyle (File, Mem, Network) to use when loading this asset
        * @param[in] theDropTime at (Zero, Exit) for when to unload this asset
        */
-      TAsset(const AssetID theAssetID,
+      TAsset(const typeAssetID theAssetID,
         AssetLoadTime theLoadTime = AssetLoadLater,
         AssetLoadStyle theLoadStyle = AssetLoadFromFile,
         AssetDropTime theDropTime = AssetDropAtZero) :
@@ -100,7 +100,7 @@ namespace GQE
        * GetID will return the ID being used for this asset.
        * @return the Asset ID assigned to this asset
        */
-      const AssetID getID(void) const
+      const typeAssetID getID(void) const
       {
         return mAssetID;
       }
@@ -113,7 +113,7 @@ namespace GQE
        * @param[in] theLoadStyle (File, Mem, Network) to use when loading this asset
        * @param[in] theDropTime at (Zero, Exit) for when to unload this asset
        */
-      void setID(const AssetID theAssetID,
+      void setID(const typeAssetID theAssetID,
         AssetLoadTime theLoadTime = AssetLoadLater,
         AssetLoadStyle theLoadStyle = AssetLoadFromFile,
         AssetDropTime theDropTime = AssetDropAtZero)
@@ -274,7 +274,7 @@ namespace GQE
       /// Pointer to the loaded asset
       TYPE*                mAsset;
       /// Asset ID specified for this asset
-      AssetID          mAssetID;
+      typeAssetID          mAssetID;
   }; // class TAsset
 } // namespace GQE
 

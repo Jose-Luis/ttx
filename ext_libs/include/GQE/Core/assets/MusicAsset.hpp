@@ -41,7 +41,7 @@ namespace GQE
        * @param[in] theLoadStyle (File, Mem, Network) to use when loading this asset
        * @param[in] theDropTime at (Zero, Exit) for when to unload this asset
        */
-      MusicAsset(const AssetID theAssetID,
+      MusicAsset(const typeAssetID theAssetID,
         AssetLoadTime theLoadTime = AssetLoadLater,
         AssetLoadStyle theLoadStyle = AssetLoadFromFile,
         AssetDropTime theDropTime = AssetDropAtZero);

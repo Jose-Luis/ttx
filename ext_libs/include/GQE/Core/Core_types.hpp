@@ -131,19 +131,19 @@ namespace GQE
   class SplashState;
 
   /// Declare Asset ID typedef which is used for identifying Asset objects
-  typedef std::string AssetID;
+  typedef std::string typeAssetID;
 
   /// Declare Asset Handler ID typedef which is used for identifying Asset Handler objects
-  typedef std::string AssetHandlerID;
+  typedef std::string typeAssetHandlerID;
 
   /// Declare Event ID typedef which is used for identifying Event objects
-  typedef std::string EventID;
+  typedef std::string typeEventID;
 
   /// Declare Property ID typedef which is used for identifying Properties
-  typedef std::string PropertyID;
+  typedef std::string typePropertyID;
 
   /// Declare State ID typedef which is used for identifying State objects
-  typedef std::string StateID;
+  typedef std::string typeStateID;
 
   /// Declare NameValue typedef which is used for config section maps
   typedef std::map<const std::string, const std::string> typeNameValue;

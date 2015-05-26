@@ -143,9 +143,17 @@ void PlayerSystem::processJoystick(GQE::IEntity* theEntity)
    {
       anJoyStick *= 1.f / anLength;
    }
-
-   anMoveData.x = anJoyStick.x;
-   anMoveData.y = anJoyStick.y;
+    
+   if( 0.2 < anLength )
+   {
+       anMoveData.x = anJoyStick.x;
+       anMoveData.y = anJoyStick.y;
+   }
+   else
+   {
+       anMoveData.x = 0;
+       anMoveData.y = 0;
+   }
 
    if(sf::Joystick::isButtonPressed(anJoy, 3))
    {
@@ -166,11 +174,13 @@ void PlayerSystem::processJoystick(GQE::IEntity* theEntity)
    theEntity->mProperties.set<MoveData>("vMoveData", anMoveData);
 
    ////////////// FIRE CONTROLS
-   if(sf::Joystick::isButtonPressed(anJoy, 2))
+
+   b2Vec2 anVector(sf::Joystick::getAxisPosition(anJoy, sf::Joystick::U),-sf::Joystick::getAxisPosition(anJoy, sf::Joystick::V));
+   if(400 < anVector.LengthSquared())
    {
       sf::Vector2f anPosition = theEntity->mProperties.get<sf::Vector2f>("vPosition");
-      float anAngle = theEntity->mProperties.get<float>("fAngle") * TORAD;
-      Position2D anPosition2D(anPosition.x, anPosition.y, anAngle);
+      float anAngle = std::atan2( anVector.x,anVector.y );
+      Position2D anPosition2D(anPosition.x, anPosition.y, anAngle );
       Weapon* anWeapon = theEntity->mProperties.getPointer<Weapon>("wWeapon");
       anWeapon->fire(anPosition2D, mState);
    }

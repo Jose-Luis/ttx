@@ -34,7 +34,7 @@ namespace GQE
        * @param[in] theType of property this property represents
        * @param[in] thePropertyID to use for this property
        */
-      IProperty(std::string theType, const PropertyID thePropertyID);
+      IProperty(std::string theType, const typePropertyID thePropertyID);
 
       /**
        * IProperty destructor
@@ -51,7 +51,7 @@ namespace GQE
        * GetID will return the Property ID used for this property.
        * @return the property ID for this property
        */
-      const PropertyID getID(void) const;
+      const typePropertyID getID(void) const;
 
       /**
        * Update will be called for each IProperty registered with IEntity and
@@ -83,7 +83,7 @@ namespace GQE
       /// The type that represents this class
       Type_t mType;
       /// The property ID assigned to this IProperty derived class
-      const PropertyID mPropertyID;
+      const typePropertyID mPropertyID;
   }; // class IProperty
 } // namespace GQE
 #endif //IPROPERTY_HPP_INCLUDED

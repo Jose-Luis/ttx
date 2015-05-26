@@ -45,9 +45,9 @@ namespace GQE
      * @return true if the asset was successfully loaded, false otherwise
      */
 #if (SFML_VERSION_MAJOR < 2)
-    virtual bool loadFromFile(const AssetID theAssetID, sf::Image& theAsset);
+    virtual bool loadFromFile(const typeAssetID theAssetID, sf::Image& theAsset);
 #else
-    virtual bool loadFromFile(const AssetID theAssetID, sf::Texture& theAsset);
+    virtual bool loadFromFile(const typeAssetID theAssetID, sf::Texture& theAsset);
 #endif
 
     /**
@@ -59,9 +59,9 @@ namespace GQE
      * @return true if the asset was successfully loaded, false otherwise
      */
 #if (SFML_VERSION_MAJOR < 2)
-    virtual bool loadFromMemory(const AssetID theAssetID, sf::Image& theAsset);
+    virtual bool loadFromMemory(const typeAssetID theAssetID, sf::Image& theAsset);
 #else
-    virtual bool loadFromMemory(const AssetID theAssetID, sf::Texture& theAsset);
+    virtual bool loadFromMemory(const typeAssetID theAssetID, sf::Texture& theAsset);
 #endif
 
     /**
@@ -73,9 +73,9 @@ namespace GQE
      * @return true if the asset was successfully loaded, false otherwise
      */
 #if (SFML_VERSION_MAJOR < 2)
-    virtual bool loadFromNetwork(const AssetID theAssetID, sf::Image& theAsset);
+    virtual bool loadFromNetwork(const typeAssetID theAssetID, sf::Image& theAsset);
 #else
-    virtual bool loadFromNetwork(const AssetID theAssetID, sf::Texture& theAsset);
+    virtual bool loadFromNetwork(const typeAssetID theAssetID, sf::Texture& theAsset);
 #endif
 
   private:

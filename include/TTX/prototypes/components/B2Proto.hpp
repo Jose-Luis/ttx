@@ -16,7 +16,7 @@ class B2Proto: virtual public GQE::Prototype
 {
    public:
 
-      B2Proto(GQE::typePrototypeID theID,IActionState& theState);
+      B2Proto(GQE::typePrototypeID theID);
 
    protected:
 

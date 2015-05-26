@@ -22,7 +22,7 @@ namespace GQE
        * IAssetHandler default constructor.
        * @param[in] theAssetHandlerID to use for this Resource Handler
        */
-      IAssetHandler(const AssetHandlerID theAssetHandlerID);
+      IAssetHandler(const typeAssetHandlerID theAssetHandlerID);
 
       /**
        * IAssetHandler deconstructor
@@ -32,9 +32,9 @@ namespace GQE
       /**
        * GetID will return the Asset Handler ID used to identify this
        * IAssetHandler object.
-       * @return GQE::AssetHandlerID is the ID for this IAssetHandler object
+       * @return GQE::typeAssetHandlerID is the ID for this IAssetHandler object
        */
-      const GQE::AssetHandlerID getID(void) const;
+      const GQE::typeAssetHandlerID getID(void) const;
 
       /**
        * DropReference will decrement the reference counter for theAssetID
@@ -44,7 +44,7 @@ namespace GQE
        * @param[in] theAssetID to drop the reference for
        * @param[in] theDropTime indicates if asset is dropped when count = 0 or exit
        */
-      virtual void dropReference(const AssetID theAssetID,
+      virtual void dropReference(const typeAssetID theAssetID,
         AssetDropTime theDropTime = AssetDropUnspecified) = 0;
 
       /**
@@ -53,14 +53,14 @@ namespace GQE
        * @param[in] theAssetID to the Resource to determine loaded state
        * @return true if loaded, false otherwise
        */
-      virtual bool isLoaded(const AssetID theAssetID) const = 0;
+      virtual bool isLoaded(const typeAssetID theAssetID) const = 0;
 
       /**
        * GetFilename is responsible for retrieving the filename to use when
        * loading theAssetID specified.
        * @param[in] theAssetID to get filename for
        */
-      virtual const std::string getFilename(const AssetID theAssetID) const = 0;
+      virtual const std::string getFilename(const typeAssetID theAssetID) const = 0;
 
       /**
        * SetFilename is responsible for noting the filename to use when loading
@@ -68,7 +68,7 @@ namespace GQE
        * @param[in] theAssetID to set filename for
        * @param[in] theFilename to use when loading this asset from a file
        */
-      virtual void setFilename(const AssetID theAssetID, std::string theFilename) = 0;
+      virtual void setFilename(const typeAssetID theAssetID, std::string theFilename) = 0;
 
       /**
        * GetLoadStyle allows someone to find out the loading style of
@@ -76,7 +76,7 @@ namespace GQE
        * @param[in] theAssetID of the asset to find loading style for
        * @return the loading style for the asset or LoadFromUnknown otherwise
        */
-      virtual AssetLoadStyle getLoadStyle(const AssetID theAssetID) const = 0;
+      virtual AssetLoadStyle getLoadStyle(const typeAssetID theAssetID) const = 0;
 
       /**
        * SetLoadStyle allows someone to change the loading style of theAssetID
@@ -85,7 +85,7 @@ namespace GQE
        * @param[in] theAssetID of the asset to change loading style
        * @param[in] theLoadStyle (File,Mem,Network) to use when loading this asset
        */
-      virtual void setLoadStyle(const AssetID theAssetID, AssetLoadStyle theLoadStyle) = 0;
+      virtual void setLoadStyle(const typeAssetID theAssetID, AssetLoadStyle theLoadStyle) = 0;
 
       /**
        * GetLoadTime allows someone to find out the loading time of
@@ -93,7 +93,7 @@ namespace GQE
        * @param[in] theAssetID of the asset to find loading time for
        * @return the loading style for the asset or LoadFromUnknown otherwise
        */
-      virtual AssetLoadTime getLoadTime(const AssetID theAssetID) const = 0;
+      virtual AssetLoadTime getLoadTime(const typeAssetID theAssetID) const = 0;
 
       /**
        * SetLoadTime allows someone to change the loading time of theAssetID
@@ -102,7 +102,7 @@ namespace GQE
        * @param[in] theAssetID of the asset to change loading time
        * @param[in] theLoadTime (Now,Later) of when to load this asset
        */
-      virtual void setLoadTime(const AssetID theAssetID, AssetLoadTime theLoadTime) = 0;
+      virtual void setLoadTime(const typeAssetID theAssetID, AssetLoadTime theLoadTime) = 0;
 
       /**
        * LoadAsset is responsible for loading the asset specified by theAssetID
@@ -110,7 +110,7 @@ namespace GQE
        * GetReference and SetLoadStyle).
        * @param[in] theAssetID of the asset to load
        */
-      virtual bool loadAsset(const AssetID theAssetID) = 0;
+      virtual bool loadAsset(const typeAssetID theAssetID) = 0;
 
       /**
        * LoadAllAssets is responsible for loading all unloaded assets that are
@@ -125,7 +125,7 @@ namespace GQE
       // Variables
       ///////////////////////////////////////////////////////////////////////////
       /// ID specified for this IAssetHandler
-      const AssetHandlerID mAssetHandlerID;
+      const typeAssetHandlerID mAssetHandlerID;
 
       /**
        * Our copy constructor is private because we do not allow copies of our

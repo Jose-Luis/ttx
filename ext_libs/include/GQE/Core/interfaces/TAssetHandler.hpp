@@ -40,7 +40,7 @@ namespace GQE
         ILOG() << "TAssetHandler::dtor(" << getID() << ")" << std::endl;
 
         // Iterator to use while deleting all assets
-        typename std::map<const AssetID, AssetData>::iterator iter;
+        typename std::map<const typeAssetID, typeAssetData>::iterator iter;
 
         // Loop through each asset and try to remove each one
         iter = mAssets.begin();
@@ -57,7 +57,7 @@ namespace GQE
               << iter->first << ") Non zero asset reference count("
               << iter->second.count << ")!" << std::endl;
           }
-          const AssetID anAssetID = iter->first;
+          const typeAssetID anAssetID = iter->first;
           TYPE* anAsset = iter->second.asset;
 
           // Remove this Asset Data structure from our map
@@ -79,11 +79,11 @@ namespace GQE
        * @param[in] theAssetID to drop the reference for
        * @param[in] theDropTime indicates if asset is dropped when count = 0 or later
        */
-      virtual void dropReference(const AssetID theAssetID,
+      virtual void dropReference(const typeAssetID theAssetID,
         AssetDropTime theDropTime = AssetDropUnspecified)
       {
         // Iterator to the asset if found
-        typename std::map<const AssetID, AssetData>::iterator iter;
+        typename std::map<const typeAssetID, typeAssetData>::iterator iter;
 
         // Try to find the asset using theAssetID as the key
         iter = mAssets.find(theAssetID);
@@ -163,7 +163,7 @@ namespace GQE
        * @param[in] theLoadStyle (File, Mem, Network) to use when loading this asset
        * @return the asset found or a newly acquired asset if not found
        */
-      TYPE* getReference(const AssetID theAssetID,
+      TYPE* getReference(const typeAssetID theAssetID,
         AssetLoadTime theLoadTime = AssetLoadLater,
         AssetLoadStyle theLoadStyle = AssetLoadFromFile,
         AssetDropTime theDropTime = AssetDropAtZero)
@@ -172,7 +172,7 @@ namespace GQE
         TYPE* anResult = NULL;
 
         // Iterator to the asset if found
-        typename std::map<const AssetID, AssetData>::iterator iter;
+        typename std::map<const typeAssetID, typeAssetData>::iterator iter;
 
         // Try to find the asset using theAssetID as the key
         iter = mAssets.find(theAssetID);
@@ -195,7 +195,7 @@ namespace GQE
           if(NULL != anResult)
           {
             // Create a new AssetData to hold our asset information
-            AssetData anAssetData;
+            typeAssetData anAssetData;
 
             // Acquire the asset for the first time
             anAssetData.asset = anResult;
@@ -221,7 +221,7 @@ namespace GQE
             }
 
             // Store the newly acquired asset pointer in our map for future reference
-            mAssets.insert(std::pair<const AssetID, AssetData>(theAssetID, anAssetData));
+            mAssets.insert(std::pair<const typeAssetID, typeAssetData>(theAssetID, anAssetData));
 
             // Were we asked to load the asset now?
             if(AssetLoadNow == anAssetData.loadTime)
@@ -249,13 +249,13 @@ namespace GQE
        * @param[in] theAssetID to the Resource to determine loaded state
        * @return true if loaded, false otherwise
        */
-      virtual bool isLoaded(const AssetID theAssetID) const
+      virtual bool isLoaded(const typeAssetID theAssetID) const
       {
         // Result if asset was not found
         bool anResult = false;
 
         // Iterator to the asset if found
-        typename std::map<const AssetID, AssetData>::const_iterator iter;
+        typename std::map<const typeAssetID, typeAssetData>::const_iterator iter;
 
         // Try to find the asset using theAssetID as the key
         iter = mAssets.find(theAssetID);
@@ -284,13 +284,13 @@ namespace GQE
        * @param[in] theAssetID to set filename for
        * @param[in] theFilename to use when loading this asset from a file
        */
-      virtual const std::string getFilename(const AssetID theAssetID) const
+      virtual const std::string getFilename(const typeAssetID theAssetID) const
       {
         // Return empty string if no filename was found
         std::string anResult;
 
         // Iterator to the asset if found
-        typename std::map<const AssetID, AssetData>::const_iterator iter;
+        typename std::map<const typeAssetID, typeAssetData>::const_iterator iter;
 
         // Try to find the asset using theAssetID as the key
         iter = mAssets.find(theAssetID);
@@ -319,10 +319,10 @@ namespace GQE
        * @param[in] theAssetID to set filename for
        * @param[in] theFilename to use when loading this asset from a file
        */
-      virtual void setFilename(const AssetID theAssetID, std::string theFilename)
+      virtual void setFilename(const typeAssetID theAssetID, std::string theFilename)
       {
         // Iterator to the asset if found
-        typename std::map<const AssetID, AssetData>::iterator iter;
+        typename std::map<const typeAssetID, typeAssetData>::iterator iter;
 
         // Try to find the asset using theAssetID as the key
         iter = mAssets.find(theAssetID);
@@ -355,12 +355,12 @@ namespace GQE
        * @param[in] theAssetID of the asset to find loading style for
        * @return the loading style for the asset or LoadFromUnknown otherwise
        */
-      virtual AssetLoadStyle getLoadStyle(const AssetID theAssetID) const
+      virtual AssetLoadStyle getLoadStyle(const typeAssetID theAssetID) const
       {
         AssetLoadStyle anResult = AssetLoadFromUnknown;
 
         // Iterator to the asset if found
-        typename std::map<const AssetID, AssetData>::const_iterator iter;
+        typename std::map<const typeAssetID, typeAssetData>::const_iterator iter;
 
         // Try to find the asset using theAssetID as the key
         iter = mAssets.find(theAssetID);
@@ -389,10 +389,10 @@ namespace GQE
        * @param[in] theAssetID of the asset to change loading style
        * @param[in] theLoadStyle (File,Mem,Network) to use when loading this asset
        */
-      void setLoadStyle(const AssetID theAssetID, AssetLoadStyle theLoadStyle)
+      void setLoadStyle(const typeAssetID theAssetID, AssetLoadStyle theLoadStyle)
       {
         // Iterator to the asset if found
-        typename std::map<const AssetID, AssetData>::iterator iter;
+        typename std::map<const typeAssetID, typeAssetData>::iterator iter;
 
         // Try to find the asset using theAssetID as the key
         iter = mAssets.find(theAssetID);
@@ -452,12 +452,12 @@ namespace GQE
        * @param[in] theAssetID of the asset to find loading time for
        * @return the loading time for the asset or AssetLoadLater otherwise
        */
-      virtual AssetLoadTime getLoadTime(const AssetID theAssetID) const
+      virtual AssetLoadTime getLoadTime(const typeAssetID theAssetID) const
       {
         AssetLoadTime anResult = AssetLoadLater;
 
         // Iterator to the asset if found
-        typename std::map<const AssetID, AssetData>::const_iterator iter;
+        typename std::map<const typeAssetID, typeAssetData>::const_iterator iter;
 
         // Try to find the asset using theAssetID as the key
         iter = mAssets.find(theAssetID);
@@ -486,10 +486,10 @@ namespace GQE
        * @param[in] theAssetID of the asset to change loading time
        * @param[in] theLoadTime (Now,Later) of when to load this asset
        */
-      virtual void setLoadTime(const AssetID theAssetID, AssetLoadTime theLoadTime)
+      virtual void setLoadTime(const typeAssetID theAssetID, AssetLoadTime theLoadTime)
       {
         // Iterator to the asset if found
-        typename std::map<const AssetID, AssetData>::iterator iter;
+        typename std::map<const typeAssetID, typeAssetData>::iterator iter;
 
         // Try to find the asset using theAssetID as the key
         iter = mAssets.find(theAssetID);
@@ -544,12 +544,12 @@ namespace GQE
        * @param[in] theAssetID of the asset to find drop time for
        * @return the drop time for the asset or AssetDropUnspecified otherwise
        */
-      virtual AssetDropTime getDropTime(const AssetID theAssetID) const
+      virtual AssetDropTime getDropTime(const typeAssetID theAssetID) const
       {
         AssetDropTime anResult = AssetDropUnspecified;
 
         // Iterator to the asset if found
-        typename std::map<const AssetID, AssetData>::const_iterator iter;
+        typename std::map<const typeAssetID, typeAssetData>::const_iterator iter;
 
         // Try to find the asset using theAssetID as the key
         iter = mAssets.find(theAssetID);
@@ -577,11 +577,11 @@ namespace GQE
        * @param[in] theAssetID of the asset to change loading time
        * @param[in] theDropTime (Zero, Exit) of when to drop this asset
        */
-      virtual void setDropTime(const AssetID theAssetID,
+      virtual void setDropTime(const typeAssetID theAssetID,
         AssetDropTime theDropTime)
       {
         // Iterator to the asset if found
-        typename std::map<const AssetID, AssetData>::iterator iter;
+        typename std::map<const typeAssetID, typeAssetData>::iterator iter;
 
         // Try to find the asset using theAssetID as the key
         iter = mAssets.find(theAssetID);
@@ -616,13 +616,13 @@ namespace GQE
        * GetReference and SetLoadStyle).
        * @param[in] theAssetID of the asset to load
        */
-      virtual bool loadAsset(const AssetID theAssetID)
+      virtual bool loadAsset(const typeAssetID theAssetID)
       {
         // Result if asset was not found
         bool anResult = false;
 
         // Iterator to the asset if found
-        typename std::map<const AssetID, AssetData>::iterator iter;
+        typename std::map<const typeAssetID, typeAssetData>::iterator iter;
 
         // Try to find the asset using theAssetID as the key
         iter = mAssets.find(theAssetID);
@@ -677,8 +677,8 @@ namespace GQE
         // Return true if all assets load successfully
         bool anResult = true;
     
-        // Iterator for each AssetData registered
-        typename std::map<const AssetID, AssetData>::iterator iter;
+        // Iterator for each typeAssetData registered
+        typename std::map<const typeAssetID, typeAssetData>::iterator iter;
 
         // Loop through each asset handler and tell it to load its assets
         iter = mAssets.begin();
@@ -726,7 +726,7 @@ namespace GQE
        * @param[in] theAssetID of the asset to acquire
        * @return a pointer to the newly created asset
        */
-      virtual TYPE* acquireAsset(const AssetID theAssetID)
+      virtual TYPE* acquireAsset(const typeAssetID theAssetID)
       {
         ILOG() << "TAssetHandler(" << getID() << "):acquireAsset("
           << theAssetID << ") Creating asset" << std::endl;
@@ -739,7 +739,7 @@ namespace GQE
        * @param[in] theAssetID of the asset to be released
        * @param[in] theAsset to be released
        */
-      virtual void releaseAsset(const AssetID theAssetID, TYPE* theAsset)
+      virtual void releaseAsset(const typeAssetID theAssetID, TYPE* theAsset)
       {
         ILOG() << "TAssetHandler(" << getID() << "):releaseAsset("
           << theAssetID << ") Releasing asset" << std::endl;
@@ -756,7 +756,7 @@ namespace GQE
        * @param[in] theAsset pointer to load
        * @return true if the asset was successfully loaded, false otherwise
        */
-      virtual bool loadFromFile(const AssetID theAssetID, TYPE& theAsset) = 0;
+      virtual bool loadFromFile(const typeAssetID theAssetID, TYPE& theAsset) = 0;
 
       /**
        * LoadFromMemory is responsible for loading theAsset from memory and
@@ -766,7 +766,7 @@ namespace GQE
        * @param[in] theAsset pointer to load
        * @return true if the asset was successfully loaded, false otherwise
        */
-      virtual bool loadFromMemory(const AssetID theAssetID, TYPE& theAsset) = 0;
+      virtual bool loadFromMemory(const typeAssetID theAssetID, TYPE& theAsset) = 0;
 
       /**
        * LoadFromNetwork is responsible for loading theAsset from network and
@@ -776,13 +776,13 @@ namespace GQE
        * @param[in] theAsset pointer to load
        * @return true if the asset was successfully loaded, false otherwise
        */
-      virtual bool loadFromNetwork(const AssetID theAssetID, TYPE& theAsset) = 0;
+      virtual bool loadFromNetwork(const typeAssetID theAssetID, TYPE& theAsset) = 0;
 
     private:
       // Structures
       ///////////////////////////////////////////////////////////////////////////
       /// Structure holding information about each Resource
-      struct AssetData {
+      struct typeAssetData {
         TYPE*          asset;     ///< The asset being shared
         Uint32         count;     ///< Number of people referencing this Asset
         bool           loaded;    ///< Is the Asset currently loaded?
@@ -795,7 +795,7 @@ namespace GQE
       // Variables
       ///////////////////////////////////////////////////////////////////////////
       /// Map that associates asset ID's with their appropriate TAssetData
-      std::map<const AssetID, AssetData> mAssets;
+      std::map<const typeAssetID, typeAssetData> mAssets;
       /// Dummy asset that will be returned if an asset can't be Acquired
       TYPE mDummyAsset;
   }; // class TAssetHandler

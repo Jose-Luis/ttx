@@ -32,7 +32,7 @@ namespace GQE
        * SplashState constructor
        * @param[in] theApp is the address to the App class.
        */
-      SplashState(IApp& theApp, AssetID theSplashID,
+      SplashState(IApp& theApp, typeAssetID theSplashID,
           const std::string theFilename = "resources/Splash.png", float theDelay = 10.0f);
 
       /**
@@ -89,7 +89,7 @@ namespace GQE
       // Variables
       /////////////////////////////////////////////////////////////////////////
       /// The Asset ID to assign to the splash image
-      AssetID         mSplashID;
+      typeAssetID         mSplashID;
       /// The filename of the splash image to load
       std::string         mSplashFilename;
       /// The time in seconds to wait before continuing to next game state

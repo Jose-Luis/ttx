@@ -38,7 +38,7 @@ namespace GQE
        * @param[in] theStateID to use for this State object
        * @param[in] theApp is the address to the IApp derived class
        */
-      IState(const StateID theStateID, IApp& theApp);
+      IState(const typeStateID theStateID, IApp& theApp);
 
       /**
        * IState deconstructor
@@ -47,9 +47,9 @@ namespace GQE
 
       /**
        * GetID will return the ID used to identify this State object
-       * @return GQE::StateID is the ID for this State object
+       * @return GQE::typeStateID is the ID for this State object
        */
-      const GQE::StateID getID(void) const;
+      const GQE::typeStateID getID(void) const;
 
       /**
        * DoInit is responsible for initializing this State.  HandleCleanup will
@@ -150,7 +150,7 @@ namespace GQE
 
     private:
       /// The State ID
-      const StateID     mStateID;
+      const typeStateID     mStateID;
       /// Boolean that indicates that DoInit has been called
       bool                  mInit;
       /// State is currently paused (not active)

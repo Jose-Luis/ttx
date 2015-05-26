@@ -13,7 +13,7 @@
 //      Method:  constructor
 // Description:
 //------------------------------------------------------------------------------
-IActionState::IActionState(GQE::StateID theStateID,GQE::IApp& theApp) :
+IActionState::IActionState(GQE::typeStateID theStateID,GQE::IApp& theApp):
     GQE::IState(theStateID,theApp),
     mWorld(b2Vec2(0.0f,0.0f))
 {
@@ -87,26 +87,5 @@ void IActionState::addSystem(ISystem* theSystem)
     {
         ELOG() << "SystemManager::addSystem() Null pointer provided!" << std::endl;
     }
-}
-//------------------------------------------------------------------------------
-//       Class:  IActionState
-//      Method:  addChild
-// Description:  A stupid method
-//------------------------------------------------------------------------------
-void IActionState::addChild(GQE::Instance* theFather,
-                            GQE::Instance* theChild,
-                            GQE::PropertyID theChildName)
-{
-    theFather->mProperties.add<GQE::Instance*>(theChildName,theChild);
-    theChild->mProperties.set<GQE::Instance*>("iFather",theFather);
-}
-//------------------------------------------------------------------------------
-//       Class:  IActionState
-//      Method:  addPlayer
-// Description:
-//------------------------------------------------------------------------------
-ISystem* IActionState::getSystem(SystemID theSystem)
-{
-   return mSystem[theSystem];
 }
 

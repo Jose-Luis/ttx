@@ -58,7 +58,7 @@ namespace GQE
        * @param[in] theEventID to use for this event, must be unique
        */
       template<class TCLASS>
-      void addCleanup(const EventID theEventID, TCLASS& theEventClass,
+      void addCleanup(const typeEventID theEventID, TCLASS& theEventClass,
         typename TEvent<TCLASS, void>::typeEventFunc theEventFunc)
       {
         mCleanupEvents.add<TCLASS, void>(theEventID, theEventClass, theEventFunc);
@@ -126,7 +126,7 @@ namespace GQE
        * state as the next state.
        * @param[in] theStateID is the ID of the State to make active
        */
-      void setActiveState(StateID theStateID);
+      void setActiveState(typeStateID theStateID);
 
       /**
        * Cleanup is responsible for dealing with the cleanup of recently

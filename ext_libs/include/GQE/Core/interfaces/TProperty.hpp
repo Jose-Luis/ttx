@@ -23,7 +23,7 @@ namespace GQE
        * TProperty default constructor
        * @param[in] thePropertyID to use for this property
        */
-      TProperty(const PropertyID thePropertyID) :
+      TProperty(const typePropertyID thePropertyID) :
         IProperty(typeid(TYPE).name(), thePropertyID)
       {
       }

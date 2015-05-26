@@ -39,7 +39,7 @@ namespace GQE
        * @param[in] theEventID to lookup in this EventManager
        * @return true if theEventID exists, false otherwise
        */
-      bool hasID(const EventID theEventID) const;
+      bool hasID(const typeEventID theEventID) const;
 
       /**
        * DoEvents should be called to execute the DoEvent method for each
@@ -54,7 +54,7 @@ namespace GQE
        * @param[in] theEventID to lookup in this EventManager
        * @return a pointer to the IEvent class or NULL otherwise
        */
-      IEvent* get(const EventID theEventID);
+      IEvent* get(const typeEventID theEventID);
 
       /**
        * Add adds a new TEvent to be managed by the EventManager using the
@@ -64,7 +64,7 @@ namespace GQE
        * @param[in] theEventFunc to call in theEventClass
        */
       template<class TCLASS>
-      void add(const EventID theEventID, TCLASS& theEventClass,
+      void add(const typeEventID theEventID, TCLASS& theEventClass,
         typename TEvent<TCLASS, void>::typeEventFunc theEventFunc)
       {
         // Only add the event if it doesn't already exist
@@ -74,7 +74,7 @@ namespace GQE
             new(std::nothrow) TEvent<TCLASS,void>(theEventID, theEventClass, theEventFunc);
           if(anEvent != NULL)
           {
-            mList.insert(std::pair<const EventID, IEvent*>(theEventID, anEvent));
+            mList.insert(std::pair<const typeEventID, IEvent*>(theEventID, anEvent));
           }
         }
       }
@@ -87,7 +87,7 @@ namespace GQE
        * @param[in] theEventFunc to call in theEventClass
        */
       template<class TCLASS, class TCONTEXT>
-      void add(const EventID theEventID, TCLASS& theEventClass,
+      void add(const typeEventID theEventID, TCLASS& theEventClass,
         typename TEvent<TCLASS, TCONTEXT>::typeEventFunc theEventFunc)
       {
         // Only add the event if it doesn't already exist
@@ -97,7 +97,7 @@ namespace GQE
             new(std::nothrow) TEvent<TCLASS,TCONTEXT>(theEventID, theEventClass, theEventFunc);
           if(anEvent != NULL)
           {
-            mList.insert(std::pair<const EventID, IEvent*>(theEventID, anEvent));
+            mList.insert(std::pair<const typeEventID, IEvent*>(theEventID, anEvent));
           }
         }
       }
@@ -115,7 +115,7 @@ namespace GQE
       // Variables
       ///////////////////////////////////////////////////////////////////////////
       /// A map of all events available for this EventManager class
-      std::map<const EventID, IEvent*> mList;
+      std::map<const typeEventID, IEvent*> mList;
 
   }; // EventManager class
 } // namespace GQE

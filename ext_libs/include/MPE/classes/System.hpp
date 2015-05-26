@@ -14,7 +14,7 @@
 #include <MPE/classes/Affector.hpp>
 #include <MPE/classes/Emitter.hpp>
 #include <MPE/classes/Focus.hpp>
-#include <TinyXML2/tinyxml2.h>
+#include <tinyxml2.h>
 
 namespace mpe
 {

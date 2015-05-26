@@ -27,7 +27,7 @@ public:
      * @brief IActionState constructor
      * @param[in] theApp is a pointer to the App class.
      */
-    IActionState(GQE::typeSystemID theSystemID,GQE::IApp& theApp);
+    IActionState(GQE::typeStateID theStateID,GQE::IApp& theApp);
 
     /**
      * @brief IActionState deconstructor
@@ -57,9 +57,9 @@ public:
      * @param theChild
      * @param theName
      */
-    void addChild(GQE::Instance* theFather,
-                  GQE::Instance* theChild,
-                  GQE::PropertyID theChildName);
+    //void addChild(GQE::Instance* theFather,
+                  //GQE::Instance* theChild,
+                  //GQE::PropertyID theChildName);
     /**
      * @brief addSystem
      * @param theSystem

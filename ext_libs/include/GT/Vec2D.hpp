@@ -17,118 +17,61 @@ namespace gt
 ////////////////////////////////////////////////////////////////////////////////
 class Vec2D
 {
-public:
+   public:
 
-   Real x;
-   Real y;
-   //////////////////////////////////////////////////////////////////////////
-   //                       LIFECYCLE
-   //////////////////////////////////////////////////////////////////////////
-   /// @brief Vec2D
-   explicit Vec2D();
-   /// @brief Vec2D
-   /// @param theX
-   /// @param theY
-   explicit Vec2D(Real theX, Real theY);
-   //////////////////////////////////////////////////////////////////////////
-   //                       METHODS
-   //////////////////////////////////////////////////////////////////////////
-   /// @brief module
-   /// @return
-   Real module ();
-   /// @brief module
-   /// @return
-   Real squaremodule ();
-   /// @brief scale
-   /// @param theXFactor
-   /// @param theYFactor
-   /// @return
-   Vec2D& scale(Real theXFactor, Real theYFactor);
-   /// @brief normalize
-   /// @return
-   Vec2D& normalize(void);
-   /// @brief rotate
-   /// @param angle
-   /// @return
-   Vec2D& rotate(Real theAngle);
-   /// @brief rotate
-   /// @param theAngle
-   /// @return
-   Vec2D& rotate(Angle theAngle);
-   //////////////////////////////////////////////////////////////////////////
-   //                       OPERATORS
-   //////////////////////////////////////////////////////////////////////////
-   /// @brief +=
-   /// @param theVector
-   /// @return
-   Vec2D& operator +=(const Vec2D& theVector);
-   /// @brief -=
-   /// @param theVector
-   /// @return
-   Vec2D& operator -=(const Vec2D& theVector);
-   /// @brief =
-   /// @param theFloat
-   /// @return
-   Vec2D& operator *=(Real theFloat);
-   /// @brief /=
-   /// @param theFloat
-   /// @return
-   Vec2D& operator /=(Real theFloat);
-   /// @brief -
-   /// @return
-   inline Vec2D operator -(void) const
-   {
-      return (Vec2D(-x, -y));
-   }
-   /// @brief +
-   /// @param theVector
-   /// @return
-   inline Vec2D operator +(const Vec2D& theVector) const
-   {
-      return (Vec2D(x + theVector.x, y + theVector.y));
-   }
-   /// @brief -
-   /// @param theVector
-   /// @return
-   inline Vec2D operator -(const Vec2D& theVector) const
-   {
-      return (Vec2D(x - theVector.x, y - theVector.y));
-   }
-   /// @brief
-   /// @param theFloat
-   /// @return
-   inline Vec2D operator *(Real theFloat) const
-   {
-      return (Vec2D(x * theFloat, y * theFloat));
-   }
-   /// @brief /
-   /// @param theFloat
-   /// @return
-   inline Vec2D operator /(Real theFloat) const
-   {
-      return (Vec2D(x / theFloat, y / theFloat));
-   }
-   /// @brief
-   /// @param theVector
-   /// @return
-   inline Real operator *(const Vec2D& theVector) const
-   {
-      return (x * theVector.x + y * theVector.y);
-   }
-   /// @brief ==
-   /// @param theVector
-   /// @return
-   bool operator ==(const Vec2D& theVector) const;
-   /// @brief !=
-   /// @param theVector
-   /// @return
-   bool operator !=(const Vec2D& theVector) const;
-};
+      Real x;
+      Real y;
+      //////////////////////////////////////////////////////////////////////////
+      //                       LIFECYCLE   
+      //////////////////////////////////////////////////////////////////////////
+      Vec2D();                               // constructor
+      explicit Vec2D(Real theX, Real theY);  // constructor
+      //////////////////////////////////////////////////////////////////////////
+      //                       METHODS   
+      //////////////////////////////////////////////////////////////////////////
+      /// @brief module 
+      /// @return 
+      Real module ();
+      /// @brief module 
+      /// @return 
+      Real squaremodule ();
+      /// @brief scale 
+      /// @param theXFactor
+      /// @param theYFactor
+      /// @return 
+      Vec2D& scale(Real theXFactor,Real theYFactor);
+      /// @brief normalize 
+      /// @return 
+      Vec2D& normalize(void);
+      /// @brief rotate 
+      /// @param angle
+      /// @return 
+      Vec2D& rotate(Real theAngle);
+      /// @brief rotate 
+      /// @param theAngle
+      /// @return 
+      Vec2D& rotate(Angle theAngle);
+      //////////////////////////////////////////////////////////////////////////
+      //                       OPERATORS   
+      //////////////////////////////////////////////////////////////////////////
+      Vec2D& operator +=(const Vec2D& theVector);
+      Vec2D& operator -=(const Vec2D& theVector);
+      Vec2D& operator *=(Real theFloat);
+      Vec2D& operator /=(Real theFloat);
+      Vec2D operator -(void) const;
+      Vec2D operator +(const Vec2D& theVector) const;
+      Vec2D operator -(const Vec2D& theVector) const;
+      Vec2D operator *(Real theFloat) const;
+      Vec2D operator /(Real theFloat) const;
+      Real operator *(const Vec2D& theVector) const;
+      bool operator ==(const Vec2D& theVector) const;
+      bool operator !=(const Vec2D& theVector) const;
+}; 
 ////////////////////////////////////////////////////////////////////////////////
-//  END OF CLASS Vec2D
+//  END OF CLASS Vec2D 
 ////////////////////////////////////////////////////////////////////////////////
 }
-#endif
+#endif  
 
 
 

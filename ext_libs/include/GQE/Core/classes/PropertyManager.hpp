@@ -41,7 +41,7 @@ public:
      * @param[in] thePropertyID to lookup in this PropertyManager
      * @return true if thePropertyID exists, false otherwise
      */
-    bool hasID(const PropertyID thePropertyID) const;
+    bool hasID(const typePropertyID thePropertyID) const;
 
     /**
      * Get returns the property as type with the ID of thePropertyID.
@@ -50,7 +50,7 @@ public:
      * Property was found it returns the default value the type constructor.
      */
     template<class TYPE>
-    TYPE get(const PropertyID thePropertyID)
+    TYPE get(const typePropertyID thePropertyID)
     {
         if(mList.find(thePropertyID) != mList.end())
         {
@@ -72,7 +72,7 @@ public:
      * @return a pointer to the property value
      */
     template<class TYPE>
-    TYPE* getPointer(const PropertyID thePropertyID)
+    TYPE* getPointer(const typePropertyID thePropertyID)
     {
         TYPE* anReturn = NULL;
         if(mList.at(thePropertyID)->getType()->name() == typeid(TYPE).name())
@@ -90,7 +90,7 @@ public:
     * @return A reference to a TProperty<TYPE> object.
     */
     template<class TYPE>
-    TProperty<TYPE>& getProperty(const PropertyID thePropertyID)
+    TProperty<TYPE>& getProperty(const typePropertyID thePropertyID)
     {
         if(mList.find(thePropertyID) != mList.end())
         {
@@ -111,7 +111,7 @@ public:
      * @param[in] theValue is the value to set.
      */
     template<class TYPE>
-    void set(const PropertyID thePropertyID, TYPE theValue)
+    void set(const typePropertyID thePropertyID, TYPE theValue)
     {
         if(mList.find(thePropertyID) != mList.end())
         {
@@ -133,7 +133,7 @@ public:
      * @param[in] theValue is the inital value to set.
      */
     template<class TYPE>
-    void add(const PropertyID thePropertyID, TYPE theValue)
+    void add(const typePropertyID thePropertyID, TYPE theValue)
     {
         // Only add the property if it doesn't already exist
         if(mList.find(thePropertyID) == mList.end())
@@ -152,9 +152,9 @@ public:
 
     /**
      * @brief remove 
-     * @param PropertyID
+     * @param typePropertyID
      */
-    void remove(PropertyID);
+    void remove(typePropertyID);
 
     /**
      * Clone is responsible for making a clone of each property in the
@@ -168,7 +168,7 @@ private:
     // Variables
     ///////////////////////////////////////////////////////////////////////////
     /// A map of all Properties available for this PropertyManager class
-    std::map<const PropertyID, IProperty*> mList;
+    std::map<const typePropertyID, IProperty*> mList;
 }; // PropertyManager class
 } // namespace GQE
 

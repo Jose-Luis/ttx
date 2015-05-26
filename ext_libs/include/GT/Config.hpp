@@ -3,6 +3,6 @@
 #define  CONFIG_INC
 
 typedef float Real;
-typedef long Integer;
+typedef int Integer;
 
 #endif   // ----- #ifndef CONFIG_INC  -----

@@ -51,7 +51,7 @@ namespace GQE
         TAssetHandler<TYPE>* anResult = NULL;
 
         // Iterator to the asset if found
-        std::map<const AssetHandlerID, IAssetHandler*>::const_iterator iter;
+        std::map<const typeAssetHandlerID, IAssetHandler*>::const_iterator iter;
 
         // Try to find the asset using theAssetID as the key
         iter = mHandlers.find(typeid(TYPE).name());
@@ -80,7 +80,7 @@ namespace GQE
        * which can then be used to obtain Asset references by Asset ID.
        * @param[in] theAssetHandlerID to retrieve
        */
-      IAssetHandler& getHandler(const AssetHandlerID theAssetHandlerID) const;
+      IAssetHandler& getHandler(const typeAssetHandlerID theAssetHandlerID) const;
 
       /**
        * RegisterHandler is responsible for registering an IAssetHandler
@@ -105,7 +105,7 @@ namespace GQE
       // Variables
       ///////////////////////////////////////////////////////////////////////////
       /// Map to hold all IAssetHandler derived classes that manage assets
-      std::map<const AssetHandlerID, IAssetHandler*> mHandlers;
+      std::map<const typeAssetHandlerID, IAssetHandler*> mHandlers;
 
       /**
        * AssetManager copy constructor is private because we do not allow copies

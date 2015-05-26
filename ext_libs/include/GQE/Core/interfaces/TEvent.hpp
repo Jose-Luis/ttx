@@ -26,7 +26,7 @@ namespace GQE
        * TEvent default constructor
        * @param[in] theEventID to use for this event
        */
-      TEvent(const EventID theEventID, TCLASS& theEventClass, typeEventFunc theEventFunc) :
+      TEvent(const typeEventID theEventID, TCLASS& theEventClass, typeEventFunc theEventFunc) :
         IEvent(typeid(TCLASS).name(), theEventID),
         mEventClass(theEventClass),
         mEventFunc(theEventFunc)
