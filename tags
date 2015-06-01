@@ -12,9 +12,9 @@ ANGLE_INC	ext_libs/include/GT/Angle.hpp	7;"	d
 ANIMATION_SYSTEM_HPP_INCLUDED	ext_libs/include/GQE/Entity/systems/AnimationSystem.hpp	9;"	d
 ANIMATION_YL97FCUT	include/TTX/classes/render/Animation.hpp	9;"	d
 APP_SETTINGS	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      static const char* APP_SETTINGS;$/;"	m	class:GQE::IApp
-ATTRIBUTE_NAME	ext_libs/include/TinyXML2/tinyxml2.h	/^        ATTRIBUTE_NAME		            	= 0,$/;"	e	enum:tinyxml2::StrPair::__anon8
-ATTRIBUTE_VALUE_LEAVE_ENTITIES	ext_libs/include/TinyXML2/tinyxml2.h	/^        ATTRIBUTE_VALUE_LEAVE_ENTITIES  	= NEEDS_NEWLINE_NORMALIZATION,$/;"	e	enum:tinyxml2::StrPair::__anon8
-ATTRIBUTE_VALUE	ext_libs/include/TinyXML2/tinyxml2.h	/^        ATTRIBUTE_VALUE		            	= NEEDS_ENTITY_PROCESSING | NEEDS_NEWLINE_NORMALIZATION,$/;"	e	enum:tinyxml2::StrPair::__anon8
+ATTRIBUTE_NAME	ext_libs/include/TinyXML2/tinyxml2.h	/^        ATTRIBUTE_NAME		            	= 0,$/;"	e	enum:tinyxml2::StrPair::__anon15
+ATTRIBUTE_VALUE_LEAVE_ENTITIES	ext_libs/include/TinyXML2/tinyxml2.h	/^        ATTRIBUTE_VALUE_LEAVE_ENTITIES  	= NEEDS_NEWLINE_NORMALIZATION,$/;"	e	enum:tinyxml2::StrPair::__anon15
+ATTRIBUTE_VALUE	ext_libs/include/TinyXML2/tinyxml2.h	/^        ATTRIBUTE_VALUE		            	= NEEDS_ENTITY_PROCESSING | NEEDS_NEWLINE_NORMALIZATION,$/;"	e	enum:tinyxml2::StrPair::__anon15
 Accelerometer	ext_libs/include/SFML/Window/Sensor.hpp	/^        Accelerometer,    \/\/\/< Measures the raw acceleration (m\/s^2)$/;"	e	enum:sf::Sensor::Type
 Accepted	ext_libs/include/SFML/Network/Http.hpp	/^            Accepted       = 202, \/\/\/< The request has been accepted, but will be processed later by the server$/;"	e	enum:sf::Http::Response::Status
 ActionGroup	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	/^  class GQE_API ActionGroup$/;"	c	namespace:GQE
@@ -22,8 +22,6 @@ ActionSystem	ext_libs/include/GQE/Entity/systems/ActionSystem.hpp	/^  class GQE_
 Add	ext_libs/include/SFML/Graphics/BlendMode.hpp	/^        Add,     \/\/\/< Pixel = Src * SrcFactor + Dst * DstFactor$/;"	e	enum:sf::BlendMode::Equation
 Add	ext_libs/include/SFML/Window/Keyboard.hpp	/^        Add,          \/\/\/< The + key$/;"	e	enum:sf::Keyboard::Key
 Add	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	void Add(b2Body* body)$/;"	f	class:b2Island
-Add	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	void Add(b2Contact* contact)$/;"	f	class:b2Island
-Add	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	void Add(b2Joint* joint)$/;"	f	class:b2Island
 Advance	ext_libs/include/Box2D/Common/b2Math.h	/^inline void b2Sweep::Advance(float32 alpha)$/;"	f	class:b2Sweep
 Advance	ext_libs/include/Box2D/Dynamics/b2Body.h	/^inline void b2Body::Advance(float32 alpha)$/;"	f	class:b2Body
 A	ext_libs/include/SFML/Window/Keyboard.hpp	/^        A = 0,        \/\/\/< The A key$/;"	e	enum:sf::Keyboard::Key
@@ -33,7 +31,6 @@ AlResource	ext_libs/include/SFML/Audio/AlResource.hpp	/^class SFML_AUDIO_API AlR
 Alloc	ext_libs/include/TinyXML2/tinyxml2.h	/^    virtual void* Alloc() {$/;"	f	class:tinyxml2::MemPoolT
 AmunitionID	include/TTX/Types.hpp	/^typedef std::string AmunitionID;$/;"	t
 Angle	ext_libs/include/GT/Angle.hpp	/^   class Angle$/;"	c	namespace:gt
-AnimationProto	src/TTX/prototypes/components/AnimationProto.cpp	/^AnimationProto::AnimationProto(GQE::typePrototypeID thePrototypeID):$/;"	f	class:AnimationProto
 AnimationSYSTEM_INC	include/TTX/systems/AnimationSystem.hpp	16;"	d
 AnimationSystem	ext_libs/include/GQE/Entity/systems/AnimationSystem.hpp	/^  class GQE_API AnimationSystem : public ISystem$/;"	c	namespace:GQE
 AnimationSystem	include/TTX/systems/AnimationSystem.hpp	/^class AnimationSystem : public ISystem$/;"	c
@@ -41,7 +38,7 @@ AnimationSystem	src/TTX/systems/AnimationSystem.cpp	/^AnimationSystem::Animation
 Animation	include/TTX/classes/render/Animation.hpp	/^class Animation$/;"	c
 Animation	include/TTX/classes/render/Animation.hpp	/^      Animation( std::vector<sf::IntRect>* theRects):$/;"	f	class:Animation
 Animation	include/TTX/classes/render/Animation.hpp	/^      Animation(){};$/;"	f	class:Animation
-AnyPort	ext_libs/include/SFML/Network/Socket.hpp	/^        AnyPort = 0 \/\/\/< Special value that tells the system to pick any available port$/;"	e	enum:sf::Socket::__anon2
+AnyPort	ext_libs/include/SFML/Network/Socket.hpp	/^        AnyPort = 0 \/\/\/< Special value that tells the system to pick any available port$/;"	e	enum:sf::Socket::__anon10
 ApplyAngularImpulse	ext_libs/include/Box2D/Dynamics/b2Body.h	/^inline void b2Body::ApplyAngularImpulse(float32 impulse)$/;"	f	class:b2Body
 ApplyForceToCenter	ext_libs/include/Box2D/Dynamics/b2Body.h	/^inline void b2Body::ApplyForceToCenter(const b2Vec2& force)$/;"	f	class:b2Body
 ApplyForce	ext_libs/include/Box2D/Dynamics/b2Body.h	/^inline void b2Body::ApplyForce(const b2Vec2& force, const b2Vec2& point)$/;"	f	class:b2Body
@@ -62,8 +59,10 @@ AssetLoadStyle	ext_libs/include/GQE/Core/Core_types.hpp	/^  enum AssetLoadStyle$
 AssetLoadTime	ext_libs/include/GQE/Core/Core_types.hpp	/^  enum AssetLoadTime$/;"	g	namespace:GQE
 AssetManager	ext_libs/include/GQE/Core/classes/AssetManager.hpp	/^  class GQE_API AssetManager$/;"	c	namespace:GQE
 Attribute	ext_libs/include/SFML/Window/ContextSettings.hpp	/^    enum Attribute$/;"	g	struct:sf::ContextSettings
-AxisCount	ext_libs/include/SFML/Window/Joystick.hpp	/^        AxisCount   = 8   \/\/\/< Maximum number of supported axes$/;"	e	enum:sf::Joystick::__anon4
+AxisCount	ext_libs/include/SFML/Window/Joystick.hpp	/^        AxisCount   = 8   \/\/\/< Maximum number of supported axes$/;"	e	enum:sf::Joystick::__anon13
 Axis	ext_libs/include/SFML/Window/Joystick.hpp	/^    enum Axis$/;"	g	class:sf::Joystick
+B2COMPONENT_INC	include/TTX/prototypes/components/B2Proto.hpp	9;"	d
+B2Component	include/TTX/prototypes/components/B2Proto.hpp	/^class B2Component: virtual public GQE::Prototype$/;"	c
 B2GROUND_INC	trashCode/B2Ground.hpp	18;"	d
 B2Ground	trashCode/B2Ground.hpp	/^class B2Ground: public GQE::Prototype$/;"	c
 B2Ground	trashCode/B2Ground.hpp	/^      B2Ground():$/;"	f	class:B2Ground
@@ -73,8 +72,8 @@ B2ObjectDefSystem	trashCode/B2ObjectDefSystem.hpp	/^class B2ObjectDefSystem: pub
 B2ObjectDefSystem	trashCode/B2ObjectDefSystem.cpp	/^B2ObjectDefSystem::B2ObjectDefSystem(GQE::IApp& theApp):$/;"	f	class:B2ObjectDefSystem
 B2ObjectSystem	trashCode/B2ObjectSystem.hpp	/^class B2ObjectSystem: public GQE::ISystem$/;"	c
 B2ObjectSystem	trashCode/B2ObjectSystem.cpp	/^B2ObjectSystem::B2ObjectSystem(GQE::IApp& theApp):$/;"	f	class:B2ObjectSystem
-B2PROTO_INC	include/TTX/prototypes/components/B2Proto.hpp	9;"	d
-B2Proto	include/TTX/prototypes/components/B2Proto.hpp	/^class B2Proto: virtual public GQE::Prototype$/;"	c
+B2PROTO_INC	include/TTX/prototypes/components/B2Component.hpp	9;"	d
+B2Proto	include/TTX/prototypes/components/B2Component.hpp	/^class B2Proto: virtual public GQE::Prototype$/;"	c
 B2Proto	src/TTX/prototypes/components/B2Proto.cpp	/^B2Proto::B2Proto(GQE::typePrototypeID theID):$/;"	f	class:B2Proto
 B2SYSTEM_INC	include/TTX/systems/B2System.hpp	18;"	d
 B2System	include/TTX/systems/B2System.hpp	/^class B2System: public ISystem$/;"	c
@@ -129,8 +128,8 @@ B2_WORLD_H	ext_libs/include/Box2D/Dynamics/b2World.h	20;"	d
 BACK_1	include/TTX/Types.hpp	/^   BACK_1, BACK_2,$/;"	e	enum:Layers
 BACK_2	include/TTX/Types.hpp	/^   BACK_1, BACK_2,$/;"	e	enum:Layers
 BOX2D_H	ext_libs/include/Box2D/Box2D.h	20;"	d
-BUF_SIZE	ext_libs/include/TinyXML2/tinyxml2.h	/^        BUF_SIZE = 200$/;"	e	enum:tinyxml2::XMLPrinter::__anon13
-BUF_SIZE	ext_libs/include/TinyXML2/tinyxml2.h	/^    enum { BUF_SIZE = 200 };$/;"	e	enum:tinyxml2::XMLAttribute::__anon11
+BUF_SIZE	ext_libs/include/TinyXML2/tinyxml2.h	/^        BUF_SIZE = 200$/;"	e	enum:tinyxml2::XMLPrinter::__anon20
+BUF_SIZE	ext_libs/include/TinyXML2/tinyxml2.h	/^    enum { BUF_SIZE = 200 };$/;"	e	enum:tinyxml2::XMLAttribute::__anon18
 BackSlash	ext_libs/include/SFML/Window/Keyboard.hpp	/^        BackSlash,    \/\/\/< The \\ key$/;"	e	enum:sf::Keyboard::Key
 BackSpace	ext_libs/include/SFML/Window/Keyboard.hpp	/^        BackSpace,    \/\/\/< The Backspace key$/;"	e	enum:sf::Keyboard::Key
 BadCommandSequence	ext_libs/include/SFML/Network/Ftp.hpp	/^            BadCommandSequence      = 503, \/\/\/< Bad sequence of commands$/;"	e	enum:sf::Ftp::Response::Status
@@ -144,6 +143,7 @@ BeginContact	src/TTX/classes/physics/CollisionListener.cpp	/^void CollisionListe
 Binary	ext_libs/include/SFML/Network/Ftp.hpp	/^        Binary, \/\/\/< Binary mode (file is transfered as a sequence of bytes)$/;"	e	enum:sf::Ftp::TransferMode
 Black	ext_libs/include/SFML/Graphics/Color.hpp	/^    static const Color Black;       \/\/\/< Black predefined color$/;"	m	class:sf::Color
 BlendMode	ext_libs/include/SFML/Graphics/BlendMode.hpp	/^struct SFML_GRAPHICS_API BlendMode$/;"	s	namespace:sf
+B	ext_libs/include/Box2D/Common/b2Math.h	/^		b2Mat22 B;$/;"	l
 Block	ext_libs/include/TinyXML2/tinyxml2.h	/^    struct Block {$/;"	s	class:tinyxml2::MemPoolT
 Blue	ext_libs/include/SFML/Graphics/Color.hpp	/^    static const Color Blue;        \/\/\/< Blue predefined color$/;"	m	class:sf::Color
 Bold	ext_libs/include/SFML/Graphics/Text.hpp	/^        Bold          = 1 << 0, \/\/\/< Bold characters$/;"	e	enum:sf::Text::Style
@@ -153,17 +153,17 @@ BoolValue	ext_libs/include/TinyXML2/tinyxml2.h	/^    bool	 BoolValue() const				
 Box	include/TTX/prototypes/Box.hpp	/^class Box: public B2Proto, public RenderProto, public HealthProto$/;"	c
 Box	include/TTX/prototypes/Box.hpp	/^      Box():$/;"	f	class:Box
 Broadcast	ext_libs/include/SFML/Network/IpAddress.hpp	/^    static const IpAddress Broadcast; \/\/\/< The "broadcast" address (for sending UDP messages to everyone on a local network)$/;"	m	class:sf::IpAddress
-BufferCount	ext_libs/include/SFML/Audio/SoundStream.hpp	/^        BufferCount = 3 \/\/\/< Number of audio buffers used by the streaming loop$/;"	e	enum:sf::SoundStream::__anon7
-ButtonCount	ext_libs/include/SFML/Window/Joystick.hpp	/^        ButtonCount = 32, \/\/\/< Maximum number of supported buttons$/;"	e	enum:sf::Joystick::__anon4
+BufferCount	ext_libs/include/SFML/Audio/SoundStream.hpp	/^        BufferCount = 3 \/\/\/< Number of audio buffers used by the streaming loop$/;"	e	enum:sf::SoundStream::__anon9
+ButtonCount	ext_libs/include/SFML/Window/Joystick.hpp	/^        ButtonCount = 32, \/\/\/< Maximum number of supported buttons$/;"	e	enum:sf::Joystick::__anon13
 ButtonCount	ext_libs/include/SFML/Window/Mouse.hpp	/^        ButtonCount \/\/\/< Keep last -- the total number of mouse buttons$/;"	e	enum:sf::Mouse::Button
 Button	ext_libs/include/SFML/Window/Mouse.hpp	/^    enum Button$/;"	g	class:sf::Mouse
 CData	ext_libs/include/TinyXML2/tinyxml2.h	/^    bool CData() const						{$/;"	f	class:tinyxml2::XMLText
 CIRCLE	ext_libs/include/MPE/classes/Emitter.hpp	/^   enum Shape {RECTANGLE, CIRCLE};$/;"	e	enum:mpe::Emitter::Shape
-CLOSED	ext_libs/include/TinyXML2/tinyxml2.h	/^        CLOSED,		\/\/ <foo\/>$/;"	e	enum:tinyxml2::XMLElement::__anon12
-CLOSING	ext_libs/include/TinyXML2/tinyxml2.h	/^        CLOSING		\/\/ <\/foo>$/;"	e	enum:tinyxml2::XMLElement::__anon12
-COLLAPSE_WHITESPACE	ext_libs/include/TinyXML2/tinyxml2.h	/^        COLLAPSE_WHITESPACE	                = 0x04,$/;"	e	enum:tinyxml2::StrPair::__anon8
+CLOSED	ext_libs/include/TinyXML2/tinyxml2.h	/^        CLOSED,		\/\/ <foo\/>$/;"	e	enum:tinyxml2::XMLElement::__anon19
+CLOSING	ext_libs/include/TinyXML2/tinyxml2.h	/^        CLOSING		\/\/ <\/foo>$/;"	e	enum:tinyxml2::XMLElement::__anon19
+COLLAPSE_WHITESPACE	ext_libs/include/TinyXML2/tinyxml2.h	/^        COLLAPSE_WHITESPACE	                = 0x04,$/;"	e	enum:tinyxml2::StrPair::__anon15
 COLLAPSE_WHITESPACE	ext_libs/include/TinyXML2/tinyxml2.h	/^    COLLAPSE_WHITESPACE$/;"	e	enum:tinyxml2::Whitespace
-COMMENT	ext_libs/include/TinyXML2/tinyxml2.h	/^        COMMENT				        = NEEDS_NEWLINE_NORMALIZATION$/;"	e	enum:tinyxml2::StrPair::__anon8
+COMMENT	ext_libs/include/TinyXML2/tinyxml2.h	/^        COMMENT				        = NEEDS_NEWLINE_NORMALIZATION$/;"	e	enum:tinyxml2::StrPair::__anon15
 CONFIG_INC	ext_libs/include/GT/Config.hpp	3;"	d
 CONFIG_MPE_INC	ext_libs/include/MPE/Config.hpp	8;"	d
 CORE_APP_HPP_INCLUDED	ext_libs/include/GQE/Core/interfaces/IApp.hpp	24;"	d
@@ -192,7 +192,7 @@ CORE_STRING_LOGGER_HPP_INCLUDED	ext_libs/include/GQE/Core/loggers/StringLogger.h
 CORE_STRING_UTIL_HPP_INCLUDED	ext_libs/include/GQE/Core/utils/StringUtil.hpp	13;"	d
 CORE_TASSET_HANDLER_HPP_INCLUDED	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	11;"	d
 CORE_TASSET_HPP_INCLUDED	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	23;"	d
-COUNT	ext_libs/include/TinyXML2/tinyxml2.h	/^    enum { COUNT = (4*1024)\/SIZE }; \/\/ Some compilers do not accept to use COUNT in private part if COUNT is private$/;"	e	enum:tinyxml2::MemPoolT::__anon10
+COUNT	ext_libs/include/TinyXML2/tinyxml2.h	/^    enum { COUNT = (4*1024)\/SIZE }; \/\/ Some compilers do not accept to use COUNT in private part if COUNT is private$/;"	e	enum:tinyxml2::MemPoolT::__anon17
 CStrSize	ext_libs/include/TinyXML2/tinyxml2.h	/^    int CStrSize() const {$/;"	f	class:tinyxml2::XMLPrinter
 CStr	ext_libs/include/TinyXML2/tinyxml2.h	/^    const char* CStr() const {$/;"	f	class:tinyxml2::XMLPrinter
 Capacity	ext_libs/include/TinyXML2/tinyxml2.h	/^    int Capacity() const				{$/;"	f	class:tinyxml2::DynArray
@@ -201,9 +201,10 @@ Chunk	ext_libs/include/SFML/Audio/SoundStream.hpp	/^    struct Chunk$/;"	s	class
 Chunk	ext_libs/include/TinyXML2/tinyxml2.h	/^    union Chunk {$/;"	u	class:tinyxml2::MemPoolT
 CircleShape	ext_libs/include/SFML/Graphics/CircleShape.hpp	/^class SFML_GRAPHICS_API CircleShape : public Shape$/;"	c	namespace:sf
 Clear	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	void Clear()$/;"	f	class:b2Island
+C	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Transform C;$/;"	l
 Clock	ext_libs/include/SFML/System/Clock.hpp	/^class SFML_SYSTEM_API Clock$/;"	c	namespace:sf
 Closed	ext_libs/include/SFML/Window/Event.hpp	/^        Closed,                 \/\/\/< The window requested to be closed (no data)$/;"	e	enum:sf::Event::EventType
-Close	ext_libs/include/SFML/Window/WindowStyle.hpp	/^        Close      = 1 << 2, \/\/\/< Title bar + close button$/;"	e	enum:sf::Style::__anon5
+Close	ext_libs/include/SFML/Window/WindowStyle.hpp	/^        Close      = 1 << 2, \/\/\/< Title bar + close button$/;"	e	enum:sf::Style::__anon12
 ClosingConnection	ext_libs/include/SFML/Network/Ftp.hpp	/^            ClosingConnection     = 221, \/\/\/< Service closing control connection$/;"	e	enum:sf::Ftp::Response::Status
 ClosingDataConnection	ext_libs/include/SFML/Network/Ftp.hpp	/^            ClosingDataConnection = 226, \/\/\/< Closing data connection, requested file action successful$/;"	e	enum:sf::Ftp::Response::Status
 ClosingType	ext_libs/include/TinyXML2/tinyxml2.h	/^    int ClosingType() const {$/;"	f	class:tinyxml2::XMLElement
@@ -230,7 +231,7 @@ ConvexShape	ext_libs/include/SFML/Graphics/ConvexShape.hpp	/^class SFML_GRAPHICS
 CoordinateType	ext_libs/include/SFML/Graphics/Texture.hpp	/^    enum CoordinateType$/;"	g	class:sf::Texture
 Core	ext_libs/include/SFML/Window/ContextSettings.hpp	/^        Core    = 1 << 0, \/\/\/< Core attribute$/;"	e	enum:sf::ContextSettings::Attribute
 Count	ext_libs/include/SFML/Window/Event.hpp	/^        Count                   \/\/\/< Keep last -- the total number of event types$/;"	e	enum:sf::Event::EventType
-Count	ext_libs/include/SFML/Window/Joystick.hpp	/^        Count       = 8,  \/\/\/< Maximum number of supported joysticks$/;"	e	enum:sf::Joystick::__anon4
+Count	ext_libs/include/SFML/Window/Joystick.hpp	/^        Count       = 8,  \/\/\/< Maximum number of supported joysticks$/;"	e	enum:sf::Joystick::__anon13
 Count	ext_libs/include/SFML/Window/Sensor.hpp	/^        Count             \/\/\/< Keep last -- the total number of sensor types$/;"	e	enum:sf::Sensor::Type
 Created	ext_libs/include/SFML/Network/Http.hpp	/^            Created        = 201, \/\/\/< The resource has successfully been created$/;"	e	enum:sf::Http::Response::Status
 CurrentAllocs	ext_libs/include/TinyXML2/tinyxml2.h	/^    int CurrentAllocs() const		{$/;"	f	class:tinyxml2::MemPoolT
@@ -250,7 +251,7 @@ Data	ext_libs/include/SFML/Network/TcpSocket.hpp	/^        std::vector<char> Dat
 Debug	ext_libs/include/SFML/Window/ContextSettings.hpp	/^        Debug   = 1 << 2  \/\/\/< Debug attribute$/;"	e	enum:sf::ContextSettings::Attribute
 D	ext_libs/include/SFML/Window/Keyboard.hpp	/^        D,            \/\/\/< The D key$/;"	e	enum:sf::Keyboard::Key
 Default	ext_libs/include/SFML/Window/ContextSettings.hpp	/^        Default = 0,      \/\/\/< Non-debug, compatibility context (this and the core attribute are mutually exclusive)$/;"	e	enum:sf::ContextSettings::Attribute
-Default	ext_libs/include/SFML/Window/WindowStyle.hpp	/^        Default = Titlebar | Resize | Close \/\/\/< Default window style$/;"	e	enum:sf::Style::__anon5
+Default	ext_libs/include/SFML/Window/WindowStyle.hpp	/^        Default = Titlebar | Resize | Close \/\/\/< Default window style$/;"	e	enum:sf::Style::__anon12
 Default	ext_libs/include/SFML/Graphics/RenderStates.hpp	/^    static const RenderStates Default; \/\/\/< Special instance holding the default render states$/;"	m	class:sf::RenderStates
 DeleteNode	ext_libs/include/TinyXML2/tinyxml2.h	/^    void DeleteNode( XMLNode* node )	{$/;"	f	class:tinyxml2::XMLDocument
 Delete	ext_libs/include/SFML/Network/Http.hpp	/^            Delete \/\/\/< Request in delete mode, useful for a REST API$/;"	e	enum:sf::Http::Request::Method
@@ -287,7 +288,7 @@ EMITTER_INC	ext_libs/include/MPE/classes/Emitter.hpp	9;"	d
 ENEMY_BULLET	include/TTX/Types.hpp	/^   ENEMY_BULLET = 0x0010,$/;"	e	enum:ObjectCategories
 ENEMY_SHIP	include/TTX/Types.hpp	/^   ENEMY_SHIP = 0x0008,$/;"	e	enum:ObjectCategories
 ENTITY_HPP_INCLUDED	ext_libs/include/GQE/Entity.hpp	14;"	d
-ENTITY_RANGE	ext_libs/include/TinyXML2/tinyxml2.h	/^        ENTITY_RANGE = 64,$/;"	e	enum:tinyxml2::XMLPrinter::__anon13
+ENTITY_RANGE	ext_libs/include/TinyXML2/tinyxml2.h	/^        ENTITY_RANGE = 64,$/;"	e	enum:tinyxml2::XMLPrinter::__anon20
 ENTITY_TYPES_HPP_INCLUDED	ext_libs/include/GQE/Entity/Entity_types.hpp	14;"	d
 ERROR_LEVEL	ext_libs/include/GQE/Core/Core_types.hpp	30;"	d
 EVENT_MANAGER_HPP_INCLUDED	ext_libs/include/GQE/Core/classes/EventManager.hpp	11;"	d
@@ -375,7 +376,7 @@ Forbidden	ext_libs/include/SFML/Network/Http.hpp	/^            Forbidden        
 Fragment	ext_libs/include/SFML/Graphics/Shader.hpp	/^        Fragment \/\/\/< Fragment (pixel) shader$/;"	e	enum:sf::Shader::Type
 Free	ext_libs/include/TinyXML2/tinyxml2.h	/^    virtual void Free( void* mem ) {$/;"	f	class:tinyxml2::MemPoolT
 Ftp	ext_libs/include/SFML/Network/Ftp.hpp	/^class SFML_NETWORK_API Ftp : NonCopyable$/;"	c	namespace:sf
-Fullscreen	ext_libs/include/SFML/Window/WindowStyle.hpp	/^        Fullscreen = 1 << 3, \/\/\/< Fullscreen mode (this flag and all others are mutually exclusive)$/;"	e	enum:sf::Style::__anon5
+Fullscreen	ext_libs/include/SFML/Window/WindowStyle.hpp	/^        Fullscreen = 1 << 3, \/\/\/< Fullscreen mode (this flag and all others are mutually exclusive)$/;"	e	enum:sf::Style::__anon12
 GAME_STATE_HPP_INCLUDED	include/TTX/gameStates/GameStateOne.hpp	11;"	d
 GENERATOR_TL9DCTRC	ext_libs/include/MPE/classes/Generator.hpp	2;"	d
 GQE_API	ext_libs/include/GQE/Config.hpp	107;"	d
@@ -787,12 +788,14 @@ MORTAL_INC	ext_libs/include/MPE/classes/Mortal.hpp	8;"	d
 MORTAL_INC	ext_libs/include/MPE/components/Mortal.hpp	8;"	d
 MOVEMENT_SYSTEM_HPP_INCLUDED	ext_libs/include/GQE/Entity/systems/MovementSystem.hpp	15;"	d
 MPE_INC	ext_libs/include/MPE/MPE.hpp	7;"	d
+Machinegun	include/TTX/prototypes/Machinegun.hpp	/^class Machinegun: public B2Component, public RenderProto, public HealthProto$/;"	c
+Machinegun	include/TTX/prototypes/Machinegun.hpp	/^      Machinegun():$/;"	f	class:Machinegun
 Magenta	ext_libs/include/SFML/Graphics/Color.hpp	/^    static const Color Magenta;     \/\/\/< Magenta predefined color$/;"	m	class:sf::Color
 Magnetometer	ext_libs/include/SFML/Window/Sensor.hpp	/^        Magnetometer,     \/\/\/< Measures the ambient magnetic field (micro-teslas)$/;"	e	enum:sf::Sensor::Type
 MapLoader	include/TTX/classes/mapLoader/MapLoader.hpp	/^class MapLoader$/;"	c
 MapLoader	src/TTX/classes/mapLoader/MapLoader.cpp	/^MapLoader::MapLoader(std::string theFileName)$/;"	f	class:MapLoader
 Map	ext_libs/include/MapLoader/map.hpp	/^class Map$/;"	c
-MaxDatagramSize	ext_libs/include/SFML/Network/UdpSocket.hpp	/^        MaxDatagramSize = 65507 \/\/\/< The maximum number of bytes that can be sent in a single UDP datagram$/;"	e	enum:sf::UdpSocket::__anon1
+MaxDatagramSize	ext_libs/include/SFML/Network/UdpSocket.hpp	/^        MaxDatagramSize = 65507 \/\/\/< The maximum number of bytes that can be sent in a single UDP datagram$/;"	e	enum:sf::UdpSocket::__anon11
 M	ext_libs/include/SFML/Window/Keyboard.hpp	/^        M,            \/\/\/< The M key$/;"	e	enum:sf::Keyboard::Key
 MemPoolT	ext_libs/include/TinyXML2/tinyxml2.h	/^class MemPoolT : public MemPool$/;"	c	namespace:tinyxml2
 MemPoolT	ext_libs/include/TinyXML2/tinyxml2.h	/^    MemPoolT() : _root(0), _currentAllocs(0), _nAllocs(0), _maxAllocs(0), _nUntracked(0)	{}$/;"	f	class:tinyxml2::MemPoolT
@@ -829,10 +832,10 @@ MusicAsset	ext_libs/include/GQE/Core/assets/MusicAsset.hpp	/^  class GQE_API Mus
 MusicHandler	ext_libs/include/GQE/Core/assets/MusicHandler.hpp	/^  class GQE_API MusicHandler : public TAssetHandler<sf::Music>$/;"	c	namespace:GQE
 Music	ext_libs/include/SFML/Audio/Music.hpp	/^class SFML_AUDIO_API Music : public SoundStream$/;"	c	namespace:sf
 Mutex	ext_libs/include/SFML/System/Mutex.hpp	/^class SFML_SYSTEM_API Mutex : NonCopyable$/;"	c	namespace:sf
-NEEDS_DELETE	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_DELETE = 0x200$/;"	e	enum:tinyxml2::StrPair::__anon9
-NEEDS_ENTITY_PROCESSING	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_ENTITY_PROCESSING			= 0x01,$/;"	e	enum:tinyxml2::StrPair::__anon8
-NEEDS_FLUSH	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_FLUSH = 0x100,$/;"	e	enum:tinyxml2::StrPair::__anon9
-NEEDS_NEWLINE_NORMALIZATION	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_NEWLINE_NORMALIZATION		= 0x02,$/;"	e	enum:tinyxml2::StrPair::__anon8
+NEEDS_DELETE	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_DELETE = 0x200$/;"	e	enum:tinyxml2::StrPair::__anon16
+NEEDS_ENTITY_PROCESSING	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_ENTITY_PROCESSING			= 0x01,$/;"	e	enum:tinyxml2::StrPair::__anon15
+NEEDS_FLUSH	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_FLUSH = 0x100,$/;"	e	enum:tinyxml2::StrPair::__anon16
+NEEDS_NEWLINE_NORMALIZATION	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_NEWLINE_NORMALIZATION		= 0x02,$/;"	e	enum:tinyxml2::StrPair::__anon15
 NOMINMAX	ext_libs/include/GQE/Config.hpp	44;"	d
 NOMINMAX	ext_libs/include/SFML/Config.hpp	46;"	d
 NON_FIXED	ext_libs/include/MPE/Config.hpp	/^const bool NON_FIXED = false;$/;"	m	namespace:mpe
@@ -857,11 +860,10 @@ NoChildren	ext_libs/include/TinyXML2/tinyxml2.h	/^    bool NoChildren() const			
 NoContent	ext_libs/include/SFML/Network/Http.hpp	/^            NoContent      = 204, \/\/\/< The server didn't send any data in return$/;"	e	enum:sf::Http::Response::Status
 NonCopyable	ext_libs/include/SFML/System/NonCopyable.hpp	/^class SFML_SYSTEM_API NonCopyable$/;"	c	namespace:sf
 NonCopyable	ext_libs/include/SFML/System/NonCopyable.hpp	/^    NonCopyable() {}$/;"	f	class:sf::NonCopyable
-None	ext_libs/include/SFML/Window/WindowStyle.hpp	/^        None       = 0,      \/\/\/< No border \/ title bar (this flag and all others are mutually exclusive)$/;"	e	enum:sf::Style::__anon5
+None	ext_libs/include/SFML/Window/WindowStyle.hpp	/^        None       = 0,      \/\/\/< No border \/ title bar (this flag and all others are mutually exclusive)$/;"	e	enum:sf::Style::__anon12
 None	ext_libs/include/SFML/Network/IpAddress.hpp	/^    static const IpAddress None;      \/\/\/< Value representing an empty\/invalid address$/;"	m	class:sf::IpAddress
 Normalized	ext_libs/include/SFML/Graphics/Texture.hpp	/^        Normalized, \/\/\/< Texture coordinates in range [0 .. 1]$/;"	e	enum:sf::Texture::CoordinateType
 Normalize	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 Normalize()$/;"	f	struct:b2Vec2
-Normalize	ext_libs/include/Box2D/Common/b2Math.h	/^inline void b2Sweep::Normalize()$/;"	f	class:b2Sweep
 NotEnoughMemory	ext_libs/include/SFML/Network/Ftp.hpp	/^            NotEnoughMemory         = 552, \/\/\/< Requested file action aborted, exceeded storage allocation$/;"	e	enum:sf::Ftp::Response::Status
 NotFound	ext_libs/include/SFML/Network/Http.hpp	/^            NotFound            = 404, \/\/\/< The requested page doesn't exist$/;"	e	enum:sf::Http::Response::Status
 NotImplemented	ext_libs/include/SFML/Network/Http.hpp	/^            NotImplemented      = 501, \/\/\/< The server doesn't implement a requested feature$/;"	e	enum:sf::Http::Response::Status
@@ -890,7 +892,7 @@ Numpad8	ext_libs/include/SFML/Window/Keyboard.hpp	/^        Numpad8,      \/\/\/
 Numpad9	ext_libs/include/SFML/Window/Keyboard.hpp	/^        Numpad9,      \/\/\/< The numpad 9 key$/;"	e	enum:sf::Keyboard::Key
 OBJT_1	include/TTX/Types.hpp	/^   OBJT_1, OBJT_2,$/;"	e	enum:Layers
 OBJT_2	include/TTX/Types.hpp	/^   OBJT_1, OBJT_2,$/;"	e	enum:Layers
-OPEN	ext_libs/include/TinyXML2/tinyxml2.h	/^        OPEN,		\/\/ <foo>$/;"	e	enum:tinyxml2::XMLElement::__anon12
+OPEN	ext_libs/include/TinyXML2/tinyxml2.h	/^        OPEN,		\/\/ <foo>$/;"	e	enum:tinyxml2::XMLElement::__anon19
 ObjectCategories	include/TTX/Types.hpp	/^enum ObjectCategories$/;"	g
 ObjectSystem	trashCode/ObjectSystemOld.cpp	/^ObjectSystem::ObjectSystem(GQE::IApp& theApp):$/;"	f	class:ObjectSystem
 ObjectSystem	trashCode/ObjectSystemOld.cpp	/^ObjectSystem::ObjectSystem(GQE::IApp& theApp,b2World theWorld):$/;"	f	class:ObjectSystem
@@ -916,6 +918,7 @@ PI	ext_libs/include/GT/Angle.hpp	/^         const static Real PI;$/;"	m	class:gt
 PI	include/TTX/Types.hpp	/^const float PI = 3.14159265359f;$/;"	v
 PLAYERSYSTEM_INC	include/TTX/systems/PlayerSystem.hpp	7;"	d
 PLAYER_INC	include/TTX/prototypes/Player.hpp	3;"	d
+PMACHINEGUN_INC	include/TTX/prototypes/Machinegun.hpp	2;"	d
 POSITION_INC	ext_libs/include/MPE/components/Position.hpp	7;"	d
 PRESERVE_WHITESPACE	ext_libs/include/TinyXML2/tinyxml2.h	/^    PRESERVE_WHITESPACE,$/;"	e	enum:tinyxml2::Whitespace
 PROMBO_INC	include/TTX/prototypes/Rombo.hpp	3;"	d
@@ -1051,7 +1054,7 @@ ResetContent	ext_libs/include/SFML/Network/Http.hpp	/^            ResetContent  
 ResetFriction	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^inline void b2Contact::ResetFriction()$/;"	f	class:b2Contact
 ResetRestitution	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^inline void b2Contact::ResetRestitution()$/;"	f	class:b2Contact
 Resized	ext_libs/include/SFML/Window/Event.hpp	/^        Resized,                \/\/\/< The window was resized (data in event.size)$/;"	e	enum:sf::Event::EventType
-Resize	ext_libs/include/SFML/Window/WindowStyle.hpp	/^        Resize     = 1 << 1, \/\/\/< Title bar + resizable border + maximize button$/;"	e	enum:sf::Style::__anon5
+Resize	ext_libs/include/SFML/Window/WindowStyle.hpp	/^        Resize     = 1 << 1, \/\/\/< Title bar + resizable border + maximize button$/;"	e	enum:sf::Style::__anon12
 ResourceStream	ext_libs/include/SFML/System/FileInputStream.hpp	/^class SFML_SYSTEM_API ResourceStream;$/;"	m	namespace:sf::priv	typeref:class:sf::priv::SFML_SYSTEM_API
 Response	ext_libs/include/SFML/Network/Ftp.hpp	/^    class SFML_NETWORK_API Response$/;"	c	class:sf::Ftp
 Response	ext_libs/include/SFML/Network/Http.hpp	/^    class SFML_NETWORK_API Response$/;"	c	class:sf::Http
@@ -1310,6 +1313,7 @@ SrcColor	ext_libs/include/SFML/Graphics/BlendMode.hpp	/^        SrcColor,       
 StatManager	ext_libs/include/GQE/Core/classes/StatManager.hpp	/^  class GQE_API StatManager$/;"	c	namespace:GQE
 StateManager	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^  class GQE_API StateManager$/;"	c	namespace:GQE
 StateProto	include/TTX/prototypes/components/StateProto.hpp	/^class StateProto: virtual public GQE::Prototype$/;"	c
+StateProto	src/TTX/prototypes/components/StateProto.cpp	/^StateProto::StateProto(GQE::typePrototypeID thePrototypeID):$/;"	f	class:StateProto
 State	ext_libs/include/Box2D/Collision/b2TimeOfImpact.h	/^	enum State$/;"	g	struct:b2TOIOutput
 StatesCache	ext_libs/include/SFML/Graphics/RenderTarget.hpp	/^    struct StatesCache$/;"	s	class:sf::RenderTarget
 StatusAppInitFailed	ext_libs/include/GQE/Core/Core_types.hpp	/^    StatusAppInitFailed   = -2,  \/\/\/< Application initialization failed$/;"	e	enum:GQE::StatusType
@@ -1350,8 +1354,8 @@ TAsset	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      TAsset() :$/;"	f	
 TAsset	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      TAsset(const TAsset<TYPE>& theCopy) :$/;"	f	class:GQE::TAsset
 TAsset	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      TAsset(const typeAssetID theAssetID,$/;"	f	class:GQE::TAsset
 TEVENT_HPP_INCLUDED	ext_libs/include/GQE/Core/interfaces/TEvent.hpp	9;"	d
-TEXT_ELEMENT_LEAVE_ENTITIES	ext_libs/include/TinyXML2/tinyxml2.h	/^        TEXT_ELEMENT_LEAVE_ENTITIES		= NEEDS_NEWLINE_NORMALIZATION,$/;"	e	enum:tinyxml2::StrPair::__anon8
-TEXT_ELEMENT	ext_libs/include/TinyXML2/tinyxml2.h	/^        TEXT_ELEMENT		            	= NEEDS_ENTITY_PROCESSING | NEEDS_NEWLINE_NORMALIZATION,$/;"	e	enum:tinyxml2::StrPair::__anon8
+TEXT_ELEMENT_LEAVE_ENTITIES	ext_libs/include/TinyXML2/tinyxml2.h	/^        TEXT_ELEMENT_LEAVE_ENTITIES		= NEEDS_NEWLINE_NORMALIZATION,$/;"	e	enum:tinyxml2::StrPair::__anon15
+TEXT_ELEMENT	ext_libs/include/TinyXML2/tinyxml2.h	/^        TEXT_ELEMENT		            	= NEEDS_ENTITY_PROCESSING | NEEDS_NEWLINE_NORMALIZATION,$/;"	e	enum:tinyxml2::StrPair::__anon15
 TEvent	ext_libs/include/GQE/Core/interfaces/TEvent.hpp	/^    class TEvent : public IEvent$/;"	c	namespace:GQE
 TEvent	ext_libs/include/GQE/Core/interfaces/TEvent.hpp	/^      TEvent(const typeEventID theEventID, TCLASS& theEventClass, typeEventFunc theEventFunc) :$/;"	f	class:GQE::TEvent
 TINYXML2_INCLUDED	ext_libs/include/TinyXML2/tinyxml2.h	25;"	d
@@ -1393,7 +1397,7 @@ ThreadLocal	ext_libs/include/SFML/System/ThreadLocal.hpp	/^class SFML_SYSTEM_API
 Thread	ext_libs/include/SFML/System/Thread.hpp	/^class SFML_SYSTEM_API Thread : NonCopyable$/;"	c	namespace:sf
 Tilde	ext_libs/include/SFML/Window/Keyboard.hpp	/^        Tilde,        \/\/\/< The ~ key$/;"	e	enum:sf::Keyboard::Key
 Time	ext_libs/include/SFML/System/Time.hpp	/^class SFML_SYSTEM_API Time$/;"	c	namespace:sf
-Titlebar	ext_libs/include/SFML/Window/WindowStyle.hpp	/^        Titlebar   = 1 << 0, \/\/\/< Title bar + fixed border$/;"	e	enum:sf::Style::__anon5
+Titlebar	ext_libs/include/SFML/Window/WindowStyle.hpp	/^        Titlebar   = 1 << 0, \/\/\/< Title bar + fixed border$/;"	e	enum:sf::Style::__anon12
 ToComment	ext_libs/include/TinyXML2/tinyxml2.h	/^    virtual XMLComment*		ToComment()		{$/;"	f	class:tinyxml2::XMLNode
 ToComment	ext_libs/include/TinyXML2/tinyxml2.h	/^    virtual XMLComment*	ToComment()					{$/;"	f	class:tinyxml2::XMLComment
 ToComment	ext_libs/include/TinyXML2/tinyxml2.h	/^    virtual const XMLComment*		ToComment() const		{$/;"	f	class:tinyxml2::XMLNode
@@ -1505,7 +1509,7 @@ VehicleProto	trashCode/VehicleProto.hpp	/^class VehicleProto: virtual public GQE
 VehicleProto	trashCode/VehicleProto.cpp	/^VehicleProto::VehicleProto(GQE::typePrototypeID theID):$/;"	f	class:VehicleProto
 VersionNotSupported	ext_libs/include/SFML/Network/Http.hpp	/^            VersionNotSupported = 505, \/\/\/< The server doesn't support the requested HTTP version$/;"	e	enum:sf::Http::Response::Status
 VertexArray	ext_libs/include/SFML/Graphics/VertexArray.hpp	/^class SFML_GRAPHICS_API VertexArray : public Drawable$/;"	c	namespace:sf
-VertexCacheSize	ext_libs/include/SFML/Graphics/RenderTarget.hpp	/^        enum {VertexCacheSize = 4};$/;"	e	enum:sf::RenderTarget::StatesCache::__anon3
+VertexCacheSize	ext_libs/include/SFML/Graphics/RenderTarget.hpp	/^        enum {VertexCacheSize = 4};$/;"	e	enum:sf::RenderTarget::StatesCache::__anon8
 Vertex	ext_libs/include/SFML/Graphics/Vertex.hpp	/^class SFML_GRAPHICS_API Vertex$/;"	c	namespace:sf
 Vertex	ext_libs/include/SFML/Graphics/Shader.hpp	/^        Vertex,  \/\/\/< Vertex shader$/;"	e	enum:sf::Shader::Type
 VerticalWheel	ext_libs/include/SFML/Window/Mouse.hpp	/^        VerticalWheel,  \/\/\/< The vertical mouse wheel$/;"	e	enum:sf::Mouse::Wheel
@@ -1651,8 +1655,21 @@ _value	ext_libs/include/TinyXML2/tinyxml2.h	/^    mutable StrPair _value;$/;"	m	
 _whitespace	ext_libs/include/TinyXML2/tinyxml2.h	/^    Whitespace  _whitespace;$/;"	m	class:tinyxml2::XMLDocument
 _writeBOM	ext_libs/include/TinyXML2/tinyxml2.h	/^    bool        _writeBOM;$/;"	m	class:tinyxml2::XMLDocument
 a0	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 a0, a;		\/\/\/< world angles$/;"	m	struct:b2Sweep
+a11	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 a11 = ex.x, a12 = ey.x, a21 = ex.y, a22 = ey.y;$/;"	l
+a12	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 a11 = ex.x, a12 = ey.x, a21 = ex.y, a22 = ey.y;$/;"	l
+a21	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 a11 = ex.x, a12 = ey.x, a21 = ex.y, a22 = ey.y;$/;"	l
+a22	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 a11 = ex.x, a12 = ey.x, a21 = ex.y, a22 = ey.y;$/;"	l
+aCosine	ext_libs/include/MPE/classes/Vec2.hpp	/^      Real aCosine = std::cos(theAngle);$/;"	l
+aDamage	src/TTX/classes/physics/CollisionListener.cpp	/^      float aDamage = theImpactStrength \/ aResistance; $/;"	l
+aHealth	src/TTX/classes/physics/CollisionListener.cpp	/^      float aHealth = theEntity->mProperties.get<float>("Health");$/;"	l
+aImpactStrength	src/TTX/classes/physics/CollisionListener.cpp	/^   float aImpactStrength = theImpulse->normalImpulses[0];$/;"	l
+aResistance	src/TTX/classes/physics/CollisionListener.cpp	/^      float aResistance = theEntity->mProperties.get<float>("Resistance");$/;"	l
+aSine	ext_libs/include/MPE/classes/Vec2.hpp	/^      Real aSine = std::sin(theAngle);$/;"	l
+aabbA	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^	const b2AABB& aabbA = m_tree.GetFatAABB(proxyIdA);$/;"	l
+aabbB	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^	const b2AABB& aabbB = m_tree.GetFatAABB(proxyIdB);$/;"	l
 aabb	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	b2AABB aabb;$/;"	m	struct:b2TreeNode
 aabb	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	b2AABB aabb;$/;"	m	struct:b2FixtureProxy
+abs_v	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	b2Vec2 abs_v = b2Abs(v);$/;"	l
 acquireAsset	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual TYPE* acquireAsset(const typeAssetID theAssetID)$/;"	f	class:GQE::TAssetHandler
 active	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	bool active;$/;"	m	struct:b2BodyDef
 addCleanup	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      void addCleanup(const typeEventID theEventID, TCLASS& theEventClass,$/;"	f	class:GQE::StateManager
@@ -1678,6 +1695,9 @@ advance	ext_libs/include/SFML/Graphics/Glyph.hpp	/^    float     advance;     \/
 affect	src/TTX/classes/particles/Affectors.cpp	/^void DisolveAffector::affect(mpe::Particle& theParticle, mpe::Real theElapsedTime)$/;"	f	class:DisolveAffector
 age	ext_libs/include/MPE/classes/Mortal.hpp	/^   inline void age(Real theElapsedTime)$/;"	f	class:mpe::Mortal
 age	ext_libs/include/MPE/components/Mortal.hpp	/^      inline void age(Real theElapsedTime)$/;"	f	class:mpe::Mortal
+a	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 a = ex.x, b = ey.x, c = ex.y, d = ey.y;$/;"	l
+a	ext_libs/include/TinyXML2/tinyxml2.h	/^        XMLAttribute* a = FindOrCreateAttribute( name );$/;"	l
+a	ext_libs/include/TinyXML2/tinyxml2.h	/^        const XMLAttribute* a = FindAttribute( name );$/;"	l
 allocator	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	b2StackAllocator* allocator;$/;"	m	struct:b2ContactSolverDef
 allowSleep	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	bool allowSleep;$/;"	m	struct:b2BodyDef
 alpha0	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 alpha0;$/;"	m	struct:b2Sweep
@@ -1689,7 +1709,179 @@ a	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 a0, a;		\/\/\/< world angles
 a	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 a;$/;"	m	struct:b2Position
 a	ext_libs/include/MPE/Config.hpp	/^   Integer r, g, b, a;$/;"	m	struct:mpe::Color
 a	ext_libs/include/SFML/Graphics/Color.hpp	/^    Uint8 a; \/\/\/< Alpha (opacity) component$/;"	m	class:sf::Color
+anAffector	src/TTX/systems/PropellerSystem.cpp	/^   std::shared_ptr<DisolveAffector> anAffector;$/;"	l
+anAngle	src/TTX/classes/objects/Propeller.cpp	/^         float  anAngle = mBody->GetAngle() * TODEG;$/;"	l
+anAngle	src/TTX/systems/B2System.cpp	/^         float anAngle     = anBody->GetAngle();$/;"	l
+anAngle	src/TTX/systems/B2System.cpp	/^   float anAngle = theEntity->mProperties.get<float>("fAngle");$/;"	l
+anAngle	src/TTX/systems/ParticleSystem.cpp	/^         float anAngle = anEntity->mProperties.get<float>("fAngle");$/;"	l
+anAngle	src/TTX/systems/ParticleSystem.cpp	/^   float anAngle = theEntity->mProperties.get<float>("fAngle");$/;"	l
+anAngle	src/TTX/systems/PlayerSystem.cpp	/^      float anAngle = std::atan2( anVector.x,anVector.y );$/;"	l
+anAngle	src/TTX/systems/RenderSystem.cpp	/^            float anAngle           = anEntity->mProperties.get<float>("fAngle");$/;"	l
+anAnimation	src/TTX/systems/AnimationSystem.cpp	/^         Animation* anAnimation = anEntity->mProperties.getPointer<Animation>("rAnimation");$/;"	l
+anApp	src/TTX/main.cpp	/^  GQE::IApp* anApp = new(std::nothrow) TTXApp();$/;"	l
+anAssetData	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^            typeAssetData anAssetData;$/;"	l
+anAssetID	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^          const typeAssetID anAssetID = iter->first;$/;"	l
+anAsset	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^              TYPE* anAsset = iter->second.asset;$/;"	l
+anAsset	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^          TYPE* anAsset = iter->second.asset;$/;"	l
+anBodyDef	src/TTX/systems/B2System.cpp	/^   b2BodyDef* anBodyDef = theEntity->mProperties.get<b2BodyDef*>("b2BodyDef");$/;"	l
+anBodyDef	trashCode/B2Ground.hpp	/^      b2BodyDef anBodyDef;$/;"	l
+anBodyDef	trashCode/ObjectSystemOld.cpp	/^   b2BodyDef* anBodyDef = theEntity->mProperties.get<b2BodyDef*>("b2BodyDef");;$/;"	l
+anBody	src/TTX/systems/B2System.cpp	/^         b2Body* anBody    = anEntity->mProperties.get<b2Body*>("b2Body");$/;"	l
+anBody	src/TTX/systems/B2System.cpp	/^   b2Body* anBody = mWorld.CreateBody(anBodyDef);$/;"	l
+anBody	src/TTX/systems/PropellerSystem.cpp	/^   b2Body* anBody = theEntity->mProperties.get<b2Body*>("b2Body");$/;"	l
+anBody	trashCode/B2Instance.cpp	/^   b2Body* anBody = mProperties.get<b2Body*>("b2Body");$/;"	l
+anBody	trashCode/ObjectSystemOld.cpp	/^         b2Body* anBody = anEntity->mProperties.get<b2Body*>("b2Body");$/;"	l
+anBody	trashCode/ObjectSystemOld.cpp	/^   b2Body* anBody = mWorld.CreateBody(anBodyDef);$/;"	l
+anBody	trashCode/ShipPropeller.cpp	/^   b2Body* anBody = theEntity->mProperties.get<b2Body*>("b2Body");$/;"	l
+anCenterPosition	src/TTX/systems/PlayerSystem.cpp	/^   sf::Vector2f anCenterPosition;$/;"	l
+anChainFixture	src/TTX/classes/mapLoader/MapLoader.cpp	/^      b2FixtureDef anChainFixture;$/;"	l
+anChainShape	src/TTX/classes/mapLoader/MapLoader.cpp	/^      b2ChainShape anChainShape;$/;"	l
+anCharPoint	src/TTX/classes/mapLoader/MapLoader.cpp	/^      const char* anCharPoint = anPoints->Attribute("points");$/;"	l
+anCharPtr	src/TTX/classes/mapLoader/MapLoader.cpp	/^      const char* anCharPtr = strchr(anCharPoint,',');$/;"	l
+anCollideEntityA	src/TTX/classes/physics/CollisionListener.cpp	/^   auto anCollideEntityA = static_cast<GQE::IEntity*>(theContact->GetFixtureA()->GetBody()->GetUserData());$/;"	l
+anCollideEntityB	src/TTX/classes/physics/CollisionListener.cpp	/^   auto anCollideEntityB = static_cast<GQE::IEntity*>(theContact->GetFixtureB()->GetBody()->GetUserData());$/;"	l
+anColor	src/TTX/classes/mapLoader/MapLoader.cpp	/^            sf::Color anColor[4];$/;"	l
+anColor	src/TTX/classes/particles/Particles.cpp	/^      mpe::Color anColor = it->getColor();$/;"	l
+anColumns	src/TTX/classes/mapLoader/MapLoader.cpp	/^      int anColumns = (theRenderManager.getLayer(anLayerID).mStates.texture->getSize().x)\/anTileWidth;$/;"	l
+anContext	ext_libs/include/GQE/Core/interfaces/TEvent.hpp	/^        TCONTEXT* anContext = static_cast<TCONTEXT*>(theContext);$/;"	l
+anCoor	src/TTX/classes/mapLoader/MapLoader.cpp	/^      char anCoor[10];$/;"	l
+anCos	src/TTX/classes/objects/Weapon.cpp	/^      float anCos = std::cos(thePosition.angle);$/;"	l
+anDropTime	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^          AssetDropTime anDropTime = iter->second.dropTime;$/;"	l
+anEmitterID	src/TTX/systems/ParticleSystem.cpp	/^   mpe::EmitterID anEmitterID = $/;"	l
+anEntity	src/TTX/systems/AnimationSystem.cpp	/^         GQE::IEntity* anEntity = *anQueue;$/;"	l
+anEntity	src/TTX/systems/B2System.cpp	/^         GQE::IEntity* anEntity = *anQueue;$/;"	l
+anEntity	src/TTX/systems/HealthSystem.cpp	/^         GQE::IEntity* anEntity = *anQueue;$/;"	l
+anEntity	src/TTX/systems/ParticleSystem.cpp	/^         GQE::IEntity* anEntity = *anQueue;$/;"	l
+anEntity	src/TTX/systems/PlayerSystem.cpp	/^         GQE::IEntity* anEntity = *anQueue;$/;"	l
+anEntity	src/TTX/systems/PropellerSystem.cpp	/^         GQE::IEntity* anEntity = *anQueue;$/;"	l
+anEntity	src/TTX/systems/RenderSystem.cpp	/^         GQE::IEntity* anEntity = *anQueue;$/;"	l
+anEntity	trashCode/ObjectSystemOld.cpp	/^         GQE::IEntity* anEntity = *anQueue;$/;"	l
+anEvent	ext_libs/include/GQE/Core/classes/EventManager.hpp	/^          TEvent<TCLASS,TCONTEXT>* anEvent =$/;"	l
+anEvent	ext_libs/include/GQE/Core/classes/EventManager.hpp	/^          TEvent<TCLASS,void>* anEvent =$/;"	l
+anExitCode	src/TTX/main.cpp	/^  int anExitCode = GQE::StatusNoError;$/;"	l
+anFixture1	include/TTX/prototypes/BasicShip.hpp	/^        b2FixtureDef anFixture1;$/;"	l
+anFixture1	include/TTX/prototypes/Box.hpp	/^      b2FixtureDef anFixture1;$/;"	l
+anFixture1	include/TTX/prototypes/Ground.hpp	/^      b2FixtureDef anFixture1;$/;"	l
+anFixture1	include/TTX/prototypes/Machinegun.hpp	/^      b2FixtureDef anFixture1;$/;"	l
+anFixture1	include/TTX/prototypes/Rombo.hpp	/^         b2FixtureDef anFixture1;$/;"	l
+anFixture1	include/TTX/prototypes/SimpleBullet.hpp	/^        b2FixtureDef anFixture1;$/;"	l
+anFixture2	include/TTX/prototypes/BasicShip.hpp	/^        b2FixtureDef anFixture2;$/;"	l
+anFixture3	include/TTX/prototypes/BasicShip.hpp	/^        b2FixtureDef anFixture3;$/;"	l
+anFixtureDef	trashCode/B2Ground.hpp	/^      b2FixtureDef anFixtureDef;$/;"	l
+anFixturesDef	src/TTX/systems/B2System.cpp	/^   std::vector<b2FixtureDef>* anFixturesDef = $/;"	l
+anFixturesDef	trashCode/B2Ground.hpp	/^      std::vector<b2FixtureDef> anFixturesDef;$/;"	l
+anFixturesDef	trashCode/ObjectSystemOld.cpp	/^   std::vector<b2FixtureDef>& anFixturesDef = theEntity->mProperties.get<std::vector<b2FixtureDef>&>("b2FixturesDef");;$/;"	l
+anFocus	src/TTX/systems/ParticleSystem.cpp	/^         mpe::FocusPtr anFocus = $/;"	l
+anFocus	src/TTX/systems/ParticleSystem.cpp	/^   mpe::FocusPtr anFocus = mParticles.createFocus(anEmitterID,$/;"	l
+anFocus	src/TTX/systems/PropellerSystem.cpp	/^   std::shared_ptr<mpe::Focus> anFocus;$/;"	l
+anHealth	src/TTX/systems/HealthSystem.cpp	/^         auto anHealth = anEntity->mProperties.get<float>("Health");$/;"	l
+anHeight	src/TTX/classes/mapLoader/MapLoader.cpp	/^   int anWidth,anHeight,anTileWidth,anTileHeight;$/;"	l
+anHeight	trashCode/B2Ground.hpp	/^      float anWidth,anHeight;$/;"	l
+anImpulse	src/TTX/systems/B2System.cpp	/^   Position2D anImpulse = theEntity->mProperties.get<Position2D>("pInitialImpulse");$/;"	l
+anInstance	src/TTX/gameStates/IActionState.cpp	/^        GQE::Instance* anInstance = addInstance(thePrototype, thePosition);$/;"	l
+anInstance	src/TTX/gameStates/IActionState.cpp	/^    GQE::Instance* anInstance = anPrototype->makeInstance();$/;"	l
+anIter	include/TTX/classes/render/RenderManager.hpp	/^      std::map<LayerID,Layer>::iterator anIter;$/;"	l
+anIter	src/TTX/systems/AnimationSystem.cpp	/^   std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;$/;"	l
+anIter	src/TTX/systems/B2System.cpp	/^   std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;$/;"	l
+anIter	src/TTX/systems/B2System.cpp	/^   std::vector<b2FixtureDef>::iterator anIter;$/;"	l
+anIter	src/TTX/systems/HealthSystem.cpp	/^   std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;$/;"	l
+anIter	src/TTX/systems/ParticleSystem.cpp	/^   std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;$/;"	l
+anIter	src/TTX/systems/PlayerSystem.cpp	/^   std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;$/;"	l
+anIter	src/TTX/systems/PropellerSystem.cpp	/^   std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;$/;"	l
+anIter	src/TTX/systems/RenderSystem.cpp	/^   std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;$/;"	l
+anIter	trashCode/ObjectSystemOld.cpp	/^   std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;$/;"	l
+anIter	trashCode/ObjectSystemOld.cpp	/^   std::vector<b2FixtureDef>::iterator anIter;$/;"	l
+anJoy	src/TTX/systems/PlayerSystem.cpp	/^   int anJoy = theEntity->mProperties.get<int>("iJoystick");$/;"	l
+anLayerID	src/TTX/classes/mapLoader/MapLoader.cpp	/^      LayerID anLayerID = LayerID(anLayer->Attribute("name"));$/;"	l
+anLayerID	src/TTX/classes/particles/Particles.cpp	/^      LayerID anLayerID = getParticleLayer(*it);$/;"	l
+anLayerID	src/TTX/systems/RenderSystem.cpp	/^            LayerID  anLayerID  = anEntity->mProperties.get<LayerID>("rLayerID");$/;"	l
+anLayer	src/TTX/classes/mapLoader/MapLoader.cpp	/^   tinyxml2::XMLElement *anLayer = anMap->FirstChildElement("layer");$/;"	l
+anLength	ext_libs/include/MPE/classes/Vec2.hpp	/^      Real anLength = length();$/;"	l
+anLength	src/TTX/classes/mapLoader/MapLoader.cpp	/^      int anLength;$/;"	l
+anLength	src/TTX/systems/PlayerSystem.cpp	/^   float anLength = anJoyStick.Length();$/;"	l
+anLoaded	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^          bool anLoaded = mAssetHandler.loadAsset(mAssetID);$/;"	l
+anMap	src/TTX/classes/mapLoader/MapLoader.cpp	/^   tinyxml2::XMLElement *anMap = mMap.FirstChildElement("map");$/;"	l
+anMoveData	src/TTX/systems/PlayerSystem.cpp	/^   MoveData anMoveData;$/;"	l
+anMoveData	src/TTX/systems/PropellerSystem.cpp	/^         MoveData anMoveData = anEntity->mProperties.get<MoveData>("vMoveData");$/;"	l
+anObject	src/TTX/classes/mapLoader/MapLoader.cpp	/^   tinyxml2::XMLElement* anObject = anShapes->FirstChildElement("object");$/;"	l
+anOpacity	src/TTX/classes/mapLoader/MapLoader.cpp	/^      float anOpacity = anLayer->FloatAttribute("opacity");$/;"	l
+anPlayerID	src/TTX/gameStates/IActionState.cpp	/^        GQE::typeEntityID anPlayerID = mSystems["PlayerSystem"]->addEntity(anInstance);$/;"	l
+anPointsArray	src/TTX/classes/mapLoader/MapLoader.cpp	/^      b2Vec2* anPointsArray = (b2Vec2*)malloc(nPoints * sizeof(b2Vec2));$/;"	l
+anPoints	src/TTX/classes/mapLoader/MapLoader.cpp	/^      tinyxml2::XMLElement* anPoints = anObject->FirstChildElement("polyline");$/;"	l
+anPosition	src/TTX/classes/objects/Propeller.cpp	/^         b2Vec2 anPosition = mBody->GetWorldCenter(); $/;"	l
+anPosition	src/TTX/classes/objects/Weapon.cpp	/^      Position2D anPosition = Position2D(thePosition.x + anX,  $/;"	l
+anPosition	src/TTX/classes/particles/Particles.cpp	/^      mpe::Vec2 anPosition = it->getPosition();$/;"	l
+anPosition	src/TTX/systems/B2System.cpp	/^         b2Vec2 anPosition = anBody->GetPosition();$/;"	l
+anPosition	src/TTX/systems/B2System.cpp	/^   sf::Vector2f anPosition = theEntity->mProperties.get<sf::Vector2f>("vPosition");$/;"	l
+anPosition	src/TTX/systems/ParticleSystem.cpp	/^         sf::Vector2f anPosition =$/;"	l
+anPosition	src/TTX/systems/ParticleSystem.cpp	/^   sf::Vector2f anPosition =$/;"	l
+anPosition	src/TTX/systems/PlayerSystem.cpp	/^         sf::Vector2f anPosition = anEntity->mProperties.get<sf::Vector2f>("vPosition");$/;"	l
+anPosition	src/TTX/systems/PlayerSystem.cpp	/^      sf::Vector2f anPosition = theEntity->mProperties.get<sf::Vector2f>("vPosition");$/;"	l
+anPosition	src/TTX/systems/RenderSystem.cpp	/^            sf::Vector2f anPosition = anEntity->mProperties.get<sf::Vector2f>("vPosition") * mFactor;$/;"	l
+anPositions	src/TTX/classes/mapLoader/MapLoader.cpp	/^            sf::Vector2f anPositions[4];$/;"	l
+anPositions	src/TTX/classes/particles/Particles.cpp	/^      sf::Vector2f anPositions[4];$/;"	l
+anPositions	src/TTX/systems/PlayerSystem.cpp	/^   std::vector<sf::Vector2f> anPositions;$/;"	l
+anPositions	src/TTX/systems/RenderSystem.cpp	/^            sf::Vector2f anPositions[4];$/;"	l
+anPower	src/TTX/classes/objects/Propeller.cpp	/^      float anPower = anDirection.LengthSquared();$/;"	l
+anPropeller	include/TTX/prototypes/BasicShip.hpp	/^        Propeller anPropeller;$/;"	l
+anPropeller	src/TTX/systems/PropellerSystem.cpp	/^         Propeller* anPropeller = anEntity->mProperties.getPointer<Propeller>("pPropeller");$/;"	l
+anPropeller	src/TTX/systems/PropellerSystem.cpp	/^   Propeller* anPropeller = theEntity->mProperties.getPointer<Propeller>("pPropeller");$/;"	l
+anProperty	ext_libs/include/GQE/Core/classes/PropertyManager.hpp	/^            TProperty<TYPE>* anProperty=new(std::nothrow) TProperty<TYPE>(thePropertyID);$/;"	l
+anProperty	ext_libs/include/GQE/Core/interfaces/TProperty.hpp	/^        TProperty<TYPE>* anProperty = new(std::nothrow) TProperty<TYPE>(getID());$/;"	l
+anPrototype	src/TTX/gameStates/IActionState.cpp	/^    GQE::Prototype* anPrototype = mPrototypes.getPrototype(thePrototype);$/;"	l
+anQueue	src/TTX/systems/AnimationSystem.cpp	/^      std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();$/;"	l
+anQueue	src/TTX/systems/B2System.cpp	/^      std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();$/;"	l
+anQueue	src/TTX/systems/HealthSystem.cpp	/^      std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();$/;"	l
+anQueue	src/TTX/systems/ParticleSystem.cpp	/^      std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();$/;"	l
+anQueue	src/TTX/systems/PlayerSystem.cpp	/^      std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();$/;"	l
+anQueue	src/TTX/systems/PropellerSystem.cpp	/^      std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();$/;"	l
+anQueue	src/TTX/systems/RenderSystem.cpp	/^      std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();$/;"	l
+anQueue	trashCode/ObjectSystemOld.cpp	/^      std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();$/;"	l
+anResult	ext_libs/include/GQE/Core/classes/AssetManager.hpp	/^        TAssetHandler<TYPE>* anResult = NULL;$/;"	l
+anResult	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        AssetDropTime anResult = AssetDropUnspecified;$/;"	l
+anResult	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        AssetLoadStyle anResult = AssetLoadFromUnknown;$/;"	l
+anResult	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        AssetLoadTime anResult = AssetLoadLater;$/;"	l
+anResult	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        TYPE* anResult = NULL;$/;"	l
+anResult	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        bool anResult = false;$/;"	l
+anResult	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        bool anResult = true;$/;"	l
+anResult	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        std::string anResult;$/;"	l
+anReturn	ext_libs/include/GQE/Core/classes/PropertyManager.hpp	/^        TYPE anReturn=TYPE();$/;"	l
+anReturn	ext_libs/include/GQE/Core/classes/PropertyManager.hpp	/^        TYPE* anReturn = NULL;$/;"	l
+anScale	src/TTX/systems/RenderSystem.cpp	/^            sf::Vector2f anScale    = anEntity->mProperties.get<sf::Vector2f>("vScale");$/;"	l
+anSceneDef	src/TTX/classes/mapLoader/MapLoader.cpp	/^      b2BodyDef anSceneDef;$/;"	l
+anScene	src/TTX/classes/mapLoader/MapLoader.cpp	/^      b2Body* anScene = theWorld.CreateBody(&anSceneDef);$/;"	l
 anShape	trashCode/B2Ground.hpp	/^      b2PolygonShape anShape; \/\/ Must be here o no lost the reference of the pointer $/;"	m	class:B2Ground
+anSin	src/TTX/classes/objects/Weapon.cpp	/^      float anSin = std::sin(thePosition.angle);$/;"	l
+anSpriteTexture	src/TTX/gameStates/GameStateOne.cpp	/^   sf::Texture* anSpriteTexture =$/;"	l
+anTexCoords	src/TTX/classes/mapLoader/MapLoader.cpp	/^            sf::Vector2f anTexCoords[4];$/;"	l
+anTexCoords	src/TTX/classes/particles/Particles.cpp	/^      sf::Vector2f anTexCoords[4];$/;"	l
+anTexCoords	src/TTX/systems/RenderSystem.cpp	/^            sf::Vector2f anTexCoords[4];$/;"	l
+anTexRect	src/TTX/classes/particles/Particles.cpp	/^      mpe::TextRect anTexRect = it->getTextRect();$/;"	l
+anTexRect	src/TTX/systems/AnimationSystem.cpp	/^         sf::IntRect anTexRect = anAnimation->getFrame();$/;"	l
+anTexRect	src/TTX/systems/RenderSystem.cpp	/^            sf::IntRect anTexRect  = anEntity->mProperties.get<sf::IntRect>("rTexRect");$/;"	l
+anTextureX	src/TTX/classes/mapLoader/MapLoader.cpp	/^            int anTextureX = anTileGID % anColumns;$/;"	l
+anTextureY	src/TTX/classes/mapLoader/MapLoader.cpp	/^            int anTextureY = anTileGID \/ anColumns;$/;"	l
+anTileGID	src/TTX/classes/mapLoader/MapLoader.cpp	/^         int anTileGID =tileElement->IntAttribute("gid")-1;$/;"	l
+anTileHeight	src/TTX/classes/mapLoader/MapLoader.cpp	/^   int anWidth,anHeight,anTileWidth,anTileHeight;$/;"	l
+anTileTexture	src/TTX/gameStates/GameStateOne.cpp	/^   sf::Texture* anTileTexture =$/;"	l
+anTileWidth	src/TTX/classes/mapLoader/MapLoader.cpp	/^   int anWidth,anHeight,anTileWidth,anTileHeight;$/;"	l
+anTime	src/TTX/classes/objects/Weapon.cpp	/^   float anTime = theState.getElapsedTime();$/;"	l
+anTransform	src/TTX/classes/particles/Particles.cpp	/^      sf::Transform anTransform;$/;"	l
+anTransform	src/TTX/systems/B2System.cpp	/^   sf::Transform anTransform;$/;"	l
+anTransform	src/TTX/systems/RenderSystem.cpp	/^            sf::Transform anTransform;$/;"	l
+anViewChanged	src/TTX/systems/PlayerSystem.cpp	/^   bool anViewChanged = false;$/;"	l
+anWeapon	include/TTX/prototypes/BasicShip.hpp	/^        Weapon anWeapon;$/;"	l
+anWeapon	src/TTX/systems/PlayerSystem.cpp	/^      Weapon* anWeapon = theEntity->mProperties.getPointer<Weapon>("wWeapon");$/;"	l
+anWidth	src/TTX/classes/mapLoader/MapLoader.cpp	/^   int anWidth,anHeight,anTileWidth,anTileHeight;$/;"	l
+anWidth	trashCode/B2Ground.hpp	/^      float anWidth,anHeight;$/;"	l
+anWorld	trashCode/B2Instance.cpp	/^   b2World* anWorld = anBody->GetWorld();$/;"	l
+anX0	src/TTX/classes/mapLoader/MapLoader.cpp	/^      int anX0 = anObject->IntAttribute("x");$/;"	l
+anX	src/TTX/classes/mapLoader/MapLoader.cpp	/^      int anX = 0;$/;"	l
+anX	src/TTX/classes/objects/Weapon.cpp	/^      float anX = mPosition.x * anCos - mPosition.y * anSin;$/;"	l
+anY0	src/TTX/classes/mapLoader/MapLoader.cpp	/^      int anY0 = anObject->IntAttribute("y");$/;"	l
+anY	src/TTX/classes/mapLoader/MapLoader.cpp	/^      int anY = 0;$/;"	l
+anY	src/TTX/classes/objects/Weapon.cpp	/^      float anY = mPosition.y * anCos + mPosition.x * anSin;$/;"	l
+angle	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 angle = (1.0f - beta) * a0 + beta * a;$/;"	l
 angle	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	float32 angle;$/;"	m	struct:b2BodyDef
 angle	include/TTX/Types.hpp	/^   float x, y, angle;$/;"	m	struct:Position2D
 angularA	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	float32 angularA;$/;"	m	struct:b2Jacobian
@@ -1930,12 +2122,19 @@ b2_toiBaugarte	ext_libs/include/Box2D/Common/b2Settings.h	113;"	d
 b2_velocityThreshold	ext_libs/include/Box2D/Common/b2Settings.h	89;"	d
 begin	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      const_iterator begin() const {return mParticles;}$/;"	f	class:mpe::ParticleContainer
 begin	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      iterator begin() {return mParticles;}$/;"	f	class:mpe::ParticleContainer
+bestIndex	ext_libs/include/Box2D/Collision/b2Distance.h	/^	int32 bestIndex = 0;$/;"	l
+bestValue	ext_libs/include/Box2D/Collision/b2Distance.h	/^	float32 bestValue = b2Dot(m_vertices[0], d);$/;"	l
 bitsPerPixel	ext_libs/include/SFML/Window/VideoMode.hpp	/^    unsigned int bitsPerPixel; \/\/\/< Video mode pixel depth, in bits per pixels$/;"	m	class:sf::VideoMode
 blendMode	ext_libs/include/SFML/Graphics/RenderStates.hpp	/^    BlendMode      blendMode; \/\/\/< Blending mode$/;"	m	class:sf::RenderStates
+b	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 a = ex.x, b = ey.x, c = ex.y, d = ey.y;$/;"	l
+b	ext_libs/include/TinyXML2/tinyxml2.h	/^        bool b=false;$/;"	l
+block	ext_libs/include/TinyXML2/tinyxml2.h	/^            Block* block = new Block();$/;"	l
 b	ext_libs/include/Box2D/Common/b2Draw.h	/^	float32 r, g, b;$/;"	m	struct:b2Color
 b	ext_libs/include/MPE/Config.hpp	/^   Integer r, g, b, a;$/;"	m	struct:mpe::Color
 b	ext_libs/include/SFML/Graphics/Color.hpp	/^    Uint8 b; \/\/\/< Blue component$/;"	m	class:sf::Color
+bodyA	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	const b2Body* bodyA = m_fixtureA->GetBody();$/;"	l
 bodyA	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	b2Body* bodyA;$/;"	m	struct:b2JointDef
+bodyB	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	const b2Body* bodyB = m_fixtureB->GetBody();$/;"	l
 bodyB	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	b2Body* bodyB;$/;"	m	struct:b2JointDef
 bounds	ext_libs/include/SFML/Graphics/Glyph.hpp	/^    FloatRect bounds;      \/\/\/< Bounding rectangle of the glyph, in coordinates relative to the baseline$/;"	m	class:sf::Glyph
 broadphase	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 broadphase;$/;"	m	struct:b2Profile
@@ -1952,8 +2151,12 @@ check	ext_libs/include/SFML/Audio/SoundFileFactory.hpp	/^        bool (*check)(c
 child1	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	int32 child1;$/;"	m	struct:b2TreeNode
 child2	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	int32 child2;$/;"	m	struct:b2TreeNode
 childIndex	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	int32 childIndex;$/;"	m	struct:b2FixtureProxy
+chunk	ext_libs/include/TinyXML2/tinyxml2.h	/^        Chunk* chunk = (Chunk*)mem;$/;"	l
 chunk	ext_libs/include/TinyXML2/tinyxml2.h	/^        Chunk chunk[COUNT];$/;"	m	struct:tinyxml2::MemPoolT::Block
 clear	include/TTX/classes/render/RenderManager.hpp	/^   void clear()$/;"	f	class:RenderManager
+c	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^		b2Vec2 c = node->aabb.GetCenter();$/;"	l
+c	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 a = ex.x, b = ey.x, c = ex.y, d = ey.y;$/;"	l
+c	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec2 c = a - b;$/;"	l
 c	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec2 c0, c;		\/\/\/< center world positions$/;"	m	struct:b2Sweep
 c	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 s, c;$/;"	m	struct:b2Rot
 c	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	b2Vec2 c;$/;"	m	struct:b2Position
@@ -1968,6 +2171,9 @@ contactIndex	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	int32
 contact	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	b2Contact* contact;		\/\/\/< the contact$/;"	m	struct:b2ContactEdge
 contacts	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	b2Contact** contacts;$/;"	m	struct:b2ContactSolverDef
 control	ext_libs/include/SFML/Window/Event.hpp	/^        bool          control; \/\/\/< Is the Control key pressed?$/;"	m	struct:sf::Event::KeyEvent
+convert	ext_libs/include/Box2D/Common/b2Math.h	/^	} convert;$/;"	l
+count	include/TTX/prototypes/BasicShip.hpp	/^        int32 count=3;$/;"	l
+count	include/TTX/prototypes/Rombo.hpp	/^        int32 count=4;$/;"	l
 count	ext_libs/include/Box2D/Collision/b2Distance.h	/^	uint16 count;$/;"	m	struct:b2SimplexCache
 count	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	int32 count;$/;"	m	struct:b2ContactSolverDef
 count	ext_libs/include/Box2D/Dynamics/b2WorldCallbacks.h	/^	int32 count;$/;"	m	struct:b2ContactImpulse
@@ -1977,6 +2183,8 @@ createFcn	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	b2ContactCreat
 create	src/TTX/classes/particles/Affectors.cpp	/^std::shared_ptr<DisolveAffector> DisolveAffector::create(mpe::Real theColorFactor)$/;"	f	class:DisolveAffector
 create	ext_libs/include/SFML/Audio/SoundFileFactory.hpp	/^        SoundFileReader* (*create)();$/;"	m	struct:sf::SoundFileFactory::ReaderFactory
 create	ext_libs/include/SFML/Audio/SoundFileFactory.hpp	/^        SoundFileWriter* (*create)();$/;"	m	struct:sf::SoundFileFactory::WriterFactory
+d1	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2Vec2 d1, d2;$/;"	l
+d2	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2Vec2 d1, d2;$/;"	l
 dampingRatio	ext_libs/include/Box2D/Dynamics/Joints/b2DistanceJoint.h	/^	float32 dampingRatio;$/;"	m	struct:b2DistanceJointDef
 dampingRatio	ext_libs/include/Box2D/Dynamics/Joints/b2MouseJoint.h	/^	float32 dampingRatio;$/;"	m	struct:b2MouseJointDef
 dampingRatio	ext_libs/include/Box2D/Dynamics/Joints/b2WeldJoint.h	/^	float32 dampingRatio;$/;"	m	struct:b2WeldJointDef
@@ -1989,9 +2197,14 @@ density	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	float32 density;$/;"	m	st
 depthBits	ext_libs/include/SFML/Window/ContextSettings.hpp	/^    unsigned int depthBits;         \/\/\/< Bits of the depth buffer$/;"	m	struct:sf::ContextSettings
 destroyFcn	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	b2ContactDestroyFcn* destroyFcn;$/;"	m	struct:b2ContactRegister
 destroy	trashCode/B2Instance.cpp	/^void B2Instance::destroy(void)$/;"	f	class:B2Instance
+det	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 det = a * d - b * c;$/;"	l
+det	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 det = a11 * a22 - a12 * a21;$/;"	l
 die	ext_libs/include/MPE/classes/Mortal.hpp	/^   inline void die()$/;"	f	class:mpe::Mortal
 die	ext_libs/include/MPE/components/Mortal.hpp	/^      inline void die()$/;"	f	class:mpe::Mortal
 distance	ext_libs/include/Box2D/Collision/b2Distance.h	/^	float32 distance;$/;"	m	struct:b2DistanceOutput
+d	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2Vec2 d = upperBound - lowerBound;$/;"	l
+d	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 a = ex.x, b = ey.x, c = ex.y, d = ey.y;$/;"	l
+d	ext_libs/include/TinyXML2/tinyxml2.h	/^        double d=0;$/;"	l
 doEvent	ext_libs/include/GQE/Core/interfaces/TEvent.hpp	/^      virtual void doEvent(void* theContext = NULL)$/;"	f	class:GQE::TEvent
 doInit	src/TTX/gameStates/GameStateOne.cpp	/^void GameStateOne::doInit(void)$/;"	f	class:GameStateOne
 drawLayer	include/TTX/classes/render/RenderManager.hpp	/^   void drawLayer(LayerID theID,sf::RenderWindow& theRenderWindow)$/;"	f	class:RenderManager
@@ -2011,51 +2224,51 @@ dropReference	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      vir
 dropTime	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        AssetDropTime  dropTime;  \/\/\/< Drop time at (Zero, Exit)$/;"	m	struct:GQE::TAssetHandler::typeAssetData
 dtRatio	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 dtRatio;	\/\/ dt * inv_dt0$/;"	m	struct:b2TimeStep
 dt	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 dt;			\/\/ time step$/;"	m	struct:b2TimeStep
-e_aabbBit	ext_libs/include/Box2D/Common/b2Draw.h	/^		e_aabbBit				= 0x0004,	\/\/\/< draw axis aligned bounding boxes$/;"	e	enum:b2Draw::__anon19
-e_activeFlag	ext_libs/include/Box2D/Dynamics/b2Body.h	/^		e_activeFlag		= 0x0020,$/;"	e	enum:b2Body::__anon15
+e_aabbBit	ext_libs/include/Box2D/Common/b2Draw.h	/^		e_aabbBit				= 0x0004,	\/\/\/< draw axis aligned bounding boxes$/;"	e	enum:b2Draw::__anon7
+e_activeFlag	ext_libs/include/Box2D/Dynamics/b2Body.h	/^		e_activeFlag		= 0x0020,$/;"	e	enum:b2Body::__anon2
 e_atLowerLimit	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	e_atLowerLimit,$/;"	e	enum:b2LimitState
 e_atUpperLimit	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	e_atUpperLimit,$/;"	e	enum:b2LimitState
-e_autoSleepFlag	ext_libs/include/Box2D/Dynamics/b2Body.h	/^		e_autoSleepFlag		= 0x0004,$/;"	e	enum:b2Body::__anon15
-e_awakeFlag	ext_libs/include/Box2D/Dynamics/b2Body.h	/^		e_awakeFlag			= 0x0002,$/;"	e	enum:b2Body::__anon15
-e_bulletFlag	ext_libs/include/Box2D/Dynamics/b2Body.h	/^		e_bulletFlag		= 0x0008,$/;"	e	enum:b2Body::__anon15
-e_bulletHitFlag	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^		e_bulletHitFlag		= 0x0010,$/;"	e	enum:b2Contact::__anon14
-e_centerOfMassBit	ext_libs/include/Box2D/Common/b2Draw.h	/^		e_centerOfMassBit		= 0x0010	\/\/\/< draw center of mass frame$/;"	e	enum:b2Draw::__anon19
+e_autoSleepFlag	ext_libs/include/Box2D/Dynamics/b2Body.h	/^		e_autoSleepFlag		= 0x0004,$/;"	e	enum:b2Body::__anon2
+e_awakeFlag	ext_libs/include/Box2D/Dynamics/b2Body.h	/^		e_awakeFlag			= 0x0002,$/;"	e	enum:b2Body::__anon2
+e_bulletFlag	ext_libs/include/Box2D/Dynamics/b2Body.h	/^		e_bulletFlag		= 0x0008,$/;"	e	enum:b2Body::__anon2
+e_bulletHitFlag	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^		e_bulletHitFlag		= 0x0010,$/;"	e	enum:b2Contact::__anon3
+e_centerOfMassBit	ext_libs/include/Box2D/Common/b2Draw.h	/^		e_centerOfMassBit		= 0x0010	\/\/\/< draw center of mass frame$/;"	e	enum:b2Draw::__anon7
 e_chain	ext_libs/include/Box2D/Collision/Shapes/b2Shape.h	/^		e_chain = 3,$/;"	e	enum:b2Shape::Type
 e_circle	ext_libs/include/Box2D/Collision/Shapes/b2Shape.h	/^		e_circle = 0,$/;"	e	enum:b2Shape::Type
 e_circles	ext_libs/include/Box2D/Collision/b2Collision.h	/^		e_circles,$/;"	e	enum:b2Manifold::Type
-e_clearForces	ext_libs/include/Box2D/Dynamics/b2World.h	/^		e_clearForces	= 0x0004$/;"	e	enum:b2World::__anon16
+e_clearForces	ext_libs/include/Box2D/Dynamics/b2World.h	/^		e_clearForces	= 0x0004$/;"	e	enum:b2World::__anon1
 e_distanceJoint	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	e_distanceJoint,$/;"	e	enum:b2JointType
 e_edge	ext_libs/include/Box2D/Collision/Shapes/b2Shape.h	/^		e_edge = 1,$/;"	e	enum:b2Shape::Type
-e_enabledFlag	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^		e_enabledFlag		= 0x0004,$/;"	e	enum:b2Contact::__anon14
+e_enabledFlag	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^		e_enabledFlag		= 0x0004,$/;"	e	enum:b2Contact::__anon3
 e_equalLimits	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	e_equalLimits$/;"	e	enum:b2LimitState
 e_faceA	ext_libs/include/Box2D/Collision/b2Collision.h	/^		e_faceA,$/;"	e	enum:b2Manifold::Type
 e_faceB	ext_libs/include/Box2D/Collision/b2Collision.h	/^		e_faceB$/;"	e	enum:b2Manifold::Type
 e_face	ext_libs/include/Box2D/Collision/b2Collision.h	/^		e_face = 1$/;"	e	enum:b2ContactFeature::Type
 e_failed	ext_libs/include/Box2D/Collision/b2TimeOfImpact.h	/^		e_failed,$/;"	e	enum:b2TOIOutput::State
-e_filterFlag	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^		e_filterFlag		= 0x0008,$/;"	e	enum:b2Contact::__anon14
-e_fixedRotationFlag	ext_libs/include/Box2D/Dynamics/b2Body.h	/^		e_fixedRotationFlag	= 0x0010,$/;"	e	enum:b2Body::__anon15
+e_filterFlag	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^		e_filterFlag		= 0x0008,$/;"	e	enum:b2Contact::__anon3
+e_fixedRotationFlag	ext_libs/include/Box2D/Dynamics/b2Body.h	/^		e_fixedRotationFlag	= 0x0010,$/;"	e	enum:b2Body::__anon2
 e_frictionJoint	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	e_frictionJoint,$/;"	e	enum:b2JointType
 e_gearJoint	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	e_gearJoint,$/;"	e	enum:b2JointType
 e_inactiveLimit	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	e_inactiveLimit,$/;"	e	enum:b2LimitState
-e_islandFlag	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^		e_islandFlag		= 0x0001,$/;"	e	enum:b2Contact::__anon14
-e_islandFlag	ext_libs/include/Box2D/Dynamics/b2Body.h	/^		e_islandFlag		= 0x0001,$/;"	e	enum:b2Body::__anon15
-e_jointBit	ext_libs/include/Box2D/Common/b2Draw.h	/^		e_jointBit				= 0x0002,	\/\/\/< draw joint connections$/;"	e	enum:b2Draw::__anon19
-e_locked	ext_libs/include/Box2D/Dynamics/b2World.h	/^		e_locked		= 0x0002,$/;"	e	enum:b2World::__anon16
+e_islandFlag	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^		e_islandFlag		= 0x0001,$/;"	e	enum:b2Contact::__anon3
+e_islandFlag	ext_libs/include/Box2D/Dynamics/b2Body.h	/^		e_islandFlag		= 0x0001,$/;"	e	enum:b2Body::__anon2
+e_jointBit	ext_libs/include/Box2D/Common/b2Draw.h	/^		e_jointBit				= 0x0002,	\/\/\/< draw joint connections$/;"	e	enum:b2Draw::__anon7
+e_locked	ext_libs/include/Box2D/Dynamics/b2World.h	/^		e_locked		= 0x0002,$/;"	e	enum:b2World::__anon1
 e_mouseJoint	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	e_mouseJoint,$/;"	e	enum:b2JointType
-e_newFixture	ext_libs/include/Box2D/Dynamics/b2World.h	/^		e_newFixture	= 0x0001,$/;"	e	enum:b2World::__anon16
-e_nullProxy	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^		e_nullProxy = -1$/;"	e	enum:b2BroadPhase::__anon18
+e_newFixture	ext_libs/include/Box2D/Dynamics/b2World.h	/^		e_newFixture	= 0x0001,$/;"	e	enum:b2World::__anon1
+e_nullProxy	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^		e_nullProxy = -1$/;"	e	enum:b2BroadPhase::__anon5
 e_overlapped	ext_libs/include/Box2D/Collision/b2TimeOfImpact.h	/^		e_overlapped,$/;"	e	enum:b2TOIOutput::State
-e_pairBit	ext_libs/include/Box2D/Common/b2Draw.h	/^		e_pairBit				= 0x0008,	\/\/\/< draw broad-phase pairs$/;"	e	enum:b2Draw::__anon19
+e_pairBit	ext_libs/include/Box2D/Common/b2Draw.h	/^		e_pairBit				= 0x0008,	\/\/\/< draw broad-phase pairs$/;"	e	enum:b2Draw::__anon7
 e_polygon	ext_libs/include/Box2D/Collision/Shapes/b2Shape.h	/^		e_polygon = 2,$/;"	e	enum:b2Shape::Type
 e_prismaticJoint	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	e_prismaticJoint,$/;"	e	enum:b2JointType
 e_pulleyJoint	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	e_pulleyJoint,$/;"	e	enum:b2JointType
 e_revoluteJoint	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	e_revoluteJoint,$/;"	e	enum:b2JointType
 e_ropeJoint	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	e_ropeJoint$/;"	e	enum:b2JointType
 e_separated	ext_libs/include/Box2D/Collision/b2TimeOfImpact.h	/^		e_separated$/;"	e	enum:b2TOIOutput::State
-e_shapeBit	ext_libs/include/Box2D/Common/b2Draw.h	/^		e_shapeBit				= 0x0001,	\/\/\/< draw shapes$/;"	e	enum:b2Draw::__anon19
-e_toiFlag	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^		e_toiFlag			= 0x0020$/;"	e	enum:b2Contact::__anon14
-e_toiFlag	ext_libs/include/Box2D/Dynamics/b2Body.h	/^		e_toiFlag			= 0x0040$/;"	e	enum:b2Body::__anon15
-e_touchingFlag	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^		e_touchingFlag		= 0x0002,$/;"	e	enum:b2Contact::__anon14
+e_shapeBit	ext_libs/include/Box2D/Common/b2Draw.h	/^		e_shapeBit				= 0x0001,	\/\/\/< draw shapes$/;"	e	enum:b2Draw::__anon7
+e_toiFlag	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^		e_toiFlag			= 0x0020$/;"	e	enum:b2Contact::__anon3
+e_toiFlag	ext_libs/include/Box2D/Dynamics/b2Body.h	/^		e_toiFlag			= 0x0040$/;"	e	enum:b2Body::__anon2
+e_touchingFlag	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^		e_touchingFlag		= 0x0002,$/;"	e	enum:b2Contact::__anon3
 e_touching	ext_libs/include/Box2D/Collision/b2TimeOfImpact.h	/^		e_touching,$/;"	e	enum:b2TOIOutput::State
 e_typeCount	ext_libs/include/Box2D/Collision/Shapes/b2Shape.h	/^		e_typeCount = 4$/;"	e	enum:b2Shape::Type
 e_unknownJoint	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	e_unknownJoint,$/;"	e	enum:b2JointType
@@ -2070,18 +2283,42 @@ enableMotor	ext_libs/include/Box2D/Dynamics/Joints/b2RevoluteJoint.h	/^	bool ena
 enableMotor	ext_libs/include/Box2D/Dynamics/Joints/b2WheelJoint.h	/^	bool enableMotor;$/;"	m	struct:b2WheelJointDef
 end	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      const_iterator end() const {return mParticles + mSize;}$/;"	f	class:mpe::ParticleContainer
 end	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      iterator end() {return mParticles + mSize;}$/;"	f	class:mpe::ParticleContainer
+endl	ext_libs/include/GQE/Core/classes/AssetManager.hpp	/^           << typeid(TYPE).name() << ") not found!" << std::endl;$/;"	m	class:GQE::AssetManager::std
+endl	ext_libs/include/GQE/Core/classes/PropertyManager.hpp	/^                   << thePropertyID << ") type" << std::endl;$/;"	m	class:GQE::PropertyManager::std
+endl	ext_libs/include/GQE/Core/classes/PropertyManager.hpp	/^                   << thePropertyID << ")" << std::endl;$/;"	m	class:GQE::PropertyManager::std
+endl	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^                << theAssetID << ") Setting load style to load from a file" << std::endl;$/;"	m	class:GQE::TAssetHandler::std
+endl	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^                << theAssetID << ") Setting load style to load from memory" << std::endl;$/;"	m	class:GQE::TAssetHandler::std
+endl	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^                << theAssetID << ") Setting load style to load from network" << std::endl;$/;"	m	class:GQE::TAssetHandler::std
+endl	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^                << theAssetID << ") Setting load style to load from unknown source!" << std::endl;$/;"	m	class:GQE::TAssetHandler::std
+endl	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^                << theAssetID << ") Setting load time to later" << std::endl;$/;"	m	class:GQE::TAssetHandler::std
+endl	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^                << theAssetID << ") Setting load time to now" << std::endl;$/;"	m	class:GQE::TAssetHandler::std
+endl	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^                << theAssetID << ") Setting load time to unknown!" << std::endl;$/;"	m	class:GQE::TAssetHandler::std
+endl	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^                << theAssetID << ") unknown loading style specified!" << std::endl;$/;"	m	class:GQE::TAssetHandler::std
+endl	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^              << theAssetID << ") Asset is already loaded" << std::endl;$/;"	m	class:GQE::TAssetHandler::std
+endl	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^              << theAssetID << ") Unknown drop time specified!" << std::endl;$/;"	m	class:GQE::TAssetHandler::std
+endl	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^            << std::endl;$/;"	m	class:GQE::TAssetHandler::std
+endl	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^          << theAssetID << ") Creating asset" << std::endl;$/;"	m	class:GQE::TAssetHandler::std
+endl	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^          << theAssetID << ") Releasing asset" << std::endl;$/;"	m	class:GQE::TAssetHandler::std
+endl	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        ILOG() << "TAssetHandler::ctor(" << getID() << ")" << std::endl;$/;"	m	class:GQE::TAssetHandler::std
+endl	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        ILOG() << "TAssetHandler::dtor(" << getID() << ")" << std::endl;$/;"	m	class:GQE::TAssetHandler::std
+endl	src/TTX/classes/mapLoader/MapLoader.cpp	/^         std::cout << "Bad map. No layer information found." << std::endl;$/;"	m	class:std	file:
+endl	src/TTX/classes/mapLoader/MapLoader.cpp	/^         std::cout << "Bad map. No tile information found." << std::endl;$/;"	m	class:std	file:
+endl	src/TTX/classes/mapLoader/MapLoader.cpp	/^      std::cout << "Loading level \\"" << theFileName << "\\" failed." << std::endl;$/;"	m	class:std	file:
+endl	src/TTX/gameStates/IActionState.cpp	/^        ELOG() << "SystemManager::addSystem() Null pointer provided!" << std::endl;$/;"	m	class:std	file:
 ex	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec2 ex, ey;$/;"	m	struct:b2Mat22
 ex	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec3 ex, ey, ez;$/;"	m	struct:b2Mat33
 ey	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec2 ex, ey;$/;"	m	struct:b2Mat22
 ey	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec3 ex, ey, ez;$/;"	m	struct:b2Mat33
 ez	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec3 ex, ey, ez;$/;"	m	struct:b2Mat33
 family	ext_libs/include/SFML/Graphics/Font.hpp	/^        std::string family; \/\/\/< The font family$/;"	m	struct:sf::Font::Info
+fatAABB	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^		const b2AABB& fatAABB = m_tree.GetFatAABB(m_queryProxyId);$/;"	l
 filename	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        std::string    filename;  \/\/\/< Filename to use when loading this asset$/;"	m	struct:GQE::TAssetHandler::typeAssetData
 filter	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	b2Filter filter;$/;"	m	struct:b2FixtureDef
 finger	ext_libs/include/SFML/Window/Event.hpp	/^        unsigned int finger; \/\/\/< Index of the finger in case of multi-touch events$/;"	m	struct:sf::Event::TouchEvent
 fire	src/TTX/classes/objects/Weapon.cpp	/^void Weapon::fire(Position2D thePosition,IActionState& theState)$/;"	f	class:Weapon
 fixedRotation	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	bool fixedRotation;$/;"	m	struct:b2BodyDef
 fixture	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	b2Fixture* fixture;$/;"	m	struct:b2FixtureProxy
+f	ext_libs/include/TinyXML2/tinyxml2.h	/^        float f=0;$/;"	l
 float32	ext_libs/include/Box2D/Common/b2Settings.h	/^typedef float float32;$/;"	t
 float64	ext_libs/include/Box2D/Common/b2Settings.h	/^typedef double float64;$/;"	t
 fraction	ext_libs/include/Box2D/Collision/b2Collision.h	/^	float32 fraction;$/;"	m	struct:b2RayCastOutput
@@ -2178,8 +2415,14 @@ height	ext_libs/include/SFML/Graphics/Font.hpp	/^        unsigned int height; \/
 height	ext_libs/include/SFML/Graphics/Rect.hpp	/^    T height; \/\/\/< Height of the rectangle$/;"	m	class:sf::Rect
 height	ext_libs/include/SFML/Window/Event.hpp	/^        unsigned int height; \/\/\/< New height, in pixels$/;"	m	struct:sf::Event::SizeEvent
 height	ext_libs/include/SFML/Window/VideoMode.hpp	/^    unsigned int height;       \/\/\/< Video mode height, in pixels$/;"	m	class:sf::VideoMode
+h	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^		b2Vec2 h = node->aabb.GetExtents();$/;"	l
 id	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2ContactID id;			\/\/\/< uniquely identifies a contact point between two shapes$/;"	m	struct:b2ManifoldPoint
 id	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2ContactID id;$/;"	m	struct:b2ClipVertex
+i	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^	int32 i = 0;$/;"	l
+i	ext_libs/include/TinyXML2/tinyxml2.h	/^        int i=0;$/;"	l
+i	ext_libs/include/TinyXML2/tinyxml2.h	/^        unsigned i=0;$/;"	l
+i	src/TTX/classes/mapLoader/MapLoader.cpp	/^      int i;$/;"	l
+i	ext_libs/include/Box2D/Common/b2Math.h	/^		int32 i;$/;"	m	union:__anon6
 impulse	src/TTX/classes/objects/Propeller.cpp	/^void Propeller::impulse(MoveData theMoveData)$/;"	f	class:Propeller
 impulse	trashCode/ShipPropeller.cpp	/^void ShipPropeller::impulse(GQE::IEntity* theEntity,b2Vec2 theDirection)$/;"	f	class:ShipPropeller
 indexA	ext_libs/include/Box2D/Collision/b2Collision.h	/^	uint8 indexA;		\/\/\/< Feature index on shapeA$/;"	m	struct:b2ContactFeature
@@ -2188,6 +2431,7 @@ indexA	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	int32 index
 indexB	ext_libs/include/Box2D/Collision/b2Collision.h	/^	uint8 indexB;		\/\/\/< Feature index on shapeB$/;"	m	struct:b2ContactFeature
 indexB	ext_libs/include/Box2D/Collision/b2Distance.h	/^	uint8 indexB[3];	\/\/\/< vertices on shape B$/;"	m	struct:b2SimplexCache
 indexB	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	int32 indexB;$/;"	m	struct:b2ContactVelocityConstraint
+infinity	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 infinity = std::numeric_limits<float32>::infinity();$/;"	l
 initAssetHandlers	src/TTX/app/TTXapp.cpp	/^void TTXApp::initAssetHandlers(void)$/;"	f	class:TTXApp
 initScreenFactory	src/TTX/app/TTXapp.cpp	/^void TTXApp::initScreenFactory(void)$/;"	f	class:TTXApp
 init	ext_libs/include/GT/Randomizer.hpp	/^         static void init()$/;"	f	class:gt::Randomizer
@@ -2197,6 +2441,7 @@ int32	ext_libs/include/Box2D/Common/b2Settings.h	/^typedef signed int int32;$/;"
 int8	ext_libs/include/Box2D/Common/b2Settings.h	/^typedef signed char	int8;$/;"	t
 invIA	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	float32 invIA, invIB;$/;"	m	struct:b2ContactVelocityConstraint
 invIB	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	float32 invIA, invIB;$/;"	m	struct:b2ContactVelocityConstraint
+invLength	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 invLength = 1.0f \/ length;$/;"	l
 invMassA	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	float32 invMassA, invMassB;$/;"	m	struct:b2ContactVelocityConstraint
 invMassB	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	float32 invMassA, invMassB;$/;"	m	struct:b2ContactVelocityConstraint
 inv_dt	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 inv_dt;		\/\/ inverse time step (0 if dt == 0).$/;"	m	struct:b2TimeStep
@@ -2206,27 +2451,32 @@ isLoaded	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      bool isLoaded(v
 isLoaded	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual bool isLoaded(const typeAssetID theAssetID) const$/;"	f	class:GQE::TAssetHandler
 isSensor	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	bool isSensor;$/;"	m	struct:b2FixtureDef
 iterations	ext_libs/include/Box2D/Collision/b2Distance.h	/^	int32 iterations;	\/\/\/< number of GJK iterations used$/;"	m	struct:b2DistanceOutput
+iter	ext_libs/include/GQE/Core/classes/AssetManager.hpp	/^        std::map<const typeAssetHandlerID, IAssetHandler*>::const_iterator iter;$/;"	l
+iter	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        typename std::map<const typeAssetID, typeAssetData>::const_iterator iter;$/;"	l
+iter	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        typename std::map<const typeAssetID, typeAssetData>::iterator iter;$/;"	l
 joint1	ext_libs/include/Box2D/Dynamics/Joints/b2GearJoint.h	/^	b2Joint* joint1;$/;"	m	struct:b2GearJointDef
 joint2	ext_libs/include/Box2D/Dynamics/Joints/b2GearJoint.h	/^	b2Joint* joint2;$/;"	m	struct:b2GearJointDef
 joint	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	b2Joint* joint;			\/\/\/< the joint$/;"	m	struct:b2JointEdge
-joystickButton	ext_libs/include/SFML/Window/Event.hpp	/^        JoystickButtonEvent   joystickButton;    \/\/\/< Joystick button event parameters (Event::JoystickButtonPressed, Event::JoystickButtonReleased)$/;"	m	union:sf::Event::__anon6
-joystickConnect	ext_libs/include/SFML/Window/Event.hpp	/^        JoystickConnectEvent  joystickConnect;   \/\/\/< Joystick (dis)connect event parameters (Event::JoystickConnected, Event::JoystickDisconnected)$/;"	m	union:sf::Event::__anon6
+joystickButton	ext_libs/include/SFML/Window/Event.hpp	/^        JoystickButtonEvent   joystickButton;    \/\/\/< Joystick button event parameters (Event::JoystickButtonPressed, Event::JoystickButtonReleased)$/;"	m	union:sf::Event::__anon14
+joystickConnect	ext_libs/include/SFML/Window/Event.hpp	/^        JoystickConnectEvent  joystickConnect;   \/\/\/< Joystick (dis)connect event parameters (Event::JoystickConnected, Event::JoystickDisconnected)$/;"	m	union:sf::Event::__anon14
 joystickId	ext_libs/include/SFML/Window/Event.hpp	/^        unsigned int   joystickId; \/\/\/< Index of the joystick (in range [0 .. Joystick::Count - 1])$/;"	m	struct:sf::Event::JoystickMoveEvent
 joystickId	ext_libs/include/SFML/Window/Event.hpp	/^        unsigned int joystickId; \/\/\/< Index of the joystick (in range [0 .. Joystick::Count - 1])$/;"	m	struct:sf::Event::JoystickButtonEvent
 joystickId	ext_libs/include/SFML/Window/Event.hpp	/^        unsigned int joystickId; \/\/\/< Index of the joystick (in range [0 .. Joystick::Count - 1])$/;"	m	struct:sf::Event::JoystickConnectEvent
-joystickMove	ext_libs/include/SFML/Window/Event.hpp	/^        JoystickMoveEvent     joystickMove;      \/\/\/< Joystick move event parameters (Event::JoystickMoved)$/;"	m	union:sf::Event::__anon6
+joystickMove	ext_libs/include/SFML/Window/Event.hpp	/^        JoystickMoveEvent     joystickMove;      \/\/\/< Joystick move event parameters (Event::JoystickMoved)$/;"	m	union:sf::Event::__anon14
 k2	ext_libs/include/Box2D/Rope/b2Rope.h	/^	float32 k2;$/;"	m	struct:b2RopeDef
 k3	ext_libs/include/Box2D/Rope/b2Rope.h	/^	float32 k3;$/;"	m	struct:b2RopeDef
 key	ext_libs/include/Box2D/Collision/b2Collision.h	/^	uint32 key;					\/\/\/< Used to quickly compare contact ids.$/;"	m	union:b2ContactID
-key	ext_libs/include/SFML/Window/Event.hpp	/^        KeyEvent              key;               \/\/\/< Key event parameters (Event::KeyPressed, Event::KeyReleased)$/;"	m	union:sf::Event::__anon6
+key	ext_libs/include/SFML/Window/Event.hpp	/^        KeyEvent              key;               \/\/\/< Key event parameters (Event::KeyPressed, Event::KeyReleased)$/;"	m	union:sf::Event::__anon14
 kill	ext_libs/include/MPE/classes/Mortal.hpp	/^   inline void kill()$/;"	f	class:mpe::Mortal
 kill	ext_libs/include/MPE/components/Mortal.hpp	/^      inline void kill()$/;"	f	class:mpe::Mortal
 lastBlendMode	ext_libs/include/SFML/Graphics/RenderTarget.hpp	/^        BlendMode lastBlendMode;  \/\/\/< Cached blending mode$/;"	m	struct:sf::RenderTarget::StatesCache
 lastTextureId	ext_libs/include/SFML/Graphics/RenderTarget.hpp	/^        Uint64    lastTextureId;  \/\/\/< Cached texture$/;"	m	struct:sf::RenderTarget::StatesCache
+layerDataElement	src/TTX/classes/mapLoader/MapLoader.cpp	/^      tinyxml2::XMLElement *layerDataElement = anLayer->FirstChildElement("data");$/;"	l
 left	ext_libs/include/SFML/Graphics/Rect.hpp	/^    T left;   \/\/\/< Left coordinate of the rectangle$/;"	m	class:sf::Rect
 lengthA	ext_libs/include/Box2D/Dynamics/Joints/b2PulleyJoint.h	/^	float32 lengthA;$/;"	m	struct:b2PulleyJointDef
 lengthB	ext_libs/include/Box2D/Dynamics/Joints/b2PulleyJoint.h	/^	float32 lengthB;$/;"	m	struct:b2PulleyJointDef
 length	ext_libs/include/MPE/classes/Vec2.hpp	/^   Real length()$/;"	f	class:mpe::Vec2
+length	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 length = Length();$/;"	l
 length	ext_libs/include/Box2D/Dynamics/Joints/b2DistanceJoint.h	/^	float32 length;$/;"	m	struct:b2DistanceJointDef
 linearDamping	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	float32 linearDamping;$/;"	m	struct:b2BodyDef
 linearVelocity	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	b2Vec2 linearVelocity;$/;"	m	struct:b2BodyDef
@@ -2282,6 +2532,7 @@ mAngle	ext_libs/include/MPE/classes/Particle.hpp	/^   Real      mAngle;$/;"	m	cl
 mAngle	include/TTX/systems/PlayerSystem.hpp	/^      float mAngle;$/;"	m	class:PlayerSystem
 mAngularVelocity	ext_libs/include/MPE/classes/Particle.hpp	/^   Real      mAngularVelocity;$/;"	m	class:mpe::Particle
 mAnimation1	include/TTX/prototypes/Box.hpp	/^      std::vector<sf::IntRect> mAnimation1;  $/;"	m	class:Box
+mAnimation1	include/TTX/prototypes/Machinegun.hpp	/^      std::vector<sf::IntRect> mAnimation1;  $/;"	m	class:Machinegun
 mAnimations	include/TTX/prototypes/components/StateProto.hpp	/^      std::map<std::string,Animation> mAnimations;$/;"	m	class:StateProto
 mApp	ext_libs/include/GQE/Core/classes/StatManager.hpp	/^      IApp*       mApp;$/;"	m	class:GQE::StatManager
 mApp	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      IApp*                 mApp;$/;"	m	class:GQE::StateManager
@@ -2293,7 +2544,7 @@ mAssetID	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      typeAssetID    
 mAssetManager	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      AssetManager              mAssetManager;$/;"	m	class:GQE::IApp
 mAsset	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      TYPE*                mAsset;$/;"	m	class:GQE::TAsset
 mAssets	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      std::map<const typeAssetID, typeAssetData> mAssets;$/;"	m	class:GQE::TAssetHandler
-mBodyDef	include/TTX/prototypes/components/B2Proto.hpp	/^      b2BodyDef mBodyDef;$/;"	m	class:B2Proto
+mBodyDef	include/TTX/prototypes/components/B2Component.hpp	/^      b2BodyDef mBodyDef;$/;"	m	class:B2Proto
 mBody	include/TTX/classes/objects/Propeller.hpp	/^      b2Body*        mBody;$/;"	m	class:Propeller
 mCadency	include/TTX/classes/objects/Weapon.hpp	/^    float         mCadency;$/;"	m	class:Weapon
 mCleanupEvents	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      EventManager          mCleanupEvents;$/;"	m	class:GQE::StateManager
@@ -2332,7 +2583,8 @@ mFactor	include/TTX/systems/RenderSystem.hpp	/^      float mFactor;$/;"	m	class:
 mFileStream	ext_libs/include/GQE/Core/loggers/FileLogger.hpp	/^      std::ofstream     mFileStream;$/;"	m	class:GQE::FileLogger
 mFirstTileID	ext_libs/include/MapLoader/map.hpp	/^      int mWidth, mHeight, mTileWidth, mTileHeight, mSpacing, mMargin, mFirstTileID;$/;"	m	class:Map
 mFixedSize	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      bool mFixedSize;$/;"	m	class:mpe::ParticleContainer
-mFixturesDef	include/TTX/prototypes/components/B2Proto.hpp	/^      std::vector<b2FixtureDef> mFixturesDef;$/;"	m	class:B2Proto
+mFixturesDef	include/TTX/prototypes/components/B2Component.hpp	/^      std::vector<b2FixtureDef> mFixturesDef;$/;"	m	class:B2Proto
+mFixturesDef	include/TTX/prototypes/components/B2Proto.hpp	/^      std::vector<b2FixtureDef> mFixturesDef;$/;"	m	class:B2Component
 mFocus	include/TTX/classes/objects/Propeller.hpp	/^      mpe::FocusPtr  mFocus;$/;"	m	class:Propeller
 mFocusses	ext_libs/include/MPE/classes/System.hpp	/^   std::list<FocusPtr>           mFocusses;$/;"	m	class:mpe::System
 mFrameClock	ext_libs/include/GQE/Core/classes/StatManager.hpp	/^      sf::Clock   mFrameClock;$/;"	m	class:GQE::StatManager
@@ -2417,6 +2669,7 @@ mSeverity	ext_libs/include/GQE/Core/loggers/ScopeLogger.hpp	/^      SeverityType
 mShape1	include/TTX/prototypes/BasicShip.hpp	/^    b2PolygonShape  mShape1,mShape2,mShape3;$/;"	m	class:BasicShip
 mShape1	include/TTX/prototypes/Box.hpp	/^      b2PolygonShape  mShape1;$/;"	m	class:Box
 mShape1	include/TTX/prototypes/Ground.hpp	/^      b2PolygonShape mShape1;$/;"	m	class:Ground
+mShape1	include/TTX/prototypes/Machinegun.hpp	/^      b2PolygonShape  mShape1;$/;"	m	class:Machinegun
 mShape1	include/TTX/prototypes/Rombo.hpp	/^         b2PolygonShape  mShape1;$/;"	m	class:Rombo
 mShape1	include/TTX/prototypes/SimpleBullet.hpp	/^    b2CircleShape mShape1;$/;"	m	class:SimpleBullet
 mShape2	include/TTX/prototypes/BasicShip.hpp	/^    b2PolygonShape  mShape1,mShape2,mShape3;$/;"	m	class:BasicShip
@@ -2501,7 +2754,6 @@ m_address	ext_libs/include/SFML/Network/IpAddress.hpp	/^    Uint32 m_address; \/
 m_allocation	ext_libs/include/Box2D/Common/b2StackAllocator.h	/^	int32 m_allocation;$/;"	m	class:b2StackAllocator
 m_allocator	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	b2StackAllocator* m_allocator;$/;"	m	class:b2ContactSolver
 m_allocator	ext_libs/include/Box2D/Dynamics/b2ContactManager.h	/^	b2BlockAllocator* m_allocator;$/;"	m	class:b2ContactManager
-m_allocator	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	b2StackAllocator* m_allocator;$/;"	m	class:b2Island
 m_allowSleep	ext_libs/include/Box2D/Dynamics/b2World.h	/^	bool m_allowSleep;$/;"	m	class:b2World
 m_angularDamping	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	float32 m_angularDamping;$/;"	m	class:b2Body
 m_angularImpulse	ext_libs/include/Box2D/Dynamics/Joints/b2FrictionJoint.h	/^	float32 m_angularImpulse;$/;"	m	class:b2FrictionJoint
@@ -2517,12 +2769,9 @@ m_bias	ext_libs/include/Box2D/Dynamics/Joints/b2DistanceJoint.h	/^	float32 m_bia
 m_bias	ext_libs/include/Box2D/Dynamics/Joints/b2WeldJoint.h	/^	float32 m_bias;$/;"	m	class:b2WeldJoint
 m_bias	ext_libs/include/Box2D/Dynamics/Joints/b2WheelJoint.h	/^	float32 m_bias;$/;"	m	class:b2WheelJoint
 m_blockAllocator	ext_libs/include/Box2D/Dynamics/b2World.h	/^	b2BlockAllocator m_blockAllocator;$/;"	m	class:b2World
-m_bodies	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	b2Body** m_bodies;$/;"	m	class:b2Island
 m_bodyA	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	b2Body* m_bodyA;$/;"	m	class:b2Joint
 m_bodyB	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	b2Body* m_bodyB;$/;"	m	class:b2Joint
-m_bodyCapacity	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	int32 m_bodyCapacity;$/;"	m	class:b2Island
 m_bodyC	ext_libs/include/Box2D/Dynamics/Joints/b2GearJoint.h	/^	b2Body* m_bodyC;$/;"	m	class:b2GearJoint
-m_bodyCount	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	int32 m_bodyCount;$/;"	m	class:b2Island
 m_bodyCount	ext_libs/include/Box2D/Dynamics/b2World.h	/^	int32 m_bodyCount;$/;"	m	class:b2World
 m_bodyD	ext_libs/include/Box2D/Dynamics/Joints/b2GearJoint.h	/^	b2Body* m_bodyD;$/;"	m	class:b2GearJoint
 m_bodyList	ext_libs/include/Box2D/Dynamics/b2World.h	/^	b2Body* m_bodyList;$/;"	m	class:b2World
@@ -2556,16 +2805,13 @@ m_commandSocket	ext_libs/include/SFML/Network/Ftp.hpp	/^    TcpSocket m_commandS
 m_connection	ext_libs/include/SFML/Network/Http.hpp	/^    TcpSocket      m_connection; \/\/\/< Connection to the host$/;"	m	class:sf::Http
 m_constant	ext_libs/include/Box2D/Dynamics/Joints/b2GearJoint.h	/^	float32 m_constant;$/;"	m	class:b2GearJoint
 m_constant	ext_libs/include/Box2D/Dynamics/Joints/b2PulleyJoint.h	/^	float32 m_constant;$/;"	m	class:b2PulleyJoint
-m_contactCapacity	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	int32 m_contactCapacity;$/;"	m	class:b2Island
 m_contactCount	ext_libs/include/Box2D/Dynamics/b2ContactManager.h	/^	int32 m_contactCount;$/;"	m	class:b2ContactManager
-m_contactCount	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	int32 m_contactCount;$/;"	m	class:b2Island
 m_contactFilter	ext_libs/include/Box2D/Dynamics/b2ContactManager.h	/^	b2ContactFilter* m_contactFilter;$/;"	m	class:b2ContactManager
 m_contactListener	ext_libs/include/Box2D/Dynamics/b2ContactManager.h	/^	b2ContactListener* m_contactListener;$/;"	m	class:b2ContactManager
 m_contactList	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	b2ContactEdge* m_contactList;$/;"	m	class:b2Body
 m_contactList	ext_libs/include/Box2D/Dynamics/b2ContactManager.h	/^	b2Contact* m_contactList;$/;"	m	class:b2ContactManager
 m_contactManager	ext_libs/include/Box2D/Dynamics/b2World.h	/^	b2ContactManager m_contactManager;$/;"	m	class:b2World
 m_contacts	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	b2Contact** m_contacts;$/;"	m	class:b2ContactSolver
-m_contacts	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	b2Contact** m_contacts;$/;"	m	class:b2Island
 m_context	ext_libs/include/SFML/Window/Context.hpp	/^    priv::GlContext* m_context; \/\/\/< Internal OpenGL context$/;"	m	class:sf::Context
 m_context	ext_libs/include/SFML/Window/Window.hpp	/^    priv::GlContext*  m_context;        \/\/\/< Platform-specific implementation of the OpenGL context$/;"	m	class:sf::Window
 m_continuousPhysics	ext_libs/include/Box2D/Dynamics/b2World.h	/^	bool m_continuousPhysics;$/;"	m	class:b2World
@@ -2746,12 +2992,9 @@ m_islandFlag	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	bool m_islandFl
 m_islandIndex	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	int32 m_islandIndex;$/;"	m	class:b2Body
 m_joint1	ext_libs/include/Box2D/Dynamics/Joints/b2GearJoint.h	/^	b2Joint* m_joint1;$/;"	m	class:b2GearJoint
 m_joint2	ext_libs/include/Box2D/Dynamics/Joints/b2GearJoint.h	/^	b2Joint* m_joint2;$/;"	m	class:b2GearJoint
-m_jointCapacity	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	int32 m_jointCapacity;$/;"	m	class:b2Island
-m_jointCount	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	int32 m_jointCount;$/;"	m	class:b2Island
 m_jointCount	ext_libs/include/Box2D/Dynamics/b2World.h	/^	int32 m_jointCount;$/;"	m	class:b2World
 m_jointList	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	b2JointEdge* m_jointList;$/;"	m	class:b2Body
 m_jointList	ext_libs/include/Box2D/Dynamics/b2World.h	/^	b2Joint* m_jointList;$/;"	m	class:b2World
-m_joints	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	b2Joint** m_joints;$/;"	m	class:b2Island
 m_k2	ext_libs/include/Box2D/Rope/b2Rope.h	/^	float32 m_k2;$/;"	m	class:b2Rope
 m_k3	ext_libs/include/Box2D/Rope/b2Rope.h	/^	float32 m_k3;$/;"	m	class:b2Rope
 m_lcA	ext_libs/include/Box2D/Dynamics/Joints/b2GearJoint.h	/^	b2Vec2 m_lcA, m_lcB, m_lcC, m_lcD;$/;"	m	class:b2GearJoint
@@ -2769,7 +3012,6 @@ m_linearDamping	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	float32 m_linearDamp
 m_linearImpulse	ext_libs/include/Box2D/Dynamics/Joints/b2FrictionJoint.h	/^	b2Vec2 m_linearImpulse;$/;"	m	class:b2FrictionJoint
 m_linearMass	ext_libs/include/Box2D/Dynamics/Joints/b2FrictionJoint.h	/^	b2Mat22 m_linearMass;$/;"	m	class:b2FrictionJoint
 m_linearVelocity	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	b2Vec2 m_linearVelocity;$/;"	m	class:b2Body
-m_listener	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	b2ContactListener* m_listener;$/;"	m	class:b2Island
 m_listing	ext_libs/include/SFML/Network/Ftp.hpp	/^        std::vector<std::string> m_listing; \/\/\/< Directory\/file names extracted from the data$/;"	m	class:sf::Ftp::ListingResponse
 m_localAnchorA	ext_libs/include/Box2D/Dynamics/Joints/b2DistanceJoint.h	/^	b2Vec2 m_localAnchorA;$/;"	m	class:b2DistanceJoint
 m_localAnchorA	ext_libs/include/Box2D/Dynamics/Joints/b2FrictionJoint.h	/^	b2Vec2 m_localAnchorA;$/;"	m	class:b2FrictionJoint
@@ -2898,7 +3140,6 @@ m_port	ext_libs/include/SFML/Network/Http.hpp	/^    unsigned short m_port;      
 m_positionConstraints	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	b2ContactPositionConstraint* m_positionConstraints;$/;"	m	class:b2ContactSolver
 m_position	ext_libs/include/SFML/Graphics/Transformable.hpp	/^    Vector2f          m_position;                   \/\/\/< Position of the object in the 2D world$/;"	m	class:sf::Transformable
 m_positions	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	b2Position* m_positions;$/;"	m	class:b2ContactSolver
-m_positions	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	b2Position* m_positions;$/;"	m	class:b2Island
 m_prevVertex	ext_libs/include/Box2D/Collision/Shapes/b2ChainShape.h	/^	b2Vec2 m_prevVertex, m_nextVertex;$/;"	m	class:b2ChainShape
 m_prev	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	b2Contact* m_prev;$/;"	m	class:b2Contact
 m_prev	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	b2Joint* m_prev;$/;"	m	class:b2Joint
@@ -3031,7 +3272,6 @@ m_userData	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	void* m_userData;
 m_userData	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	void* m_userData;$/;"	m	class:b2Body
 m_userData	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	void* m_userData;$/;"	m	class:b2Fixture
 m_velocities	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	b2Velocity* m_velocities;$/;"	m	class:b2ContactSolver
-m_velocities	ext_libs/include/Box2D/Dynamics/b2Island.h	/^	b2Velocity* m_velocities;$/;"	m	class:b2Island
 m_velocityConstraints	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	b2ContactVelocityConstraint* m_velocityConstraints;$/;"	m	class:b2ContactSolver
 m_vertex0	ext_libs/include/Box2D/Collision/Shapes/b2EdgeShape.h	/^	b2Vec2 m_vertex0, m_vertex3;$/;"	m	class:b2EdgeShape
 m_vertex1	ext_libs/include/Box2D/Collision/Shapes/b2EdgeShape.h	/^	b2Vec2 m_vertex1, m_vertex2;$/;"	m	class:b2EdgeShape
@@ -3062,6 +3302,7 @@ masses	ext_libs/include/Box2D/Rope/b2Rope.h	/^	float32* masses;$/;"	m	struct:b2R
 mass	ext_libs/include/Box2D/Collision/Shapes/b2Shape.h	/^	float32 mass;$/;"	m	struct:b2MassData
 maxForce	ext_libs/include/Box2D/Dynamics/Joints/b2FrictionJoint.h	/^	float32 maxForce;$/;"	m	struct:b2FrictionJointDef
 maxForce	ext_libs/include/Box2D/Dynamics/Joints/b2MouseJoint.h	/^	float32 maxForce;$/;"	m	struct:b2MouseJointDef
+maxFraction	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	float32 maxFraction = input.maxFraction;$/;"	l
 maxFraction	ext_libs/include/Box2D/Collision/b2Collision.h	/^	float32 maxFraction;$/;"	m	struct:b2RayCastInput
 maxLength	ext_libs/include/Box2D/Dynamics/Joints/b2RopeJoint.h	/^	float32 maxLength;$/;"	m	struct:b2RopeJointDef
 maxMotorForce	ext_libs/include/Box2D/Dynamics/Joints/b2PrismaticJoint.h	/^	float32 maxMotorForce;$/;"	m	struct:b2PrismaticJointDef
@@ -3075,10 +3316,10 @@ minor	ext_libs/include/Box2D/Common/b2Settings.h	/^	int32 minor;		\/\/\/< increm
 motorSpeed	ext_libs/include/Box2D/Dynamics/Joints/b2PrismaticJoint.h	/^	float32 motorSpeed;$/;"	m	struct:b2PrismaticJointDef
 motorSpeed	ext_libs/include/Box2D/Dynamics/Joints/b2RevoluteJoint.h	/^	float32 motorSpeed;$/;"	m	struct:b2RevoluteJointDef
 motorSpeed	ext_libs/include/Box2D/Dynamics/Joints/b2WheelJoint.h	/^	float32 motorSpeed;$/;"	m	struct:b2WheelJointDef
-mouseButton	ext_libs/include/SFML/Window/Event.hpp	/^        MouseButtonEvent      mouseButton;       \/\/\/< Mouse button event parameters (Event::MouseButtonPressed, Event::MouseButtonReleased)$/;"	m	union:sf::Event::__anon6
-mouseMove	ext_libs/include/SFML/Window/Event.hpp	/^        MouseMoveEvent        mouseMove;         \/\/\/< Mouse move event parameters (Event::MouseMoved)$/;"	m	union:sf::Event::__anon6
-mouseWheelScroll	ext_libs/include/SFML/Window/Event.hpp	/^        MouseWheelScrollEvent mouseWheelScroll;  \/\/\/< Mouse wheel event parameters (Event::MouseWheelScrolled)$/;"	m	union:sf::Event::__anon6
-mouseWheel	ext_libs/include/SFML/Window/Event.hpp	/^        MouseWheelEvent       mouseWheel;        \/\/\/< Mouse wheel event parameters (Event::MouseWheelMoved) (deprecated)$/;"	m	union:sf::Event::__anon6
+mouseButton	ext_libs/include/SFML/Window/Event.hpp	/^        MouseButtonEvent      mouseButton;       \/\/\/< Mouse button event parameters (Event::MouseButtonPressed, Event::MouseButtonReleased)$/;"	m	union:sf::Event::__anon14
+mouseMove	ext_libs/include/SFML/Window/Event.hpp	/^        MouseMoveEvent        mouseMove;         \/\/\/< Mouse move event parameters (Event::MouseMoved)$/;"	m	union:sf::Event::__anon14
+mouseWheelScroll	ext_libs/include/SFML/Window/Event.hpp	/^        MouseWheelScrollEvent mouseWheelScroll;  \/\/\/< Mouse wheel event parameters (Event::MouseWheelScrolled)$/;"	m	union:sf::Event::__anon14
+mouseWheel	ext_libs/include/SFML/Window/Event.hpp	/^        MouseWheelEvent       mouseWheel;        \/\/\/< Mouse wheel event parameters (Event::MouseWheelMoved) (deprecated)$/;"	m	union:sf::Event::__anon14
 move	ext_libs/include/MPE/components/Position.hpp	/^      void move(Real theXOffset,Real theYOffset)$/;"	f	class:mpe::Position
 move	ext_libs/include/MPE/components/Position.hpp	/^      void move(gt::Vec2D theOffset)$/;"	f	class:mpe::Position
 move	include/TTX/Types.hpp	/^   bool  move,turn;$/;"	m	struct:MoveData
@@ -3094,15 +3335,21 @@ mpe	ext_libs/include/MPE/classes/System.hpp	/^namespace mpe$/;"	n
 mpe	ext_libs/include/MPE/classes/Vec2.hpp	/^namespace mpe$/;"	n
 mpe	ext_libs/include/MPE/components/Mortal.hpp	/^namespace mpe$/;"	n
 mpe	ext_libs/include/MPE/components/Position.hpp	/^namespace mpe$/;"	n
+nPoints	src/TTX/classes/mapLoader/MapLoader.cpp	/^      int nPoints = 0;$/;"	l
 name	ext_libs/include/GQE/Core/interfaces/IEvent.hpp	/^          std::string name() const$/;"	f	class:GQE::IEvent::Type_t
 name	ext_libs/include/GQE/Core/interfaces/IProperty.hpp	/^          std::string name() const$/;"	f	class:GQE::IProperty::Type_t
 name	ext_libs/include/SFML/Window/Joystick.hpp	/^        sf::String   name;      \/\/\/< Name of the joystick$/;"	m	struct:sf::Joystick::Identification
+newAllocated	ext_libs/include/TinyXML2/tinyxml2.h	/^            int newAllocated = cap * 2;$/;"	l
+newMem	ext_libs/include/TinyXML2/tinyxml2.h	/^            T* newMem = new T[newAllocated];$/;"	l
 nextRow	ext_libs/include/SFML/Graphics/Font.hpp	/^        unsigned int     nextRow; \/\/\/< Y position of the next new row in the texture$/;"	m	struct:sf::Font::Page
 next	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^	int32 next;$/;"	m	struct:b2Pair
-next	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^		int32 next;$/;"	m	union:b2TreeNode::__anon17
+next	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^		int32 next;$/;"	m	union:b2TreeNode::__anon4
 next	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	b2ContactEdge* next;	\/\/\/< the next contact edge in the body's contact list$/;"	m	struct:b2ContactEdge
 next	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	b2JointEdge* next;		\/\/\/< the next joint edge in the body's joint list$/;"	m	struct:b2JointEdge
 next	ext_libs/include/TinyXML2/tinyxml2.h	/^        Chunk*  next;$/;"	m	union:tinyxml2::MemPoolT::Chunk
+n	ext_libs/include/TinyXML2/tinyxml2.h	/^        int n = 0;$/;"	l
+nodeId	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^		int32 nodeId = stack.Pop();$/;"	l
+node	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^		const b2TreeNode* node = m_nodes + nodeId;$/;"	l
 normalImpulse	ext_libs/include/Box2D/Collision/b2Collision.h	/^	float32 normalImpulse;	\/\/\/< the non-penetration impulse$/;"	m	struct:b2ManifoldPoint
 normalImpulse	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	float32 normalImpulse;$/;"	m	struct:b2VelocityConstraintPoint
 normalImpulses	ext_libs/include/Box2D/Dynamics/b2WorldCallbacks.h	/^	float32 normalImpulses[b2_maxManifoldPoints];$/;"	m	struct:b2ContactImpulse
@@ -3112,6 +3359,9 @@ normalize	ext_libs/include/MPE/classes/Vec2.hpp	/^   void normalize()$/;"	f	clas
 normal	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2Vec2 normal;							\/\/\/< world vector pointing from A to B$/;"	m	struct:b2WorldManifold
 normal	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2Vec2 normal;$/;"	m	struct:b2RayCastOutput
 normal	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	b2Vec2 normal;$/;"	m	struct:b2ContactVelocityConstraint
+nx	ext_libs/include/MPE/classes/Vec2.hpp	/^      Real nx = x * aCosine - y * aSine;$/;"	l
+ny	ext_libs/include/MPE/classes/Vec2.hpp	/^      Real ny = x * aSine + y * aCosine;$/;"	l
+old	ext_libs/include/Box2D/Common/b2GrowableStack.h	/^			T* old = m_stack;$/;"	l
 operator ()	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 operator () (int32 i) const$/;"	f	struct:b2Vec2
 operator ()	ext_libs/include/Box2D/Common/b2Math.h	/^	float32& operator () (int32 i)$/;"	f	struct:b2Vec2
 operator *=	ext_libs/include/Box2D/Common/b2Math.h	/^	void operator *= (float32 a)$/;"	f	struct:b2Vec2
@@ -3144,9 +3394,12 @@ operator []	ext_libs/include/TinyXML2/tinyxml2.h	/^    T& operator[](int i)				{
 operator []	ext_libs/include/TinyXML2/tinyxml2.h	/^    const T& operator[](int i) const	{$/;"	f	class:tinyxml2::DynArray
 other	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	b2Body* other;			\/\/\/< provides quick access to the other body attached.$/;"	m	struct:b2ContactEdge
 other	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	b2Body* other;			\/\/\/< provides quick access to the other body attached.$/;"	m	struct:b2JointEdge
+p1	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	b2Vec2 p1 = input.p1;$/;"	l
 p1	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2Vec2 p1, p2;$/;"	m	struct:b2RayCastInput
+p2	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	b2Vec2 p2 = input.p2;$/;"	l
 p2	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2Vec2 p1, p2;$/;"	m	struct:b2RayCastInput
-parent	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^		int32 parent;$/;"	m	union:b2TreeNode::__anon17
+pair	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^			b2Pair* pair = m_pairBuffer + i;$/;"	l
+parent	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^		int32 parent;$/;"	m	union:b2TreeNode::__anon4
 p	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec2 p;$/;"	m	struct:b2Transform
 pointA	ext_libs/include/Box2D/Collision/b2Distance.h	/^	b2Vec2 pointA;		\/\/\/< closest point on shapeA$/;"	m	struct:b2DistanceOutput
 pointB	ext_libs/include/Box2D/Collision/b2Distance.h	/^	b2Vec2 pointB;		\/\/\/< closest point on shapeB$/;"	m	struct:b2DistanceOutput
@@ -3163,6 +3416,7 @@ positions	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	b2Positi
 positions	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	b2Position* positions;$/;"	m	struct:b2SolverData
 prev	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	b2ContactEdge* prev;	\/\/\/< the previous contact edge in the body's contact list$/;"	m	struct:b2ContactEdge
 prev	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	b2JointEdge* prev;		\/\/\/< the previous joint edge in the body's joint list$/;"	m	struct:b2JointEdge
+primaryPair	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^		b2Pair* primaryPair = m_pairBuffer + i;$/;"	l
 primary	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	bool primary;$/;"	m	struct:b2ContactRegister
 priv	ext_libs/include/SFML/Graphics/RenderTexture.hpp	/^namespace priv$/;"	n	namespace:sf
 priv	ext_libs/include/SFML/System/FileInputStream.hpp	/^namespace priv$/;"	n	namespace:sf
@@ -3171,6 +3425,7 @@ priv	ext_libs/include/SFML/System/Thread.hpp	/^namespace priv$/;"	n	namespace:sf
 priv	ext_libs/include/SFML/System/ThreadLocal.hpp	/^namespace priv$/;"	n	namespace:sf
 priv	ext_libs/include/SFML/Window/Context.hpp	/^namespace priv$/;"	n	namespace:sf
 priv	ext_libs/include/SFML/Window/Window.hpp	/^namespace priv$/;"	n	namespace:sf
+proceed	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^				bool proceed = callback->QueryCallback(nodeId);$/;"	l
 processJoystick	src/TTX/systems/PlayerSystem.cpp	/^void PlayerSystem::processJoystick(GQE::IEntity* theEntity)$/;"	f	class:PlayerSystem
 productId	ext_libs/include/SFML/Window/Joystick.hpp	/^        unsigned int productId; \/\/\/< Product identifier$/;"	m	struct:sf::Joystick::Identification
 proxyA	ext_libs/include/Box2D/Collision/b2Distance.h	/^	b2DistanceProxy proxyA;$/;"	m	struct:b2DistanceInput
@@ -3180,7 +3435,10 @@ proxyB	ext_libs/include/Box2D/Collision/b2TimeOfImpact.h	/^	b2DistanceProxy prox
 proxyIdA	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^	int32 proxyIdA;$/;"	m	struct:b2Pair
 proxyIdB	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^	int32 proxyIdB;$/;"	m	struct:b2Pair
 proxyId	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	int32 proxyId;$/;"	m	struct:b2FixtureProxy
+px	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 px = v.x - T.p.x;$/;"	l
+py	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 py = v.y - T.p.y;$/;"	l
 q	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Rot q;$/;"	m	struct:b2Transform
+qr	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Rot qr;$/;"	l
 rA	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	b2Vec2 rA;$/;"	m	struct:b2VelocityConstraintPoint
 rB	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	b2Vec2 rB;$/;"	m	struct:b2VelocityConstraintPoint
 ratio	ext_libs/include/Box2D/Dynamics/Joints/b2GearJoint.h	/^	float32 ratio;$/;"	m	struct:b2GearJointDef
@@ -3194,7 +3452,13 @@ resetLife	ext_libs/include/MPE/classes/Mortal.hpp	/^   inline void resetLife(Rea
 reset	include/TTX/classes/render/Animation.hpp	/^      void reset()$/;"	f	class:Animation
 restitution	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	float32 restitution;$/;"	m	struct:b2ContactVelocityConstraint
 restitution	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	float32 restitution;$/;"	m	struct:b2FixtureDef
+result	ext_libs/include/Box2D/Collision/b2Collision.h	/^		bool result = true;$/;"	l
+result	ext_libs/include/Box2D/Common/b2Math.h	/^	bool result = x > 0 && (x & (x - 1)) == 0;$/;"	l
+result	ext_libs/include/TinyXML2/tinyxml2.h	/^        void* result = _root;$/;"	l
+result	ext_libs/include/TinyXML2/tinyxml2.h	/^    int result = vsnprintf_s( buffer, size, _TRUNCATE, format, va );$/;"	l
+ret	ext_libs/include/TinyXML2/tinyxml2.h	/^        T* ret = &_mem[_size];$/;"	l
 revision	ext_libs/include/Box2D/Common/b2Settings.h	/^	int32 revision;		\/\/\/< bug fixes$/;"	m	struct:b2Version
+r	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	b2Vec2 r = p2 - p1;$/;"	l
 r	ext_libs/include/Box2D/Common/b2Draw.h	/^	float32 r, g, b;$/;"	m	struct:b2Color
 r	ext_libs/include/MPE/Config.hpp	/^   Integer r, g, b, a;$/;"	m	struct:mpe::Color
 r	ext_libs/include/SFML/Graphics/Color.hpp	/^    Uint8 r; \/\/\/< Red component$/;"	m	class:sf::Color
@@ -3214,7 +3478,9 @@ sampleCount	ext_libs/include/SFML/Audio/SoundStream.hpp	/^        std::size_t  s
 sampleRate	ext_libs/include/SFML/Audio/SoundFileReader.hpp	/^        unsigned int sampleRate;   \/\/\/< Samples rate of the sound, in samples per second$/;"	m	struct:sf::SoundFileReader::Info
 samples	ext_libs/include/SFML/Audio/SoundStream.hpp	/^        const Int16* samples;     \/\/\/< Pointer to the audio samples$/;"	m	struct:sf::SoundStream::Chunk
 scale	ext_libs/include/MPE/classes/Vec2.hpp	/^   Vec2& scale(const Real& theScalarX, const Real& theScalarY)$/;"	f	class:mpe::Vec2
-sensor	ext_libs/include/SFML/Window/Event.hpp	/^        SensorEvent           sensor;            \/\/\/< Sensor event parameters (Event::SensorChanged)$/;"	m	union:sf::Event::__anon6
+segmentAABB	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	b2AABB segmentAABB;$/;"	l
+sensor	ext_libs/include/SFML/Window/Event.hpp	/^        SensorEvent           sensor;            \/\/\/< Sensor event parameters (Event::SensorChanged)$/;"	m	union:sf::Event::__anon14
+separation	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^		float32 separation = b2Abs(b2Dot(v, p1 - c)) - b2Dot(abs_v, h);$/;"	l
 setBody	src/TTX/classes/objects/Propeller.cpp	/^void Propeller::setBody(b2Body* theBody)$/;"	f	class:Propeller
 setBody	trashCode/ShipPropeller.cpp	/^void ShipPropeller::setBody (b2Body* theBody)$/;"	f	class:ShipPropeller
 setDropTime	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      void setDropTime(AssetDropTime theDropTime)$/;"	f	class:GQE::TAsset
@@ -3320,11 +3586,13 @@ sf	ext_libs/include/SFML/Window/Window.hpp	/^namespace sf$/;"	n
 sf	ext_libs/include/SFML/Window/WindowHandle.hpp	/^namespace sf$/;"	n
 sf	ext_libs/include/SFML/Window/WindowStyle.hpp	/^namespace sf$/;"	n
 shader	ext_libs/include/SFML/Graphics/RenderStates.hpp	/^    const Shader*  shader;    \/\/\/< Shader$/;"	m	class:sf::RenderStates
+shapeA	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	const b2Shape* shapeA = m_fixtureA->GetShape();$/;"	l
+shapeB	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	const b2Shape* shapeB = m_fixtureB->GetShape();$/;"	l
 shape	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	const b2Shape* shape;$/;"	m	struct:b2FixtureDef
 shift	ext_libs/include/SFML/Window/Event.hpp	/^        bool          shift;   \/\/\/< Is the Shift key pressed?$/;"	m	struct:sf::Event::KeyEvent
 size	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^      size_t size(){return mSize;};$/;"	f	class:mpe::ParticleContainer
 size	ext_libs/include/Box2D/Common/b2StackAllocator.h	/^	int32 size;$/;"	m	struct:b2StackEntry
-size	ext_libs/include/SFML/Window/Event.hpp	/^        SizeEvent             size;              \/\/\/< Size event parameters (Event::Resized)$/;"	m	union:sf::Event::__anon6
+size	ext_libs/include/SFML/Window/Event.hpp	/^        SizeEvent             size;              \/\/\/< Size event parameters (Event::Resized)$/;"	m	union:sf::Event::__anon14
 s	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 s, c;$/;"	m	struct:b2Rot
 solveInit	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 solveInit;$/;"	m	struct:b2Profile
 solvePosition	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 solvePosition;$/;"	m	struct:b2Profile
@@ -3332,11 +3600,13 @@ solveTOI	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 solveTOI;$/;"	m
 solveVelocity	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 solveVelocity;$/;"	m	struct:b2Profile
 solve	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 solve;$/;"	m	struct:b2Profile
 squareLength	ext_libs/include/MPE/classes/Vec2.hpp	/^   Real squareLength()$/;"	f	class:mpe::Vec2
+stack	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	b2GrowableStack<int32, 256> stack;$/;"	l
 state	ext_libs/include/Box2D/Collision/b2TimeOfImpact.h	/^	State state;$/;"	m	struct:b2TOIOutput
 stencilBits	ext_libs/include/SFML/Window/ContextSettings.hpp	/^    unsigned int stencilBits;       \/\/\/< Bits of the stencil buffer$/;"	m	struct:sf::ContextSettings
 step	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	b2TimeStep step;$/;"	m	struct:b2ContactSolverDef
 step	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	b2TimeStep step;$/;"	m	struct:b2SolverData
 step	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 step;$/;"	m	struct:b2Profile
+subInput	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^			b2RayCastInput subInput;$/;"	l
 swap	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      friend void swap(TAsset& first, TAsset& second)$/;"	f	class:GQE::TAsset
 sweepA	ext_libs/include/Box2D/Collision/b2TimeOfImpact.h	/^	b2Sweep sweepA;$/;"	m	struct:b2TOIInput
 sweepB	ext_libs/include/Box2D/Collision/b2TimeOfImpact.h	/^	b2Sweep sweepB;$/;"	m	struct:b2TOIInput
@@ -3350,17 +3620,21 @@ tangentImpulses	ext_libs/include/Box2D/Dynamics/b2WorldCallbacks.h	/^	float32 ta
 tangentMass	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	float32 tangentMass;$/;"	m	struct:b2VelocityConstraintPoint
 target	ext_libs/include/Box2D/Dynamics/Joints/b2MouseJoint.h	/^	b2Vec2 target;$/;"	m	struct:b2MouseJointDef
 texCoords	ext_libs/include/SFML/Graphics/Vertex.hpp	/^    Vector2f  texCoords; \/\/\/< Coordinates of the texture's pixel to map to the vertex$/;"	m	class:sf::Vertex
-text	ext_libs/include/SFML/Window/Event.hpp	/^        TextEvent             text;              \/\/\/< Text event parameters (Event::TextEntered)$/;"	m	union:sf::Event::__anon6
+text	ext_libs/include/SFML/Window/Event.hpp	/^        TextEvent             text;              \/\/\/< Text event parameters (Event::TextEntered)$/;"	m	union:sf::Event::__anon14
 textureRect	ext_libs/include/SFML/Graphics/Glyph.hpp	/^    IntRect   textureRect; \/\/\/< Texture coordinates of the glyph inside the font's texture$/;"	m	class:sf::Glyph
 texture	ext_libs/include/SFML/Graphics/Font.hpp	/^        sf::Texture      texture; \/\/\/< Texture containing the pixels of the glyphs$/;"	m	struct:sf::Font::Page
 texture	ext_libs/include/SFML/Graphics/RenderStates.hpp	/^    const Texture* texture;   \/\/\/< Texture$/;"	m	class:sf::RenderStates
+tileElement	src/TTX/classes/mapLoader/MapLoader.cpp	/^      tinyxml2::XMLElement *tileElement = layerDataElement->FirstChildElement("tile");$/;"	l
 tinyxml2	ext_libs/include/TinyXML2/tinyxml2.h	/^namespace tinyxml2$/;"	n
+t	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^				b2Vec2 t = p1 + maxFraction * (p2 - p1);$/;"	l
+t	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^		b2Vec2 t = p1 + maxFraction * (p2 - p1);$/;"	l
 t	ext_libs/include/Box2D/Collision/b2TimeOfImpact.h	/^	float32 t;$/;"	m	struct:b2TOIOutput
+tmp	ext_libs/include/Box2D/Common/b2Math.h	/^	T tmp = a;$/;"	l
 toDegrees	ext_libs/include/GT/Angle.hpp	/^         static inline Real toDegrees(float theRadians)$/;"	f	class:gt::Angle
 toRadians	ext_libs/include/GT/Angle.hpp	/^         static inline Real toRadians(float theDegrees)$/;"	f	class:gt::Angle
 top	ext_libs/include/SFML/Graphics/Font.hpp	/^        unsigned int top;    \/\/\/< Y position of the row into the texture$/;"	m	struct:sf::Font::Row
 top	ext_libs/include/SFML/Graphics/Rect.hpp	/^    T top;    \/\/\/< Top coordinate of the rectangle$/;"	m	class:sf::Rect
-touch	ext_libs/include/SFML/Window/Event.hpp	/^        TouchEvent            touch;             \/\/\/< Touch events parameters (Event::TouchBegan, Event::TouchMoved, Event::TouchEnded)$/;"	m	union:sf::Event::__anon6
+touch	ext_libs/include/SFML/Window/Event.hpp	/^        TouchEvent            touch;             \/\/\/< Touch events parameters (Event::TouchBegan, Event::TouchMoved, Event::TouchEnded)$/;"	m	union:sf::Event::__anon14
 transformA	ext_libs/include/Box2D/Collision/b2Distance.h	/^	b2Transform transformA;$/;"	m	struct:b2DistanceInput
 transformB	ext_libs/include/Box2D/Collision/b2Distance.h	/^	b2Transform transformB;$/;"	m	struct:b2DistanceInput
 transform	ext_libs/include/SFML/Graphics/RenderStates.hpp	/^    Transform      transform; \/\/\/< Transform$/;"	m	class:sf::RenderStates
@@ -3400,7 +3674,6 @@ updateFixed	src/TTX/systems/PropellerSystem.cpp	/^void PropellerSystem::updateFi
 updateFixed	src/TTX/systems/RenderSystem.cpp	/^void RenderSystem::updateFixed()$/;"	f	class:RenderSystem
 updateFixed	trashCode/B2ObjectDefSystem.cpp	/^void B2ObjectDefSystem::updateFixed()$/;"	f	class:B2ObjectDefSystem
 updateFixed	trashCode/B2ObjectSystem.cpp	/^void B2ObjectSystem::updateFixed()$/;"	f	class:B2ObjectSystem
-updateFixed	trashCode/B2WorldSystem.cpp	/^void B2WorldSystem::updateFixed()$/;"	f	class:B2WorldSystem
 updateFixed	trashCode/ObjectSystemOld.cpp	/^void ObjectSystem::updateFixed()$/;"	f	class:ObjectSystem
 updateRender	src/TTX/classes/particles/Particles.cpp	/^void Particles::updateRender(RenderManager& theRenderManager)$/;"	f	class:Particles
 updateSelected	src/TTX/gameStates/GameStateOne.cpp	/^void GameStateOne::updateSelected(sf::Event theEvent)$/;"	f	class:GameStateOne
@@ -3426,18 +3699,29 @@ upperTranslation	ext_libs/include/Box2D/Dynamics/Joints/b2PrismaticJoint.h	/^	fl
 useRadii	ext_libs/include/Box2D/Collision/b2Distance.h	/^	bool useRadii;$/;"	m	struct:b2DistanceInput
 useVertexCache	ext_libs/include/SFML/Graphics/RenderTarget.hpp	/^        bool      useVertexCache; \/\/\/< Did we previously use the vertex cache?$/;"	m	struct:sf::RenderTarget::StatesCache
 usedMalloc	ext_libs/include/Box2D/Common/b2StackAllocator.h	/^	bool usedMalloc;$/;"	m	struct:b2StackEntry
+userDataA	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^		void* userDataA = m_tree.GetUserData(primaryPair->proxyIdA);$/;"	l
+userDataB	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^		void* userDataB = m_tree.GetUserData(primaryPair->proxyIdB);$/;"	l
 userData	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	void* userData;$/;"	m	struct:b2TreeNode
 userData	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	void* userData;$/;"	m	struct:b2JointDef
 userData	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	void* userData;$/;"	m	struct:b2BodyDef
 userData	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	void* userData;$/;"	m	struct:b2FixtureDef
+va	ext_libs/include/TinyXML2/tinyxml2.h	/^    va_list va;$/;"	l
+valid	ext_libs/include/Box2D/Collision/b2Collision.h	/^	bool valid = d.x >= 0.0f && d.y >= 0.0f;$/;"	l
+value	ext_libs/include/Box2D/Collision/b2Distance.h	/^		float32 value = b2Dot(m_vertices[i], d);$/;"	l
+value	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^			float32 value = callback->RayCastCallback(subInput, nodeId);$/;"	l
 velocities	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	b2Velocity* velocities;$/;"	m	struct:b2ContactSolverDef
 velocities	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	b2Velocity* velocities;$/;"	m	struct:b2SolverData
 velocityBias	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	float32 velocityBias;$/;"	m	struct:b2VelocityConstraintPoint
 velocityIterations	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	int32 velocityIterations;$/;"	m	struct:b2TimeStep
 vendorId	ext_libs/include/SFML/Window/Joystick.hpp	/^        unsigned int vendorId;  \/\/\/< Manufacturer identifier$/;"	m	struct:sf::Joystick::Identification
 vertexCache	ext_libs/include/SFML/Graphics/RenderTarget.hpp	/^        Vertex    vertexCache[VertexCacheSize]; \/\/\/< Pre-transformed vertices cache$/;"	m	struct:sf::RenderTarget::StatesCache
+vertices	include/TTX/prototypes/BasicShip.hpp	/^        b2Vec2 vertices[3];$/;"	l
+vertices	include/TTX/prototypes/Rombo.hpp	/^        b2Vec2 vertices[3];$/;"	l
 vertices	ext_libs/include/Box2D/Rope/b2Rope.h	/^	b2Vec2* vertices;$/;"	m	struct:b2RopeDef
 viewChanged	ext_libs/include/SFML/Graphics/RenderTarget.hpp	/^        bool      viewChanged;    \/\/\/< Has the current view changed since last draw?$/;"	m	struct:sf::RenderTarget::StatesCache
+v	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	b2Vec2 v = b2Cross(1.0f, r);$/;"	l
+v	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec2 operator -() const { b2Vec2 v; v.Set(-x, -y); return v; }$/;"	l
+v	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec3 operator -() const { b2Vec3 v; v.Set(-x, -y, -z); return v; }$/;"	l
 v	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2Vec2 v;$/;"	m	struct:b2ClipVertex
 v	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	b2Vec2 v;$/;"	m	struct:b2Velocity
 warmStarting	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	bool warmStarting;$/;"	m	struct:b2TimeStep
@@ -3448,6 +3732,13 @@ width	ext_libs/include/SFML/Graphics/Rect.hpp	/^    T width;  \/\/\/< Width of t
 width	ext_libs/include/SFML/Window/Event.hpp	/^        unsigned int width;  \/\/\/< New width, in pixels$/;"	m	struct:sf::Event::SizeEvent
 width	ext_libs/include/SFML/Window/VideoMode.hpp	/^    unsigned int width;        \/\/\/< Video mode width, in pixels$/;"	m	class:sf::VideoMode
 w	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 w;$/;"	m	struct:b2Velocity
+wx	ext_libs/include/Box2D/Collision/b2Collision.h	/^		float32 wx = upperBound.x - lowerBound.x;$/;"	l
+wy	ext_libs/include/Box2D/Collision/b2Collision.h	/^		float32 wy = upperBound.y - lowerBound.y;$/;"	l
+xhalf	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 xhalf = 0.5f * x;$/;"	l
+x	ext_libs/include/Box2D/Common/b2Math.h	/^		b2Vec2 x;$/;"	l
+x	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 x = (T.q.c * px + T.q.s * py);$/;"	l
+x	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 x = (T.q.c * v.x - T.q.s * v.y) + T.p.x;$/;"	l
+x	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 x;$/;"	m	union:__anon6
 x	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 x, y, z;$/;"	m	struct:b2Vec3
 x	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 x, y;$/;"	m	struct:b2Vec2
 x	ext_libs/include/GT/Vec2D.hpp	/^      Real x;$/;"	m	class:gt::Vec2D
@@ -3463,6 +3754,8 @@ x	ext_libs/include/SFML/Window/Event.hpp	/^        int x;     \/\/\/< X position
 x	ext_libs/include/SFML/Window/Event.hpp	/^        int x; \/\/\/< X position of the mouse pointer, relative to the left of the owner window$/;"	m	struct:sf::Event::MouseMoveEvent
 x	include/TTX/Types.hpp	/^   float x, y, angle;$/;"	m	struct:Position2D
 x	include/TTX/Types.hpp	/^   float x,y;$/;"	m	struct:MoveData
+y	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 y = (-T.q.s * px + T.q.c * py);$/;"	l
+y	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 y = (T.q.s * v.x + T.q.c * v.y) + T.p.y;$/;"	l
 y	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 x, y, z;$/;"	m	struct:b2Vec3
 y	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 x, y;$/;"	m	struct:b2Vec2
 y	ext_libs/include/GT/Vec2D.hpp	/^      Real y;$/;"	m	class:gt::Vec2D

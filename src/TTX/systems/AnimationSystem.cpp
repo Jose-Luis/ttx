@@ -1,5 +1,5 @@
 /// @file AnimationSystem.cpp
-/// @brief 
+/// @brief
 /// @author Jose Luis Lavado
 /// @version 0.1
 /// @date 2013-04-02
@@ -7,7 +7,7 @@
 #include <TTX/systems/AnimationSystem.hpp>
 
 AnimationSystem::AnimationSystem(IActionState& theState):
-   ISystem("AnimationSystem",theState)
+   ISystem("AnimationSystem", theState)
 {}
 
 AnimationSystem::~AnimationSystem()
@@ -15,7 +15,7 @@ AnimationSystem::~AnimationSystem()
 
 void AnimationSystem::addProperties(GQE::IEntity* theEntity)
 {
-   theEntity->mProperties.add<sf::IntRect>("rTexRect",sf::IntRect(0,0,0,0));
+   theEntity->mProperties.add<sf::IntRect>("rTexRect", sf::IntRect(0, 0, 0, 0));
 }
 
 void AnimationSystem::handleInit(GQE::IEntity* theEntity)
@@ -32,6 +32,7 @@ void AnimationSystem::updateFixed()
    while(anIter != mEntities.end())
    {
       std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();
+
       while(anQueue != anIter->second.end())
       {
          GQE::IEntity* anEntity = *anQueue;
@@ -39,12 +40,13 @@ void AnimationSystem::updateFixed()
          Animation* anAnimation = anEntity->mProperties.getPointer<Animation>("rAnimation");
          sf::IntRect anTexRect = anAnimation->getFrame();
          anAnimation->update(SPU);
-         anEntity->mProperties.set("rTexRect",anTexRect);
+         anEntity->mProperties.set("rTexRect", anTexRect);
 
          anQueue++;
-      } 
+      }
+
       anIter++;
-   } 
+   }
 }
 
 void AnimationSystem::updateVariable(float theElapsedTime)
@@ -52,7 +54,7 @@ void AnimationSystem::updateVariable(float theElapsedTime)
 
 void AnimationSystem::draw()
 {
-  }
+}
 
 void AnimationSystem::handleCleanup(GQE::IEntity* theEntity)
 {}

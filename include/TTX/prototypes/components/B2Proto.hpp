@@ -26,3 +26,4 @@ class B2Proto: virtual public GQE::Prototype
 
 #endif   // ----- #ifndef B2PROTO_INC  -----
 
+

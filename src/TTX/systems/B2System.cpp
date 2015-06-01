@@ -53,7 +53,6 @@ void B2System::updateFixed()
    mWorld.Step(mTimeStep,mVelocityIterations,mPositionIterations);
 
    std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;
-   sf::Transform anTransform;
    anIter = mEntities.begin();
    while(anIter != mEntities.end())
    {
