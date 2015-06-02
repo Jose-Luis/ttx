@@ -4,7 +4,9 @@ set(PROTOCOMPONENTS_FILES
    ${SRCROOT}/prototypes/components/B2Proto.cpp
    ${SRCROOT}/prototypes/components/RenderProto.cpp
    ${INCROOT}/prototypes/components/HealthProto.hpp
-   ${SRCROOT}/prototypes/components/HealthProto.cpp)
+   ${SRCROOT}/prototypes/components/HealthProto.cpp
+   ${INCROOT}/prototypes/components/AttachedProto.hpp
+   ${SRCROOT}/prototypes/components/AttachedProto.cpp)
 
 add_library(proto_components ${PROTOCOMPONENTS_FILES})
 

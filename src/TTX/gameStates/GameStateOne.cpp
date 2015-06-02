@@ -54,7 +54,9 @@ void GameStateOne::doInit(void)
    mPrototypes.addPrototype(new BasicShip());
    mPrototypes.addPrototype(new SimpleBullet());
    mPrototypes.addPrototype(new Player());
+   mPrototypes.addPrototype(new Machinegun());
    //Systems
+   addSystem(new AttachSystem(*this));
    addSystem(new RenderSystem(*this,mRenderManager,LENGTHFACTOR));
    addSystem(new PlayerSystem(*this,mView,LENGTHFACTOR));
    addSystem(new PropellerSystem(*this,mParticles));
@@ -123,13 +125,27 @@ void GameStateOne::handleEvents(sf::Event theEvent)
    else if((theEvent.type == sf::Event::KeyReleased) &&
            (theEvent.key.code == sf::Keyboard::A))
    {
+      if(mPlayer)
+      {
+          GQE::Prototype* anPrototype = mPrototypes.getPrototype("pMachinegun");
+          GQE::Instance* anInstance = anPrototype->makeInstance();
+          //Setting the posiion to the instance.
+          anInstance->mProperties.set<GQE::IEntity*>("Parent", mPlayer);
+          //Adding the instance to the systems.
+          for(auto anSystem :  anPrototype->mSystemIDs)
+          {
+              mSystems[anSystem]->addEntity(anInstance);
+          }
+      }
+      
    }
     else
     {
        for(int i=0;i<8;i++)
        {
           if(sf::Joystick::isConnected(i) && sf::Joystick::isButtonPressed(i,0))
-            addPlayer(i,"pBasicShip",Position2D(4,16,90*TORAD));
+             if(!mPlayer)
+            this->mPlayer = addPlayer(i,"pBasicShip",Position2D(4,16,90*TORAD));
        }
     }
 }
@@ -150,9 +166,10 @@ void GameStateOne::updateFixed(void)
 {
 
    mRenderManager.clear();
+   mSystems["B2System"]->updateFixed();
+   mSystems["AttachSystem"]->updateFixed();
    mSystems["PlayerSystem"]->updateFixed();
    mSystems["PropellerSystem"]->updateFixed();
-   mSystems["B2System"]->updateFixed();
    mSystems["HealthSystem"]->updateFixed();
    mSystems["AnimationSystem"]->updateFixed();
    mSystems["RenderSystem"]->updateFixed();

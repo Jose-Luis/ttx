@@ -48,7 +48,7 @@ public:
      * @param thePrototype
      * @param thePosition
      */
-    void addPlayer(int                  theJoy,
+    GQE::IEntity* addPlayer(int                  theJoy,
                    GQE::typePrototypeID thePrototype,
                    Position2D           thePosition);
     /**

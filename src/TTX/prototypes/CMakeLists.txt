@@ -12,7 +12,8 @@ set(PROTOTYPE_FILES
    ${SRCROOT}/prototypes/BasicShip.cpp
    ${SRCROOT}/prototypes/Ground.cpp
    ${SRCROOT}/prototypes/Player.cpp
-   ${SRCROOT}/prototypes/SimpleBullet.cpp)
+   ${SRCROOT}/prototypes/SimpleBullet.cpp
+   ${SRCROOT}/prototypes/Machinegun.cpp)
 
 add_library(protos  ${PROTOTYPE_FILES})
 

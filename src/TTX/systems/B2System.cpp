@@ -45,6 +45,7 @@ void B2System::addProperties(GQE::IEntity *theEntity)
    theEntity->mProperties.add<sf::Vector2f>("vPosition",sf::Vector2f(0,0));
    theEntity->mProperties.add<float>("fAngle",0);
    theEntity->mProperties.add<b2Body*>("b2Body",0);
+   theEntity->mProperties.add<sf::Transform>("b2Body",0);
 }
 
 
@@ -65,6 +66,7 @@ void B2System::updateFixed()
          b2Body* anBody    = anEntity->mProperties.get<b2Body*>("b2Body");
          b2Vec2 anPosition = anBody->GetPosition();
          float anAngle     = anBody->GetAngle();
+         
          
          anEntity->mProperties.set<sf::Vector2f>("vPosition",sf::Vector2f(anPosition.x,anPosition.y));
          anEntity->mProperties.set<float>("fAngle",anAngle * TODEG);

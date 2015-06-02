@@ -13,11 +13,11 @@
 //      Method:  constructor
 // Description:
 //------------------------------------------------------------------------------
-IActionState::IActionState(GQE::typeStateID theStateID,GQE::IApp& theApp):
-    GQE::IState(theStateID,theApp),
-    mWorld(b2Vec2(0.0f,0.0f))
+IActionState::IActionState(GQE::typeStateID theStateID, GQE::IApp& theApp):
+   GQE::IState(theStateID, theApp),
+   mWorld(b2Vec2(0.0f, 0.0f))
 {
-    mWorld.SetAllowSleeping(true);
+   mWorld.SetAllowSleeping(true);
 }
 //------------------------------------------------------------------------------
 //       Class:  IActionState
@@ -26,10 +26,10 @@ IActionState::IActionState(GQE::typeStateID theStateID,GQE::IApp& theApp):
 //------------------------------------------------------------------------------
 IActionState::~IActionState()
 {
-    for (auto anSystem: mSystems)
-    {
-        delete anSystem.second;
-    }
+   for (auto anSystem : mSystems)
+   {
+      delete anSystem.second;
+   }
 }
 //------------------------------------------------------------------------------
 //       Class:  IActionState
@@ -37,40 +37,46 @@ IActionState::~IActionState()
 // Description:
 //------------------------------------------------------------------------------
 GQE::Instance* IActionState::addInstance(GQE::typePrototypeID thePrototype,
-        Position2D           thePosition,
-        Position2D           theInitialImpulse)
+                                         Position2D           thePosition,
+                                         Position2D           theInitialImpulse)
 
 {
-    //Getting the prototype and creating the instance.
-    GQE::Prototype* anPrototype = mPrototypes.getPrototype(thePrototype);
-    GQE::Instance* anInstance = anPrototype->makeInstance();
-    //Setting the posiion to the instance.
-    anInstance->mProperties.set<sf::Vector2f>("vPosition", sf::Vector2f(thePosition.x,thePosition.y));
-    anInstance->mProperties.set<float>("fAngle",thePosition.angle);
-    anInstance->mProperties.add<Position2D>("pInitialImpulse", theInitialImpulse);
-    //Adding the instance to the systems.
-    for(auto anSystem :  anPrototype->mSystemIDs)
-    {
-        mSystems[anSystem]->addEntity(anInstance);
-    }
-    return anInstance;
+   //Getting the prototype and creating the instance.
+   GQE::Prototype* anPrototype = mPrototypes.getPrototype(thePrototype);
+   GQE::Instance* anInstance = anPrototype->makeInstance();
+   //Setting the posiion to the instance.
+   anInstance->mProperties.set<sf::Vector2f>("vPosition", sf::Vector2f(thePosition.x, thePosition.y));
+   anInstance->mProperties.set<float>("fAngle", thePosition.angle);
+   anInstance->mProperties.add<Position2D>("pInitialImpulse", theInitialImpulse);
+
+   //Adding the instance to the systems.
+   for(auto anSystem :  anPrototype->mSystemIDs)
+   {
+      mSystems[anSystem]->addEntity(anInstance);
+   }
+
+   return anInstance;
 }
 //------------------------------------------------------------------------------
 //       Class:  IActionState
 //      Method:  addPlayer
 // Description:
 //------------------------------------------------------------------------------
-void IActionState::addPlayer(int                  theJoy,
-                             GQE::typePrototypeID thePrototype,
-                             Position2D           thePosition)
+GQE::IEntity* IActionState::addPlayer(int                  theJoy,
+                                      GQE::typePrototypeID thePrototype,
+                                      Position2D           thePosition)
 {
-    if(mPlayers.find(theJoy) == mPlayers.end())
-    {
-        GQE::Instance* anInstance = addInstance(thePrototype, thePosition);
-        anInstance->mProperties.add<int>("iJoystick",theJoy);
-        GQE::typeEntityID anPlayerID = mSystems["PlayerSystem"]->addEntity(anInstance);
-        mPlayers.insert(std::pair<int,GQE::typeEntityID>(theJoy,anPlayerID));
-    }
+   GQE::Instance* anInstance = 0;
+
+   if(mPlayers.find(theJoy) == mPlayers.end())
+   {
+      anInstance = addInstance(thePrototype, thePosition);
+      anInstance->mProperties.add<int>("iJoystick", theJoy);
+      GQE::typeEntityID anPlayerID = mSystems["PlayerSystem"]->addEntity(anInstance);
+      mPlayers.insert(std::pair<int, GQE::typeEntityID>(theJoy, anPlayerID));
+   }
+
+   return anInstance;
 }
 //------------------------------------------------------------------------------
 //       Class:  IActionState
@@ -79,13 +85,13 @@ void IActionState::addPlayer(int                  theJoy,
 //------------------------------------------------------------------------------
 void IActionState::addSystem(ISystem* theSystem)
 {
-    if(theSystem != NULL)
-    {
-        mSystems[theSystem->getID()]=theSystem;
-    }
-    else
-    {
-        ELOG() << "SystemManager::addSystem() Null pointer provided!" << std::endl;
-    }
+   if(theSystem != NULL)
+   {
+      mSystems[theSystem->getID()] = theSystem;
+   }
+   else
+   {
+      ELOG() << "SystemManager::addSystem() Null pointer provided!" << std::endl;
+   }
 }
 

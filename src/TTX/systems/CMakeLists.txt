@@ -12,6 +12,7 @@ set(SYSTEMS_FILES
    ${SRCROOT}/systems/PlayerSystem.cpp
    ${SRCROOT}/systems/PropellerSystem.cpp
    ${SRCROOT}/systems/HealthSystem.cpp
+   ${SRCROOT}/systems/AttachSystem.cpp
    ${SRCROOT}/systems/AnimationSystem.cpp)
 
 add_library(systems ${SYSTEMS_FILES}) 

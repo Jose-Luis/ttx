@@ -26,6 +26,7 @@
 
 #include <TTX/Types.hpp>
 #include <TTX/gameStates/IActionState.hpp>
+#include <TTX/systems/AttachSystem.hpp>
 #include <TTX/systems/B2System.hpp>
 #include <TTX/systems/PropellerSystem.hpp>
 #include <TTX/systems/PlayerSystem.hpp>
@@ -38,6 +39,7 @@
 #include <TTX/prototypes/BasicShip.hpp>
 #include <TTX/prototypes/Player.hpp>
 #include <TTX/prototypes/SimpleBullet.hpp>
+#include <TTX/prototypes/Machinegun.hpp>
 #include <TTX/classes/mapLoader/MapLoader.hpp>
 
 /// Provides the TicTacToe GameStateOne example
@@ -110,6 +112,8 @@ class GameStateOne : public IActionState
 
       sf::View mView;
       b2ContactListener* mCollisionListener;
+
+      GQE::IEntity* mPlayer;
 
 
    /*#ifndef  NDEBUG
