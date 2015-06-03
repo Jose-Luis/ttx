@@ -11,12 +11,12 @@
 
 //------------------------------------------------------------------------------
 //       Class:  ISystem
-//      Method:  
-// Description:  A stupid method 
+//      Method:
+// Description:  A stupid method
 //------------------------------------------------------------------------------
-ISystem::ISystem (GQE::typeSystemID theSystemID, 
+ISystem::ISystem (GQE::typeSystemID theSystemID,
                   IActionState&      theState):
-   GQE::ISystem(theSystemID,*GQE::IApp::getApp()),
+   GQE::ISystem(theSystemID, *GQE::IApp::getApp()),
    mState(theState)
 {}
-ISystem::~ISystem(){}
+ISystem::~ISystem() {}

@@ -10,16 +10,16 @@
 class Box: public B2Proto, public RenderProto, public HealthProto
 {
 
-   public:
+public:
 
-      Box():
-         GQE::Prototype("pBox"),
-         B2Proto("pBox"),
-         RenderProto("pBox"),
-         HealthProto("pBox")
+   Box():
+      GQE::Prototype("pBox"),
+      B2Proto("pBox"),
+      RenderProto("pBox"),
+      HealthProto("pBox")
    {
       b2FixtureDef anFixture1;
-      mShape1.SetAsBox(1,1);
+      mShape1.SetAsBox(1, 1);
       anFixture1.shape = &mShape1;
       anFixture1.density = 1;
       anFixture1.friction = 0.5;
@@ -28,12 +28,12 @@ class Box: public B2Proto, public RenderProto, public HealthProto
       anFixture1.filter.maskBits = ObjectCategories::SCENE | ObjectCategories::FRIENDLY_BULLET | ObjectCategories::FRIENDLY_SHIP;
 
       mBodyDef.type = b2_dynamicBody;
-      mProperties.set("rTexRect",sf::IntRect(96,0,32,32));
+      mProperties.set("rTexRect", sf::IntRect(96, 0, 32, 32));
       mFixturesDef.push_back(anFixture1);
-      mAnimation1.push_back(sf::IntRect(96,0,32,32));
-      mAnimation1.push_back(sf::IntRect(128,0,32,32));
-      mAnimation1.push_back(sf::IntRect(160,0,32,32));
-      mAnimation1.push_back(sf::IntRect(192,0,32,32));
+      mAnimation1.push_back(sf::IntRect(96, 0, 32, 32));
+      mAnimation1.push_back(sf::IntRect(128, 0, 32, 32));
+      mAnimation1.push_back(sf::IntRect(160, 0, 32, 32));
+      mAnimation1.push_back(sf::IntRect(192, 0, 32, 32));
       Animation anAnimation(&mAnimation1);
       anAnimation.mLoop = true;
       anAnimation.mFPS = 2;
@@ -42,15 +42,15 @@ class Box: public B2Proto, public RenderProto, public HealthProto
       mProperties.set("Resistance", 5.f);
       mProperties.set("Health", 150.f);
    }
-   private:
+private:
 
 
-      b2PolygonShape  mShape1;
-      std::vector<sf::IntRect> mAnimation1;  
+   b2PolygonShape  mShape1;
+   std::vector<sf::IntRect> mAnimation1;
 
 
 
 
-};                                          
+};
 
 #endif   // ----- #ifndef PBOX_INC  ----- 

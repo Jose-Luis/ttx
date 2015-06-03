@@ -33,123 +33,123 @@
 
 namespace GQE
 {
-  /// Enumeration of recommended Graphic Range
-  enum GraphicRange
-  {
-    LowRange  = 0, ///< Recommend using LowRange graphics (32x32 pixels)
-    MidRange  = 1, ///< Recommend using MidRange graphics (64x64 pixels)
-    HighRange = 2  ///< Recommend using HighRange graphics (128x128 pixels)
-  };
+/// Enumeration of recommended Graphic Range
+enum GraphicRange
+{
+   LowRange  = 0, ///< Recommend using LowRange graphics (32x32 pixels)
+   MidRange  = 1, ///< Recommend using MidRange graphics (64x64 pixels)
+   HighRange = 2  ///< Recommend using HighRange graphics (128x128 pixels)
+};
 
-  /// Enumeration of AssetLoadTime
-  enum AssetLoadTime
-  {
-    AssetLoadNow   = 0, ///< Load the asset now
-    AssetLoadLater = 1  ///< Load the asset later
-  };
+/// Enumeration of AssetLoadTime
+enum AssetLoadTime
+{
+   AssetLoadNow   = 0, ///< Load the asset now
+   AssetLoadLater = 1  ///< Load the asset later
+};
 
-  /// Enumeration of AssetDropTime
-  enum AssetDropTime
-  {
-    AssetDropUnspecified = 0, ///< Drop/unload time unspecified, use default AtZero
-    AssetDropAtZero      = 1, ///< Drop/unload when count reaches 0
-    AssetDropAtExit      = 2  ///< Drop/unload when program exits (deconstructor)
-  };
+/// Enumeration of AssetDropTime
+enum AssetDropTime
+{
+   AssetDropUnspecified = 0, ///< Drop/unload time unspecified, use default AtZero
+   AssetDropAtZero      = 1, ///< Drop/unload when count reaches 0
+   AssetDropAtExit      = 2  ///< Drop/unload when program exits (deconstructor)
+};
 
-  /// Enumeration of all Asset loading techniques
-  enum AssetLoadStyle
-  {
-    AssetLoadFromUnknown = 0, ///< Error condition returned by GetLoadStyle
-    AssetLoadFromFile    = 1, ///< Load the asset from a file
-    AssetLoadFromMemory  = 2, ///< Load the asset from memory
-    AssetLoadFromNetwork = 3  ///< Load the asset from the network
-  };
+/// Enumeration of all Asset loading techniques
+enum AssetLoadStyle
+{
+   AssetLoadFromUnknown = 0, ///< Error condition returned by GetLoadStyle
+   AssetLoadFromFile    = 1, ///< Load the asset from a file
+   AssetLoadFromMemory  = 2, ///< Load the asset from memory
+   AssetLoadFromNetwork = 3  ///< Load the asset from the network
+};
 
-  /// Enumeration of all Logging severity types
-  enum SeverityType
-  {
-    // Logger severity types range from 0 to 5
-    SeverityInfo          = INFO_LEVEL,   ///< Informational severity type
-    SeverityWarning       = WARN_LEVEL,   ///< Warning severity type
-    SeverityError         = ERROR_LEVEL,  ///< Error severity type
-    SeverityFatal         = FATAL_LEVEL   ///< Fatal severity type
-  };
+/// Enumeration of all Logging severity types
+enum SeverityType
+{
+   // Logger severity types range from 0 to 5
+   SeverityInfo          = INFO_LEVEL,   ///< Informational severity type
+   SeverityWarning       = WARN_LEVEL,   ///< Warning severity type
+   SeverityError         = ERROR_LEVEL,  ///< Error severity type
+   SeverityFatal         = FATAL_LEVEL   ///< Fatal severity type
+};
 
-  /// Status Enumeration for Status Return values
-  enum StatusType
-  {
-    // Values from -99 to 99 are common Error and Good status responses
-    StatusAppMissingAsset = -4,  ///< Application failed due to missing asset file
-    StatusAppStackEmpty   = -3,  ///< Application States stack is empty
-    StatusAppInitFailed   = -2,  ///< Application initialization failed
-    StatusError           = -1,  ///< General error status response
-    StatusAppOK           =  0,  ///< Application quit without error
-    StatusNoError         =  0,  ///< General no error status response
-    StatusFalse           =  0,  ///< False status response
-    StatusTrue            =  1,  ///< True status response
-    StatusOK              =  1   ///< OK status response
+/// Status Enumeration for Status Return values
+enum StatusType
+{
+   // Values from -99 to 99 are common Error and Good status responses
+   StatusAppMissingAsset = -4,  ///< Application failed due to missing asset file
+   StatusAppStackEmpty   = -3,  ///< Application States stack is empty
+   StatusAppInitFailed   = -2,  ///< Application initialization failed
+   StatusError           = -1,  ///< General error status response
+   StatusAppOK           =  0,  ///< Application quit without error
+   StatusNoError         =  0,  ///< General no error status response
+   StatusFalse           =  0,  ///< False status response
+   StatusTrue            =  1,  ///< True status response
+   StatusOK              =  1   ///< OK status response
 
-    // Values from +-100 to +-199 are reserved for File status responses
-  };
+                            // Values from +-100 to +-199 are reserved for File status responses
+};
 
-  // Forward declare GQE core interfaces provided
-  class IApp;
-  class IAssetHandler;
-  class IEvent;
-  class ILogger;
-  class IProperty;
-  class IState;
+// Forward declare GQE core interfaces provided
+class IApp;
+class IAssetHandler;
+class IEvent;
+class ILogger;
+class IProperty;
+class IState;
 
-  // Forward declare GQE core classes provided
-  class AssetManager;
-  class ConfigReader;
-  class EventManager;
-  class PropertyManager;
-  class StateManager;
+// Forward declare GQE core classes provided
+class AssetManager;
+class ConfigReader;
+class EventManager;
+class PropertyManager;
+class StateManager;
 
-  // Forward declare GQE core assets provided
-  class ConfigAsset;
-  class ConfigHandler;
-  class DummyHandler;
-  class FontAsset;
-  class FontHandler;
-  class ImageAsset;
-  class ImageHandler;
-  class MusicAsset;
-  class MusicHandler;
-  class SoundAsset;
-  class SoundHandler;
+// Forward declare GQE core assets provided
+class ConfigAsset;
+class ConfigHandler;
+class DummyHandler;
+class FontAsset;
+class FontHandler;
+class ImageAsset;
+class ImageHandler;
+class MusicAsset;
+class MusicHandler;
+class SoundAsset;
+class SoundHandler;
 
-  // Forward declare GQE core loggers provided
-  class FatalLogger;
-  class FileLogger;
-  class ScopeLogger;
-  class StringLogger;
+// Forward declare GQE core loggers provided
+class FatalLogger;
+class FileLogger;
+class ScopeLogger;
+class StringLogger;
 
-  // Forward declare GQE core states provided
-  class MenuState;
-  class SplashState;
+// Forward declare GQE core states provided
+class MenuState;
+class SplashState;
 
-  /// Declare Asset ID typedef which is used for identifying Asset objects
-  typedef std::string typeAssetID;
+/// Declare Asset ID typedef which is used for identifying Asset objects
+typedef std::string typeAssetID;
 
-  /// Declare Asset Handler ID typedef which is used for identifying Asset Handler objects
-  typedef std::string typeAssetHandlerID;
+/// Declare Asset Handler ID typedef which is used for identifying Asset Handler objects
+typedef std::string typeAssetHandlerID;
 
-  /// Declare Event ID typedef which is used for identifying Event objects
-  typedef std::string typeEventID;
+/// Declare Event ID typedef which is used for identifying Event objects
+typedef std::string typeEventID;
 
-  /// Declare Property ID typedef which is used for identifying Properties
-  typedef std::string typePropertyID;
+/// Declare Property ID typedef which is used for identifying Properties
+typedef std::string typePropertyID;
 
-  /// Declare State ID typedef which is used for identifying State objects
-  typedef std::string typeStateID;
+/// Declare State ID typedef which is used for identifying State objects
+typedef std::string typeStateID;
 
-  /// Declare NameValue typedef which is used for config section maps
-  typedef std::map<const std::string, const std::string> typeNameValue;
+/// Declare NameValue typedef which is used for config section maps
+typedef std::map<const std::string, const std::string> typeNameValue;
 
-  /// Declare NameValueIter typedef which is used for name,value pair maps
-  typedef std::map<const std::string, const std::string>::iterator typeNameValueIter;
+/// Declare NameValueIter typedef which is used for name,value pair maps
+typedef std::map<const std::string, const std::string>::iterator typeNameValueIter;
 } // namespace GQE
 #endif // GQE_CORE_TYPES_HPP_INCLUDED
 

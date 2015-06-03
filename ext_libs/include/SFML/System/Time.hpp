@@ -41,72 +41,72 @@ class SFML_SYSTEM_API Time
 {
 public:
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Default constructor
-    ///
-    /// Sets the time value to zero.
-    ///
-    ////////////////////////////////////////////////////////////
-    Time();
+   ////////////////////////////////////////////////////////////
+   /// \brief Default constructor
+   ///
+   /// Sets the time value to zero.
+   ///
+   ////////////////////////////////////////////////////////////
+   Time();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Return the time value as a number of seconds
-    ///
-    /// \return Time in seconds
-    ///
-    /// \see asMilliseconds, asMicroseconds
-    ///
-    ////////////////////////////////////////////////////////////
-    float asSeconds() const;
+   ////////////////////////////////////////////////////////////
+   /// \brief Return the time value as a number of seconds
+   ///
+   /// \return Time in seconds
+   ///
+   /// \see asMilliseconds, asMicroseconds
+   ///
+   ////////////////////////////////////////////////////////////
+   float asSeconds() const;
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Return the time value as a number of milliseconds
-    ///
-    /// \return Time in milliseconds
-    ///
-    /// \see asSeconds, asMicroseconds
-    ///
-    ////////////////////////////////////////////////////////////
-    Int32 asMilliseconds() const;
+   ////////////////////////////////////////////////////////////
+   /// \brief Return the time value as a number of milliseconds
+   ///
+   /// \return Time in milliseconds
+   ///
+   /// \see asSeconds, asMicroseconds
+   ///
+   ////////////////////////////////////////////////////////////
+   Int32 asMilliseconds() const;
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Return the time value as a number of microseconds
-    ///
-    /// \return Time in microseconds
-    ///
-    /// \see asSeconds, asMilliseconds
-    ///
-    ////////////////////////////////////////////////////////////
-    Int64 asMicroseconds() const;
+   ////////////////////////////////////////////////////////////
+   /// \brief Return the time value as a number of microseconds
+   ///
+   /// \return Time in microseconds
+   ///
+   /// \see asSeconds, asMilliseconds
+   ///
+   ////////////////////////////////////////////////////////////
+   Int64 asMicroseconds() const;
 
-    ////////////////////////////////////////////////////////////
-    // Static member data
-    ////////////////////////////////////////////////////////////
-    static const Time Zero; ///< Predefined "zero" time value
-
-private:
-
-    friend SFML_SYSTEM_API Time seconds(float);
-    friend SFML_SYSTEM_API Time milliseconds(Int32);
-    friend SFML_SYSTEM_API Time microseconds(Int64);
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Construct from a number of microseconds
-    ///
-    /// This function is internal. To construct time values,
-    /// use sf::seconds, sf::milliseconds or sf::microseconds instead.
-    ///
-    /// \param microseconds Number of microseconds
-    ///
-    ////////////////////////////////////////////////////////////
-    explicit Time(Int64 microseconds);
+   ////////////////////////////////////////////////////////////
+   // Static member data
+   ////////////////////////////////////////////////////////////
+   static const Time Zero; ///< Predefined "zero" time value
 
 private:
 
-    ////////////////////////////////////////////////////////////
-    // Member data
-    ////////////////////////////////////////////////////////////
-    Int64 m_microseconds; ///< Time value stored as microseconds
+   friend SFML_SYSTEM_API Time seconds(float);
+   friend SFML_SYSTEM_API Time milliseconds(Int32);
+   friend SFML_SYSTEM_API Time microseconds(Int64);
+
+   ////////////////////////////////////////////////////////////
+   /// \brief Construct from a number of microseconds
+   ///
+   /// This function is internal. To construct time values,
+   /// use sf::seconds, sf::milliseconds or sf::microseconds instead.
+   ///
+   /// \param microseconds Number of microseconds
+   ///
+   ////////////////////////////////////////////////////////////
+   explicit Time(Int64 microseconds);
+
+private:
+
+   ////////////////////////////////////////////////////////////
+   // Member data
+   ////////////////////////////////////////////////////////////
+   Int64 m_microseconds; ///< Time value stored as microseconds
 };
 
 ////////////////////////////////////////////////////////////

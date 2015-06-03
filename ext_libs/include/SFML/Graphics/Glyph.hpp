@@ -42,18 +42,18 @@ class SFML_GRAPHICS_API Glyph
 {
 public:
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Default constructor
-    ///
-    ////////////////////////////////////////////////////////////
-    Glyph() : advance(0) {}
+   ////////////////////////////////////////////////////////////
+   /// \brief Default constructor
+   ///
+   ////////////////////////////////////////////////////////////
+   Glyph() : advance(0) {}
 
-    ////////////////////////////////////////////////////////////
-    // Member data
-    ////////////////////////////////////////////////////////////
-    float     advance;     ///< Offset to move horizontally to the next character
-    FloatRect bounds;      ///< Bounding rectangle of the glyph, in coordinates relative to the baseline
-    IntRect   textureRect; ///< Texture coordinates of the glyph inside the font's texture
+   ////////////////////////////////////////////////////////////
+   // Member data
+   ////////////////////////////////////////////////////////////
+   float     advance;     ///< Offset to move horizontally to the next character
+   FloatRect bounds;      ///< Bounding rectangle of the glyph, in coordinates relative to the baseline
+   IntRect   textureRect; ///< Texture coordinates of the glyph inside the font's texture
 };
 
 } // namespace sf

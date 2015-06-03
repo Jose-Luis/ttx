@@ -1,5 +1,5 @@
 /// @file RenderProto.hpp
-/// @brief 
+/// @brief
 /// @author Jose Luis Lavado
 /// @version 0.1
 /// @date 2013-04-01
@@ -9,21 +9,22 @@
 #define  RENDERPROTO_INC
 
 #include <SFML/Graphics.hpp>
+#include <TTX/Types.hpp>
 #include <GQE/Entity/classes/Prototype.hpp>
 
 //Forward declarations
 class b2Body;
 
-/// @brief : 
+/// @brief :
 //
 class RenderProto: virtual public GQE::Prototype
 {
 
-   public:
+public:
 
-      RenderProto(GQE::typePrototypeID theID);
+   RenderProto(GQE::typePrototypeID theID);
 
-   private:
+private:
 };
 
 #endif   // ----- #ifndef RENDERPROTO_INC  -----

@@ -16,13 +16,13 @@
 class MapLoader
 {
    //Loads the map. Returns false if it fails.
-   public:
-    MapLoader(std::string theFileName);
-    ~MapLoader();
-    void loadTiles(RenderManager& theRenderManager);
-    void loadShapes(b2World& theWorld);
-   private:
-    tinyxml2::XMLDocument mMap;
+public:
+   MapLoader(std::string theFileName);
+   ~MapLoader();
+   void loadTiles(RenderManager& theRenderManager);
+   void loadShapes(b2World& theWorld);
+private:
+   tinyxml2::XMLDocument mMap;
 };
 
-#endif 
+#endif

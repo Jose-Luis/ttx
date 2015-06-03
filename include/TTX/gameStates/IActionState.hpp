@@ -23,60 +23,60 @@
 class IActionState : public GQE::IState
 {
 public:
-    /**
-     * @brief IActionState constructor
-     * @param[in] theApp is a pointer to the App class.
-     */
-    IActionState(GQE::typeStateID theStateID,GQE::IApp& theApp);
+   /**
+    * @brief IActionState constructor
+    * @param[in] theApp is a pointer to the App class.
+    */
+   IActionState(GQE::typeStateID theStateID, GQE::IApp& theApp);
 
-    /**
-     * @brief IActionState deconstructor
-     */
-    virtual ~IActionState(void);
-    /**
-     * @brief addInstance
-     * @param thePrototype
-     * @param thePosition
-     * @return
-     */
-    GQE::Instance* addInstance(GQE::typePrototypeID thePrototype,
-                               Position2D           thePosition,
-                               Position2D           theInitialImpulse = Position2D(0,0,0));
-    /**
-     * @brief addPlayer
-     * @param theJoy
-     * @param thePrototype
-     * @param thePosition
-     */
-    GQE::IEntity* addPlayer(int                  theJoy,
-                   GQE::typePrototypeID thePrototype,
-                   Position2D           thePosition);
-    /**
-     * @brief addChild 
-     * @param theFather
-     * @param theChild
-     * @param theName
-     */
-    //void addChild(GQE::Instance* theFather,
-                  //GQE::Instance* theChild,
-                  //GQE::PropertyID theChildName);
-    /**
-     * @brief addSystem
-     * @param theSystem
-     */
-    void addSystem(ISystem* theSystem);
-    /// @brief addSystem 
-    /// @param theSystem
-    ISystem* getSystem(SystemID theSystem);
+   /**
+    * @brief IActionState deconstructor
+    */
+   virtual ~IActionState(void);
+   /**
+    * @brief addInstance
+    * @param thePrototype
+    * @param thePosition
+    * @return
+    */
+   GQE::Instance* addInstance(GQE::typePrototypeID thePrototype,
+                              Position2D           thePosition,
+                              Position2D           theInitialImpulse = Position2D(0, 0, 0));
+   /**
+    * @brief addPlayer
+    * @param theJoy
+    * @param thePrototype
+    * @param thePosition
+    */
+   GQE::IEntity* addPlayer(int                  theJoy,
+                           GQE::typePrototypeID thePrototype,
+                           Position2D           thePosition);
+   /**
+    * @brief addChild
+    * @param theFather
+    * @param theChild
+    * @param theName
+    */
+   //void addChild(GQE::Instance* theFather,
+   //GQE::Instance* theChild,
+   //GQE::PropertyID theChildName);
+   /**
+    * @brief addSystem
+    * @param theSystem
+    */
+   void addSystem(ISystem* theSystem);
+   /// @brief addSystem
+   /// @param theSystem
+   ISystem* getSystem(SystemID theSystem);
 
 protected:   //Members
 
-    GQE::PrototypeManager mPrototypes;
-    SystemContainer       mSystems;
-    PlayerContainer       mPlayers;
-    RenderManager         mRenderManager;
-    Particles             mParticles;
-    b2World               mWorld;
+   GQE::PrototypeManager mPrototypes;
+   SystemContainer       mSystems;
+   PlayerContainer       mPlayers;
+   RenderManager         mRenderManager;
+   Particles             mParticles;
+   b2World               mWorld;
 };
 
 #endif /* end of include guard: IACTIONSTATE_M3AYKRER */

@@ -1,5 +1,5 @@
 /// @file VehicleProto.cpp
-/// @brief 
+/// @brief
 /// @author Jose Luis Lavado
 /// @version 0.1
 /// @date 2013-04-01
@@ -10,12 +10,12 @@
 #include <GQE/Entity/classes/Prototype.hpp>
 #include <TTX/classes/propellers/Propeller.hpp>
 
-class VehicleProto: virtual public GQE::Prototype 
+class VehicleProto: virtual public GQE::Prototype
 {
-   public:
+public:
 
-      VehicleProto(GQE::typePrototypeID theID);
-      void setPropellerModel(PropellerType theModel);
+   VehicleProto(GQE::typePrototypeID theID);
+   void setPropellerModel(PropellerType theModel);
 };
 
 #endif   // ----- #ifndef VehiclePROTO_INC  -----

@@ -14,34 +14,34 @@
 
 typedef std::string LayerID;
 
-struct Layer 
+struct Layer
 {
    /**
-    * @brief Layer 
+    * @brief Layer
     */
-   Layer(){};
+   Layer() {};
    /**
-    * @brief Layer 
+    * @brief Layer
     * @param theID
     * @param theTexure
     */
-   Layer(LayerID theID,sf::Texture* theTexure)
+   Layer(LayerID theID, sf::Texture* theTexure)
    {
       mID = theID;
       mVertices.setPrimitiveType(sf::Quads);
       mStates.texture = theTexure;
    }
    /**
-    * @brief ~Layer 
+    * @brief ~Layer
     */
-   ~Layer (){};
+   ~Layer () {};
    /**
-    * @brief draw 
+    * @brief draw
     * @param theWindow
     */
    void draw(sf::RenderWindow& theWindow)
    {
-      theWindow.draw(mVertices,mStates);
+      theWindow.draw(mVertices, mStates);
    }
    /****** Variables ******/
    LayerID mID;

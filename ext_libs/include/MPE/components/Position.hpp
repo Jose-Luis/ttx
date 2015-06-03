@@ -14,47 +14,47 @@ namespace mpe
 class Position
 {
 
-   public:
+public:
 
-      /// @brief getPosition 
-      /// @return 
-      gt::Vec2D getPosition() const
-      {
-         return mPosition;
-      }
-      /// @brief setPosition 
-      /// @param thePosition
-      void setPosition(gt::Vec2D thePosition)
-      {
-         mPosition=thePosition;
-      }
-      /// @brief setPosition 
-      /// @param theX
-      /// @param theY
-      void setPosition(Real theX,Real theY)
-      {
-         mPosition.x = theX;
-         mPosition.y = theY;
-      }
-      /// @brief move 
-      /// @param theXOffset
-      /// @param theYOffset
-      void move(Real theXOffset,Real theYOffset)
-     {
-         mPosition.x += theXOffset;
-         mPosition.y += theYOffset;
-      }
-      /// @brief move 
-      /// @param theOffset
-      void move(gt::Vec2D theOffset)
-      {
-         mPosition += theOffset;
-      }
-     
-   protected:
+   /// @brief getPosition
+   /// @return
+   gt::Vec2D getPosition() const
+   {
+      return mPosition;
+   }
+   /// @brief setPosition
+   /// @param thePosition
+   void setPosition(gt::Vec2D thePosition)
+   {
+      mPosition = thePosition;
+   }
+   /// @brief setPosition
+   /// @param theX
+   /// @param theY
+   void setPosition(Real theX, Real theY)
+   {
+      mPosition.x = theX;
+      mPosition.y = theY;
+   }
+   /// @brief move
+   /// @param theXOffset
+   /// @param theYOffset
+   void move(Real theXOffset, Real theYOffset)
+   {
+      mPosition.x += theXOffset;
+      mPosition.y += theYOffset;
+   }
+   /// @brief move
+   /// @param theOffset
+   void move(gt::Vec2D theOffset)
+   {
+      mPosition += theOffset;
+   }
 
-      Position(gt::Vec2D thePosition);
-      gt::Vec2D mPosition;
+protected:
+
+   Position(gt::Vec2D thePosition);
+   gt::Vec2D mPosition;
 };
 }
 #endif   // ----- #ifndef POSITION_INC  -----

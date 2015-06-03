@@ -11,64 +11,67 @@
 #include <TTX/classes/render/Layer.hpp>
 #include <map>
 
-class RenderManager 
+class RenderManager
 {
 public:
    /**
-    * @brief RenderManager 
+    * @brief RenderManager
     * @param theWindow
     */
-   RenderManager(){};
+   RenderManager() {};
    /**
-    * @brief ~RenderManager 
+    * @brief ~RenderManager
     */
-   ~RenderManager (){};
+   ~RenderManager () {};
    /**
-    * @brief addLayer 
+    * @brief addLayer
     * @param theID
     * @param theTexture
     */
-   void addLayer(LayerID theID,sf::Texture* theTexture)
+   void addLayer(LayerID theID, sf::Texture* theTexture)
    {
-      Layer anLayer(theID,theTexture);
-      mLayers.insert(std::pair<LayerID,Layer>(theID,anLayer));
+      Layer anLayer(theID, theTexture);
+      mLayers.insert(std::pair<LayerID, Layer>(theID, anLayer));
    }
    /**
-    * @brief drawLayer 
+    * @brief drawLayer
     * @param theID
     */
-   void drawLayer(LayerID theID,sf::RenderWindow& theRenderWindow)
+   void drawLayer(LayerID theID, sf::RenderWindow& theRenderWindow)
    {
       mLayers[theID].draw(theRenderWindow);
    }
    /**
-    * @brief getLayerVertices 
+    * @brief getLayerVertices
     * @param theID
-    * @return 
+    * @return
     */
    Layer& getLayer(LayerID theID)
    {
       return mLayers[theID];
    }
    /**
-    * @brief addVertex 
+    * @brief addVertex
     * @param theID
     * @param theVertex
     */
-   void addVertex(LayerID theID,const sf::Vertex& theVertex)
+   void addVertex(LayerID theID, const sf::Vertex& theVertex)
    {
       mLayers[theID].mVertices.append(theVertex);
    }
    /**
-    * @brief clear 
+    * @brief clear
     */
    void clear()
    {
-      std::map<LayerID,Layer>::iterator anIter;
+      std::map<LayerID, Layer>::iterator anIter;
+
       for (anIter = mLayers.begin(); anIter != mLayers.end(); anIter++)
       {
          if(anIter->second.mUpdatable == true)
+         {
             anIter->second.mVertices.clear();
+         }
       }
    }
 private:

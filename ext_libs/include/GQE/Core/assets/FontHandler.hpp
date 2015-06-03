@@ -8,60 +8,60 @@
  */
 #ifndef   CORE_FONT_HANDLER_HPP_INCLUDED
 #define   CORE_FONT_HANDLER_HPP_INCLUDED
- 
+
 #include <SFML/Graphics.hpp>
 #include <GQE/Core/Core_types.hpp>
 #include <GQE/Core/interfaces/TAssetHandler.hpp>
 
 namespace GQE
 {
-  /// Provides the FontHandler class for managing sf::Font assets
-  class GQE_API FontHandler : public TAssetHandler<sf::Font>
-  {
-  public:
-    /**
-     * FontHandler constructor
-     */
-    FontHandler();
- 
-    /**
-     * FontHandler deconstructor
-     */
-    virtual ~FontHandler();
- 
-  protected:
-    /**
-     * LoadFromFile is responsible for loading theAsset from a file and must
-     * be defined by the derived class since the interface for TYPE is
-     * unknown at this stage.
-     * @param[in] theAssetID of the asset to be loaded
-     * @param[in] theAsset pointer to load
-     * @return true if the asset was successfully loaded, false otherwise
-     */
-    virtual bool loadFromFile(const typeAssetID theAssetID, sf::Font& theAsset);
+/// Provides the FontHandler class for managing sf::Font assets
+class GQE_API FontHandler : public TAssetHandler<sf::Font>
+{
+public:
+   /**
+    * FontHandler constructor
+    */
+   FontHandler();
 
-    /**
-     * LoadFromMemory is responsible for loading theAsset from memory and
-     * must be defined by the derived class since the interface for TYPE is
-     * unknown at this stage.
-     * @param[in] theAssetID of the asset to be loaded
-     * @param[in] theAsset pointer to load
-     * @return true if the asset was successfully loaded, false otherwise
-     */
-    virtual bool loadFromMemory(const typeAssetID theAssetID, sf::Font& theAsset);
+   /**
+    * FontHandler deconstructor
+    */
+   virtual ~FontHandler();
 
-    /**
-     * LoadFromNetwork is responsible for loading theAsset from network and
-     * must be defined by the derived class since the interface for TYPE is
-     * unknown at this stage.
-     * @param[in] theAssetID of the asset to be loaded
-     * @param[in] theAsset pointer to load
-     * @return true if the asset was successfully loaded, false otherwise
-     */
-    virtual bool loadFromNetwork(const typeAssetID theAssetID, sf::Font& theAsset);
+protected:
+   /**
+    * LoadFromFile is responsible for loading theAsset from a file and must
+    * be defined by the derived class since the interface for TYPE is
+    * unknown at this stage.
+    * @param[in] theAssetID of the asset to be loaded
+    * @param[in] theAsset pointer to load
+    * @return true if the asset was successfully loaded, false otherwise
+    */
+   virtual bool loadFromFile(const typeAssetID theAssetID, sf::Font& theAsset);
 
-  private:
-  }; // class FontHandler
+   /**
+    * LoadFromMemory is responsible for loading theAsset from memory and
+    * must be defined by the derived class since the interface for TYPE is
+    * unknown at this stage.
+    * @param[in] theAssetID of the asset to be loaded
+    * @param[in] theAsset pointer to load
+    * @return true if the asset was successfully loaded, false otherwise
+    */
+   virtual bool loadFromMemory(const typeAssetID theAssetID, sf::Font& theAsset);
+
+   /**
+    * LoadFromNetwork is responsible for loading theAsset from network and
+    * must be defined by the derived class since the interface for TYPE is
+    * unknown at this stage.
+    * @param[in] theAssetID of the asset to be loaded
+    * @param[in] theAsset pointer to load
+    * @return true if the asset was successfully loaded, false otherwise
+    */
+   virtual bool loadFromNetwork(const typeAssetID theAssetID, sf::Font& theAsset);
+
+private:
+}; // class FontHandler
 } // namespace GQE
 
 #endif // CORE_FONT_MANAGER_HPP_INCLUDED

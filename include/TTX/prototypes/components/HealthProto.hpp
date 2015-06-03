@@ -1,5 +1,5 @@
 /// @file HealthProto.hpp
-/// @brief 
+/// @brief
 /// @author Jose Luis Lavado
 /// @version 0.1
 /// @date 2013-04-01
@@ -15,11 +15,11 @@
 class HealthProto: virtual public GQE::Prototype
 {
 
-   public:
+public:
 
-      HealthProto(GQE::typePrototypeID theID);
+   HealthProto(GQE::typePrototypeID theID);
 
-   private:
+private:
 };
 
 #endif   // ----- #ifndef RENDERPROTO_INC  -----

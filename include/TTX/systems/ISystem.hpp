@@ -28,6 +28,6 @@ public:
     */
    virtual ~ISystem ();
 
-    IActionState& mState;
+   IActionState& mState;
 };
 #endif /* end of include guard: ISYSTEM_E119QL54 */

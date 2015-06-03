@@ -1,5 +1,5 @@
 /// @file B2Proto.hpp
-/// @brief 
+/// @brief
 /// @author Jose Luis Lavado
 /// @version 0.1
 /// @date 2013-04-01
@@ -14,14 +14,14 @@
 
 class B2Proto: virtual public GQE::Prototype
 {
-   public:
+public:
 
-      B2Proto(GQE::typePrototypeID theID);
+   B2Proto(GQE::typePrototypeID theID);
 
-   protected:
+protected:
 
-      b2BodyDef mBodyDef;
-      std::vector<b2FixtureDef> mFixturesDef;
+   b2BodyDef mBodyDef;
+   std::vector<b2FixtureDef> mFixturesDef;
 };
 
 #endif   // ----- #ifndef B2PROTO_INC  -----

@@ -7,10 +7,12 @@ DisolveAffector::DisolveAffector(mpe::Real theLifetime, mpe::Real theColorFactor
 }
 void DisolveAffector::affect(mpe::Particle& theParticle, mpe::Real theElapsedTime)
 {
-      theParticle.modifyAlpha(-mColorFactor);
+   theParticle.modifyAlpha(-mColorFactor);
 
-      if (theParticle.isTransparent())
-         theParticle.kill();
+   if (theParticle.isTransparent())
+   {
+      theParticle.kill();
+   }
 }
 
 void DisolveAffector::update(mpe::Real theElapsedTime)

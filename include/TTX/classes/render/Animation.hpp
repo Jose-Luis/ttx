@@ -13,52 +13,57 @@
 
 class Animation
 {
-   public:
-      Animation(){};
-      Animation( std::vector<sf::IntRect>* theRects):
-         mFPS(8),
-         mTime(0),
-         mFrame(0),
-         mSize(theRects->size())
+public:
+   Animation() {};
+   Animation( std::vector<sf::IntRect>* theRects):
+      mFPS(8),
+      mTime(0),
+      mFrame(0),
+      mSize(theRects->size())
    {
       mRects = theRects;
    }
 
-      ~Animation(){};
-      void update(float theTime)
-      {
-         mFrame = mFPS * mTime;
+   ~Animation() {};
+   void update(float theTime)
+   {
+      mFrame = mFPS * mTime;
 
-         if(mFrame > (mSize - 1))
+      if(mFrame > (mSize - 1))
+      {
+         if(mLoop)
          {
-            if(mLoop)
-               mFrame = mFrame % mSize;
-            else  
-               mFrame = mSize - 1;
+            mFrame = mFrame % mSize;
          }
-         mTime += theTime;
+         else
+         {
+            mFrame = mSize - 1;
+         }
       }
 
-      void reset()
-      {
-         mTime = 0;
-      }
+      mTime += theTime;
+   }
 
-      sf::IntRect getFrame()
-      {
-         return (*mRects)[mFrame];
-      }
+   void reset()
+   {
+      mTime = 0;
+   }
+
+   sf::IntRect getFrame()
+   {
+      return (*mRects)[mFrame];
+   }
 
 
-   public:
-      bool mLoop;
-      float mFPS;
+public:
+   bool mLoop;
+   float mFPS;
 
-   private:
-      std::vector<sf::IntRect>* mRects;
-      float mTime;
-      int mFrame;
-      int mSize;
+private:
+   std::vector<sf::IntRect>* mRects;
+   float mTime;
+   int mFrame;
+   int mSize;
 };
 
 //Animation::Animation()
@@ -80,7 +85,7 @@ class Animation
 //{
 //if(mLoop)
 //mFrame = mFrame % mSize;
-//else  
+//else
 //mFrame = mSize - 1;
 //}
 //mTime += theTime;

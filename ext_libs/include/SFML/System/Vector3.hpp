@@ -38,44 +38,44 @@ class Vector3
 {
 public:
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Default constructor
-    ///
-    /// Creates a Vector3(0, 0, 0).
-    ///
-    ////////////////////////////////////////////////////////////
-    Vector3();
+   ////////////////////////////////////////////////////////////
+   /// \brief Default constructor
+   ///
+   /// Creates a Vector3(0, 0, 0).
+   ///
+   ////////////////////////////////////////////////////////////
+   Vector3();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Construct the vector from its coordinates
-    ///
-    /// \param X X coordinate
-    /// \param Y Y coordinate
-    /// \param Z Z coordinate
-    ///
-    ////////////////////////////////////////////////////////////
-    Vector3(T X, T Y, T Z);
+   ////////////////////////////////////////////////////////////
+   /// \brief Construct the vector from its coordinates
+   ///
+   /// \param X X coordinate
+   /// \param Y Y coordinate
+   /// \param Z Z coordinate
+   ///
+   ////////////////////////////////////////////////////////////
+   Vector3(T X, T Y, T Z);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Construct the vector from another type of vector
-    ///
-    /// This constructor doesn't replace the copy constructor,
-    /// it's called only when U != T.
-    /// A call to this constructor will fail to compile if U
-    /// is not convertible to T.
-    ///
-    /// \param vector Vector to convert
-    ///
-    ////////////////////////////////////////////////////////////
-    template <typename U>
-    explicit Vector3(const Vector3<U>& vector);
+   ////////////////////////////////////////////////////////////
+   /// \brief Construct the vector from another type of vector
+   ///
+   /// This constructor doesn't replace the copy constructor,
+   /// it's called only when U != T.
+   /// A call to this constructor will fail to compile if U
+   /// is not convertible to T.
+   ///
+   /// \param vector Vector to convert
+   ///
+   ////////////////////////////////////////////////////////////
+   template <typename U>
+   explicit Vector3(const Vector3<U>& vector);
 
-    ////////////////////////////////////////////////////////////
-    // Member data
-    ////////////////////////////////////////////////////////////
-    T x; ///< X coordinate of the vector
-    T y; ///< Y coordinate of the vector
-    T z; ///< Z coordinate of the vector
+   ////////////////////////////////////////////////////////////
+   // Member data
+   ////////////////////////////////////////////////////////////
+   T x; ///< X coordinate of the vector
+   T y; ///< Y coordinate of the vector
+   T z; ///< Z coordinate of the vector
 };
 
 ////////////////////////////////////////////////////////////

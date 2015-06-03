@@ -12,22 +12,22 @@
 class Weapon
 {
 public:
-    Weapon();
-    virtual ~Weapon();
-    void fire(Position2D thePosition, IActionState& theState);
-    void loadAmunition(int theAmu);
-    void setPosition(Position2D thePosition);
+   Weapon();
+   virtual ~Weapon();
+   void fire(Position2D thePosition, IActionState& theState);
+   void loadAmunition(int theAmu);
+   void setPosition(Position2D thePosition);
 
 private:
 
 
-    WeaponID      mID;
-    AmunitionID   mAmunitionType;
-    float         mCadency;
-    float         mPower;
-    float         mLastTime;
-    int           mAmunition;
-    int           mAmuLoaded;
-    Position2D    mPosition;
+   WeaponID      mID;
+   AmunitionID   mAmunitionType;
+   float         mCadency;
+   float         mPower;
+   float         mLastTime;
+   int           mAmunition;
+   int           mAmuLoaded;
+   Position2D    mPosition;
 };
 #endif /* end of include guard: WEAPON_8FPXBSUG */

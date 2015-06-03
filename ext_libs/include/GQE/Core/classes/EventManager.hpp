@@ -19,105 +19,107 @@
 
 namespace GQE
 {
-  /// Provides the EventManager class for managing IEvent classes
-  class GQE_API EventManager
-  {
-    public:
-      /**
-       * EventManager default constructor
-       */
-      EventManager();
+/// Provides the EventManager class for managing IEvent classes
+class GQE_API EventManager
+{
+public:
+   /**
+    * EventManager default constructor
+    */
+   EventManager();
 
-      /**
-       * EventManager deconstructor
-       */
-      virtual ~EventManager();
+   /**
+    * EventManager deconstructor
+    */
+   virtual ~EventManager();
 
-      /**
-       * HasID returns true if theEventID specified exists in this
-       * EventManager.
-       * @param[in] theEventID to lookup in this EventManager
-       * @return true if theEventID exists, false otherwise
-       */
-      bool hasID(const typeEventID theEventID) const;
+   /**
+    * HasID returns true if theEventID specified exists in this
+    * EventManager.
+    * @param[in] theEventID to lookup in this EventManager
+    * @return true if theEventID exists, false otherwise
+    */
+   bool hasID(const typeEventID theEventID) const;
 
-      /**
-       * DoEvents should be called to execute the DoEvent method for each
-       * IEvent stored in this EventManager.
-       * @param[in] theContext for the event, typically a different class
-       */
-      void doEvents(void* theContext = NULL);
+   /**
+    * DoEvents should be called to execute the DoEvent method for each
+    * IEvent stored in this EventManager.
+    * @param[in] theContext for the event, typically a different class
+    */
+   void doEvents(void* theContext = NULL);
 
-      /**
-       * Get returns the IEvent that matches theEventID specified that was
-       * previously added to the EventManager using the Add methods.
-       * @param[in] theEventID to lookup in this EventManager
-       * @return a pointer to the IEvent class or NULL otherwise
-       */
-      IEvent* get(const typeEventID theEventID);
+   /**
+    * Get returns the IEvent that matches theEventID specified that was
+    * previously added to the EventManager using the Add methods.
+    * @param[in] theEventID to lookup in this EventManager
+    * @return a pointer to the IEvent class or NULL otherwise
+    */
+   IEvent* get(const typeEventID theEventID);
 
-      /**
-       * Add adds a new TEvent to be managed by the EventManager using the
-       * class and member function specified without a context class specified.
-       * @param[in] theEventID to use when creating the TEvent class
-       * @param[in] theEventClass to use when calling theEventFunc
-       * @param[in] theEventFunc to call in theEventClass
-       */
-      template<class TCLASS>
-      void add(const typeEventID theEventID, TCLASS& theEventClass,
-        typename TEvent<TCLASS, void>::typeEventFunc theEventFunc)
+   /**
+    * Add adds a new TEvent to be managed by the EventManager using the
+    * class and member function specified without a context class specified.
+    * @param[in] theEventID to use when creating the TEvent class
+    * @param[in] theEventClass to use when calling theEventFunc
+    * @param[in] theEventFunc to call in theEventClass
+    */
+   template<class TCLASS>
+   void add(const typeEventID theEventID, TCLASS& theEventClass,
+            typename TEvent<TCLASS, void>::typeEventFunc theEventFunc)
+   {
+      // Only add the event if it doesn't already exist
+      if(mList.find(theEventID) == mList.end())
       {
-        // Only add the event if it doesn't already exist
-        if(mList.find(theEventID) == mList.end())
-        {
-          TEvent<TCLASS,void>* anEvent =
-            new(std::nothrow) TEvent<TCLASS,void>(theEventID, theEventClass, theEventFunc);
-          if(anEvent != NULL)
-          {
-            mList.insert(std::pair<const typeEventID, IEvent*>(theEventID, anEvent));
-          }
-        }
-      }
+         TEvent<TCLASS, void>* anEvent =
+            new(std::nothrow) TEvent<TCLASS, void>(theEventID, theEventClass, theEventFunc);
 
-      /**
-       * Add adds a new TEvent to be managed by the EventManager using the
-       * class and member function and context class type specified.
-       * @param[in] theEventID to use when creating the TEvent class
-       * @param[in] theEventClass to use when calling theEventFunc
-       * @param[in] theEventFunc to call in theEventClass
-       */
-      template<class TCLASS, class TCONTEXT>
-      void add(const typeEventID theEventID, TCLASS& theEventClass,
-        typename TEvent<TCLASS, TCONTEXT>::typeEventFunc theEventFunc)
+         if(anEvent != NULL)
+         {
+            mList.insert(std::pair<const typeEventID, IEvent*>(theEventID, anEvent));
+         }
+      }
+   }
+
+   /**
+    * Add adds a new TEvent to be managed by the EventManager using the
+    * class and member function and context class type specified.
+    * @param[in] theEventID to use when creating the TEvent class
+    * @param[in] theEventClass to use when calling theEventFunc
+    * @param[in] theEventFunc to call in theEventClass
+    */
+   template<class TCLASS, class TCONTEXT>
+   void add(const typeEventID theEventID, TCLASS& theEventClass,
+            typename TEvent<TCLASS, TCONTEXT>::typeEventFunc theEventFunc)
+   {
+      // Only add the event if it doesn't already exist
+      if(mList.find(theEventID) == mList.end())
       {
-        // Only add the event if it doesn't already exist
-        if(mList.find(theEventID) == mList.end())
-        {
-          TEvent<TCLASS,TCONTEXT>* anEvent =
-            new(std::nothrow) TEvent<TCLASS,TCONTEXT>(theEventID, theEventClass, theEventFunc);
-          if(anEvent != NULL)
-          {
+         TEvent<TCLASS, TCONTEXT>* anEvent =
+            new(std::nothrow) TEvent<TCLASS, TCONTEXT>(theEventID, theEventClass, theEventFunc);
+
+         if(anEvent != NULL)
+         {
             mList.insert(std::pair<const typeEventID, IEvent*>(theEventID, anEvent));
-          }
-        }
+         }
       }
+   }
 
-      /**
-       * Add will manage theEvent provided in this EventManager. Sometimes you might
-       * want to create your own IEvent based classes instead of using the TEvent
-       * class technique.
-       * @param[in] theEvent is a pointer to a class that derives from IEvent
-       */
-      void add(IEvent* theEvent);
-    protected:
+   /**
+    * Add will manage theEvent provided in this EventManager. Sometimes you might
+    * want to create your own IEvent based classes instead of using the TEvent
+    * class technique.
+    * @param[in] theEvent is a pointer to a class that derives from IEvent
+    */
+   void add(IEvent* theEvent);
+protected:
 
-    private:
-      // Variables
-      ///////////////////////////////////////////////////////////////////////////
-      /// A map of all events available for this EventManager class
-      std::map<const typeEventID, IEvent*> mList;
+private:
+   // Variables
+   ///////////////////////////////////////////////////////////////////////////
+   /// A map of all events available for this EventManager class
+   std::map<const typeEventID, IEvent*> mList;
 
-  }; // EventManager class
+}; // EventManager class
 } // namespace GQE
 #endif
 

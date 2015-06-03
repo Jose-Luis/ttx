@@ -1,7 +1,7 @@
 #include <TTX/systems/ParticleSystem.hpp>
 
-ParticleSystem::ParticleSystem(GQE::IState& theState,Particles& theParticles):
-   ISystem("ParticleSystem",theState),
+ParticleSystem::ParticleSystem(GQE::IState& theState, Particles& theParticles):
+   ISystem("ParticleSystem", theState),
    mParticles(theParticles)
 {
    mParticles.setXFactor(16);
@@ -28,12 +28,12 @@ ParticleSystem::~ParticleSystem()
 
 void ParticleSystem::addProperties(GQE::IEntity* theEntity)
 {
-   theEntity->mProperties.add<mpe::EmitterID>("pEmitterID","DUMMY");
+   theEntity->mProperties.add<mpe::EmitterID>("pEmitterID", "DUMMY");
 }
 
 void ParticleSystem::handleInit(GQE::IEntity* theEntity)
 {
-   mpe::EmitterID anEmitterID = 
+   mpe::EmitterID anEmitterID =
       theEntity->mProperties.get<mpe::EmitterID>("pEmitterID");
 
    sf::Vector2f anPosition =
@@ -43,10 +43,10 @@ void ParticleSystem::handleInit(GQE::IEntity* theEntity)
 
    mpe::FocusPtr anFocus = mParticles.createFocus(anEmitterID,
                                                   anPosition.x,
-                                                  anPosition.y, 
+                                                  anPosition.y,
                                                   anAngle);
    mParticles.addFocus(anFocus);
-      theEntity->mProperties.add<mpe::FocusPtr>("pFocus",anFocus);
+   theEntity->mProperties.add<mpe::FocusPtr>("pFocus", anFocus);
 }
 
 void ParticleSystem::handleEvents(sf::Event theEvent)
@@ -57,9 +57,11 @@ void ParticleSystem::updateFixed()
 {
    std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;
    anIter = mEntities.begin();
+
    while(anIter != mEntities.end())
    {
       std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();
+
       while(anQueue != anIter->second.end())
       {
          // get the IEntity address first
@@ -69,16 +71,17 @@ void ParticleSystem::updateFixed()
             anEntity->mProperties.get<sf::Vector2f>("vPosition");
 
          float anAngle = anEntity->mProperties.get<float>("fAngle");
-         mpe::FocusPtr anFocus = 
+         mpe::FocusPtr anFocus =
             anEntity->mProperties.get<mpe::FocusPtr>("pFocus");
 
-         anFocus->setPosition(anPosition.x,anPosition.y);
+         anFocus->setPosition(anPosition.x, anPosition.y);
          anFocus->setAngle(anAngle);
          // Increment the IEntity iterator second
          anQueue++;
-      }  
+      }
+
       anIter++;
-   mParticles.update(UPDATE_RATE);
+      mParticles.update(UPDATE_RATE);
    }
 }
 
@@ -93,7 +96,7 @@ void ParticleSystem::draw()
 
 void ParticleSystem::handleCleanup(GQE::IEntity* theEntity)
 {
-  delete (theEntity->mProperties.get<Particle*>("pParticle"));
+   delete (theEntity->mProperties.get<Particle*>("pParticle"));
 }
 
 /**

@@ -3,7 +3,7 @@
 VehicleProto::VehicleProto(GQE::typePrototypeID theID):
    GQE::Prototype(theID)
 {
-   mProperties.add<PropellerType>("pPropellerType", NOPROPELLER); 
+   mProperties.add<PropellerType>("pPropellerType", NOPROPELLER);
    mSystemIDs.push_back("PropellerSystem");
 }
 

@@ -41,12 +41,12 @@ private:
    Integer drain(Real theElapsedTime);
    Particle createParticle();
 
-   Real      mWidth; 
+   Real      mWidth;
    Real      mHeight;
    Vec2      mPosition;
    Real      mAngle;
-   Integer   mTP;  
-   Integer   mEP; 
+   Integer   mTP;
+   Integer   mEP;
    Real      mPPS;
    Real      mTimeAcum;
    GroupID   mGroups;

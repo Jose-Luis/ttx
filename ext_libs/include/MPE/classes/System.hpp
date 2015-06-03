@@ -21,9 +21,9 @@ namespace mpe
 class System
 {
 public:
-   
+
    System();
-   System(size_t theNParticles,bool theFixed=true);
+   System(size_t theNParticles, bool theFixed = true);
    bool setSize(size_t theNumberOfParticles);
    void addEmitter(Emitter& theEmitter);
    void addFocus(FocusPtr theFocus);

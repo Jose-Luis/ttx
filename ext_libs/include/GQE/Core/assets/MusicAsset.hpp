@@ -23,40 +23,40 @@
 
 namespace GQE
 {
-  /// Provides the MusicAsset class
-  class GQE_API MusicAsset : public TAsset<sf::Music>
-  {
-    public:
-      /**
-       * MusicAsset default constructor is used when you don't know theAssetID
-       * until later. You must call the SetID method before calling the
-       * GetAsset method to prevent getting the DummyAsset instead.
-       */
-      MusicAsset();
+/// Provides the MusicAsset class
+class GQE_API MusicAsset : public TAsset<sf::Music>
+{
+public:
+   /**
+    * MusicAsset default constructor is used when you don't know theAssetID
+    * until later. You must call the SetID method before calling the
+    * GetAsset method to prevent getting the DummyAsset instead.
+    */
+   MusicAsset();
 
-      /**
-       * MusicAsset constructor
-       * @param[in] theAssetID to uniquely identify this asset
-       * @param[in] theLoadTime (Now, Later) of when to load this asset
-       * @param[in] theLoadStyle (File, Mem, Network) to use when loading this asset
-       * @param[in] theDropTime at (Zero, Exit) for when to unload this asset
-       */
-      MusicAsset(const typeAssetID theAssetID,
-        AssetLoadTime theLoadTime = AssetLoadLater,
-        AssetLoadStyle theLoadStyle = AssetLoadFromFile,
-        AssetDropTime theDropTime = AssetDropAtZero);
+   /**
+    * MusicAsset constructor
+    * @param[in] theAssetID to uniquely identify this asset
+    * @param[in] theLoadTime (Now, Later) of when to load this asset
+    * @param[in] theLoadStyle (File, Mem, Network) to use when loading this asset
+    * @param[in] theDropTime at (Zero, Exit) for when to unload this asset
+    */
+   MusicAsset(const typeAssetID theAssetID,
+              AssetLoadTime theLoadTime = AssetLoadLater,
+              AssetLoadStyle theLoadStyle = AssetLoadFromFile,
+              AssetDropTime theDropTime = AssetDropAtZero);
 
-      /**
-       * MusicAsset deconstructor
-       */
-      virtual ~MusicAsset();
+   /**
+    * MusicAsset deconstructor
+    */
+   virtual ~MusicAsset();
 
-    protected:
+protected:
 
-    private:
-      // Variables
-      ///////////////////////////////////////////////////////////////////////////
-  }; // class MusicAsset
+private:
+   // Variables
+   ///////////////////////////////////////////////////////////////////////////
+}; // class MusicAsset
 } // namespace GQE
 
 #endif // CORE_MUSIC_ASSET_HPP_INCLUDED

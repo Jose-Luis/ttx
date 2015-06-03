@@ -33,6 +33,21 @@ struct Position2D
       x(theX), y(theY), angle(theAngle)
    {}
 
+   Position2D operator-(const Position2D& theOther) const
+   {
+      return (Position2D(x - theOther.x, y - theOther.y, angle - theOther.angle));
+   }
+
+   Position2D operator-=(const Position2D& theOther) const
+   {
+      return (Position2D(x - theOther.x, y - theOther.y, angle - theOther.angle));
+   }
+
+   Position2D operator+=(const Position2D& theOther) const
+   {
+      return (Position2D(x + theOther.x, y + theOther.y, angle + theOther.angle));
+   }
+
    Position2D operator+(const Position2D& theOther) const
    {
       return (Position2D(x + theOther.x, y + theOther.y, angle + theOther.angle));
@@ -41,10 +56,12 @@ struct Position2D
    float x, y, angle;
 };
 
-struct MoveData 
+typedef Position2D Transform;
+
+struct MoveData
 {
-   float x,y;
-   bool  move,turn;
+   float x, y;
+   bool  move, turn;
 };
 enum Layers
 {

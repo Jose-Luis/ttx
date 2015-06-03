@@ -11,4 +11,4 @@
 #include <GT/Vec2D.hpp>
 #include <GT/Randomizer.hpp>
 
-#endif 
+#endif

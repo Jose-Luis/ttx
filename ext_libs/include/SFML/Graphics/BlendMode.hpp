@@ -40,83 +40,83 @@ namespace sf
 ////////////////////////////////////////////////////////////
 struct SFML_GRAPHICS_API BlendMode
 {
-    ////////////////////////////////////////////////////////
-    /// \brief Enumeration of the blending factors
-    ///
-    /// The factors are mapped directly to their OpenGL equivalents,
-    /// specified by glBlendFunc() or glBlendFuncSeparate().
-    ////////////////////////////////////////////////////////
-    enum Factor
-    {
-        Zero,             ///< (0, 0, 0, 0)
-        One,              ///< (1, 1, 1, 1)
-        SrcColor,         ///< (src.r, src.g, src.b, src.a)
-        OneMinusSrcColor, ///< (1, 1, 1, 1) - (src.r, src.g, src.b, src.a)
-        DstColor,         ///< (dst.r, dst.g, dst.b, dst.a)
-        OneMinusDstColor, ///< (1, 1, 1, 1) - (dst.r, dst.g, dst.b, dst.a)
-        SrcAlpha,         ///< (src.a, src.a, src.a, src.a)
-        OneMinusSrcAlpha, ///< (1, 1, 1, 1) - (src.a, src.a, src.a, src.a)
-        DstAlpha,         ///< (dst.a, dst.a, dst.a, dst.a)
-        OneMinusDstAlpha  ///< (1, 1, 1, 1) - (dst.a, dst.a, dst.a, dst.a)
-    };
+   ////////////////////////////////////////////////////////
+   /// \brief Enumeration of the blending factors
+   ///
+   /// The factors are mapped directly to their OpenGL equivalents,
+   /// specified by glBlendFunc() or glBlendFuncSeparate().
+   ////////////////////////////////////////////////////////
+   enum Factor
+   {
+      Zero,             ///< (0, 0, 0, 0)
+      One,              ///< (1, 1, 1, 1)
+      SrcColor,         ///< (src.r, src.g, src.b, src.a)
+      OneMinusSrcColor, ///< (1, 1, 1, 1) - (src.r, src.g, src.b, src.a)
+      DstColor,         ///< (dst.r, dst.g, dst.b, dst.a)
+      OneMinusDstColor, ///< (1, 1, 1, 1) - (dst.r, dst.g, dst.b, dst.a)
+      SrcAlpha,         ///< (src.a, src.a, src.a, src.a)
+      OneMinusSrcAlpha, ///< (1, 1, 1, 1) - (src.a, src.a, src.a, src.a)
+      DstAlpha,         ///< (dst.a, dst.a, dst.a, dst.a)
+      OneMinusDstAlpha  ///< (1, 1, 1, 1) - (dst.a, dst.a, dst.a, dst.a)
+   };
 
-    ////////////////////////////////////////////////////////
-    /// \brief Enumeration of the blending equations
-    ///
-    /// The equations are mapped directly to their OpenGL equivalents,
-    /// specified by glBlendEquation() or glBlendEquationSeparate().
-    ////////////////////////////////////////////////////////
-    enum Equation
-    {
-        Add,     ///< Pixel = Src * SrcFactor + Dst * DstFactor
-        Subtract ///< Pixel = Src * SrcFactor - Dst * DstFactor
-    };
+   ////////////////////////////////////////////////////////
+   /// \brief Enumeration of the blending equations
+   ///
+   /// The equations are mapped directly to their OpenGL equivalents,
+   /// specified by glBlendEquation() or glBlendEquationSeparate().
+   ////////////////////////////////////////////////////////
+   enum Equation
+   {
+      Add,     ///< Pixel = Src * SrcFactor + Dst * DstFactor
+      Subtract ///< Pixel = Src * SrcFactor - Dst * DstFactor
+   };
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Default constructor
-    ///
-    /// Constructs a blending mode that does alpha blending.
-    ///
-    ////////////////////////////////////////////////////////////
-    BlendMode();
+   ////////////////////////////////////////////////////////////
+   /// \brief Default constructor
+   ///
+   /// Constructs a blending mode that does alpha blending.
+   ///
+   ////////////////////////////////////////////////////////////
+   BlendMode();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Construct the blend mode given the factors and equation.
-    ///
-    /// This constructor uses the same factors and equation for both
-    /// color and alpha components. It also defaults to the Add equation.
-    ///
-    /// \param sourceFactor      Specifies how to compute the source factor for the color and alpha channels.
-    /// \param destinationFactor Specifies how to compute the destination factor for the color and alpha channels.
-    /// \param blendEquation     Specifies how to combine the source and destination colors and alpha.
-    ///
-    ////////////////////////////////////////////////////////////
-    BlendMode(Factor sourceFactor, Factor destinationFactor, Equation blendEquation = Add);
+   ////////////////////////////////////////////////////////////
+   /// \brief Construct the blend mode given the factors and equation.
+   ///
+   /// This constructor uses the same factors and equation for both
+   /// color and alpha components. It also defaults to the Add equation.
+   ///
+   /// \param sourceFactor      Specifies how to compute the source factor for the color and alpha channels.
+   /// \param destinationFactor Specifies how to compute the destination factor for the color and alpha channels.
+   /// \param blendEquation     Specifies how to combine the source and destination colors and alpha.
+   ///
+   ////////////////////////////////////////////////////////////
+   BlendMode(Factor sourceFactor, Factor destinationFactor, Equation blendEquation = Add);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Construct the blend mode given the factors and equation.
-    ///
-    /// \param colorSourceFactor      Specifies how to compute the source factor for the color channels.
-    /// \param colorDestinationFactor Specifies how to compute the destination factor for the color channels.
-    /// \param colorBlendEquation     Specifies how to combine the source and destination colors.
-    /// \param alphaSourceFactor      Specifies how to compute the source factor.
-    /// \param alphaDestinationFactor Specifies how to compute the destination factor.
-    /// \param alphaBlendEquation     Specifies how to combine the source and destination alphas.
-    ///
-    ////////////////////////////////////////////////////////////
-    BlendMode(Factor colorSourceFactor, Factor colorDestinationFactor,
-              Equation colorBlendEquation, Factor alphaSourceFactor,
-              Factor alphaDestinationFactor, Equation alphaBlendEquation);
+   ////////////////////////////////////////////////////////////
+   /// \brief Construct the blend mode given the factors and equation.
+   ///
+   /// \param colorSourceFactor      Specifies how to compute the source factor for the color channels.
+   /// \param colorDestinationFactor Specifies how to compute the destination factor for the color channels.
+   /// \param colorBlendEquation     Specifies how to combine the source and destination colors.
+   /// \param alphaSourceFactor      Specifies how to compute the source factor.
+   /// \param alphaDestinationFactor Specifies how to compute the destination factor.
+   /// \param alphaBlendEquation     Specifies how to combine the source and destination alphas.
+   ///
+   ////////////////////////////////////////////////////////////
+   BlendMode(Factor colorSourceFactor, Factor colorDestinationFactor,
+             Equation colorBlendEquation, Factor alphaSourceFactor,
+             Factor alphaDestinationFactor, Equation alphaBlendEquation);
 
-    ////////////////////////////////////////////////////////////
-    // Member Data
-    ////////////////////////////////////////////////////////////
-    Factor   colorSrcFactor; ///< Source blending factor for the color channels
-    Factor   colorDstFactor; ///< Destination blending factor for the color channels
-    Equation colorEquation;  ///< Blending equation for the color channels
-    Factor   alphaSrcFactor; ///< Source blending factor for the alpha channel
-    Factor   alphaDstFactor; ///< Destination blending factor for the alpha channel
-    Equation alphaEquation;  ///< Blending equation for the alpha channel
+   ////////////////////////////////////////////////////////////
+   // Member Data
+   ////////////////////////////////////////////////////////////
+   Factor   colorSrcFactor; ///< Source blending factor for the color channels
+   Factor   colorDstFactor; ///< Destination blending factor for the color channels
+   Equation colorEquation;  ///< Blending equation for the color channels
+   Factor   alphaSrcFactor; ///< Source blending factor for the alpha channel
+   Factor   alphaDstFactor; ///< Destination blending factor for the alpha channel
+   Equation alphaEquation;  ///< Blending equation for the alpha channel
 };
 
 ////////////////////////////////////////////////////////////

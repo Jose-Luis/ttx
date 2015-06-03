@@ -23,40 +23,40 @@
 
 namespace GQE
 {
-  /// Provides the Font asset class
-  class GQE_API FontAsset : public TAsset<sf::Font>
-  {
-    public:
-      /**
-       * FontAsset default constructor is used when you don't know theAssetID
-       * until later. You must call the SetID method before calling the
-       * GetAsset method to prevent getting the DummyAsset instead.
-       */
-      FontAsset();
+/// Provides the Font asset class
+class GQE_API FontAsset : public TAsset<sf::Font>
+{
+public:
+   /**
+    * FontAsset default constructor is used when you don't know theAssetID
+    * until later. You must call the SetID method before calling the
+    * GetAsset method to prevent getting the DummyAsset instead.
+    */
+   FontAsset();
 
-      /**
-       * FontAsset constructor
-       * @param[in] theAssetID to uniquely identify this asset
-       * @param[in] theLoadTime (Now, Later) of when to load this asset
-       * @param[in] theLoadStyle (File, Mem, Network) to use when loading this asset
-       * @param[in] theDropTime at (Zero, Exit) for when to unload this asset
-       */
-      FontAsset(const typeAssetID theAssetID,
-        AssetLoadTime theLoadTime = AssetLoadLater,
-        AssetLoadStyle theLoadStyle = AssetLoadFromFile,
-        AssetDropTime theDropTime = AssetDropAtZero);
+   /**
+    * FontAsset constructor
+    * @param[in] theAssetID to uniquely identify this asset
+    * @param[in] theLoadTime (Now, Later) of when to load this asset
+    * @param[in] theLoadStyle (File, Mem, Network) to use when loading this asset
+    * @param[in] theDropTime at (Zero, Exit) for when to unload this asset
+    */
+   FontAsset(const typeAssetID theAssetID,
+             AssetLoadTime theLoadTime = AssetLoadLater,
+             AssetLoadStyle theLoadStyle = AssetLoadFromFile,
+             AssetDropTime theDropTime = AssetDropAtZero);
 
-      /**
-       * FontAsset deconstructor
-       */
-      virtual ~FontAsset();
+   /**
+    * FontAsset deconstructor
+    */
+   virtual ~FontAsset();
 
-    protected:
+protected:
 
-    private:
-      // Variables
-      ///////////////////////////////////////////////////////////////////////////
-  }; // class FontAsset
+private:
+   // Variables
+   ///////////////////////////////////////////////////////////////////////////
+}; // class FontAsset
 } // namespace GQE
 
 #endif // CORE_FONT_ASSET_HPP_INCLUDED

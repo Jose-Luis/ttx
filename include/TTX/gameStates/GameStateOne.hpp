@@ -45,75 +45,75 @@
 /// Provides the TicTacToe GameStateOne example
 class GameStateOne : public IActionState
 {
-   public:
-      /**
-       * GameStateOne constructor
-       * @param[in] theApp is a pointer to the App class.
-       */
-      GameStateOne(GQE::IApp& theApp);
+public:
+   /**
+    * GameStateOne constructor
+    * @param[in] theApp is a pointer to the App class.
+    */
+   GameStateOne(GQE::IApp& theApp);
 
-      /**
-       * GameStateOne deconstructor
-       */
-      virtual ~GameStateOne(void);
+   /**
+    * GameStateOne deconstructor
+    */
+   virtual ~GameStateOne(void);
 
-      /**
-       * DoInit is responsible for initializing this State
-       */
-      virtual void doInit(void);
+   /**
+    * DoInit is responsible for initializing this State
+    */
+   virtual void doInit(void);
 
-      /**
-       * ReInit is responsible for Reseting this state when the
-       * StateManager::resetActiveState() method is called.  This way a Game
-       * State can be restarted without unloading and reloading the game assets
-       */
-      virtual void reInit(void);
+   /**
+    * ReInit is responsible for Reseting this state when the
+    * StateManager::resetActiveState() method is called.  This way a Game
+    * State can be restarted without unloading and reloading the game assets
+    */
+   virtual void reInit(void);
 
-      /**
-       * HandleEvents is responsible for handling input events for this
-       * State when it is the active State.
-       * @param[in] theEvent to process from the App class Loop method
-       */
-      virtual void handleEvents(sf::Event theEvent);
+   /**
+    * HandleEvents is responsible for handling input events for this
+    * State when it is the active State.
+    * @param[in] theEvent to process from the App class Loop method
+    */
+   virtual void handleEvents(sf::Event theEvent);
 
-      /**
-       * UpdateSelected is responsible for clearing the previously selected
-       * edge and changing the image of the newly selected edge.
-       * @param[in] theEvent that specifies the new mouse position
-       */
-      void updateSelected(sf::Event theEvent);
+   /**
+    * UpdateSelected is responsible for clearing the previously selected
+    * edge and changing the image of the newly selected edge.
+    * @param[in] theEvent that specifies the new mouse position
+    */
+   void updateSelected(sf::Event theEvent);
 
-      /**
-       * UpdateFixed is responsible for handling all State fixed update needs for
-       * this State when it is the active State.
-       */
-      virtual void updateFixed(void);
+   /**
+    * UpdateFixed is responsible for handling all State fixed update needs for
+    * this State when it is the active State.
+    */
+   virtual void updateFixed(void);
 
-      /**
-       * UpdateVariable is responsible for handling all State variable update
-       * needs for this State when it is the active State.
-       * @param[in] theElapsedTime since the last Draw was called */
-      virtual void updateVariable(float theElapsedTime);
+   /**
+    * UpdateVariable is responsible for handling all State variable update
+    * needs for this State when it is the active State.
+    * @param[in] theElapsedTime since the last Draw was called */
+   virtual void updateVariable(float theElapsedTime);
 
-      /**
-       * Draw is responsible for handling all Drawing needs for this State
-       * when it is the Active State.
-       */
-      virtual void draw(void);
+   /**
+    * Draw is responsible for handling all Drawing needs for this State
+    * when it is the Active State.
+    */
+   virtual void draw(void);
 
-   protected:
-      /**
-       * HandleCleanup is responsible for performing any cleanup required before
-       * this State is removed.
-       */
-      virtual void handleCleanup(void);
+protected:
+   /**
+    * HandleCleanup is responsible for performing any cleanup required before
+    * this State is removed.
+    */
+   virtual void handleCleanup(void);
 
-   private:
+private:
 
-      sf::View mView;
-      b2ContactListener* mCollisionListener;
+   sf::View mView;
+   b2ContactListener* mCollisionListener;
 
-      GQE::IEntity* mPlayer;
+   GQE::IEntity* mPlayer;
 
 
    /*#ifndef  NDEBUG

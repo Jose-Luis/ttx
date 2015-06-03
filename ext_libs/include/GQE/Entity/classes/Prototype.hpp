@@ -21,81 +21,81 @@
 
 namespace GQE
 {
-  /// Provides Prototype class for creating Instance classes
-  class GQE_API Prototype : public IEntity
-  {
-    public:
-       std::vector<typeSystemID> mSystemIDs;
-      /**
-       * Prototype default constructor
-       * @param[in] thePrototypeID to use for this prototype
-       * @param[in] theOrder to assign to this prototype and each Instance
-       */
-      Prototype(const typePrototypeID thePrototypeID, Uint32 theOrder = 0);
+/// Provides Prototype class for creating Instance classes
+class GQE_API Prototype : public IEntity
+{
+public:
+   std::vector<typeSystemID> mSystemIDs;
+   /**
+    * Prototype default constructor
+    * @param[in] thePrototypeID to use for this prototype
+    * @param[in] theOrder to assign to this prototype and each Instance
+    */
+   Prototype(const typePrototypeID thePrototypeID, Uint32 theOrder = 0);
 
-      /**
-       * Prototype destructor
-       */
-      virtual ~Prototype();
+   /**
+    * Prototype destructor
+    */
+   virtual ~Prototype();
 
-      /**
-       * GetID will return the ID used for this prototype.
-       * @return the prototype ID for this prototype
-       */
-      const typePrototypeID getID(void) const;
+   /**
+    * GetID will return the ID used for this prototype.
+    * @return the prototype ID for this prototype
+    */
+   const typePrototypeID getID(void) const;
 
-      /**
-       * Destroy is responsible for removing this Prototype and all of its
-       * Instances.
-       */
-      virtual void destroy(void);
+   /**
+    * Destroy is responsible for removing this Prototype and all of its
+    * Instances.
+    */
+   virtual void destroy(void);
 
-      /**
-       * DestroyInstance is responsible for dropping and removing theEntityID
-       * Instance specified and is usually called by the Instance class itself.
-       */
-      void destroyInstance(const typeEntityID theEntityID);
+   /**
+    * DestroyInstance is responsible for dropping and removing theEntityID
+    * Instance specified and is usually called by the Instance class itself.
+    */
+   void destroyInstance(const typeEntityID theEntityID);
 
-      /**
-       * GetInstance is responsible for returning the Instance class that
-       * matches theEntityID provided. Each Prototype class keeps track of all
-       * Instance classes that were created using the MakeInstance method below.
-       * @param[in] theEntityID to find and return
-       * @return a pointer to theInstance class found, NULL otherwise
-       */
-      Instance* getInstance(const typeEntityID theEntityID) const;
+   /**
+    * GetInstance is responsible for returning the Instance class that
+    * matches theEntityID provided. Each Prototype class keeps track of all
+    * Instance classes that were created using the MakeInstance method below.
+    * @param[in] theEntityID to find and return
+    * @return a pointer to theInstance class found, NULL otherwise
+    */
+   Instance* getInstance(const typeEntityID theEntityID) const;
 
-      /**
-       * MakeInstance is responsible for creating an Instance of this Prototype
-       * class using the MakeClone methods provided by the IComponent and
-       * IProperty derived classes.
-       * @return a pointer to the Instance class created.
-       */
-      Instance* makeInstance(void);
-    private:
-      // Variables
-      ///////////////////////////////////////////////////////////////////////////
-      /// The prototype ID assigned to this Prototype class
-      const typePrototypeID mPrototypeID;
-      /// A map of all Instance classes created by this Prototype
-      std::map<const typeEntityID, Instance*> mInstances;
-      /// A linked list of all Instance classes to destroy during HandleCleanup
-      std::vector<Instance*> mCleanup;
+   /**
+    * MakeInstance is responsible for creating an Instance of this Prototype
+    * class using the MakeClone methods provided by the IComponent and
+    * IProperty derived classes.
+    * @return a pointer to the Instance class created.
+    */
+   Instance* makeInstance(void);
+private:
+   // Variables
+   ///////////////////////////////////////////////////////////////////////////
+   /// The prototype ID assigned to this Prototype class
+   const typePrototypeID mPrototypeID;
+   /// A map of all Instance classes created by this Prototype
+   std::map<const typeEntityID, Instance*> mInstances;
+   /// A linked list of all Instance classes to destroy during HandleCleanup
+   std::vector<Instance*> mCleanup;
 
-      /**
-       * DropAllInstances is responsible for dropping all Instance classes that
-       * this Prototype is responsible for as part of the removal of this
-       * Prototype class.
-       */
-      void dropAllInstances(void);
+   /**
+    * DropAllInstances is responsible for dropping all Instance classes that
+    * this Prototype is responsible for as part of the removal of this
+    * Prototype class.
+    */
+   void dropAllInstances(void);
 
-      /**
-       * HandleCleanup is responsible for deleting all Instance classes from
-       * our Cleanup list. Instances are placed in our Cleanup list by either
-       * the DropAllInstances or DropInstance methods.
-       */
-      void handleCleanup(void* theContext);
-  };
+   /**
+    * HandleCleanup is responsible for deleting all Instance classes from
+    * our Cleanup list. Instances are placed in our Cleanup list by either
+    * the DropAllInstances or DropInstance methods.
+    */
+   void handleCleanup(void* theContext);
+};
 } // namespace GQE
 
 #endif // PROTOTYPE_HPP_INCLUDED

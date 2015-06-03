@@ -1,7 +1,7 @@
 #include <GQE/Entity/interfaces/IEntity.hpp>
 #include <Box2D/Box2D.h>
 
-class CollisionListener :public b2ContactListener
+class CollisionListener : public b2ContactListener
 {
 public:
    void PreSolve(b2Contact* theContact, const b2Manifold* theOldManifold);

@@ -8,60 +8,60 @@
  */
 #ifndef   CORE_SOUND_HANDLER_HPP_INCLUDED
 #define   CORE_SOUND_HANDLER_HPP_INCLUDED
- 
+
 #include <SFML/Audio.hpp>
 #include <GQE/Core/Core_types.hpp>
 #include <GQE/Core/interfaces/TAssetHandler.hpp>
 
 namespace GQE
 {
-  /// Provides the SoundHandler class for managing sf::Sound assets
-  class GQE_API SoundHandler : public TAssetHandler<sf::SoundBuffer>
-  {
-  public:
-    /**
-     * SoundHandler constructor
-     */
-    SoundHandler();
- 
-    /**
-     * SoundHandler deconstructor
-     */
-    virtual ~SoundHandler();
- 
-  protected:
-    /**
-     * LoadFromFile is responsible for loading theAsset from a file and must
-     * be defined by the derived class since the interface for TYPE is
-     * unknown at this stage.
-     * @param[in] theAssetID of the asset to be loaded
-     * @param[in] theAsset pointer to load
-     * @return true if the asset was successfully loaded, false otherwise
-     */
-    virtual bool loadFromFile(const typeAssetID theAssetID, sf::SoundBuffer& theAsset);
+/// Provides the SoundHandler class for managing sf::Sound assets
+class GQE_API SoundHandler : public TAssetHandler<sf::SoundBuffer>
+{
+public:
+   /**
+    * SoundHandler constructor
+    */
+   SoundHandler();
 
-    /**
-     * LoadFromMemory is responsible for loading theAsset from memory and
-     * must be defined by the derived class since the interface for TYPE is
-     * unknown at this stage.
-     * @param[in] theAssetID of the asset to be loaded
-     * @param[in] theAsset pointer to load
-     * @return true if the asset was successfully loaded, false otherwise
-     */
-    virtual bool loadFromMemory(const typeAssetID theAssetID, sf::SoundBuffer& theAsset);
+   /**
+    * SoundHandler deconstructor
+    */
+   virtual ~SoundHandler();
 
-    /**
-     * LoadFromNetwork is responsible for loading theAsset from network and
-     * must be defined by the derived class since the interface for TYPE is
-     * unknown at this stage.
-     * @param[in] theAssetID of the asset to be loaded
-     * @param[in] theAsset pointer to load
-     * @return true if the asset was successfully loaded, false otherwise
-     */
-    virtual bool loadFromNetwork(const typeAssetID theAssetID, sf::SoundBuffer& theAsset);
+protected:
+   /**
+    * LoadFromFile is responsible for loading theAsset from a file and must
+    * be defined by the derived class since the interface for TYPE is
+    * unknown at this stage.
+    * @param[in] theAssetID of the asset to be loaded
+    * @param[in] theAsset pointer to load
+    * @return true if the asset was successfully loaded, false otherwise
+    */
+   virtual bool loadFromFile(const typeAssetID theAssetID, sf::SoundBuffer& theAsset);
 
-  private:
-  }; // class SoundHandler
+   /**
+    * LoadFromMemory is responsible for loading theAsset from memory and
+    * must be defined by the derived class since the interface for TYPE is
+    * unknown at this stage.
+    * @param[in] theAssetID of the asset to be loaded
+    * @param[in] theAsset pointer to load
+    * @return true if the asset was successfully loaded, false otherwise
+    */
+   virtual bool loadFromMemory(const typeAssetID theAssetID, sf::SoundBuffer& theAsset);
+
+   /**
+    * LoadFromNetwork is responsible for loading theAsset from network and
+    * must be defined by the derived class since the interface for TYPE is
+    * unknown at this stage.
+    * @param[in] theAssetID of the asset to be loaded
+    * @param[in] theAsset pointer to load
+    * @return true if the asset was successfully loaded, false otherwise
+    */
+   virtual bool loadFromNetwork(const typeAssetID theAssetID, sf::SoundBuffer& theAsset);
+
+private:
+}; // class SoundHandler
 } // namespace GQE
 
 #endif // CORE_SOUND_MANAGER_HPP_INCLUDED

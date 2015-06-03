@@ -15,39 +15,39 @@
 /// Provides the core game loop algorithm for the TTX example.
 class TTXApp : public GQE::IApp
 {
-  public:
-    /**
-     * TTXApp constructor
-     * @param[in] theTitle is the title of the window
+public:
+   /**
+    * TTXApp constructor
+    * @param[in] theTitle is the title of the window
+    */
+   TTXApp(const std::string theTitle = "TTX");
+
+   /**
+    * TTXApp deconstructor
+    */
+   virtual ~TTXApp();
+
+protected:
+   /**
+     * InitAssetHandlers is responsible for registering custom IAssetHandler
+     * derived classes for a specific game application.
      */
-    TTXApp(const std::string theTitle = "TTX");
+   virtual void initAssetHandlers(void);
 
-    /**
-     * TTXApp deconstructor
+   /**
+     * InitScreenFactory is responsible for initializing any IScreen derived
+     * classes with the ScreenManager class that will be used to create new
+     * IScreen derived classes as requested.
      */
-    virtual ~TTXApp();
+   virtual void initScreenFactory(void);
 
-  protected:
-    /**
-      * InitAssetHandlers is responsible for registering custom IAssetHandler
-      * derived classes for a specific game application.
-      */
-    virtual void initAssetHandlers(void);
+   /**
+     * HandleCleanup is responsible for performing any custom last minute
+     * Application cleanup steps before exiting the Application.
+     */
+   virtual void handleCleanup(void);
 
-    /**
-      * InitScreenFactory is responsible for initializing any IScreen derived
-      * classes with the ScreenManager class that will be used to create new
-      * IScreen derived classes as requested.
-      */
-    virtual void initScreenFactory(void);
-
-    /**
-      * HandleCleanup is responsible for performing any custom last minute
-      * Application cleanup steps before exiting the Application.
-      */
-    virtual void handleCleanup(void);
-
-  private:
+private:
 }; // class TTXApp
 
 #endif // SPACE_DOTS_APP_HPP_INCLUDED

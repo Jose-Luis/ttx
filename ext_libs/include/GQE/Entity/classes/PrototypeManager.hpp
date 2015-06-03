@@ -16,43 +16,43 @@
 
 namespace GQE
 {
-  /// Provides the PrototypeManager class for managing Prototype and Instance classes
-  class GQE_API PrototypeManager
-  {
-    public:
-      /**
-       * EntityManager default constructor
-       */
-      PrototypeManager();
+/// Provides the PrototypeManager class for managing Prototype and Instance classes
+class GQE_API PrototypeManager
+{
+public:
+   /**
+    * EntityManager default constructor
+    */
+   PrototypeManager();
 
-      /**
-       * EntityManager deconstructor
-       */
-      virtual ~PrototypeManager();
+   /**
+    * EntityManager deconstructor
+    */
+   virtual ~PrototypeManager();
 
-      /**
-       * AddPrototype is responsible for adding a Prototype entity to the list
-       * of available Prototype classes that can be used to create an Instance
-       * entity class.
-       * @param[in] thePrototype class to add
-       */
-      void addPrototype(Prototype* thePrototype);
+   /**
+    * AddPrototype is responsible for adding a Prototype entity to the list
+    * of available Prototype classes that can be used to create an Instance
+    * entity class.
+    * @param[in] thePrototype class to add
+    */
+   void addPrototype(Prototype* thePrototype);
 
-      /**
-       * GetPrototype is responsible for returning the Prototype class pointer
-       * that matches thePrototypeID provided.
-       * @param[in] thePrototypeID to find and return
-       * @return the pointer to the Prototype class specified
-       */
-      Prototype* getPrototype(const typePrototypeID thePrototypeID);
-    protected:
+   /**
+    * GetPrototype is responsible for returning the Prototype class pointer
+    * that matches thePrototypeID provided.
+    * @param[in] thePrototypeID to find and return
+    * @return the pointer to the Prototype class specified
+    */
+   Prototype* getPrototype(const typePrototypeID thePrototypeID);
+protected:
 
-    private:
-      // Variables
-      ///////////////////////////////////////////////////////////////////////////
-      /// A map of Prototype classes managed by the EntityManager
-      std::map<const typePrototypeID, Prototype*> mPrototypes;
-  };
+private:
+   // Variables
+   ///////////////////////////////////////////////////////////////////////////
+   /// A map of Prototype classes managed by the EntityManager
+   std::map<const typePrototypeID, Prototype*> mPrototypes;
+};
 } // namespace GQE
 
 #endif // PROTOTYPE_MANAGER_HPP_INCLUDED

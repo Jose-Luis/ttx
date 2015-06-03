@@ -22,35 +22,35 @@
  */
 int main(int argc, char* argv[])
 {
-  // Default anExitCode to a specific value
-  int anExitCode = GQE::StatusNoError;
+   // Default anExitCode to a specific value
+   int anExitCode = GQE::StatusNoError;
 
-  // Create a FileLogger and make it the default logger before creating our App
-  GQE::FileLogger anLogger("output.txt", true);
+   // Create a FileLogger and make it the default logger before creating our App
+   GQE::FileLogger anLogger("output.txt", true);
 
-  // Create our action application.
-  GQE::IApp* anApp = new(std::nothrow) TTXApp();
-  assert(NULL != anApp && "main() Can't create Application");
+   // Create our action application.
+   GQE::IApp* anApp = new(std::nothrow) TTXApp();
+   assert(NULL != anApp && "main() Can't create Application");
 
-  // Process command line arguments
-  anApp->processArguments(argc, argv);
-  anApp->mWindow.setVerticalSyncEnabled(true);
+   // Process command line arguments
+   anApp->processArguments(argc, argv);
+   anApp->mWindow.setVerticalSyncEnabled(true);
 
-  // Start the action application:
-  // Initialize the action application
-  // Enter the Game Loop where the application will remain until it is shutdown
-  // Cleanup the action application
-  // Exit back to here
-  anExitCode = anApp->run();
+   // Start the action application:
+   // Initialize the action application
+   // Enter the Game Loop where the application will remain until it is shutdown
+   // Cleanup the action application
+   // Exit back to here
+   anExitCode = anApp->run();
 
-  // Cleanup ourselves by deleting the action application
-  delete anApp;
+   // Cleanup ourselves by deleting the action application
+   delete anApp;
 
-  // Don't keep pointers to objects we have just deleted
-  anApp = NULL;
+   // Don't keep pointers to objects we have just deleted
+   anApp = NULL;
 
-  // return our exit code
-  return anExitCode;
+   // return our exit code
+   return anExitCode;
 }
 
 /**

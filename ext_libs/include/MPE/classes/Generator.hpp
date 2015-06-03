@@ -17,7 +17,7 @@ public:
    Generator(T theMin, T theMax);
    T operator()() const;
 
-   static Generator<T> create(T theMin,T theMax);
+   static Generator<T> create(T theMin, T theMax);
 
 private:
    std::function<T()> mGenerator;

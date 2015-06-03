@@ -3,18 +3,18 @@
 //------------------------------------------------------------------------------
 //       Class:  Propeller
 //      Method:  constructor
-// Description:   
+// Description:
 //------------------------------------------------------------------------------
 Propeller::Propeller():
    mOn(true),
    mLinearPower(1),
    mTurnPower(1),
-   mInnerPosition(b2Vec2(0,0))
+   mInnerPosition(b2Vec2(0, 0))
 {}
 //------------------------------------------------------------------------------
 //       Class:  Propeller
 //      Method:  setTurnPower
-// Description:   
+// Description:
 //------------------------------------------------------------------------------
 void Propeller::setTurnPower(float theTurnPower)
 {
@@ -23,7 +23,7 @@ void Propeller::setTurnPower(float theTurnPower)
 //------------------------------------------------------------------------------
 //       Class:  Propeller
 //      Method:  setLinearPower
-// Description:   
+// Description:
 //------------------------------------------------------------------------------
 void Propeller::setLinearPower(float theLinearPower)
 {
@@ -32,7 +32,7 @@ void Propeller::setLinearPower(float theLinearPower)
 //------------------------------------------------------------------------------
 //       Class:  Propeller
 //      Method:  setBody
-// Description:  setter 
+// Description:  setter
 //------------------------------------------------------------------------------
 void Propeller::setBody(b2Body* theBody)
 {
@@ -41,7 +41,7 @@ void Propeller::setBody(b2Body* theBody)
 //------------------------------------------------------------------------------
 //       Class:  Propeller
 //      Method:  setFocus
-// Description:  A stupid method 
+// Description:  A stupid method
 //------------------------------------------------------------------------------
 void Propeller::setFocus(mpe::FocusPtr theFocus)
 {
@@ -50,7 +50,7 @@ void Propeller::setFocus(mpe::FocusPtr theFocus)
 //------------------------------------------------------------------------------
 //       Class:  Propeller
 //      Method:  setInnerPosition
-// Description:  setter 
+// Description:  setter
 //------------------------------------------------------------------------------
 void Propeller::setInnerPosition(b2Vec2 theInnerPosition)
 {
@@ -59,7 +59,7 @@ void Propeller::setInnerPosition(b2Vec2 theInnerPosition)
 //------------------------------------------------------------------------------
 //       Class:  Propeller
 //      Method:  setEmitterID
-// Description:  setter 
+// Description:  setter
 //------------------------------------------------------------------------------
 void Propeller::setEmitterID(mpe::EmitterID theEmitterID)
 {
@@ -68,7 +68,7 @@ void Propeller::setEmitterID(mpe::EmitterID theEmitterID)
 ////------------------------------------------------------------------------------
 //       Class:  Propeller
 //      Method:  getEmitterID
-// Description:  getter 
+// Description:  getter
 //------------------------------------------------------------------------------
 mpe::EmitterID Propeller::getEmitterID()
 {
@@ -95,30 +95,34 @@ void Propeller::switchOn()
 //------------------------------------------------------------------------------
 //       Class:  Propeller
 //      Method:  impulse
-// Description:  impluse the body 
+// Description:  impluse the body
 //------------------------------------------------------------------------------
 void Propeller::impulse(MoveData theMoveData)
 {
-   b2Vec2 anDirection(theMoveData.x,theMoveData.y);
+   b2Vec2 anDirection(theMoveData.x, theMoveData.y);
 
    if(mOn && mBody)
    {
       float anPower = anDirection.LengthSquared();
+
       if(anPower)
       {
          if(theMoveData.move)
          {
             mBody->ApplyForceToCenter(mLinearPower * anDirection);
          }
+
          if(theMoveData.turn)
          {
             mBody->ApplyTorque(mBody->GetLocalVector(anDirection).x * mTurnPower);
          }
-         b2Vec2 anPosition = mBody->GetWorldCenter(); 
-         mFocus->setPosition(mpe::Vec2(anPosition.x,anPosition.y));
+
+         b2Vec2 anPosition = mBody->GetWorldCenter();
+         mFocus->setPosition(mpe::Vec2(anPosition.x, anPosition.y));
          float  anAngle = mBody->GetAngle() * TODEG;
          mFocus->setAngle(anAngle);
       }
+
       mFocus->setPPS(anPower * 32);
    }
 }

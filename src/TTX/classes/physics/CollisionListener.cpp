@@ -4,7 +4,7 @@ void CollisionListener::PreSolve(b2Contact* theContact, const b2Manifold* theOld
 {
 }
 
-void CollisionListener::PostSolve(b2Contact* theContact,const b2ContactImpulse* theImpulse)
+void CollisionListener::PostSolve(b2Contact* theContact, const b2ContactImpulse* theImpulse)
 {
    auto anCollideEntityA = static_cast<GQE::IEntity*>(theContact->GetFixtureA()->GetBody()->GetUserData());
    auto anCollideEntityB = static_cast<GQE::IEntity*>(theContact->GetFixtureB()->GetBody()->GetUserData());
@@ -27,7 +27,7 @@ void CollisionListener::applyDamage(GQE::IEntity* theEntity, float theImpactStre
    {
 
       float aResistance = theEntity->mProperties.get<float>("Resistance");
-      float aDamage = theImpactStrength / aResistance; 
+      float aDamage = theImpactStrength / aResistance;
       float aHealth = theEntity->mProperties.get<float>("Health");
       theEntity->mProperties.set<float>("Health", aHealth - aDamage);
    }

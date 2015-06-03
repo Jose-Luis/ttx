@@ -1,5 +1,5 @@
 /// @file HealthProto.cpp
-/// @brief 
+/// @brief
 /// @author Jose Luis Lavado
 /// @version 0.1
 /// @date 2013-04-01
@@ -9,8 +9,8 @@
 HealthProto::HealthProto(GQE::typePrototypeID theID):
    GQE::Prototype(theID)
 {
-   mProperties.add<float>("Resistance",0);
-   mProperties.add<float>("Health",0);
+   mProperties.add<float>("Resistance", 0);
+   mProperties.add<float>("Health", 0);
 
    mSystemIDs.push_back("HealthSystem");
 }

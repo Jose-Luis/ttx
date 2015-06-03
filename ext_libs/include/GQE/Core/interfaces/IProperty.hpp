@@ -12,79 +12,79 @@
 
 namespace GQE
 {
-  /// Provides the interface for all properties managed by the PropertyManager
-  class GQE_API IProperty
-  {
-    public:
-      /// Class that represents the type for this class
-      class Type_t
+/// Provides the interface for all properties managed by the PropertyManager
+class GQE_API IProperty
+{
+public:
+   /// Class that represents the type for this class
+   class Type_t
+   {
+   private:
+      std::string mName;
+   public:
+      explicit Type_t(std::string theName) : mName(theName) {}
+      std::string name() const
       {
-        private:
-          std::string mName;
-        public:
-          explicit Type_t(std::string theName) : mName(theName) {}
-          std::string name() const
-          {
-            return mName;
-          };
+         return mName;
       };
+   };
 
-      /**
-       * IProperty default constructor
-       * @param[in] theType of property this property represents
-       * @param[in] thePropertyID to use for this property
-       */
-      IProperty(std::string theType, const typePropertyID thePropertyID);
+   /**
+    * IProperty default constructor
+    * @param[in] theType of property this property represents
+    * @param[in] thePropertyID to use for this property
+    */
+   IProperty(std::string theType, const typePropertyID thePropertyID);
 
-      /**
-       * IProperty destructor
-       */
-      virtual ~IProperty();
+   /**
+    * IProperty destructor
+    */
+   virtual ~IProperty();
 
-      /**
-       * GetType will return the Type_t type for this property
-       * @return the Type_t class for this property
-       */
-      Type_t* getType(void);
+   /**
+    * GetType will return the Type_t type for this property
+    * @return the Type_t class for this property
+    */
+   Type_t* getType(void);
 
-      /**
-       * GetID will return the Property ID used for this property.
-       * @return the property ID for this property
-       */
-      const typePropertyID getID(void) const;
+   /**
+    * GetID will return the Property ID used for this property.
+    * @return the property ID for this property
+    */
+   const typePropertyID getID(void) const;
 
-      /**
-       * Update will be called for each IProperty registered with IEntity and
-       * enable each IProperty derived class to perform Update related tasks
-       * (e.g. frame counter, timer update, decreate in shields, etc).
-       */
-      virtual void update() = 0;
+   /**
+    * Update will be called for each IProperty registered with IEntity and
+    * enable each IProperty derived class to perform Update related tasks
+    * (e.g. frame counter, timer update, decreate in shields, etc).
+    */
+   virtual void update() = 0;
 
-      /**
-       * MakeClone is responsible for creating a clone of this IProperty
-       * derived class and returning it as part of the Prototype and Instance
-       * system. The value of the Property will also be copied into the clone.
-       * @return pointer to the IProperty derived class clone that was created
-       */
-      virtual IProperty* makeClone() = 0;
+   /**
+    * MakeClone is responsible for creating a clone of this IProperty
+    * derived class and returning it as part of the Prototype and Instance
+    * system. The value of the Property will also be copied into the clone.
+    * @return pointer to the IProperty derived class clone that was created
+    */
+   virtual IProperty* makeClone() = 0;
 
-    protected:
-      /**
-       * SetType is responsible for setting the type of class this IProperty
-       * class represents and is usually called by the IProperty derived class
-       * to set theType.
-       * @param[in] theType to set for this IProperty derived class
-       */
-      void setType(std::string theType);
+protected:
+   /**
+    * SetType is responsible for setting the type of class this IProperty
+    * class represents and is usually called by the IProperty derived class
+    * to set theType.
+    * @param[in] theType to set for this IProperty derived class
+    */
+   void setType(std::string theType);
 
-    private:
-      // Variables
-      ///////////////////////////////////////////////////////////////////////////
-      /// The type that represents this class
-      Type_t mType;
-      /// The property ID assigned to this IProperty derived class
-      const typePropertyID mPropertyID;
-  }; // class IProperty
+private:
+   // Variables
+   ///////////////////////////////////////////////////////////////////////////
+   /// The type that represents this class
+   Type_t mType;
+   /// The property ID assigned to this IProperty derived class
+   const typePropertyID mPropertyID;
+}; // class IProperty
 } // namespace GQE
 #endif //IPROPERTY_HPP_INCLUDED
 

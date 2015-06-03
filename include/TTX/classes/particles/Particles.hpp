@@ -11,7 +11,7 @@
 #include <MPE/MPE.hpp>
 #include <TTX/classes/render/RenderManager.hpp>
 
-class Particles: public mpe::System 
+class Particles: public mpe::System
 {
 public:
 

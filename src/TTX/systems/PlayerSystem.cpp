@@ -20,7 +20,7 @@ PlayerSystem::PlayerSystem(IActionState& theState, sf::View& theView, float theF
    ISystem("PlayerSystem", theState),
    mView(theView),
    mAngle(theView.getRotation()),
-   mRot(mAngle* TORAD),
+   mRot(mAngle * TORAD),
    mFactor(theFactor)
 {
 }
@@ -65,7 +65,7 @@ void PlayerSystem::updateFixed()
       anIter++;
    }
 
-for (auto anPosition: anPositions)
+   for (auto anPosition : anPositions)
    {
       anCenterPosition.x += anPosition.x;
       anCenterPosition.y += anPosition.y;
@@ -143,16 +143,16 @@ void PlayerSystem::processJoystick(GQE::IEntity* theEntity)
    {
       anJoyStick *= 1.f / anLength;
    }
-    
+
    if( 0.2 < anLength )
    {
-       anMoveData.x = anJoyStick.x;
-       anMoveData.y = anJoyStick.y;
+      anMoveData.x = anJoyStick.x;
+      anMoveData.y = anJoyStick.y;
    }
    else
    {
-       anMoveData.x = 0;
-       anMoveData.y = 0;
+      anMoveData.x = 0;
+      anMoveData.y = 0;
    }
 
    if(sf::Joystick::isButtonPressed(anJoy, 3))
@@ -175,11 +175,12 @@ void PlayerSystem::processJoystick(GQE::IEntity* theEntity)
 
    ////////////// FIRE CONTROLS
 
-   b2Vec2 anVector(sf::Joystick::getAxisPosition(anJoy, sf::Joystick::U),-sf::Joystick::getAxisPosition(anJoy, sf::Joystick::V));
+   b2Vec2 anVector(sf::Joystick::getAxisPosition(anJoy, sf::Joystick::U), -sf::Joystick::getAxisPosition(anJoy, sf::Joystick::V));
+
    if(400 < anVector.LengthSquared())
    {
       sf::Vector2f anPosition = theEntity->mProperties.get<sf::Vector2f>("vPosition");
-      float anAngle = std::atan2( anVector.x,anVector.y );
+      float anAngle = std::atan2( anVector.x, anVector.y );
       Position2D anPosition2D(anPosition.x, anPosition.y, anAngle );
       Weapon* anWeapon = theEntity->mProperties.getPointer<Weapon>("wWeapon");
       anWeapon->fire(anPosition2D, mState);

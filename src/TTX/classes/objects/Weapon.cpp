@@ -5,13 +5,13 @@
 // Description:  default constructor
 //------------------------------------------------------------------------------
 Weapon::Weapon():
-    mID("Submachinegun"),
-    mAmunitionType("pSimpleBullet"),
-    mCadency(0.1),
-    mPower(64),
-    mLastTime(0),
-    mAmunition(1000),
-    mPosition(0,0,0)
+   mID("Submachinegun"),
+   mAmunitionType("pSimpleBullet"),
+   mCadency(0.1),
+   mPower(64),
+   mLastTime(0),
+   mAmunition(1000),
+   mPosition(0, 0, 0)
 {
 
 }
@@ -28,7 +28,7 @@ Weapon::~Weapon()
 //      Method:  fire
 // Description:  A stupid method
 //------------------------------------------------------------------------------
-void Weapon::fire(Position2D thePosition,IActionState& theState)
+void Weapon::fire(Position2D thePosition, IActionState& theState)
 {
    float anTime = theState.getElapsedTime();
 
@@ -40,7 +40,7 @@ void Weapon::fire(Position2D thePosition,IActionState& theState)
       float anX = mPosition.x * anCos - mPosition.y * anSin;
       float anY = mPosition.y * anCos + mPosition.x * anSin;
 
-      Position2D anPosition = Position2D(thePosition.x + anX,  
+      Position2D anPosition = Position2D(thePosition.x + anX,
                                          thePosition.y + anY,
                                          thePosition.angle + mPosition.angle);
 
@@ -48,10 +48,10 @@ void Weapon::fire(Position2D thePosition,IActionState& theState)
                            std::sin(anPosition.angle)*mPower,
                            0);
 
-      theState.addInstance(mAmunitionType,anPosition,anImpulse);
+      theState.addInstance(mAmunitionType, anPosition, anImpulse);
       mAmunition--;
       mLastTime = anTime;
-    }
+   }
 }
 //------------------------------------------------------------------------------
 //       Class:  Weapon
@@ -60,12 +60,12 @@ void Weapon::fire(Position2D thePosition,IActionState& theState)
 //------------------------------------------------------------------------------
 void Weapon::loadAmunition(int theAmu)
 {
-    mAmunition += theAmu;
+   mAmunition += theAmu;
 }
 //------------------------------------------------------------------------------
 //       Class:  Weapon
 //      Method:  setPosition
-// Description:  A stupid method 
+// Description:  A stupid method
 //------------------------------------------------------------------------------
 void Weapon::setPosition(Position2D thePosition)
 {
