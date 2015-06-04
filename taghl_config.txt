@@ -1,0 +1,2 @@
+IncludeLocals:1
+UserLibraryDir:/home/momia/.vim/highlights/Box2D/types_c.taghl;/home/momia/.vim/highlights/SFML/types_c.taghl;/home/momia/.vim/highlights/GQE/types_c.tagh
