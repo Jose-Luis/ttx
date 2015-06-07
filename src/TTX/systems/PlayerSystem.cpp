@@ -56,7 +56,9 @@ void PlayerSystem::updateFixed()
          GQE::IEntity* anEntity = *anQueue;
 
          processJoystick(anEntity);
-         sf::Vector2f anPosition = anEntity->mProperties.get<sf::Vector2f>("vPosition");
+         Position2D anPosition2D = anEntity->mProperties.get<Position2D>("Position");
+         sf::Vector2f anPosition(anPosition2D.x,anPosition2D.y);
+
          anPositions.push_back(anPosition);
 
          anQueue++;

@@ -3,6 +3,8 @@
 #define  TYPES_INC
 #include <map>
 #include <string>
+#include <GQE/Entity/interfaces/IEntity.hpp>
+
 class ISystem;
 
 const float PI = 3.14159265359f;
@@ -16,11 +18,13 @@ const float LENGTHFACTOR = 16;
 
 typedef std::string ID;
 typedef std::string SystemID;
+typedef std::string EntityID;
 typedef std::string WeaponID;
 typedef std::string AmunitionID;
 typedef unsigned int InstanceID;
 
 typedef std::map<SystemID, ISystem*> SystemContainer;
+typedef std::map<EntityID, GQE::IEntity*> ChildrenContainer;
 typedef std::map<int, InstanceID> PlayerContainer;
 
 struct Position2D
@@ -36,6 +40,11 @@ struct Position2D
    Position2D operator-(const Position2D& theOther) const
    {
       return (Position2D(x - theOther.x, y - theOther.y, angle - theOther.angle));
+   }
+
+   Position2D operator*(const float& theOther) const
+   {
+      return (Position2D(x * theOther, y * theOther, angle));
    }
 
    Position2D operator-=(const Position2D& theOther) const

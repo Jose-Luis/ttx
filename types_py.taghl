@@ -1,0 +1,4 @@
+syn keyword CTagsImport os ycm_core
+syn keyword CTagsGlobalVariable database flags SOURCE_EXTENSIONS compilation_database_folder
+syn keyword CTagsFunction GetCompilationInfoForFile DirectoryOfThisScript FlagsForFile IsHeaderFile MakeRelativePathsInFlagsAbsolute
+

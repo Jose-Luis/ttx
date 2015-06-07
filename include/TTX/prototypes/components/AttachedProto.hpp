@@ -9,6 +9,7 @@
 #define  ATTACHEDPROTO_INC
 
 #include <TTX/Types.hpp>
+#include <TTX/prototypes/components/FamilyProto.hpp>
 #include <TTX/prototypes/components/B2Proto.hpp>
 #include <GQE/Entity/classes/Prototype.hpp>
 

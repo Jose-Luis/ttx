@@ -45,9 +45,8 @@ GQE::Instance* IActionState::addInstance(GQE::typePrototypeID thePrototype,
    GQE::Prototype* anPrototype = mPrototypes.getPrototype(thePrototype);
    GQE::Instance* anInstance = anPrototype->makeInstance();
    //Setting the posiion to the instance.
-   anInstance->mProperties.set<sf::Vector2f>("vPosition", sf::Vector2f(thePosition.x, thePosition.y));
-   anInstance->mProperties.set<float>("fAngle", thePosition.angle);
-   anInstance->mProperties.add<Position2D>("pInitialImpulse", theInitialImpulse);
+   anInstance->mProperties.set<Position2D>("Position", thePosition);
+   anInstance->mProperties.add<Position2D>("InitialImpulse", theInitialImpulse);
 
    //Adding the instance to the systems.
    for(auto anSystem :  anPrototype->mSystemIDs)

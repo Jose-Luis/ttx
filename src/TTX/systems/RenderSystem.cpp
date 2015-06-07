@@ -24,8 +24,7 @@ RenderSystem::~RenderSystem()
 
 void RenderSystem::addProperties(GQE::IEntity* theEntity)
 {
-   theEntity->mProperties.add<sf::Vector2f>  ("vPosition", sf::Vector2f(0, 0));
-   theEntity->mProperties.add<float>         ("fAngle", 0);
+   theEntity->mProperties.add<Position2D>  ("Position", Position2D(0, 0, 0));
    theEntity->mProperties.add<sf::Vector2f>  ("vScale", sf::Vector2f(1, 1));
    theEntity->mProperties.add<sf::IntRect>  ("rTexRect", sf::IntRect(0, 0, 0, 0));
    theEntity->mProperties.add<bool>          ("bVisible", true);
@@ -53,15 +52,14 @@ void RenderSystem::updateFixed()
 
          if(anEntity->mProperties.get<bool>("bVisible"))
          {
-            sf::Vector2f anPosition = anEntity->mProperties.get<sf::Vector2f>("vPosition") * mFactor;
+            Position2D anPosition = anEntity->mProperties.get<Position2D>("Position") * mFactor;
             sf::Vector2f anScale    = anEntity->mProperties.get<sf::Vector2f>("vScale");
-            float anAngle           = anEntity->mProperties.get<float>("fAngle");
             sf::IntRect anTexRect  = anEntity->mProperties.get<sf::IntRect>("rTexRect");
             LayerID  anLayerID  = anEntity->mProperties.get<LayerID>("rLayerID");
 
             sf::Transform anTransform;
 
-            anTransform.translate(anPosition).rotate(anAngle).scale(anScale);
+            anTransform.translate(sf::Vector2f(anPosition.x,anPosition.y)).rotate(anPosition.angle).scale(anScale);
             //anTransform.translate(anPosition);
 
             sf::Vector2f anPositions[4];

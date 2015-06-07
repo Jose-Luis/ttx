@@ -2,19 +2,19 @@
 #define  PBOX2_INC
 
 #include <TTX/Types.hpp>
-#include <TTX/prototypes/components/B2Proto.hpp>
+#include <TTX/prototypes/components/PhysicProto.hpp>
 #include <TTX/prototypes/components/RenderProto.hpp>
 #include <TTX/prototypes/components/HealthProto.hpp>
 #include <TTX/classes/render/Animation.hpp>
 
-class Box: public B2Proto, public RenderProto, public HealthProto
+class Box: public PhysicProto, public RenderProto, public HealthProto
 {
 
 public:
 
    Box():
       GQE::Prototype("pBox"),
-      B2Proto("pBox"),
+      PhysicProto("pBox"),
       RenderProto("pBox"),
       HealthProto("pBox")
    {

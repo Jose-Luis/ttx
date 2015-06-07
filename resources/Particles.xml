@@ -9,7 +9,7 @@
       <focusNP min="65536" max="65536"/>
       <focusPPS min="10" max="100"/>
       <particleTOL min="100" max="2000"/>
-      <particleSize min="8" max="24"/>
+      <particleSize min="0.8" max="2.4"/>
       <particleAngle min="0" max="2"/>
       <particleLV min="0" max="10"/>
       <particleAV min="0" max="2"/>

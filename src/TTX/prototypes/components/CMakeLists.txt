@@ -5,6 +5,10 @@ set(PROTOCOMPONENTS_FILES
    ${SRCROOT}/prototypes/components/RenderProto.cpp
    ${INCROOT}/prototypes/components/HealthProto.hpp
    ${SRCROOT}/prototypes/components/HealthProto.cpp
+   ${INCROOT}/prototypes/components/FamilyProto.hpp
+   ${SRCROOT}/prototypes/components/FamilyProto.cpp
+   ${INCROOT}/prototypes/components/PhysicProto.hpp
+   ${SRCROOT}/prototypes/components/PhysicProto.cpp
    ${INCROOT}/prototypes/components/AttachedProto.hpp
    ${SRCROOT}/prototypes/components/AttachedProto.cpp)
 

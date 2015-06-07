@@ -10,9 +10,10 @@
 
 #include <Box2D/Box2D.h>
 #include <GQE/Entity/classes/Prototype.hpp>
+#include <TTX/prototypes/components/FamilyProto.hpp>
 #include <TTX/gameStates/IActionState.hpp>
 
-class B2Proto: virtual public GQE::Prototype
+class B2Proto: public FamilyProto
 {
 public:
 

@@ -44,7 +44,7 @@ void PropellerSystem::addProperties(GQE::IEntity* theEntity)
 void PropellerSystem::handleInit(GQE::IEntity* theEntity)
 {
    Propeller* anPropeller = theEntity->mProperties.getPointer<Propeller>("pPropeller");
-   b2Body* anBody = theEntity->mProperties.get<b2Body*>("b2Body");
+   b2Body* anBody = theEntity->mProperties.get<b2Body*>("Body");
    anPropeller->setBody(anBody);
    std::shared_ptr<mpe::Focus> anFocus;
    anFocus = mParticles.createFocus(anPropeller->getEmitterID());

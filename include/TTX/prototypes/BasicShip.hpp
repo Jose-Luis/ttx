@@ -2,19 +2,19 @@
 #ifndef  PTRIANGLE_INC
 #define  PTRIANGLE_INC
 
-#include <TTX/prototypes/components/B2Proto.hpp>
+#include <TTX/prototypes/components/PhysicProto.hpp>
 #include <TTX/prototypes/components/RenderProto.hpp>
 #include <TTX/prototypes/components/HealthProto.hpp>
 #include <TTX/classes/objects/Propeller.hpp>
 #include <TTX/classes/objects/Weapon.hpp>
 
-class BasicShip: public B2Proto, public RenderProto, public HealthProto
+class BasicShip: public PhysicProto, public RenderProto, public HealthProto
 {
 public:
 
    BasicShip():
       GQE::Prototype("pBasicShip"),
-      B2Proto("pBasicShip"),
+      PhysicProto("pBasicShip"),
       RenderProto("pBasicShip"),
       HealthProto("pBasicShip")
    {
@@ -61,6 +61,7 @@ public:
 
       mProperties.set("Resistance", 100.f);
       mProperties.set("Health", 100.f);
+      mProperties.set<b2Vec2>("WeaponAnchor",b2Vec2(2,2));
 
       mFixturesDef.push_back(anFixture1);
       mFixturesDef.push_back(anFixture2);

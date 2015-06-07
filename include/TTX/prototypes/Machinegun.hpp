@@ -5,17 +5,17 @@
 #include <Box2D/Box2D.h>
 #include <TTX/prototypes/components/RenderProto.hpp>
 #include <TTX/prototypes/components/HealthProto.hpp>
-#include <TTX/prototypes/components/AttachedProto.hpp>
+#include <TTX/prototypes/components/PhysicProto.hpp>
 #include <TTX/classes/render/Animation.hpp>
 
-class Machinegun:   public AttachedProto, public RenderProto, public HealthProto
+class Machinegun:   public PhysicProto, public RenderProto, public HealthProto
 {
 
 public:
 
    Machinegun():
       GQE::Prototype("pMachinegun"),
-      AttachedProto("pMachinegun"),
+      PhysicProto("pMachinegun"),
       RenderProto("pMachinegun"),
       HealthProto("pMachinegun")
    {
@@ -25,8 +25,8 @@ public:
       anFixture1.density = 1;
       anFixture1.friction = 0.5;
       anFixture1.restitution = 0;
-      anFixture1.filter.categoryBits = ObjectCategories::ENEMY_SHIP;
-      anFixture1.filter.maskBits = ObjectCategories::SCENE | ObjectCategories::FRIENDLY_BULLET | ObjectCategories::FRIENDLY_SHIP;
+      anFixture1.filter.categoryBits = ObjectCategories::FRIENDLY_SHIP ;
+      anFixture1.filter.maskBits = ObjectCategories::SCENE;
 
       mBodyDef.type = b2_dynamicBody;
       mProperties.set("rTexRect", sf::IntRect(96, 0, 32, 32));
@@ -43,9 +43,13 @@ public:
       mProperties.set("Resistance", 5.f);
       mProperties.set("Health", 150.f);
 
-      mProperties.set("LocalTransform", b2Transform(b2Vec2( 0.5, 0.5 ), b2Rot()));
+      mProperties.set("LocalPosition", Position2D(0.5, 0.5, 0));
       mProperties.set<b2JointDef*>("JointDef", &mJointDef);
-      mJointDef.localAnchorA = b2Vec2(-1, -1);
+      mProperties.set<EntityID>("Name","Machinegun");
+      mProperties.set("FatherAnchorPoint","WeaponAnchor");
+
+      mJointDef.localAnchorB = b2Vec2(0, -1);
+      mJointDef.collideConnected = true;
    }
 private:
 

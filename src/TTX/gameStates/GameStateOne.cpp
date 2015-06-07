@@ -60,7 +60,8 @@ void GameStateOne::doInit(void)
    addSystem(new RenderSystem(*this, mRenderManager, LENGTHFACTOR));
    addSystem(new PlayerSystem(*this, mView, LENGTHFACTOR));
    addSystem(new PropellerSystem(*this, mParticles));
-   addSystem(new B2System(*this, mWorld));
+   addSystem(new PhysicSystem(*this, mWorld));
+   //addSystem(new B2System(*this, mWorld));
    addSystem(new AnimationSystem(*this));
    addSystem(new HealthSystem(*this));
    //RenderUnits
@@ -127,16 +128,18 @@ void GameStateOne::handleEvents(sf::Event theEvent)
    {
       if(mPlayer)
       {
+         static GQE::IEntity* last = mPlayer;
          GQE::Prototype* anPrototype = mPrototypes.getPrototype("pMachinegun");
          GQE::Instance* anInstance = anPrototype->makeInstance();
          //Setting the posiion to the instance.
-         anInstance->mProperties.set<GQE::IEntity*>("Parent", mPlayer);
+         anInstance->mProperties.set<GQE::IEntity*>("FatherNode", last);
 
          //Adding the instance to the systems.
          for(auto anSystem :  anPrototype->mSystemIDs)
          {
             mSystems[anSystem]->addEntity(anInstance);
          }
+         last = anInstance;
       }
 
    }
@@ -169,8 +172,9 @@ void GameStateOne::updateFixed(void)
 {
 
    mRenderManager.clear();
-   mSystems["B2System"]->updateFixed();
-   mSystems["AttachSystem"]->updateFixed();
+   mSystems["PhysicSystem"]->updateFixed();
+   //mSystems["B2System"]->updateFixed();
+   //mSystems["AttachSystem"]->updateFixed();
    mSystems["PlayerSystem"]->updateFixed();
    mSystems["PropellerSystem"]->updateFixed();
    mSystems["HealthSystem"]->updateFixed();

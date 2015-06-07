@@ -30,13 +30,11 @@ void AttachSystem::handleInit(GQE::IEntity* theEntity)
    GQE::IEntity* anParentEntity = theEntity->mProperties.get<GQE::IEntity*>("Parent");
    theEntity->mProperties.set<bool>("DirtyTransformBit", true);
 
-   if(anParentEntity)
+   if(1 < anParentEntity->getOrder())
    {
       Transform anLocalTransform = theEntity->mProperties.get<Transform>("LocalTransform");
-      //anLocalTransform = anLocalTransform + anParentEntity->mProperties.get<Transform>("Transform");
+      anLocalTransform = anLocalTransform + anParentEntity->mProperties.get<Transform>("Transform");
       theEntity->mProperties.set<Transform>("Transform", anLocalTransform);
-      GQE::Uint32 anOrder = anParentEntity->getOrder();
-      theEntity->setOrder(anOrder++); //Don't touch otherwise CRASH!!
 
       b2Body* anParentBody = anParentEntity->mProperties.get<b2Body*>("b2Body");
       b2Body* anBody = theEntity->mProperties.get<b2Body*>("b2Body");
@@ -93,14 +91,5 @@ void AttachSystem::draw()
 }
 
 void AttachSystem::handleCleanup(GQE::IEntity* theEntity)
-{
-   theEntity->mProperties.set<GQE::IEntity*>("Parent", 0);
-   b2Joint* anJoint = theEntity->mProperties.get<b2Joint*>("Joint");
-
-   if(anJoint)
-   {
-      mWorld.DestroyJoint(anJoint);
-   }
-}
-
+{} 
 

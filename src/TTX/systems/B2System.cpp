@@ -16,22 +16,11 @@
 
 #include <TTX/systems/B2System.hpp>
 
-/*B2System::B2System(GQE::IState& theState):*/
-//ISystem("B2System",theState),
-//mWorld(b2Vec2(0.0f,1.0f))
-//{
-////mTimeStep = theApp.getUpdateRate();
-
-//mTimeStep = 1/30.f;
-//mVelocityIterations = 6;
-//mPositionIterations = 2;
-/*}*/
 
 B2System::B2System(IActionState& theState, b2World& theWorld):
    ISystem("B2System", theState),
    mWorld(theWorld)
 {
-   //mTimeStep = this->mApp.getUpdateRate();
    mTimeStep = SPU;
    mVelocityIterations = 6;
    mPositionIterations = 2;

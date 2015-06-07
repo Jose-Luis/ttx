@@ -10,7 +10,6 @@ AttachedProto::AttachedProto(GQE::typePrototypeID theID):
    GQE::Prototype(theID),
    B2Proto(theID)
 {
-   mProperties.add<GQE::IEntity*>("Parent", 0);
    mProperties.add<Transform>("LocalTransform", Transform(0, 0, 0));
    mProperties.add<Transform>("Transform", Transform(0, 0, 0));
    mProperties.add<b2JointDef*>("JointDef", 0);
