@@ -11,6 +11,12 @@ Propeller::Propeller():
    mTurnPower(1),
    mInnerPosition(b2Vec2(0, 0))
 {}
+
+Propeller::~Propeller()
+{
+   if(mFocus)
+   mFocus->kill();
+}
 //------------------------------------------------------------------------------
 //       Class:  Propeller
 //      Method:  setTurnPower
@@ -114,7 +120,13 @@ void Propeller::impulse(MoveData theMoveData)
 
          if(theMoveData.turn)
          {
+            mBody->SetFixedRotation(false);
             mBody->ApplyTorque(mBody->GetLocalVector(anDirection).x * mTurnPower);
+         }
+         else
+         {
+            mBody->SetFixedRotation(true);
+
          }
 
          b2Vec2 anPosition = mBody->GetWorldCenter();

@@ -28,11 +28,11 @@ PlayerSystem::~PlayerSystem()
 {}
 void PlayerSystem::addProperties(GQE::IEntity* theEntity)
 {
-   theEntity->mProperties.add<int>("iID", 0);
-   theEntity->mProperties.add<int>("iJoystick", 0);
-   theEntity->mProperties.add<int>("iPoints", 0);
-   theEntity->mProperties.add<std::string>("sName", "");
-   theEntity->mProperties.add<GQE::Instance*>("gInstance", 0);
+   theEntity->mProperties.add<int>("ID", 0);
+   theEntity->mProperties.add<int>("Joystick", 0);
+   theEntity->mProperties.add<int>("Points", 0);
+   theEntity->mProperties.add<std::string>("Name", "");
+   theEntity->mProperties.add<GQE::IEntity*>("Actor", 0);
 }
 
 void PlayerSystem::handleEvents(sf::Event theEvent)
@@ -56,10 +56,14 @@ void PlayerSystem::updateFixed()
          GQE::IEntity* anEntity = *anQueue;
 
          processJoystick(anEntity);
-         Position2D anPosition2D = anEntity->mProperties.get<Position2D>("Position");
-         sf::Vector2f anPosition(anPosition2D.x,anPosition2D.y);
+         GQE::IEntity* anActor = anEntity->mProperties.get<GQE::IEntity*>("Actor");
+         if(anActor)
+         {
+             Position2D anPosition2D = anActor->mProperties.get<Position2D>("Position");
+             sf::Vector2f anPosition(anPosition2D.x, anPosition2D.y);
+             anPositions.push_back(anPosition);
+         }
 
-         anPositions.push_back(anPosition);
 
          anQueue++;
       }
@@ -91,11 +95,12 @@ void PlayerSystem::updateVariable(float theElapsedTime)
 void PlayerSystem::handleInit(GQE::IEntity* theEntity)
 {}
 void PlayerSystem::handleCleanup(GQE::IEntity* theEntity)
-{}
+{
+}
 void PlayerSystem::processJoystick(GQE::IEntity* theEntity)
 {
 
-   int anJoy = theEntity->mProperties.get<int>("iJoystick");
+   int anJoy = theEntity->mProperties.get<int>("Joystick");
    bool anViewChanged = false;
 
    ////////////// VIEW CONTROLS
@@ -161,6 +166,10 @@ void PlayerSystem::processJoystick(GQE::IEntity* theEntity)
    {
       anMoveData.turn = false;
    }
+   else
+   {
+       anMoveData.turn = true;
+   }
 
    if(sf::Joystick::isButtonPressed(anJoy, 7))
    {
@@ -173,7 +182,8 @@ void PlayerSystem::processJoystick(GQE::IEntity* theEntity)
       mRot.Set(mAngle * TORAD);
    }
 
-   theEntity->mProperties.set<MoveData>("vMoveData", anMoveData);
+   GQE::IEntity* anActor = theEntity->mProperties.get<GQE::IEntity*>("Actor");
+   anActor->mProperties.set<MoveData>("vMoveData", anMoveData);
 
    ////////////// FIRE CONTROLS
 

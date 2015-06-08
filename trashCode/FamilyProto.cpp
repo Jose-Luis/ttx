@@ -9,10 +9,10 @@
 FamilyProto::FamilyProto(GQE::typePrototypeID theID):
    GQE::Prototype(theID)
 {
-   mProperties.add<EntityID>("Name","");
+   mProperties.add<EntityID>("Name", "");
    mProperties.add<GQE::IEntity*>("Parent", 0);
    mProperties.add<ChildrenContainer>("Children", ChildrenContainer());
-   mProperties.add<bool>("Independent",false);
+   mProperties.add<bool>("Independent", false);
 
    mSystemIDs.push_back("FamilySystem");
 }

@@ -1,46 +1,24 @@
-// =====================================================================================
-//
-//       Filename:  B2System.hpp
-//
-//    Description:
-//
-//        Version:  1.0
-//        Created:  15/10/12 11:50:56
-//       Revision:  none
-//       Compiler:  g++
-//
-//         Author:  YOUR NAME (),
-//        Company:
-//
-// =====================================================================================
 
-#ifndef  B2SYSTEM_INC
-#define  B2SYSTEM_INC
+// =====================================================================================
+//        Class:  ActorSystem
+//  Description:
+// =====================================================================================
+#ifndef  ACTORSYSTEM_INC
+#define  ACTORSYSTEM_INC
 
-#include <cstdio>
-#include <iostream>
-#include <vector>
-#include <Box2D/Box2D.h>
 #include <GQE/Entity/interfaces/ISystem.hpp>
 #include <GQE/Entity/Entity_types.hpp>
-#include <GQE/Entity/classes/Instance.hpp>
-#include <TTX/prototypes/components/B2Proto.hpp>
 #include <TTX/Types.hpp>
 #include <TTX/systems/ISystem.hpp>
 
-class B2System: public ISystem
+class ActorSystem: public ISystem
 {
 public:
 
-   B2System (IActionState& theState);                         // constructor
-   B2System (IActionState& theState, b2World& theWorld);           // constructor
+   ActorSystem (IActionState& theState, float theFactor);                            // constructor
+   ActorSystem (IActionState& theState, sf::View& theView, float theFactor);                           // constructor
+   virtual ~ActorSystem();
 
-   virtual ~B2System ();
-
-   /**
-    * RegisterPrototype is responsible for adding the properties to a prototype.
-    * @param[in] thePrototype is the prototype to use.
-    */
    void addProperties(GQE::IEntity* theEntity);
 
    /**
@@ -87,10 +65,6 @@ protected:
     * to perform any custom work before the IEntity is deleted.
     */
    virtual void handleCleanup(GQE::IEntity* theEntity);
-private:
-   b2World& mWorld;
-   float mTimeStep;
-   int32 mVelocityIterations;
-   int32 mPositionIterations;
-};
-#endif //  ----- #ifndef B2SYSTEM_INC  -----
+}; // -----  end of class ActorSystem  -----
+
+#endif   // ----- #ifndef CONTROLLERSYSTEM_INC  -----

@@ -1,18 +1,18 @@
 #ifndef  SIMPLEBULLET_INC
 #define  SIMPLEBULLET_INC
 
-#include <TTX/prototypes/components/B2Proto.hpp>
+#include <TTX/prototypes/components/PhysicProto.hpp>
 #include <TTX/prototypes/components/RenderProto.hpp>
 #include <TTX/prototypes/components/HealthProto.hpp>
 #include <TTX/Types.hpp>
 
-class SimpleBullet: public B2Proto, public RenderProto, public HealthProto
+class SimpleBullet: public PhysicProto, public RenderProto, public HealthProto
 {
 
 public:
    SimpleBullet():
       GQE::Prototype("pSimpleBullet"),
-      B2Proto("pSimpleBullet"),
+      PhysicProto("pSimpleBullet"),
       RenderProto("pSimpleBullet"),
       HealthProto("pSimpleBullet")
    {

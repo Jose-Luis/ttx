@@ -68,7 +68,7 @@ void FamilySystem::handleCleanup(GQE::IEntity* theEntity)
       }
       else
       {
-         anEntity->mProperties.set<GQE::IEntity*>("Parent",0);
+         anEntity->mProperties.set<GQE::IEntity*>("Parent", 0);
          anEntity->setOrder(0);
       }
    }

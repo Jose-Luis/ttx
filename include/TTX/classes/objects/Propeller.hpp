@@ -7,20 +7,21 @@
 #include <MPE/MPE.hpp>
 #include <GQE/Entity/interfaces/IEntity.hpp>
 #include <TTX/Types.hpp>
+#include <TTX/classes/objects/IPropeller.hpp>
 
 #ifndef  PROPELLER_INC
 #define  PROPELLER_INC
 
-class Propeller
+class Propeller : public IPropeller
 {
 public:
 
    Propeller();
-   ~Propeller() {};
+   virtual ~Propeller();
 
    /// @brief impulse
    /// @param theDirection
-   void impulse(MoveData theDirection);
+   virtual void impulse(MoveData theDirection);
    /// @brief setLinearPower
    /// @param theLinearPower
    void setLinearPower(float theLinearPower);

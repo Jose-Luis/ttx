@@ -3,11 +3,11 @@
 #include <TTX/prototypes/Player.hpp>
 
 Player::Player():
-   GQE::Prototype("pPlayer")
+   GQE::Prototype("Player")
 {
-   mProperties.add<int>("iID", -1);
-   mProperties.add<int>("iJoystick", -1);
-   mProperties.add<int>("iPoints", 0);
-   mProperties.add<std::string>("sName", "");
-   mProperties.add<GQE::Instance*>("gInstance", 0);
+   mProperties.add<int>("ID", -1);
+   mProperties.add<int>("Joystick", -1);
+   mProperties.add<int>("Points", 0);
+   mProperties.add<std::string>("Name", "");
+   mProperties.add<GQE::IEntity*>("Actor", 0);
 }

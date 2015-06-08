@@ -27,8 +27,11 @@ void CollisionListener::applyDamage(GQE::IEntity* theEntity, float theImpactStre
    {
 
       float aResistance = theEntity->mProperties.get<float>("Resistance");
-      float aDamage = theImpactStrength / aResistance;
-      float aHealth = theEntity->mProperties.get<float>("Health");
-      theEntity->mProperties.set<float>("Health", aHealth - aDamage);
+      if(aResistance)
+      {
+         float aDamage = theImpactStrength / aResistance;
+         float aHealth = theEntity->mProperties.get<float>("Health");
+         theEntity->mProperties.set<float>("Health", aHealth - aDamage);
+      }
    }
 }

@@ -39,7 +39,7 @@ void PhysicSystem::addProperties(GQE::IEntity* theEntity)
 
 void PhysicSystem::updateFixed()
 {
-   mWorld.Step(mTimeStep, mVelocityIterations, mPositionIterations);
+   //mWorld.Step(mTimeStep, mVelocityIterations, mPositionIterations);
 
    std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;
    anIter = mEntities.begin();
@@ -74,92 +74,79 @@ void PhysicSystem::updateVariable(float theElapsedTime)
 void PhysicSystem::handleInit(GQE::IEntity* theEntity)
 {
    GQE::IEntity* aFather = theEntity->mProperties.get<GQE::IEntity*>("FatherNode");
+   b2Body* aBody = 0;
 
    if (aFather)
    {
+      GQE::Uint32 anOrder = aFather->getOrder();
+      theEntity->setOrder(anOrder++); //Don't touch otherwise CRASH!!
       EntityID aName = theEntity->mProperties.get<EntityID>("Name");
-      //GQE::typePropertyID aFatherAnchorPoint = theEntity->mProperties.get<GQE::typePropertyID>("FatherAnchorPoint");
-      //b2Vec2 aAnchorPoint = aFather->mProperties.get<b2Vec2>(aFatherAnchorPoint);
-       
-      //ChildrenContainer* aChildrenMap = aFather->mProperties.getPointer<ChildrenContainer>("ChildrenNodes");
-      //if(aChildrenMap->find(aName) != aChildrenMap->end())
-      //{
-         //theEntity->destroy();
-      //}
-      //else
-      //{
-         Position2D aLocalPosition = theEntity->mProperties.get<Position2D>("LocalPosition");
-         b2Body* aFatherBody = aFather->mProperties.get<b2Body*>("Body");
-         b2Vec2 aFatherPos = aFatherBody->GetPosition();
-         theEntity->mProperties.set<Position2D>("Position",Position2D(aFatherPos.x,aFatherPos.y,0) + aLocalPosition);
-         setBody(theEntity);
-
-         //aChildrenMap->insert(std::pair<EntityID, GQE::IEntity*>( aName, theEntity ));
-         GQE::Uint32 anOrder = aFather->getOrder();
-         theEntity->setOrder(anOrder++); //Don't touch otherwise CRASH!!
+      aFather->mProperties.set<GQE::IEntity*>(aName, theEntity);
 
 
-         b2Body* aBody = theEntity->mProperties.get<b2Body*>("Body");
-         //aBody->SetTransform(aFatherBody->GetPosition() + b2Vec2(aLocalPosition.x, aLocalPosition.y), aFatherBody->GetAngle() + aLocalPosition.angle);
+      b2Body* aFatherBody = aFather->mProperties.get<b2Body*>("Body");
 
-         b2JointDef*  aJointDef = theEntity->mProperties.get<b2JointDef*>("JointDef");
+      b2JointDef*  aJointDef = theEntity->mProperties.get<b2JointDef*>("JointDef");
 
-         if(aJointDef)
+      if(aJointDef)
+      {
+
+         switch(aJointDef->type)
          {
-            aJointDef->bodyB = aFatherBody;
-            aJointDef->bodyA = aBody;
-            b2Joint* aJoint = mWorld.CreateJoint(aJointDef);
-            theEntity->mProperties.set<b2Joint*>("Joint", aJoint);
+         case b2JointType::e_weldJoint:
+            GQE::typePropertyID aPropertyName = theEntity->mProperties.get<GQE::typePropertyID>("AnchorPoint");
+            b2Vec2 aFatherAnchorPoint = aFather->mProperties.get<b2Vec2>(aPropertyName);
+            b2WeldJointDef* aWeldJointDef = static_cast<b2WeldJointDef*>(aJointDef);
+            aWeldJointDef->localAnchorA = aFatherAnchorPoint;
+            b2Vec2 aPosition = aFatherBody->GetPosition() + aFatherAnchorPoint + aWeldJointDef->localAnchorB;
+            theEntity->mProperties.set<Position2D>("Position", Position2D(aPosition.x, aPosition.y, 0));
+            break;
          }
-      //}
+
+         aBody = setBody(theEntity);
+         aJointDef->bodyA = aFatherBody;
+         aJointDef->bodyB = aBody;
+         b2Joint* aJoint = mWorld.CreateJoint(aJointDef);
+         theEntity->mProperties.set<b2Joint*>("Joint", aJoint);
+      }
    }
-   
+
    else
    {
-      setBody(theEntity);
+      aBody = setBody(theEntity);
    }
 
-         b2Body* aBody = theEntity->mProperties.get<b2Body*>("Body");
-         aBody->SetActive(true);
+   aBody->SetActive(true);
 }
 
 void PhysicSystem::handleCleanup(GQE::IEntity* theEntity)
 {
-   mWorld.DestroyBody(theEntity->mProperties.get<b2Body*>("Body"));
-   //GQE::IEntity* aParentEntity = theEntity->mProperties.get<GQE::IEntity*>("FatherNode");
+   GQE::IEntity* aParentEntity = theEntity->mProperties.get<GQE::IEntity*>("FatherNode");
 
-   //if(aParentEntity)
-   //{
-      //ChildrenContainer* aChildrenMap = aParentEntity->mProperties.getPointer<ChildrenContainer>("ChildrenNodes");
-      //EntityID aChildName = theEntity->mProperties.get<EntityID>("Name");
-      //aChildrenMap->erase(aChildrenMap->find(aChildName));
-   //}
+   if(aParentEntity)
+   {
+      aParentEntity->mProperties.remove(theEntity->mProperties.get<GQE::typePropertyID>("Name"));
 
-   //ChildrenContainer* aChildrenMap = theEntity->mProperties.getPointer<ChildrenContainer>("ChildrenNodes");
-
-   //for(auto aChild : *aChildrenMap)
-   //{
-      //GQE::IEntity* anEntity = aChild.second;
-      //bool independent = anEntity->mProperties.get<bool>("Independent");
-
-      //if(!independent)
-      //{
-         //anEntity->destroy();
-      //}
-      //else
-      //{
-         //anEntity->mProperties.set<GQE::IEntity*>("FatherNode",0);
-         //anEntity->setOrder(0);
-      //}
-   //}
+      if(!theEntity->mProperties.get<bool>("Independent"))
+      {
+         theEntity->destroy();
+         mWorld.DestroyBody(theEntity->mProperties.get<b2Body*>("Body"));
+      }
+      else
+      {
+         theEntity->mProperties.set<GQE::IEntity*>("FatherNode", 0);
+         theEntity->setOrder(0);
+      }
+   }
 }
+
 
 void PhysicSystem::handleEvents(sf::Event theEvent)
 {}
 void PhysicSystem::draw(void)
 {}
 
-void PhysicSystem::setBody(GQE::IEntity* theEntity)
+b2Body* PhysicSystem::setBody(GQE::IEntity* theEntity)
 {
 
    b2BodyDef* anBodyDef = theEntity->mProperties.get<b2BodyDef*>("BodyDef");
@@ -185,6 +172,7 @@ void PhysicSystem::setBody(GQE::IEntity* theEntity)
    }
 
    theEntity->mProperties.set<b2Body*>("Body", anBody);
+   return anBody;
 }
 
 

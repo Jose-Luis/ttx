@@ -2,17 +2,17 @@
 #ifndef  PGROUND_INC
 #define  PGROUND_INC
 
-#include <TTX/prototypes/components/B2Proto.hpp>
+#include <TTX/prototypes/components/PhysicProto.hpp>
 #include <TTX/prototypes/components/RenderProto.hpp>
 
-class Ground: public B2Proto, public RenderProto
+class Ground: public PhysicProto, public RenderProto
 {
 
 public:
 
    Ground():
       GQE::Prototype("pGround"),
-      B2Proto("pGround"),
+      PhysicProto("pGround"),
       RenderProto("pGround")
    {
       mShape1.SetAsBox(16, 0.5);

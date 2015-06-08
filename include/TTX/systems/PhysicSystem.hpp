@@ -74,7 +74,7 @@ public:
     */
    void draw(void);
 
-   void attachNodes(GQE::IEntity* theFather,GQE::IEntity* theChild,GQE::typePropertyID theAnchorPoint,GQE::typePropertyID theNodeName);
+   void attachNodes(GQE::IEntity* theFather, GQE::IEntity* theChild, GQE::typePropertyID theAnchorPoint, GQE::typePropertyID theNodeName);
    void deattachNode(GQE::IEntity*);
 
 protected:
@@ -97,6 +97,6 @@ private:
    int32 mVelocityIterations;
    int32 mPositionIterations;
 
-   void setBody(GQE::IEntity* theEntity);
+   b2Body* setBody(GQE::IEntity* theEntity);
 };
 #endif //  ----- #ifndef PhysicSYSTEM_INC  -----

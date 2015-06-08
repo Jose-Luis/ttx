@@ -1,4 +1,3 @@
-
 #ifndef  PTRIANGLE_INC
 #define  PTRIANGLE_INC
 
@@ -37,16 +36,6 @@ public:
       anFixture1.filter.categoryBits = ObjectCategories::FRIENDLY_SHIP;
       anFixture1.filter.maskBits = ObjectCategories::SCENE | ObjectCategories::ENEMY_SHIP;
 
-      b2FixtureDef anFixture2;
-      mShape2.SetAsBox(0.125, 0.25, b2Vec2(0.75, 0), 0);
-      anFixture2.shape = &mShape2;
-      anFixture2.filter.maskBits = ObjectCategories::SCENE;
-
-      b2FixtureDef anFixture3;
-      mShape3.SetAsBox(0.125, 0.25, b2Vec2(-0.75, 0), 0);
-      anFixture3.shape = &mShape3;
-      anFixture3.filter.maskBits = ObjectCategories::SCENE;
-
       Propeller anPropeller;
       anPropeller.setEmitterID("ShipPropeller");
       anPropeller.setLinearPower(8192);
@@ -57,15 +46,12 @@ public:
 
       mProperties.add<Propeller>("pPropeller", anPropeller);
       mProperties.add<Weapon>("wWeapon", anWeapon);
+      mProperties.add<b2Vec2>("WeaponAnchorLeft", b2Vec2(-0.7,-1.2));
       mProperties.set("rTexRect", sf::Rect<int>(0, 96, 32, 32));
 
       mProperties.set("Resistance", 100.f);
       mProperties.set("Health", 100.f);
-      mProperties.set<b2Vec2>("WeaponAnchor",b2Vec2(2,2));
-
       mFixturesDef.push_back(anFixture1);
-      mFixturesDef.push_back(anFixture2);
-      mFixturesDef.push_back(anFixture3);
       mSystemIDs.push_back("PropellerSystem");
 
    }

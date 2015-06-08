@@ -2,17 +2,17 @@
 #ifndef  PROMBO_INC
 #define  PROMBO_INC
 
-#include <TTX/prototypes/components/B2Proto.hpp>
+#include <TTX/prototypes/components/PhysicProto.hpp>
 #include <TTX/prototypes/components/RenderProto.hpp>
 
-class Rombo: public B2Proto, public RenderProto
+class Rombo: public PhysicProto, public RenderProto
 {
 
 public:
 
    Rombo():
       GQE::Prototype("pRombo"),
-      B2Proto("pRombo"),
+      PhysicProto("pRombo"),
       RenderProto("pRombo")
    {
       b2FixtureDef anFixture1;

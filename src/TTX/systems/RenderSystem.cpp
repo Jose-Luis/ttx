@@ -59,7 +59,7 @@ void RenderSystem::updateFixed()
 
             sf::Transform anTransform;
 
-            anTransform.translate(sf::Vector2f(anPosition.x,anPosition.y)).rotate(anPosition.angle).scale(anScale);
+            anTransform.translate(sf::Vector2f(anPosition.x, anPosition.y)).rotate(anPosition.angle).scale(anScale);
             //anTransform.translate(anPosition);
 
             sf::Vector2f anPositions[4];

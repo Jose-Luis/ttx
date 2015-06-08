@@ -53,8 +53,7 @@ void AnimationSystem::updateVariable(float theElapsedTime)
 {}
 
 void AnimationSystem::draw()
-{
-}
+{}
 
 void AnimationSystem::handleCleanup(GQE::IEntity* theEntity)
 {}

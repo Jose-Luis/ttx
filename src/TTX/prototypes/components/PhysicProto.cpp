@@ -9,8 +9,8 @@
 PhysicProto::PhysicProto(GQE::typePrototypeID theID):
    GQE::Prototype(theID)
 {
-   mBodyDef.active=false;
-   mProperties.add<EntityID>("Name","");
+   mBodyDef.active = false;
+   mProperties.add<EntityID>("Name", "");
    mProperties.add<GQE::IEntity*>("FatherNode", 0);
    mProperties.add<ChildrenContainer>("ChildrenNodes", ChildrenContainer());
 
@@ -19,12 +19,12 @@ PhysicProto::PhysicProto(GQE::typePrototypeID theID):
 
    mProperties.add<b2BodyDef*>("BodyDef", &mBodyDef);
    mProperties.add<std::vector<b2FixtureDef>*>("FixturesDef", &mFixturesDef);
-   mProperties.add<GQE::typePropertyID>("FatherAnchorPoint","");
+   mProperties.add<GQE::typePropertyID>("FatherAnchorPoint", "");
    mProperties.add<b2JointDef*>("JointDef", &mJointDef);
    mProperties.add<b2Body*>("Body", 0);
    mProperties.add<b2Joint*>("Joint", 0);
 
-   mProperties.add<bool>("Independent",false);
+   mProperties.add<bool>("Independent", false);
 
    mSystemIDs.push_back("PhysicSystem");
 }
