@@ -44,6 +44,7 @@ public:
       Weapon anWeapon;
       anWeapon.setPosition(Position2D(-0.75, 0, -HALF_PI));
 
+      mProperties.add<EntityID>("Name", "BasicShip");
       mProperties.add<Propeller>("pPropeller", anPropeller);
       mProperties.add<Weapon>("wWeapon", anWeapon);
       mProperties.add<b2Vec2>("WeaponAnchorLeft", b2Vec2(-0.7,-1.2));

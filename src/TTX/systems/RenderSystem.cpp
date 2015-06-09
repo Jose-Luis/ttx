@@ -91,8 +91,7 @@ void RenderSystem::updateVariable(float theElapsedTime)
 {}
 
 void RenderSystem::draw()
-{
-}
+{}
 
 void RenderSystem::handleCleanup(GQE::IEntity* theEntity)
 {}

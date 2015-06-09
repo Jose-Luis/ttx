@@ -16,7 +16,7 @@
 
 #include <TTX/systems/ActorSystem.hpp>
 
-ActorSystem::ActorSystem(IActionState& theState, sf::View& theView, float theFactor):
+ActorSystem::ActorSystem(IActionState& theState):
    ISystem("ActorSystem", theState)
 {}
 ActorSystem::~ActorSystem()
@@ -24,8 +24,6 @@ ActorSystem::~ActorSystem()
 void ActorSystem::addProperties(GQE::IEntity* theEntity)
 {
    theEntity->mProperties.add<GQE::IEntity*>("Player", 0);
-   theEntity->mProperties.add<GQE::IEntity*>("Propeller", 0);
-   theEntity->mProperties.add<GQE::IEntity*>("Weapon", 0);
 }
 
 void ActorSystem::handleEvents(sf::Event theEvent)
@@ -33,25 +31,25 @@ void ActorSystem::handleEvents(sf::Event theEvent)
 
 void ActorSystem::updateFixed()
 {
-   std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;
-   std::vector<sf::Vector2f> anPositions;
-   sf::Vector2f anCenterPosition;
+   //std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;
+   //std::vector<sf::Vector2f> anPositions;
+   //sf::Vector2f anCenterPosition;
 
-   anIter = mEntities.begin();
+   //anIter = mEntities.begin();
 
-   while(anIter != mEntities.end())
-   {
-      std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();
+   //while(anIter != mEntities.end())
+   //{
+      //std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();
 
-      while(anQueue != anIter->second.end())
-      {
-         GQE::IEntity* anEntity = *anQueue;
+      //while(anQueue != anIter->second.end())
+      //{
+         //GQE::IEntity* anEntity = *anQueue;
 
-         anQueue++;
-      }
+         //anQueue++;
+      //}
 
-      anIter++;
-   }
+      //anIter++;
+   //}
 }
 
 void ActorSystem::draw(void)
@@ -62,5 +60,7 @@ void ActorSystem::handleInit(GQE::IEntity* theEntity)
 {}
 void ActorSystem::handleCleanup(GQE::IEntity* theEntity)
 {
-   theEntity->mProperties.get<GQE::IEntity*>("Player")->mProperties.set<GQE::IEntity*>("Actor",0);
+   GQE::IEntity* aPlayer = theEntity->mProperties.get<GQE::IEntity*>("Player");
+   if(aPlayer)
+      aPlayer->mProperties.set<GQE::IEntity*>("Actor",0);
 }

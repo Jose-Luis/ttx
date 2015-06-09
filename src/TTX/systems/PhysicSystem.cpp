@@ -36,10 +36,9 @@ void PhysicSystem::addProperties(GQE::IEntity* theEntity)
    theEntity->mProperties.add<bool>("Independent", false);
 }
 
-
 void PhysicSystem::updateFixed()
 {
-   //mWorld.Step(mTimeStep, mVelocityIterations, mPositionIterations);
+   mWorld.Step(mTimeStep, mVelocityIterations, mPositionIterations);
 
    std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;
    anIter = mEntities.begin();
@@ -138,11 +137,16 @@ void PhysicSystem::handleCleanup(GQE::IEntity* theEntity)
          theEntity->setOrder(0);
       }
    }
+   else
+   {
+         theEntity->destroy();
+         mWorld.DestroyBody(theEntity->mProperties.get<b2Body*>("Body"));
+   }
 }
-
 
 void PhysicSystem::handleEvents(sf::Event theEvent)
 {}
+
 void PhysicSystem::draw(void)
 {}
 
@@ -175,13 +179,11 @@ b2Body* PhysicSystem::setBody(GQE::IEntity* theEntity)
    return anBody;
 }
 
-
 void PhysicSystem::attachNodes(GQE::IEntity* theFather,
                                GQE::IEntity* theChild,
                                GQE::typePropertyID theAnchorPoint,
                                GQE::typePropertyID theNodeName)
 {}
-
 
 void PhysicSystem::deattachNode(GQE::IEntity*)
 {}

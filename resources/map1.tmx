@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="300" height="300" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="300" height="300" tilewidth="32" tileheight="32" nextobjectid="3">
  <tileset firstgid="1" name="cutre" tilewidth="32" tileheight="32">
-  <image source="../../../../../../home/momia/Images/GameDev/TileSets/cutre.png" width="256" height="256"/>
+  <image source="Tiles1.png" width="256" height="256"/>
  </tileset>
  <layer name="Back" width="300" height="300">
   <data>
@@ -1205,7 +1205,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="37"/>
+   <tile gid="1"/>
    <tile gid="37"/>
    <tile gid="37"/>
    <tile gid="37"/>
@@ -1505,7 +1505,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -1805,7 +1805,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -2105,7 +2105,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -2405,7 +2405,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -2705,7 +2705,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -3005,7 +3005,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -3305,7 +3305,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="53"/>
+   <tile gid="1"/>
    <tile gid="53"/>
    <tile gid="53"/>
    <tile gid="53"/>
@@ -90007,11 +90007,11 @@
    <tile gid="0"/>
   </data>
  </layer>
- <objectgroup name="Shapes" width="300" height="300">
-  <object x="1" y="144">
-   <polyline points="0,0 0,222 160,224 414,477 449,479 799,829 815,829 815,815 927,703 1263,702 1261,-128 751,-128 751,-34 765,-34 784,-19 622,145 621,151 614,159 607,160 591,177 590,185 583,191 576,192 559,210 557,219 547,223 543,223 527,240 524,249 519,255 511,255 497,271 493,281 487,284 477,289 447,289 157,1 0,-1"/>
+ <objectgroup name="Shapes">
+  <object id="1" x="3" y="146">
+   <polyline points="27,2 27,222 160,224 414,477 449,479 799,829 815,829 815,815 927,703 1263,702 1261,-128 751,-128 751,-34 765,-34 784,-19 622,145 621,151 614,159 607,160 591,177 590,185 583,191 576,192 559,210 557,219 547,223 543,223 527,240 524,249 519,255 511,255 497,271 493,281 487,284 477,289 447,289 157,1 30,0"/>
   </object>
-  <object x="496" y="545">
+  <object id="2" x="496" y="545">
    <polyline points="0,0 112,-112 223,-2 112,111 0,-1"/>
   </object>
  </objectgroup>

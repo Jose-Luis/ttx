@@ -8,22 +8,14 @@
  * @date 20120512 - Use new RAII Asset style
  */
 #include <TTX/gameStates/IActionState.hpp>
-//------------------------------------------------------------------------------
-//       Class:  IActionState
-//      Method:  constructor
-// Description:
-//------------------------------------------------------------------------------
+
 IActionState::IActionState(GQE::typeStateID theStateID, GQE::IApp& theApp):
     GQE::IState(theStateID, theApp),
     mWorld(b2Vec2(0.0f, 0.0f))
 {
     mWorld.SetAllowSleeping(true);
 }
-//------------------------------------------------------------------------------
-//       Class:  IActionState
-//      Method:  deconstructor
-// Description:
-//------------------------------------------------------------------------------
+
 IActionState::~IActionState()
 {
     for (auto anSystem : mSystems)
@@ -31,11 +23,7 @@ IActionState::~IActionState()
         delete anSystem.second;
     }
 }
-//------------------------------------------------------------------------------
-//       Class:  IActionState
-//      Method:  addInstance
-// Description:
-//------------------------------------------------------------------------------
+
 GQE::Instance* IActionState::addInstance(GQE::typePrototypeID thePrototype,
         Position2D           thePosition,
         Position2D           theInitialImpulse)
@@ -56,32 +44,29 @@ GQE::Instance* IActionState::addInstance(GQE::typePrototypeID thePrototype,
 
     return anInstance;
 }
-//------------------------------------------------------------------------------
-//       Class:  IActionState
-//      Method:  addPlayer
-// Description:
-//------------------------------------------------------------------------------
+
 GQE::IEntity* IActionState::addPlayer(int                  theJoy,
         GQE::typePrototypeID thePrototype,
         Position2D           thePosition)
 {
     GQE::IEntity* aPlayer = 0;
+    GQE::IEntity* anActor = 0;
+
     if(mPlayers.find(theJoy) == mPlayers.end())
     {
         aPlayer = mPrototypes.getPrototype("Player")->makeInstance();
-        aPlayer->mProperties.set<GQE::IEntity*>("Actor",addInstance(thePrototype, thePosition));
+        anActor = addInstance(thePrototype,thePosition);
+        aPlayer->mProperties.set<GQE::IEntity*>("Actor",anActor);
         aPlayer->mProperties.set<int>("Joystick", theJoy);
+        anActor->mProperties.add<GQE::IEntity*>("Player",aPlayer);
         GQE::typeEntityID anPlayerID = mSystems["PlayerSystem"]->addEntity(aPlayer);
+        mSystems["ActorSystem"]->addEntity(anActor);
         mPlayers.insert(std::pair<int, GQE::typeEntityID>(theJoy, anPlayerID));
     }
 
     return aPlayer;
 }
-//------------------------------------------------------------------------------
-//       Class:  IActionState
-//      Method:  addSystem
-// Description:
-//------------------------------------------------------------------------------
+
 void IActionState::addSystem(ISystem* theSystem)
 {
     if(theSystem != NULL)

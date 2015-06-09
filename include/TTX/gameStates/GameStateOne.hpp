@@ -18,6 +18,7 @@
 #include <GQE/Core/assets/FontAsset.hpp>
 #include <GQE/Core/assets/ImageAsset.hpp>
 #include <GQE/Core/assets/SoundAsset.hpp>
+#include <GQE/Core/classes/StatManager.hpp>
 #include <GQE/Core/Core_types.hpp>
 #include <GQE/Core/interfaces/IApp.hpp>
 #include <GQE/Entity/classes/Instance.hpp>
@@ -32,6 +33,7 @@
 #include <TTX/systems/RenderSystem.hpp>
 #include <TTX/systems/AnimationSystem.hpp>
 #include <TTX/systems/HealthSystem.hpp>
+#include <TTX/systems/ActorSystem.hpp>
 #include <TTX/prototypes/Rombo.hpp>
 #include <TTX/prototypes/Box.hpp>
 #include <TTX/prototypes/Ground.hpp>
@@ -115,12 +117,9 @@ private:
    GQE::IEntity* mPlayer;
 
 
-   /*#ifndef  NDEBUG
-      sf::Clock mFpsClock;
-      float mAcum;
-      int mCont;
-      sf::Text mFpsText;
-   #endif */
+   #ifndef  NDEBUG
+      GQE::StatManager mStatManager;
+   #endif 
 };
 
 #endif // GAME_STATE_HPP_INCLUDED

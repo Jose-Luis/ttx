@@ -14,6 +14,9 @@
 GameStateOne::GameStateOne(GQE::IApp& theApp):
    IActionState("State1", theApp)
 {
+#ifndef NDEBUG
+   mStatManager.registerApp(&mApp);
+#endif
 }
 //------------------------------------------------------------------------------
 //       Class:  GameStateOne
@@ -33,6 +36,10 @@ void GameStateOne::doInit(void)
    // First call our base class implementation
    IState::doInit();
    //Assets
+#ifndef NDEBUG
+      mStatManager.doInit();
+      mStatManager.setShow(true);
+#endif
    sf::Texture* anSpriteTexture =
       mApp.mAssetManager.getHandler<sf::Texture>().
       getReference("resources/Sprites.png",
@@ -45,6 +52,7 @@ void GameStateOne::doInit(void)
                    GQE::AssetLoadNow,
                    GQE::AssetLoadFromFile,
                    GQE::AssetDropAtZero);
+
    mApp.mAssetManager.loadAllAssets();
    mView.setRotation(0);
    //Prototypes
@@ -62,13 +70,17 @@ void GameStateOne::doInit(void)
    addSystem(new PhysicSystem(*this, mWorld));
    addSystem(new AnimationSystem(*this));
    addSystem(new HealthSystem(*this));
+   addSystem(new ActorSystem(*this));
    //RenderUnits
    mRenderManager.addLayer("Back", anTileTexture);
    mRenderManager.addLayer("Fore", anTileTexture);
    mRenderManager.addLayer("Obj1", anSpriteTexture);
    mRenderManager.addLayer("Par1", anSpriteTexture);
+   mRenderManager.addLayer("Par1", anSpriteTexture);
+   mRenderManager.addLayer("HUD", anSpriteTexture);
    mRenderManager.getLayer("Obj1").mUpdatable = true;
    mRenderManager.getLayer("Par1").mUpdatable = true;
+   mRenderManager.getLayer("HUD").mUpdatable = true;
    mRenderManager.getLayer("Back").mUpdatable = false;
    mRenderManager.getLayer("Fore").mUpdatable = false;
    //Update Rate
@@ -113,7 +125,8 @@ void GameStateOne::handleEvents(sf::Event theEvent)
            (theEvent.key.code == sf::Keyboard::Space))
    {
       //Position2D anPos(rand()%40,0,rand()%3);
-      addInstance("pBox", Position2D(rand() % 4, 16, rand() % 3), Position2D(3, 3, 0));
+      //addInstance("pBox", Position2D(rand() % 4, 16, rand() % 3), Position2D(3, 3, 0));
+      addInstance("pBox", Position2D(4, 16, rand() % 3), Position2D(0, 0, 0));
    }
    else if((theEvent.type == sf::Event::KeyReleased) &&
            (theEvent.key.code == sf::Keyboard::B))
@@ -167,11 +180,8 @@ void GameStateOne::updateSelected(sf::Event theEvent)
 //------------------------------------------------------------------------------
 void GameStateOne::updateFixed(void)
 {
-
    mRenderManager.clear();
    mSystems["PhysicSystem"]->updateFixed();
-   //mSystems["B2System"]->updateFixed();
-   //mSystems["AttachSystem"]->updateFixed();
    mSystems["PlayerSystem"]->updateFixed();
    mSystems["PropellerSystem"]->updateFixed();
    mSystems["HealthSystem"]->updateFixed();
@@ -179,7 +189,9 @@ void GameStateOne::updateFixed(void)
    mSystems["RenderSystem"]->updateFixed();
    mParticles.update(SPU);
    mParticles.updateRender(mRenderManager);
-   mWorld.Step(60, 4, 2);
+#ifndef NDEBUG
+   mStatManager.updateFixed();
+#endif
 }
 //------------------------------------------------------------------------------
 //       Class:  GameStateOne
@@ -201,27 +213,18 @@ void GameStateOne::draw(void)
    mRenderManager.drawLayer("Par1", mApp.mWindow);
    mRenderManager.drawLayer("Obj1", mApp.mWindow);
    mRenderManager.drawLayer("Fore", mApp.mWindow);
+   mRenderManager.drawLayer("HUD", mApp.mWindow);
+#ifndef NDEBUG
+   mStatManager.draw();
+#endif
+}
 
-}
+
+
+
 //------------------------------------------------------------------------------
-//       Class:  GameStateOne
-/*
-#ifndef  NDEBUG
-mAcum += 1/mFpsClock.restart().asSeconds();
-mCont += 1;
-if (mCont == 30)
-{
-   float anFps = mAcum /30;
-   mCont = 0;
-   mAcum = 0;
-   std::ostringstream ss;
-   ss << "FPS: " << anFps;
-   std::string s(ss.str());
-   mFpsText.setString(s);
-}
-mFpsText.setPosition(mView.getCenter());
-mApp.mWindow.draw(mFpsText);
-#endif *///      Method:  handleCleanup
+// Class:  GameStateOne
+// Method:  handleCleanup
 // Description:
 //------------------------------------------------------------------------------
 void GameStateOne::handleCleanup(void)

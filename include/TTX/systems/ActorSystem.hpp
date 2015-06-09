@@ -15,8 +15,7 @@ class ActorSystem: public ISystem
 {
 public:
 
-   ActorSystem (IActionState& theState, float theFactor);                            // constructor
-   ActorSystem (IActionState& theState, sf::View& theView, float theFactor);                           // constructor
+   ActorSystem (IActionState& theState);                            // constructor
    virtual ~ActorSystem();
 
    void addProperties(GQE::IEntity* theEntity);

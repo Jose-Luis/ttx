@@ -36,8 +36,7 @@ void PlayerSystem::addProperties(GQE::IEntity* theEntity)
 }
 
 void PlayerSystem::handleEvents(sf::Event theEvent)
-{
-}
+{}
 
 void PlayerSystem::updateFixed()
 {
@@ -55,15 +54,28 @@ void PlayerSystem::updateFixed()
       {
          GQE::IEntity* anEntity = *anQueue;
 
-         processJoystick(anEntity);
          GQE::IEntity* anActor = anEntity->mProperties.get<GQE::IEntity*>("Actor");
+
          if(anActor)
          {
-             Position2D anPosition2D = anActor->mProperties.get<Position2D>("Position");
-             sf::Vector2f anPosition(anPosition2D.x, anPosition2D.y);
-             anPositions.push_back(anPosition);
+            processJoystick(anEntity);
+            Position2D anPosition2D = anActor->mProperties.get<Position2D>("Position");
+            sf::Vector2f anPosition(anPosition2D.x, anPosition2D.y);
+            anPositions.push_back(anPosition);
          }
+         else
+         {
+            sf::Font aFont;
+            aFont.loadFromFile("resources/arial.ttf");
+            sf::Text aText;
+            aText.setFont(aFont);
+            aText.setCharacterSize(32);
+            aText.setColor(sf::Color::Green);
 
+            aText.setString("GAME OVER!");
+            //aText.setPosition(mView.getCenter());
+            mApp.mWindow.draw(aText);
+         }
 
          anQueue++;
       }
@@ -168,7 +180,7 @@ void PlayerSystem::processJoystick(GQE::IEntity* theEntity)
    }
    else
    {
-       anMoveData.turn = true;
+      anMoveData.turn = true;
    }
 
    if(sf::Joystick::isButtonPressed(anJoy, 7))

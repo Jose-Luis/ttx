@@ -25,7 +25,6 @@ void CollisionListener::applyDamage(GQE::IEntity* theEntity, float theImpactStre
 {
    if (theEntity)
    {
-
       float aResistance = theEntity->mProperties.get<float>("Resistance");
       if(aResistance)
       {
