@@ -54,12 +54,14 @@ void PlayerSystem::updateFixed()
       {
          GQE::IEntity* anEntity = *anQueue;
 
-         GQE::IEntity* anActor = anEntity->mProperties.get<GQE::IEntity*>("Actor");
+         GQE::IEntity* actor = anEntity->mProperties.get<GQE::IEntity*>("Actor");
 
-         if(anActor)
+         if(actor)
          {
-            processJoystick(anEntity);
-            Position2D anPosition2D = anActor->mProperties.get<Position2D>("Position");
+            int joy = anEntity->mProperties.get<int>("Joystick");
+
+            processJoystick(joy,actor);
+            Position2D anPosition2D = actor->mProperties.get<Position2D>("Position");
             sf::Vector2f anPosition(anPosition2D.x, anPosition2D.y);
             anPositions.push_back(anPosition);
          }
@@ -109,34 +111,33 @@ void PlayerSystem::handleInit(GQE::IEntity* theEntity)
 void PlayerSystem::handleCleanup(GQE::IEntity* theEntity)
 {
 }
-void PlayerSystem::processJoystick(GQE::IEntity* theEntity)
+void PlayerSystem::processJoystick(int theJoy, GQE::IEntity* theActor)
 {
 
-   int anJoy = theEntity->mProperties.get<int>("Joystick");
    bool anViewChanged = false;
 
    ////////////// VIEW CONTROLS
-   if(sf::Joystick::isButtonPressed(anJoy, 4))
+   if(sf::Joystick::isButtonPressed(theJoy, 4))
    {
       mAngle -= 1;
       mView.setRotation(mAngle);
       anViewChanged = true;
    }
 
-   if(sf::Joystick::isButtonPressed(anJoy, 5))
+   if(sf::Joystick::isButtonPressed(theJoy, 5))
    {
       mAngle += 1;
       mView.setRotation(mAngle);
       anViewChanged = true;
    }
 
-   if(sf::Joystick::isButtonPressed(anJoy, 6))
+   if(sf::Joystick::isButtonPressed(theJoy, 6))
    {
       mView.zoom(0.98);
       anViewChanged = true;
    }
 
-   if(sf::Joystick::isButtonPressed(anJoy, 7))
+   if(sf::Joystick::isButtonPressed(theJoy, 7))
    {
       mView.zoom(1.02);
       anViewChanged = true;
@@ -153,20 +154,20 @@ void PlayerSystem::processJoystick(GQE::IEntity* theEntity)
 
    MoveData anMoveData;
 
-   b2Vec2 anJoyStick(sf::Joystick::getAxisPosition(anJoy, sf::Joystick::X) / 100,
-                     sf::Joystick::getAxisPosition(anJoy, sf::Joystick::Y) / 100);
-   anJoyStick = b2Mul(mRot, anJoyStick);
-   float anLength = anJoyStick.Length();
+   b2Vec2 theJoyStick(sf::Joystick::getAxisPosition(theJoy, sf::Joystick::X) / 100,
+                     sf::Joystick::getAxisPosition(theJoy, sf::Joystick::Y) / 100);
+   theJoyStick = b2Mul(mRot, theJoyStick);
+   float anLength = theJoyStick.Length();
 
    if( 1 < anLength )
    {
-      anJoyStick *= 1.f / anLength;
+      theJoyStick *= 1.f / anLength;
    }
 
    if( 0.2 < anLength )
    {
-      anMoveData.x = anJoyStick.x;
-      anMoveData.y = anJoyStick.y;
+      anMoveData.x = theJoyStick.x;
+      anMoveData.y = theJoyStick.y;
    }
    else
    {
@@ -174,7 +175,7 @@ void PlayerSystem::processJoystick(GQE::IEntity* theEntity)
       anMoveData.y = 0;
    }
 
-   if(sf::Joystick::isButtonPressed(anJoy, 3))
+   if(sf::Joystick::isButtonPressed(theJoy, 3))
    {
       anMoveData.turn = false;
    }
@@ -183,7 +184,7 @@ void PlayerSystem::processJoystick(GQE::IEntity* theEntity)
       anMoveData.turn = true;
    }
 
-   if(sf::Joystick::isButtonPressed(anJoy, 7))
+   if(sf::Joystick::isButtonPressed(theJoy, 7))
    {
       anMoveData.move = false;
    }
@@ -194,19 +195,6 @@ void PlayerSystem::processJoystick(GQE::IEntity* theEntity)
       mRot.Set(mAngle * TORAD);
    }
 
-   GQE::IEntity* anActor = theEntity->mProperties.get<GQE::IEntity*>("Actor");
-   anActor->mProperties.set<MoveData>("MoveData", anMoveData);
+   theActor->mProperties.set<MoveData>("MoveData", anMoveData);
 
-   ////////////// FIRE CONTROLS
-
-   b2Vec2 anVector(sf::Joystick::getAxisPosition(anJoy, sf::Joystick::U), -sf::Joystick::getAxisPosition(anJoy, sf::Joystick::V));
-
-   if(400 < anVector.LengthSquared())
-   {
-      sf::Vector2f anPosition = theEntity->mProperties.get<sf::Vector2f>("vPosition");
-      float anAngle = std::atan2( anVector.x, anVector.y );
-      Position2D anPosition2D(anPosition.x, anPosition.y, anAngle );
-      Weapon* anWeapon = theEntity->mProperties.getPointer<Weapon>("wWeapon");
-      anWeapon->fire(anPosition2D, mState);
-   }
 }

@@ -1,12 +1,3 @@
-/**
- * Provides the SpaceDots GameState example in the GQE library.
- *
- * @file src/IActionState.cpp
- * @author Ryan Lindeman
- * @date 20120323 - Initial Release
- * @date 20120421 - Make sure SFML 2 doesn't use its default font since it will crash on exit
- * @date 20120512 - Use new RAII Asset style
- */
 #ifndef IACTIONSTATE_M3AYKRER
 #define IACTIONSTATE_M3AYKRER
 
@@ -51,36 +42,15 @@ public:
    GQE::IEntity* addPlayer(int                  theJoy,
                            GQE::typePrototypeID thePrototype,
                            Position2D           thePosition);
-   /**
-    * @brief addChild
-    * @param theFather
-    * @param theChild
-    * @param theName
-    */
-   //void addChild(GQE::Instance* theFather,
-   //GQE::Instance* theChild,
-   //GQE::PropertyID theChildName);
-   /**
-    * @brief addSystem
-    * @param theSystem
-    */
-   void addSystem(ISystem* theSystem);
-   /// @brief addSystem
-   /// @param theSystem
-   ISystem* getSystem(SystemID theSystem);
 
 protected:   //Members
 
    GQE::PrototypeManager mPrototypes;
-   SystemContainer       mSystems;
    PlayerContainer       mPlayers;
    RenderManager         mRenderManager;
    Particles             mParticles;
    b2World               mWorld;
 };
 
-#endif /* end of include guard: IACTIONSTATE_M3AYKRER */
+#endif 
 
-/**
- * @class IActionState
- */

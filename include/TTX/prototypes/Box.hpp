@@ -2,21 +2,16 @@
 #define  PBOX2_INC
 
 #include <TTX/Types.hpp>
-#include <TTX/prototypes/components/PhysicProto.hpp>
-#include <TTX/prototypes/components/RenderProto.hpp>
-#include <TTX/prototypes/components/HealthProto.hpp>
+#include <TTX/prototypes/PhysicProto.hpp>
 #include <TTX/classes/render/Animation.hpp>
 
-class Box: public PhysicProto, public RenderProto, public HealthProto
+class Box: public PhysicProto
 {
 
 public:
 
    Box():
-      GQE::Prototype("pBox"),
-      PhysicProto("pBox"),
-      RenderProto("pBox"),
-      HealthProto("pBox")
+      PhysicProto("Box")
    {
       b2FixtureDef anFixture1;
       mShape1.SetAsBox(1, 1);
@@ -28,7 +23,6 @@ public:
       anFixture1.filter.maskBits = ObjectCategories::SCENE | ObjectCategories::FRIENDLY_BULLET | ObjectCategories::FRIENDLY_SHIP;
 
       mBodyDef.type = b2_dynamicBody;
-      mProperties.set("rTexRect", sf::IntRect(96, 0, 32, 32));
       mFixturesDef.push_back(anFixture1);
       mAnimation1.push_back(sf::IntRect(96, 0, 32, 32));
       mAnimation1.push_back(sf::IntRect(128, 0, 32, 32));
@@ -39,8 +33,10 @@ public:
       anAnimation.mFPS = 2;
       mProperties.add<Animation>("rAnimation", anAnimation);
       mSystemIDs.push_back("AnimationSystem");
-      mProperties.set("Resistance", 5.f);
-      mProperties.set("Health", 150.f);
+
+      mProperties.add("TexRect", sf::IntRect(96, 0, 32, 32));
+      mProperties.add("Resistance", 5.f);
+      mProperties.add("Health", 150.f);
    }
 private:
 

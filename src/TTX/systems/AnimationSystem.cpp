@@ -15,7 +15,7 @@ AnimationSystem::~AnimationSystem()
 
 void AnimationSystem::addProperties(GQE::IEntity* theEntity)
 {
-   theEntity->mProperties.add<sf::IntRect>("rTexRect", sf::IntRect(0, 0, 0, 0));
+   theEntity->mProperties.add<sf::IntRect>("TexRect", sf::IntRect(0, 0, 0, 0));
 }
 
 void AnimationSystem::handleInit(GQE::IEntity* theEntity)
@@ -40,7 +40,7 @@ void AnimationSystem::updateFixed()
          Animation* anAnimation = anEntity->mProperties.getPointer<Animation>("rAnimation");
          sf::IntRect anTexRect = anAnimation->getFrame();
          anAnimation->update(SPU);
-         anEntity->mProperties.set("rTexRect", anTexRect);
+         anEntity->mProperties.set("TexRect", anTexRect);
 
          anQueue++;
       }

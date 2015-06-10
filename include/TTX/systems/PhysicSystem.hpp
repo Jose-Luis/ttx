@@ -24,7 +24,7 @@
 #include <GQE/Entity/interfaces/ISystem.hpp>
 #include <GQE/Entity/Entity_types.hpp>
 #include <GQE/Entity/classes/Instance.hpp>
-#include <TTX/prototypes/components/PhysicProto.hpp>
+#include <TTX/prototypes/PhysicProto.hpp>
 #include <TTX/Types.hpp>
 #include <TTX/systems/ISystem.hpp>
 

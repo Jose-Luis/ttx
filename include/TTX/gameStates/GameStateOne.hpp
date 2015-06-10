@@ -34,9 +34,7 @@
 #include <TTX/systems/AnimationSystem.hpp>
 #include <TTX/systems/HealthSystem.hpp>
 #include <TTX/systems/ActorSystem.hpp>
-#include <TTX/prototypes/Rombo.hpp>
 #include <TTX/prototypes/Box.hpp>
-#include <TTX/prototypes/Ground.hpp>
 #include <TTX/prototypes/BasicShip.hpp>
 #include <TTX/prototypes/Player.hpp>
 #include <TTX/prototypes/SimpleBullet.hpp>
@@ -115,7 +113,13 @@ private:
    b2ContactListener* mCollisionListener;
 
    GQE::IEntity* mPlayer;
-
+   GQE::ISystem* mRenderSystem;
+   GQE::ISystem* mPlayerSystem;
+   GQE::ISystem* mPropellerSystem;
+   GQE::ISystem* mPhysicSystem;
+   GQE::ISystem* mAnimationSystem;
+   GQE::ISystem* mHealthSystem;
+   GQE::ISystem* mActorSystem;
 
    #ifndef  NDEBUG
       GQE::StatManager mStatManager;

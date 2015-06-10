@@ -12,7 +12,7 @@
 #include <Box2D/Box2D.h>
 #include <TTX/Types.hpp>
 #include <TTX/systems/ISystem.hpp>
-#include <TTX/classes/objects/Weapon.hpp>
+#include <TTX/classes/objects/IWeapon.hpp>
 
 class PlayerSystem: public ISystem
 {
@@ -69,7 +69,7 @@ protected:
     */
    virtual void handleCleanup(GQE::IEntity* theEntity);
 private:
-   void processJoystick(GQE::IEntity* theEntity);
+   void processJoystick(int theJoy, GQE::IEntity* theActor);
 
    sf::View& mView;
    float mAngle;

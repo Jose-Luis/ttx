@@ -54,44 +54,68 @@ void GameStateOne::doInit(void)
                    GQE::AssetDropAtZero);
 
    mApp.mAssetManager.loadAllAssets();
-   mView.setRotation(0);
    //Prototypes
-   mPrototypes.addPrototype(new Rombo());
-   mPrototypes.addPrototype(new Box());
-   mPrototypes.addPrototype(new Ground());
-   mPrototypes.addPrototype(new BasicShip());
-   mPrototypes.addPrototype(new SimpleBullet());
-   mPrototypes.addPrototype(new Player());
-   mPrototypes.addPrototype(new Machinegun());
-   //Systems
-   addSystem(new RenderSystem(*this, mRenderManager, LENGTHFACTOR));
-   addSystem(new PlayerSystem(*this, mView, LENGTHFACTOR));
-   addSystem(new PropellerSystem(*this, mParticles));
-   addSystem(new PhysicSystem(*this, mWorld));
-   addSystem(new AnimationSystem(*this));
-   addSystem(new HealthSystem(*this));
-   addSystem(new ActorSystem(*this));
-   //RenderUnits
+   auto boxProto = new Box();
+   auto basicShipProto = new BasicShip();
+   auto simpleBulletProto = new SimpleBullet();
+   auto playerProto = new Player();
+   auto machinegunProto = new Machinegun();
+   
+   mRenderSystem = new RenderSystem(*this, mRenderManager, LENGTHFACTOR);
+   mPlayerSystem = new PlayerSystem(*this, mView, LENGTHFACTOR);
+   mPropellerSystem = new PropellerSystem(*this, mParticles);
+   mPhysicSystem = new PhysicSystem(*this, mWorld);
+   mAnimationSystem = new AnimationSystem(*this);
+   mHealthSystem = new HealthSystem(*this);
+   mActorSystem = new ActorSystem(*this);
+
+   playerProto->addSystem(mPlayerSystem);
+   
+   machinegunProto->addSystem(mRenderSystem); 
+   machinegunProto->addSystem(mHealthSystem); 
+   machinegunProto->addSystem(mPhysicSystem); 
+
+   simpleBulletProto->addSystem(mRenderSystem); 
+   simpleBulletProto->addSystem(mHealthSystem); 
+   simpleBulletProto->addSystem(mPhysicSystem); 
+
+   basicShipProto->addSystem(mRenderSystem); 
+   basicShipProto->addSystem(mActorSystem); 
+   basicShipProto->addSystem(mHealthSystem); 
+   basicShipProto->addSystem(mPhysicSystem); 
+   basicShipProto->addSystem(mPropellerSystem); 
+
+   boxProto->addSystem(mRenderSystem); 
+   boxProto->addSystem(mAnimationSystem); 
+   boxProto->addSystem(mHealthSystem); 
+   boxProto->addSystem(mPhysicSystem); 
+
+   mPrototypes.addPrototype(boxProto);
+   mPrototypes.addPrototype(basicShipProto);
+   mPrototypes.addPrototype(simpleBulletProto);
+   mPrototypes.addPrototype(playerProto);
+   mPrototypes.addPrototype(machinegunProto);
+
+   //RenderUnits                      
    mRenderManager.addLayer("Back", anTileTexture);
    mRenderManager.addLayer("Fore", anTileTexture);
    mRenderManager.addLayer("Obj1", anSpriteTexture);
    mRenderManager.addLayer("Par1", anSpriteTexture);
-   mRenderManager.addLayer("Par1", anSpriteTexture);
-   mRenderManager.addLayer("HUD", anSpriteTexture);
+
    mRenderManager.getLayer("Obj1").mUpdatable = true;
    mRenderManager.getLayer("Par1").mUpdatable = true;
-   mRenderManager.getLayer("HUD").mUpdatable = true;
    mRenderManager.getLayer("Back").mUpdatable = false;
    mRenderManager.getLayer("Fore").mUpdatable = false;
    //Update Rate
    mApp.setUpdateRate(UPDATE_RATE);
-   //Others
    mApp.mWindow.setView(mView);
-   mApp.mWindow.setVerticalSyncEnabled(true);
+   mView.setRotation(0);
+   //Others
    mParticles.setSize(1024);
    mParticles.setXFactor(16);
    mParticles.setYFactor(16);
    mParticles.initFromFile("resources/Particles.xml");
+   //MapLoader
    MapLoader anMapLoader("resources/map1.tmx");
    anMapLoader.loadTiles(mRenderManager);
    anMapLoader.loadShapes(mWorld);
@@ -126,7 +150,7 @@ void GameStateOne::handleEvents(sf::Event theEvent)
    {
       //Position2D anPos(rand()%40,0,rand()%3);
       //addInstance("pBox", Position2D(rand() % 4, 16, rand() % 3), Position2D(3, 3, 0));
-      addInstance("pBox", Position2D(4, 16, rand() % 3), Position2D(0, 0, 0));
+      addInstance("Box", Position2D(4, 16, rand() % 3), Position2D(0, 0, 0));
    }
    else if((theEvent.type == sf::Event::KeyReleased) &&
            (theEvent.key.code == sf::Keyboard::B))
@@ -139,17 +163,12 @@ void GameStateOne::handleEvents(sf::Event theEvent)
    {
       if(mPlayer)
       {
-         GQE::Prototype* anPrototype = mPrototypes.getPrototype("MachinegunLeft");
-         GQE::Instance* anInstance = anPrototype->makeInstance();
-         //Setting the posiion to the instance.
-         anInstance->mProperties.set<GQE::IEntity*>("FatherNode", mPlayer->mProperties.get<GQE::IEntity*>("Actor"));
-
-         //Adding the instance to the systems.
-         for(auto anSystem :  anPrototype->mSystemIDs)
-         {
-            mSystems[anSystem]->addEntity(anInstance);
-         }
-
+         GQE::Prototype* prototype = mPrototypes.getPrototype("Machinegun");
+         prototype->mProperties.add<GQE::IEntity*>("FatherNode", mPlayer->mProperties.get<GQE::IEntity*>("Actor"));
+         prototype->mProperties.set<GQE::typePropertyID>("AnchorPoint", "WeaponAnchorLeft");
+         prototype->makeInstance();
+         prototype->mProperties.set<GQE::typePropertyID>("AnchorPoint", "WeaponAnchorRight");
+         prototype->makeInstance();
       }
 
    }
@@ -160,7 +179,7 @@ void GameStateOne::handleEvents(sf::Event theEvent)
          if(sf::Joystick::isConnected(i) && sf::Joystick::isButtonPressed(i, 0))
             if(!mPlayer)
             {
-               this->mPlayer = addPlayer(i, "pBasicShip", Position2D(4, 16, 90 * TORAD));
+               this->mPlayer = addPlayer(i, "BasicShip", Position2D(4, 16, 90 * TORAD));
             }
       }
    }
@@ -181,12 +200,12 @@ void GameStateOne::updateSelected(sf::Event theEvent)
 void GameStateOne::updateFixed(void)
 {
    mRenderManager.clear();
-   mSystems["PhysicSystem"]->updateFixed();
-   mSystems["PlayerSystem"]->updateFixed();
-   mSystems["PropellerSystem"]->updateFixed();
-   mSystems["HealthSystem"]->updateFixed();
-   mSystems["AnimationSystem"]->updateFixed();
-   mSystems["RenderSystem"]->updateFixed();
+   mPhysicSystem->updateFixed();
+   mPlayerSystem->updateFixed();
+   mPropellerSystem->updateFixed();
+   mHealthSystem->updateFixed();
+   mAnimationSystem->updateFixed();
+   mRenderSystem->updateFixed();
    mParticles.update(SPU);
    mParticles.updateRender(mRenderManager);
 #ifndef NDEBUG

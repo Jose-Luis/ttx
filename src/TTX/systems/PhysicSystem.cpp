@@ -89,16 +89,19 @@ void PhysicSystem::handleInit(GQE::IEntity* theEntity)
 
       if(aJointDef)
       {
-
          switch(aJointDef->type)
          {
          case b2JointType::e_weldJoint:
-            GQE::typePropertyID aPropertyName = theEntity->mProperties.get<GQE::typePropertyID>("AnchorPoint");
-            b2Vec2 aFatherAnchorPoint = aFather->mProperties.get<b2Vec2>(aPropertyName);
-            b2WeldJointDef* aWeldJointDef = static_cast<b2WeldJointDef*>(aJointDef);
-            aWeldJointDef->localAnchorA = aFatherAnchorPoint;
-            b2Vec2 aPosition = aFatherBody->GetPosition() + aFatherAnchorPoint + aWeldJointDef->localAnchorB;
-            theEntity->mProperties.set<Position2D>("Position", Position2D(aPosition.x, aPosition.y, 0));
+            {
+               GQE::typePropertyID aPropertyName = theEntity->mProperties.get<GQE::typePropertyID>("AnchorPoint");
+               b2Vec2 aFatherAnchorPoint = aFather->mProperties.get<b2Vec2>(aPropertyName);
+               b2WeldJointDef* aWeldJointDef = static_cast<b2WeldJointDef*>(aJointDef);
+               aWeldJointDef->localAnchorA = aFatherAnchorPoint;
+               b2Vec2 aPosition = aFatherBody->GetPosition() + aFatherAnchorPoint + aWeldJointDef->localAnchorB;
+               theEntity->mProperties.set<Position2D>("Position", Position2D(aPosition.x, aPosition.y, 0));
+               break;
+            }
+         default:
             break;
          }
 

@@ -17,65 +17,37 @@ IActionState::IActionState(GQE::typeStateID theStateID, GQE::IApp& theApp):
 }
 
 IActionState::~IActionState()
-{
-    for (auto anSystem : mSystems)
-    {
-        delete anSystem.second;
-    }
-}
+{}
 
 GQE::Instance* IActionState::addInstance(GQE::typePrototypeID thePrototype,
-        Position2D           thePosition,
-        Position2D           theInitialImpulse)
-
+                                         Position2D           thePosition,
+                                         Position2D           theInitialImpulse)
 {
-    //Getting the prototype and creating the instance.
-    GQE::Prototype* anPrototype = mPrototypes.getPrototype(thePrototype);
-    GQE::Instance* anInstance = anPrototype->makeInstance();
-    //Setting the posiion to the instance.
-    anInstance->mProperties.set<Position2D>("Position", thePosition);
-    anInstance->mProperties.add<Position2D>("InitialImpulse", theInitialImpulse);
+    GQE::Prototype* prototype = mPrototypes.getPrototype(thePrototype);
+    prototype->mProperties.add<Position2D>("Position", thePosition);
+    prototype->mProperties.add<Position2D>("InitialImpulse", theInitialImpulse);
 
-    //Adding the instance to the systems.
-    for(auto anSystem :  anPrototype->mSystemIDs)
-    {
-        mSystems[anSystem]->addEntity(anInstance);
-    }
-
-    return anInstance;
+    return prototype->makeInstance();
 }
 
 GQE::IEntity* IActionState::addPlayer(int                  theJoy,
         GQE::typePrototypeID thePrototype,
         Position2D           thePosition)
 {
-    GQE::IEntity* aPlayer = 0;
-    GQE::IEntity* anActor = 0;
+    GQE::IEntity* player = 0;
+    GQE::IEntity* actor = 0;
 
     if(mPlayers.find(theJoy) == mPlayers.end())
     {
-        aPlayer = mPrototypes.getPrototype("Player")->makeInstance();
-        anActor = addInstance(thePrototype,thePosition);
-        aPlayer->mProperties.set<GQE::IEntity*>("Actor",anActor);
-        aPlayer->mProperties.set<int>("Joystick", theJoy);
-        anActor->mProperties.add<GQE::IEntity*>("Player",aPlayer);
-        GQE::typeEntityID anPlayerID = mSystems["PlayerSystem"]->addEntity(aPlayer);
-        mSystems["ActorSystem"]->addEntity(anActor);
-        mPlayers.insert(std::pair<int, GQE::typeEntityID>(theJoy, anPlayerID));
+        player = mPrototypes.getPrototype("Player")->makeInstance();
+        GQE::Prototype* actorProto = mPrototypes.getPrototype(thePrototype);
+        actorProto->mProperties.add<Position2D>("Position", thePosition);
+        actor = actorProto->makeInstance();
+
+        player->mProperties.set<GQE::IEntity*>("Actor",actor);
+        player->mProperties.set<int>("Joystick", theJoy);
+        actor->mProperties.set<GQE::IEntity*>("Player",player);
     }
 
-    return aPlayer;
+    return player;
 }
-
-void IActionState::addSystem(ISystem* theSystem)
-{
-    if(theSystem != NULL)
-    {
-        mSystems[theSystem->getID()] = theSystem;
-    }
-    else
-    {
-        ELOG() << "SystemManager::addSystem() Null pointer provided!" << std::endl;
-    }
-}
-

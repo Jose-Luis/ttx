@@ -24,6 +24,7 @@ ActorSystem::~ActorSystem()
 void ActorSystem::addProperties(GQE::IEntity* theEntity)
 {
    theEntity->mProperties.add<GQE::IEntity*>("Player", 0);
+   theEntity->mProperties.add<Position2D>("Position",Position2D(0,0,0));
    theEntity->mProperties.add<MoveData>("MoveData", MoveData());
    theEntity->mProperties.add<FireData>("FireData", FireData());
 }

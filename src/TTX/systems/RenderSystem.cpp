@@ -25,10 +25,10 @@ RenderSystem::~RenderSystem()
 void RenderSystem::addProperties(GQE::IEntity* theEntity)
 {
    theEntity->mProperties.add<Position2D>  ("Position", Position2D(0, 0, 0));
-   theEntity->mProperties.add<sf::Vector2f>  ("vScale", sf::Vector2f(1, 1));
-   theEntity->mProperties.add<sf::IntRect>  ("rTexRect", sf::IntRect(0, 0, 0, 0));
-   theEntity->mProperties.add<bool>          ("bVisible", true);
-   theEntity->mProperties.add<LayerID>       ("rLayerID", "Obj1");
+   theEntity->mProperties.add<sf::Vector2f>  ("Scale", sf::Vector2f(1, 1));
+   theEntity->mProperties.add<sf::IntRect>  ("TexRect", sf::IntRect(0, 0, 0, 0));
+   theEntity->mProperties.add<bool>          ("Visible", true);
+   theEntity->mProperties.add<LayerID>       ("LayerID", "Obj1");
 }
 
 void RenderSystem::handleInit(GQE::IEntity* theEntity)
@@ -50,12 +50,12 @@ void RenderSystem::updateFixed()
       {
          GQE::IEntity* anEntity = *anQueue;
 
-         if(anEntity->mProperties.get<bool>("bVisible"))
+         if(anEntity->mProperties.get<bool>("Visible"))
          {
             Position2D anPosition = anEntity->mProperties.get<Position2D>("Position") * mFactor;
-            sf::Vector2f anScale    = anEntity->mProperties.get<sf::Vector2f>("vScale");
-            sf::IntRect anTexRect  = anEntity->mProperties.get<sf::IntRect>("rTexRect");
-            LayerID  anLayerID  = anEntity->mProperties.get<LayerID>("rLayerID");
+            sf::Vector2f anScale    = anEntity->mProperties.get<sf::Vector2f>("Scale");
+            sf::IntRect anTexRect  = anEntity->mProperties.get<sf::IntRect>("TexRect");
+            LayerID  anLayerID  = anEntity->mProperties.get<LayerID>("LayerID");
 
             sf::Transform anTransform;
 
