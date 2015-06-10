@@ -195,7 +195,7 @@ void PlayerSystem::processJoystick(GQE::IEntity* theEntity)
    }
 
    GQE::IEntity* anActor = theEntity->mProperties.get<GQE::IEntity*>("Actor");
-   anActor->mProperties.set<MoveData>("vMoveData", anMoveData);
+   anActor->mProperties.set<MoveData>("MoveData", anMoveData);
 
    ////////////// FIRE CONTROLS
 

@@ -82,7 +82,7 @@ void PropellerSystem::updateFixed()
          // Increment the IEntity iterator second
          anQueue++;
 
-         MoveData anMoveData = anEntity->mProperties.get<MoveData>("vMoveData");
+         MoveData anMoveData = anEntity->mProperties.get<MoveData>("MoveData");
          Propeller* anPropeller = anEntity->mProperties.getPointer<Propeller>("pPropeller");
          anPropeller->impulse(anMoveData);
       }

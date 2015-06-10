@@ -72,6 +72,10 @@ struct MoveData
    float x, y;
    bool  move, turn;
 };
+
+struct FireData
+{};
+
 enum Layers
 {
    BACK_1, BACK_2,

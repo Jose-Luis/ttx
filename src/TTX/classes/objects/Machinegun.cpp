@@ -1,34 +1,27 @@
-#include <TTX/classes/objects/Weapon.hpp>
+#include <TTX/classes/objects/Machinegun.hpp>
 //------------------------------------------------------------------------------
-//       Class:  Weapon
-//      Method:  Weapon
+//       Class:  Machinegun
+//      Method:  Machinegun
 // Description:  default constructor
 //------------------------------------------------------------------------------
-Weapon::Weapon():
-   mID("Submachinegun"),
-   mAmunitionType("pSimpleBullet"),
-   mCadency(0.1),
-   mPower(64),
-   mLastTime(0),
-   mAmunition(1000),
-   mPosition(0, 0, 0)
+Machinegun::Machinegun():
 {
 
 }
 //------------------------------------------------------------------------------
-//       Class:  Weapon
-//      Method:  ~Weapon
+//       Class:  Machinegun
+//      Method:  ~Machinegun
 // Description:  deconstructor
 //------------------------------------------------------------------------------
-Weapon::~Weapon()
+Machinegun::~Machinegun()
 {
 }
 //------------------------------------------------------------------------------
-//       Class:  Weapon
+//       Class:  Machinegun
 //      Method:  fire
 // Description:  A stupid method
 //------------------------------------------------------------------------------
-void Weapon::fire(Position2D thePosition, IActionState& theState)
+void Machinegun::fire(FireData theFireData)
 {
    float anTime = theState.getElapsedTime();
 
@@ -54,20 +47,16 @@ void Weapon::fire(Position2D thePosition, IActionState& theState)
    }
 }
 //------------------------------------------------------------------------------
-//       Class:  Weapon
+//       Class:  Machinegun
 //      Method:  loadAmunition
 // Description:  add ammunition
 //------------------------------------------------------------------------------
-void Weapon::loadAmunition(int theAmu)
+void Machinegun::loadAmunition(int theAmu)
 {
    mAmunition += theAmu;
 }
 //------------------------------------------------------------------------------
-//       Class:  Weapon
+//       Class:  Machinegun
 //      Method:  setPosition
 // Description:  A stupid method
 //------------------------------------------------------------------------------
-void Weapon::setPosition(Position2D thePosition)
-{
-   mPosition = thePosition;
-}
