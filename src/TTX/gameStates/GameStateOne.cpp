@@ -1,15 +1,5 @@
-/**
- * @brief Provides the GameStateOne.
- * @file GameStateOne.cpp
- * @author Jose Luis Lavado
- * @date 2013-04-22 Created
- */
 #include <TTX/gameStates/GameStateOne.hpp>
-//------------------------------------------------------------------------------
-//       Class:  GameStateOne
-//      Method:  constructor
-// Description:
-//------------------------------------------------------------------------------
+
 GameStateOne::GameStateOne(GQE::IApp& theApp):
    IActionState("State1", theApp)
 {
@@ -17,19 +7,10 @@ GameStateOne::GameStateOne(GQE::IApp& theApp):
    mStatManager.registerApp(&mApp);
 #endif
 }
-//------------------------------------------------------------------------------
-//       Class:  GameStateOne
-//      Method:  deconstructor
-// Description:
-//------------------------------------------------------------------------------
+
 GameStateOne::~GameStateOne(void)
-{
-}
-//------------------------------------------------------------------------------
-//       Class:  GameStateOne
-//      Method:  doInit
-// Description:
-//------------------------------------------------------------------------------
+{}
+
 void GameStateOne::doInit(void)
 {
    // First call our base class implementation
@@ -55,7 +36,7 @@ void GameStateOne::doInit(void)
    mApp.mAssetManager.loadAllAssets();
    //Prototypes
    auto boxProto = new Box();
-   auto basicShipProto = new BasicShip();
+   auto basicShipProto = new BasicShip(this);
    auto simpleBulletProto = new SimpleBullet();
    auto playerProto = new Player();
    auto machinegunProto = new Machinegun();
@@ -127,19 +108,10 @@ void GameStateOne::doInit(void)
    mCollisionListener = new CollisionListener();
    mWorld.SetContactListener(mCollisionListener);
 }
-//------------------------------------------------------------------------------
-//       Class:  GameStateOne
-//      Method:  reInit
-// Description:
-//------------------------------------------------------------------------------
+
 void GameStateOne::reInit(void)
-{
-}
-//------------------------------------------------------------------------------
-//       Class:  GameStateOne
-//      Method:  handleEvents
-// Description:
-//------------------------------------------------------------------------------
+{}
+
 void GameStateOne::handleEvents(sf::Event theEvent)
 {
    // Exit program if Escape key is pressed
@@ -163,9 +135,12 @@ void GameStateOne::handleEvents(sf::Event theEvent)
       if(mPlayer)
       {
          GQE::Prototype* prototype = mPrototypes.getPrototype("Machinegun");
-         prototype->mProperties.add<GQE::IEntity*>("FatherNode", mPlayer->mProperties.get<GQE::IEntity*>("Actor"));
+         GQE::IEntity* actor = mPlayer->mProperties.get<GQE::IEntity*>("Actor");
+         prototype->mProperties.add<GQE::IEntity*>("FatherNode", actor);
          prototype->mProperties.set<GQE::typePropertyID>("AnchorPoint", "WeaponAnchorLeft");
-         prototype->makeInstance();
+         GQE::IEntity* machinegunleft = prototype->makeInstance();
+         actor->mProperties.get<WeaponManager>("WeaponManager").addPrimaryWeapon(machinegunleft);
+
          prototype->mProperties.set<GQE::typePropertyID>("AnchorPoint", "WeaponAnchorRight");
          prototype->makeInstance();
       }
@@ -186,19 +161,10 @@ void GameStateOne::handleEvents(sf::Event theEvent)
       }
    }
 }
-//------------------------------------------------------------------------------
-//       Class:  GameStateOne
-//      Method:  UpdateSelected
-// Description:
-//------------------------------------------------------------------------------
+
 void GameStateOne::updateSelected(sf::Event theEvent)
-{
-}
-//------------------------------------------------------------------------------
-//       Class:  GameStateOne
-//      Method:  updateFixed
-// Description:
-//------------------------------------------------------------------------------
+{}
+
 void GameStateOne::updateFixed(void)
 {
    mRenderManager.clear();
@@ -215,19 +181,10 @@ void GameStateOne::updateFixed(void)
    mStatManager.updateFixed();
 #endif
 }
-//------------------------------------------------------------------------------
-//       Class:  GameStateOne
-//      Method:  updateVariable
-// Description:
-//------------------------------------------------------------------------------
+
 void GameStateOne::updateVariable(float theElapsedTime)
-{
-}
-//------------------------------------------------------------------------------
-//       Class:  GameStateOne
-//      Method:  draw
-// Description:
-//------------------------------------------------------------------------------
+{}
+
 void GameStateOne::draw(void)
 {
    mApp.mWindow.clear();
@@ -240,14 +197,5 @@ void GameStateOne::draw(void)
 #endif
 }
 
-
-
-
-//------------------------------------------------------------------------------
-// Class:  GameStateOne
-// Method:  handleCleanup
-// Description:
-//------------------------------------------------------------------------------
 void GameStateOne::handleCleanup(void)
-{
-}
+{}

@@ -74,7 +74,18 @@ struct MoveData
 };
 
 struct FireData
-{};
+{
+   FireData():
+      mFire(false),
+      mFireDirection(0,0,0),
+      mFireTarget(0){};
+
+   bool mFire;
+   Position2D mFireDirection;
+   GQE::IEntity* mFireTarget;
+};
+
+typedef std::vector<FireData> WeaponManagerInput;
 
 enum Layers
 {

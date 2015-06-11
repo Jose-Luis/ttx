@@ -10,11 +10,6 @@
 #ifndef   GAME_STATE_HPP_INCLUDED
 #define   GAME_STATE_HPP_INCLUDED
 
-#include <vector>
-
-#include <SFML/Audio.hpp>
-#include <SFML/Graphics.hpp>
-
 #include <GQE/Core/assets/FontAsset.hpp>
 #include <GQE/Core/assets/ImageAsset.hpp>
 #include <GQE/Core/assets/SoundAsset.hpp>
@@ -35,6 +30,7 @@
 #include <TTX/systems/AnimationSystem.hpp>
 #include <TTX/systems/HealthSystem.hpp>
 #include <TTX/systems/ActorSystem.hpp>
+#include <TTX/systems/WeaponSystem.hpp>
 #include <TTX/prototypes/Box.hpp>
 #include <TTX/prototypes/BasicShip.hpp>
 #include <TTX/prototypes/Player.hpp>
@@ -43,70 +39,29 @@
 #include <TTX/prototypes/ShipPropeller.hpp>
 #include <TTX/classes/mapLoader/MapLoader.hpp>
 
-/// Provides the TicTacToe GameStateOne example
 class GameStateOne : public IActionState
 {
 public:
-   /**
-    * GameStateOne constructor
-    * @param[in] theApp is a pointer to the App class.
-    */
    GameStateOne(GQE::IApp& theApp);
 
-   /**
-    * GameStateOne deconstructor
-    */
    virtual ~GameStateOne(void);
 
-   /**
-    * DoInit is responsible for initializing this State
-    */
    virtual void doInit(void);
 
-   /**
-    * ReInit is responsible for Reseting this state when the
-    * StateManager::resetActiveState() method is called.  This way a Game
-    * State can be restarted without unloading and reloading the game assets
-    */
    virtual void reInit(void);
 
-   /**
-    * HandleEvents is responsible for handling input events for this
-    * State when it is the active State.
-    * @param[in] theEvent to process from the App class Loop method
-    */
    virtual void handleEvents(sf::Event theEvent);
 
-   /**
-    * UpdateSelected is responsible for clearing the previously selected
-    * edge and changing the image of the newly selected edge.
-    * @param[in] theEvent that specifies the new mouse position
-    */
    void updateSelected(sf::Event theEvent);
 
-   /**
-    * UpdateFixed is responsible for handling all State fixed update needs for
-    * this State when it is the active State.
-    */
    virtual void updateFixed(void);
 
-   /**
-    * UpdateVariable is responsible for handling all State variable update
-    * needs for this State when it is the active State.
-    * @param[in] theElapsedTime since the last Draw was called */
    virtual void updateVariable(float theElapsedTime);
 
-   /**
-    * Draw is responsible for handling all Drawing needs for this State
-    * when it is the Active State.
-    */
    virtual void draw(void);
 
 protected:
-   /**
-    * HandleCleanup is responsible for performing any cleanup required before
-    * this State is removed.
-    */
+
    virtual void handleCleanup(void);
 
 private:
@@ -122,10 +77,11 @@ private:
    GQE::ISystem* mAnimationSystem;
    GQE::ISystem* mHealthSystem;
    GQE::ISystem* mActorSystem;
+   GQE::ISystem* mWeaponSystem;
 
-   #ifndef  NDEBUG
-      GQE::StatManager mStatManager;
-   #endif 
+#ifndef  NDEBUG
+   GQE::StatManager mStatManager;
+#endif
 };
 
 #endif // GAME_STATE_HPP_INCLUDED

@@ -3,29 +3,46 @@
 
 #include <TTX/Types.hpp>
 #include <TTX/gameStates/IActionState.hpp>
+#include <TTX/classes/objects/IWeapon.hpp>
 
-class IWeapon;
 
 class WeaponManager
 {
-   WeaponManager(IActionState& theState);
+public:
+
+   struct Input
+   {
+      Input()
+      {
+         mChange[0] = false;
+         mChange[1] = false;
+      };
+
+      FireData mFireData[2];
+      bool mChange[2];
+   };
+
+   WeaponManager();
+
+   WeaponManager(IActionState* theState);
 
    GQE::IEntity* getPrimaryWeapon();
    GQE::IEntity* getSecondaryWeapon();
 
-   void fire(FireData theFireData);
+   void manage(Input theFireData);
 
    void changePrimaryWeapon();
    void changeSecondaryWeapon();
 
    void addPrimaryWeapon(GQE::IEntity* theWeapon);
 
-   private:
+private:
 
-   int mPrimary,mSecondary;
+   GQE::IEntity* mActor;
+   int mPrimary, mSecondary;
    std::vector<GQE::IEntity*> mPrimaryWeapons;
    std::vector<GQE::IEntity*> mSecondaryWeapons;
-   IActionState& mState;
-}
+   IActionState* mState;
+};
 
 #endif

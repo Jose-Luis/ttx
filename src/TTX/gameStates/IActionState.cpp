@@ -71,3 +71,49 @@ void IActionState::activeEntity(GQE::IEntity* theEntity)
       body->SetActive(true);
    }
 }
+
+void IActionState::attachEntities(GQE::IEntity* theFather,GQE::IEntity* theChild,GQE::typePropertyID theChildName)
+{
+   b2Body* childBody = theChild->mProperties.get<b2Body*>("Body");
+   if(childBody)
+   {
+      childBody->SetActive(false);
+      theChild->mProperties.add("FatherNode",0);
+      theChild->mProperties.set<GQE::IEntity*>("FatherNode",theFather);
+
+      GQE::Uint32 order = theFather->getOrder();
+      theChild->setOrder(order++); //Don't touch otherwise CRASH!!
+      theFather->mProperties.add(theChildName,0);
+      theFather->mProperties.set<GQE::IEntity*>(theChildName, theChild);
+
+      b2Body* fatherBody = theFather->mProperties.get<b2Body*>("Body");
+
+      b2JointDef*  jointDef = theChild->mProperties.get<b2JointDef*>("JointDef");
+
+      if(jointDef)
+      {
+         switch(jointDef->type)
+         {
+            case b2JointType::e_weldJoint:
+               {
+                  GQE::typePropertyID anchorPoint = theChild->mProperties.get<GQE::typePropertyID>("AnchorPoint");
+                  b2Vec2 fatherAnchorPoint = theFather->mProperties.get<b2Vec2>(anchorPoint);
+                  b2WeldJointDef* weldJointDef = static_cast<b2WeldJointDef*>(jointDef);
+                  weldJointDef->localAnchorA = fatherAnchorPoint;
+                  b2Vec2 localPosition = fatherBody->GetPosition() + fatherAnchorPoint + weldJointDef->localAnchorB;
+                  childBody->SetTransform(localPosition,fatherBody->GetAngle());
+                  break;
+               }
+            default:
+               break;
+         }
+
+
+         jointDef->bodyA = fatherBody;
+         jointDef->bodyB = childBody;
+         b2Joint* joint = mWorld.CreateJoint(jointDef);
+         theChild->mProperties.set<b2Joint*>("Joint", joint);
+      }
+      childBody->SetActive(true);
+   }
+}

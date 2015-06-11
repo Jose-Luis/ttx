@@ -3,19 +3,19 @@
 /// @author Jose Luis Lavado
 /// @version 0.1
 /// @date 2013-05-07
-#ifndef WEAPON_8FPXBSUG
-#define WEAPON_8FPXBSUG
+#ifndef WEAPONMACHINEGUN_INC
+#define WEAPONMACHINEGUN_INC
 
 #include <TTX/Types.hpp>
 #include <TTX/classes/objects/IWeapon.hpp>
 #include <TTX/gameStates/IActionState.hpp>
 
-class Machinegun: public IWeapon
+class WeaponMachinegun: public IWeapon
 {
 public:
-   Machinegun();
-   virtual ~Machinegun();
-   void fire(FireData theFireData);
+   WeaponMachinegun();
+   virtual ~WeaponMachinegun();
+   void fire(Position2D,IActionState*,FireData);
    void loadAmunition(int theAmu);
    void getAmmunitionCount();
 

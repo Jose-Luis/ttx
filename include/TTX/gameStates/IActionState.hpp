@@ -14,31 +14,13 @@
 class IActionState : public GQE::IState
 {
 public:
-   /**
-    * @brief IActionState constructor
-    * @param[in] theApp is a pointer to the App class.
-    */
    IActionState(GQE::typeStateID theStateID, GQE::IApp& theApp);
 
-   /**
-    * @brief IActionState deconstructor
-    */
    virtual ~IActionState(void);
-   /**
-    * @brief addInstance
-    * @param thePrototype
-    * @param thePosition
-    * @return
-    */
+
    GQE::Instance* addInstance(GQE::typePrototypeID thePrototype,
                               Position2D           thePosition,
                               Position2D           theInitialImpulse = Position2D(0, 0, 0));
-   /**
-    * @brief addPlayer
-    * @param theJoy
-    * @param thePrototype
-    * @param thePosition
-    */
    GQE::IEntity* addPlayer(int                  theJoy,
                            GQE::typePrototypeID thePrototype,
                            Position2D           thePosition);
@@ -46,6 +28,7 @@ public:
    void deactivateEntity(GQE::IEntity* theEntity);
 
    void activeEntity(GQE::IEntity* theEntity);
+   void attachEntities(GQE::IEntity* theFather,GQE::IEntity* theChild,GQE::typePropertyID theChildName);
 
 
 protected:   //Members

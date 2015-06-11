@@ -1,6 +1,10 @@
 set(OBJECTS_FILES 
                     ${INCROOT}/classes/objects/Propeller.hpp
-                    ${SRCROOT}/classes/objects/Propeller.cpp)
+                    ${SRCROOT}/classes/objects/Propeller.cpp
+                    ${INCROOT}/classes/objects/WeaponMachinegun.hpp
+                    ${SRCROOT}/classes/objects/WeaponMachinegun.cpp
+                    ${INCROOT}/classes/objects/WeaponManager.hpp
+                    ${SRCROOT}/classes/objects/WeaponManager.cpp)
 
 add_library(objects ${OBJECTS_FILES})
 

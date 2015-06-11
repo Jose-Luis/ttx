@@ -18,6 +18,7 @@ Machinegun::Machinegun():
       mProperties.add<EntityID>("Name", "Machinegun");
       mProperties.add<GQE::typePropertyID>("AnchorPoint", "");
       mProperties.add("TexRect", sf::IntRect(32, 96, 6, 12));
+      mProperties.add("Weapon",WeaponMachinegun());
       mProperties.add("Resistance", 5.f);
       mProperties.add("Health", 150.f);
       mProperties.add<b2JointDef*>("JointDef", &mJointDef);

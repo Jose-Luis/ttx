@@ -119,8 +119,8 @@ void Propeller::impulse(b2Body* theBody,MoveData theMoveData)
          }
          else
          {
+            theBody->SetAngularVelocity(0);
             theBody->SetFixedRotation(true);
-
          }
 
          b2Vec2 anPosition = theBody->GetWorldCenter();

@@ -197,4 +197,11 @@ void PlayerSystem::processJoystick(int theJoy, GQE::IEntity* theActor)
 
    theActor->mProperties.set<MoveData>("MoveData", anMoveData);
 
+   WeaponManager::Input weaponManagerInput;
+
+   if(sf::Joystick::isButtonPressed(theJoy, 2))
+   {
+      weaponManagerInput.mFireData[0].mFire = true;
+      theActor->mProperties.set<WeaponManager::Input>("WeaponManagerInput",weaponManagerInput);
+   }
 }

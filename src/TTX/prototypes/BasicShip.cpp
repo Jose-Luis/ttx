@@ -1,13 +1,13 @@
 #include <TTX/prototypes/BasicShip.hpp>
 
-BasicShip::BasicShip():
+BasicShip::BasicShip(IActionState* theState):
       PhysicProto("BasicShip")
    {
       mProperties.add<EntityID>("Name", "BasicShip");
       
       mBodyDef.type = b2_dynamicBody;
       mBodyDef.linearDamping = 8.0f;
-      mBodyDef.angularDamping = 40.0f;
+      mBodyDef.angularDamping = 64.0f;
 
       b2FixtureDef anFixture1;
       b2Vec2 vertices[3];
@@ -25,7 +25,8 @@ BasicShip::BasicShip():
 
       mProperties.add<b2Vec2>("WeaponAnchorLeft", b2Vec2(-0.8,-0.2));
       mProperties.add<b2Vec2>("WeaponAnchorRight", b2Vec2(0.8,-0.2));
-      mProperties.add<b2Vec2>("PropellerAnchor", b2Vec2(0.0,1));
+      mProperties.add<b2Vec2>("PropellerAnchor", b2Vec2(0.0,0.8));
+      mProperties.add<WeaponManager>("WeaponManager", WeaponManager(theState));
 
       mProperties.add("TexRect", sf::Rect<int>(0, 96, 32, 32));
       mProperties.add("Resistance", 100.f);

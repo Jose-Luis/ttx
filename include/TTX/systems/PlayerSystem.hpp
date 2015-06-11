@@ -13,6 +13,7 @@
 #include <TTX/Types.hpp>
 #include <TTX/systems/ISystem.hpp>
 #include <TTX/classes/objects/IWeapon.hpp>
+#include <TTX/classes/objects/WeaponManager.hpp>
 
 class PlayerSystem: public ISystem
 {

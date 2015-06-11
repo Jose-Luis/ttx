@@ -3,12 +3,13 @@
 
 #include <TTX/prototypes/PhysicProto.hpp>
 #include <TTX/classes/objects/Propeller.hpp>
+#include <TTX/classes/objects/WeaponManager.hpp>
 
 class BasicShip: public PhysicProto
 {
 public:
 
-   BasicShip();
+   BasicShip(IActionState* theState);
 
 private:
 
