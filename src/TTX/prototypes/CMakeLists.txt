@@ -4,11 +4,13 @@ set(PROTOTYPE_FILES
    ${INCROOT}/prototypes/BasicShip.hpp
    ${INCROOT}/prototypes/Player.hpp
    ${INCROOT}/prototypes/SimpleBullet.hpp
+   ${INCROOT}/prototypes/ShipPropeller.hpp
    ${SRCROOT}/prototypes/PhysicProto.cpp
    ${SRCROOT}/prototypes/Box.cpp
    ${SRCROOT}/prototypes/BasicShip.cpp
    ${SRCROOT}/prototypes/Player.cpp
    ${SRCROOT}/prototypes/SimpleBullet.cpp
+   ${SRCROOT}/prototypes/ShipPropeller.cpp
    ${SRCROOT}/prototypes/Machinegun.cpp)
 
 add_library(protos  ${PROTOTYPE_FILES})

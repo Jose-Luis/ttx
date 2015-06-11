@@ -3,6 +3,8 @@
 BasicShip::BasicShip():
       PhysicProto("BasicShip")
    {
+      mProperties.add<EntityID>("Name", "BasicShip");
+      
       mBodyDef.type = b2_dynamicBody;
       mBodyDef.linearDamping = 8.0f;
       mBodyDef.angularDamping = 40.0f;
@@ -21,16 +23,10 @@ BasicShip::BasicShip():
       anFixture1.filter.categoryBits = ObjectCategories::FRIENDLY_SHIP;
       anFixture1.filter.maskBits = ObjectCategories::SCENE | ObjectCategories::ENEMY_SHIP;
 
-      Propeller anPropeller;
-      anPropeller.setEmitterID("ShipPropeller");
-      anPropeller.setLinearPower(8192);
-      anPropeller.setTurnPower(32768);
-
-
-      mProperties.add<EntityID>("Name", "BasicShip");
-      mProperties.add<Propeller>("pPropeller", anPropeller);
       mProperties.add<b2Vec2>("WeaponAnchorLeft", b2Vec2(-0.8,-0.2));
       mProperties.add<b2Vec2>("WeaponAnchorRight", b2Vec2(0.8,-0.2));
+      mProperties.add<b2Vec2>("PropellerAnchor", b2Vec2(0.0,1));
+
       mProperties.add("TexRect", sf::Rect<int>(0, 96, 32, 32));
       mProperties.add("Resistance", 100.f);
       mProperties.add("Health", 100.f);

@@ -34,7 +34,7 @@ PropellerSystem::~PropellerSystem()
 //------------------------------------------------------------------------------
 void PropellerSystem::addProperties(GQE::IEntity* theEntity)
 {
-   theEntity->mProperties.add<MoveData>("vMoveData", MoveData());
+   theEntity->mProperties.add<MoveData>("MoveData", MoveData());
 }
 //------------------------------------------------------------------------------
 //       Class:  PropellerSystem
@@ -43,13 +43,9 @@ void PropellerSystem::addProperties(GQE::IEntity* theEntity)
 //------------------------------------------------------------------------------
 void PropellerSystem::handleInit(GQE::IEntity* theEntity)
 {
-   Propeller* anPropeller = theEntity->mProperties.getPointer<Propeller>("pPropeller");
-   b2Body* anBody = theEntity->mProperties.get<b2Body*>("Body");
-   anPropeller->setBody(anBody);
-   std::shared_ptr<mpe::Focus> anFocus;
-   anFocus = mParticles.createFocus(anPropeller->getEmitterID());
-   mParticles.addFocus(anFocus);
-   anPropeller->setFocus(anFocus);
+   IPropeller* propeller = theEntity->mProperties.get<IPropeller*>("Propeller");
+   if(propeller)
+      theEntity->mProperties.set<IPropeller*>("Propeller", propeller->clone());
 
 }
 //------------------------------------------------------------------------------
@@ -82,9 +78,10 @@ void PropellerSystem::updateFixed()
          // Increment the IEntity iterator second
          anQueue++;
 
-         MoveData anMoveData = anEntity->mProperties.get<MoveData>("MoveData");
-         Propeller* anPropeller = anEntity->mProperties.getPointer<Propeller>("pPropeller");
-         anPropeller->impulse(anMoveData);
+         MoveData moveData = anEntity->mProperties.get<MoveData>("MoveData");
+         IPropeller* propeller = anEntity->mProperties.get<IPropeller*>("Propeller");
+         b2Body* body = anEntity->mProperties.get<b2Body*>("Body");
+         propeller->impulse(body,moveData);
       }
 
       anIter++;
@@ -113,7 +110,7 @@ void PropellerSystem::draw()
 //------------------------------------------------------------------------------
 void PropellerSystem::handleCleanup(GQE::IEntity* theEntity)
 {
-   delete (theEntity->mProperties.get<Propeller*>("pPropeller"));
+   delete (theEntity->mProperties.get<IPropeller*>("Propeller"));
 }
 /* Copyright (C)
  * 2013 - Jose Luis Lavado

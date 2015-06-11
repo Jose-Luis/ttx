@@ -32,7 +32,6 @@ public:
       anAnimation.mLoop = true;
       anAnimation.mFPS = 2;
       mProperties.add<Animation>("rAnimation", anAnimation);
-      mSystemIDs.push_back("AnimationSystem");
 
       mProperties.add("TexRect", sf::IntRect(96, 0, 32, 32));
       mProperties.add("Resistance", 5.f);

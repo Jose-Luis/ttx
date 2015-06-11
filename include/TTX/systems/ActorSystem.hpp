@@ -10,6 +10,7 @@
 #include <GQE/Entity/Entity_types.hpp>
 #include <TTX/Types.hpp>
 #include <TTX/systems/ISystem.hpp>
+#include <TTX/classes/objects/IPropeller.hpp>
 
 class ActorSystem: public ISystem
 {

@@ -24,6 +24,7 @@
 #include <GQE/Entity/classes/Instance.hpp>
 #include <GQE/Entity/Entity_types.hpp>
 #include <Box2D/Box2D.h>
+#include <TTX/classes/physics/CollisionListener.hpp>
 
 #include <TTX/Types.hpp>
 #include <TTX/gameStates/IActionState.hpp>
@@ -39,6 +40,7 @@
 #include <TTX/prototypes/Player.hpp>
 #include <TTX/prototypes/SimpleBullet.hpp>
 #include <TTX/prototypes/Machinegun.hpp>
+#include <TTX/prototypes/ShipPropeller.hpp>
 #include <TTX/classes/mapLoader/MapLoader.hpp>
 
 /// Provides the TicTacToe GameStateOne example

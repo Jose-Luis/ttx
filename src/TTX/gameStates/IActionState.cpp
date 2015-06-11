@@ -51,3 +51,23 @@ GQE::IEntity* IActionState::addPlayer(int                  theJoy,
 
     return player;
 }
+
+void IActionState::deactivateEntity(GQE::IEntity* theEntity)
+{
+   if(theEntity)
+   {
+      theEntity->mProperties.set<bool>("Visible",false);
+      b2Body* body = theEntity->mProperties.get<b2Body*>("Body");
+      body->SetActive(false);
+   }
+}
+
+void IActionState::activeEntity(GQE::IEntity* theEntity)
+{
+   if(theEntity)
+   {
+      theEntity->mProperties.set<bool>("Visible",true);
+      b2Body* body = theEntity->mProperties.get<b2Body*>("Body");
+      body->SetActive(true);
+   }
+}

@@ -8,6 +8,7 @@
 #include <GQE/Entity/interfaces/IEntity.hpp>
 #include <TTX/Types.hpp>
 #include <TTX/classes/objects/IPropeller.hpp>
+#include <TTX/classes/particles/Particles.hpp>
 
 #ifndef  PROPELLER_INC
 #define  PROPELLER_INC
@@ -16,32 +17,26 @@ class Propeller : public IPropeller
 {
 public:
 
-   Propeller();
+   Propeller(Particles& theSystem);
    virtual ~Propeller();
+
+   virtual Propeller* clone();
 
    /// @brief impulse
    /// @param theDirection
-   virtual void impulse(MoveData theDirection);
+   virtual void impulse(b2Body* theBody,MoveData theDirection);
    /// @brief setLinearPower
    /// @param theLinearPower
    void setLinearPower(float theLinearPower);
    /// @brief setTurnPower
    /// @param theTurnPower
    void setTurnPower(float theTurnPower);
-   /// @brief setFocus
-   /// @param theFocus
-   void setFocus(mpe::FocusPtr theFocus);
-   /// @brief setBody
-   /// @param theBody
-   void setBody(b2Body* theBody);
-   /// @brief setInnerPosition
-   /// @param theInnerPosition
-   void setInnerPosition(b2Vec2 theInnerPosition);
    /// @brief setEmitterID
    /// @param theEmitterID
    void setEmitterID(mpe::EmitterID theEmitterID);
    /// @brief getEmitterID
    /// @return
+   void setFocus(mpe::FocusPtr theFocus);
    mpe::EmitterID getEmitterID();
    /// @brief switchOn
    void switchOn();
@@ -51,11 +46,10 @@ public:
 
 protected:
    bool           mOn;
-   b2Body*        mBody;
    mpe::FocusPtr  mFocus;
    float          mLinearPower;
    float          mTurnPower;
-   b2Vec2         mInnerPosition;
    mpe::EmitterID mEmitterID;
+   Particles&   mParticles;
 };
 #endif   // ----- #ifndef PROPELLER_INC  -----

@@ -43,6 +43,11 @@ public:
                            GQE::typePrototypeID thePrototype,
                            Position2D           thePosition);
 
+   void deactivateEntity(GQE::IEntity* theEntity);
+
+   void activeEntity(GQE::IEntity* theEntity);
+
+
 protected:   //Members
 
    GQE::PrototypeManager mPrototypes;

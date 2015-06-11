@@ -34,25 +34,39 @@ void ActorSystem::handleEvents(sf::Event theEvent)
 
 void ActorSystem::updateFixed()
 {
-   //std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;
-   //std::vector<sf::Vector2f> anPositions;
-   //sf::Vector2f anCenterPosition;
+   std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;
+   std::vector<sf::Vector2f> anPositions;
+   sf::Vector2f anCenterPosition;
 
-   //anIter = mEntities.begin();
+   anIter = mEntities.begin();
 
-   //while(anIter != mEntities.end())
-   //{
-      //std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();
+   while(anIter != mEntities.end())
+   {
+      std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();
 
-      //while(anQueue != anIter->second.end())
-      //{
-         //GQE::IEntity* anEntity = *anQueue;
+      while(anQueue != anIter->second.end())
+      {
+         GQE::IEntity* anEntity = *anQueue;
 
-         //anQueue++;
-      //}
+         GQE::IEntity* propellerEntity = anEntity->mProperties.get<GQE::IEntity*>("Propeller");
+         if(propellerEntity)
+         {
+            MoveData moveData = anEntity->mProperties.get<MoveData>("MoveData");
+            propellerEntity->mProperties.set<MoveData>("MoveData",moveData);
+         }
 
-      //anIter++;
-   //}
+         GQE::IEntity* weaponEntity = anEntity->mProperties.get<GQE::IEntity*>("Weapons");
+         if(weaponEntity)
+         {
+            FireData fireData = anEntity->mProperties.get<FireData>("FireData");
+            weaponEntity->mProperties.set<FireData>("FireData",fireData);
+         }
+
+         anQueue++;
+      }
+
+      anIter++;
+   }
 }
 
 void ActorSystem::draw(void)

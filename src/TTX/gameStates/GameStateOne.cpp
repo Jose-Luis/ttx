@@ -5,7 +5,6 @@
  * @date 2013-04-22 Created
  */
 #include <TTX/gameStates/GameStateOne.hpp>
-#include <TTX/classes/physics/CollisionListener.hpp>
 //------------------------------------------------------------------------------
 //       Class:  GameStateOne
 //      Method:  constructor
@@ -37,8 +36,8 @@ void GameStateOne::doInit(void)
    IState::doInit();
    //Assets
 #ifndef NDEBUG
-      mStatManager.doInit();
-      mStatManager.setShow(true);
+   mStatManager.doInit();
+   mStatManager.setShow(true);
 #endif
    sf::Texture* anSpriteTexture =
       mApp.mAssetManager.getHandler<sf::Texture>().
@@ -60,7 +59,8 @@ void GameStateOne::doInit(void)
    auto simpleBulletProto = new SimpleBullet();
    auto playerProto = new Player();
    auto machinegunProto = new Machinegun();
-   
+   auto shipPropellerProto = new ShipPropeller(mParticles);
+
    mRenderSystem = new RenderSystem(*this, mRenderManager, LENGTHFACTOR);
    mPlayerSystem = new PlayerSystem(*this, mView, LENGTHFACTOR);
    mPropellerSystem = new PropellerSystem(*this, mParticles);
@@ -70,33 +70,38 @@ void GameStateOne::doInit(void)
    mActorSystem = new ActorSystem(*this);
 
    playerProto->addSystem(mPlayerSystem);
-   
-   machinegunProto->addSystem(mRenderSystem); 
-   machinegunProto->addSystem(mHealthSystem); 
-   machinegunProto->addSystem(mPhysicSystem); 
 
-   simpleBulletProto->addSystem(mRenderSystem); 
-   simpleBulletProto->addSystem(mHealthSystem); 
-   simpleBulletProto->addSystem(mPhysicSystem); 
+   machinegunProto->addSystem(mRenderSystem);
+   machinegunProto->addSystem(mHealthSystem);
+   machinegunProto->addSystem(mPhysicSystem);
 
-   basicShipProto->addSystem(mRenderSystem); 
-   basicShipProto->addSystem(mActorSystem); 
-   basicShipProto->addSystem(mHealthSystem); 
-   basicShipProto->addSystem(mPhysicSystem); 
-   basicShipProto->addSystem(mPropellerSystem); 
+   simpleBulletProto->addSystem(mRenderSystem);
+   simpleBulletProto->addSystem(mHealthSystem);
+   simpleBulletProto->addSystem(mPhysicSystem);
 
-   boxProto->addSystem(mRenderSystem); 
-   boxProto->addSystem(mAnimationSystem); 
-   boxProto->addSystem(mHealthSystem); 
-   boxProto->addSystem(mPhysicSystem); 
+   shipPropellerProto->addSystem(mRenderSystem);
+   shipPropellerProto->addSystem(mHealthSystem);
+   shipPropellerProto->addSystem(mPhysicSystem);
+   shipPropellerProto->addSystem(mPropellerSystem);
+
+   basicShipProto->addSystem(mRenderSystem);
+   basicShipProto->addSystem(mActorSystem);
+   basicShipProto->addSystem(mHealthSystem);
+   basicShipProto->addSystem(mPhysicSystem);
+
+   boxProto->addSystem(mRenderSystem);
+   boxProto->addSystem(mAnimationSystem);
+   boxProto->addSystem(mHealthSystem);
+   boxProto->addSystem(mPhysicSystem);
 
    mPrototypes.addPrototype(boxProto);
    mPrototypes.addPrototype(basicShipProto);
    mPrototypes.addPrototype(simpleBulletProto);
    mPrototypes.addPrototype(playerProto);
    mPrototypes.addPrototype(machinegunProto);
+   mPrototypes.addPrototype(shipPropellerProto);
 
-   //RenderUnits                      
+   //RenderUnits
    mRenderManager.addLayer("Back", anTileTexture);
    mRenderManager.addLayer("Fore", anTileTexture);
    mRenderManager.addLayer("Obj1", anSpriteTexture);
@@ -142,21 +147,15 @@ void GameStateOne::handleEvents(sf::Event theEvent)
    if((theEvent.type == sf::Event::KeyReleased) &&
          (theEvent.key.code == sf::Keyboard::Escape))
    {
-      // Signal the application to exit
       mApp.quit(GQE::StatusAppOK);
-   }
-   else if((theEvent.type == sf::Event::KeyReleased) &&
-           (theEvent.key.code == sf::Keyboard::Space))
-   {
-      //Position2D anPos(rand()%40,0,rand()%3);
-      //addInstance("pBox", Position2D(rand() % 4, 16, rand() % 3), Position2D(3, 3, 0));
-      addInstance("Box", Position2D(4, 16, rand() % 3), Position2D(0, 0, 0));
    }
    else if((theEvent.type == sf::Event::KeyReleased) &&
            (theEvent.key.code == sf::Keyboard::B))
    {
-      //Position2D anPos(rand()%40,0,rand()%6);
-      addInstance("pRombo", Position2D(rand() % 40, 0, rand() % 6));
+      if(mPlayer)
+      {
+         deactivateEntity( mPlayer->mProperties.get<GQE::IEntity*>("Actor"));
+      }
    }
    else if((theEvent.type == sf::Event::KeyReleased) &&
            (theEvent.key.code == sf::Keyboard::A))
@@ -170,7 +169,6 @@ void GameStateOne::handleEvents(sf::Event theEvent)
          prototype->mProperties.set<GQE::typePropertyID>("AnchorPoint", "WeaponAnchorRight");
          prototype->makeInstance();
       }
-
    }
    else
    {
@@ -179,7 +177,11 @@ void GameStateOne::handleEvents(sf::Event theEvent)
          if(sf::Joystick::isConnected(i) && sf::Joystick::isButtonPressed(i, 0))
             if(!mPlayer)
             {
-               this->mPlayer = addPlayer(i, "BasicShip", Position2D(4, 16, 90 * TORAD));
+               mPlayer = addPlayer(i, "BasicShip", Position2D(4, 16, 90 * TORAD));
+               GQE::IEntity* actor = mPlayer->mProperties.get<GQE::IEntity*>("Actor");
+               GQE::Prototype* propeller = mPrototypes.getPrototype("ShipPropeller");
+               propeller->mProperties.add<GQE::IEntity*>("FatherNode", actor);
+               actor->mProperties.add<GQE::IEntity*>("Propeller", propeller->makeInstance());
             }
       }
    }
@@ -202,6 +204,7 @@ void GameStateOne::updateFixed(void)
    mRenderManager.clear();
    mPhysicSystem->updateFixed();
    mPlayerSystem->updateFixed();
+   mActorSystem->updateFixed();
    mPropellerSystem->updateFixed();
    mHealthSystem->updateFixed();
    mAnimationSystem->updateFixed();
@@ -232,7 +235,6 @@ void GameStateOne::draw(void)
    mRenderManager.drawLayer("Par1", mApp.mWindow);
    mRenderManager.drawLayer("Obj1", mApp.mWindow);
    mRenderManager.drawLayer("Fore", mApp.mWindow);
-   mRenderManager.drawLayer("HUD", mApp.mWindow);
 #ifndef NDEBUG
    mStatManager.draw();
 #endif
