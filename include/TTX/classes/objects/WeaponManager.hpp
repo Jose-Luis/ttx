@@ -2,9 +2,10 @@
 #define WEAPONMANAGER_INC
 
 #include <TTX/Types.hpp>
+#include <set>
 #include <TTX/gameStates/IActionState.hpp>
-#include <TTX/classes/objects/IWeapon.hpp>
-
+#include <TTX/classes/objects/Weapon.hpp>
+#include <TTX/classes/objects/WeaponMachinegun.hpp>
 
 class WeaponManager
 {
@@ -12,36 +13,35 @@ public:
 
    struct Input
    {
-      Input()
-      {
-         mChange[0] = false;
-         mChange[1] = false;
-      };
+      FireData mFireData;
+      bool mChange;
 
-      FireData mFireData[2];
-      bool mChange[2];
+      Input():
+         mChange(false)
+      {}
    };
 
    WeaponManager();
 
    WeaponManager(IActionState* theState);
 
-   GQE::IEntity* getPrimaryWeapon();
-   GQE::IEntity* getSecondaryWeapon();
+   GQE::IEntity* getWeapon();
 
    void manage(Input theFireData);
 
-   void changePrimaryWeapon();
-   void changeSecondaryWeapon();
+   void changeWeapon();
 
-   void addPrimaryWeapon(GQE::IEntity* theWeapon);
+   void changeWeapon(WeaponID);
+
+   void addWeapon(GQE::IEntity* theWeapon);
+
+   void removeWeapon(WeaponID theWeapon);
 
 private:
 
    GQE::IEntity* mActor;
-   int mPrimary, mSecondary;
-   std::vector<GQE::IEntity*> mPrimaryWeapons;
-   std::vector<GQE::IEntity*> mSecondaryWeapons;
+   std::map<WeaponID,GQE::IEntity*> mWeaponMap;
+   WeaponID mActiveWeapon;
    IActionState* mState;
 };
 

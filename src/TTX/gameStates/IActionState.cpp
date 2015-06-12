@@ -24,8 +24,8 @@ GQE::Instance* IActionState::addInstance(GQE::typePrototypeID thePrototype,
                                          Position2D           theInitialImpulse)
 {
     GQE::Prototype* prototype = mPrototypes.getPrototype(thePrototype);
-    prototype->mProperties.add<Position2D>("Position", thePosition);
-    prototype->mProperties.add<Position2D>("InitialImpulse", theInitialImpulse);
+    prototype->mProperties.set<Position2D>("Position", thePosition);
+    prototype->mProperties.set<Position2D>("InitialImpulse", theInitialImpulse);
 
     return prototype->makeInstance();
 }
@@ -41,7 +41,7 @@ GQE::IEntity* IActionState::addPlayer(int                  theJoy,
     {
         player = mPrototypes.getPrototype("Player")->makeInstance();
         GQE::Prototype* actorProto = mPrototypes.getPrototype(thePrototype);
-        actorProto->mProperties.add<Position2D>("Position", thePosition);
+        actorProto->mProperties.set<Position2D>("Position", thePosition);
         actor = actorProto->makeInstance();
 
         player->mProperties.set<GQE::IEntity*>("Actor",actor);

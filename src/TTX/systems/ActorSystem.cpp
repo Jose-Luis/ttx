@@ -43,7 +43,7 @@ void ActorSystem::updateFixed()
 
          WeaponManager::Input weaponManagerInput = anEntity->mProperties.get<WeaponManager::Input>("WeaponManagerInput");
 
-         if(weaponManagerInput.mFireData[0].mFire)
+         if(weaponManagerInput.mFireData.mFire)
          {
             WeaponManager weaponManager = anEntity->mProperties.get<WeaponManager>("WeaponManager");
             weaponManager.manage(weaponManagerInput);

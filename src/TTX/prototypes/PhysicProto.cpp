@@ -13,5 +13,7 @@ PhysicProto::PhysicProto(GQE::typePrototypeID theID):
 
    mProperties.add<b2BodyDef*>                ("BodyDef", &mBodyDef);
    mProperties.add<std::vector<b2FixtureDef>*>("FixturesDef", &mFixturesDef);
+   mProperties.add<Position2D>("Position",Position2D());
+   mProperties.add<Position2D>("InitialImpulse",Position2D());
 }
 

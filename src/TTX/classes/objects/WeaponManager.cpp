@@ -4,97 +4,66 @@ WeaponManager::WeaponManager()
 {}
 
 WeaponManager::WeaponManager(IActionState* theState):
-   mPrimary(0),
-   mSecondary(0),
+   mActiveWeapon("none")
    mState(theState)
-{}
-
-GQE::IEntity* WeaponManager::getPrimaryWeapon()
 {
-   GQE::IEntity* primary = 0;
-   if(0 < mPrimaryWeapons.size())
+}
+
+GQE::IEntity* WeaponManager::getWeapon()
+{
+   if(mActiveWeapon != "none")
+      return mWeaponMap[mActiveWeapon];
+   else
+      return 0;
+
+}
+
+void WeaponManager::changeWeapon()
+{
+   if(mActiveWeapon != "none")
    {
-      primary = mPrimaryWeapons[mPrimary];
-      while(!primary)
+      auto iterA = mWeaponMap.find(mActiveWeapon);
+      auto iterB = iterA;
+      iterB++;
+      if(iterB == mWeaponMap.end())
+         iterB = mWeaponMap.begin();
+
+      if(iterA != iterB)
       {
-         mPrimaryWeapons.erase(mPrimaryWeapons.begin() + mPrimary);
-         changePrimaryWeapon();
+         mState->deactivateEntity(iterA->second);
+         mState->activeEntity(iterB->second);
       }
    }
-   return primary;
 }
 
-GQE::IEntity* WeaponManager::getSecondaryWeapon()
+void WeaponManager::addWeapon(GQE::IEntity* theWeapon)
 {
-   GQE::IEntity* secondary = 0;
-   if(0 < mSecondaryWeapons.size())
+   WeaponID weaponID = theWeapon->mProperties.getPointer<Weapon>("Weapon")->getID();
+   auto iter = mWeaponMap.insert(std::pair<WeaponID,GQE::IEntity*>(weaponID,theWeapon)).first;
+   theWeapon->mProperties.getPointer<Weapon>("Weapon")->setWeaponManager(this);
+   if(mActiveWeapon == "none")
+      mActiveWeapon = iter->first;
+}
+
+void WeaponManager::manage(WeaponManager::Input theInputData)
+{
+   if(theInputData.mChange)
+      changeWeapon();
+   if(theInputData.mFireData.mFire)
    {
-      secondary = mSecondaryWeapons[mSecondary];
-      while(!secondary)
+      if(mActiveWeapon != "none")
       {
-         mSecondaryWeapons.erase(mSecondaryWeapons.begin() + mSecondary);
-         changeSecondaryWeapon();
+         Position2D position = mWeaponMap[mActiveWeapon]->mProperties.get<Position2D>("Position");
+         mWeaponMap[mActiveWeapon]->mProperties.getPointer<Weapon>("Weapon")->fire(position,mState,theInputData.mFireData);
       }
    }
-   return secondary;
 }
 
-void WeaponManager::changePrimaryWeapon()
+void WeaponManager::removeWeapon(WeaponID theWeapon)
 {
-   int count = mPrimaryWeapons.size();
-   int previousPrimary = mPrimary;
-
-   mPrimary++;
-   mPrimary %= count;
-   if(previousPrimary != mPrimary)
-   {
-      mState->deactivateEntity(mPrimaryWeapons[previousPrimary]);
-      mState->activeEntity(getPrimaryWeapon());
-   }
-}
-
-void WeaponManager::changeSecondaryWeapon()
-{
-   int count = mSecondaryWeapons.size();
-   int previousSecondary = mSecondary;
-
-   mSecondary++;
-   mSecondary %= count;
-   if(previousSecondary != mSecondary)
-   {
-      mState->deactivateEntity(mSecondaryWeapons[previousSecondary]);
-      mState->activeEntity(getSecondaryWeapon());
-   }
-}
-
-void WeaponManager::addPrimaryWeapon(GQE::IEntity* theWeapon)
-{
-   mPrimaryWeapons.push_back(theWeapon);
-}
-
-void WeaponManager::manage(WeaponManager::Input theFireData)
-{
-   if(theFireData.mChange[0])
-      changePrimaryWeapon();
-   if(theFireData.mChange[1])
-      changeSecondaryWeapon();
-   if(theFireData.mFireData[0].mFire)
-   {
-      auto primary = getPrimaryWeapon();
-      if(primary)
-      {
-         auto position = primary->mProperties.get<Position2D>("Position");
-         primary->mProperties.get<IWeapon*>("Weapon")->fire(position,mState,theFireData.mFireData[0]);
-      }
-   }
-   if(theFireData.mFireData[1].mFire)
-   {
-      auto secondary = getSecondaryWeapon();
-      if(secondary)
-      {
-         auto position = secondary->mProperties.get<Position2D>("Position");
-         secondary->mProperties.get<IWeapon*>("Weapon")->fire(position,mState,theFireData.mFireData[1]);
-      }
-   }
-
+   mWeaponMap.erase(theWeapon);
+   if(!mWeaponMap.empty())
+      mActiveWeapon = mWeaponMap.begin()->first;
+   else
+      mActiveWeapon = "none";
 }

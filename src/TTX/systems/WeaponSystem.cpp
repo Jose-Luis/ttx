@@ -8,56 +8,34 @@ WeaponSystem::~WeaponSystem()
 {}
 
 void WeaponSystem::addProperties(GQE::IEntity* theEntity)
-{
-   theEntity->mProperties.add<float>("Resistance", 0);
-   theEntity->mProperties.add<float>("Weapon", 0);
-}
+{}
 
 void WeaponSystem::handleInit(GQE::IEntity* theEntity)
 {}
 
 void WeaponSystem::handleEvents(sf::Event theEvent)
-{
-}
+{}
 
 void WeaponSystem::updateFixed()
-{
-   std::map<const GQE::Uint32, std::deque<GQE::IEntity*> >::iterator anIter;
-   anIter = mEntities.begin();
-
-   while(anIter != mEntities.end())
-   {
-      std::deque<GQE::IEntity*>::iterator anQueue = anIter->second.begin();
-
-      while(anQueue != anIter->second.end())
-      {
-         // get the IEntity address first
-         GQE::IEntity* anEntity = *anQueue;
-
-         auto anWeapon = anEntity->mProperties.get<float>("Weapon");
-
-         if(anWeapon < 0)
-         {
-            anEntity->destroy();
-         }
-
-         anQueue++;
-      }
-
-      anIter++;
-   }
-}
+{}
 
 void WeaponSystem::updateVariable(float theElapsedTime)
-{
-}
+{}
 
 void WeaponSystem::draw()
-{
-}
+{}
 
 void WeaponSystem::handleCleanup(GQE::IEntity* theEntity)
 {
+   //Weapon* mg = theEntity->mProperties.getPointer<Weapon>("Weapon");
+   //if(mg)
+   //{
+      //WeaponManager* wm = mg->getManager();
+      //if(wm)
+      //{
+         //wm->removeWeapon(theEntity);
+      //}
+   //}
 }
 
 /**

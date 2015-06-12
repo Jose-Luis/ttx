@@ -13,6 +13,7 @@ set(SYSTEMS_FILES
    ${SRCROOT}/systems/HealthSystem.cpp
    ${SRCROOT}/systems/PhysicSystem.cpp
    ${SRCROOT}/systems/ActorSystem.cpp
+   ${SRCROOT}/systems/WeaponSystem.cpp
    ${SRCROOT}/systems/AnimationSystem.cpp)
 
 add_library(systems ${SYSTEMS_FILES}) 

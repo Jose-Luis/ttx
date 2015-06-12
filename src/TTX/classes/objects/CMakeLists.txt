@@ -1,8 +1,8 @@
 set(OBJECTS_FILES 
                     ${INCROOT}/classes/objects/Propeller.hpp
                     ${SRCROOT}/classes/objects/Propeller.cpp
-                    ${INCROOT}/classes/objects/WeaponMachinegun.hpp
-                    ${SRCROOT}/classes/objects/WeaponMachinegun.cpp
+                    ${INCROOT}/classes/objects/Weapon.hpp
+                    ${SRCROOT}/classes/objects/Weapon.cpp
                     ${INCROOT}/classes/objects/WeaponManager.hpp
                     ${SRCROOT}/classes/objects/WeaponManager.cpp)
 

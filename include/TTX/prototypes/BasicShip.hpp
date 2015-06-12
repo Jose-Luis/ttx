@@ -13,7 +13,7 @@ public:
 
 private:
 
-   b2PolygonShape  mShape1, mShape2, mShape3;
+   b2PolygonShape  mShape1;
 };
 
 #endif   // ----- #ifndef PBOX_INC  -----

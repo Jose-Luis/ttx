@@ -49,12 +49,14 @@ void GameStateOne::doInit(void)
    mAnimationSystem = new AnimationSystem(*this);
    mHealthSystem = new HealthSystem(*this);
    mActorSystem = new ActorSystem(*this);
+   mWeaponSystem = new WeaponSystem(*this);
 
    playerProto->addSystem(mPlayerSystem);
 
    machinegunProto->addSystem(mRenderSystem);
    machinegunProto->addSystem(mHealthSystem);
    machinegunProto->addSystem(mPhysicSystem);
+   machinegunProto->addSystem(mWeaponSystem);
 
    simpleBulletProto->addSystem(mRenderSystem);
    simpleBulletProto->addSystem(mHealthSystem);
@@ -139,7 +141,8 @@ void GameStateOne::handleEvents(sf::Event theEvent)
          prototype->mProperties.add<GQE::IEntity*>("FatherNode", actor);
          prototype->mProperties.set<GQE::typePropertyID>("AnchorPoint", "WeaponAnchorLeft");
          GQE::IEntity* machinegunleft = prototype->makeInstance();
-         actor->mProperties.get<WeaponManager>("WeaponManager").addPrimaryWeapon(machinegunleft);
+         actor->mProperties.getPointer<WeaponManager>("WeaponManager")->addWeapon(machinegunleft);
+
 
          prototype->mProperties.set<GQE::typePropertyID>("AnchorPoint", "WeaponAnchorRight");
          prototype->makeInstance();
