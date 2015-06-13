@@ -27,15 +27,15 @@ void WeaponSystem::draw()
 
 void WeaponSystem::handleCleanup(GQE::IEntity* theEntity)
 {
-   //Weapon* mg = theEntity->mProperties.getPointer<Weapon>("Weapon");
-   //if(mg)
-   //{
-      //WeaponManager* wm = mg->getManager();
-      //if(wm)
-      //{
-         //wm->removeWeapon(theEntity);
-      //}
-   //}
+   Weapon* mg = theEntity->mProperties.getPointer<Weapon>("Weapon");
+   if(mg)
+   {
+      WeaponManager* wm = mg->getManager();
+      if(wm)
+      {
+         wm->removeWeapon(theEntity);
+      }
+   }
 }
 
 /**

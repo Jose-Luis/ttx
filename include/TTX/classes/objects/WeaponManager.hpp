@@ -25,7 +25,7 @@ public:
 
    WeaponManager(IActionState* theState);
 
-   GQE::IEntity* getWeapon();
+   WeaponID getWeapon();
 
    void manage(Input theFireData);
 
@@ -37,10 +37,12 @@ public:
 
    void removeWeapon(WeaponID theWeapon);
 
+   void removeWeapon(GQE::IEntity* theWeapon);
+
 private:
 
    GQE::IEntity* mActor;
-   std::map<WeaponID,GQE::IEntity*> mWeaponMap;
+   std::map<WeaponID,std::set<GQE::IEntity*>> mWeaponMap;
    WeaponID mActiveWeapon;
    IActionState* mState;
 };

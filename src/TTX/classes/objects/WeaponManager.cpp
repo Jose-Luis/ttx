@@ -4,18 +4,14 @@ WeaponManager::WeaponManager()
 {}
 
 WeaponManager::WeaponManager(IActionState* theState):
-   mActiveWeapon("none")
+   mActiveWeapon("none"),
    mState(theState)
 {
 }
 
-GQE::IEntity* WeaponManager::getWeapon()
+WeaponID WeaponManager::getWeapon()
 {
-   if(mActiveWeapon != "none")
-      return mWeaponMap[mActiveWeapon];
-   else
-      return 0;
-
+   return mActiveWeapon;
 }
 
 void WeaponManager::changeWeapon()
@@ -24,14 +20,20 @@ void WeaponManager::changeWeapon()
    {
       auto iterA = mWeaponMap.find(mActiveWeapon);
       auto iterB = iterA;
-      iterB++;
-      if(iterB == mWeaponMap.end())
-         iterB = mWeaponMap.begin();
+      do
+      {
+         iterB++;
+         if(iterB == mWeaponMap.end())
+            iterB = mWeaponMap.begin();
+      }
+      while(iterB->second.empty());
 
       if(iterA != iterB)
       {
-         mState->deactivateEntity(iterA->second);
-         mState->activeEntity(iterB->second);
+         for(auto setIter : iterA->second)
+            mState->deactivateEntity(setIter);
+         for(auto setIter : iterA->second)
+            mState->activeEntity(setIter);
       }
    }
 }
@@ -39,10 +41,15 @@ void WeaponManager::changeWeapon()
 void WeaponManager::addWeapon(GQE::IEntity* theWeapon)
 {
    WeaponID weaponID = theWeapon->mProperties.getPointer<Weapon>("Weapon")->getID();
-   auto iter = mWeaponMap.insert(std::pair<WeaponID,GQE::IEntity*>(weaponID,theWeapon)).first;
+   auto mapIter = mWeaponMap.find(weaponID);
+   if(mapIter == mWeaponMap.end())
+   {
+      mapIter = mWeaponMap.insert(std::pair<WeaponID,std::set<GQE::IEntity*>>(weaponID,std::set<GQE::IEntity*>())).first;
+   }
+   mapIter->second.insert(theWeapon);
    theWeapon->mProperties.getPointer<Weapon>("Weapon")->setWeaponManager(this);
    if(mActiveWeapon == "none")
-      mActiveWeapon = iter->first;
+      mActiveWeapon = weaponID;
 }
 
 void WeaponManager::manage(WeaponManager::Input theInputData)
@@ -53,8 +60,11 @@ void WeaponManager::manage(WeaponManager::Input theInputData)
    {
       if(mActiveWeapon != "none")
       {
-         Position2D position = mWeaponMap[mActiveWeapon]->mProperties.get<Position2D>("Position");
-         mWeaponMap[mActiveWeapon]->mProperties.getPointer<Weapon>("Weapon")->fire(position,mState,theInputData.mFireData);
+         for(auto setIter : mWeaponMap.find(mActiveWeapon)->second)
+         {
+            Position2D position = setIter->mProperties.get<Position2D>("Position");
+            setIter->mProperties.getPointer<Weapon>("Weapon")->fire(position,mState,theInputData.mFireData);
+         }
       }
    }
 }
@@ -66,4 +76,22 @@ void WeaponManager::removeWeapon(WeaponID theWeapon)
       mActiveWeapon = mWeaponMap.begin()->first;
    else
       mActiveWeapon = "none";
+}
+
+void WeaponManager::removeWeapon(GQE::IEntity* theWeapon)
+{
+   WeaponID weaponID = theWeapon->mProperties.getPointer<Weapon>("Weapon")->getID();
+   auto iter = mWeaponMap.find(weaponID);
+   if(iter != mWeaponMap.end())
+   {
+      iter->second.erase(theWeapon);
+      if(iter->second.empty())
+      {
+         mWeaponMap.erase(weaponID);
+         if(!mWeaponMap.empty())
+            mActiveWeapon = mWeaponMap.begin()->first;
+         else
+            mActiveWeapon = "none";
+      }
+   }
 }

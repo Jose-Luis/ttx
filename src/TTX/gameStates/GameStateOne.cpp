@@ -23,15 +23,15 @@ void GameStateOne::doInit(void)
    sf::Texture* anSpriteTexture =
       mApp.mAssetManager.getHandler<sf::Texture>().
       getReference("resources/Sprites.png",
-                   GQE::AssetLoadNow,
-                   GQE::AssetLoadFromFile,
-                   GQE::AssetDropAtZero);
+            GQE::AssetLoadNow,
+            GQE::AssetLoadFromFile,
+            GQE::AssetDropAtZero);
    sf::Texture* anTileTexture =
       mApp.mAssetManager.getHandler<sf::Texture>().
       getReference("resources/Tiles1.png",
-                   GQE::AssetLoadNow,
-                   GQE::AssetLoadFromFile,
-                   GQE::AssetDropAtZero);
+            GQE::AssetLoadNow,
+            GQE::AssetLoadFromFile,
+            GQE::AssetDropAtZero);
 
    mApp.mAssetManager.loadAllAssets();
    //Prototypes
@@ -98,6 +98,8 @@ void GameStateOne::doInit(void)
    mApp.setUpdateRate(UPDATE_RATE);
    mApp.mWindow.setView(mView);
    mView.setRotation(0);
+   mView.setSize(mApp.mVideoMode.width,mApp.mVideoMode.height);
+
    //Others
    mParticles.setSize(1024);
    mParticles.setXFactor(16);
@@ -124,7 +126,7 @@ void GameStateOne::handleEvents(sf::Event theEvent)
       mApp.quit(GQE::StatusAppOK);
    }
    else if((theEvent.type == sf::Event::KeyReleased) &&
-           (theEvent.key.code == sf::Keyboard::B))
+         (theEvent.key.code == sf::Keyboard::B))
    {
       if(mPlayer)
       {
@@ -132,21 +134,8 @@ void GameStateOne::handleEvents(sf::Event theEvent)
       }
    }
    else if((theEvent.type == sf::Event::KeyReleased) &&
-           (theEvent.key.code == sf::Keyboard::A))
+         (theEvent.key.code == sf::Keyboard::A))
    {
-      if(mPlayer)
-      {
-         GQE::Prototype* prototype = mPrototypes.getPrototype("Machinegun");
-         GQE::IEntity* actor = mPlayer->mProperties.get<GQE::IEntity*>("Actor");
-         prototype->mProperties.add<GQE::IEntity*>("FatherNode", actor);
-         prototype->mProperties.set<GQE::typePropertyID>("AnchorPoint", "WeaponAnchorLeft");
-         GQE::IEntity* machinegunleft = prototype->makeInstance();
-         actor->mProperties.getPointer<WeaponManager>("WeaponManager")->addWeapon(machinegunleft);
-
-
-         prototype->mProperties.set<GQE::typePropertyID>("AnchorPoint", "WeaponAnchorRight");
-         prototype->makeInstance();
-      }
    }
    else
    {
@@ -155,11 +144,18 @@ void GameStateOne::handleEvents(sf::Event theEvent)
          if(sf::Joystick::isConnected(i) && sf::Joystick::isButtonPressed(i, 0))
             if(!mPlayer)
             {
-               mPlayer = addPlayer(i, "BasicShip", Position2D(4, 16, 90 * TORAD));
+               mPlayer = addPlayer(i, "BasicShip", Position2D(40, 160, 90 * TORAD));
                GQE::IEntity* actor = mPlayer->mProperties.get<GQE::IEntity*>("Actor");
                GQE::Prototype* propeller = mPrototypes.getPrototype("ShipPropeller");
                propeller->mProperties.add<GQE::IEntity*>("FatherNode", actor);
                actor->mProperties.add<GQE::IEntity*>("Propeller", propeller->makeInstance());
+               GQE::Prototype* prototype = mPrototypes.getPrototype("Machinegun");
+               prototype->mProperties.add<GQE::IEntity*>("FatherNode", actor);
+               prototype->mProperties.set<GQE::typePropertyID>("AnchorPoint", "WeaponAnchorLeft");
+               GQE::IEntity* machinegunleft = prototype->makeInstance();
+               actor->mProperties.getPointer<WeaponManager>("WeaponManager")->addWeapon(machinegunleft);
+               prototype->mProperties.set<GQE::typePropertyID>("AnchorPoint", "WeaponAnchorRight");
+               actor->mProperties.getPointer<WeaponManager>("WeaponManager")->addWeapon(prototype->makeInstance());
             }
       }
    }

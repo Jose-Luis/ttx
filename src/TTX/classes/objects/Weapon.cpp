@@ -9,7 +9,7 @@ Weapon::Weapon():
    mID("Submachinegun"),
    mAmunitionType("SimpleBullet"),
    mCadency(0.1),
-   mPower(64),
+   mPower(128),
    mLastTime(0),
    mAmunition(1000),
    mManager(0)
@@ -28,8 +28,6 @@ Weapon::Weapon(WeaponID theID,AmunitionID theAmuID,float thePower,float theCaden
 //------------------------------------------------------------------------------
 Weapon::~Weapon()
 {
-   if(mManager)
-   mManager->removeWeapon(mID);
 }
 //------------------------------------------------------------------------------
 //       Class:  Weapon
