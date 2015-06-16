@@ -12,7 +12,7 @@
 #ifndef PROPERTY_MANAGER_HPP_INCLUDED
 #define PROPERTY_MANAGER_HPP_INCLUDED
 
-#include <map>
+#include <unordered_map>
 #include <typeinfo>
 #include <GQE/Core/loggers/Log_macros.hpp>
 #include <GQE/Core/interfaces/IProperty.hpp>
@@ -25,160 +25,172 @@ namespace GQE
 class GQE_API PropertyManager
 {
 public:
-   /**
-    * PropertyManager default constructor
-    */
-   PropertyManager();
+    /**
+     * PropertyManager default constructor
+     */
+    PropertyManager();
 
-   /**
-    * PropertyManager deconstructor
-    */
-   virtual ~PropertyManager();
+    /**
+     * PropertyManager deconstructor
+     */
+    virtual ~PropertyManager();
 
-   /**
-    * HasID returns true if thePropertyID specified exists in this
-    * PropertyManager.
-    * @param[in] thePropertyID to lookup in this PropertyManager
-    * @return true if thePropertyID exists, false otherwise
-    */
-   bool hasID(const typePropertyID thePropertyID) const;
+    /**
+     * HasID returns true if thePropertyID specified exists in this
+     * PropertyManager.
+     * @param[in] thePropertyID to lookup in this PropertyManager
+     * @return true if thePropertyID exists, false otherwise
+     */
+    bool hasID(const typePropertyID thePropertyID) const;
 
-   /**
-    * Get returns the property as type with the ID of thePropertyID.
+    /**
+     * Get returns the property as type with the ID of thePropertyID.
+     * @param[in] thePropertyID is the ID of the property to return.
+     * @return the value stored in the found propery in the form of TYPE. If no
+     * Property was found it returns the default value the type constructor.
+     */
+    template<class TYPE>
+    TYPE& getReference(const typePropertyID thePropertyID)
+    {
+        if(mList.find(thePropertyID) != mList.end())
+        {
+            if(mList.at(thePropertyID)->getType()->name() == typeid(TYPE).name())
+                return static_cast<TProperty<TYPE>*>(mList[thePropertyID])->getValue();
+        }
+        else
+        {
+            WLOG() << "PropertyManager:get() returning blank property("
+                   << thePropertyID << ") type" << std::endl;
+        }
+        TYPE anReturn=TYPE();
+        return anReturn;
+    }
+    /**
+     * Get returns the property as type with the ID of thePropertyID.
+     * @param[in] thePropertyID is the ID of the property to return.
+     * @return the value stored in the found propery in the form of TYPE. If no
+     * Property was found it returns the default value the type constructor.
+     */
+    template<class TYPE>
+    TYPE get(const typePropertyID thePropertyID)
+    {
+        if(mList.find(thePropertyID) != mList.end())
+        {
+            if(mList.at(thePropertyID)->getType()->name() == typeid(TYPE).name())
+                return static_cast<TProperty<TYPE>*>(mList[thePropertyID])->getValue();
+        }
+        else
+        {
+            WLOG() << "PropertyManager:get() returning blank property("
+                   << thePropertyID << ") type" << std::endl;
+        }
+        TYPE anReturn=TYPE();
+        return anReturn;
+    }
+    /**
+     * @brief getPointer
+     * @tparam TYPE
+     * @param thePropertyID
+     * @return a pointer to the property value
+     */
+    template<class TYPE>
+    TYPE* getPointer(const typePropertyID thePropertyID)
+    {
+        TYPE* anReturn = NULL;
+        if(mList.at(thePropertyID)->getType()->name() == typeid(TYPE).name())
+            anReturn = static_cast<TProperty<TYPE>*>(mList[thePropertyID])->getPointer();
+        else
+        {
+            WLOG() << "PropertyManager:getPointer() returning a NULL pointer("
+                   << thePropertyID << ") type" << std::endl;
+        }
+        return anReturn;
+    }
+    /**
+    * GetProperty returns the property as TProperty<TYPE> with the ID of thePropertyID.
     * @param[in] thePropertyID is the ID of the property to return.
-    * @return the value stored in the found propery in the form of TYPE. If no
-    * Property was found it returns the default value the type constructor.
+    * @return A reference to a TProperty<TYPE> object.
     */
-   template<class TYPE>
-   TYPE get(const typePropertyID thePropertyID)
-   {
-      if(mList.find(thePropertyID) != mList.end())
-      {
-         if(mList.at(thePropertyID)->getType()->name() == typeid(TYPE).name())
-         {
-            return static_cast<TProperty<TYPE>*>(mList[thePropertyID])->getValue();
-         }
-      }
-      else
-      {
-         WLOG() << "PropertyManager:get() returning blank property("
-                << thePropertyID << ") type" << std::endl;
-      }
+    template<class TYPE>
+    TProperty<TYPE>& getProperty(const typePropertyID thePropertyID)
+    {
+        if(mList.find(thePropertyID) != mList.end())
+        {
+            if(mList.at(thePropertyID)->getType()->name() == typeid(TYPE).name())
+                return static_cast<TProperty<TYPE>&>(mList[thePropertyID]);
+        }
+        else
+        {
+            WLOG() << "PropertyManager:get() returning blank property("
+                   << thePropertyID << ") type" << std::endl;
+        }
+        TYPE anReturn=TYPE();
+        return anReturn;
+    }
+    /**
+     * Set sets the property with the ID of thePropertyID to theValue.
+     * @param[in] thePropertyID is the ID of the property to set.
+     * @param[in] theValue is the value to set.
+     */
+    template<class TYPE>
+    void set(const typePropertyID thePropertyID, TYPE theValue)
+    {
+        if(mList.find(thePropertyID) != mList.end())
+        {
+            if(mList.at(thePropertyID)->getType()->name() == typeid(TYPE).name())
+            {
+                static_cast<TProperty<TYPE>*>(mList[thePropertyID])->setValue(theValue);
+            }
+        }
+        else
+        {
+            ELOG() << "PropertyManager:set() unable to find property("
+                   << thePropertyID << ")" << std::endl;
+        }
+    }
 
-      TYPE anReturn = TYPE();
-      return anReturn;
-   }
-   /**
-    * @brief getPointer
-    * @tparam TYPE
-    * @param thePropertyID
-    * @return a pointer to the property value
-    */
-   template<class TYPE>
-   TYPE* getPointer(const typePropertyID thePropertyID)
-   {
-      TYPE* anReturn = NULL;
+    /**
+     * Add creates a Property and addes it to this PropertyManager.
+     * @param[in] thePropertyID is the ID of the property to create.
+     * @param[in] theValue is the inital value to set.
+     */
+    template<class TYPE>
+    void add(const typePropertyID thePropertyID, TYPE theValue)
+    {
+        // Only add the property if it doesn't already exist
+        if(mList.find(thePropertyID) == mList.end())
+        {
+            TProperty<TYPE>* anProperty=new(std::nothrow) TProperty<TYPE>(thePropertyID);
+            anProperty->setValue(theValue);
+            mList[anProperty->getID()]=anProperty;
+        }
+    }
 
-      if(mList.at(thePropertyID)->getType()->name() == typeid(TYPE).name())
-      {
-         anReturn = static_cast<TProperty<TYPE>*>(mList[thePropertyID])->getPointer();
-      }
-      else
-      {
-         WLOG() << "PropertyManager:getPointer() returning a NULL pointer("
-                << thePropertyID << ") type" << std::endl;
-      }
+    /**
+     * Add gets a premade Property and adds it to this PropertyManager.
+     * @param[in] theProperty is a pointer to a pre exisiting property.
+     */
+    void add(IProperty* theProperty);
 
-      return anReturn;
-   }
-   /**
-   * GetProperty returns the property as TProperty<TYPE> with the ID of thePropertyID.
-   * @param[in] thePropertyID is the ID of the property to return.
-   * @return A reference to a TProperty<TYPE> object.
-   */
-   template<class TYPE>
-   TProperty<TYPE>& getProperty(const typePropertyID thePropertyID)
-   {
-      if(mList.find(thePropertyID) != mList.end())
-      {
-         if(mList.at(thePropertyID)->getType()->name() == typeid(TYPE).name())
-         {
-            return static_cast<TProperty<TYPE>&>(mList[thePropertyID]);
-         }
-      }
-      else
-      {
-         WLOG() << "PropertyManager:get() returning blank property("
-                << thePropertyID << ") type" << std::endl;
-      }
+    /**
+     * @brief remove 
+     * @param typePropertyID
+     */
+    void remove(typePropertyID);
 
-      TYPE anReturn = TYPE();
-      return anReturn;
-   }
-   /**
-    * Set sets the property with the ID of thePropertyID to theValue.
-    * @param[in] thePropertyID is the ID of the property to set.
-    * @param[in] theValue is the value to set.
-    */
-   template<class TYPE>
-   void set(const typePropertyID thePropertyID, TYPE theValue)
-   {
-      if(mList.find(thePropertyID) != mList.end())
-      {
-         if(mList.at(thePropertyID)->getType()->name() == typeid(TYPE).name())
-         {
-            static_cast<TProperty<TYPE>*>(mList[thePropertyID])->setValue(theValue);
-         }
-      }
-      else
-      {
-         ELOG() << "PropertyManager:set() unable to find property("
-                << thePropertyID << ")" << std::endl;
-      }
-   }
-
-   /**
-    * Add creates a Property and addes it to this PropertyManager.
-    * @param[in] thePropertyID is the ID of the property to create.
-    * @param[in] theValue is the inital value to set.
-    */
-   template<class TYPE>
-   void add(const typePropertyID thePropertyID, TYPE theValue)
-   {
-      // Only add the property if it doesn't already exist
-      if(mList.find(thePropertyID) == mList.end())
-      {
-         TProperty<TYPE>* anProperty = new(std::nothrow) TProperty<TYPE>(thePropertyID);
-         anProperty->setValue(theValue);
-         mList[anProperty->getID()] = anProperty;
-      }
-   }
-
-   /**
-    * Add gets a premade Property and adds it to this PropertyManager.
-    * @param[in] theProperty is a pointer to a pre exisiting property.
-    */
-   void add(IProperty* theProperty);
-
-   /**
-    * @brief remove
-    * @param typePropertyID
-    */
-   void remove(typePropertyID);
-
-   /**
-    * Clone is responsible for making a clone of each property in the
-    * PropertyManager provided.
-    * @param[in] thePropertyManager to clone into ourselves
-    */
-   void clone(const PropertyManager& thePropertyManager);
+    /**
+     * Clone is responsible for making a clone of each property in the
+     * PropertyManager provided.
+     * @param[in] thePropertyManager to clone into ourselves
+     */
+    void clone(const PropertyManager& thePropertyManager);
 protected:
 
 private:
-   // Variables
-   ///////////////////////////////////////////////////////////////////////////
-   /// A map of all Properties available for this PropertyManager class
-   std::map<const typePropertyID, IProperty*> mList;
+    // Variables
+    ///////////////////////////////////////////////////////////////////////////
+    /// A map of all Properties available for this PropertyManager class
+    std::unordered_map<typePropertyID, IProperty*> mList;
 }; // PropertyManager class
 } // namespace GQE
 

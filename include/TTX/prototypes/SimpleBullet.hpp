@@ -3,13 +3,14 @@
 
 #include <TTX/prototypes/PhysicProto.hpp>
 #include <TTX/Types.hpp>
+#include <TTX/Definition.hpp>
 
 class SimpleBullet: public PhysicProto
 {
 
 public:
    SimpleBullet():
-      PhysicProto("SimpleBullet")
+      PhysicProto(SIMPLE_BULLET_PROTO)
    {
       b2FixtureDef anFixture1;
       mShape1.m_radius = 0.50;
@@ -24,9 +25,9 @@ public:
       mBodyDef.bullet = true;
       mBodyDef.fixedRotation = true;
 
-      mProperties.add("TexRect", sf::IntRect(24, 72, 8, 8));
-      mProperties.add("Health", 1.f);
-      mProperties.add("Resistance", 1.f);
+      mProperties.add(TEXTURE_RECT, sf::IntRect(24, 72, 8, 8));
+      mProperties.add(HEALTH, 1.f);
+      mProperties.add(RESISTANCE, 1.f);
    }
 private:
    b2CircleShape mShape1;

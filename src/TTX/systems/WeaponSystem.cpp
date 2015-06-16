@@ -1,7 +1,7 @@
 #include <TTX/systems/WeaponSystem.hpp>
 
 WeaponSystem::WeaponSystem(IActionState& theState):
-   ISystem("WeaponSystem", theState)
+   ISystem(WEAPON_SYSTEM, theState)
 {}
 
 WeaponSystem::~WeaponSystem()
@@ -27,7 +27,7 @@ void WeaponSystem::draw()
 
 void WeaponSystem::handleCleanup(GQE::IEntity* theEntity)
 {
-   Weapon* mg = theEntity->mProperties.getPointer<Weapon>("Weapon");
+   Weapon* mg = theEntity->mProperties.getPointer<Weapon>(WEAPON);
    if(mg)
    {
       WeaponManager* wm = mg->getManager();

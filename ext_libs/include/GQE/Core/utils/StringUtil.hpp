@@ -20,314 +20,314 @@
 #if (SFML_VERSION_MAJOR < 2)
 namespace sf
 {
-typedef Vector2<unsigned int> Vector2u;
+  typedef Vector2<unsigned int> Vector2u;
 }
 #endif
 
 namespace GQE
 {
-///////////////////////////////////////////////////////////////////////////
-// String Manipulation Methods
-///////////////////////////////////////////////////////////////////////////
-/**
- * ConvertBool will convert the boolean value provided into a string.
- * @param[in] theBoolean to convert to a string.
- * @return the resulting string after converting theBoolean
- */
-std::string GQE_API convertBool(const bool theBoolean);
+  ///////////////////////////////////////////////////////////////////////////
+  // String Manipulation Methods
+  ///////////////////////////////////////////////////////////////////////////
+  /**
+   * ConvertBool will convert the boolean value provided into a string.
+   * @param[in] theBoolean to convert to a string.
+   * @return the resulting string after converting theBoolean
+   */
+  std::string GQE_API convertBool(const bool theBoolean);
 
-/**
- * ConvertColor will convert theColor value provided into a string.
- * @param[in] theVector to convert to a string.
- * @return the resulting string after converting theVector
- */
-std::string GQE_API convertColor(const sf::Color theVector);
+  /**
+   * ConvertColor will convert theColor value provided into a string.
+   * @param[in] theVector to convert to a string.
+   * @return the resulting string after converting theVector
+   */
+  std::string GQE_API convertColor(const sf::Color theVector);
 
-/**
- * ConvertDouble will convert the double value provided into a string.
- * @param[in] theFloat to convert to a string.
- * @return the resulting string after converting theFloat
- */
-std::string GQE_API convertDouble(const double theFloat);
+  /**
+   * ConvertDouble will convert the double value provided into a string.
+   * @param[in] theFloat to convert to a string.
+   * @return the resulting string after converting theFloat
+   */
+  std::string GQE_API convertDouble(const double theFloat);
 
-/**
- * ConvertFloat will convert the float value provided into a string.
- * @param[in] theFloat to convert to a string.
- * @return the resulting string after converting theFloat
- */
-std::string GQE_API convertFloat(const float theFloat);
+  /**
+   * ConvertFloat will convert the float value provided into a string.
+   * @param[in] theFloat to convert to a string.
+   * @return the resulting string after converting theFloat
+   */
+  std::string GQE_API convertFloat(const float theFloat);
 
-/**
- * ConvertInt8 will convert the 8 bit signed integer provided into a
- * string.
- * @param[in] theNumber to convert to a string.
- * @return the resulting string after converting theNumber
- */
-std::string GQE_API convertInt8(const Int8 theNumber);
+  /**
+   * ConvertInt8 will convert the 8 bit signed integer provided into a
+   * string.
+   * @param[in] theNumber to convert to a string.
+   * @return the resulting string after converting theNumber
+   */
+  std::string GQE_API convertInt8(const Int8 theNumber);
 
-/**
- * ConvertInt16 will convert the 16 bit signed integer provided into a
- * string.
- * @param[in] theNumber to convert to a string.
- * @return the resulting string after converting theNumber
- */
-std::string GQE_API convertInt16(const Int16 theNumber);
+  /**
+   * ConvertInt16 will convert the 16 bit signed integer provided into a
+   * string.
+   * @param[in] theNumber to convert to a string.
+   * @return the resulting string after converting theNumber
+   */
+  std::string GQE_API convertInt16(const Int16 theNumber);
 
-/**
- * ConvertInt32 will convert the 32 bit signed integer provided into a
- * string.
- * @param[in] theNumber to convert to a string.
- * @return the resulting string after converting theNumber
- */
-std::string GQE_API convertInt32(const Int32 theNumber);
+  /**
+   * ConvertInt32 will convert the 32 bit signed integer provided into a
+   * string.
+   * @param[in] theNumber to convert to a string.
+   * @return the resulting string after converting theNumber
+   */
+  std::string GQE_API convertInt32(const Int32 theNumber);
 
-/**
- * ConvertInt64 will convert the 64 bit signed integer provided into a
- * string.
- * @param[in] theNumber to convert to a string.
- * @return the resulting string after converting theNumber
- */
-std::string GQE_API convertInt64(const Int64 theNumber);
+  /**
+   * ConvertInt64 will convert the 64 bit signed integer provided into a
+   * string.
+   * @param[in] theNumber to convert to a string.
+   * @return the resulting string after converting theNumber
+   */
+  std::string GQE_API convertInt64(const Int64 theNumber);
 
-/**
- * ConvertIntRect will convert the sf::IntRect value provided into a string.
- * @param[in] theRect to convert to a string.
- * @return the resulting string after converting theRect
- */
-std::string GQE_API convertIntRect(const sf::IntRect theRect);
+  /**
+   * ConvertIntRect will convert the sf::IntRect value provided into a string.
+   * @param[in] theRect to convert to a string.
+   * @return the resulting string after converting theRect
+   */
+  std::string GQE_API convertIntRect(const sf::IntRect theRect);
 
-/**
- * ConvertUint8 will convert the 8 bit unsigned integer provided into a
- * string.
- * @param[in] theNumber to convert to a string.
- * @return the resulting string after converting theNumber
- */
-std::string GQE_API convertUint8(const Uint8 theNumber);
+  /**
+   * ConvertUint8 will convert the 8 bit unsigned integer provided into a
+   * string.
+   * @param[in] theNumber to convert to a string.
+   * @return the resulting string after converting theNumber
+   */
+  std::string GQE_API convertUint8(const Uint8 theNumber);
 
-/**
- * ConvertUint16 will convert the 16 bit unsigned integer provided into a
- * string.
- * @param[in] theNumber to convert to a string.
- * @return the resulting string after converting theNumber
- */
-std::string GQE_API convertUint16(const Uint16 theNumber);
+  /**
+   * ConvertUint16 will convert the 16 bit unsigned integer provided into a
+   * string.
+   * @param[in] theNumber to convert to a string.
+   * @return the resulting string after converting theNumber
+   */
+  std::string GQE_API convertUint16(const Uint16 theNumber);
 
-/**
- * ConvertUint32 will convert the 32 bit unsigned integer provided into a
- * string.
- * @param[in] theNumber to convert to a string.
- * @return the resulting string after converting theNumber
- */
-std::string GQE_API convertUint32(const Uint32 theNumber);
+  /**
+   * ConvertUint32 will convert the 32 bit unsigned integer provided into a
+   * string.
+   * @param[in] theNumber to convert to a string.
+   * @return the resulting string after converting theNumber
+   */
+  std::string GQE_API convertUint32(const Uint32 theNumber);
 
-/**
- * ConvertUint64 will convert the 64 bit unsigned integer provided into a
- * string.
- * @param[in] theNumber to convert to a string.
- * @return the resulting string after converting theNumber
- */
-std::string GQE_API convertUint64(const Uint64 theNumber);
+  /**
+   * ConvertUint64 will convert the 64 bit unsigned integer provided into a
+   * string.
+   * @param[in] theNumber to convert to a string.
+   * @return the resulting string after converting theNumber
+   */
+  std::string GQE_API convertUint64(const Uint64 theNumber);
 
-/**
- * ConvertVector2f will convert theVector value provided into a string.
- * @param[in] theVector to convert to a string.
- * @return the resulting string after converting theVector
- */
-std::string GQE_API convertVector2f(const sf::Vector2f theVector);
+  /**
+   * ConvertVector2f will convert theVector value provided into a string.
+   * @param[in] theVector to convert to a string.
+   * @return the resulting string after converting theVector
+   */
+  std::string GQE_API convertVector2f(const sf::Vector2f theVector);
 
-/**
- * ConvertVector2i will convert theVector value provided into a string.
- * @param[in] theVector to convert to a string.
- * @return the resulting string after converting theVector
- */
-std::string GQE_API convertVector2i(const sf::Vector2i theVector);
+  /**
+   * ConvertVector2i will convert theVector value provided into a string.
+   * @param[in] theVector to convert to a string.
+   * @return the resulting string after converting theVector
+   */
+  std::string GQE_API convertVector2i(const sf::Vector2i theVector);
 
-/**
- * ConvertVector2u will convert theVector value provided into a string.
- * @param[in] theVector to convert to a string.
- * @return the resulting string after converting theVector
- */
-std::string GQE_API convertVector2u(const sf::Vector2u theVector);
+  /**
+   * ConvertVector2u will convert theVector value provided into a string.
+   * @param[in] theVector to convert to a string.
+   * @return the resulting string after converting theVector
+   */
+  std::string GQE_API convertVector2u(const sf::Vector2u theVector);
 
-/**
- * ConvertVector3f will convert theVector value provided into a string.
- * @param[in] theVector to convert to a string.
- * @return the resulting string after converting theVector
- */
-std::string GQE_API convertVector3f(const sf::Vector3f theVector);
+  /**
+   * ConvertVector3f will convert theVector value provided into a string.
+   * @param[in] theVector to convert to a string.
+   * @return the resulting string after converting theVector
+   */
+  std::string GQE_API convertVector3f(const sf::Vector3f theVector);
 
-/**
- * ConvertVector3i will convert theVector value provided into a string.
- * @param[in] theVector to convert to a string.
- * @return the resulting string after converting theVector
- */
-std::string GQE_API convertVector3i(const sf::Vector3i theVector);
+  /**
+   * ConvertVector3i will convert theVector value provided into a string.
+   * @param[in] theVector to convert to a string.
+   * @return the resulting string after converting theVector
+   */
+  std::string GQE_API convertVector3i(const sf::Vector3i theVector);
 
-///////////////////////////////////////////////////////////////////////////
-// String Parse Methods
-///////////////////////////////////////////////////////////////////////////
-/**
- * ParseBool will parse theValue string to obtain the boolean value to
- * return.  If the value is not one of the following (0,1,true,false,on,
- * off) then theDefault will be returned instead.
- * @param[in] theValue to parse for (0,1,true,false,on,off)
- * @param[in] theDefault value to return if not one of the above
- * @return the boolean value obtained
- */
-bool GQE_API parseBool(std::string theValue, const bool theDefault);
+  ///////////////////////////////////////////////////////////////////////////
+  // String Parse Methods
+  ///////////////////////////////////////////////////////////////////////////
+  /**
+   * ParseBool will parse theValue string to obtain the boolean value to
+   * return.  If the value is not one of the following (0,1,true,false,on,
+   * off) then theDefault will be returned instead.
+   * @param[in] theValue to parse for (0,1,true,false,on,off)
+   * @param[in] theDefault value to return if not one of the above
+   * @return the boolean value obtained
+   */
+  bool GQE_API parseBool(std::string theValue, const bool theDefault);
 
-/**
- * ParseColor will parse theValue string to obtain the R,G,B,A color values
- * to produce an sf::Color object for the GetColor method above.
- * @param[in] theValue to parse for R,G,B,A color values
- * @param[in] theDefault color to use if the parser fails
- * @return the color object created with the values obtained
- */
-sf::Color GQE_API parseColor(const std::string theValue, const sf::Color theDefault);
+  /**
+   * ParseColor will parse theValue string to obtain the R,G,B,A color values
+   * to produce an sf::Color object for the GetColor method above.
+   * @param[in] theValue to parse for R,G,B,A color values
+   * @param[in] theDefault color to use if the parser fails
+   * @return the color object created with the values obtained
+   */
+  sf::Color GQE_API parseColor(const std::string theValue, const sf::Color theDefault);
 
-/**
- * ParseDouble will parse theValue string to obtain the double value to
- * return or return theDefault instead.
- * @param[in] theValue to parse for the float value
- * @param[in] theDefault float value to use if the parser fails
- * @return the float value obtained or theDefault if not parsed
- */
-double GQE_API parseDouble(const std::string theValue, const double theDefault);
+  /**
+   * ParseDouble will parse theValue string to obtain the double value to
+   * return or return theDefault instead.
+   * @param[in] theValue to parse for the float value
+   * @param[in] theDefault float value to use if the parser fails
+   * @return the float value obtained or theDefault if not parsed
+   */
+  double GQE_API parseDouble(const std::string theValue, const double theDefault);
 
-/**
- * ParseFloat will parse theValue string to obtain the float value to
- * return or return theDefault instead.
- * @param[in] theValue to parse for the float value
- * @param[in] theDefault float value to use if the parser fails
- * @return the float value obtained or theDefault if not parsed
- */
-float GQE_API parseFloat(const std::string theValue, const float theDefault);
+  /**
+   * ParseFloat will parse theValue string to obtain the float value to
+   * return or return theDefault instead.
+   * @param[in] theValue to parse for the float value
+   * @param[in] theDefault float value to use if the parser fails
+   * @return the float value obtained or theDefault if not parsed
+   */
+  float GQE_API parseFloat(const std::string theValue, const float theDefault);
 
-/**
- * ParseInt8 will parse theValue string to obtain a signed 8 bit value.
- * If the parser fails, then it will return theDefault instead.
- * @param[in] theValue to parse for the signed 8 bit value
- * @param[in] theDefault signed 8 bit value to use if the parser fails
- * @return the signed 8 bit value obtained
- */
-Int8 GQE_API parseInt8(const std::string theValue, const Int8 theDefault);
+  /**
+   * ParseInt8 will parse theValue string to obtain a signed 8 bit value.
+   * If the parser fails, then it will return theDefault instead.
+   * @param[in] theValue to parse for the signed 8 bit value
+   * @param[in] theDefault signed 8 bit value to use if the parser fails
+   * @return the signed 8 bit value obtained
+   */
+  Int8 GQE_API parseInt8(const std::string theValue, const Int8 theDefault);
 
-/**
- * ParseInt16 will parse theValue string to obtain a signed 16 bit value.
- * If the parser fails, then it will return theDefault instead.
- * @param[in] theValue to parse for the signed 16 bit value
- * @param[in] theDefault signed 16 bit value to use if the parser fails
- * @return the signed 16 bit value obtained
- */
-Int16 GQE_API parseInt16(const std::string theValue, const Int16 theDefault);
+  /**
+   * ParseInt16 will parse theValue string to obtain a signed 16 bit value.
+   * If the parser fails, then it will return theDefault instead.
+   * @param[in] theValue to parse for the signed 16 bit value
+   * @param[in] theDefault signed 16 bit value to use if the parser fails
+   * @return the signed 16 bit value obtained
+   */
+  Int16 GQE_API parseInt16(const std::string theValue, const Int16 theDefault);
 
-/**
- * ParseInt32 will parse theValue string to obtain a signed 32 bit value.
- * If the parser fails, then it will return theDefault instead.
- * @param[in] theValue to parse for the signed 32 bit value
- * @param[in] theDefault signed 32 bit value to use if the parser fails
- * @return the signed 32 bit value obtained
- */
-Int32 GQE_API parseInt32(const std::string theValue, const Int32 theDefault);
+  /**
+   * ParseInt32 will parse theValue string to obtain a signed 32 bit value.
+   * If the parser fails, then it will return theDefault instead.
+   * @param[in] theValue to parse for the signed 32 bit value
+   * @param[in] theDefault signed 32 bit value to use if the parser fails
+   * @return the signed 32 bit value obtained
+   */
+  Int32 GQE_API parseInt32(const std::string theValue, const Int32 theDefault);
 
-/**
- * ParseInt64 will parse theValue string to obtain a signed 64 bit value.
- * If the parser fails, then it will return theDefault instead.
- * @param[in] theValue to parse for the signed 64 bit value
- * @param[in] theDefault signed 64 bit value to use if the parser fails
- * @return the signed 64 bit value obtained
- */
-Int64 GQE_API parseInt64(const std::string theValue, const Int64 theDefault);
+  /**
+   * ParseInt64 will parse theValue string to obtain a signed 64 bit value.
+   * If the parser fails, then it will return theDefault instead.
+   * @param[in] theValue to parse for the signed 64 bit value
+   * @param[in] theDefault signed 64 bit value to use if the parser fails
+   * @return the signed 64 bit value obtained
+   */
+  Int64 GQE_API parseInt64(const std::string theValue, const Int64 theDefault);
 
-/**
- * ParseIntRect will parse theValue string to obtain a sf::IntRect value.
- * If the parser fails, then it will return theDefault instead.
- * @param[in] theValue to parse for the sf::IntRect value
- * @param[in] theDefault sf::IntRect value to use if the parser fails
- * @return the sf::IntRect value obtained
- */
-sf::IntRect GQE_API parseIntRect(const std::string theValue, const sf::IntRect theDefault);
+  /**
+   * ParseIntRect will parse theValue string to obtain a sf::IntRect value.
+   * If the parser fails, then it will return theDefault instead.
+   * @param[in] theValue to parse for the sf::IntRect value
+   * @param[in] theDefault sf::IntRect value to use if the parser fails
+   * @return the sf::IntRect value obtained
+   */
+  sf::IntRect GQE_API parseIntRect(const std::string theValue, const sf::IntRect theDefault);
 
-/**
- * ParseUint8 will parse theValue string to obtain a signed 8 bit value.
- * If the parser fails, then it will return theDefault instead.
- * @param[in] theValue to parse for the signed 8 bit value
- * @param[in] theDefault signed 8 bit value to use if the parser fails
- * @return the signed 8 bit value obtained
- */
-Uint8 GQE_API parseUint8(const std::string theValue, const Uint8 theDefault);
+  /**
+   * ParseUint8 will parse theValue string to obtain a signed 8 bit value.
+   * If the parser fails, then it will return theDefault instead.
+   * @param[in] theValue to parse for the signed 8 bit value
+   * @param[in] theDefault signed 8 bit value to use if the parser fails
+   * @return the signed 8 bit value obtained
+   */
+  Uint8 GQE_API parseUint8(const std::string theValue, const Uint8 theDefault);
 
-/**
- * ParseUint16 will parse theValue string to obtain an unsigned 16 bit
- * value.  If the parser fails, then it will return theDefault instead.
- * @param[in] theValue to parse for the unsigned 16 bit value
- * @param[in] theDefault unsigned 16 bit value to use if the parser fails
- * @return the unsigned 16 bit value obtained
- */
-Uint16 GQE_API parseUint16(const std::string theValue, const Uint16 theDefault);
+  /**
+   * ParseUint16 will parse theValue string to obtain an unsigned 16 bit
+   * value.  If the parser fails, then it will return theDefault instead.
+   * @param[in] theValue to parse for the unsigned 16 bit value
+   * @param[in] theDefault unsigned 16 bit value to use if the parser fails
+   * @return the unsigned 16 bit value obtained
+   */
+  Uint16 GQE_API parseUint16(const std::string theValue, const Uint16 theDefault);
 
-/**
- * ParseUint32 will parse theValue string to obtain an unsigned 32 bit
- * value.  If the parser fails, then it will return theDefault instead.
- * @param[in] theValue to parse for the unsigned 32 bit value
- * @param[in] theDefault unsigned 32 bit value to use if the parser fails
- * @return the unsigned 32 bit value obtained
- */
-Uint32 GQE_API parseUint32(const std::string theValue, const Uint32 theDefault);
+  /**
+   * ParseUint32 will parse theValue string to obtain an unsigned 32 bit
+   * value.  If the parser fails, then it will return theDefault instead.
+   * @param[in] theValue to parse for the unsigned 32 bit value
+   * @param[in] theDefault unsigned 32 bit value to use if the parser fails
+   * @return the unsigned 32 bit value obtained
+   */
+  Uint32 GQE_API parseUint32(const std::string theValue, const Uint32 theDefault);
 
-/**
- * ParseUint64 will parse theValue string to obtain an unsigned 64 bit
- * value.  If the parser fails, then it will return theDefault instead.
- * @param[in] theValue to parse for the unsigned 64 bit value
- * @param[in] theDefault unsigned 64 bit value to use if the parser fails
- * @return the unsigned 64 bit value obtained
- */
-Uint64 GQE_API parseUint64(const std::string theValue, const Uint64 theDefault);
+  /**
+   * ParseUint64 will parse theValue string to obtain an unsigned 64 bit
+   * value.  If the parser fails, then it will return theDefault instead.
+   * @param[in] theValue to parse for the unsigned 64 bit value
+   * @param[in] theDefault unsigned 64 bit value to use if the parser fails
+   * @return the unsigned 64 bit value obtained
+   */
+  Uint64 GQE_API parseUint64(const std::string theValue, const Uint64 theDefault);
 
-/**
- * ParseVector2f will parse theValue string to obtain the X,Y vector values
- * to produce an sf::Vector2f object.
- * @param[in] theValue to parse for X,Y vector values
- * @param[in] theDefault color to use if the parser fails
- * @return the color object created with the values obtained
- */
-sf::Vector2f GQE_API parseVector2f(const std::string theValue, const sf::Vector2f theDefault);
+  /**
+   * ParseVector2f will parse theValue string to obtain the X,Y vector values
+   * to produce an sf::Vector2f object.
+   * @param[in] theValue to parse for X,Y vector values
+   * @param[in] theDefault color to use if the parser fails
+   * @return the color object created with the values obtained
+   */
+  sf::Vector2f GQE_API parseVector2f(const std::string theValue, const sf::Vector2f theDefault);
 
-/**
- * ParseVector2i will parse theValue string to obtain the X,Y vector values
- * to produce an sf::Vector2i object.
- * @param[in] theValue to parse for X,Y vector values
- * @param[in] theDefault color to use if the parser fails
- * @return the color object created with the values obtained
- */
-sf::Vector2i GQE_API parseVector2i(const std::string theValue, const sf::Vector2i theDefault);
+  /**
+   * ParseVector2i will parse theValue string to obtain the X,Y vector values
+   * to produce an sf::Vector2i object.
+   * @param[in] theValue to parse for X,Y vector values
+   * @param[in] theDefault color to use if the parser fails
+   * @return the color object created with the values obtained
+   */
+  sf::Vector2i GQE_API parseVector2i(const std::string theValue, const sf::Vector2i theDefault);
 
-/**
- * ParseVector2u will parse theValue string to obtain the X,Y vector values
- * to produce an sf::Vector2u object.
- * @param[in] theValue to parse for X,Y vector values
- * @param[in] theDefault color to use if the parser fails
- * @return the color object created with the values obtained
- */
-sf::Vector2u GQE_API parseVector2u(const std::string theValue, const sf::Vector2u theDefault);
+  /**
+   * ParseVector2u will parse theValue string to obtain the X,Y vector values
+   * to produce an sf::Vector2u object.
+   * @param[in] theValue to parse for X,Y vector values
+   * @param[in] theDefault color to use if the parser fails
+   * @return the color object created with the values obtained
+   */
+  sf::Vector2u GQE_API parseVector2u(const std::string theValue, const sf::Vector2u theDefault);
 
-/**
- * ParseVector3f will parse theValue string to obtain the X,Y,Z vector values
- * to produce an sf::Vector3f object.
- * @param[in] theValue to parse for X,Y,Z vector values
- * @param[in] theDefault color to use if the parser fails
- * @return the color object created with the values obtained
- */
-sf::Vector3f GQE_API parseVector3f(const std::string theValue, const sf::Vector3f theDefault);
+  /**
+   * ParseVector3f will parse theValue string to obtain the X,Y,Z vector values
+   * to produce an sf::Vector3f object.
+   * @param[in] theValue to parse for X,Y,Z vector values
+   * @param[in] theDefault color to use if the parser fails
+   * @return the color object created with the values obtained
+   */
+  sf::Vector3f GQE_API parseVector3f(const std::string theValue, const sf::Vector3f theDefault);
 
-/**
- * ParseVector3i will parse theValue string to obtain the X,Y,Z vector values
- * to produce an sf::Vector3i object.
- * @param[in] theValue to parse for X,Y,Z vector values
- * @param[in] theDefault color to use if the parser fails
- * @return the color object created with the values obtained
- */
-sf::Vector3i GQE_API parseVector3i(const std::string theValue, const sf::Vector3i theDefault);
+  /**
+   * ParseVector3i will parse theValue string to obtain the X,Y,Z vector values
+   * to produce an sf::Vector3i object.
+   * @param[in] theValue to parse for X,Y,Z vector values
+   * @param[in] theDefault color to use if the parser fails
+   * @return the color object created with the values obtained
+   */
+  sf::Vector3i GQE_API parseVector3i(const std::string theValue, const sf::Vector3i theDefault);
 
 } // namespace GQE
 

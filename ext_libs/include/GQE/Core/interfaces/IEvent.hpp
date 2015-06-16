@@ -12,70 +12,70 @@
 
 namespace GQE
 {
-/// Provides the interface for all IEvent properties
-class GQE_API IEvent
-{
-public:
-   /// Class that represents the type for this class
-   class Type_t
-   {
-   private:
-      std::string mName;
-   public:
-      explicit Type_t(std::string theName) : mName(theName) {}
-      std::string name() const
+  /// Provides the interface for all IEvent properties
+  class GQE_API IEvent
+  {
+    public:
+      /// Class that represents the type for this class
+      class Type_t
       {
-         return mName;
+        private:
+          std::string mName;
+        public:
+          explicit Type_t(std::string theName) : mName(theName) {}
+          std::string name() const
+          {
+            return mName;
+          };
       };
-   };
 
-   /**
-    * IEvent default constructor
-    * @param[in] theType of event this IEvent represents
-    * @param[in] theEventID to use for this IEvent
-    */
-   IEvent(std::string theType, const typeEventID theEventID);
+      /**
+       * IEvent default constructor
+       * @param[in] theType of event this IEvent represents
+       * @param[in] theEventID to use for this IEvent
+       */
+      IEvent(std::string theType, const typeEventID theEventID);
 
-   /**
-    * IEvent destructor
-    */
-   virtual ~IEvent();
+      /**
+       * IEvent destructor
+       */
+      virtual ~IEvent();
 
-   /**
-    * GetType will return the Type_t type for this property
-    * @return the Type_t class for this property
-    */
-   Type_t* getType(void);
+      /**
+       * GetType will return the Type_t type for this property
+       * @return the Type_t class for this property
+       */
+      Type_t* getType(void);
 
-   /**
-    * GetID will return the Entity ID used for this event.
-    * @return the event ID for this event
-    */
-   const typeEventID getID(void) const;
+      /**
+       * GetID will return the Entity ID used for this event.
+       * @return the event ID for this event
+       */
+      const typeEventID getID(void) const;
 
-   /**
-    * DoEvent will be called to perform the IEvent and will be defined by
-    * the derived IEvent class.
-    */
-   virtual void doEvent(void* theContext = NULL) = 0;
+      /**
+       * DoEvent will be called to perform the IEvent and will be defined by
+       * the derived IEvent class.
+       */
+      virtual void doEvent(void* theContext = NULL) = 0;
 
-protected:
-   /**
-    * SetType is responsible for setting the type of class this IEvent
-    * class represents and is usually called by the IEvent derived class
-    * to set theType.
-    * @param[in] theType to set for this IEvent derived class
-    */
-   void setType(std::string theType);
+    protected:
+      /**
+       * SetType is responsible for setting the type of class this IEvent
+       * class represents and is usually called by the IEvent derived class
+       * to set theType.
+       * @param[in] theType to set for this IEvent derived class
+       */
+      void setType(std::string theType);
 
-private:
-   // Variables
-   ///////////////////////////////////////////////////////////////////////////
-   /// The type that represents this class
-   Type_t mType;
-   /// The event ID assigned to this IEvent derived class
-   const typeEventID mEventID;
-}; // class IEvent
+    private:
+      // Variables
+      ///////////////////////////////////////////////////////////////////////////
+      /// The type that represents this class
+      Type_t mType;
+      /// The event ID assigned to this IEvent derived class
+      const typeEventID mEventID;
+  }; // class IEvent
 } // namespace GQE
 #endif //IEVENT_HPP_INCLUDED
 

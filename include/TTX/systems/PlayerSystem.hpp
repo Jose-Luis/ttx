@@ -6,11 +6,13 @@
 #ifndef  PLAYERSYSTEM_INC
 #define  PLAYERSYSTEM_INC
 
+#include <GQE/Core/utils/CRC32.hpp>
 #include <GQE/Entity/interfaces/ISystem.hpp>
 #include <GQE/Entity/Entity_types.hpp>
 #include <GQE/Entity/classes/Instance.hpp>
 #include <Box2D/Box2D.h>
 #include <TTX/Types.hpp>
+#include <TTX/Definition.hpp>
 #include <TTX/systems/ISystem.hpp>
 #include <TTX/classes/objects/IWeapon.hpp>
 #include <TTX/classes/objects/WeaponManager.hpp>

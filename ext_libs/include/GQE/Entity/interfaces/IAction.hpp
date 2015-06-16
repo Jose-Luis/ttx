@@ -13,43 +13,43 @@
 
 namespace GQE
 {
-/// The IAction base class to be managed by the ActionSystem class
-class GQE_API IAction
-{
-public:
-   /**
-    * IAction default constructor
-    * @param[in] theActionID used to identify this action
-    */
-   IAction(const typeActionID theActionID);
+  /// The IAction base class to be managed by the ActionSystem class
+  class GQE_API IAction
+  {
+    public:
+      /**
+       * IAction default constructor
+       * @param[in] theActionID used to identify this action
+       */
+      IAction(const typeActionID theActionID);
 
-   /**
-    * IAction destructor
-    */
-   virtual ~IAction();
+      /**
+       * IAction destructor
+       */
+      virtual ~IAction();
 
-   /**
-    * GetID will return the Action ID used by this IAction class.
-    * @return the action ID for this IAction class
-    */
-   const typeActionID getID(void) const;
+      /**
+       * GetID will return the Action ID used by this IAction class.
+       * @return the action ID for this IAction class
+       */
+      const typeActionID getID(void) const;
 
-   /**
-    * DoAction is responsible for performing the work of this IAction class
-    * using theEntity provided as the originator of the IAction.
-    */
-   virtual void doAction(IEntity* theEntity) = 0;
+      /**
+       * DoAction is responsible for performing the work of this IAction class
+       * using theEntity provided as the originator of the IAction.
+       */
+      virtual void doAction(IEntity* theEntity) = 0;
 
-protected:
-   // Variables
-   ///////////////////////////////////////////////////////////////////////////
+    protected:
+      // Variables
+      ///////////////////////////////////////////////////////////////////////////
 
-private:
-   // Variables
-   ///////////////////////////////////////////////////////////////////////////
-   /// The action ID assigned to this IAction class
-   const typeActionID mActionID;
-};
+    private:
+      // Variables
+      ///////////////////////////////////////////////////////////////////////////
+      /// The action ID assigned to this IAction class
+      const typeActionID mActionID;
+  };
 } // namespace GQE
 
 #endif // IACTION_HPP_INCLUDED

@@ -16,11 +16,13 @@ const float TORAD = PI / 180;
 const float TODEG = 180 / PI;
 const float LENGTHFACTOR = 16;
 
-typedef std::string ID;
-typedef std::string SystemID;
-typedef std::string EntityID;
-typedef std::string WeaponID;
-typedef std::string AmunitionID;
+typedef uint32_t Id;
+using LayerID = uint32_t;
+using SystemID = uint32_t;
+using EntityID = uint32_t;
+using WeaponID = uint32_t;
+using AmunitionID = uint32_t;
+using LayerID = uint32_t;
 typedef unsigned int InstanceID;
 
 typedef std::map<SystemID, ISystem*> SystemContainer;

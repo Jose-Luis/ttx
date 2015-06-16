@@ -18,127 +18,127 @@
 
 namespace GQE
 {
-/// Provides the base class interface for all Logger classes
-class GQE_API ILogger
-{
-public:
-   /// Null stream for Logger macros if not active or severity level is disabled
-   static std::onullstream gNullStream;
+  /// Provides the base class interface for all Logger classes
+  class GQE_API ILogger
+  {
+    public:
+      /// Null stream for Logger macros if not active or severity level is disabled
+      static std::onullstream gNullStream;
 
-   /**
-    * ILogger deconstructor
-    */
-   virtual ~ILogger();
+      /**
+       * ILogger deconstructor
+       */
+      virtual ~ILogger();
 
-   /**
-    * GetInstance will return the most recent ILogger based class that was created
-    * so it can be used to log messages or NULL if none has been created yet.
-    * @return pointer to ILogger based class or NULL if none is available
-    */
-   static ILogger* getLogger(void);
+      /**
+       * GetInstance will return the most recent ILogger based class that was created
+       * so it can be used to log messages or NULL if none has been created yet.
+       * @return pointer to ILogger based class or NULL if none is available
+       */
+      static ILogger* getLogger(void);
 
-   /**
-    * IsActive will return true if this logger is currently active
-    * @return true if logger is active, false otherwise
-    */
-   bool isActive(void);
+      /**
+       * IsActive will return true if this logger is currently active
+       * @return true if logger is active, false otherwise
+       */
+      bool isActive(void);
 
-   /**
-    * SetActive is responsible for setting the active state for this
-    * logger.
-    * @param[in] theActive value to set this logger to
-    */
-   virtual void setActive(bool theActive);
+      /**
+       * SetActive is responsible for setting the active state for this
+       * logger.
+       * @param[in] theActive value to set this logger to
+       */
+      virtual void setActive(bool theActive);
 
-   /**
-    * GetStream is responsible for returning the ostream necessary to log the
-    * custom message that will follow without a prefix.
-    * @return the ostream to use for logging the message
-    */
-   virtual std::ostream& getStream(void) = 0;
+      /**
+       * GetStream is responsible for returning the ostream necessary to log the
+       * custom message that will follow without a prefix.
+       * @return the ostream to use for logging the message
+       */
+      virtual std::ostream& getStream(void) = 0;
 
-   /**
-    * GetStream is responsible for returning the ostream necessary to log the
-    * custom message that will follow and prefix the custom message with an
-    * appropriate timestamp and File:Line tag.
-    * @param[in] theSeverity for this message to be logged
-    * @param[in] theSourceFile where the Log macro was called from
-    * @param[in] theSourceLine number where the Log macro was called from
-    * @param[in] theExitCode value to use when FatalShutdown is called
-    * @return the ostream to use for logging the message
-    */
-   virtual std::ostream& getStream(SeverityType theSeverity,
-                                   const char* theSourceFile, int theSourceLine, int theExitCode = StatusError) = 0;
+      /**
+       * GetStream is responsible for returning the ostream necessary to log the
+       * custom message that will follow and prefix the custom message with an
+       * appropriate timestamp and File:Line tag.
+       * @param[in] theSeverity for this message to be logged
+       * @param[in] theSourceFile where the Log macro was called from
+       * @param[in] theSourceLine number where the Log macro was called from
+       * @param[in] theExitCode value to use when FatalShutdown is called
+       * @return the ostream to use for logging the message
+       */
+      virtual std::ostream& getStream(SeverityType theSeverity,
+          const char* theSourceFile, int theSourceLine, int theExitCode = StatusError) = 0;
 
-   /**
-    * LogMessage is responsible for logging the message provided using an
-    * appropriate timestamp and File:Line tag in front.
-    * @param[in] theMessage to log
-    */
-   virtual void logMessage(const char* theMessage) = 0;
+      /**
+       * LogMessage is responsible for logging the message provided using an
+       * appropriate timestamp and File:Line tag in front.
+       * @param[in] theMessage to log
+       */
+      virtual void logMessage(const char* theMessage) = 0;
 
-   /**
-    * LogMessage is responsible for logging the message provided using an
-    * appropriate timestamp and File:Line tag in front.
-    * @param[in] theSeverity for this message to be logged
-    * @param[in] theSourceFile where the Log macro was called from
-    * @param[in] theSourceLine number where the Log macro was called from
-    * @param[in] theMessage to log
-    */
-   virtual void logMessage(SeverityType theSeverity,
-                           const char* theSourceFile, int theSourceLine,
-                           const char* theMessage) = 0;
+      /**
+       * LogMessage is responsible for logging the message provided using an
+       * appropriate timestamp and File:Line tag in front.
+       * @param[in] theSeverity for this message to be logged
+       * @param[in] theSourceFile where the Log macro was called from
+       * @param[in] theSourceLine number where the Log macro was called from
+       * @param[in] theMessage to log
+       */
+      virtual void logMessage(SeverityType theSeverity,
+          const char* theSourceFile, int theSourceLine,
+          const char* theMessage) = 0;
 
-protected:
-   /**
-    * ILogger constructor is protected because we do not allow copies of our
-    * Singleton class except to those who derive from us.
-    * @param[in] theExitCode to use if FatalShutdown is called
-    */
-   ILogger(bool theDefault = false, int theExitCode = StatusError);
+    protected:
+      /**
+       * ILogger constructor is protected because we do not allow copies of our
+       * Singleton class except to those who derive from us.
+       * @param[in] theExitCode to use if FatalShutdown is called
+       */
+      ILogger(bool theDefault = false, int theExitCode = StatusError);
 
-   /**
-    * WriteTag will write an appropriate timestamp and File:Line tag in the
-    * ostream provided.  The caller should make sure to check isActive()
-    * before calling this method to prevent the tag from being written to
-    * the provided stream when the logger is not active.
-    * @param[in,out] theOstream to use to write the prefix tag
-    * @param[in] theSeverity for this message to be logged
-    * @param[in] theSourceFile where the Log macro was called from
-    * @param[in] theSourceLine number where the Log macro was called from
-    */
-   void writeTag(std::ostream& theOstream, SeverityType theSeverity,
-                 const char* theSourceFile, int theSourceLine);
+      /**
+       * WriteTag will write an appropriate timestamp and File:Line tag in the
+       * ostream provided.  The caller should make sure to check isActive()
+       * before calling this method to prevent the tag from being written to
+       * the provided stream when the logger is not active.
+       * @param[in,out] theOstream to use to write the prefix tag
+       * @param[in] theSeverity for this message to be logged
+       * @param[in] theSourceFile where the Log macro was called from
+       * @param[in] theSourceLine number where the Log macro was called from
+       */
+      void writeTag(std::ostream& theOstream, SeverityType theSeverity,
+          const char* theSourceFile, int theSourceLine);
 
-   /**
-    * FatalShutdown is called when logging a Fatal severity after the message
-    * has been logged and will handle gracefully exiting the application by
-    * using the global gApp variable to call the applications Quit method.
-    */
-   void fatalShutdown(void);
+      /**
+       * FatalShutdown is called when logging a Fatal severity after the message
+       * has been logged and will handle gracefully exiting the application by
+       * using the global gApp variable to call the applications Quit method.
+       */
+      void fatalShutdown(void);
 
-private:
-   /// Instance variable assigned at construction time
-   static ILogger* gInstance;
+    private:
+      /// Instance variable assigned at construction time
+      static ILogger* gInstance;
 
-   /// Logger is currently active
-   bool  mActive;
-   /// The Exit value to use when FatalShutdown method is called
-   int mExitCode;
+      /// Logger is currently active
+      bool  mActive;
+      /// The Exit value to use when FatalShutdown method is called
+      int mExitCode;
 
-   /**
-    * Our copy constructor is private because we do not allow copies of
-    * our Singleton class
-    */
-   ILogger(const ILogger&);  // Intentionally undefined
+      /**
+       * Our copy constructor is private because we do not allow copies of
+       * our Singleton class
+       */
+      ILogger(const ILogger&);  // Intentionally undefined
 
-   /**
-    * Our assignment operator is private because we do not allow copies
-    * of our Singleton class
-    */
-   ILogger& operator=(const ILogger&); // Intentionally undefined
+      /**
+       * Our assignment operator is private because we do not allow copies
+       * of our Singleton class
+       */
+      ILogger& operator=(const ILogger&); // Intentionally undefined
 
-}; // class ILogger
+  }; // class ILogger
 } // namespace GQE
 
 #endif // CORE_ILOGGER_HPP_INCLUDED

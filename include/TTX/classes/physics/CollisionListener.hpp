@@ -1,3 +1,8 @@
+#ifndef COLLISIONLISTENER_INC
+#define COLLISIONLISTENER_INC
+
+#include <GQE/Core/utils/CRC32.hpp>
+#include <TTX/Definition.hpp>
 #include <GQE/Entity/interfaces/IEntity.hpp>
 #include <Box2D/Box2D.h>
 
@@ -13,3 +18,5 @@ private:
    void applyDamage(GQE::IEntity* theEntity, float theImpactStrength);
    /* data */
 };
+
+#endif

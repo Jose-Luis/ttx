@@ -6,6 +6,8 @@
 
 #include <SFML/Graphics.hpp>
 #include <TTX/Types.hpp>
+#include <TTX/Definition.hpp>
+#include <GQE/Core/utils/CRC32.hpp>
 #include <GQE/Entity/interfaces/IEntity.hpp>
 #include <GQE/Entity/interfaces/ISystem.hpp>
 #include <GQE/Entity/Entity_types.hpp>

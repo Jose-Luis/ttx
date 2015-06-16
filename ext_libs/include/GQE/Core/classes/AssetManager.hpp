@@ -24,101 +24,101 @@
 
 namespace GQE
 {
-/// Provides centralized game asset manager class for managing game assets.
-class GQE_API AssetManager
-{
-public:
-   /**
-    * AssetManager constructor
-    */
-   AssetManager();
+  /// Provides centralized game asset manager class for managing game assets.
+  class GQE_API AssetManager
+  {
+    public:
+      /**
+       * AssetManager constructor
+       */
+      AssetManager();
 
-   /**
-    * AssetManager deconstructor
-    */
-   virtual ~AssetManager();
+      /**
+       * AssetManager deconstructor
+       */
+      virtual ~AssetManager();
 
-   /**
-    * GetHandler is responsible for returning an TAssetHandler derived
-    * class that was previously registered under typeid(TYPE).name() of the
-    * TYPE provided which can then be used to obtain Asset references by
-    * Asset ID.
-    */
-   template<class TYPE>
-   TAssetHandler<TYPE>& getHandler() const
-   {
-      // The TAssetHandler<TYPE> derived class that will be returned
-      TAssetHandler<TYPE>* anResult = NULL;
-
-      // Iterator to the asset if found
-      std::map<const typeAssetHandlerID, IAssetHandler*>::const_iterator iter;
-
-      // Try to find the asset using theAssetID as the key
-      iter = mHandlers.find(typeid(TYPE).name());
-
-      // Found asset? increment the count and return the reference
-      if(iter != mHandlers.end())
+      /**
+       * GetHandler is responsible for returning an TAssetHandler derived
+       * class that was previously registered under typeid(TYPE).name() of the
+       * TYPE provided which can then be used to obtain Asset references by
+       * Asset ID.
+       */
+      template<class TYPE>
+      TAssetHandler<TYPE>& getHandler() const
       {
-         // Cast the IAssetHandler address found into TAssetHandler
-         anResult = static_cast<TAssetHandler<TYPE>*>(iter->second);
-      }
+        // The TAssetHandler<TYPE> derived class that will be returned
+        TAssetHandler<TYPE>* anResult = NULL;
 
-      // Make sure we aren't returning NULL at this point
-      if(anResult == NULL)
-      {
+        // Iterator to the asset if found
+        std::map<const typeAssetHandlerID, IAssetHandler*>::const_iterator iter;
+
+        // Try to find the asset using theAssetID as the key
+        iter = mHandlers.find(typeid(TYPE).name());
+
+        // Found asset? increment the count and return the reference
+        if(iter != mHandlers.end())
+        {
+          // Cast the IAssetHandler address found into TAssetHandler
+          anResult = static_cast<TAssetHandler<TYPE>*>(iter->second);
+        }
+
+        // Make sure we aren't returning NULL at this point
+        if(anResult == NULL)
+        {
          FLOG(StatusAppMissingAsset) << "AssetManager::getHandler("
-                                     << typeid(TYPE).name() << ") not found!" << std::endl;
+           << typeid(TYPE).name() << ") not found!" << std::endl;
+        }
+
+        // Return the TAssetHandler addres or Null if something went wrong
+        return *anResult;
       }
 
-      // Return the TAssetHandler addres or Null if something went wrong
-      return *anResult;
-   }
+      /**
+       * GetHandler is responsible for returning an IAssetHandler derived
+       * class that was previously registered under theAssetHandlerID provided
+       * which can then be used to obtain Asset references by Asset ID.
+       * @param[in] theAssetHandlerID to retrieve
+       */
+      IAssetHandler& getHandler(const typeAssetHandlerID theAssetHandlerID) const;
 
-   /**
-    * GetHandler is responsible for returning an IAssetHandler derived
-    * class that was previously registered under theAssetHandlerID provided
-    * which can then be used to obtain Asset references by Asset ID.
-    * @param[in] theAssetHandlerID to retrieve
-    */
-   IAssetHandler& getHandler(const typeAssetHandlerID theAssetHandlerID) const;
+      /**
+       * RegisterHandler is responsible for registering an IAssetHandler
+       * derived class with the AssetManager. These handlers are used to manage
+       * various asset types used by game states and other entities.
+       * @param[in] theAssetHandler pointer to register
+       */
+      void registerHandler(IAssetHandler* theAssetHandler);
 
-   /**
-    * RegisterHandler is responsible for registering an IAssetHandler
-    * derived class with the AssetManager. These handlers are used to manage
-    * various asset types used by game states and other entities.
-    * @param[in] theAssetHandler pointer to register
-    */
-   void registerHandler(IAssetHandler* theAssetHandler);
+      /**
+       * LoadAllAssets is responsible for loading all unloaded assets for every
+       * IAssetHandler derived class registered, typically from the
+       * IState::doInit() method.
+       * @return true if all assets load successfully, false otherwise
+       */
+      bool loadAllAssets(void);
 
-   /**
-    * LoadAllAssets is responsible for loading all unloaded assets for every
-    * IAssetHandler derived class registered, typically from the
-    * IState::doInit() method.
-    * @return true if all assets load successfully, false otherwise
-    */
-   bool loadAllAssets(void);
+    private:
+      // Constants
+      ///////////////////////////////////////////////////////////////////////////
 
-private:
-   // Constants
-   ///////////////////////////////////////////////////////////////////////////
+      // Variables
+      ///////////////////////////////////////////////////////////////////////////
+      /// Map to hold all IAssetHandler derived classes that manage assets
+      std::map<const typeAssetHandlerID, IAssetHandler*> mHandlers;
 
-   // Variables
-   ///////////////////////////////////////////////////////////////////////////
-   /// Map to hold all IAssetHandler derived classes that manage assets
-   std::map<const typeAssetHandlerID, IAssetHandler*> mHandlers;
+      /**
+       * AssetManager copy constructor is private because we do not allow copies
+       * of our class
+       */
+      AssetManager(const AssetManager&); // Intentionally undefined
 
-   /**
-    * AssetManager copy constructor is private because we do not allow copies
-    * of our class
-    */
-   AssetManager(const AssetManager&); // Intentionally undefined
-
-   /**
-    * Our assignment operator is private because we do not allow copies
-    * of our class
-    */
-   AssetManager& operator=(const AssetManager&); // Intentionally undefined
-}; // class AssetManager
+      /**
+       * Our assignment operator is private because we do not allow copies
+       * of our class
+       */
+      AssetManager& operator=(const AssetManager&); // Intentionally undefined
+  }; // class AssetManager
 } // namespace GQE
 
 #endif // CORE_ASSET_MANAGER_HPP_INCLUDED

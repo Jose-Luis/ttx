@@ -6,12 +6,13 @@
 #ifndef  WEAPONSYSTEM_INC
 #define  WEAPONSYSTEM_INC
 
+#include <GQE/Core/utils/CRC32.hpp>
 #include <GQE/Entity/interfaces/ISystem.hpp>
 #include <GQE/Entity/Entity_types.hpp>
 #include <GQE/Entity/classes/Instance.hpp>
 #include <TTX/Types.hpp>
+#include <TTX/Definition.hpp>
 #include <TTX/systems/ISystem.hpp>
-#include <TTX/classes/objects/WeaponMachinegun.hpp>
 #include <TTX/classes/objects/WeaponManager.hpp>
 
 class WeaponSystem: public ISystem

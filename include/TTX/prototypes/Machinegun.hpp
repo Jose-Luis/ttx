@@ -1,6 +1,7 @@
 #ifndef  PMACHINEGUN_INC
 #define  PMACHINEGUN_INC
 
+#include <TTX/Definition.hpp>
 #include <TTX/Types.hpp>
 #include <Box2D/Box2D.h>
 #include <TTX/prototypes/PhysicProto.hpp>

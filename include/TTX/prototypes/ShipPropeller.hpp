@@ -1,6 +1,7 @@
 #ifndef SHIPPROPELLER_INC
 #define SHIPPROPELLER_INC
 
+#include<TTX/Definition.hpp>
 #include<Box2D/Box2D.h>
 #include<TTX/prototypes/PhysicProto.hpp>
 #include<TTX/classes/objects/Propeller.hpp>

@@ -9,6 +9,7 @@
 #define PARTICLESYSTEM_T69OX7N
 
 #include <MPE/MPE.hpp>
+#include <GQE/Core/utils/CRC32.hpp>
 #include <TTX/classes/render/RenderManager.hpp>
 
 class Particles: public mpe::System
@@ -16,7 +17,7 @@ class Particles: public mpe::System
 public:
 
    void updateRender(RenderManager& theRenderManager);
-   LayerID getParticleLayer(const mpe::Particle& theParticle);
+   Id getParticleLayer(const mpe::Particle& theParticle);
 
 };
 

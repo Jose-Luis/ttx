@@ -1,6 +1,7 @@
 #ifndef  PTRIANGLE_INC
 #define  PTRIANGLE_INC
 
+#include <TTX/Definition.hpp>
 #include <TTX/prototypes/PhysicProto.hpp>
 #include <TTX/classes/objects/Propeller.hpp>
 #include <TTX/classes/objects/WeaponManager.hpp>

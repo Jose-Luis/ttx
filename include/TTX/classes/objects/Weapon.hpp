@@ -14,7 +14,7 @@ class Weapon
 {
 public:
    Weapon();
-   Weapon(WeaponID,AmunitionID,float,float);
+   Weapon(WeaponID,AmunitionID,float,float,GQE::typeAssetID);
    virtual ~Weapon();
    void fire(Position2D , IActionState* , FireData);
    void loadAmunition(int theAmu);
@@ -34,5 +34,6 @@ private:
    int           mAmunition;
    int           mAmuLoaded;
    WeaponManager* mManager;
+   sf::Sound*    mSound;
 };
 #endif /* end of include guard: WEAPON_8FPXBSUG */

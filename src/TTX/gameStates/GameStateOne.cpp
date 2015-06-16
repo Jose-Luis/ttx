@@ -1,7 +1,7 @@
 #include <TTX/gameStates/GameStateOne.hpp>
 
 GameStateOne::GameStateOne(GQE::IApp& theApp):
-   IActionState("State1", theApp)
+   IActionState(STATE_1, theApp)
 {
 #ifndef NDEBUG
    mStatManager.registerApp(&mApp);
@@ -32,6 +32,7 @@ void GameStateOne::doInit(void)
             GQE::AssetLoadNow,
             GQE::AssetLoadFromFile,
             GQE::AssetDropAtZero);
+
 
    mApp.mAssetManager.loadAllAssets();
    //Prototypes
@@ -85,15 +86,15 @@ void GameStateOne::doInit(void)
    mPrototypes.addPrototype(shipPropellerProto);
 
    //RenderUnits
-   mRenderManager.addLayer("Back", anTileTexture);
-   mRenderManager.addLayer("Fore", anTileTexture);
-   mRenderManager.addLayer("Obj1", anSpriteTexture);
-   mRenderManager.addLayer("Par1", anSpriteTexture);
+   mRenderManager.addLayer(BACKGROUND, anTileTexture);
+   mRenderManager.addLayer(FOREGROUND, anTileTexture);
+   mRenderManager.addLayer(OBJECTS, anSpriteTexture);
+   mRenderManager.addLayer(PARTICLES, anSpriteTexture);
 
-   mRenderManager.getLayer("Obj1").mUpdatable = true;
-   mRenderManager.getLayer("Par1").mUpdatable = true;
-   mRenderManager.getLayer("Back").mUpdatable = false;
-   mRenderManager.getLayer("Fore").mUpdatable = false;
+   mRenderManager.getLayer(OBJECTS).mUpdatable = true;
+   mRenderManager.getLayer(PARTICLES).mUpdatable = true;
+   mRenderManager.getLayer(BACKGROUND).mUpdatable = false;
+   mRenderManager.getLayer(FOREGROUND).mUpdatable = false;
    //Update Rate
    mApp.setUpdateRate(UPDATE_RATE);
    mApp.mWindow.setView(mView);
@@ -130,7 +131,7 @@ void GameStateOne::handleEvents(sf::Event theEvent)
    {
       if(mPlayer)
       {
-         deactivateEntity( mPlayer->mProperties.get<GQE::IEntity*>("Actor"));
+         deactivateEntity( mPlayer->mProperties.get<GQE::IEntity*>(ACTOR));
       }
    }
    else if((theEvent.type == sf::Event::KeyReleased) &&
@@ -144,18 +145,18 @@ void GameStateOne::handleEvents(sf::Event theEvent)
          if(sf::Joystick::isConnected(i) && sf::Joystick::isButtonPressed(i, 0))
             if(!mPlayer)
             {
-               mPlayer = addPlayer(i, "BasicShip", Position2D(40, 160, 90 * TORAD));
-               GQE::IEntity* actor = mPlayer->mProperties.get<GQE::IEntity*>("Actor");
-               GQE::Prototype* propeller = mPrototypes.getPrototype("ShipPropeller");
-               propeller->mProperties.add<GQE::IEntity*>("FatherNode", actor);
-               actor->mProperties.add<GQE::IEntity*>("Propeller", propeller->makeInstance());
-               GQE::Prototype* prototype = mPrototypes.getPrototype("Machinegun");
-               prototype->mProperties.add<GQE::IEntity*>("FatherNode", actor);
-               prototype->mProperties.set<GQE::typePropertyID>("AnchorPoint", "WeaponAnchorLeft");
+               mPlayer = addPlayer(i, BASIC_SHIP_PROTO, Position2D(40, 160, 90 * TORAD));
+               GQE::IEntity* actor = mPlayer->mProperties.get<GQE::IEntity*>(ACTOR);
+               GQE::Prototype* propeller = mPrototypes.getPrototype(SHIP_PROPELLER_PROTO);
+               propeller->mProperties.add<GQE::IEntity*>(FATHER_NODE, actor);
+               actor->mProperties.add<GQE::IEntity*>(PROPELLER, propeller->makeInstance());
+               GQE::Prototype* prototype = mPrototypes.getPrototype(MACHINEGUN_PROTO);
+               prototype->mProperties.add<GQE::IEntity*>(FATHER_NODE, actor);
+               prototype->mProperties.set<GQE::typePropertyID>(ID32_("AnchorPoint"), ID32_("WeaponAnchorLeft"));
                GQE::IEntity* machinegunleft = prototype->makeInstance();
-               actor->mProperties.getPointer<WeaponManager>("WeaponManager")->addWeapon(machinegunleft);
-               prototype->mProperties.set<GQE::typePropertyID>("AnchorPoint", "WeaponAnchorRight");
-               actor->mProperties.getPointer<WeaponManager>("WeaponManager")->addWeapon(prototype->makeInstance());
+               actor->mProperties.getPointer<WeaponManager>(WEAPON_MANAGER)->addWeapon(machinegunleft);
+               prototype->mProperties.set<GQE::typePropertyID>(ID32_("AnchorPoint"), ID32_("WeaponAnchorRight"));
+               actor->mProperties.getPointer<WeaponManager>(WEAPON_MANAGER)->addWeapon(prototype->makeInstance());
             }
       }
    }
@@ -187,10 +188,10 @@ void GameStateOne::updateVariable(float theElapsedTime)
 void GameStateOne::draw(void)
 {
    mApp.mWindow.clear();
-   mRenderManager.drawLayer("Back", mApp.mWindow);
-   mRenderManager.drawLayer("Par1", mApp.mWindow);
-   mRenderManager.drawLayer("Obj1", mApp.mWindow);
-   mRenderManager.drawLayer("Fore", mApp.mWindow);
+   mRenderManager.drawLayer(BACKGROUND, mApp.mWindow);
+   mRenderManager.drawLayer(PARTICLES, mApp.mWindow);
+   mRenderManager.drawLayer(OBJECTS, mApp.mWindow);
+   mRenderManager.drawLayer(FOREGROUND, mApp.mWindow);
 #ifndef NDEBUG
    mStatManager.draw();
 #endif

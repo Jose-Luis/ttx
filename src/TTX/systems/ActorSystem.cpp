@@ -1,7 +1,7 @@
 #include <TTX/systems/ActorSystem.hpp>
 
 ActorSystem::ActorSystem(IActionState& theState):
-   ISystem("ActorSystem", theState)
+   ISystem(ACTOR_SYSTEM, theState)
 {}
 
 ActorSystem::~ActorSystem()
@@ -9,10 +9,10 @@ ActorSystem::~ActorSystem()
 
 void ActorSystem::addProperties(GQE::IEntity* theEntity)
 {
-   theEntity->mProperties.add<GQE::IEntity*>("Player", 0);
-   theEntity->mProperties.add<Position2D>("Position",Position2D(0,0,0));
-   theEntity->mProperties.add<MoveData>("MoveData", MoveData());
-   theEntity->mProperties.add<WeaponManager::Input>("WeaponManagerInput", WeaponManager::Input());
+   theEntity->mProperties.add<GQE::IEntity*>(PLAYER, 0);
+   theEntity->mProperties.add<Position2D>(POSITION,Position2D(0,0,0));
+   theEntity->mProperties.add<MoveData>(MOVE_DATA, MoveData());
+   theEntity->mProperties.add<WeaponManager::Input>(WEAPON_MANAGER_INPUT, WeaponManager::Input());
 }
 
 void ActorSystem::handleEvents(sf::Event theEvent)
@@ -34,18 +34,18 @@ void ActorSystem::updateFixed()
       {
          GQE::IEntity* anEntity = *anQueue;
 
-         GQE::IEntity* propellerEntity = anEntity->mProperties.get<GQE::IEntity*>("Propeller");
+         GQE::IEntity* propellerEntity = anEntity->mProperties.get<GQE::IEntity*>(PROPELLER);
          if(propellerEntity)
          {
-            MoveData moveData = anEntity->mProperties.get<MoveData>("MoveData");
-            propellerEntity->mProperties.set<MoveData>("MoveData",moveData);
+            MoveData moveData = anEntity->mProperties.get<MoveData>(MOVE_DATA);
+            propellerEntity->mProperties.set<MoveData>(MOVE_DATA,moveData);
          }
 
-         WeaponManager::Input weaponManagerInput = anEntity->mProperties.get<WeaponManager::Input>("WeaponManagerInput");
+         WeaponManager::Input weaponManagerInput = anEntity->mProperties.get<WeaponManager::Input>(WEAPON_MANAGER_INPUT);
 
          if(weaponManagerInput.mFireData.mFire)
          {
-            WeaponManager weaponManager = anEntity->mProperties.get<WeaponManager>("WeaponManager");
+            WeaponManager weaponManager = anEntity->mProperties.get<WeaponManager>(WEAPON_MANAGER);
             weaponManager.manage(weaponManagerInput);
          }
 
@@ -67,7 +67,7 @@ void ActorSystem::handleInit(GQE::IEntity* theEntity)
 
 void ActorSystem::handleCleanup(GQE::IEntity* theEntity)
 {
-   GQE::IEntity* aPlayer = theEntity->mProperties.get<GQE::IEntity*>("Player");
+   GQE::IEntity* aPlayer = theEntity->mProperties.get<GQE::IEntity*>(PLAYER);
    if(aPlayer)
-      aPlayer->mProperties.set<GQE::IEntity*>("Actor",0);
+      aPlayer->mProperties.set<GQE::IEntity*>(ACTOR,0);
 }

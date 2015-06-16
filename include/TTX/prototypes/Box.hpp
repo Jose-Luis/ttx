@@ -11,7 +11,7 @@ class Box: public PhysicProto
 public:
 
    Box():
-      PhysicProto("Box")
+      PhysicProto(BOX_PROTO)
    {
       b2FixtureDef anFixture1;
       mShape1.SetAsBox(1, 1);
@@ -31,11 +31,11 @@ public:
       Animation anAnimation(&mAnimation1);
       anAnimation.mLoop = true;
       anAnimation.mFPS = 2;
-      mProperties.add<Animation>("rAnimation", anAnimation);
+      mProperties.add<Animation>(ANIMATION, anAnimation);
 
-      mProperties.add("TexRect", sf::IntRect(96, 0, 32, 32));
-      mProperties.add("Resistance", 5.f);
-      mProperties.add("Health", 150.f);
+      mProperties.add(TEXTURE_RECT, sf::IntRect(96, 0, 32, 32));
+      mProperties.add(RESISTANCE, 5.f);
+      mProperties.add(HEALTH, 150.f);
    }
 private:
 

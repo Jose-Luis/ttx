@@ -8,12 +8,14 @@
 #ifndef RENDERMANAGER_YJUY1HTM
 #define RENDERMANAGER_YJUY1HTM
 
+#include <TTX/Types.hpp>
 #include <TTX/classes/render/Layer.hpp>
 #include <map>
 
 class RenderManager
 {
 public:
+
    /**
     * @brief RenderManager
     * @param theWindow
@@ -28,16 +30,16 @@ public:
     * @param theID
     * @param theTexture
     */
-   void addLayer(LayerID theID, sf::Texture* theTexture)
+   void addLayer(Id theID, sf::Texture* theTexture)
    {
       Layer anLayer(theID, theTexture);
-      mLayers.insert(std::pair<LayerID, Layer>(theID, anLayer));
+      mLayers.insert(std::pair<Id, Layer>(theID, anLayer));
    }
    /**
     * @brief drawLayer
     * @param theID
     */
-   void drawLayer(LayerID theID, sf::RenderWindow& theRenderWindow)
+   void drawLayer(Id theID, sf::RenderWindow& theRenderWindow)
    {
       mLayers[theID].draw(theRenderWindow);
    }
@@ -46,7 +48,7 @@ public:
     * @param theID
     * @return
     */
-   Layer& getLayer(LayerID theID)
+   Layer& getLayer(Id theID)
    {
       return mLayers[theID];
    }
@@ -55,7 +57,7 @@ public:
     * @param theID
     * @param theVertex
     */
-   void addVertex(LayerID theID, const sf::Vertex& theVertex)
+   void addVertex(Id theID, const sf::Vertex& theVertex)
    {
       mLayers[theID].mVertices.append(theVertex);
    }
@@ -64,7 +66,7 @@ public:
     */
    void clear()
    {
-      std::map<LayerID, Layer>::iterator anIter;
+      std::map<Id, Layer>::iterator anIter;
 
       for (anIter = mLayers.begin(); anIter != mLayers.end(); anIter++)
       {
@@ -75,7 +77,7 @@ public:
       }
    }
 private:
-   std::map<LayerID, Layer> mLayers;
+   std::map<Id, Layer> mLayers;
 
 };
 #endif /* end of include guard: RENDERUNIT_YJUY1HTM */

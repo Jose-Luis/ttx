@@ -24,8 +24,8 @@ GQE::Instance* IActionState::addInstance(GQE::typePrototypeID thePrototype,
                                          Position2D           theInitialImpulse)
 {
     GQE::Prototype* prototype = mPrototypes.getPrototype(thePrototype);
-    prototype->mProperties.set<Position2D>("Position", thePosition);
-    prototype->mProperties.set<Position2D>("InitialImpulse", theInitialImpulse);
+    prototype->mProperties.set<Position2D>(POSITION, thePosition);
+    prototype->mProperties.set<Position2D>(INITIAL_IMPULSE, theInitialImpulse);
 
     return prototype->makeInstance();
 }
@@ -39,14 +39,14 @@ GQE::IEntity* IActionState::addPlayer(int                  theJoy,
 
     if(mPlayers.find(theJoy) == mPlayers.end())
     {
-        player = mPrototypes.getPrototype("Player")->makeInstance();
+        player = mPrototypes.getPrototype(PLAYER_PROTO)->makeInstance();
         GQE::Prototype* actorProto = mPrototypes.getPrototype(thePrototype);
-        actorProto->mProperties.set<Position2D>("Position", thePosition);
+        actorProto->mProperties.set<Position2D>(POSITION, thePosition);
         actor = actorProto->makeInstance();
 
-        player->mProperties.set<GQE::IEntity*>("Actor",actor);
-        player->mProperties.set<int>("Joystick", theJoy);
-        actor->mProperties.set<GQE::IEntity*>("Player",player);
+        player->mProperties.set<GQE::IEntity*>(ACTOR,actor);
+        player->mProperties.set<int>(JOYSTICK, theJoy);
+        actor->mProperties.set<GQE::IEntity*>(PLAYER,player);
     }
 
     return player;
@@ -56,8 +56,8 @@ void IActionState::deactivateEntity(GQE::IEntity* theEntity)
 {
    if(theEntity)
    {
-      theEntity->mProperties.set<bool>("Visible",false);
-      b2Body* body = theEntity->mProperties.get<b2Body*>("Body");
+      theEntity->mProperties.set<bool>(VISIBLE,false);
+      b2Body* body = theEntity->mProperties.get<b2Body*>(BODY);
       body->SetActive(false);
    }
 }
@@ -66,29 +66,29 @@ void IActionState::activeEntity(GQE::IEntity* theEntity)
 {
    if(theEntity)
    {
-      theEntity->mProperties.set<bool>("Visible",true);
-      b2Body* body = theEntity->mProperties.get<b2Body*>("Body");
+      theEntity->mProperties.set<bool>(VISIBLE,true);
+      b2Body* body = theEntity->mProperties.get<b2Body*>(BODY);
       body->SetActive(true);
    }
 }
 
 void IActionState::attachEntities(GQE::IEntity* theFather,GQE::IEntity* theChild,GQE::typePropertyID theChildName)
 {
-   b2Body* childBody = theChild->mProperties.get<b2Body*>("Body");
+   b2Body* childBody = theChild->mProperties.get<b2Body*>(BODY);
    if(childBody)
    {
       childBody->SetActive(false);
-      theChild->mProperties.add("FatherNode",0);
-      theChild->mProperties.set<GQE::IEntity*>("FatherNode",theFather);
+      theChild->mProperties.add(FATHER_NODE,0);
+      theChild->mProperties.set<GQE::IEntity*>(FATHER_NODE,theFather);
 
       GQE::Uint32 order = theFather->getOrder();
       theChild->setOrder(order++); //Don't touch otherwise CRASH!!
       theFather->mProperties.add(theChildName,0);
       theFather->mProperties.set<GQE::IEntity*>(theChildName, theChild);
 
-      b2Body* fatherBody = theFather->mProperties.get<b2Body*>("Body");
+      b2Body* fatherBody = theFather->mProperties.get<b2Body*>(BODY);
 
-      b2JointDef*  jointDef = theChild->mProperties.get<b2JointDef*>("JointDef");
+      b2JointDef*  jointDef = theChild->mProperties.get<b2JointDef*>(JOINTDEF);
 
       if(jointDef)
       {
@@ -96,7 +96,7 @@ void IActionState::attachEntities(GQE::IEntity* theFather,GQE::IEntity* theChild
          {
             case b2JointType::e_weldJoint:
                {
-                  GQE::typePropertyID anchorPoint = theChild->mProperties.get<GQE::typePropertyID>("AnchorPoint");
+                  GQE::typePropertyID anchorPoint = theChild->mProperties.get<GQE::typePropertyID>(ID32_("AnchorPoint"));
                   b2Vec2 fatherAnchorPoint = theFather->mProperties.get<b2Vec2>(anchorPoint);
                   b2WeldJointDef* weldJointDef = static_cast<b2WeldJointDef*>(jointDef);
                   weldJointDef->localAnchorA = fatherAnchorPoint;
@@ -112,7 +112,7 @@ void IActionState::attachEntities(GQE::IEntity* theFather,GQE::IEntity* theChild
          jointDef->bodyA = fatherBody;
          jointDef->bodyB = childBody;
          b2Joint* joint = mWorld.CreateJoint(jointDef);
-         theChild->mProperties.set<b2Joint*>("Joint", joint);
+         theChild->mProperties.set<b2Joint*>(JOINT, joint);
       }
       childBody->SetActive(true);
    }

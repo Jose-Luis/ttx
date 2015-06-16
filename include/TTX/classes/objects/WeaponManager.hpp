@@ -2,10 +2,11 @@
 #define WEAPONMANAGER_INC
 
 #include <TTX/Types.hpp>
+#include <TTX/Definition.hpp>
 #include <set>
+#include <GQE/Core/utils/CRC32.hpp>
 #include <TTX/gameStates/IActionState.hpp>
 #include <TTX/classes/objects/Weapon.hpp>
-#include <TTX/classes/objects/WeaponMachinegun.hpp>
 
 class WeaponManager
 {

@@ -1,9 +1,9 @@
 #include <TTX/prototypes/ShipPropeller.hpp>
 
 ShipPropeller::ShipPropeller(Particles& theSystem):
-   PhysicProto("ShipPropeller")
+   PhysicProto(SHIP_PROPELLER_PROTO)
 {
-   mProperties.add<EntityID>("Name", "Propeller");
+   mProperties.add<EntityID>(NAME, PROPELLER);
 
    b2FixtureDef anFixture1;
    mShape.SetAsBox(0.375, 0.28125);
@@ -17,20 +17,20 @@ ShipPropeller::ShipPropeller(Particles& theSystem):
 
    mBodyDef.type = b2_dynamicBody;
    mJointDef.localAnchorB = b2Vec2(0, 0.4);
-   mProperties.add<b2JointDef*>("JointDef", &mJointDef);
+   mProperties.add<b2JointDef*>(JOINTDEF, &mJointDef);
 
-   mProperties.add<GQE::typePropertyID>("AnchorPoint", "PropellerAnchor");
+   mProperties.add<GQE::typePropertyID>(ID32_("AnchorPoint"), ID32_("PropellerAnchor"));
 
    Propeller* propeller = new Propeller(theSystem);
    propeller->setEmitterID("ShipPropeller");
-   propeller->setLinearPower(8192);
+   propeller->setLinearPower(16000);
    propeller->setTurnPower(32768);
 
-   mProperties.add<IPropeller*>("Propeller", propeller);
+   mProperties.add<IPropeller*>(PROPELLER, propeller);
 
-   mProperties.add<sf::IntRect>("TexRect",sf::IntRect(42,96,12,9));
-   mProperties.add("Resistance", 5.f);
-   mProperties.add("Health", 150.f);
-   mProperties.add<MoveData>("MoveData", MoveData());
+   mProperties.add<sf::IntRect>(TEXTURE_RECT,sf::IntRect(42,96,12,9));
+   mProperties.add(RESISTANCE, 5.f);
+   mProperties.add(HEALTH, 150.f);
+   mProperties.add<MoveData>(MOVE_DATA, MoveData());
 
 }

@@ -54,7 +54,7 @@ include_directories(${SFML_INCLUDE_DIR})
 if(MSVC)
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3")
 elseif(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
-   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall  -pedantic")
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -std=c++11 -Wall -pedantic")
 endif()
 
 ADD_DEFINITIONS(-DSFML_DYNAMIC)

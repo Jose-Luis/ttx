@@ -6,8 +6,8 @@
 // Description:  default constructor
 //------------------------------------------------------------------------------
 Weapon::Weapon():
-   mID("Submachinegun"),
-   mAmunitionType("SimpleBullet"),
+   mID(SUBMACHINEGUN),
+   mAmunitionType(SIMPLE_BULLET_PROTO),
    mCadency(0.1),
    mPower(128),
    mLastTime(0),
@@ -15,12 +15,14 @@ Weapon::Weapon():
    mManager(0)
 {
 }
-Weapon::Weapon(WeaponID theID,AmunitionID theAmuID,float thePower,float theCadency):
+Weapon::Weapon(WeaponID theID,AmunitionID theAmuID,float thePower,float theCadency,GQE::typeAssetID theAssetID):
    mID(theID),
    mAmunitionType(theAmuID),
    mCadency(theCadency),
    mPower(thePower)
-{}
+{
+   }
+
 //------------------------------------------------------------------------------
 //       Class:  Weapon
 //      Method:  ~Weapon

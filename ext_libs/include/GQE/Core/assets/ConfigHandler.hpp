@@ -8,60 +8,60 @@
  */
 #ifndef   CORE_CONFIG_HANDLER_HPP_INCLUDED
 #define   CORE_CONFIG_HANDLER_HPP_INCLUDED
-
+ 
 #include <GQE/Core/classes/ConfigReader.hpp>
 #include <GQE/Core/interfaces/TAssetHandler.hpp>
 #include <GQE/Core/Core_types.hpp>
 
 namespace GQE
 {
-/// Provides the ConfigHandler class for managing ConfigReader assets
-class GQE_API ConfigHandler : public TAssetHandler<ConfigReader>
-{
-public:
-   /**
-    * ConfigHandler constructor
-    */
-   ConfigHandler();
+  /// Provides the ConfigHandler class for managing ConfigReader assets
+  class GQE_API ConfigHandler : public TAssetHandler<ConfigReader>
+  {
+  public:
+    /**
+     * ConfigHandler constructor
+     */
+    ConfigHandler();
+ 
+    /**
+     * ConfigHandler deconstructor
+     */
+    virtual ~ConfigHandler();
+ 
+  protected:
+    /**
+     * LoadFromFile is responsible for loading theAsset from a file and must
+     * be defined by the derived class since the interface for TYPE is
+     * unknown at this stage.
+     * @param[in] theAssetID of the asset to be loaded
+     * @param[in] theAsset pointer to load
+     * @return true if the asset was successfully loaded, false otherwise
+     */
+    virtual bool loadFromFile(const typeAssetID theAssetID, ConfigReader& theAsset);
 
-   /**
-    * ConfigHandler deconstructor
-    */
-   virtual ~ConfigHandler();
+    /**
+     * LoadFromMemory is responsible for loading theAsset from memory and
+     * must be defined by the derived class since the interface for TYPE is
+     * unknown at this stage.
+     * @param[in] theAssetID of the asset to be loaded
+     * @param[in] theAsset pointer to load
+     * @return true if the asset was successfully loaded, false otherwise
+     */
+    virtual bool loadFromMemory(const typeAssetID theAssetID, ConfigReader& theAsset);
 
-protected:
-   /**
-    * LoadFromFile is responsible for loading theAsset from a file and must
-    * be defined by the derived class since the interface for TYPE is
-    * unknown at this stage.
-    * @param[in] theAssetID of the asset to be loaded
-    * @param[in] theAsset pointer to load
-    * @return true if the asset was successfully loaded, false otherwise
-    */
-   virtual bool loadFromFile(const typeAssetID theAssetID, ConfigReader& theAsset);
+    /**
+     * LoadFromNetwork is responsible for loading theAsset from network and
+     * must be defined by the derived class since the interface for TYPE is
+     * unknown at this stage.
+     * @param[in] theAssetID of the asset to be loaded
+     * @param[in] theAsset pointer to load
+     * @return true if the asset was successfully loaded, false otherwise
+     */
+    virtual bool loadFromNetwork(const typeAssetID theAssetID, ConfigReader& theAsset);
 
-   /**
-    * LoadFromMemory is responsible for loading theAsset from memory and
-    * must be defined by the derived class since the interface for TYPE is
-    * unknown at this stage.
-    * @param[in] theAssetID of the asset to be loaded
-    * @param[in] theAsset pointer to load
-    * @return true if the asset was successfully loaded, false otherwise
-    */
-   virtual bool loadFromMemory(const typeAssetID theAssetID, ConfigReader& theAsset);
-
-   /**
-    * LoadFromNetwork is responsible for loading theAsset from network and
-    * must be defined by the derived class since the interface for TYPE is
-    * unknown at this stage.
-    * @param[in] theAssetID of the asset to be loaded
-    * @param[in] theAsset pointer to load
-    * @return true if the asset was successfully loaded, false otherwise
-    */
-   virtual bool loadFromNetwork(const typeAssetID theAssetID, ConfigReader& theAsset);
-
-private:
-}; // class ConfigHandler
+  private:
+  }; // class ConfigHandler
 } // namespace GQE
 
 #endif // CORE_CONFIG_MANAGER_HPP_INCLUDED

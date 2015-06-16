@@ -9,7 +9,7 @@
 RenderSystem::RenderSystem(IActionState& theState,
                            RenderManager& theRenderManager,
                            float theFactor):
-   ISystem("RenderSystem", theState),
+   ISystem(RENDER_SYSTEM, theState),
    mRenderManager(theRenderManager),
    mFactor(theFactor)
 {
@@ -24,11 +24,11 @@ RenderSystem::~RenderSystem()
 
 void RenderSystem::addProperties(GQE::IEntity* theEntity)
 {
-   theEntity->mProperties.add<Position2D>  ("Position", Position2D(0, 0, 0));
-   theEntity->mProperties.add<sf::Vector2f>  ("Scale", sf::Vector2f(1, 1));
-   theEntity->mProperties.add<sf::IntRect>  ("TexRect", sf::IntRect(0, 0, 0, 0));
-   theEntity->mProperties.add<bool>          ("Visible", true);
-   theEntity->mProperties.add<LayerID>       ("LayerID", "Obj1");
+   theEntity->mProperties.add<Position2D>  (POSITION, Position2D(0, 0, 0));
+   theEntity->mProperties.add<sf::Vector2f>  (SCALE, sf::Vector2f(1, 1));
+   theEntity->mProperties.add<sf::IntRect>  (TEXTURE_RECT, sf::IntRect(0, 0, 0, 0));
+   theEntity->mProperties.add<bool>          (VISIBLE, true);
+   theEntity->mProperties.add<LayerID>       (LAYER, OBJECTS);
 }
 
 void RenderSystem::handleInit(GQE::IEntity* theEntity)
@@ -50,12 +50,12 @@ void RenderSystem::updateFixed()
       {
          GQE::IEntity* anEntity = *anQueue;
 
-         if(anEntity->mProperties.get<bool>("Visible"))
+         if(anEntity->mProperties.get<bool>(VISIBLE))
          {
-            Position2D anPosition = anEntity->mProperties.get<Position2D>("Position") * mFactor;
-            sf::Vector2f anScale    = anEntity->mProperties.get<sf::Vector2f>("Scale");
-            sf::IntRect anTexRect  = anEntity->mProperties.get<sf::IntRect>("TexRect");
-            LayerID  anLayerID  = anEntity->mProperties.get<LayerID>("LayerID");
+            Position2D anPosition = anEntity->mProperties.get<Position2D>(POSITION) * mFactor;
+            sf::Vector2f anScale    = anEntity->mProperties.get<sf::Vector2f>(SCALE);
+            sf::IntRect anTexRect  = anEntity->mProperties.get<sf::IntRect>(TEXTURE_RECT);
+            LayerID  anLayerID  = anEntity->mProperties.get<LayerID>(LAYER);
 
             sf::Transform anTransform;
 

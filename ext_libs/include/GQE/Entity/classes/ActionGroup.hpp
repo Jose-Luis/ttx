@@ -20,97 +20,97 @@
 
 namespace GQE
 {
-/// Provides the PropertyManager class for managing IProperty classes
-class GQE_API ActionGroup
-{
-public:
-   /**
-    * ActionGroup default constructor
-    */
-   ActionGroup();
+  /// Provides the PropertyManager class for managing IProperty classes
+  class GQE_API ActionGroup
+  {
+    public:
+      /**
+       * ActionGroup default constructor
+       */
+      ActionGroup();
 
-   /**
-    * ActionGroup default constructor
-    * @param[in] theActionSystem pointer to use for adding actions
-    */
-   ActionGroup(ActionSystem* theActionSystem);
+      /**
+       * ActionGroup default constructor
+       * @param[in] theActionSystem pointer to use for adding actions
+       */
+      ActionGroup(ActionSystem* theActionSystem);
 
-   /**
-    * ActionGroup deconstructor
-    */
-   virtual ~ActionGroup();
+      /**
+       * ActionGroup deconstructor
+       */
+      virtual ~ActionGroup();
 
-   /**
-    * IsAvailable returns true if theActionID specified exists in either the
-    * active or disabled ActionGroup lists.
-    * @param[in] theActionID to lookup in the ActionGroup lists
-    * @return true if theActionID is available, false otherwise
-    */
-   bool isAvailable(const typeActionID theActionID) const;
+      /**
+       * IsAvailable returns true if theActionID specified exists in either the
+       * active or disabled ActionGroup lists.
+       * @param[in] theActionID to lookup in the ActionGroup lists
+       * @return true if theActionID is available, false otherwise
+       */
+      bool isAvailable(const typeActionID theActionID) const;
 
-   /**
-    * IsActive returns true if theActionID provided is currently active in
-    * this ActionGroup.
-    * @param[in] theActionID to lookup in this ActionGroup
-    * @return true if theActionID exists and is active, false otherwise
-    */
-   bool isActive(const typeActionID theActionID) const;
+      /**
+       * IsActive returns true if theActionID provided is currently active in
+       * this ActionGroup.
+       * @param[in] theActionID to lookup in this ActionGroup
+       * @return true if theActionID exists and is active, false otherwise
+       */
+      bool isActive(const typeActionID theActionID) const;
 
-   /**
-    * Activate will active theActionID specified if it is available in the
-    * disabled ActionGroup list.
-    * @param[in] theActionID to activate
-    */
-   void activate(const typeActionID theActionID);
+      /**
+       * Activate will active theActionID specified if it is available in the
+       * disabled ActionGroup list.
+       * @param[in] theActionID to activate
+       */
+      void activate(const typeActionID theActionID);
 
-   /**
-    * Disable will disable theActionID specified if it is found in the
-    * active ActionGroup list.
-    * @param[in] theActionID to disable
-    */
-   void disable(const typeActionID theActionID);
+      /**
+       * Disable will disable theActionID specified if it is found in the
+       * active ActionGroup list.
+       * @param[in] theActionID to disable
+       */
+      void disable(const typeActionID theActionID);
 
-   /**
-    * Add will attempt to retrieve theActionID from the ActionSystem and
-    * add the action as a disabled action in this ActionGroup class.
-    * @param[in] theActionID to find in the ActionSystem and add
-    */
-   void add(const typeActionID theActionID);
+      /**
+       * Add will attempt to retrieve theActionID from the ActionSystem and
+       * add the action as a disabled action in this ActionGroup class.
+       * @param[in] theActionID to find in the ActionSystem and add
+       */
+      void add(const typeActionID theActionID);
 
-   /**
-    * Drop will attempt to drop theActionID from both the active or
-    * disabled ActionGroup list such that it can never be activated
-    * again for this ActionGroup.
-    * @param[in] theActionID to find and drop in the ActionGroup lists
-    */
-   void drop(const typeActionID theActionID);
+      /**
+       * Drop will attempt to drop theActionID from both the active or
+       * disabled ActionGroup list such that it can never be activated
+       * again for this ActionGroup.
+       * @param[in] theActionID to find and drop in the ActionGroup lists
+       */
+      void drop(const typeActionID theActionID);
 
-   /**
-    * DoActions is responsible for calling the DoAction method and providing
-    * the IEntity pointer for each Active action in this ActionGroup.
-    * @param[in] theEntity pointer to provide to each DoAction method
-    */
-   void doActions(IEntity* theEntity);
+      /**
+       * DoActions is responsible for calling the DoAction method and providing
+       * the IEntity pointer for each Active action in this ActionGroup.
+       * @param[in] theEntity pointer to provide to each DoAction method
+       */
+      void doActions(IEntity* theEntity);
 
-   /**
-    * SetActionSystem will save theActionSystem pointer provided as the
-    * source for adding new actions to this ActionGroup.
-    */
-   void setActionSystem(ActionSystem* theActionSystem);
+      /**
+       * SetActionSystem will save theActionSystem pointer provided as the
+       * source for adding new actions to this ActionGroup.
+       */
+      void setActionSystem(ActionSystem* theActionSystem);
 
-protected:
+    protected:
 
-private:
-   // Variables
-   ///////////////////////////////////////////////////////////////////////////
-   /// A reference address to the ActionSystem class
-   ActionSystem* mActionSystem;
-   /// A map of all active IActions available for this ActionGroup class
-   std::map<const typeActionID, IAction*> mActive;
-   /// A map of all disabled IActions available for this ActionGroup class
-   std::map<const typeActionID, IAction*> mDisabled;
+    private:
+      // Variables
+      ///////////////////////////////////////////////////////////////////////////
+      /// A reference address to the ActionSystem class
+      ActionSystem* mActionSystem;
+      /// A map of all active IActions available for this ActionGroup class
+      std::map<const typeActionID, IAction*> mActive;
+      /// A map of all disabled IActions available for this ActionGroup class
+      std::map<const typeActionID, IAction*> mDisabled;
 
-}; // ActionGroup class
+  }; // ActionGroup class
 } // namespace GQE
 
 #endif

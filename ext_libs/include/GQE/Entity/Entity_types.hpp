@@ -19,36 +19,36 @@
 
 namespace GQE
 {
-// Forward declare GQE Entity interfaces provided
-class IAction;
-class IEntity;
-class ISystem;
+  // Forward declare GQE Entity interfaces provided
+  class IAction;
+  class IEntity;
+  class ISystem;
 
-// Forward declare GQE Entity classes provided
-class Prototype;
-class Instance;
-class PrototypeManager;
+  // Forward declare GQE Entity classes provided
+  class Prototype;
+  class Instance;
+  class PrototypeManager;
 
-// Forward declare GQE Entity systems provided
-class ActionSystem;
-class AnimationSystem;
-class MovementSystem;
-class RenderSystem;
+  // Forward declare GQE Entity systems provided
+  class ActionSystem;
+  class AnimationSystem;
+  class MovementSystem;
+  class RenderSystem;
 
-/// Declare Action ID typedef which is used for identifying IAction objects
-typedef std::string typeActionID;
+  /// Declare Action ID typedef which is used for identifying IAction objects
+  typedef uint32_t typeActionID;
 
-/// Declare Entity ID typedef which is used for identifying IEntity objects
-typedef Uint32 typeEntityID;
+  /// Declare Entity ID typedef which is used for identifying IEntity objects
+  typedef Uint32 typeEntityID;
 
-/// Declare Prototype ID typedef which is used for identifying Prototype objects
-typedef std::string typePrototypeID;
+  /// Declare Prototype ID typedef which is used for identifying Prototype objects
+  typedef uint32_t typePrototypeID;
 
-/// Declare System ID typedef which is used for identifying ISystem objects
-typedef std::string typeChildID;
+  /// Declare System ID typedef which is used for identifying ISystem objects
+  typedef uint32_t typeChildID;
 
-/// Declare System ID typedef which is used for identifying ISystem objects
-typedef std::string typeSystemID;
+  /// Declare System ID typedef which is used for identifying ISystem objects
+  typedef uint32_t typeSystemID;
 }
 #endif // ENTITY_TYPES_HPP_INCLUDED
 

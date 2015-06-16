@@ -7,7 +7,7 @@
 #include <TTX/systems/AnimationSystem.hpp>
 
 AnimationSystem::AnimationSystem(IActionState& theState):
-   ISystem("AnimationSystem", theState)
+   ISystem(ANIMATION_SYSTEM, theState)
 {}
 
 AnimationSystem::~AnimationSystem()
@@ -15,7 +15,7 @@ AnimationSystem::~AnimationSystem()
 
 void AnimationSystem::addProperties(GQE::IEntity* theEntity)
 {
-   theEntity->mProperties.add<sf::IntRect>("TexRect", sf::IntRect(0, 0, 0, 0));
+   theEntity->mProperties.add<sf::IntRect>(TEXTURE_RECT, sf::IntRect(0, 0, 0, 0));
 }
 
 void AnimationSystem::handleInit(GQE::IEntity* theEntity)
@@ -37,10 +37,10 @@ void AnimationSystem::updateFixed()
       {
          GQE::IEntity* anEntity = *anQueue;
 
-         Animation* anAnimation = anEntity->mProperties.getPointer<Animation>("rAnimation");
+         Animation* anAnimation = anEntity->mProperties.getPointer<Animation>(ANIMATION);
          sf::IntRect anTexRect = anAnimation->getFrame();
          anAnimation->update(SPU);
-         anEntity->mProperties.set("TexRect", anTexRect);
+         anEntity->mProperties.set(TEXTURE_RECT, anTexRect);
 
          anQueue++;
       }

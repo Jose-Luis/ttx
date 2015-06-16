@@ -2,10 +2,12 @@
 #define IACTIONSTATE_M3AYKRER
 
 #include <Box2D/Box2D.h>
+#include <GQE/Core/utils/CRC32.hpp>
 #include <GQE/Core/interfaces/IState.hpp>
 #include <GQE/Entity/classes/PrototypeManager.hpp>
 #include <GQE/Entity/classes/Prototype.hpp>
 #include <GQE/Entity/classes/Instance.hpp>
+#include <TTX/Definition.hpp>
 #include <TTX/Types.hpp>
 #include <TTX/systems/ISystem.hpp>
 #include <TTX/classes/render/RenderManager.hpp>

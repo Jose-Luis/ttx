@@ -23,104 +23,104 @@
 
 namespace GQE
 {
-/// The IEntity base class to be managed by the EntityManager class
-class GQE_API IEntity
-{
-public:
-   // Variables
-   ///////////////////////////////////////////////////////////////////////////
-   PropertyManager mProperties;
+  /// The IEntity base class to be managed by the EntityManager class
+  class GQE_API IEntity
+  {
+    public:
+      // Variables
+      ///////////////////////////////////////////////////////////////////////////
+      PropertyManager mProperties;
 
-   /**
-    * IEntity default constructor
-    */
-   IEntity(Uint32 theOrder = 0);
+      /**
+       * IEntity default constructor
+       */
+      IEntity(Uint32 theOrder = 0);
 
-   /**
-    * IEntity destructor
-    */
-   virtual ~IEntity();
+      /**
+       * IEntity destructor
+       */
+      virtual ~IEntity();
 
-   /**
-    * GetID will return the Entity ID used by this IEntity class.
-    * @return the entity ID for this IEntity class
-    */
-   const typeEntityID getID(void) const;
+      /**
+       * GetID will return the Entity ID used by this IEntity class.
+       * @return the entity ID for this IEntity class
+       */
+      const typeEntityID getID(void) const;
 
-   /**
-    * UseNextID Gets the next available Entity ID.
-    * @return an ID of an IEntity;
-    */
-   static typeEntityID useNextID();
+      /**
+       * UseNextID Gets the next available Entity ID.
+       * @return an ID of an IEntity;
+       */
+      static typeEntityID useNextID();
 
-   /**
-    * GetOrder will return the z-order value assigned to this IEntity which
-    * can be used to organize the display or processing order of each
-    * IEntity class assigned to a ISystem (see RenderSystem).
-    * @return the z-order value assigned to this IEntity class
-    */
-   const Uint32 getOrder(void) const;
+      /**
+       * GetOrder will return the z-order value assigned to this IEntity which
+       * can be used to organize the display or processing order of each
+       * IEntity class assigned to a ISystem (see RenderSystem).
+       * @return the z-order value assigned to this IEntity class
+       */
+      const Uint32 getOrder(void) const;
 
-   /**
-    * SetOrder will set the z-order value for this IEntity which can be used
-    * to organize the display or processing order of each IEntity class
-    * assigned to a ISystem (see RenderSystem).
-    * @param[in] theOrder to be assigned to this IEntity class
-    */
-   void setOrder(const Uint32 theOrder);
+      /**
+       * SetOrder will set the z-order value for this IEntity which can be used
+       * to organize the display or processing order of each IEntity class
+       * assigned to a ISystem (see RenderSystem).
+       * @param[in] theOrder to be assigned to this IEntity class
+       */
+      void setOrder(const Uint32 theOrder);
 
-   /**
-    * Destroy is responsible for safely marking this IEntity class for
-    * being destroyed and should be implemented by a derived class.
-    */
-   virtual void destroy(void) = 0;
+      /**
+       * Destroy is responsible for safely marking this IEntity class for
+       * being destroyed and should be implemented by a derived class.
+       */
+      virtual void destroy(void) = 0;
 
-   /**
-    * AddSystem adds a dependant system to the entity.
-    * @param[in] theSystem is a pointer to the active system.
-    */
-   void addSystem(ISystem* theSystem);
+      /**
+       * AddSystem adds a dependant system to the entity.
+       * @param[in] theSystem is a pointer to the active system.
+       */
+      void addSystem(ISystem* theSystem);
 
-   /**
-    * HasSystem confirms that theSystemID has been registered with this
-    * IEntity class.
-    * @param[in] theSystemID to confirm is registered
-    */
-   bool hasSystem(const typeSystemID theSystemID) const;
+      /**
+       * HasSystem confirms that theSystemID has been registered with this
+       * IEntity class.
+       * @param[in] theSystemID to confirm is registered
+       */
+      bool hasSystem(const typeSystemID theSystemID) const;
 
-   /**
-    * DropSystem removes a dependent system from the entity.
-    * @param[in] theSystemID to find and drop from this entity
-    */
-   void dropSystem(const typeSystemID theSystemID);
+      /**
+       * DropSystem removes a dependent system from the entity.
+       * @param[in] theSystemID to find and drop from this entity
+       */
+      void dropSystem(const typeSystemID theSystemID);
 
-protected:
-   // Variables
-   ///////////////////////////////////////////////////////////////////////////
-   //A list of systems this entity is controlled by
-   std::map<const typeSystemID, ISystem*> mSystems;
+    protected:
+      // Variables
+      ///////////////////////////////////////////////////////////////////////////
+      //A list of systems this entity is controlled by
+      std::map<const typeSystemID, ISystem*> mSystems;
 
-   /**
-    * DropAllSystems is responsible for removing this IEntity class from all
-    * registered ISystem classes.
-    */
-   void dropAllSystems(void);
-private:
-   // Variables
-   ///////////////////////////////////////////////////////////////////////////
-   /// The entity ID assigned to this IEntity class
-   const typeEntityID  mEntityID;
-   /// The z-order assigned to this IEntity class
-   Uint32              mOrder;
-   /// The next ID to assign to a new Instance class
-   static typeEntityID mNextID;
+      /**
+       * DropAllSystems is responsible for removing this IEntity class from all
+       * registered ISystem classes.
+       */
+      void dropAllSystems(void);
+    private:
+      // Variables
+      ///////////////////////////////////////////////////////////////////////////
+      /// The entity ID assigned to this IEntity class
+      const typeEntityID  mEntityID;
+      /// The z-order assigned to this IEntity class
+      Uint32              mOrder;
+      /// The next ID to assign to a new Instance class
+      static typeEntityID mNextID;
 
-   /**
-    * EraseSystem will erase the ISystem iterator provided.
-    * @param[in] theSystemIter iterator to be erased
-    */
-   void eraseSystem(std::map<const typeSystemID, ISystem*>::iterator theSystemIter);
-}; // class IEntity
+      /**
+       * EraseSystem will erase the ISystem iterator provided.
+       * @param[in] theSystemIter iterator to be erased
+       */
+      void eraseSystem(std::map<const typeSystemID, ISystem*>::iterator theSystemIter);
+  }; // class IEntity
 } // namespace GQE
 
 #endif // IENTITY_HPP_INCLUDED

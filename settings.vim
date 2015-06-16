@@ -9,3 +9,4 @@ endfunc
 map <F4> :Make<CR>
 map <F5> :call Run()<CR>
 map <F6> :call Debug()<CR>
+let g:surround_45 = "ID32_(\r)"

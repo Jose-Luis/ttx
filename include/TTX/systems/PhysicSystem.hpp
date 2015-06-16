@@ -21,11 +21,14 @@
 #include <iostream>
 #include <vector>
 #include <Box2D/Box2D.h>
+#include <GQE/Core/utils/CRC32.hpp>
 #include <GQE/Entity/interfaces/ISystem.hpp>
 #include <GQE/Entity/Entity_types.hpp>
 #include <GQE/Entity/classes/Instance.hpp>
 #include <TTX/prototypes/PhysicProto.hpp>
 #include <TTX/Types.hpp>
+#include <TTX/Definition.hpp>
+#include <TTX/Definition.hpp>
 #include <TTX/systems/ISystem.hpp>
 
 class PhysicSystem: public ISystem

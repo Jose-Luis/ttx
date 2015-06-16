@@ -1,5 +1,4 @@
 #include<TTX/classes/particles/Particles.hpp>
-#include<iostream>
 
 void Particles::updateRender(RenderManager& theRenderManager)
 {
@@ -10,7 +9,7 @@ void Particles::updateRender(RenderManager& theRenderManager)
       mpe::Color anColor = it->getColor();
 
       sf::Transform anTransform;
-      LayerID anLayerID = getParticleLayer(*it);
+      Id anLayerID = getParticleLayer(*it);
 
       anTransform.translate(anPosition.getX() * getXFactor(), anPosition.getY() * getYFactor());
       anTransform.rotate(it->getAngle());
@@ -35,14 +34,14 @@ void Particles::updateRender(RenderManager& theRenderManager)
    }
 }
 
-LayerID Particles::getParticleLayer(const mpe::Particle& theParticle)
+Id Particles::getParticleLayer(const mpe::Particle& theParticle)
 {
    if(theParticle.belongToGroup(mpe::GROUP_A | mpe::GROUP_B | mpe::GROUP_C | mpe::GROUP_D))
    {
-      return "Par1";
+      return ID32_("Par1");
    }
    else
    {
-      return "Par2";
+      return ID32_("Par2");
    }
 }

@@ -17,7 +17,7 @@
 #include <TTX/systems/PlayerSystem.hpp>
 
 PlayerSystem::PlayerSystem(IActionState& theState, sf::View& theView, float theFactor):
-   ISystem("PlayerSystem", theState),
+   ISystem(PLAYER_SYSTEM, theState),
    mView(theView),
    mAngle(theView.getRotation()),
    mRot(mAngle * TORAD),
@@ -28,11 +28,11 @@ PlayerSystem::~PlayerSystem()
 {}
 void PlayerSystem::addProperties(GQE::IEntity* theEntity)
 {
-   theEntity->mProperties.add<int>("ID", 0);
-   theEntity->mProperties.add<int>("Joystick", 0);
-   theEntity->mProperties.add<int>("Points", 0);
-   theEntity->mProperties.add<std::string>("Name", "");
-   theEntity->mProperties.add<GQE::IEntity*>("Actor", 0);
+   theEntity->mProperties.add<int>(ID, 0);
+   theEntity->mProperties.add<int>(JOYSTICK, 0);
+   theEntity->mProperties.add<int>(POINTS, 0);
+   theEntity->mProperties.add<std::string>(NAME, "");
+   theEntity->mProperties.add<GQE::IEntity*>(ACTOR, 0);
 }
 
 void PlayerSystem::handleEvents(sf::Event theEvent)
@@ -54,14 +54,14 @@ void PlayerSystem::updateFixed()
       {
          GQE::IEntity* anEntity = *anQueue;
 
-         GQE::IEntity* actor = anEntity->mProperties.get<GQE::IEntity*>("Actor");
+         GQE::IEntity* actor = anEntity->mProperties.get<GQE::IEntity*>(ACTOR);
 
          if(actor)
          {
-            int joy = anEntity->mProperties.get<int>("Joystick");
+            int joy = anEntity->mProperties.get<int>(JOYSTICK);
 
             processJoystick(joy,actor);
-            Position2D anPosition2D = actor->mProperties.get<Position2D>("Position");
+            Position2D anPosition2D = actor->mProperties.get<Position2D>(POSITION);
             sf::Vector2f anPosition(anPosition2D.x, anPosition2D.y);
             anPositions.push_back(anPosition);
          }
@@ -195,7 +195,7 @@ void PlayerSystem::processJoystick(int theJoy, GQE::IEntity* theActor)
       mRot.Set(mAngle * TORAD);
    }
 
-   theActor->mProperties.set<MoveData>("MoveData", anMoveData);
+   theActor->mProperties.set<MoveData>(MOVE_DATA, anMoveData);
 
    WeaponManager::Input weaponManagerInput;
 
@@ -207,5 +207,5 @@ void PlayerSystem::processJoystick(int theJoy, GQE::IEntity* theActor)
    {
       weaponManagerInput.mFireData.mFire = false;
    }
-   theActor->mProperties.set<WeaponManager::Input>("WeaponManagerInput",weaponManagerInput);
+   theActor->mProperties.set<WeaponManager::Input>(WEAPON_MANAGER_INPUT,weaponManagerInput);
 }

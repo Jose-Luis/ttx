@@ -11,7 +11,9 @@
  * @date 20120623 - Improved documentation and adjusted some properties
  */
 #include <GQE/Entity/interfaces/ISystem.hpp>
+#include <GQE/Core/utils/CRC32.hpp>
 #include <TTX/Types.hpp>
+#include <TTX/Definition.hpp>
 #include <TTX/classes/objects/Propeller.hpp>
 #include <TTX/classes/particles/Particles.hpp>
 #include <TTX/classes/particles/Affectors.hpp>

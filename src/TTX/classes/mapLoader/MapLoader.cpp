@@ -47,7 +47,7 @@ void MapLoader::loadTiles( RenderManager& theRenderManager)
 
    while (anLayer)
    {
-      LayerID anLayerID = LayerID(anLayer->Attribute("name"));
+      LayerID anLayerID = BACKGROUND;
       int anColumns = (theRenderManager.getLayer(anLayerID).mStates.texture->getSize().x) / anTileWidth;
       float anOpacity = anLayer->FloatAttribute("opacity");
 

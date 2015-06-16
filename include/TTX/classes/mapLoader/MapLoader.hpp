@@ -11,6 +11,7 @@
 #include <SFML/Graphics.hpp>
 #include <TTX/classes/render/RenderManager.hpp>
 #include <TTX/Types.hpp>
+#include <TTX/Definition.hpp>
 #include <Box2D/Box2D.h>
 
 class MapLoader

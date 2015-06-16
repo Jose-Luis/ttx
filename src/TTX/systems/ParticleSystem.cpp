@@ -28,25 +28,25 @@ ParticleSystem::~ParticleSystem()
 
 void ParticleSystem::addProperties(GQE::IEntity* theEntity)
 {
-   theEntity->mProperties.add<mpe::EmitterID>("pEmitterID", "DUMMY");
+   theEntity->mProperties.add<mpe::EmitterID>(ID32_("pEmitterID"), "DUMMY");
 }
 
 void ParticleSystem::handleInit(GQE::IEntity* theEntity)
 {
    mpe::EmitterID anEmitterID =
-      theEntity->mProperties.get<mpe::EmitterID>("pEmitterID");
+      theEntity->mProperties.get<mpe::EmitterID>(ID32_("pEmitterID"));
 
    sf::Vector2f anPosition =
-      theEntity->mProperties.get<sf::Vector2f>("vPosition");
+      theEntity->mProperties.get<sf::Vector2f>(ID32_("vPosition"));
 
-   float anAngle = theEntity->mProperties.get<float>("fAngle");
+   float anAngle = theEntity->mProperties.get<float>(ID32_("fAngle"));
 
    mpe::FocusPtr anFocus = mParticles.createFocus(anEmitterID,
                                                   anPosition.x,
                                                   anPosition.y,
                                                   anAngle);
    mParticles.addFocus(anFocus);
-   theEntity->mProperties.add<mpe::FocusPtr>("pFocus", anFocus);
+   theEntity->mProperties.add<mpe::FocusPtr>(ID32_("pFocus"), anFocus);
 }
 
 void ParticleSystem::handleEvents(sf::Event theEvent)
@@ -68,11 +68,11 @@ void ParticleSystem::updateFixed()
          GQE::IEntity* anEntity = *anQueue;
 
          sf::Vector2f anPosition =
-            anEntity->mProperties.get<sf::Vector2f>("vPosition");
+            anEntity->mProperties.get<sf::Vector2f>(ID32_("vPosition"));
 
-         float anAngle = anEntity->mProperties.get<float>("fAngle");
+         float anAngle = anEntity->mProperties.get<float>(ID32_("fAngle"));
          mpe::FocusPtr anFocus =
-            anEntity->mProperties.get<mpe::FocusPtr>("pFocus");
+            anEntity->mProperties.get<mpe::FocusPtr>(ID32_("pFocus"));
 
          anFocus->setPosition(anPosition.x, anPosition.y);
          anFocus->setAngle(anAngle);
@@ -96,7 +96,7 @@ void ParticleSystem::draw()
 
 void ParticleSystem::handleCleanup(GQE::IEntity* theEntity)
 {
-   delete (theEntity->mProperties.get<Particle*>("pParticle"));
+   delete (theEntity->mProperties.get<Particle*>(ID32_("pParticle")));
 }
 
 /**
@@ -111,7 +111,7 @@ void ParticleSystem::handleCleanup(GQE::IEntity* theEntity)
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * THE SOFTWARE IS PROVIDED ID32_("AS IS"), WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER

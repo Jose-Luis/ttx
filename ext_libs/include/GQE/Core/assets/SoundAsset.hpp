@@ -23,40 +23,40 @@
 
 namespace GQE
 {
-/// Provides the Sound asset class
-class GQE_API SoundAsset : public TAsset<sf::SoundBuffer>
-{
-public:
-   /**
-    * SoundAsset default constructor is used when you don't know theAssetID
-    * until later. You must call the SetID method before calling the
-    * GetAsset method to prevent getting the DummyAsset instead.
-    */
-   SoundAsset();
+  /// Provides the Sound asset class
+  class GQE_API SoundAsset : public TAsset<sf::SoundBuffer>
+  {
+    public:
+      /**
+       * SoundAsset default constructor is used when you don't know theAssetID
+       * until later. You must call the SetID method before calling the
+       * GetAsset method to prevent getting the DummyAsset instead.
+       */
+      SoundAsset();
 
-   /**
-    * SoundAsset constructor
-    * @param[in] theAssetID to uniquely identify this asset
-    * @param[in] theLoadTime (Now, Later) of when to load this asset
-    * @param[in] theLoadStyle (File, Mem, Network) to use when loading this asset
-    * @param[in] theDropTime at (Zero, Exit) for when to unload this asset
-    */
-   SoundAsset(const typeAssetID theAssetID,
-              AssetLoadTime theLoadTime = AssetLoadLater,
-              AssetLoadStyle theLoadStyle = AssetLoadFromFile,
-              AssetDropTime theDropTime = AssetDropAtZero);
+      /**
+       * SoundAsset constructor
+       * @param[in] theAssetID to uniquely identify this asset
+       * @param[in] theLoadTime (Now, Later) of when to load this asset
+       * @param[in] theLoadStyle (File, Mem, Network) to use when loading this asset
+       * @param[in] theDropTime at (Zero, Exit) for when to unload this asset
+       */
+      SoundAsset(const typeAssetID theAssetID,
+        AssetLoadTime theLoadTime = AssetLoadLater,
+        AssetLoadStyle theLoadStyle = AssetLoadFromFile,
+        AssetDropTime theDropTime = AssetDropAtZero);
 
-   /**
-    * SoundAsset deconstructor
-    */
-   virtual ~SoundAsset();
+      /**
+       * SoundAsset deconstructor
+       */
+      virtual ~SoundAsset();
 
-protected:
+    protected:
 
-private:
-   // Variables
-   ///////////////////////////////////////////////////////////////////////////
-}; // class SoundAsset
+    private:
+      // Variables
+      ///////////////////////////////////////////////////////////////////////////
+  }; // class SoundAsset
 } // namespace GQE
 
 #endif // CORE_SOUND_ASSET_HPP_INCLUDED

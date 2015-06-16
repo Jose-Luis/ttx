@@ -1,7 +1,7 @@
 #include <TTX/prototypes/Machinegun.hpp>
 
 Machinegun::Machinegun():
-      PhysicProto("Machinegun")
+      PhysicProto(MACHINEGUN_PROTO)
    {
       b2FixtureDef anFixture1;
       mShape1.SetAsBox(0.4, 0.4);
@@ -15,11 +15,11 @@ Machinegun::Machinegun():
       mFixturesDef.push_back(anFixture1);
       mJointDef.localAnchorB = b2Vec2(0, 0.4);
 
-      mProperties.add<EntityID>("Name", "Machinegun");
-      mProperties.add<GQE::typePropertyID>("AnchorPoint", "");
-      mProperties.add("TexRect", sf::IntRect(32, 96, 6, 12));
-      mProperties.add("Weapon",Weapon());
-      mProperties.add("Resistance", 5.f);
-      mProperties.add("Health", 150.f);
-      mProperties.add<b2JointDef*>("JointDef", &mJointDef);
+      mProperties.add<EntityID>(NAME, MACHINEGUN_PROTO);
+      mProperties.add<GQE::typePropertyID>(ID32_("AnchorPoint"), ID32_(""));
+      mProperties.add(TEXTURE_RECT, sf::IntRect(32, 96, 6, 12));
+      mProperties.add(WEAPON,Weapon());
+      mProperties.add(RESISTANCE, 5.f);
+      mProperties.add(HEALTH, 150.f);
+      mProperties.add<b2JointDef*>(JOINTDEF, &mJointDef);
    }

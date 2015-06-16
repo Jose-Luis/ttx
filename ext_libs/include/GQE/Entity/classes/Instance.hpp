@@ -16,39 +16,39 @@
 
 namespace GQE
 {
-/// Provides the Instance class which is produced by the Prototype class
-class GQE_API Instance : public IEntity
-{
-public:
-   /**
-    * Instance default constructor
-    * @param[in] thePrototype class address used to create this Instance class
-    */
-   Instance(Prototype& thePrototype, Uint32 theOrder = 0);
+  /// Provides the Instance class which is produced by the Prototype class
+  class GQE_API Instance : public IEntity
+  {
+    public:
+      /**
+       * Instance default constructor
+       * @param[in] thePrototype class address used to create this Instance class
+       */
+      Instance(Prototype& thePrototype, Uint32 theOrder = 0);
 
-   /**
-    * Instance deconstructor
-    */
-   virtual ~Instance();
+      /**
+       * Instance deconstructor
+       */
+      virtual ~Instance();
 
-   /**
-    * Destroy is responsible for safely marking this IEntity class for
-    * being destroyed and should be implemented by a derived class.
-    */
-   virtual void destroy(void);
+      /**
+       * Destroy is responsible for safely marking this IEntity class for
+       * being destroyed and should be implemented by a derived class.
+       */
+      virtual void destroy(void);
 
-   /**
-    * GetPrototype will return the Prototype class used to create this
-    * Instance class, so you can create another Instance if desired.
-    * @return a pointer to the Prototype class used to create this Instance
-    */
-   Prototype& getPrototype();
-private:
-   // Variables
-   ///////////////////////////////////////////////////////////////////////////
-   /// The address to the Prototype class used to create this Instance
-   Prototype& mPrototype;
-};
+      /**
+       * GetPrototype will return the Prototype class used to create this
+       * Instance class, so you can create another Instance if desired.
+       * @return a pointer to the Prototype class used to create this Instance
+       */
+      Prototype& getPrototype();
+    private:
+      // Variables
+      ///////////////////////////////////////////////////////////////////////////
+      /// The address to the Prototype class used to create this Instance
+      Prototype& mPrototype;
+  };
 }
 
 #endif // INSTANCE_HPP_INCLUDED
