@@ -30,17 +30,23 @@ GQE::Instance* IActionState::addInstance(GQE::typePrototypeID thePrototype,
     return prototype->makeInstance();
 }
 
-GQE::IEntity* IActionState::addPlayer(int theJoy,Entity* theActor)
+GQE::IEntity* IActionState::addPlayer(int                  theJoy,
+        GQE::typePrototypeID thePrototype,
+        Position2D           thePosition)
 {
     GQE::IEntity* player = 0;
+    GQE::IEntity* actor = 0;
 
     if(mPlayers.find(theJoy) == mPlayers.end())
     {
         player = mPrototypes.getPrototype(PLAYER_PROTO)->makeInstance();
+        GQE::Prototype* actorProto = mPrototypes.getPrototype(thePrototype);
+        actorProto->mProperties.set<Position2D>(POSITION, thePosition);
+        actor = actorProto->makeInstance();
 
-        player->mProperties.set<GQE::IEntity*>(ACTOR,theActor);
+        player->mProperties.set<GQE::IEntity*>(ACTOR,actor);
         player->mProperties.set<int>(JOYSTICK, theJoy);
-        theActor->mProperties.set<GQE::IEntity*>(PLAYER,player);
+        actor->mProperties.set<GQE::IEntity*>(PLAYER,player);
     }
 
     return player;

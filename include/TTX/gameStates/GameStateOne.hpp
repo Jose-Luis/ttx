@@ -38,7 +38,6 @@
 #include <TTX/prototypes/Machinegun.hpp>
 #include <TTX/prototypes/ShipPropeller.hpp>
 #include <TTX/classes/mapLoader/MapLoader.hpp>
-#include <TTX/classes/listeners/weapons/WeaponManagerListener.hpp>
 
 class GameStateOne : public IActionState
 {

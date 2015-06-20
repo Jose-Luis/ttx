@@ -79,8 +79,8 @@ void PhysicSystem::handleInit(GQE::IEntity* theEntity)
    {
       GQE::Uint32 anOrder = aFather->getOrder();
       theEntity->setOrder(anOrder++); //Don't touch otherwise CRASH!!
-      //EntityID aName = theEntity->mProperties.get<GQE::typePropertyID>(NAME);
-      //aFather->mProperties.set<GQE::IEntity*>(aName, theEntity);
+      GQE::typePropertyID aName = theEntity->mProperties.get<GQE::typePropertyID>(NAME);
+      aFather->mProperties.set<GQE::IEntity*>(aName, theEntity);
 
 
       b2Body* aFatherBody = aFather->mProperties.get<b2Body*>(BODY);

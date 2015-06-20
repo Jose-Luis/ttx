@@ -1,9 +1,20 @@
-#include <TTX/classes/listeners/weapons/WeaponManagerListener.hpp>
+#include <TTX/classes/objects/WeaponManager.hpp>
 
-WeaponManagerListener::WeaponManagerListener()
+WeaponManager::WeaponManager()
 {}
 
-void WeaponManagerListener::changeWeapon()
+WeaponManager::WeaponManager(IActionState* theState):
+   mActiveWeapon(NONE),
+   mState(theState)
+{
+}
+
+WeaponID WeaponManager::getWeapon()
+{
+   return mActiveWeapon;
+}
+
+void WeaponManager::changeWeapon()
 {
    if(mActiveWeapon != NONE)
    {
@@ -27,33 +38,38 @@ void WeaponManagerListener::changeWeapon()
    }
 }
 
-void WeaponManagerListener::addWeapon(GQE::IEntity* theWeapon)
+void WeaponManager::addWeapon(GQE::IEntity* theWeapon)
 {
-   auto weaponID = theWeapon->mProperties.get<EntityID>(NAME);
+   WeaponID weaponID = theWeapon->mProperties.getPointer<Weapon>(WEAPON)->getID();
    auto mapIter = mWeaponMap.find(weaponID);
    if(mapIter == mWeaponMap.end())
    {
       mapIter = mWeaponMap.insert(std::pair<WeaponID,std::set<GQE::IEntity*>>(weaponID,std::set<GQE::IEntity*>())).first;
    }
    mapIter->second.insert(theWeapon);
+   theWeapon->mProperties.getPointer<Weapon>(WEAPON)->setWeaponManager(this);
    if(mActiveWeapon == NONE)
       mActiveWeapon = weaponID;
 }
 
-void WeaponManagerListener::update(Input::Data theInputData)
+void WeaponManager::manage(WeaponManager::Input theInputData)
 {
-   if(theInputData.changeNext)
+   if(theInputData.mChange)
       changeWeapon();
+   if(theInputData.mFireData.mFire)
+   {
       if(mActiveWeapon != NONE)
       {
          for(auto setIter : mWeaponMap.find(mActiveWeapon)->second)
          {
-            setIter->mProperties.getPointer<InputListener>(INPUT_LISTENER)->update(theInputData);
+            Position2D position = setIter->mProperties.get<Position2D>(POSITION);
+            setIter->mProperties.getPointer<Weapon>(WEAPON)->fire(position,mState,theInputData.mFireData);
          }
       }
+   }
 }
 
-void WeaponManagerListener::removeWeapon(WeaponID theWeapon)
+void WeaponManager::removeWeapon(WeaponID theWeapon)
 {
    mWeaponMap.erase(theWeapon);
    if(!mWeaponMap.empty())
@@ -62,9 +78,9 @@ void WeaponManagerListener::removeWeapon(WeaponID theWeapon)
       mActiveWeapon = NONE;
 }
 
-void WeaponManagerListener::removeWeapon(GQE::IEntity* theWeapon)
+void WeaponManager::removeWeapon(GQE::IEntity* theWeapon)
 {
-   auto weaponID = theWeapon->mProperties.get<EntityID>(NAME);
+   WeaponID weaponID = theWeapon->mProperties.getPointer<Weapon>(WEAPON)->getID();
    auto iter = mWeaponMap.find(weaponID);
    if(iter != mWeaponMap.end())
    {

@@ -33,8 +33,6 @@
 #define NAME                  27
 #define PLAYER_NAME           28
 #define PLAYER                29
-#define INPUT_LISTENER        30
-#define INPUT                 31
 
 //SYSTEMS
 
@@ -46,7 +44,6 @@
 #define PROPELLER_SYSTEM      6
 #define RENDER_SYSTEM         7
 #define WEAPON_SYSTEM         8
-#define ENTITY_LISTENER_SYSTEM 9
 
 //LAYERS
 
@@ -56,20 +53,20 @@
 #define OBJECTS               4
 
 //GAMESTATES
-
+ 
 #define STATE_1               1
 
 //PROTOTYPES
 
-#define BASIC_SHIP_PROTO            1
-#define MACHINEGUN_PROTO            2
-#define SHIP_PROPELLER_PROTO        3
-#define BOX_PROTO                   4
-#define PLAYER_PROTO                5
-#define SIMPLE_BULLET_PROTO         6
+#define BASIC_SHIP_PROTO            1 
+#define MACHINEGUN_PROTO            2 
+#define SHIP_PROPELLER_PROTO        3 
+#define BOX_PROTO                   4 
+#define PLAYER_PROTO                5 
+#define SIMPLE_BULLET_PROTO         6 
 
 //WEAPONS
 
-#define SUBMACHINEGUN            1
+#define SUBMACHINEGUN            1 
 
 #endif

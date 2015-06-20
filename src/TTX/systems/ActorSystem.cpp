@@ -11,7 +11,8 @@ void ActorSystem::addProperties(GQE::IEntity* theEntity)
 {
    theEntity->mProperties.add<GQE::IEntity*>(PLAYER, 0);
    theEntity->mProperties.add<Position2D>(POSITION,Position2D(0,0,0));
-   theEntity->mProperties.add<Input>(INPUT, Input());
+   theEntity->mProperties.add<MoveData>(MOVE_DATA, MoveData());
+   theEntity->mProperties.add<WeaponManager::Input>(WEAPON_MANAGER_INPUT, WeaponManager::Input());
 }
 
 void ActorSystem::handleEvents(sf::Event theEvent)
@@ -33,14 +34,26 @@ void ActorSystem::updateFixed()
       {
          GQE::IEntity* anEntity = *anQueue;
 
-         Input* input = anEntity->mProperties.getPointer<Input>(INPUT);
-         input->publish();
+         GQE::IEntity* propellerEntity = anEntity->mProperties.get<GQE::IEntity*>(PROPELLER);
+         if(propellerEntity)
+         {
+            MoveData moveData = anEntity->mProperties.get<MoveData>(MOVE_DATA);
+            propellerEntity->mProperties.set<MoveData>(MOVE_DATA,moveData);
+         }
+
+         WeaponManager::Input weaponManagerInput = anEntity->mProperties.get<WeaponManager::Input>(WEAPON_MANAGER_INPUT);
+
+         if(weaponManagerInput.mFireData.mFire)
+         {
+            WeaponManager weaponManager = anEntity->mProperties.get<WeaponManager>(WEAPON_MANAGER);
+            weaponManager.manage(weaponManagerInput);
+         }
+
+         anQueue++;
       }
 
-      anQueue++;
+      anIter++;
    }
-
-   anIter++;
 }
 
 void ActorSystem::draw(void)
