@@ -145,18 +145,29 @@ void GameStateOne::handleEvents(sf::Event theEvent)
          if(sf::Joystick::isConnected(i) && sf::Joystick::isButtonPressed(i, 0))
             if(!mPlayer)
             {
-               mPlayer = addPlayer(i, BASIC_SHIP_PROTO, Position2D(40, 160, 90 * TORAD));
-               GQE::IEntity* actor = mPlayer->mProperties.get<GQE::IEntity*>(ACTOR);
-               GQE::Prototype* propeller = mPrototypes.getPrototype(SHIP_PROPELLER_PROTO);
-               propeller->mProperties.add<GQE::IEntity*>(FATHER_NODE, actor);
-               actor->mProperties.add<GQE::IEntity*>(PROPELLER, propeller->makeInstance());
-               GQE::Prototype* prototype = mPrototypes.getPrototype(MACHINEGUN_PROTO);
-               prototype->mProperties.add<GQE::IEntity*>(FATHER_NODE, actor);
-               prototype->mProperties.set<GQE::typePropertyID>(ID32_("AnchorPoint"), ID32_("WeaponAnchorLeft"));
-               GQE::IEntity* machinegunleft = prototype->makeInstance();
-               actor->mProperties.getPointer<WeaponManager>(WEAPON_MANAGER)->addWeapon(machinegunleft);
-               prototype->mProperties.set<GQE::typePropertyID>(ID32_("AnchorPoint"), ID32_("WeaponAnchorRight"));
-               actor->mProperties.getPointer<WeaponManager>(WEAPON_MANAGER)->addWeapon(prototype->makeInstance());
+
+               GQE::Prototype* basicShipProto = mPrototypes.getPrototype(BASIC_SHIP_PROTO);
+               GQE::Prototype* propellerProto = mPrototypes.getPrototype(SHIP_PROPELLER_PROTO);
+               GQE::Prototype* machinegunProto = mPrototypes.getPrototype(MACHINEGUN_PROTO);
+
+               basicShipProto->mProperties.set<Position2D>(POSITION, Position2D(40, 160, 90 * TORAD));
+               basicShipProto->mProperties.set<Position2D>(INITIAL_IMPULSE, Position2D(0,0,0));
+               auto basicShip = basicShipProto->makeInstance(); 
+
+               propellerProto->mProperties.add<GQE::IEntity*>(ACTOR, basicShip);
+               propellerProto->mProperties.add<GQE::IEntity*>(FATHER_NODE, basicShip);
+               basicShip->mProperties.add<GQE::IEntity*>(PROPELLER, propellerProto->makeInstance());
+
+               machinegunProto->mProperties.add<GQE::IEntity*>(ACTOR, basicShip);
+               machinegunProto->mProperties.add<GQE::IEntity*>(FATHER_NODE, basicShip);
+               machinegunProto->mProperties.set<GQE::typePropertyID>(ID32_("AnchorPoint"), ID32_("WeaponAnchorLeft"));
+               GQE::IEntity* machinegunleft = machinegunProto->makeInstance();
+
+               basicShip->mProperties.getPointer<WeaponManagerListener>(WEAPON_MANAGER)->addWeapon(machinegunleft);
+               machinegunProto->mProperties.set<GQE::typePropertyID>(ID32_("AnchorPoint"), ID32_("WeaponAnchorRight"));
+               basicShip->mProperties.getPointer<WeaponManagerListener>(WEAPON_MANAGER)->addWeapon(machinegunProto->makeInstance());
+
+               mPlayer = addPlayer(i, basicShip);
             }
       }
    }

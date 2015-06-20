@@ -6,7 +6,7 @@
 #include <Box2D/Box2D.h>
 #include <TTX/prototypes/PhysicProto.hpp>
 #include <TTX/classes/render/Animation.hpp>
-#include <TTX/classes/objects/Weapon.hpp>
+#include <TTX/classes/listeners/weapons/SimpleWeaponListener.hpp>
 
 class Machinegun:   public PhysicProto
 {

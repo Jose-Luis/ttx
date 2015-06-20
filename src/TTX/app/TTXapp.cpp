@@ -23,7 +23,6 @@ TTXApp::~TTXApp()
 
 void TTXApp::initAssetHandlers(void)
 {
-   mAssetManager.registerHandler(new GQE::SoundHandler());
    // No custom asset handlers needed or provided
 }
 

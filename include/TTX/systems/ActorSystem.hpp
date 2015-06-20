@@ -9,6 +9,8 @@
 #include <TTX/systems/ISystem.hpp>
 #include <TTX/classes/objects/IPropeller.hpp>
 #include <TTX/classes/objects/WeaponManager.hpp>
+#include <TTX/classes/listeners/Input.hpp>
+#include <TTX/classes/listeners/EntityInputListener.hpp>
 
 class ActorSystem: public ISystem
 {

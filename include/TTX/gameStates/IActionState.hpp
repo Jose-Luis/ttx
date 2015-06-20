@@ -23,9 +23,8 @@ public:
    GQE::Instance* addInstance(GQE::typePrototypeID thePrototype,
                               Position2D           thePosition,
                               Position2D           theInitialImpulse = Position2D(0, 0, 0));
-   GQE::IEntity* addPlayer(int                  theJoy,
-                           GQE::typePrototypeID thePrototype,
-                           Position2D           thePosition);
+
+   GQE::IEntity* addPlayer(int theJoy,Entity* theActor);
 
    void deactivateEntity(GQE::IEntity* theEntity);
 
