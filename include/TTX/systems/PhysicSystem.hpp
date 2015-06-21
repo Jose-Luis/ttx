@@ -28,7 +28,6 @@
 #include <TTX/prototypes/PhysicProto.hpp>
 #include <TTX/Types.hpp>
 #include <TTX/Definition.hpp>
-#include <TTX/Definition.hpp>
 #include <TTX/systems/ISystem.hpp>
 
 class PhysicSystem: public ISystem

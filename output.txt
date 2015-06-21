@@ -1,511 +1,119 @@
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/loggers/FileLogger.cpp:21 FileLogger::ctor()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/AssetManager.cpp:29 AssetManager::ctor()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StatManager.cpp:44 StatManager::ctor()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StateManager.cpp:37 StateManager::ctor()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:94 IApp::processArguments(/home/momia/Development/Builds/ttx/debug/bin/TTX) command line: (none)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:108 Enter(App_Run) 
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:19 IAssetHandler::ctor(N3GQE12ConfigReaderE)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:35 ConfigReader::ctor()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:32 TAssetHandler::ctor(N3GQE12ConfigReaderE)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/ConfigHandler.cpp:19 ConfigHandler::ctor()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:19 IAssetHandler::ctor(N2sf4FontE)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:32 TAssetHandler::ctor(N2sf4FontE)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/FontHandler.cpp:18 FontHandler::ctor()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:19 IAssetHandler::ctor(N2sf7TextureE)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:32 TAssetHandler::ctor(N2sf7TextureE)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/ImageHandler.cpp:20 ImageHandler::ctor()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:19 IAssetHandler::ctor(N2sf5MusicE)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:32 TAssetHandler::ctor(N2sf5MusicE)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/MusicHandler.cpp:18 MusicHandler::ctor()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:19 IAssetHandler::ctor(N2sf11SoundBufferE)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:32 TAssetHandler::ctor(N2sf11SoundBufferE)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/SoundHandler.cpp:18 SoundHandler::ctor()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:19 IAssetHandler::ctor(N2sf11SoundBufferE)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:32 TAssetHandler::ctor(N2sf11SoundBufferE)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/SoundHandler.cpp:18 SoundHandler::ctor()
-2015-06-16 10:35:57 E /home/momia/Development/Project/gqe/src/GQE/Core/classes/AssetManager.cpp:104 AssetManager:registerHandler(N2sf11SoundBufferE) Handler already registered for this ID!
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:238 Enter(App_InitSettingsConfig) 
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:731 TAssetHandler(N3GQE12ConfigReaderE):acquireAsset(resources/settings.cfg) Creating asset
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:35 ConfigReader::ctor()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:744 TAssetHandler(N3GQE12ConfigReaderE):releaseAsset(resources/settings.cfg) Releasing asset
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:45 ConfigReader::dtor()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:238 Exit(App_InitSettingsConfig)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:244 Enter(App_InitRenderer) 
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:731 TAssetHandler(N3GQE12ConfigReaderE):acquireAsset(resources/settings.cfg) Creating asset
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:35 ConfigReader::ctor()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:194 ConfigReader:read(resources/settings.cfg) opening...
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:408 ConfigReader::storeNameValue(window) adding (width,1920)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:434 ConfigReader::storeNameValue(window) adding (height,1080)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:434 ConfigReader::storeNameValue(window) adding (depth,32)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:434 ConfigReader::storeNameValue(window) adding (fullscreen,1)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:244 Exit(App_InitRenderer)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IState.cpp:30 IState::ctor(1)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/PrototypeManager.cpp:20 PrototypeManager::ctor()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StatManager.cpp:44 StatManager::ctor()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StateManager.cpp:119 StateManager::addActiveState(1)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IState.cpp:45 IState::doInit(1)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StatManager.cpp:58 StatManager::DoInit()
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:731 TAssetHandler(N2sf7TextureE):acquireAsset(resources/Sprites.png) Creating asset
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:731 TAssetHandler(N2sf7TextureE):acquireAsset(resources/Tiles1.png) Creating asset
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(1,0)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:26 Prototype::ctor(4)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(2,0)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:26 Prototype::ctor(1)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(3,0)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:26 Prototype::ctor(6)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(4,0)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:26 Prototype::ctor(5)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(5,0)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:26 Prototype::ctor(2)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(6,0)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:26 Prototype::ctor(3)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(7)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(5)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(6)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(4)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(2)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(3)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(1)
-2015-06-16 10:35:57 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(8)
-2015-06-16 10:35:58 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StatManager.cpp:58 StatManager::DoInit()
-2015-06-16 10:35:58 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:283 Enter(App_GameLoop) 
-2015-06-16 10:35:58 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IState.cpp:114 IState::resume(1)
-2015-06-16 10:35:58 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(7,0)
-2015-06-16 10:35:58 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(5)::makeInstance(7) created successfully!
-2015-06-16 10:35:58 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(8,0)
-2015-06-16 10:35:58 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:35:58 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(1)::makeInstance(8) created successfully!
-2015-06-16 10:35:58 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(9,0)
-2015-06-16 10:35:58 E /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:147 PropertyManager:set() unable to find property(11)
-2015-06-16 10:35:58 E /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:147 PropertyManager:set() unable to find property(10)
-2015-06-16 10:35:58 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(3)::makeInstance(9) created successfully!
-2015-06-16 10:35:58 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(10,0)
-2015-06-16 10:35:58 E /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:147 PropertyManager:set() unable to find property(10)
-2015-06-16 10:35:58 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(2)::makeInstance(10) created successfully!
-2015-06-16 10:35:58 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(11,0)
-2015-06-16 10:35:58 E /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:147 PropertyManager:set() unable to find property(10)
-2015-06-16 10:35:58 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(2)::makeInstance(11) created successfully!
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(12,0)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(12) created successfully!
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(13,0)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(13) created successfully!
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(12)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(13)
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(14,0)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(14) created successfully!
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(15,0)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(15) created successfully!
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(14)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(15)
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(16,0)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(16) created successfully!
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(17,0)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(17) created successfully!
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(16)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(17)
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(18,0)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(18) created successfully!
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(19,0)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(19) created successfully!
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(18)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(19)
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(20,0)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(20) created successfully!
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(21,0)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(21) created successfully!
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(20)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(21)
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(22,0)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(22) created successfully!
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(23,0)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(23) created successfully!
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(22)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(23)
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(24,0)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(24) created successfully!
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(25,0)
-2015-06-16 10:36:00 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:00 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(25) created successfully!
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(24)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(25)
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(26,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(26) created successfully!
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(27,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(27) created successfully!
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(26)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(27)
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(28,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(28) created successfully!
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(29,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(29) created successfully!
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(28)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(29)
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(30,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(30) created successfully!
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(31,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(31) created successfully!
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(30)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(31)
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(32,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(32) created successfully!
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(33,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(33) created successfully!
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(32)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(33)
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(34,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(34) created successfully!
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(35,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(35) created successfully!
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(34)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(35)
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(36,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(36) created successfully!
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(37,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(37) created successfully!
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(36)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(37)
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(38,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(38) created successfully!
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(39,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(39) created successfully!
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(40,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(40) created successfully!
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(41,0)
-2015-06-16 10:36:01 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:01 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(41) created successfully!
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(42,0)
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(42) created successfully!
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(43,0)
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(43) created successfully!
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(44,0)
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(44) created successfully!
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(45,0)
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(45) created successfully!
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(44)
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(45)
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(46,0)
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(46) created successfully!
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(47,0)
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(47) created successfully!
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(46)
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(47)
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(48,0)
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(48) created successfully!
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(49,0)
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(49) created successfully!
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(48)
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(49)
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(50,0)
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(50) created successfully!
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(51,0)
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(51) created successfully!
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(50)
-2015-06-16 10:36:02 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:02 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(51)
-2015-06-16 10:36:04 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:04 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(38)
-2015-06-16 10:36:04 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:04 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(39)
-2015-06-16 10:36:04 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:04 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(40)
-2015-06-16 10:36:04 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:04 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(41)
-2015-06-16 10:36:04 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:04 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(42)
-2015-06-16 10:36:04 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:04 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(43)
-2015-06-16 10:36:09 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(11)
-2015-06-16 10:36:12 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(52,0)
-2015-06-16 10:36:12 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:12 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(52) created successfully!
-2015-06-16 10:36:12 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(53,0)
-2015-06-16 10:36:12 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:12 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(53) created successfully!
-2015-06-16 10:36:12 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(54,0)
-2015-06-16 10:36:12 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:12 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(54) created successfully!
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(55,0)
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(55) created successfully!
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(54)
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(56,0)
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(56) created successfully!
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(57,0)
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(57) created successfully!
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(55)
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(53)
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(58,0)
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(58) created successfully!
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(52)
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(59,0)
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(59) created successfully!
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(57)
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(60,0)
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(60) created successfully!
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(58)
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(59)
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(56)
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(61,0)
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(61) created successfully!
-2015-06-16 10:36:13 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:13 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(60)
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(62,0)
-2015-06-16 10:36:14 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(62) created successfully!
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(63,0)
-2015-06-16 10:36:14 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(63) created successfully!
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(64,0)
-2015-06-16 10:36:14 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(64) created successfully!
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(65,0)
-2015-06-16 10:36:14 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(65) created successfully!
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(66,0)
-2015-06-16 10:36:14 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(66) created successfully!
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(67,0)
-2015-06-16 10:36:14 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(67) created successfully!
-2015-06-16 10:36:14 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(65)
-2015-06-16 10:36:14 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(66)
-2015-06-16 10:36:14 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(67)
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(68,0)
-2015-06-16 10:36:14 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:14 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(68) created successfully!
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(69,0)
-2015-06-16 10:36:15 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(69) created successfully!
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(70,0)
-2015-06-16 10:36:15 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(70) created successfully!
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(71,0)
-2015-06-16 10:36:15 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(71) created successfully!
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(72,0)
-2015-06-16 10:36:15 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(72) created successfully!
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(73,0)
-2015-06-16 10:36:15 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(73) created successfully!
-2015-06-16 10:36:15 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(69)
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(74,0)
-2015-06-16 10:36:15 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(74) created successfully!
-2015-06-16 10:36:15 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(70)
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(75,0)
-2015-06-16 10:36:15 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(75) created successfully!
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(76,0)
-2015-06-16 10:36:15 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(76) created successfully!
-2015-06-16 10:36:15 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:15 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(71)
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(77,0)
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(77) created successfully!
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(78,0)
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(78) created successfully!
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(79,0)
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(79) created successfully!
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(80,0)
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(80) created successfully!
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(76)
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(77)
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(81,0)
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(81) created successfully!
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(78)
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(79)
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(82,0)
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(82) created successfully!
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(80)
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(81)
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(82)
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(83,0)
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(83) created successfully!
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(84,0)
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(84) created successfully!
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(85,0)
-2015-06-16 10:36:16 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:16 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(85) created successfully!
-2015-06-16 10:36:17 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(86,0)
-2015-06-16 10:36:17 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:17 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:117 Prototype(6)::makeInstance(86) created successfully!
-2015-06-16 10:36:17 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(10)
-2015-06-16 10:36:17 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:17 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(63)
-2015-06-16 10:36:17 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:17 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(62)
-2015-06-16 10:36:18 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(61)
-2015-06-16 10:36:18 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(64)
-2015-06-16 10:36:18 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(68)
-2015-06-16 10:36:18 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(73)
-2015-06-16 10:36:18 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(74)
-2015-06-16 10:36:18 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(75)
-2015-06-16 10:36:18 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(83)
-2015-06-16 10:36:18 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(84)
-2015-06-16 10:36:18 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(85)
-2015-06-16 10:36:19 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:19 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(86)
-2015-06-16 10:36:19 W /home/momia/Development/Project/ttx/ext_libs/include/GQE/Core/classes/PropertyManager.hpp:84 PropertyManager:get() returning blank property(7) type
-2015-06-16 10:36:19 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(72)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:283 Exit(App_GameLoop)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:401 Enter(App_Cleanup) 
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StatManager.cpp:82 StatManager::DeInit()
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:401 Exit(App_Cleanup)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:159 Result(App_Run) exitCode=0
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:159 Exit(App_Run)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StateManager.cpp:42 StateManager::dtor()
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IState.cpp:101 IState::pause(1)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IState.cpp:71 IState::deInit(1)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StatManager.cpp:50 StatManager::dtor()
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/PrototypeManager.cpp:25 PrototypeManager::dtor()
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:34 Prototype::dtor(1)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(2)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:34 Prototype::dtor(2)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(5)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:34 Prototype::dtor(3)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(6)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:34 Prototype::dtor(4)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(1)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:34 Prototype::dtor(5)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(4)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:34 Prototype::dtor(6)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(3)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IState.cpp:35 IState::dtor(1)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StatManager.cpp:50 StatManager::dtor()
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/AssetManager.cpp:34 AssetManager::dtor()
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/SoundHandler.cpp:23 SoundHandler::dtor()
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:40 TAssetHandler::dtor(N2sf11SoundBufferE)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:24 IAssetHandler::dtor(N2sf11SoundBufferE)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/FontHandler.cpp:23 FontHandler::dtor()
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:40 TAssetHandler::dtor(N2sf4FontE)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:24 IAssetHandler::dtor(N2sf4FontE)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/MusicHandler.cpp:23 MusicHandler::dtor()
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:40 TAssetHandler::dtor(N2sf5MusicE)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:24 IAssetHandler::dtor(N2sf5MusicE)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/ImageHandler.cpp:25 ImageHandler::dtor()
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:40 TAssetHandler::dtor(N2sf7TextureE)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:744 TAssetHandler(N2sf7TextureE):releaseAsset(resources/Sprites.png) Releasing asset
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:744 TAssetHandler(N2sf7TextureE):releaseAsset(resources/Tiles1.png) Releasing asset
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:24 IAssetHandler::dtor(N2sf7TextureE)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/ConfigHandler.cpp:24 ConfigHandler::dtor()
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:40 TAssetHandler::dtor(N3GQE12ConfigReaderE)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:744 TAssetHandler(N3GQE12ConfigReaderE):releaseAsset(resources/settings.cfg) Releasing asset
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:45 ConfigReader::dtor()
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:45 ConfigReader::dtor()
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:24 IAssetHandler::dtor(N3GQE12ConfigReaderE)
-2015-06-16 10:36:20 I /home/momia/Development/Project/gqe/src/GQE/Core/loggers/FileLogger.cpp:29 FileLogger::dtor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/loggers/FileLogger.cpp:21 FileLogger::ctor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/AssetManager.cpp:29 AssetManager::ctor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StatManager.cpp:44 StatManager::ctor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StateManager.cpp:37 StateManager::ctor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:94 IApp::processArguments(/home/momia/Development/Builds/ttx/debug/bin/TTX) command line: (none)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:108 Enter(App_Run) 
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:19 IAssetHandler::ctor(N3GQE12ConfigReaderE)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:35 ConfigReader::ctor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:32 TAssetHandler::ctor(N3GQE12ConfigReaderE)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/ConfigHandler.cpp:19 ConfigHandler::ctor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:19 IAssetHandler::ctor(N2sf4FontE)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:32 TAssetHandler::ctor(N2sf4FontE)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/FontHandler.cpp:18 FontHandler::ctor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:19 IAssetHandler::ctor(N2sf7TextureE)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:32 TAssetHandler::ctor(N2sf7TextureE)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/ImageHandler.cpp:20 ImageHandler::ctor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:19 IAssetHandler::ctor(N2sf5MusicE)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:32 TAssetHandler::ctor(N2sf5MusicE)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/MusicHandler.cpp:18 MusicHandler::ctor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:19 IAssetHandler::ctor(N2sf11SoundBufferE)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:32 TAssetHandler::ctor(N2sf11SoundBufferE)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/SoundHandler.cpp:18 SoundHandler::ctor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:19 IAssetHandler::ctor(N2sf11SoundBufferE)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:32 TAssetHandler::ctor(N2sf11SoundBufferE)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/SoundHandler.cpp:18 SoundHandler::ctor()
+2015-06-21 20:41:18 E /home/momia/Development/Project/gqe/src/GQE/Core/classes/AssetManager.cpp:104 AssetManager:registerHandler(N2sf11SoundBufferE) Handler already registered for this ID!
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:238 Enter(App_InitSettingsConfig) 
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:731 TAssetHandler(N3GQE12ConfigReaderE):acquireAsset(resources/settings.cfg) Creating asset
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:35 ConfigReader::ctor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:744 TAssetHandler(N3GQE12ConfigReaderE):releaseAsset(resources/settings.cfg) Releasing asset
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:45 ConfigReader::dtor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:238 Exit(App_InitSettingsConfig)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:244 Enter(App_InitRenderer) 
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:731 TAssetHandler(N3GQE12ConfigReaderE):acquireAsset(resources/settings.cfg) Creating asset
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:35 ConfigReader::ctor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:194 ConfigReader:read(resources/settings.cfg) opening...
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:408 ConfigReader::storeNameValue(window) adding (width,1920)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:434 ConfigReader::storeNameValue(window) adding (height,1080)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:434 ConfigReader::storeNameValue(window) adding (depth,32)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:434 ConfigReader::storeNameValue(window) adding (fullscreen,1)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:244 Exit(App_InitRenderer)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IState.cpp:30 IState::ctor(1)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/PrototypeManager.cpp:20 PrototypeManager::ctor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StatManager.cpp:44 StatManager::ctor()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StateManager.cpp:119 StateManager::addActiveState(1)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IState.cpp:45 IState::doInit(1)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StatManager.cpp:58 StatManager::DoInit()
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:731 TAssetHandler(N2sf7TextureE):acquireAsset(resources/Sprites.png) Creating asset
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:731 TAssetHandler(N2sf7TextureE):acquireAsset(resources/Tiles1.png) Creating asset
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(1,0)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:26 Prototype::ctor(4)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(2,0)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:26 Prototype::ctor(1)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(3,0)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:26 Prototype::ctor(6)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(4,0)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:26 Prototype::ctor(5)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(5,0)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:26 Prototype::ctor(2)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:22 IEntity::ctor(6,0)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:26 Prototype::ctor(3)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(7)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(5)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(6)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(4)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(2)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(3)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(1)
+2015-06-21 20:41:18 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/ISystem.cpp:23 ISystem::ctor(8)
+2015-06-21 20:41:19 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StatManager.cpp:58 StatManager::DoInit()
+2015-06-21 20:41:19 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:283 Enter(App_GameLoop) 
+2015-06-21 20:41:19 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IState.cpp:114 IState::resume(1)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:283 Exit(App_GameLoop)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:401 Enter(App_Cleanup) 
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StatManager.cpp:82 StatManager::DeInit()
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:401 Exit(App_Cleanup)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:159 Result(App_Run) exitCode=0
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IApp.cpp:159 Exit(App_Run)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StateManager.cpp:42 StateManager::dtor()
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IState.cpp:101 IState::pause(1)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IState.cpp:71 IState::deInit(1)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StatManager.cpp:50 StatManager::dtor()
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/PrototypeManager.cpp:25 PrototypeManager::dtor()
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:34 Prototype::dtor(1)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(2)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:34 Prototype::dtor(2)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(5)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:34 Prototype::dtor(3)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(6)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:34 Prototype::dtor(4)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(1)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:34 Prototype::dtor(5)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(4)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Entity/classes/Prototype.cpp:34 Prototype::dtor(6)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Entity/interfaces/IEntity.cpp:27 IEntity::dtor(3)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IState.cpp:35 IState::dtor(1)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/StatManager.cpp:50 StatManager::dtor()
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/AssetManager.cpp:34 AssetManager::dtor()
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/SoundHandler.cpp:23 SoundHandler::dtor()
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:40 TAssetHandler::dtor(N2sf11SoundBufferE)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:24 IAssetHandler::dtor(N2sf11SoundBufferE)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/FontHandler.cpp:23 FontHandler::dtor()
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:40 TAssetHandler::dtor(N2sf4FontE)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:24 IAssetHandler::dtor(N2sf4FontE)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/MusicHandler.cpp:23 MusicHandler::dtor()
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:40 TAssetHandler::dtor(N2sf5MusicE)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:24 IAssetHandler::dtor(N2sf5MusicE)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/ImageHandler.cpp:25 ImageHandler::dtor()
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:40 TAssetHandler::dtor(N2sf7TextureE)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:744 TAssetHandler(N2sf7TextureE):releaseAsset(resources/Sprites.png) Releasing asset
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:744 TAssetHandler(N2sf7TextureE):releaseAsset(resources/Tiles1.png) Releasing asset
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:24 IAssetHandler::dtor(N2sf7TextureE)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/assets/ConfigHandler.cpp:24 ConfigHandler::dtor()
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:40 TAssetHandler::dtor(N3GQE12ConfigReaderE)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/include/GQE/Core/interfaces/TAssetHandler.hpp:744 TAssetHandler(N3GQE12ConfigReaderE):releaseAsset(resources/settings.cfg) Releasing asset
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:45 ConfigReader::dtor()
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/classes/ConfigReader.cpp:45 ConfigReader::dtor()
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/interfaces/IAssetHandler.cpp:24 IAssetHandler::dtor(N3GQE12ConfigReaderE)
+2015-06-21 20:41:21 I /home/momia/Development/Project/gqe/src/GQE/Core/loggers/FileLogger.cpp:29 FileLogger::dtor()

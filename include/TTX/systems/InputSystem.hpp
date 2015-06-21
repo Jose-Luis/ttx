@@ -1,34 +1,35 @@
-/// @file NodeSystem.hpp
+/// @file InputSystem.hpp
 /// @brief
 /// @author Jose Luis Lavado
 /// @version 0.1
 /// @date 2013-04-02
 
+#include <TTX/Definition.hpp>
 #include <TTX/Types.hpp>
 #include <GQE/Entity/interfaces/IEntity.hpp>
 #include <GQE/Entity/interfaces/ISystem.hpp>
 #include <GQE/Entity/Entity_types.hpp>
 #include <TTX/systems/ISystem.hpp>
 
-#ifndef NODESYSTEM_INC
-#define NODESYSTEM_INC
+#ifndef INPUTSYSTEM_INC
+#define INPUTSYSTEM_INC
 
 
-/// The NodeSystem for managing all father-child relations between entities  in a game
+/// The InputSystem for managing all father-child relations between entities  in a game
 
-class NodeSystem : public ISystem
+class InputSystem : public ISystem
 {
 public:
    /**
-    * NodeSystem Constructor.
+    * InputSystem Constructor.
     * @param[in] theApp is the current GQE app.
     */
-   NodeSystem(IActionState& theState);
+   InputSystem(IActionState& theState);
 
    /**
     * ISystem Destructor.
     */
-   virtual ~NodeSystem();
+   virtual ~InputSystem();
 
    /**
     * AddProperties is responsible for adding the properties used by this

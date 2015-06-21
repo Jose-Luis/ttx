@@ -33,6 +33,9 @@
 #define NAME                  27
 #define PLAYER_NAME           28
 #define PLAYER                29
+#define PARENT                30
+#define CHILDREN              31
+#define ROOT                  32
 
 //SYSTEMS
 
@@ -44,6 +47,8 @@
 #define PROPELLER_SYSTEM      6
 #define RENDER_SYSTEM         7
 #define WEAPON_SYSTEM         8
+#define NODE_SYSTEM           9
+#define INPUT_SYSTEM          10
 
 //LAYERS
 

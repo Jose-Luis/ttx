@@ -14,16 +14,22 @@ NodeSystem::~NodeSystem()
 {}
 
 void NodeSystem::addProperties(GQE::IEntity* theEntity)
-{}
+{
+   theEntity->mProperties.add<Entity*>(PARENT,0);
+   theEntity->mProperties.add<Entity*>(ROOT,0);
+   theEntity->mProperties.add<ChildrenContainer>(CHILDREN,ChildrenContainer());
+}
 
 void NodeSystem::handleInit(GQE::IEntity* theEntity)
 {
-   GQE::IEntity* parent = theEntity->mProperties.get<IEntity*>(PARENT);
+   GQE::IEntity* parent = theEntity->mProperties.get<Entity*>(PARENT);
 
    if(parent)
    {
+      Entity* root = parent->mProperties.get<Entity*>(ROOT);
+      theEntity->mProperties.set<Entity*>(ROOT,root);
       ChildrenContainer* children = parent->mProperties.getPointer<ChildrenContainer>(CHILDREN);
-      aChildrenMap->push_front(theEntity);
+      children->push_front(theEntity);
       GQE::Uint32 order = parent->getOrder();
       theEntity->setOrder(order++); //Don't touch otherwise CRASH!!
    }
@@ -62,6 +68,7 @@ void NodeSystem::handleCleanup(GQE::IEntity* theEntity)
       else
       {
          child->mProperties.set<Entity*>(PARENT, 0);
+         child->mProperties.set<Entity*>(ROOT, 0);
          child->setOrder(0);
       }
    }

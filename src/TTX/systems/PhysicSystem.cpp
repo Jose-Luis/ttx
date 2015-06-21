@@ -72,19 +72,12 @@ void PhysicSystem::updateVariable(float theElapsedTime)
 
 void PhysicSystem::handleInit(GQE::IEntity* theEntity)
 {
-   GQE::IEntity* aFather = theEntity->mProperties.get<GQE::IEntity*>(FATHER_NODE);
+   GQE::IEntity* aFather = theEntity->mProperties.get<GQE::IEntity*>(PARENT);
    b2Body* aBody = 0;
 
    if (aFather)
    {
-      GQE::Uint32 anOrder = aFather->getOrder();
-      theEntity->setOrder(anOrder++); //Don't touch otherwise CRASH!!
-      GQE::typePropertyID aName = theEntity->mProperties.get<GQE::typePropertyID>(NAME);
-      aFather->mProperties.set<GQE::IEntity*>(aName, theEntity);
-
-
       b2Body* aFatherBody = aFather->mProperties.get<b2Body*>(BODY);
-
       b2JointDef*  aJointDef = theEntity->mProperties.get<b2JointDef*>(JOINTDEF);
 
       if(aJointDef)
@@ -123,28 +116,7 @@ void PhysicSystem::handleInit(GQE::IEntity* theEntity)
 
 void PhysicSystem::handleCleanup(GQE::IEntity* theEntity)
 {
-   GQE::IEntity* aParentEntity = theEntity->mProperties.get<GQE::IEntity*>(FATHER_NODE);
-
-   if(aParentEntity)
-   {
-      //aParentEntity->mProperties.remove(theEntity->mProperties.get<GQE::typePropertyID>(NAME));
-
-      if(!theEntity->mProperties.get<bool>(INDEPENDENT))
-      {
-         theEntity->destroy();
-         mWorld.DestroyBody(theEntity->mProperties.get<b2Body*>(BODY));
-      }
-      else
-      {
-         theEntity->mProperties.set<GQE::IEntity*>(FATHER_NODE, 0);
-         theEntity->setOrder(0);
-      }
-   }
-   else
-   {
-         theEntity->destroy();
-         mWorld.DestroyBody(theEntity->mProperties.get<b2Body*>(BODY));
-   }
+      mWorld.DestroyBody(theEntity->mProperties.get<b2Body*>(BODY));
 }
 
 void PhysicSystem::handleEvents(sf::Event theEvent)

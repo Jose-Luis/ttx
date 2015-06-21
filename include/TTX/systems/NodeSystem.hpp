@@ -4,6 +4,7 @@
 /// @version 0.1
 /// @date 2013-04-02
 
+#include <TTX/Definition.hpp>
 #include <TTX/Types.hpp>
 #include <GQE/Entity/interfaces/IEntity.hpp>
 #include <GQE/Entity/interfaces/ISystem.hpp>

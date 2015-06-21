@@ -6,14 +6,14 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 ACTION_GROUP_HPP_INCLUDED	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	12;"	d
 ACTORSYSTEM_INC	include/TTX/systems/ActorSystem.hpp	2;"	d
-ACTOR_SYSTEM	include/TTX/Definition.hpp	39;"	d
+ACTOR_SYSTEM	include/TTX/Definition.hpp	42;"	d
 ACTOR	include/TTX/Definition.hpp	26;"	d
 AFFECTORS_INC	include/TTX/classes/particles/Affectors.hpp	9;"	d
 AFFECTOR_INC	ext_libs/include/MPE/classes/Affector.hpp	7;"	d
 ALL	include/TTX/Types.hpp	/^   ALL = 0xFFFF$/;"	e	enum:ObjectCategories
 ANGLE_INC	ext_libs/include/GT/Angle.hpp	7;"	d
 ANIMATION_SYSTEM_HPP_INCLUDED	ext_libs/include/GQE/Entity/systems/AnimationSystem.hpp	9;"	d
-ANIMATION_SYSTEM	include/TTX/Definition.hpp	40;"	d
+ANIMATION_SYSTEM	include/TTX/Definition.hpp	43;"	d
 ANIMATION_YL97FCUT	include/TTX/classes/render/Animation.hpp	9;"	d
 ANIMATION	include/TTX/Definition.hpp	20;"	d
 APP_SETTINGS	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      static const char* APP_SETTINGS;$/;"	m	class:GQE::IApp
@@ -36,6 +36,7 @@ AffectorPtr	ext_libs/include/MPE/Config.hpp	/^typedef std::shared_ptr<Affector> 
 Affector	ext_libs/include/MPE/classes/Affector.hpp	/^class Affector: public Mortal$/;"	c	namespace:mpe
 AlResource	ext_libs/include/SFML/Audio/AlResource.hpp	/^class SFML_AUDIO_API AlResource$/;"	c	namespace:sf
 Alloc	ext_libs/include/TinyXML2/tinyxml2.h	/^    virtual void* Alloc() {$/;"	f	class:tinyxml2::MemPoolT
+AmunitionID	include/TTX/Types.hpp	/^typedef uint32_t AmunitionID;$/;"	t
 Angle	ext_libs/include/GT/Angle.hpp	/^class Angle$/;"	c	namespace:gt
 AnimationSYSTEM_INC	include/TTX/systems/AnimationSystem.hpp	18;"	d
 AnimationSystem	ext_libs/include/GQE/Entity/systems/AnimationSystem.hpp	/^  class GQE_API AnimationSystem : public ISystem$/;"	c	namespace:GQE
@@ -123,14 +124,14 @@ B2_WELD_JOINT_H	ext_libs/include/Box2D/Dynamics/Joints/b2WeldJoint.h	20;"	d
 B2_WHEEL_JOINT_H	ext_libs/include/Box2D/Dynamics/Joints/b2WheelJoint.h	20;"	d
 B2_WORLD_CALLBACKS_H	ext_libs/include/Box2D/Dynamics/b2WorldCallbacks.h	20;"	d
 B2_WORLD_H	ext_libs/include/Box2D/Dynamics/b2World.h	20;"	d
-BACKGROUND	include/TTX/Definition.hpp	50;"	d
+BACKGROUND	include/TTX/Definition.hpp	55;"	d
 BACK_1	include/TTX/Types.hpp	/^   BACK_1, BACK_2,$/;"	e	enum:Layers
 BACK_2	include/TTX/Types.hpp	/^   BACK_1, BACK_2,$/;"	e	enum:Layers
-BASIC_SHIP_PROTO	include/TTX/Definition.hpp	61;"	d
+BASIC_SHIP_PROTO	include/TTX/Definition.hpp	66;"	d
 BODYDEF	include/TTX/Definition.hpp	11;"	d
 BODY	include/TTX/Definition.hpp	10;"	d
 BOX2D_H	ext_libs/include/Box2D/Box2D.h	20;"	d
-BOX_PROTO	include/TTX/Definition.hpp	64;"	d
+BOX_PROTO	include/TTX/Definition.hpp	69;"	d
 BUF_SIZE	ext_libs/include/TinyXML2/tinyxml2.h	/^        BUF_SIZE = 200$/;"	e	enum:tinyxml2::XMLPrinter::__anon20
 BUF_SIZE	ext_libs/include/TinyXML2/tinyxml2.h	/^    enum { BUF_SIZE = 200 };$/;"	e	enum:tinyxml2::XMLAttribute::__anon18
 BackSlash	ext_libs/include/SFML/Window/Keyboard.hpp	/^      BackSlash,    \/\/\/< The \\ key$/;"	e	enum:sf::Keyboard::Key
@@ -161,6 +162,7 @@ ButtonCount	ext_libs/include/SFML/Window/Joystick.hpp	/^      ButtonCount = 32, 
 ButtonCount	ext_libs/include/SFML/Window/Mouse.hpp	/^      ButtonCount \/\/\/< Keep last -- the total number of mouse buttons$/;"	e	enum:sf::Mouse::Button
 Button	ext_libs/include/SFML/Window/Mouse.hpp	/^   enum Button$/;"	g	class:sf::Mouse
 CData	ext_libs/include/TinyXML2/tinyxml2.h	/^    bool CData() const						{$/;"	f	class:tinyxml2::XMLText
+CHILDREN	include/TTX/Definition.hpp	37;"	d
 CIRCLE	ext_libs/include/MPE/classes/Emitter.hpp	/^   enum Shape {RECTANGLE, CIRCLE};$/;"	e	enum:mpe::Emitter::Shape
 CLOSED	ext_libs/include/TinyXML2/tinyxml2.h	/^        CLOSED,		\/\/ <foo\/>$/;"	e	enum:tinyxml2::XMLElement::__anon19
 CLOSING	ext_libs/include/TinyXML2/tinyxml2.h	/^        CLOSING		\/\/ <\/foo>$/;"	e	enum:tinyxml2::XMLElement::__anon19
@@ -202,7 +204,7 @@ CStrSize	ext_libs/include/TinyXML2/tinyxml2.h	/^    int CStrSize() const {$/;"	f
 CStr	ext_libs/include/TinyXML2/tinyxml2.h	/^    const char* CStr() const {$/;"	f	class:tinyxml2::XMLPrinter
 Capacity	ext_libs/include/TinyXML2/tinyxml2.h	/^    int Capacity() const				{$/;"	f	class:tinyxml2::DynArray
 C	ext_libs/include/SFML/Window/Keyboard.hpp	/^      C,            \/\/\/< The C key$/;"	e	enum:sf::Keyboard::Key
-ChildrenContainer	include/TTX/Types.hpp	/^typedef std::map<EntityID, GQE::IEntity*> ChildrenContainer;$/;"	t
+ChildrenContainer	include/TTX/Types.hpp	/^typedef std::forward_list<GQE::IEntity*> ChildrenContainer;$/;"	t
 Chunk	ext_libs/include/SFML/Audio/SoundStream.hpp	/^   struct Chunk$/;"	s	class:sf::SoundStream
 Chunk	ext_libs/include/TinyXML2/tinyxml2.h	/^    union Chunk {$/;"	u	class:tinyxml2::MemPoolT
 CircleShape	ext_libs/include/SFML/Graphics/CircleShape.hpp	/^class SFML_GRAPHICS_API CircleShape : public Shape$/;"	c	namespace:sf
@@ -310,6 +312,8 @@ EndContact	src/TTX/classes/physics/CollisionListener.cpp	/^void CollisionListene
 End	ext_libs/include/SFML/Window/Keyboard.hpp	/^      End,          \/\/\/< The End key$/;"	e	enum:sf::Keyboard::Key
 EnsureCapacity	ext_libs/include/TinyXML2/tinyxml2.h	/^    void EnsureCapacity( int cap ) {$/;"	f	class:tinyxml2::DynArray
 EnteringPassiveMode	ext_libs/include/SFML/Network/Ftp.hpp	/^         EnteringPassiveMode   = 227, \/\/\/< Entering passive mode$/;"	e	enum:sf::Ftp::Response::Status
+EntityID	include/TTX/Types.hpp	/^typedef uint32_t EntityID;$/;"	t
+Entity	include/TTX/Types.hpp	/^typedef GQE::IEntity Entity;$/;"	t
 Equal	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Equal,        \/\/\/< The = key$/;"	e	enum:sf::Keyboard::Key
 Equation	ext_libs/include/SFML/Graphics/BlendMode.hpp	/^   enum Equation$/;"	g	struct:sf::BlendMode
 ErrorID	ext_libs/include/TinyXML2/tinyxml2.h	/^    XMLError  ErrorID() const {$/;"	f	class:tinyxml2::XMLDocument
@@ -335,7 +339,7 @@ F7	ext_libs/include/SFML/Window/Keyboard.hpp	/^      F7,           \/\/\/< The F
 F8	ext_libs/include/SFML/Window/Keyboard.hpp	/^      F8,           \/\/\/< The F8 key$/;"	e	enum:sf::Keyboard::Key
 F9	ext_libs/include/SFML/Window/Keyboard.hpp	/^      F9,           \/\/\/< The F9 key$/;"	e	enum:sf::Keyboard::Key
 FAMILYPROTO_INC	trashCode/FamilyProto.hpp	9;"	d
-FAMILYSYSTEM_INC	trashCode/FamilySystem.hpp	15;"	d
+FAMILY_INC	include/TTX/classes/utils/Family.hpp	2;"	d
 FATAL_LEVEL	ext_libs/include/GQE/Core/Core_types.hpp	31;"	d
 FATHER_NODE	include/TTX/Definition.hpp	13;"	d
 FIXED	ext_libs/include/MPE/Config.hpp	/^const bool FIXED = true;$/;"	m	namespace:mpe
@@ -349,7 +353,7 @@ FLOG_IF	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	272;"	d
 FLOG	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	235;"	d
 FLOG	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	269;"	d
 FOCUS_INC	ext_libs/include/MPE/classes/Focus.hpp	7;"	d
-FOREGROUND	include/TTX/Definition.hpp	51;"	d
+FOREGROUND	include/TTX/Definition.hpp	56;"	d
 FORE_1	include/TTX/Types.hpp	/^   FORE_1, FORE_2$/;"	e	enum:Layers
 FORE_2	include/TTX/Types.hpp	/^   FORE_1, FORE_2$/;"	e	enum:Layers
 FRIENDLY_BULLET	include/TTX/Types.hpp	/^   FRIENDLY_BULLET = 0x0002,$/;"	e	enum:ObjectCategories
@@ -357,8 +361,8 @@ FRIENDLY_SHIP	include/TTX/Types.hpp	/^   FRIENDLY_SHIP = 0x0001,$/;"	e	enum:Obje
 Factor	ext_libs/include/SFML/Graphics/BlendMode.hpp	/^   enum Factor$/;"	g	struct:sf::BlendMode
 FamilyProto	trashCode/FamilyProto.hpp	/^class FamilyProto:  virtual public GQE::Prototype$/;"	c
 FamilyProto	trashCode/FamilyProto.cpp	/^FamilyProto::FamilyProto(GQE::typePrototypeID theID):$/;"	f	class:FamilyProto
-FamilySystem	trashCode/FamilySystem.hpp	/^class FamilySystem : public ISystem$/;"	c
-FamilySystem	trashCode/FamilySystem.cpp	/^FamilySystem::FamilySystem(IActionState& theState):$/;"	f	class:FamilySystem
+Family	include/TTX/classes/utils/Family.hpp	/^class Family$/;"	c
+Family	include/TTX/classes/utils/Family.hpp	/^      Family(TYPE* theMe):$/;"	f	class:Family
 FatalLogger	ext_libs/include/GQE/Core/loggers/FatalLogger.hpp	/^  class GQE_API FatalLogger : public StringLogger$/;"	c	namespace:GQE
 F	ext_libs/include/SFML/Window/Keyboard.hpp	/^      F,            \/\/\/< The F key$/;"	e	enum:sf::Keyboard::Key
 FieldTable	ext_libs/include/SFML/Network/Http.hpp	/^      typedef std::map<std::string, std::string> FieldTable;$/;"	t	class:sf::Http::Request
@@ -640,7 +644,7 @@ GroupID	ext_libs/include/MPE/Config.hpp	/^typedef unsigned char GroupID;$/;"	t	n
 Gyroscope	ext_libs/include/SFML/Window/Sensor.hpp	/^      Gyroscope,        \/\/\/< Measures the raw rotation rates (degrees\/s)$/;"	e	enum:sf::Sensor::Type
 HALF_PI	include/TTX/Types.hpp	/^const float HALF_PI = 3.14159265359f \/ 2;$/;"	v
 HEALTHSYSTEM_INC	include/TTX/systems/HealthSystem.hpp	7;"	d
-HEALTH_SYSTEM	include/TTX/Definition.hpp	41;"	d
+HEALTH_SYSTEM	include/TTX/Definition.hpp	44;"	d
 HEALTH	include/TTX/Definition.hpp	22;"	d
 HasBOM	ext_libs/include/TinyXML2/tinyxml2.h	/^    bool HasBOM() const {$/;"	f	class:tinyxml2::XMLDocument
 Head	ext_libs/include/SFML/Network/Http.hpp	/^         Head,  \/\/\/< Request a page's header only$/;"	e	enum:sf::Http::Request::Method
@@ -678,7 +682,9 @@ INDEPENDENT	include/TTX/Definition.hpp	9;"	d
 INFO_LEVEL	ext_libs/include/GQE/Core/Core_types.hpp	28;"	d
 INITIAL_IMPULSE	include/TTX/Definition.hpp	32;"	d
 INITIAL_POSITION	include/TTX/Definition.hpp	23;"	d
+INPUTSYSTEM_INC	include/TTX/systems/InputSystem.hpp	15;"	d
 INPUT_SYSTEM_HPP_INCLUDED	ext_libs/include/GQE/Entity/systems/ActionSystem.hpp	9;"	d
+INPUT_SYSTEM	include/TTX/Definition.hpp	51;"	d
 INSTANCE_HPP_INCLUDED	ext_libs/include/GQE/Entity/classes/Instance.hpp	12;"	d
 IPROPELLER_INC	include/TTX/classes/objects/IPropeller.hpp	2;"	d
 IPROPERTY_HPP_INCLUDED	ext_libs/include/GQE/Core/interfaces/IProperty.hpp	9;"	d
@@ -705,10 +711,12 @@ Info	ext_libs/include/SFML/Audio/SoundFileReader.hpp	/^   struct Info$/;"	s	clas
 Info	ext_libs/include/SFML/Graphics/Font.hpp	/^   struct Info$/;"	s	class:sf::Font
 InputSoundFile	ext_libs/include/SFML/Audio/InputSoundFile.hpp	/^class SFML_AUDIO_API InputSoundFile : NonCopyable$/;"	c	namespace:sf
 InputStream	ext_libs/include/SFML/System/InputStream.hpp	/^class SFML_SYSTEM_API InputStream$/;"	c	namespace:sf
+InputSystem	include/TTX/systems/InputSystem.hpp	/^class InputSystem : public ISystem$/;"	c
+InputSystem	src/TTX/systems/InputSystem.cpp	/^InputSystem::InputSystem(IActionState& theState):$/;"	f	class:InputSystem
 Input	include/TTX/classes/objects/WeaponManager.hpp	/^      Input():$/;"	f	struct:WeaponManager::Input
 Input	include/TTX/classes/objects/WeaponManager.hpp	/^   struct Input$/;"	s	class:WeaponManager
 Insert	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Insert,       \/\/\/< The Insert key$/;"	e	enum:sf::Keyboard::Key
-InstanceID	include/TTX/Types.hpp	/^typedef unsigned int InstanceID;$/;"	t
+InstanceID	include/TTX/Types.hpp	/^typedef uint32_t InstanceID;$/;"	t
 Instance	ext_libs/include/GQE/Entity/classes/Instance.hpp	/^  class GQE_API Instance : public IEntity$/;"	c	namespace:GQE
 InsufficientStorageSpace	ext_libs/include/SFML/Network/Ftp.hpp	/^         InsufficientStorageSpace  = 452, \/\/\/< Requested action not taken; insufficient storage space in system, file unavailable$/;"	e	enum:sf::Ftp::Response::Status
 Int16	ext_libs/include/GQE/Config.hpp	/^  typedef signed   short Int16;   \/\/\/< Standard 16 bit signed integer$/;"	t	namespace:GQE
@@ -793,6 +801,7 @@ LastChild	ext_libs/include/TinyXML2/tinyxml2.h	/^    XMLHandle LastChild()						
 LastChild	ext_libs/include/TinyXML2/tinyxml2.h	/^    XMLNode*		LastChild()								{$/;"	f	class:tinyxml2::XMLNode
 LastChild	ext_libs/include/TinyXML2/tinyxml2.h	/^    const XMLConstHandle LastChild()	const										{$/;"	f	class:tinyxml2::XMLConstHandle
 LastChild	ext_libs/include/TinyXML2/tinyxml2.h	/^    const XMLNode*	LastChild() const						{$/;"	f	class:tinyxml2::XMLNode
+LayerID	include/TTX/Types.hpp	/^typedef uint32_t LayerID;$/;"	t
 Layer	include/TTX/classes/render/Layer.hpp	/^   Layer() {};$/;"	f	struct:Layer
 Layer	include/TTX/classes/render/Layer.hpp	/^   Layer(Id theID, sf::Texture* theTexure)$/;"	f	struct:Layer
 Layers	include/TTX/Types.hpp	/^enum Layers$/;"	g
@@ -813,7 +822,7 @@ Lock	ext_libs/include/SFML/System/Lock.hpp	/^class SFML_SYSTEM_API Lock : NonCop
 LoggedIn	ext_libs/include/SFML/Network/Ftp.hpp	/^         LoggedIn              = 230, \/\/\/< User logged in, proceed. Logged out if appropriate$/;"	e	enum:sf::Ftp::Response::Status
 LostFocus	ext_libs/include/SFML/Window/Event.hpp	/^      LostFocus,              \/\/\/< The window lost the focus (no data)$/;"	e	enum:sf::Event::EventType
 LowRange	ext_libs/include/GQE/Core/Core_types.hpp	/^    LowRange  = 0, \/\/\/< Recommend using LowRange graphics (32x32 pixels)$/;"	e	enum:GQE::GraphicRange
-MACHINEGUN_PROTO	include/TTX/Definition.hpp	62;"	d
+MACHINEGUN_PROTO	include/TTX/Definition.hpp	67;"	d
 MAP_H	ext_libs/include/MapLoader/map.hpp	2;"	d
 MAP_H	include/TTX/classes/mapLoader/MapLoader.hpp	2;"	d
 MAX_CHARS	ext_libs/include/GQE/Core/classes/ConfigReader.hpp	/^      static const unsigned short MAX_CHARS = 100;$/;"	m	class:GQE::ConfigReader
@@ -873,6 +882,9 @@ NEEDS_DELETE	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_DELETE = 0x200
 NEEDS_ENTITY_PROCESSING	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_ENTITY_PROCESSING			= 0x01,$/;"	e	enum:tinyxml2::StrPair::__anon15
 NEEDS_FLUSH	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_FLUSH = 0x100,$/;"	e	enum:tinyxml2::StrPair::__anon16
 NEEDS_NEWLINE_NORMALIZATION	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_NEWLINE_NORMALIZATION		= 0x02,$/;"	e	enum:tinyxml2::StrPair::__anon15
+NODESYSTEM_INC	include/TTX/systems/NodeSystem.hpp	15;"	d
+NODESYSTEM_INC	trashCode/FamilySystem.hpp	14;"	d
+NODE_SYSTEM	include/TTX/Definition.hpp	50;"	d
 NOMINMAX	ext_libs/include/GQE/Config.hpp	44;"	d
 NOMINMAX	ext_libs/include/SFML/Config.hpp	46;"	d
 NONE	include/TTX/Definition.hpp	4;"	d
@@ -896,6 +908,10 @@ NextSibling	ext_libs/include/TinyXML2/tinyxml2.h	/^    const XMLNode*	NextSiblin
 Next	ext_libs/include/TinyXML2/tinyxml2.h	/^    const XMLAttribute* Next() const {$/;"	f	class:tinyxml2::XMLAttribute
 NoChildren	ext_libs/include/TinyXML2/tinyxml2.h	/^    bool NoChildren() const					{$/;"	f	class:tinyxml2::XMLNode
 NoContent	ext_libs/include/SFML/Network/Http.hpp	/^         NoContent      = 204, \/\/\/< The server didn't send any data in return$/;"	e	enum:sf::Http::Response::Status
+NodeSystem	include/TTX/systems/NodeSystem.hpp	/^class NodeSystem : public ISystem$/;"	c
+NodeSystem	trashCode/FamilySystem.hpp	/^class NodeSystem : public ISystem$/;"	c
+NodeSystem	src/TTX/systems/NodeSystem.cpp	/^NodeSystem::NodeSystem(IActionState& theState):$/;"	f	class:NodeSystem
+NodeSystem	trashCode/FamilySystem.cpp	/^NodeSystem::NodeSystem(IActionState& theState):$/;"	f	class:NodeSystem
 NonCopyable	ext_libs/include/SFML/System/NonCopyable.hpp	/^class SFML_SYSTEM_API NonCopyable$/;"	c	namespace:sf
 NonCopyable	ext_libs/include/SFML/System/NonCopyable.hpp	/^   NonCopyable() {}$/;"	f	class:sf::NonCopyable
 None	ext_libs/include/SFML/Window/WindowStyle.hpp	/^   None       = 0,      \/\/\/< No border \/ title bar (this flag and all others are mutually exclusive)$/;"	e	enum:sf::Style::__anon12
@@ -928,7 +944,7 @@ Numpad6	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Numpad6,      \/\/\/< 
 Numpad7	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Numpad7,      \/\/\/< The numpad 7 key$/;"	e	enum:sf::Keyboard::Key
 Numpad8	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Numpad8,      \/\/\/< The numpad 8 key$/;"	e	enum:sf::Keyboard::Key
 Numpad9	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Numpad9,      \/\/\/< The numpad 9 key$/;"	e	enum:sf::Keyboard::Key
-OBJECTS	include/TTX/Definition.hpp	53;"	d
+OBJECTS	include/TTX/Definition.hpp	58;"	d
 OBJT_1	include/TTX/Types.hpp	/^   OBJT_1, OBJT_2,$/;"	e	enum:Layers
 OBJT_2	include/TTX/Types.hpp	/^   OBJT_1, OBJT_2,$/;"	e	enum:Layers
 OPEN	ext_libs/include/TinyXML2/tinyxml2.h	/^        OPEN,		\/\/ <foo>$/;"	e	enum:tinyxml2::XMLElement::__anon19
@@ -946,22 +962,23 @@ One	ext_libs/include/SFML/Graphics/BlendMode.hpp	/^      One,              \/\/\
 OpeningDataConnection	ext_libs/include/SFML/Network/Ftp.hpp	/^         OpeningDataConnection       = 150, \/\/\/< File status ok, about to open data connection$/;"	e	enum:sf::Ftp::Response::Status
 Orientation	ext_libs/include/SFML/Window/Sensor.hpp	/^      Orientation,      \/\/\/< Measures the absolute 3D orientation (degrees)$/;"	e	enum:sf::Sensor::Type
 OutputSoundFile	ext_libs/include/SFML/Audio/OutputSoundFile.hpp	/^class SFML_AUDIO_API OutputSoundFile : NonCopyable$/;"	c	namespace:sf
+PARENT	include/TTX/Definition.hpp	36;"	d
 PARTICLECONTAINER_N3JXVU09	ext_libs/include/MPE/classes/ParticleContainer.hpp	2;"	d
 PARTICLESYSTEM_T69OX7N	include/TTX/classes/particles/Particles.hpp	9;"	d
-PARTICLES	include/TTX/Definition.hpp	52;"	d
+PARTICLES	include/TTX/Definition.hpp	57;"	d
 PARTICLE_INC	ext_libs/include/MPE/classes/Particle.hpp	8;"	d
 PART_1	include/TTX/Types.hpp	/^   PART_1, PART_2,$/;"	e	enum:Layers
 PART_2	include/TTX/Types.hpp	/^   PART_1, PART_2,$/;"	e	enum:Layers
 PBOX2_INC	include/TTX/prototypes/Box.hpp	2;"	d
 PHYSICPROTO_INC	include/TTX/prototypes/PhysicProto.hpp	2;"	d
-PHYSIC_SYSTEM	include/TTX/Definition.hpp	42;"	d
+PHYSIC_SYSTEM	include/TTX/Definition.hpp	45;"	d
 PI	ext_libs/include/GT/Angle.hpp	/^   const static Real PI;$/;"	m	class:gt::Angle
 PI	include/TTX/Types.hpp	/^const float PI = 3.14159265359f;$/;"	v
 PLAYERSYSTEM_INC	include/TTX/systems/PlayerSystem.hpp	7;"	d
 PLAYER_INC	include/TTX/prototypes/Player.hpp	2;"	d
 PLAYER_NAME	include/TTX/Definition.hpp	34;"	d
-PLAYER_PROTO	include/TTX/Definition.hpp	65;"	d
-PLAYER_SYSTEM	include/TTX/Definition.hpp	43;"	d
+PLAYER_PROTO	include/TTX/Definition.hpp	70;"	d
+PLAYER_SYSTEM	include/TTX/Definition.hpp	46;"	d
 PLAYER	include/TTX/Definition.hpp	35;"	d
 PMACHINEGUN_INC	include/TTX/prototypes/Machinegun.hpp	2;"	d
 POINTS	include/TTX/Definition.hpp	25;"	d
@@ -970,7 +987,7 @@ POSITION	include/TTX/Definition.hpp	8;"	d
 PRESERVE_WHITESPACE	ext_libs/include/TinyXML2/tinyxml2.h	/^    PRESERVE_WHITESPACE,$/;"	e	enum:tinyxml2::Whitespace
 PROPELLERSYSTEM_INC	include/TTX/systems/PropellerSystem.hpp	25;"	d
 PROPELLER_INC	include/TTX/classes/objects/Propeller.hpp	14;"	d
-PROPELLER_SYSTEM	include/TTX/Definition.hpp	44;"	d
+PROPELLER_SYSTEM	include/TTX/Definition.hpp	47;"	d
 PROPELLER	include/TTX/Definition.hpp	17;"	d
 PROPERTY_MANAGER_HPP_INCLUDED	ext_libs/include/GQE/Core/classes/PropertyManager.hpp	13;"	d
 PROTOTYPE_HPP_INCLUDED	ext_libs/include/GQE/Entity/classes/Prototype.hpp	15;"	d
@@ -1072,8 +1089,9 @@ RECTANGLE	ext_libs/include/MPE/classes/Emitter.hpp	/^   enum Shape {RECTANGLE, C
 REFLECT	ext_libs/include/MPE/classes/Emitter.hpp	/^   enum Dispersion {LINEAR, RADIAL, REFLECT, RANDOM, STATIC};$/;"	e	enum:mpe::Emitter::Dispersion
 RENDERMANAGER_YJUY1HTM	include/TTX/classes/render/RenderManager.hpp	9;"	d
 RENDER_SYSTEM_HPP_INCLUDED	ext_libs/include/GQE/Entity/systems/RenderSystem.hpp	13;"	d
-RENDER_SYSTEM	include/TTX/Definition.hpp	45;"	d
+RENDER_SYSTEM	include/TTX/Definition.hpp	48;"	d
 RESISTANCE	include/TTX/Definition.hpp	21;"	d
+ROOT	include/TTX/Definition.hpp	38;"	d
 RShift	ext_libs/include/SFML/Window/Keyboard.hpp	/^      RShift,       \/\/\/< The right Shift key$/;"	e	enum:sf::Keyboard::Key
 RSystem	ext_libs/include/SFML/Window/Keyboard.hpp	/^      RSystem,      \/\/\/< The right OS specific key: window (Windows and Linux), apple (MacOS X), ...$/;"	e	enum:sf::Keyboard::Key
 Randomizer	ext_libs/include/GT/Randomizer.hpp	/^class Randomizer$/;"	c	namespace:gt
@@ -1241,9 +1259,9 @@ SFML_WINDOW_API	ext_libs/include/SFML/Window/Export.hpp	43;"	d
 SFML_WINDOW_EXPORT_HPP	ext_libs/include/SFML/Window/Export.hpp	26;"	d
 SFML_WINDOW_HPP	ext_libs/include/SFML/Window/Window.hpp	26;"	d
 SHIPPROPELLER_INC	include/TTX/prototypes/ShipPropeller.hpp	2;"	d
-SHIP_PROPELLER_PROTO	include/TTX/Definition.hpp	63;"	d
+SHIP_PROPELLER_PROTO	include/TTX/Definition.hpp	68;"	d
 SIMPLEBULLET_INC	include/TTX/prototypes/SimpleBullet.hpp	2;"	d
-SIMPLE_BULLET_PROTO	include/TTX/Definition.hpp	66;"	d
+SIMPLE_BULLET_PROTO	include/TTX/Definition.hpp	71;"	d
 SLOGE	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	307;"	d
 SLOGE	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	358;"	d
 SLOGRE	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	349;"	d
@@ -1255,9 +1273,9 @@ SLOG	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	356;"	d
 SOURCE_EXTENSIONS	.ycm_extra_conf.py	/^SOURCE_EXTENSIONS = [ '.cpp', '.cxx', '.cc', '.c', '.m', '.mm' ]$/;"	v
 SPACE_DOTS_APP_HPP_INCLUDED	include/TTX/app/TTXapp.hpp	11;"	d
 SPU	include/TTX/Types.hpp	/^const float SPU = 1.0f \/ UPDATE_RATE;$/;"	v
-STATE_1	include/TTX/Definition.hpp	57;"	d
+STATE_1	include/TTX/Definition.hpp	62;"	d
 STATIC	ext_libs/include/MPE/classes/Emitter.hpp	/^   enum Dispersion {LINEAR, RADIAL, REFLECT, RANDOM, STATIC};$/;"	e	enum:mpe::Emitter::Dispersion
-SUBMACHINEGUN	include/TTX/Definition.hpp	70;"	d
+SUBMACHINEGUN	include/TTX/Definition.hpp	75;"	d
 SYSTEM_INC	ext_libs/include/MPE/classes/System.hpp	7;"	d
 ScopeLogger	ext_libs/include/GQE/Core/loggers/ScopeLogger.hpp	/^  class GQE_API ScopeLogger : public ILogger$/;"	c	namespace:GQE
 S	ext_libs/include/SFML/Window/Keyboard.hpp	/^      S,            \/\/\/< The S key$/;"	e	enum:sf::Keyboard::Key
@@ -1400,6 +1418,7 @@ Subtract	ext_libs/include/SFML/Graphics/BlendMode.hpp	/^      Subtract \/\/\/< P
 Subtract	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Subtract,     \/\/\/< The - key$/;"	e	enum:sf::Keyboard::Key
 SynchronizeTransform	ext_libs/include/Box2D/Dynamics/b2Body.h	/^inline void b2Body::SynchronizeTransform()$/;"	f	class:b2Body
 SystemContainer	include/TTX/Types.hpp	/^typedef std::map<SystemID, ISystem*> SystemContainer;$/;"	t
+SystemID	include/TTX/Types.hpp	/^typedef uint32_t SystemID;$/;"	t
 SystemStatus	ext_libs/include/SFML/Network/Ftp.hpp	/^         SystemStatus          = 211, \/\/\/< System status, or system help reply$/;"	e	enum:sf::Ftp::Response::Status
 SystemType	ext_libs/include/SFML/Network/Ftp.hpp	/^         SystemType            = 215, \/\/\/< NAME system type, where NAME is an official system name from the list in the Assigned Numbers document$/;"	e	enum:sf::Ftp::Response::Status
 System	ext_libs/include/MPE/classes/System.hpp	/^class System$/;"	c	namespace:mpe
@@ -1591,7 +1610,7 @@ WEAPONSYSTEM_INC	include/TTX/systems/WeaponSystem.hpp	7;"	d
 WEAPON_8FPXBSUG	include/TTX/classes/objects/Weapon.hpp	7;"	d
 WEAPON_MANAGER_INPUT	include/TTX/Definition.hpp	18;"	d
 WEAPON_MANAGER	include/TTX/Definition.hpp	31;"	d
-WEAPON_SYSTEM	include/TTX/Definition.hpp	46;"	d
+WEAPON_SYSTEM	include/TTX/Definition.hpp	49;"	d
 WEAPON	include/TTX/Definition.hpp	30;"	d
 WIN32_LEAN_AND_MEAN	ext_libs/include/GQE/Config.hpp	41;"	d
 WLOGM_IF	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	138;"	d
@@ -1602,6 +1621,7 @@ WLOG_IF	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	147;"	d
 WLOG_IF	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	155;"	d
 WLOG	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	125;"	d
 WLOG	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	152;"	d
+WeaponID	include/TTX/Types.hpp	/^typedef uint32_t WeaponID;$/;"	t
 WeaponManagerInput	include/TTX/Types.hpp	/^typedef std::vector<FireData> WeaponManagerInput;$/;"	t
 WeaponManager	include/TTX/classes/objects/WeaponManager.hpp	/^class WeaponManager$/;"	c
 WeaponManager	src/TTX/classes/objects/WeaponManager.cpp	/^WeaponManager::WeaponManager()$/;"	f	class:WeaponManager
@@ -1733,24 +1753,16 @@ a12	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 a11 = ex.x, a12 = ey.x, a
 a21	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 a11 = ex.x, a12 = ey.x, a21 = ex.y, a22 = ey.y;$/;"	l
 a22	ext_libs/include/Box2D/Common/b2Math.h	/^		float32 a11 = ex.x, a12 = ey.x, a21 = ex.y, a22 = ey.y;$/;"	l
 aBody	src/TTX/systems/PhysicSystem.cpp	/^   b2Body* aBody = 0;$/;"	l
-aChildName	trashCode/FamilySystem.cpp	/^      EntityID aChildName = theEntity->mProperties.get<EntityID>("Name");$/;"	l
-aChildrenMap	trashCode/FamilySystem.cpp	/^      ChildrenContainer* aChildrenMap = aParentEntity->mProperties.getPointer<ChildrenContainer>("Children");$/;"	l
-aChildrenMap	trashCode/FamilySystem.cpp	/^      ChildrenContainer* aChildrenMap = anParentEntity->mProperties.getPointer<ChildrenContainer>("Children");$/;"	l
-aChildrenMap	trashCode/FamilySystem.cpp	/^   ChildrenContainer* aChildrenMap = theEntity->mProperties.getPointer<ChildrenContainer>("Children");$/;"	l
 aCosine	ext_libs/include/MPE/classes/Vec2.hpp	/^      Real aCosine = std::cos(theAngle);$/;"	l
 aDamage	src/TTX/classes/physics/CollisionListener.cpp	/^         float aDamage = theImpactStrength \/ aResistance;$/;"	l
 aFatherAnchorPoint	src/TTX/systems/PhysicSystem.cpp	/^               b2Vec2 aFatherAnchorPoint = aFather->mProperties.get<b2Vec2>(aPropertyName);$/;"	l
 aFatherBody	src/TTX/systems/PhysicSystem.cpp	/^      b2Body* aFatherBody = aFather->mProperties.get<b2Body*>(BODY);$/;"	l
-aFather	src/TTX/systems/PhysicSystem.cpp	/^   GQE::IEntity* aFather = theEntity->mProperties.get<GQE::IEntity*>(FATHER_NODE);$/;"	l
+aFather	src/TTX/systems/PhysicSystem.cpp	/^   GQE::IEntity* aFather = theEntity->mProperties.get<GQE::IEntity*>(PARENT);$/;"	l
 aFont	src/TTX/systems/PlayerSystem.cpp	/^            sf::Font aFont;$/;"	l
 aHealth	src/TTX/classes/physics/CollisionListener.cpp	/^         float aHealth = theEntity->mProperties.get<float>(HEALTH);$/;"	l
 aImpactStrength	src/TTX/classes/physics/CollisionListener.cpp	/^   float aImpactStrength = theImpulse->normalImpulses[0];$/;"	l
 aJointDef	src/TTX/systems/PhysicSystem.cpp	/^      b2JointDef*  aJointDef = theEntity->mProperties.get<b2JointDef*>(JOINTDEF);$/;"	l
 aJoint	src/TTX/systems/PhysicSystem.cpp	/^         b2Joint* aJoint = mWorld.CreateJoint(aJointDef);$/;"	l
-aName	src/TTX/systems/PhysicSystem.cpp	/^      GQE::typePropertyID aName = theEntity->mProperties.get<GQE::typePropertyID>(NAME);$/;"	l
-aName	trashCode/FamilySystem.cpp	/^      EntityID aName = theEntity->mProperties.get<EntityID>("Name");$/;"	l
-aParentEntity	src/TTX/systems/PhysicSystem.cpp	/^   GQE::IEntity* aParentEntity = theEntity->mProperties.get<GQE::IEntity*>(FATHER_NODE);$/;"	l
-aParentEntity	trashCode/FamilySystem.cpp	/^   GQE::IEntity* aParentEntity = theEntity->mProperties.get<GQE::IEntity*>("Parent");$/;"	l
 aPlayer	src/TTX/systems/ActorSystem.cpp	/^   GQE::IEntity* aPlayer = theEntity->mProperties.get<GQE::IEntity*>(PLAYER);$/;"	l
 aPosition	src/TTX/systems/PhysicSystem.cpp	/^               b2Vec2 aPosition = aFatherBody->GetPosition() + aFatherAnchorPoint + aWeldJointDef->localAnchorB;$/;"	l
 aPropertyName	src/TTX/systems/PhysicSystem.cpp	/^               GQE::typePropertyID aPropertyName = theEntity->mProperties.get<GQE::typePropertyID>(ID32_("AnchorPoint"));$/;"	l
@@ -1770,6 +1782,7 @@ actorProto	src/TTX/gameStates/IActionState.cpp	/^        GQE::Prototype* actorPr
 actor	src/TTX/gameStates/GameStateOne.cpp	/^               GQE::IEntity* actor = mPlayer->mProperties.get<GQE::IEntity*>(ACTOR);$/;"	l
 actor	src/TTX/gameStates/IActionState.cpp	/^    GQE::IEntity* actor = 0;$/;"	l
 actor	src/TTX/systems/PlayerSystem.cpp	/^         GQE::IEntity* actor = anEntity->mProperties.get<GQE::IEntity*>(ACTOR);$/;"	l
+addChild	include/TTX/classes/utils/Family.hpp	/^      void addChild(TYPE* theChild)$/;"	f	class:Family
 addCleanup	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      void addCleanup(const typeEventID theEventID, TCLASS& theEventClass,$/;"	f	class:GQE::StateManager
 addInstance	src/TTX/gameStates/IActionState.cpp	/^GQE::Instance* IActionState::addInstance(GQE::typePrototypeID thePrototype,$/;"	f	class:IActionState
 addLayer	include/TTX/classes/render/RenderManager.hpp	/^   void addLayer(Id theID, sf::Texture* theTexture)$/;"	f	class:RenderManager
@@ -1777,6 +1790,8 @@ addPlayer	src/TTX/gameStates/IActionState.cpp	/^GQE::IEntity* IActionState::addP
 addProperties	src/TTX/systems/ActorSystem.cpp	/^void ActorSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:ActorSystem
 addProperties	src/TTX/systems/AnimationSystem.cpp	/^void AnimationSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:AnimationSystem
 addProperties	src/TTX/systems/HealthSystem.cpp	/^void HealthSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:HealthSystem
+addProperties	src/TTX/systems/InputSystem.cpp	/^void InputSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:InputSystem
+addProperties	src/TTX/systems/NodeSystem.cpp	/^void NodeSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:NodeSystem
 addProperties	src/TTX/systems/ParticleSystem.cpp	/^void ParticleSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:ParticleSystem
 addProperties	src/TTX/systems/PhysicSystem.cpp	/^void PhysicSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:PhysicSystem
 addProperties	src/TTX/systems/PlayerSystem.cpp	/^void PlayerSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:PlayerSystem
@@ -1786,7 +1801,7 @@ addProperties	src/TTX/systems/WeaponSystem.cpp	/^void WeaponSystem::addPropertie
 addProperties	trashCode/B2ObjectDefSystem.cpp	/^void B2ObjectDefSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:B2ObjectDefSystem
 addProperties	trashCode/B2ObjectSystem.cpp	/^void B2ObjectSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:B2ObjectSystem
 addProperties	trashCode/B2WorldSystem.cpp	/^void B2WorldSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:B2WorldSystem
-addProperties	trashCode/FamilySystem.cpp	/^void FamilySystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:FamilySystem
+addProperties	trashCode/FamilySystem.cpp	/^void NodeSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:NodeSystem
 addProperties	trashCode/ObjectSystemOld.cpp	/^void ObjectSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:ObjectSystem
 addVertex	include/TTX/classes/render/RenderManager.hpp	/^   void addVertex(Id theID, const sf::Vertex& theVertex)$/;"	f	class:RenderManager
 addWeapon	src/TTX/classes/objects/WeaponManager.cpp	/^void WeaponManager::addWeapon(GQE::IEntity* theWeapon)$/;"	f	class:WeaponManager
@@ -1853,7 +1868,6 @@ anEntity	src/TTX/systems/PhysicSystem.cpp	/^         GQE::IEntity* anEntity = *a
 anEntity	src/TTX/systems/PlayerSystem.cpp	/^         GQE::IEntity* anEntity = *anQueue;$/;"	l
 anEntity	src/TTX/systems/PropellerSystem.cpp	/^         GQE::IEntity* anEntity = *anQueue;$/;"	l
 anEntity	src/TTX/systems/RenderSystem.cpp	/^         GQE::IEntity* anEntity = *anQueue;$/;"	l
-anEntity	trashCode/FamilySystem.cpp	/^      GQE::IEntity* anEntity = aChild.second;$/;"	l
 anEntity	trashCode/ObjectSystemOld.cpp	/^         GQE::IEntity* anEntity = *anQueue;$/;"	l
 anEvent	ext_libs/include/GQE/Core/classes/EventManager.hpp	/^          TEvent<TCLASS,TCONTEXT>* anEvent =$/;"	l
 anEvent	ext_libs/include/GQE/Core/classes/EventManager.hpp	/^          TEvent<TCLASS,void>* anEvent =$/;"	l
@@ -1896,9 +1910,6 @@ anMap	src/TTX/classes/mapLoader/MapLoader.cpp	/^   tinyxml2::XMLElement* anMap =
 anMoveData	src/TTX/systems/PlayerSystem.cpp	/^   MoveData anMoveData;$/;"	l
 anObject	src/TTX/classes/mapLoader/MapLoader.cpp	/^   tinyxml2::XMLElement* anObject = anShapes->FirstChildElement("object");$/;"	l
 anOpacity	src/TTX/classes/mapLoader/MapLoader.cpp	/^      float anOpacity = anLayer->FloatAttribute("opacity");$/;"	l
-anOrder	src/TTX/systems/PhysicSystem.cpp	/^      GQE::Uint32 anOrder = aFather->getOrder();$/;"	l
-anOrder	trashCode/FamilySystem.cpp	/^      GQE::Uint32 anOrder = anParentEntity->getOrder();$/;"	l
-anParentEntity	trashCode/FamilySystem.cpp	/^   GQE::IEntity* anParentEntity = theEntity->mProperties.get<GQE::IEntity*>("Parent");$/;"	l
 anPointsArray	src/TTX/classes/mapLoader/MapLoader.cpp	/^      b2Vec2* anPointsArray = (b2Vec2*)malloc(nPoints * sizeof(b2Vec2));$/;"	l
 anPoints	src/TTX/classes/mapLoader/MapLoader.cpp	/^      tinyxml2::XMLElement* anPoints = anObject->FirstChildElement("polyline");$/;"	l
 anPosition2D	src/TTX/systems/PlayerSystem.cpp	/^            Position2D anPosition2D = actor->mProperties.get<Position2D>(POSITION);$/;"	l
@@ -2244,6 +2255,10 @@ child1	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	int32 child1;$/;"	m	s
 child2	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	int32 child2;$/;"	m	struct:b2TreeNode
 childBody	src/TTX/gameStates/IActionState.cpp	/^   b2Body* childBody = theChild->mProperties.get<b2Body*>(BODY);$/;"	l
 childIndex	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	int32 childIndex;$/;"	m	struct:b2FixtureProxy
+children	src/TTX/systems/NodeSystem.cpp	/^      ChildrenContainer* children = parent->mProperties.getPointer<ChildrenContainer>(CHILDREN);$/;"	l
+children	src/TTX/systems/NodeSystem.cpp	/^   ChildrenContainer* children = theEntity->mProperties.getPointer<ChildrenContainer>(CHILDREN);$/;"	l
+children	trashCode/FamilySystem.cpp	/^      ChildrenContainer* children = parent->mProperties.getPointer<ChildrenContainer>(CHILDREN);$/;"	l
+children	trashCode/FamilySystem.cpp	/^   ChildrenContainer* children = theEntity->mProperties.getPointer<ChildrenContainer>(CHILDREN);$/;"	l
 chunk	ext_libs/include/TinyXML2/tinyxml2.h	/^        Chunk* chunk = (Chunk*)mem;$/;"	l
 chunk	ext_libs/include/TinyXML2/tinyxml2.h	/^        Chunk chunk[COUNT];$/;"	m	struct:tinyxml2::MemPoolT::Block
 clear	include/TTX/classes/render/RenderManager.hpp	/^   void clear()$/;"	f	class:RenderManager
@@ -2314,6 +2329,8 @@ draw	src/TTX/gameStates/GameStateOne.cpp	/^void GameStateOne::draw(void)$/;"	f	c
 draw	src/TTX/systems/ActorSystem.cpp	/^void ActorSystem::draw(void)$/;"	f	class:ActorSystem
 draw	src/TTX/systems/AnimationSystem.cpp	/^void AnimationSystem::draw()$/;"	f	class:AnimationSystem
 draw	src/TTX/systems/HealthSystem.cpp	/^void HealthSystem::draw()$/;"	f	class:HealthSystem
+draw	src/TTX/systems/InputSystem.cpp	/^void InputSystem::draw(void)$/;"	f	class:InputSystem
+draw	src/TTX/systems/NodeSystem.cpp	/^void NodeSystem::draw()$/;"	f	class:NodeSystem
 draw	src/TTX/systems/ParticleSystem.cpp	/^void ParticleSystem::draw()$/;"	f	class:ParticleSystem
 draw	src/TTX/systems/PhysicSystem.cpp	/^void PhysicSystem::draw(void)$/;"	f	class:PhysicSystem
 draw	src/TTX/systems/PlayerSystem.cpp	/^void PlayerSystem::draw(void)$/;"	f	class:PlayerSystem
@@ -2322,8 +2339,9 @@ draw	src/TTX/systems/RenderSystem.cpp	/^void RenderSystem::draw()$/;"	f	class:Re
 draw	src/TTX/systems/WeaponSystem.cpp	/^void WeaponSystem::draw()$/;"	f	class:WeaponSystem
 draw	trashCode/B2ObjectDefSystem.cpp	/^void B2ObjectDefSystem::draw(void)$/;"	f	class:B2ObjectDefSystem
 draw	trashCode/B2ObjectSystem.cpp	/^void B2ObjectSystem::draw(void)$/;"	f	class:B2ObjectSystem
-draw	trashCode/FamilySystem.cpp	/^void FamilySystem::draw()$/;"	f	class:FamilySystem
+draw	trashCode/FamilySystem.cpp	/^void NodeSystem::draw()$/;"	f	class:NodeSystem
 draw	trashCode/ObjectSystemOld.cpp	/^void ObjectSystem::draw(void)$/;"	f	class:ObjectSystem
+dropChild	include/TTX/classes/utils/Family.hpp	/^      void dropChild(TYPE* theChild)$/;"	f	class:Family
 dropReference	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual void dropReference(const typeAssetID theAssetID,$/;"	f	class:GQE::TAssetHandler
 dropTime	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        AssetDropTime  dropTime;  \/\/\/< Drop time at (Zero, Exit)$/;"	m	struct:GQE::TAssetHandler::typeAssetData
 dtRatio	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 dtRatio;	\/\/ dt * inv_dt0$/;"	m	struct:b2TimeStep
@@ -2445,6 +2463,7 @@ getCos	ext_libs/include/GT/Angle.hpp	/^   inline Real getCos ( ) const$/;"	f	cla
 getDropTime	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      AssetDropTime getDropTime(void) const$/;"	f	class:GQE::TAsset
 getDropTime	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual AssetDropTime getDropTime(const typeAssetID theAssetID) const$/;"	f	class:GQE::TAssetHandler
 getEmitterID	src/TTX/classes/objects/Propeller.cpp	/^mpe::EmitterID Propeller::getEmitterID()$/;"	f	class:Propeller
+getFather	include/TTX/classes/utils/Family.hpp	/^      TYPE* getFather()$/;"	f	class:Family
 getFilename	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      const std::string getFilename(void)$/;"	f	class:GQE::TAsset
 getFilename	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual const std::string getFilename(const typeAssetID theAssetID) const$/;"	f	class:GQE::TAssetHandler
 getFrame	include/TTX/classes/render/Animation.hpp	/^   sf::IntRect getFrame()$/;"	f	class:Animation
@@ -2457,6 +2476,7 @@ getLoadStyle	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virt
 getLoadTime	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      AssetLoadTime getLoadTime(void) const$/;"	f	class:GQE::TAsset
 getLoadTime	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual AssetLoadTime getLoadTime(const typeAssetID theAssetID) const$/;"	f	class:GQE::TAssetHandler
 getManager	include/TTX/classes/objects/Weapon.hpp	/^   WeaponManager* getManager(){return mManager;}$/;"	f	class:Weapon
+getMe	include/TTX/classes/utils/Family.hpp	/^      TYPE* getMe()$/;"	f	class:Family
 getParticleLayer	src/TTX/classes/particles/Particles.cpp	/^Id Particles::getParticleLayer(const mpe::Particle& theParticle)$/;"	f	class:Particles
 getPointer	ext_libs/include/GQE/Core/classes/PropertyManager.hpp	/^    TYPE* getPointer(const typePropertyID thePropertyID)$/;"	f	class:GQE::PropertyManager
 getPointer	ext_libs/include/GQE/Core/interfaces/TProperty.hpp	/^      TYPE* getPointer()$/;"	f	class:GQE::TProperty
@@ -2465,6 +2485,7 @@ getProperty	ext_libs/include/GQE/Core/classes/PropertyManager.hpp	/^    TPropert
 getReference	ext_libs/include/GQE/Core/classes/PropertyManager.hpp	/^    TYPE& getReference(const typePropertyID thePropertyID)$/;"	f	class:GQE::PropertyManager
 getReference	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      TYPE* getReference(const typeAssetID theAssetID,$/;"	f	class:GQE::TAssetHandler
 getReference	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      TYPE* getReference(void)$/;"	f	class:GQE::TAssetHandler
+getRoot	include/TTX/classes/utils/Family.hpp	/^      TYPE* getRoot()$/;"	f	class:Family
 getSin	ext_libs/include/GT/Angle.hpp	/^   inline Real getSin ( ) const$/;"	f	class:gt::Angle
 getValue	ext_libs/include/GQE/Core/interfaces/TProperty.hpp	/^      TYPE getValue()$/;"	f	class:GQE::TProperty
 getValue	ext_libs/include/GT/Angle.hpp	/^   inline Real getValue ( ) const$/;"	f	class:gt::Angle
@@ -2492,6 +2513,8 @@ handleCleanup	src/TTX/gameStates/GameStateOne.cpp	/^void GameStateOne::handleCle
 handleCleanup	src/TTX/systems/ActorSystem.cpp	/^void ActorSystem::handleCleanup(GQE::IEntity* theEntity)$/;"	f	class:ActorSystem
 handleCleanup	src/TTX/systems/AnimationSystem.cpp	/^void AnimationSystem::handleCleanup(GQE::IEntity* theEntity)$/;"	f	class:AnimationSystem
 handleCleanup	src/TTX/systems/HealthSystem.cpp	/^void HealthSystem::handleCleanup(GQE::IEntity* theEntity)$/;"	f	class:HealthSystem
+handleCleanup	src/TTX/systems/InputSystem.cpp	/^void InputSystem::handleCleanup(GQE::IEntity* theEntity)$/;"	f	class:InputSystem
+handleCleanup	src/TTX/systems/NodeSystem.cpp	/^void NodeSystem::handleCleanup(GQE::IEntity* theEntity)$/;"	f	class:NodeSystem
 handleCleanup	src/TTX/systems/ParticleSystem.cpp	/^void ParticleSystem::handleCleanup(GQE::IEntity* theEntity)$/;"	f	class:ParticleSystem
 handleCleanup	src/TTX/systems/PhysicSystem.cpp	/^void PhysicSystem::handleCleanup(GQE::IEntity* theEntity)$/;"	f	class:PhysicSystem
 handleCleanup	src/TTX/systems/PlayerSystem.cpp	/^void PlayerSystem::handleCleanup(GQE::IEntity* theEntity)$/;"	f	class:PlayerSystem
@@ -2500,12 +2523,14 @@ handleCleanup	src/TTX/systems/RenderSystem.cpp	/^void RenderSystem::handleCleanu
 handleCleanup	src/TTX/systems/WeaponSystem.cpp	/^void WeaponSystem::handleCleanup(GQE::IEntity* theEntity)$/;"	f	class:WeaponSystem
 handleCleanup	trashCode/B2ObjectDefSystem.cpp	/^void B2ObjectDefSystem::handleCleanup(GQE::IEntity* theEntity)$/;"	f	class:B2ObjectDefSystem
 handleCleanup	trashCode/B2ObjectSystem.cpp	/^void B2ObjectSystem::handleCleanup(GQE::IEntity* theEntity)$/;"	f	class:B2ObjectSystem
-handleCleanup	trashCode/FamilySystem.cpp	/^void FamilySystem::handleCleanup(GQE::IEntity* theEntity)$/;"	f	class:FamilySystem
+handleCleanup	trashCode/FamilySystem.cpp	/^void NodeSystem::handleCleanup(GQE::IEntity* theEntity)$/;"	f	class:NodeSystem
 handleCleanup	trashCode/ObjectSystemOld.cpp	/^void ObjectSystem::handleCleanup(GQE::IEntity* theEntity)$/;"	f	class:ObjectSystem
 handleEvents	src/TTX/gameStates/GameStateOne.cpp	/^void GameStateOne::handleEvents(sf::Event theEvent)$/;"	f	class:GameStateOne
 handleEvents	src/TTX/systems/ActorSystem.cpp	/^void ActorSystem::handleEvents(sf::Event theEvent)$/;"	f	class:ActorSystem
 handleEvents	src/TTX/systems/AnimationSystem.cpp	/^void AnimationSystem::handleEvents(sf::Event theEvent)$/;"	f	class:AnimationSystem
 handleEvents	src/TTX/systems/HealthSystem.cpp	/^void HealthSystem::handleEvents(sf::Event theEvent)$/;"	f	class:HealthSystem
+handleEvents	src/TTX/systems/InputSystem.cpp	/^void InputSystem::handleEvents(sf::Event theEvent)$/;"	f	class:InputSystem
+handleEvents	src/TTX/systems/NodeSystem.cpp	/^void NodeSystem::handleEvents(sf::Event theEvent)$/;"	f	class:NodeSystem
 handleEvents	src/TTX/systems/ParticleSystem.cpp	/^void ParticleSystem::handleEvents(sf::Event theEvent)$/;"	f	class:ParticleSystem
 handleEvents	src/TTX/systems/PhysicSystem.cpp	/^void PhysicSystem::handleEvents(sf::Event theEvent)$/;"	f	class:PhysicSystem
 handleEvents	src/TTX/systems/PlayerSystem.cpp	/^void PlayerSystem::handleEvents(sf::Event theEvent)$/;"	f	class:PlayerSystem
@@ -2514,11 +2539,13 @@ handleEvents	src/TTX/systems/RenderSystem.cpp	/^void RenderSystem::handleEvents(
 handleEvents	src/TTX/systems/WeaponSystem.cpp	/^void WeaponSystem::handleEvents(sf::Event theEvent)$/;"	f	class:WeaponSystem
 handleEvents	trashCode/B2ObjectDefSystem.cpp	/^void B2ObjectDefSystem::handleEvents(sf::Event theEvent)$/;"	f	class:B2ObjectDefSystem
 handleEvents	trashCode/B2ObjectSystem.cpp	/^void B2ObjectSystem::handleEvents(sf::Event theEvent)$/;"	f	class:B2ObjectSystem
-handleEvents	trashCode/FamilySystem.cpp	/^void FamilySystem::handleEvents(sf::Event theEvent)$/;"	f	class:FamilySystem
+handleEvents	trashCode/FamilySystem.cpp	/^void NodeSystem::handleEvents(sf::Event theEvent)$/;"	f	class:NodeSystem
 handleEvents	trashCode/ObjectSystemOld.cpp	/^void ObjectSystem::handleEvents(sf::Event theEvent)$/;"	f	class:ObjectSystem
 handleInit	src/TTX/systems/ActorSystem.cpp	/^void ActorSystem::handleInit(GQE::IEntity* theEntity)$/;"	f	class:ActorSystem
 handleInit	src/TTX/systems/AnimationSystem.cpp	/^void AnimationSystem::handleInit(GQE::IEntity* theEntity)$/;"	f	class:AnimationSystem
 handleInit	src/TTX/systems/HealthSystem.cpp	/^void HealthSystem::handleInit(GQE::IEntity* theEntity)$/;"	f	class:HealthSystem
+handleInit	src/TTX/systems/InputSystem.cpp	/^void InputSystem::handleInit(GQE::IEntity* theEntity)$/;"	f	class:InputSystem
+handleInit	src/TTX/systems/NodeSystem.cpp	/^void NodeSystem::handleInit(GQE::IEntity* theEntity)$/;"	f	class:NodeSystem
 handleInit	src/TTX/systems/ParticleSystem.cpp	/^void ParticleSystem::handleInit(GQE::IEntity* theEntity)$/;"	f	class:ParticleSystem
 handleInit	src/TTX/systems/PhysicSystem.cpp	/^void PhysicSystem::handleInit(GQE::IEntity* theEntity)$/;"	f	class:PhysicSystem
 handleInit	src/TTX/systems/PlayerSystem.cpp	/^void PlayerSystem::handleInit(GQE::IEntity* theEntity)$/;"	f	class:PlayerSystem
@@ -2527,7 +2554,7 @@ handleInit	src/TTX/systems/RenderSystem.cpp	/^void RenderSystem::handleInit(GQE:
 handleInit	src/TTX/systems/WeaponSystem.cpp	/^void WeaponSystem::handleInit(GQE::IEntity* theEntity)$/;"	f	class:WeaponSystem
 handleInit	trashCode/B2ObjectDefSystem.cpp	/^void B2ObjectDefSystem::handleInit(GQE::IEntity* theEntity)$/;"	f	class:B2ObjectDefSystem
 handleInit	trashCode/B2ObjectSystem.cpp	/^void B2ObjectSystem::handleInit(GQE::IEntity* theEntity)$/;"	f	class:B2ObjectSystem
-handleInit	trashCode/FamilySystem.cpp	/^void FamilySystem::handleInit(GQE::IEntity* theEntity)$/;"	f	class:FamilySystem
+handleInit	trashCode/FamilySystem.cpp	/^void NodeSystem::handleInit(GQE::IEntity* theEntity)$/;"	f	class:NodeSystem
 handleInit	trashCode/ObjectSystemOld.cpp	/^void ObjectSystem::handleInit(GQE::IEntity* theEntity)$/;"	f	class:ObjectSystem
 height	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	int32 height;$/;"	m	struct:b2TreeNode
 height	ext_libs/include/MPE/Config.hpp	/^   Integer x, y, width, height;$/;"	m	struct:mpe::TextRect
@@ -2545,7 +2572,6 @@ i	src/TTX/classes/mapLoader/MapLoader.cpp	/^      int i;$/;"	l
 i	ext_libs/include/Box2D/Common/b2Math.h	/^		int32 i;$/;"	m	union:__anon6
 impulse	src/TTX/classes/objects/Propeller.cpp	/^void Propeller::impulse(b2Body* theBody,MoveData theMoveData)$/;"	f	class:Propeller
 impulse	trashCode/ShipPropeller.cpp	/^void ShipPropeller::impulse(GQE::IEntity* theEntity, b2Vec2 theDirection)$/;"	f	class:ShipPropeller
-independent	trashCode/FamilySystem.cpp	/^      bool independent = anEntity->mProperties.get<bool>("Independent");$/;"	l
 indexA	ext_libs/include/Box2D/Collision/b2Collision.h	/^	uint8 indexA;		\/\/\/< Feature index on shapeA$/;"	m	struct:b2ContactFeature
 indexA	ext_libs/include/Box2D/Collision/b2Distance.h	/^	uint8 indexA[3];	\/\/\/< vertices on shape A$/;"	m	struct:b2SimplexCache
 indexA	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	int32 indexA;$/;"	m	struct:b2ContactVelocityConstraint
@@ -2570,6 +2596,7 @@ isAlive	ext_libs/include/MPE/classes/Mortal.hpp	/^   inline bool isAlive()$/;"	f
 isAlive	ext_libs/include/MPE/components/Mortal.hpp	/^   inline bool isAlive()$/;"	f	class:mpe::Mortal
 isLoaded	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      bool isLoaded(void) const$/;"	f	class:GQE::TAsset
 isLoaded	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual bool isLoaded(const typeAssetID theAssetID) const$/;"	f	class:GQE::TAssetHandler
+isRoot	include/TTX/classes/utils/Family.hpp	/^      bool isRoot()$/;"	f	class:Family
 isSensor	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	bool isSensor;$/;"	m	struct:b2FixtureDef
 iterA	src/TTX/classes/objects/WeaponManager.cpp	/^      auto iterA = mWeaponMap.find(mActiveWeapon);$/;"	l
 iterB	src/TTX/classes/objects/WeaponManager.cpp	/^      auto iterB = iterA;$/;"	l
@@ -2677,6 +2704,7 @@ mAssets	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      std::map<
 mBodyDef	include/TTX/prototypes/PhysicProto.hpp	/^   b2BodyDef mBodyDef;$/;"	m	class:PhysicProto
 mCadency	include/TTX/classes/objects/Weapon.hpp	/^   float         mCadency;$/;"	m	class:Weapon
 mChange	include/TTX/classes/objects/WeaponManager.hpp	/^      bool mChange;$/;"	m	struct:WeaponManager::Input
+mChildren	include/TTX/classes/utils/Family.hpp	/^      std::forward_list<TYPE*> mChildren;$/;"	m	class:Family
 mCleanupEvents	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      EventManager          mCleanupEvents;$/;"	m	class:GQE::StateManager
 mCleanup	ext_libs/include/GQE/Core/interfaces/IState.hpp	/^      bool                  mCleanup;$/;"	m	class:GQE::IState
 mCleanup	ext_libs/include/GQE/Entity/classes/Prototype.hpp	/^      std::vector<Instance*> mCleanup;$/;"	m	class:GQE::Prototype
@@ -2710,6 +2738,7 @@ mFPS	ext_libs/include/GQE/Core/classes/StatManager.hpp	/^      sf::Text*   mFPS;
 mFPS	include/TTX/classes/render/Animation.hpp	/^   float mFPS;$/;"	m	class:Animation
 mFactor	include/TTX/systems/PlayerSystem.hpp	/^   float mFactor;$/;"	m	class:PlayerSystem
 mFactor	include/TTX/systems/RenderSystem.hpp	/^   float mFactor;$/;"	m	class:RenderSystem
+mFather	include/TTX/classes/utils/Family.hpp	/^      TYPE* mFather;$/;"	m	class:Family
 mFileStream	ext_libs/include/GQE/Core/loggers/FileLogger.hpp	/^      std::ofstream     mFileStream;$/;"	m	class:GQE::FileLogger
 mFireData	include/TTX/classes/objects/WeaponManager.hpp	/^      FireData mFireData;$/;"	m	struct:WeaponManager::Input
 mFireDirection	include/TTX/Types.hpp	/^   Position2D mFireDirection;$/;"	m	struct:FireData
@@ -2765,6 +2794,7 @@ mMargin	ext_libs/include/MapLoader/map.hpp	/^   int mWidth, mHeight, mTileWidth,
 mMaxSize	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^   size_t mMaxSize;$/;"	m	class:mpe::ParticleContainer
 mMaxUpdates	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      Uint32       mMaxUpdates;$/;"	m	class:GQE::IApp
 mMax	ext_libs/include/GT/Randomizer.hpp	/^   Real mMax;$/;"	m	class:gt::Randomizer
+mMe	include/TTX/classes/utils/Family.hpp	/^      TYPE* mMe;$/;"	m	class:Family
 mMin	ext_libs/include/GT/Randomizer.hpp	/^   Real mMin;$/;"	m	class:gt::Randomizer
 mName	ext_libs/include/GQE/Core/interfaces/IEvent.hpp	/^          std::string mName;$/;"	m	class:GQE::IEvent::Type_t
 mName	ext_libs/include/GQE/Core/interfaces/IProperty.hpp	/^          std::string mName;$/;"	m	class:GQE::IProperty::Type_t
@@ -2802,6 +2832,7 @@ mRects	include/TTX/classes/render/Animation.hpp	/^   std::vector<sf::IntRect>* m
 mRenderManager	include/TTX/gameStates/IActionState.hpp	/^   RenderManager         mRenderManager;$/;"	m	class:IActionState
 mRenderManager	include/TTX/systems/RenderSystem.hpp	/^   RenderManager& mRenderManager;$/;"	m	class:RenderSystem
 mRenderSystem	include/TTX/gameStates/GameStateOne.hpp	/^   GQE::ISystem* mRenderSystem;$/;"	m	class:GameStateOne
+mRoot	include/TTX/classes/utils/Family.hpp	/^      TYPE* mRoot;$/;"	m	class:Family
 mRot	include/TTX/systems/PlayerSystem.hpp	/^   b2Rot mRot;$/;"	m	class:PlayerSystem
 mRunning	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      bool         mRunning;$/;"	m	class:GQE::IApp
 mScopeName	ext_libs/include/GQE/Core/loggers/ScopeLogger.hpp	/^      const char* mScopeName;$/;"	m	class:GQE::ScopeLogger
@@ -3547,6 +3578,8 @@ operator =	ext_libs/include/TinyXML2/tinyxml2.h	/^    XMLHandle& operator=( cons
 operator []	ext_libs/include/TinyXML2/tinyxml2.h	/^    T& operator[](int i)				{$/;"	f	class:tinyxml2::DynArray
 operator []	ext_libs/include/TinyXML2/tinyxml2.h	/^    const T& operator[](int i) const	{$/;"	f	class:tinyxml2::DynArray
 order	src/TTX/gameStates/IActionState.cpp	/^      GQE::Uint32 order = theFather->getOrder();$/;"	l
+order	src/TTX/systems/NodeSystem.cpp	/^      GQE::Uint32 order = parent->getOrder();$/;"	l
+order	trashCode/FamilySystem.cpp	/^      GQE::Uint32 order = parent->getOrder();$/;"	l
 os	.ycm_extra_conf.py	/^import os$/;"	i
 other	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	b2Body* other;			\/\/\/< provides quick access to the other body attached.$/;"	m	struct:b2ContactEdge
 other	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	b2Body* other;			\/\/\/< provides quick access to the other body attached.$/;"	m	struct:b2JointEdge
@@ -3555,6 +3588,9 @@ p1	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2Vec2 p1, p2;$/;"	m	struct
 p2	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	b2Vec2 p2 = input.p2;$/;"	l
 p2	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2Vec2 p1, p2;$/;"	m	struct:b2RayCastInput
 pair	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^			b2Pair* pair = m_pairBuffer + i;$/;"	l
+parent	src/TTX/systems/NodeSystem.cpp	/^   GQE::IEntity* parent = theEntity->mProperties.get<Entity*>(PARENT);$/;"	l
+parent	trashCode/FamilySystem.cpp	/^   GQE::IEntity* parent = theEntity->mProperties.get<Entity*>(PARENT);$/;"	l
+parent	trashCode/FamilySystem.cpp	/^   GQE::IEntity* parent = theEntity->mProperties.get<IEntity*>(PARENT);$/;"	l
 parent	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^		int32 parent;$/;"	m	union:b2TreeNode::__anon4
 playerProto	src/TTX/gameStates/GameStateOne.cpp	/^   auto playerProto = new Player();$/;"	l
 player	src/TTX/gameStates/IActionState.cpp	/^    GQE::IEntity* player = 0;$/;"	l
@@ -3630,6 +3666,7 @@ r	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	b2Vec2 r = p2 - p1;$/;"	l
 r	ext_libs/include/Box2D/Common/b2Draw.h	/^	float32 r, g, b;$/;"	m	struct:b2Color
 r	ext_libs/include/MPE/Config.hpp	/^   Integer r, g, b, a;$/;"	m	struct:mpe::Color
 r	ext_libs/include/SFML/Graphics/Color.hpp	/^   Uint8 r; \/\/\/< Red component$/;"	m	class:sf::Color
+root	src/TTX/systems/NodeSystem.cpp	/^      Entity* root = parent->mProperties.get<Entity*>(ROOT);$/;"	l
 rotate	ext_libs/include/MPE/classes/Vec2.hpp	/^   Vec2& rotate ( Real theAngle )$/;"	f	class:mpe::Vec2
 rows	ext_libs/include/SFML/Graphics/Font.hpp	/^      std::vector<Row> rows;    \/\/\/< List containing the position of all the existing rows$/;"	m	struct:sf::Font::Page
 sRealRandom	ext_libs/include/MPE/classes/Emitter.hpp	/^   static Generator<Real> sRealRandom;$/;"	m	class:mpe::Emitter
@@ -3666,6 +3703,7 @@ setLoadTime	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtu
 setPosition	ext_libs/include/MPE/components/Position.hpp	/^   void setPosition(Real theX, Real theY)$/;"	f	class:mpe::Position
 setPosition	ext_libs/include/MPE/components/Position.hpp	/^   void setPosition(gt::Vec2D thePosition)$/;"	f	class:mpe::Position
 setPropellerModel	trashCode/VehicleProto.cpp	/^void VehicleProto::setPropellerModel(PropellerType theModel)$/;"	f	class:VehicleProto
+setRoot	include/TTX/classes/utils/Family.hpp	/^      void setRoot(TYPE* theRoot)$/;"	f	class:Family
 setTurnPower	src/TTX/classes/objects/Propeller.cpp	/^void Propeller::setTurnPower(float theTurnPower)$/;"	f	class:Propeller
 setValue	ext_libs/include/GQE/Core/interfaces/TProperty.hpp	/^      void setValue(TYPE& theValue)$/;"	f	class:GQE::TProperty
 setWeaponManager	src/TTX/classes/objects/Weapon.cpp	/^void Weapon::setWeaponManager(WeaponManager* theManager)$/;"	f	class:Weapon
@@ -3837,6 +3875,8 @@ updateFixed	src/TTX/gameStates/GameStateOne.cpp	/^void GameStateOne::updateFixed
 updateFixed	src/TTX/systems/ActorSystem.cpp	/^void ActorSystem::updateFixed()$/;"	f	class:ActorSystem
 updateFixed	src/TTX/systems/AnimationSystem.cpp	/^void AnimationSystem::updateFixed()$/;"	f	class:AnimationSystem
 updateFixed	src/TTX/systems/HealthSystem.cpp	/^void HealthSystem::updateFixed()$/;"	f	class:HealthSystem
+updateFixed	src/TTX/systems/InputSystem.cpp	/^void InputSystem::updateFixed(void)$/;"	f	class:InputSystem
+updateFixed	src/TTX/systems/NodeSystem.cpp	/^void NodeSystem::updateFixed()$/;"	f	class:NodeSystem
 updateFixed	src/TTX/systems/ParticleSystem.cpp	/^void ParticleSystem::updateFixed()$/;"	f	class:ParticleSystem
 updateFixed	src/TTX/systems/PhysicSystem.cpp	/^void PhysicSystem::updateFixed()$/;"	f	class:PhysicSystem
 updateFixed	src/TTX/systems/PlayerSystem.cpp	/^void PlayerSystem::updateFixed()$/;"	f	class:PlayerSystem
@@ -3845,7 +3885,7 @@ updateFixed	src/TTX/systems/RenderSystem.cpp	/^void RenderSystem::updateFixed()$
 updateFixed	src/TTX/systems/WeaponSystem.cpp	/^void WeaponSystem::updateFixed()$/;"	f	class:WeaponSystem
 updateFixed	trashCode/B2ObjectDefSystem.cpp	/^void B2ObjectDefSystem::updateFixed()$/;"	f	class:B2ObjectDefSystem
 updateFixed	trashCode/B2ObjectSystem.cpp	/^void B2ObjectSystem::updateFixed()$/;"	f	class:B2ObjectSystem
-updateFixed	trashCode/FamilySystem.cpp	/^void FamilySystem::updateFixed()$/;"	f	class:FamilySystem
+updateFixed	trashCode/FamilySystem.cpp	/^void NodeSystem::updateFixed()$/;"	f	class:NodeSystem
 updateFixed	trashCode/ObjectSystemOld.cpp	/^void ObjectSystem::updateFixed()$/;"	f	class:ObjectSystem
 updateRender	src/TTX/classes/particles/Particles.cpp	/^void Particles::updateRender(RenderManager& theRenderManager)$/;"	f	class:Particles
 updateSelected	src/TTX/gameStates/GameStateOne.cpp	/^void GameStateOne::updateSelected(sf::Event theEvent)$/;"	f	class:GameStateOne
@@ -3853,6 +3893,8 @@ updateVariable	src/TTX/gameStates/GameStateOne.cpp	/^void GameStateOne::updateVa
 updateVariable	src/TTX/systems/ActorSystem.cpp	/^void ActorSystem::updateVariable(float theElapsedTime)$/;"	f	class:ActorSystem
 updateVariable	src/TTX/systems/AnimationSystem.cpp	/^void AnimationSystem::updateVariable(float theElapsedTime)$/;"	f	class:AnimationSystem
 updateVariable	src/TTX/systems/HealthSystem.cpp	/^void HealthSystem::updateVariable(float theElapsedTime)$/;"	f	class:HealthSystem
+updateVariable	src/TTX/systems/InputSystem.cpp	/^void InputSystem::updateVariable(float theElapsedTime)$/;"	f	class:InputSystem
+updateVariable	src/TTX/systems/NodeSystem.cpp	/^void NodeSystem::updateVariable(float theElapsedTime)$/;"	f	class:NodeSystem
 updateVariable	src/TTX/systems/ParticleSystem.cpp	/^void ParticleSystem::updateVariable(float theElapsedTime)$/;"	f	class:ParticleSystem
 updateVariable	src/TTX/systems/PhysicSystem.cpp	/^void PhysicSystem::updateVariable(float theElapsedTime)$/;"	f	class:PhysicSystem
 updateVariable	src/TTX/systems/PlayerSystem.cpp	/^void PlayerSystem::updateVariable(float theElapsedTime)$/;"	f	class:PlayerSystem
@@ -3861,7 +3903,7 @@ updateVariable	src/TTX/systems/RenderSystem.cpp	/^void RenderSystem::updateVaria
 updateVariable	src/TTX/systems/WeaponSystem.cpp	/^void WeaponSystem::updateVariable(float theElapsedTime)$/;"	f	class:WeaponSystem
 updateVariable	trashCode/B2ObjectDefSystem.cpp	/^void B2ObjectDefSystem::updateVariable(float theElapsedTime)$/;"	f	class:B2ObjectDefSystem
 updateVariable	trashCode/B2ObjectSystem.cpp	/^void B2ObjectSystem::updateVariable(float theElapsedTime)$/;"	f	class:B2ObjectSystem
-updateVariable	trashCode/FamilySystem.cpp	/^void FamilySystem::updateVariable(float theElapsedTime)$/;"	f	class:FamilySystem
+updateVariable	trashCode/FamilySystem.cpp	/^void NodeSystem::updateVariable(float theElapsedTime)$/;"	f	class:NodeSystem
 updateVariable	trashCode/ObjectSystemOld.cpp	/^void ObjectSystem::updateVariable(float theElapsedTime)$/;"	f	class:ObjectSystem
 update	ext_libs/include/GQE/Core/interfaces/TProperty.hpp	/^      void update()$/;"	f	class:GQE::TProperty
 update	ext_libs/include/MPE/classes/Affector.hpp	/^   virtual void update(Real theElapsedtime)$/;"	f	class:mpe::Affector
@@ -3963,17 +4005,19 @@ z	ext_libs/include/SFML/Window/Event.hpp	/^      float z;           \/\/\/< Curr
 ~B2WorldSystem	trashCode/B2WorldSystem.cpp	/^B2WorldSystem::~B2WorldSystem()$/;"	f	class:B2WorldSystem
 ~Drawable	ext_libs/include/SFML/Graphics/Drawable.hpp	/^   virtual ~Drawable() {}$/;"	f	class:sf::Drawable
 ~DynArray	ext_libs/include/TinyXML2/tinyxml2.h	/^    ~DynArray() {$/;"	f	class:tinyxml2::DynArray
-~FamilySystem	trashCode/FamilySystem.cpp	/^FamilySystem::~FamilySystem()$/;"	f	class:FamilySystem
 ~GameStateOne	src/TTX/gameStates/GameStateOne.cpp	/^GameStateOne::~GameStateOne(void)$/;"	f	class:GameStateOne
 ~HealthSystem	src/TTX/systems/HealthSystem.cpp	/^HealthSystem::~HealthSystem()$/;"	f	class:HealthSystem
 ~IActionState	src/TTX/gameStates/IActionState.cpp	/^IActionState::~IActionState()$/;"	f	class:IActionState
 ~IPropeller	include/TTX/classes/objects/IPropeller.hpp	/^      virtual ~IPropeller() {};$/;"	f	class:IPropeller
 ~ISystem	src/TTX/systems/ISystem.cpp	/^ISystem::~ISystem() {}$/;"	f	class:ISystem
 ~InputStream	ext_libs/include/SFML/System/InputStream.hpp	/^   virtual ~InputStream() {}$/;"	f	class:sf::InputStream
+~InputSystem	src/TTX/systems/InputSystem.cpp	/^InputSystem::~InputSystem()$/;"	f	class:InputSystem
 ~Layer	include/TTX/classes/render/Layer.hpp	/^   ~Layer () {};$/;"	f	struct:Layer
 ~MapLoader	src/TTX/classes/mapLoader/MapLoader.cpp	/^MapLoader::~MapLoader ()$/;"	f	class:MapLoader
 ~MemPoolT	ext_libs/include/TinyXML2/tinyxml2.h	/^    ~MemPoolT() {$/;"	f	class:tinyxml2::MemPoolT
 ~MemPool	ext_libs/include/TinyXML2/tinyxml2.h	/^    virtual ~MemPool() {}$/;"	f	class:tinyxml2::MemPool
+~NodeSystem	src/TTX/systems/NodeSystem.cpp	/^NodeSystem::~NodeSystem()$/;"	f	class:NodeSystem
+~NodeSystem	trashCode/FamilySystem.cpp	/^NodeSystem::~NodeSystem()$/;"	f	class:NodeSystem
 ~ObjectSystem	trashCode/ObjectSystemOld.cpp	/^ObjectSystem::~ObjectSystem()$/;"	f	class:ObjectSystem
 ~ParticleSystem	src/TTX/systems/ParticleSystem.cpp	/^ParticleSystem::~ParticleSystem()$/;"	f	class:ParticleSystem
 ~PhysicSystem	src/TTX/systems/PhysicSystem.cpp	/^PhysicSystem::~PhysicSystem()$/;"	f	class:PhysicSystem

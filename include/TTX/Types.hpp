@@ -2,6 +2,7 @@
 #ifndef  TYPES_INC
 #define  TYPES_INC
 #include <map>
+#include <forward_list>
 #include <string>
 #include <GQE/Entity/interfaces/IEntity.hpp>
 
@@ -17,17 +18,19 @@ const float TODEG = 180 / PI;
 const float LENGTHFACTOR = 16;
 
 typedef uint32_t Id;
-using LayerID = uint32_t;
-using SystemID = uint32_t;
-using EntityID = uint32_t;
-using WeaponID = uint32_t;
-using AmunitionID = uint32_t;
-using LayerID = uint32_t;
-typedef unsigned int InstanceID;
+typedef uint32_t LayerID;
+typedef uint32_t SystemID;
+typedef uint32_t EntityID;
+typedef uint32_t WeaponID;
+typedef uint32_t AmunitionID;
+typedef uint32_t LayerID;
+typedef uint32_t InstanceID;
 
 typedef std::map<SystemID, ISystem*> SystemContainer;
-typedef std::map<EntityID, GQE::IEntity*> ChildrenContainer;
+typedef std::forward_list<GQE::IEntity*> ChildrenContainer;
 typedef std::map<int, InstanceID> PlayerContainer;
+
+typedef GQE::IEntity Entity;
 
 struct Position2D
 {
