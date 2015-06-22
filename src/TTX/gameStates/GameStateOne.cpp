@@ -51,9 +51,12 @@ void GameStateOne::doInit(void)
    mHealthSystem = new HealthSystem(*this);
    mActorSystem = new ActorSystem(*this);
    mWeaponSystem = new WeaponSystem(*this);
+   mNodeSystem = new NodeSystem(*this);
+   mInputSystem = new InputSystem(*this);
 
    playerProto->addSystem(mPlayerSystem);
 
+   machinegunProto->addSystem(mNodeSystem);
    machinegunProto->addSystem(mRenderSystem);
    machinegunProto->addSystem(mHealthSystem);
    machinegunProto->addSystem(mPhysicSystem);
@@ -63,11 +66,13 @@ void GameStateOne::doInit(void)
    simpleBulletProto->addSystem(mHealthSystem);
    simpleBulletProto->addSystem(mPhysicSystem);
 
+   shipPropellerProto->addSystem(mNodeSystem);
    shipPropellerProto->addSystem(mRenderSystem);
    shipPropellerProto->addSystem(mHealthSystem);
    shipPropellerProto->addSystem(mPhysicSystem);
    shipPropellerProto->addSystem(mPropellerSystem);
 
+   basicShipProto->addSystem(mNodeSystem);
    basicShipProto->addSystem(mRenderSystem);
    basicShipProto->addSystem(mActorSystem);
    basicShipProto->addSystem(mHealthSystem);
@@ -148,10 +153,10 @@ void GameStateOne::handleEvents(sf::Event theEvent)
                mPlayer = addPlayer(i, BASIC_SHIP_PROTO, Position2D(40, 160, 90 * TORAD));
                GQE::IEntity* actor = mPlayer->mProperties.get<GQE::IEntity*>(ACTOR);
                GQE::Prototype* propeller = mPrototypes.getPrototype(SHIP_PROPELLER_PROTO);
-               propeller->mProperties.add<GQE::IEntity*>(FATHER_NODE, actor);
+               propeller->mProperties.add<GQE::IEntity*>(PARENT, actor);
                actor->mProperties.add<GQE::IEntity*>(PROPELLER, propeller->makeInstance());
                GQE::Prototype* prototype = mPrototypes.getPrototype(MACHINEGUN_PROTO);
-               prototype->mProperties.add<GQE::IEntity*>(FATHER_NODE, actor);
+               prototype->mProperties.add<GQE::IEntity*>(PARENT, actor);
                prototype->mProperties.set<GQE::typePropertyID>(ID32_("AnchorPoint"), ID32_("WeaponAnchorLeft"));
                GQE::IEntity* machinegunleft = prototype->makeInstance();
                actor->mProperties.getPointer<WeaponManager>(WEAPON_MANAGER)->addWeapon(machinegunleft);

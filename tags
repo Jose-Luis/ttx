@@ -1586,6 +1586,7 @@ Val_0	ext_libs/include/GQE/Core/utils/CRC32.hpp	/^    Val_0 = ID32_("Val_0"),$/;
 Value	ext_libs/include/TinyXML2/tinyxml2.h	/^    const char* Value() const			{$/;"	f	class:tinyxml2::XMLNode
 Value	ext_libs/include/TinyXML2/tinyxml2.h	/^    const char* Value() const {$/;"	f	class:tinyxml2::XMLAttribute
 Vec2D	ext_libs/include/GT/Vec2D.hpp	/^class Vec2D$/;"	c	namespace:gt
+Vec2D	include/TTX/Types.hpp	/^typedef gt::Vec2D Vec2D;$/;"	t
 Vec2	ext_libs/include/MPE/classes/Vec2.hpp	/^class Vec2$/;"	c	namespace:mpe
 Vec2	ext_libs/include/MPE/classes/Vec2.hpp	/^   Vec2(): x(0), y(0) {}$/;"	f	class:mpe::Vec2
 Vec2	ext_libs/include/MPE/classes/Vec2.hpp	/^   Vec2(Real theX, Real theY):$/;"	f	class:mpe::Vec2
@@ -2463,7 +2464,7 @@ filename	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        std::s
 filter	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	b2Filter filter;$/;"	m	struct:b2FixtureDef
 finger	ext_libs/include/SFML/Window/Event.hpp	/^      unsigned int finger; \/\/\/< Index of the finger in case of multi-touch events$/;"	m	struct:sf::Event::TouchEvent
 fire	src/TTX/classes/objects/Weapon.cpp	/^void Weapon::fire(Position2D thePosition, IActionState* theState,FireData theFireData)$/;"	f	class:Weapon
-fire	include/TTX/classes/listeners/Input.hpp	/^         Vec2 fire;$/;"	m	struct:Input::Data
+fire	include/TTX/classes/listeners/Input.hpp	/^         Vec2D fire;$/;"	m	struct:Input::Data
 fixedRotation	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	bool fixedRotation;$/;"	m	struct:b2BodyDef
 fixture	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	b2Fixture* fixture;$/;"	m	struct:b2FixtureProxy
 flags	.ycm_extra_conf.py	/^flags = [$/;"	v
@@ -2609,6 +2610,7 @@ initAssetHandlers	src/TTX/app/TTXapp.cpp	/^void TTXApp::initAssetHandlers(void)$
 initScreenFactory	src/TTX/app/TTXapp.cpp	/^void TTXApp::initScreenFactory(void)$/;"	f	class:TTXApp
 init	ext_libs/include/GT/Randomizer.hpp	/^   static void init()$/;"	f	class:gt::Randomizer
 init	ext_libs/include/MPE/classes/Vec2.hpp	/^   void init(Real theX, Real theY)$/;"	f	class:mpe::Vec2
+input	src/TTX/systems/InputSystem.cpp	/^   Input* input = root->mProperties.get<Input*>(INPUT);$/;"	l
 int16	ext_libs/include/Box2D/Common/b2Settings.h	/^typedef signed short int16;$/;"	t
 int32	ext_libs/include/Box2D/Common/b2Settings.h	/^typedef signed int int32;$/;"	t
 int8	ext_libs/include/Box2D/Common/b2Settings.h	/^typedef signed char	int8;$/;"	t
@@ -2664,6 +2666,7 @@ length	ext_libs/include/Box2D/Dynamics/Joints/b2DistanceJoint.h	/^	float32 lengt
 linearDamping	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	float32 linearDamping;$/;"	m	struct:b2BodyDef
 linearVelocity	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	b2Vec2 linearVelocity;$/;"	m	struct:b2BodyDef
 linear	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	b2Vec2 linear;$/;"	m	struct:b2Jacobian
+listener	src/TTX/systems/InputSystem.cpp	/^      auto listener = theEntity->mProperties.get<EntityInputListener*>(INPUT_LISTENER);$/;"	l
 loadAllAssets	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual bool loadAllAssets(void)$/;"	f	class:GQE::TAssetHandler
 loadAmunition	src/TTX/classes/objects/Weapon.cpp	/^void Weapon::loadAmunition(int theAmu)$/;"	f	class:Weapon
 loadAsset	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual bool loadAsset(const typeAssetID theAssetID)$/;"	f	class:GQE::TAssetHandler
@@ -2810,6 +2813,7 @@ mID	include/TTX/classes/objects/Weapon.hpp	/^   WeaponID      mID;$/;"	m	class:W
 mID	include/TTX/classes/render/Layer.hpp	/^   Id mID;$/;"	m	struct:Layer
 mImage	trashCode/B2Ground.hpp	/^   GQE::ImageAsset mImage;$/;"	m	class:B2Ground
 mInit	ext_libs/include/GQE/Core/interfaces/IState.hpp	/^      bool                  mInit;$/;"	m	class:GQE::IState
+mInputSystem	include/TTX/gameStates/GameStateOne.hpp	/^   GQE::ISystem* mInputSystem;$/;"	m	class:GameStateOne
 mInput	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      const sf::Input&          mInput;$/;"	m	class:GQE::IApp
 mInput	include/TTX/classes/listeners/InputListener.hpp	/^      Input* mInput;$/;"	m	class:InputListener
 mInput	include/TTX/classes/listeners/weapons/WeaponManagerListener.hpp	/^   Input* mInput;$/;"	m	class:WeaponManagerListener
@@ -2838,6 +2842,7 @@ mMin	ext_libs/include/GT/Randomizer.hpp	/^   Real mMin;$/;"	m	class:gt::Randomiz
 mName	ext_libs/include/GQE/Core/interfaces/IEvent.hpp	/^          std::string mName;$/;"	m	class:GQE::IEvent::Type_t
 mName	ext_libs/include/GQE/Core/interfaces/IProperty.hpp	/^          std::string mName;$/;"	m	class:GQE::IProperty::Type_t
 mNextID	ext_libs/include/GQE/Entity/interfaces/IEntity.hpp	/^      static typeEntityID mNextID;$/;"	m	class:GQE::IEntity
+mNodeSystem	include/TTX/gameStates/GameStateOne.hpp	/^   GQE::ISystem* mNodeSystem;$/;"	m	class:GameStateOne
 mOn	include/TTX/classes/objects/Propeller.hpp	/^   bool           mOn;$/;"	m	class:Propeller
 mOrder	ext_libs/include/GQE/Entity/interfaces/IEntity.hpp	/^      Uint32              mOrder;$/;"	m	class:GQE::IEntity
 mPPS	ext_libs/include/MPE/classes/Focus.hpp	/^   Real      mPPS;$/;"	m	class:mpe::Focus
@@ -3547,7 +3552,7 @@ moveData	src/TTX/systems/PropellerSystem.cpp	/^         MoveData moveData = anEn
 move	ext_libs/include/MPE/components/Position.hpp	/^   void move(Real theXOffset, Real theYOffset)$/;"	f	class:mpe::Position
 move	ext_libs/include/MPE/components/Position.hpp	/^   void move(gt::Vec2D theOffset)$/;"	f	class:mpe::Position
 move	include/TTX/Types.hpp	/^   bool  move, turn;$/;"	m	struct:MoveData
-move	include/TTX/classes/listeners/Input.hpp	/^         Vec2 move;$/;"	m	struct:Input::Data
+move	include/TTX/classes/listeners/Input.hpp	/^         Vec2D move;$/;"	m	struct:Input::Data
 mpe	ext_libs/include/MPE/Config.hpp	/^namespace mpe$/;"	n
 mpe	ext_libs/include/MPE/classes/Affector.hpp	/^namespace mpe$/;"	n
 mpe	ext_libs/include/MPE/classes/Emitter.hpp	/^namespace mpe$/;"	n
@@ -3717,7 +3722,8 @@ r	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	b2Vec2 r = p2 - p1;$/;"	l
 r	ext_libs/include/Box2D/Common/b2Draw.h	/^	float32 r, g, b;$/;"	m	struct:b2Color
 r	ext_libs/include/MPE/Config.hpp	/^   Integer r, g, b, a;$/;"	m	struct:mpe::Color
 r	ext_libs/include/SFML/Graphics/Color.hpp	/^   Uint8 r; \/\/\/< Red component$/;"	m	class:sf::Color
-root	src/TTX/systems/NodeSystem.cpp	/^      Entity* root = parent->mProperties.get<Entity*>(ROOT);$/;"	l
+root	src/TTX/systems/InputSystem.cpp	/^   Entity* root = theEntity->mProperties.get<Entity*>(ROOT);$/;"	l
+root	src/TTX/systems/NodeSystem.cpp	/^   Entity* root = theEntity;$/;"	l
 rotate	ext_libs/include/MPE/classes/Vec2.hpp	/^   Vec2& rotate ( Real theAngle )$/;"	f	class:mpe::Vec2
 rows	ext_libs/include/SFML/Graphics/Font.hpp	/^      std::vector<Row> rows;    \/\/\/< List containing the position of all the existing rows$/;"	m	struct:sf::Font::Page
 sRealRandom	ext_libs/include/MPE/classes/Emitter.hpp	/^   static Generator<Real> sRealRandom;$/;"	m	class:mpe::Emitter

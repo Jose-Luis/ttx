@@ -7,6 +7,7 @@ set(SYSTEMS_FILES
    ${INCROOT}/systems/HealthSystem.hpp
    ${INCROOT}/systems/PhysicSystem.hpp
    ${INCROOT}/systems/NodeSystem.hpp
+   ${INCROOT}/systems/InputSystem.hpp
    ${SRCROOT}/systems/ISystem.cpp
    ${SRCROOT}/systems/RenderSystem.cpp
    ${SRCROOT}/systems/PlayerSystem.cpp
@@ -16,12 +17,14 @@ set(SYSTEMS_FILES
    ${SRCROOT}/systems/ActorSystem.cpp
    ${SRCROOT}/systems/WeaponSystem.cpp
    ${SRCROOT}/systems/NodeSystem.cpp
+   ${SRCROOT}/systems/InputSystem.cpp
    ${SRCROOT}/systems/AnimationSystem.cpp)
 
 add_library(systems ${SYSTEMS_FILES}) 
 
 target_link_libraries(
    systems
+      listeners
       ${BOX2D_LIBRARY}
       ${SFML_LIBRARIES}
       ${GQE_LIBRARIES}

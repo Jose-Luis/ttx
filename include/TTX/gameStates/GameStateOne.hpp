@@ -31,6 +31,8 @@
 #include <TTX/systems/HealthSystem.hpp>
 #include <TTX/systems/ActorSystem.hpp>
 #include <TTX/systems/WeaponSystem.hpp>
+#include <TTX/systems/NodeSystem.hpp>
+#include <TTX/systems/InputSystem.hpp>
 #include <TTX/prototypes/Box.hpp>
 #include <TTX/prototypes/BasicShip.hpp>
 #include <TTX/prototypes/Player.hpp>
@@ -78,7 +80,8 @@ private:
    GQE::ISystem* mHealthSystem;
    GQE::ISystem* mActorSystem;
    GQE::ISystem* mWeaponSystem;
-
+   GQE::ISystem* mNodeSystem;
+   GQE::ISystem* mInputSystem;
 #ifndef  NDEBUG
    GQE::StatManager mStatManager;
 #endif
