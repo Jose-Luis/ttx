@@ -5,6 +5,7 @@
 #include<Box2D/Box2D.h>
 #include<TTX/prototypes/PhysicProto.hpp>
 #include<TTX/classes/objects/Propeller.hpp>
+#include<TTX/classes/listeners/propellers/ShipPropellerListener.hpp>
 
 class ShipPropeller: public PhysicProto
 {

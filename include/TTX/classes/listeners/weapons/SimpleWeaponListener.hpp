@@ -9,6 +9,7 @@ class SimpleWeaponListener: public EntityInputListener
 {
    public:
       SimpleWeaponListener();
+      virtual SimpleWeaponListener* clone();
       virtual void update(Input::Data theInput);
       void setAmmunitionType(AmunitionID theAmmu);
       void setCadency(float theCadency);

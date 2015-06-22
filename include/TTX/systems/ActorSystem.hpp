@@ -7,6 +7,7 @@
 #include <TTX/Types.hpp>
 #include <TTX/Definition.hpp>
 #include <TTX/systems/ISystem.hpp>
+#include <TTX/classes/listeners/Input.hpp>
 #include <TTX/classes/objects/IPropeller.hpp>
 #include <TTX/classes/objects/WeaponManager.hpp>
 

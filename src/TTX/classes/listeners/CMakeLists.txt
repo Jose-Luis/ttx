@@ -3,6 +3,8 @@ set(OBJECTS_FILES
    ${SRCROOT}/classes/listeners/Input.cpp
    ${INCROOT}/classes/listeners/InputListener.hpp
    ${SRCROOT}/classes/listeners/InputListener.cpp
+   ${INCROOT}/classes/listeners/propellers/ShipPropellerListener.hpp
+   ${SRCROOT}/classes/listeners/propellers/ShipPropellerListener.cpp
    ${INCROOT}/classes/listeners/weapons/SimpleWeaponListener.hpp
    ${SRCROOT}/classes/listeners/weapons/SimpleWeaponListener.cpp
    ${INCROOT}/classes/listeners/weapons/WeaponManagerListener.hpp

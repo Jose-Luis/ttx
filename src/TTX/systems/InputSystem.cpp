@@ -31,12 +31,14 @@ void InputSystem::handleInit(GQE::IEntity* theEntity)
    Input* input = root->mProperties.get<Input*>(INPUT);
    if(input)
    {
-      auto listener = theEntity->mProperties.get<EntityInputListener*>(INPUT_LISTENER);
+      auto listener = theEntity->mProperties.get<EntityInputListener*>(INPUT_LISTENER)->clone();
+
       if(listener)
       {
          listener->setEntity(theEntity);
          listener->setState(&mState);
          input->addListener(listener);
+         theEntity->mProperties.set<EntityInputListener*>(INPUT_LISTENER,listener);
       }
    }
 }

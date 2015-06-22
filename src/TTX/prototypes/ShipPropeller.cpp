@@ -19,18 +19,12 @@ ShipPropeller::ShipPropeller(Particles& theSystem):
    mJointDef.localAnchorB = b2Vec2(0, 0.4);
    mProperties.add<b2JointDef*>(JOINTDEF, &mJointDef);
 
-   mProperties.add<GQE::typePropertyID>(ID32_("AnchorPoint"), ID32_("PropellerAnchor"));
+   mProperties.add<GQE::typePropertyID>(ANCHOR_POINT, BACK_ANCHOR);
 
-   Propeller* propeller = new Propeller(theSystem);
-   propeller->setEmitterID("ShipPropeller");
-   propeller->setLinearPower(16000);
-   propeller->setTurnPower(32768);
-
-   mProperties.add<IPropeller*>(PROPELLER, propeller);
-
+   mProperties.add<EntityInputListener*>(INPUT_LISTENER,new ShipPropellerListener());
    mProperties.add<sf::IntRect>(TEXTURE_RECT,sf::IntRect(42,96,12,9));
    mProperties.add(RESISTANCE, 5.f);
-   mProperties.add(HEALTH, 150.f);
+   mProperties.add(HEALTH, 15.f);
    mProperties.add<MoveData>(MOVE_DATA, MoveData());
 
 }

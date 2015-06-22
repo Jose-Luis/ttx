@@ -38,6 +38,12 @@
 #define ROOT                  32
 #define INPUT                 33
 #define INPUT_LISTENER        34
+#define ANCHOR_POINT          35
+#define LEFT_ANCHOR           35
+#define RIGHT_ANCHOR          36
+#define FRONT_ANCHOR          37
+#define BACK_ANCHOR           38
+#define CENTER_ANCHOR         39
 
 //SYSTEMS
 

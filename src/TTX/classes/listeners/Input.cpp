@@ -3,13 +3,13 @@
 
 void Input::addListener(InputListener* theInputListener)
 {
-   if( mListeners.insert(theInputListener).second )
-      theInputListener->setInput(this);
+    mListeners.push_front(theInputListener);
+   theInputListener->setInput(this);
 }
 
 void Input::dropListener(InputListener* theInputListener)
 {
-   mListeners.erase(theInputListener);
+   mListeners.remove(theInputListener);
 }
 
 void Input::publish()

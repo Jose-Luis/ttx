@@ -18,6 +18,21 @@ class Input
          bool pivot,turn;
          bool pause,menu;
          float turbo;
+
+         Data():
+            move(0,0),
+            fire(0,0),
+            Afire(false),
+            Bfire(false),
+            changeNext(false),
+            changePrevious(false),
+            pivot(false),
+            turn(false),
+            pause(false),
+            menu(false),
+            turbo(false)
+         {}
+
       };
 
       void addListener(InputListener* theInputListener);
@@ -28,7 +43,7 @@ class Input
 
    private:
 
-      std::set<InputListener*> mListeners;
+      std::forward_list<InputListener*> mListeners;
       Data mData;
 };
 

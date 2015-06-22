@@ -16,9 +16,9 @@ Machinegun::Machinegun():
       mJointDef.localAnchorB = b2Vec2(0, 0.4);
 
       mProperties.add<EntityID>(NAME, MACHINEGUN_PROTO);
-      mProperties.add<GQE::typePropertyID>(ID32_("AnchorPoint"), ID32_(""));
-      mProperties.add(TEXTURE_RECT, sf::IntRect(32, 96, 6, 12));
-      mProperties.add(WEAPON,Weapon());
+      mProperties.add<GQE::typePropertyID>(ANCHOR_POINT, NONE);
+      mProperties.add<sf::IntRect>(TEXTURE_RECT, sf::IntRect(32, 96, 6, 12));
+      mProperties.add<EntityInputListener*>(INPUT_LISTENER,new SimpleWeaponListener());
       mProperties.add(RESISTANCE, 5.f);
       mProperties.add(HEALTH, 150.f);
       mProperties.add<b2JointDef*>(JOINTDEF, &mJointDef);

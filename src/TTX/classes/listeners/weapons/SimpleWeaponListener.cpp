@@ -6,7 +6,7 @@ void SimpleWeaponListener::update(Input::Data theInput)
    {
       auto position = mEntity->mProperties.get<Position2D>(POSITION);
 
-      float time(mState->getElapsedTime());
+      float time = mState->getElapsedTime();
 
       if (time - mLastTime > mCadency && mAmunition)
       {
@@ -24,9 +24,10 @@ void SimpleWeaponListener::update(Input::Data theInput)
 
 SimpleWeaponListener::SimpleWeaponListener():
    mAmunitionType(SIMPLE_BULLET_PROTO),
-   mCadency(1),
+   mCadency(0.2),
    mPower(1024),
-   mAmunition(std::numeric_limits<uint32_t>::infinity())
+   mLastTime(0),
+   mAmunition(1024)
 {
 }
 
@@ -44,3 +45,9 @@ void SimpleWeaponListener::setPower(float thePower)
 {
    mPower = thePower;
 }
+
+SimpleWeaponListener* SimpleWeaponListener::clone()
+{
+   return new SimpleWeaponListener();
+}
+

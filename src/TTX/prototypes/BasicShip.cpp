@@ -23,10 +23,9 @@ BasicShip::BasicShip(IActionState* theState):
       anFixture1.filter.categoryBits = ObjectCategories::FRIENDLY_SHIP;
       anFixture1.filter.maskBits = ObjectCategories::SCENE | ObjectCategories::ENEMY_SHIP;
 
-      mProperties.add<b2Vec2>(ID32_("WeaponAnchorLeft"), b2Vec2(-0.8,-0.2));
-      mProperties.add<b2Vec2>(ID32_("WeaponAnchorRight"), b2Vec2(0.8,-0.2));
-      mProperties.add<b2Vec2>(ID32_("PropellerAnchor"), b2Vec2(0.0,0.8));
-      mProperties.add<WeaponManager>(WEAPON_MANAGER, WeaponManager(theState));
+      mProperties.add<b2Vec2>(LEFT_ANCHOR, b2Vec2(-0.8,-0.2));
+      mProperties.add<b2Vec2>(RIGHT_ANCHOR, b2Vec2(0.8,-0.2));
+      mProperties.add<b2Vec2>(BACK_ANCHOR, b2Vec2(0.0,0.8));
 
       mProperties.add(TEXTURE_RECT, sf::Rect<int>(0, 96, 32, 32));
       mProperties.add(RESISTANCE, 100.f);

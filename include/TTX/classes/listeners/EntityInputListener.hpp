@@ -8,6 +8,7 @@ class EntityInputListener: public InputListener
 {
    public:
       virtual void update(Input::Data theInput) = 0;
+      virtual EntityInputListener* clone() = 0;
 
       void setEntity(Entity* theEntity){mEntity = theEntity;}
       void setState(IActionState* theState){mState = theState;}

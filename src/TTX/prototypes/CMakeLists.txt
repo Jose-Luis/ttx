@@ -17,4 +17,5 @@ add_library(protos  ${PROTOTYPE_FILES})
 
 target_link_libraries(
    protos
+      listeners
 )

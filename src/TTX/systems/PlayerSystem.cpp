@@ -152,7 +152,7 @@ void PlayerSystem::processJoystick(int theJoy, GQE::IEntity* theActor)
    ////////////// MOVE CONTROLS
    ///////////  JOY  CONTROLS
 
-   MoveData anMoveData;
+   Input::Data inputData;
 
    b2Vec2 theJoyStick(sf::Joystick::getAxisPosition(theJoy, sf::Joystick::X) / 100,
                      sf::Joystick::getAxisPosition(theJoy, sf::Joystick::Y) / 100);
@@ -166,27 +166,27 @@ void PlayerSystem::processJoystick(int theJoy, GQE::IEntity* theActor)
 
    if( 0.2 < anLength )
    {
-      anMoveData.x = theJoyStick.x;
-      anMoveData.y = theJoyStick.y;
+      inputData.move.x = theJoyStick.x;
+      inputData.move.y = theJoyStick.y;
    }
    else
    {
-      anMoveData.x = 0;
-      anMoveData.y = 0;
+      inputData.move.x = 0;
+      inputData.move.y = 0;
    }
 
    if(sf::Joystick::isButtonPressed(theJoy, 3))
    {
-      anMoveData.turn = false;
+      inputData.turn = false;
    }
    else
    {
-      anMoveData.turn = true;
+      inputData.turn = true;
    }
 
-   if(sf::Joystick::isButtonPressed(theJoy, 7))
+   if(sf::Joystick::isButtonPressed(theJoy, 4))
    {
-      anMoveData.move = false;
+      inputData.pivot = true;
    }
 
    if (anViewChanged)
@@ -195,17 +195,10 @@ void PlayerSystem::processJoystick(int theJoy, GQE::IEntity* theActor)
       mRot.Set(mAngle * TORAD);
    }
 
-   theActor->mProperties.set<MoveData>(MOVE_DATA, anMoveData);
-
-   WeaponManager::Input weaponManagerInput;
-
    if(sf::Joystick::isButtonPressed(theJoy, 2))
    {
-      weaponManagerInput.mFireData.mFire = true;
+      inputData.Afire = true;
    }
-   else
-   {
-      weaponManagerInput.mFireData.mFire = false;
-   }
-   theActor->mProperties.set<WeaponManager::Input>(WEAPON_MANAGER_INPUT,weaponManagerInput);
+
+   theActor->mProperties.get<Input*>(INPUT)->setData(inputData);
 }

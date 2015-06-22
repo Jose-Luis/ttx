@@ -86,7 +86,7 @@ void PhysicSystem::handleInit(GQE::IEntity* theEntity)
          {
          case b2JointType::e_weldJoint:
             {
-               GQE::typePropertyID aPropertyName = theEntity->mProperties.get<GQE::typePropertyID>(ID32_("AnchorPoint"));
+               GQE::typePropertyID aPropertyName = theEntity->mProperties.get<GQE::typePropertyID>(ANCHOR_POINT);
                b2Vec2 aFatherAnchorPoint = aFather->mProperties.get<b2Vec2>(aPropertyName);
                b2WeldJointDef* aWeldJointDef = static_cast<b2WeldJointDef*>(aJointDef);
                aWeldJointDef->localAnchorA = aFatherAnchorPoint;

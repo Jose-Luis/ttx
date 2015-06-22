@@ -45,7 +45,6 @@ void GameStateOne::doInit(void)
 
    mRenderSystem = new RenderSystem(*this, mRenderManager, LENGTHFACTOR);
    mPlayerSystem = new PlayerSystem(*this, mView, LENGTHFACTOR);
-   mPropellerSystem = new PropellerSystem(*this, mParticles);
    mPhysicSystem = new PhysicSystem(*this, mWorld);
    mAnimationSystem = new AnimationSystem(*this);
    mHealthSystem = new HealthSystem(*this);
@@ -57,20 +56,20 @@ void GameStateOne::doInit(void)
    playerProto->addSystem(mPlayerSystem);
 
    machinegunProto->addSystem(mNodeSystem);
+   machinegunProto->addSystem(mInputSystem);
    machinegunProto->addSystem(mRenderSystem);
    machinegunProto->addSystem(mHealthSystem);
    machinegunProto->addSystem(mPhysicSystem);
-   machinegunProto->addSystem(mWeaponSystem);
 
    simpleBulletProto->addSystem(mRenderSystem);
    simpleBulletProto->addSystem(mHealthSystem);
    simpleBulletProto->addSystem(mPhysicSystem);
 
    shipPropellerProto->addSystem(mNodeSystem);
+   shipPropellerProto->addSystem(mInputSystem);
    shipPropellerProto->addSystem(mRenderSystem);
    shipPropellerProto->addSystem(mHealthSystem);
    shipPropellerProto->addSystem(mPhysicSystem);
-   shipPropellerProto->addSystem(mPropellerSystem);
 
    basicShipProto->addSystem(mNodeSystem);
    basicShipProto->addSystem(mRenderSystem);
@@ -154,14 +153,13 @@ void GameStateOne::handleEvents(sf::Event theEvent)
                GQE::IEntity* actor = mPlayer->mProperties.get<GQE::IEntity*>(ACTOR);
                GQE::Prototype* propeller = mPrototypes.getPrototype(SHIP_PROPELLER_PROTO);
                propeller->mProperties.add<GQE::IEntity*>(PARENT, actor);
-               actor->mProperties.add<GQE::IEntity*>(PROPELLER, propeller->makeInstance());
+               propeller->makeInstance();
                GQE::Prototype* prototype = mPrototypes.getPrototype(MACHINEGUN_PROTO);
                prototype->mProperties.add<GQE::IEntity*>(PARENT, actor);
-               prototype->mProperties.set<GQE::typePropertyID>(ID32_("AnchorPoint"), ID32_("WeaponAnchorLeft"));
-               GQE::IEntity* machinegunleft = prototype->makeInstance();
-               actor->mProperties.getPointer<WeaponManager>(WEAPON_MANAGER)->addWeapon(machinegunleft);
-               prototype->mProperties.set<GQE::typePropertyID>(ID32_("AnchorPoint"), ID32_("WeaponAnchorRight"));
-               actor->mProperties.getPointer<WeaponManager>(WEAPON_MANAGER)->addWeapon(prototype->makeInstance());
+               prototype->mProperties.set<GQE::typePropertyID>(ANCHOR_POINT, LEFT_ANCHOR);
+               prototype->makeInstance();
+               prototype->mProperties.set<GQE::typePropertyID>(ANCHOR_POINT, RIGHT_ANCHOR);
+               prototype->makeInstance();
             }
       }
    }
@@ -173,10 +171,9 @@ void GameStateOne::updateSelected(sf::Event theEvent)
 void GameStateOne::updateFixed(void)
 {
    mRenderManager.clear();
-   mPhysicSystem->updateFixed();
    mPlayerSystem->updateFixed();
    mActorSystem->updateFixed();
-   mPropellerSystem->updateFixed();
+   mPhysicSystem->updateFixed();
    mHealthSystem->updateFixed();
    mAnimationSystem->updateFixed();
    mRenderSystem->updateFixed();

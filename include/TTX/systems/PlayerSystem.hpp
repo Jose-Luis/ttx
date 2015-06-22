@@ -16,6 +16,7 @@
 #include <TTX/systems/ISystem.hpp>
 #include <TTX/classes/objects/IWeapon.hpp>
 #include <TTX/classes/objects/WeaponManager.hpp>
+#include <TTX/classes/listeners/Input.hpp>
 
 class PlayerSystem: public ISystem
 {
