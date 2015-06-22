@@ -7,10 +7,9 @@ set(OBJECTS_FILES
    ${SRCROOT}/classes/listeners/weapons/SimpleWeaponListener.cpp
    ${INCROOT}/classes/listeners/weapons/WeaponManagerListener.hpp
    ${SRCROOT}/classes/listeners/weapons/WeaponManagerListener.cpp
-   ${INCROOT}/classes/listeners/WeaponManager.hpp
-   ${SRCROOT}/classes/listeners/WeaponManager.cpp)
+   )
 
-add_library(objects ${OBJECTS_FILES})
+add_library(listeners ${OBJECTS_FILES})
 
 target_link_libraries(
    listeners

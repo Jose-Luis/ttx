@@ -48,7 +48,7 @@ void WeaponManagerListener::update(Input::Data theInputData)
       {
          for(auto setIter : mWeaponMap.find(mActiveWeapon)->second)
          {
-            setIter->mProperties.getPointer<InputListener>(INPUT_LISTENER)->update(theInputData);
+            setIter->mProperties.get<InputListener*>(INPUT_LISTENER)->update(theInputData);
          }
       }
 }

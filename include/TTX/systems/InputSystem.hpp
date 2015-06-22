@@ -10,6 +10,8 @@
 #include <GQE/Entity/interfaces/ISystem.hpp>
 #include <GQE/Entity/Entity_types.hpp>
 #include <TTX/systems/ISystem.hpp>
+#include <TTX/classes/listeners/Input.hpp>
+#include <TTX/classes/listeners/EntityInputListener.hpp>
 
 #ifndef INPUTSYSTEM_INC
 #define INPUTSYSTEM_INC

@@ -11,8 +11,8 @@ class Input
 
       struct Data
       {
-         Vec2 move;
-         Vec2 fire;
+         Vec2D move;
+         Vec2D fire;
          bool Afire,Bfire;
          bool changeNext,changePrevious;
          bool pivot,turn;

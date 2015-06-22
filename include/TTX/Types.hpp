@@ -5,6 +5,7 @@
 #include <forward_list>
 #include <string>
 #include <GQE/Entity/interfaces/IEntity.hpp>
+#include <GT/Vec2D.hpp>
 
 class ISystem;
 
@@ -25,6 +26,7 @@ typedef uint32_t WeaponID;
 typedef uint32_t AmunitionID;
 typedef uint32_t LayerID;
 typedef uint32_t InstanceID;
+typedef gt::Vec2D Vec2D;
 
 typedef std::map<SystemID, ISystem*> SystemContainer;
 typedef std::forward_list<GQE::IEntity*> ChildrenContainer;

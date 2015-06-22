@@ -6,14 +6,14 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 ACTION_GROUP_HPP_INCLUDED	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	12;"	d
 ACTORSYSTEM_INC	include/TTX/systems/ActorSystem.hpp	2;"	d
-ACTOR_SYSTEM	include/TTX/Definition.hpp	42;"	d
+ACTOR_SYSTEM	include/TTX/Definition.hpp	44;"	d
 ACTOR	include/TTX/Definition.hpp	26;"	d
 AFFECTORS_INC	include/TTX/classes/particles/Affectors.hpp	9;"	d
 AFFECTOR_INC	ext_libs/include/MPE/classes/Affector.hpp	7;"	d
 ALL	include/TTX/Types.hpp	/^   ALL = 0xFFFF$/;"	e	enum:ObjectCategories
 ANGLE_INC	ext_libs/include/GT/Angle.hpp	7;"	d
 ANIMATION_SYSTEM_HPP_INCLUDED	ext_libs/include/GQE/Entity/systems/AnimationSystem.hpp	9;"	d
-ANIMATION_SYSTEM	include/TTX/Definition.hpp	43;"	d
+ANIMATION_SYSTEM	include/TTX/Definition.hpp	45;"	d
 ANIMATION_YL97FCUT	include/TTX/classes/render/Animation.hpp	9;"	d
 ANIMATION	include/TTX/Definition.hpp	20;"	d
 APP_SETTINGS	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      static const char* APP_SETTINGS;$/;"	m	class:GQE::IApp
@@ -34,6 +34,7 @@ Advance	ext_libs/include/Box2D/Dynamics/b2Body.h	/^inline void b2Body::Advance(f
 A	ext_libs/include/SFML/Window/Keyboard.hpp	/^      A = 0,        \/\/\/< The A key$/;"	e	enum:sf::Keyboard::Key
 AffectorPtr	ext_libs/include/MPE/Config.hpp	/^typedef std::shared_ptr<Affector> AffectorPtr;$/;"	t	namespace:mpe
 Affector	ext_libs/include/MPE/classes/Affector.hpp	/^class Affector: public Mortal$/;"	c	namespace:mpe
+Afire	include/TTX/classes/listeners/Input.hpp	/^         bool Afire,Bfire;$/;"	m	struct:Input::Data
 AlResource	ext_libs/include/SFML/Audio/AlResource.hpp	/^class SFML_AUDIO_API AlResource$/;"	c	namespace:sf
 Alloc	ext_libs/include/TinyXML2/tinyxml2.h	/^    virtual void* Alloc() {$/;"	f	class:tinyxml2::MemPoolT
 AmunitionID	include/TTX/Types.hpp	/^typedef uint32_t AmunitionID;$/;"	t
@@ -124,14 +125,14 @@ B2_WELD_JOINT_H	ext_libs/include/Box2D/Dynamics/Joints/b2WeldJoint.h	20;"	d
 B2_WHEEL_JOINT_H	ext_libs/include/Box2D/Dynamics/Joints/b2WheelJoint.h	20;"	d
 B2_WORLD_CALLBACKS_H	ext_libs/include/Box2D/Dynamics/b2WorldCallbacks.h	20;"	d
 B2_WORLD_H	ext_libs/include/Box2D/Dynamics/b2World.h	20;"	d
-BACKGROUND	include/TTX/Definition.hpp	55;"	d
+BACKGROUND	include/TTX/Definition.hpp	57;"	d
 BACK_1	include/TTX/Types.hpp	/^   BACK_1, BACK_2,$/;"	e	enum:Layers
 BACK_2	include/TTX/Types.hpp	/^   BACK_1, BACK_2,$/;"	e	enum:Layers
-BASIC_SHIP_PROTO	include/TTX/Definition.hpp	66;"	d
+BASIC_SHIP_PROTO	include/TTX/Definition.hpp	68;"	d
 BODYDEF	include/TTX/Definition.hpp	11;"	d
 BODY	include/TTX/Definition.hpp	10;"	d
 BOX2D_H	ext_libs/include/Box2D/Box2D.h	20;"	d
-BOX_PROTO	include/TTX/Definition.hpp	69;"	d
+BOX_PROTO	include/TTX/Definition.hpp	71;"	d
 BUF_SIZE	ext_libs/include/TinyXML2/tinyxml2.h	/^        BUF_SIZE = 200$/;"	e	enum:tinyxml2::XMLPrinter::__anon20
 BUF_SIZE	ext_libs/include/TinyXML2/tinyxml2.h	/^    enum { BUF_SIZE = 200 };$/;"	e	enum:tinyxml2::XMLAttribute::__anon18
 BackSlash	ext_libs/include/SFML/Window/Keyboard.hpp	/^      BackSlash,    \/\/\/< The \\ key$/;"	e	enum:sf::Keyboard::Key
@@ -144,6 +145,7 @@ BasicShip	src/TTX/prototypes/BasicShip.cpp	/^BasicShip::BasicShip(IActionState* 
 B	ext_libs/include/SFML/Window/Keyboard.hpp	/^      B,            \/\/\/< The B key$/;"	e	enum:sf::Keyboard::Key
 BeginContact	ext_libs/include/Box2D/Dynamics/b2WorldCallbacks.h	/^	virtual void BeginContact(b2Contact* contact) { B2_NOT_USED(contact); }$/;"	f	class:b2ContactListener
 BeginContact	src/TTX/classes/physics/CollisionListener.cpp	/^void CollisionListener::BeginContact(b2Contact* theContact)$/;"	f	class:CollisionListener
+Bfire	include/TTX/classes/listeners/Input.hpp	/^         bool Afire,Bfire;$/;"	m	struct:Input::Data
 Binary	ext_libs/include/SFML/Network/Ftp.hpp	/^      Binary, \/\/\/< Binary mode (file is transfered as a sequence of bytes)$/;"	e	enum:sf::Ftp::TransferMode
 Black	ext_libs/include/SFML/Graphics/Color.hpp	/^   static const Color Black;       \/\/\/< Black predefined color$/;"	m	class:sf::Color
 BlendMode	ext_libs/include/SFML/Graphics/BlendMode.hpp	/^struct SFML_GRAPHICS_API BlendMode$/;"	s	namespace:sf
@@ -257,6 +259,7 @@ DataConnectionAlreadyOpened	ext_libs/include/SFML/Network/Ftp.hpp	/^         Dat
 DataConnectionOpened	ext_libs/include/SFML/Network/Ftp.hpp	/^         DataConnectionOpened  = 225, \/\/\/< Data connection open, no transfer in progress$/;"	e	enum:sf::Ftp::Response::Status
 DataConnectionUnavailable	ext_libs/include/SFML/Network/Ftp.hpp	/^         DataConnectionUnavailable = 425, \/\/\/< Can't open data connection$/;"	e	enum:sf::Ftp::Response::Status
 Data	ext_libs/include/SFML/Network/TcpSocket.hpp	/^      std::vector<char> Data;         \/\/\/< Data of the packet$/;"	m	struct:sf::TcpSocket::PendingPacket
+Data	include/TTX/classes/listeners/Input.hpp	/^      struct Data$/;"	s	class:Input
 Debug	ext_libs/include/SFML/Window/ContextSettings.hpp	/^      Debug   = 1 << 2  \/\/\/< Debug attribute$/;"	e	enum:sf::ContextSettings::Attribute
 D	ext_libs/include/SFML/Window/Keyboard.hpp	/^      D,            \/\/\/< The D key$/;"	e	enum:sf::Keyboard::Key
 Default	ext_libs/include/SFML/Window/ContextSettings.hpp	/^      Default = 0,      \/\/\/< Non-debug, compatibility context (this and the core attribute are mutually exclusive)$/;"	e	enum:sf::ContextSettings::Attribute
@@ -297,6 +300,7 @@ EMITTER_INC	ext_libs/include/MPE/classes/Emitter.hpp	9;"	d
 ENEMY_BULLET	include/TTX/Types.hpp	/^   ENEMY_BULLET = 0x0010,$/;"	e	enum:ObjectCategories
 ENEMY_SHIP	include/TTX/Types.hpp	/^   ENEMY_SHIP = 0x0008,$/;"	e	enum:ObjectCategories
 ENTITY_HPP_INCLUDED	ext_libs/include/GQE/Entity.hpp	14;"	d
+ENTITY_INPUTLISTENER_INC	include/TTX/classes/listeners/EntityInputListener.hpp	2;"	d
 ENTITY_RANGE	ext_libs/include/TinyXML2/tinyxml2.h	/^        ENTITY_RANGE = 64,$/;"	e	enum:tinyxml2::XMLPrinter::__anon20
 ENTITY_TYPES_HPP_INCLUDED	ext_libs/include/GQE/Entity/Entity_types.hpp	14;"	d
 ERROR_LEVEL	ext_libs/include/GQE/Core/Core_types.hpp	30;"	d
@@ -313,6 +317,7 @@ End	ext_libs/include/SFML/Window/Keyboard.hpp	/^      End,          \/\/\/< The 
 EnsureCapacity	ext_libs/include/TinyXML2/tinyxml2.h	/^    void EnsureCapacity( int cap ) {$/;"	f	class:tinyxml2::DynArray
 EnteringPassiveMode	ext_libs/include/SFML/Network/Ftp.hpp	/^         EnteringPassiveMode   = 227, \/\/\/< Entering passive mode$/;"	e	enum:sf::Ftp::Response::Status
 EntityID	include/TTX/Types.hpp	/^typedef uint32_t EntityID;$/;"	t
+EntityInputListener	include/TTX/classes/listeners/EntityInputListener.hpp	/^class EntityInputListener: public InputListener$/;"	c
 Entity	include/TTX/Types.hpp	/^typedef GQE::IEntity Entity;$/;"	t
 Equal	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Equal,        \/\/\/< The = key$/;"	e	enum:sf::Keyboard::Key
 Equation	ext_libs/include/SFML/Graphics/BlendMode.hpp	/^   enum Equation$/;"	g	struct:sf::BlendMode
@@ -353,7 +358,7 @@ FLOG_IF	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	272;"	d
 FLOG	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	235;"	d
 FLOG	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	269;"	d
 FOCUS_INC	ext_libs/include/MPE/classes/Focus.hpp	7;"	d
-FOREGROUND	include/TTX/Definition.hpp	56;"	d
+FOREGROUND	include/TTX/Definition.hpp	58;"	d
 FORE_1	include/TTX/Types.hpp	/^   FORE_1, FORE_2$/;"	e	enum:Layers
 FORE_2	include/TTX/Types.hpp	/^   FORE_1, FORE_2$/;"	e	enum:Layers
 FRIENDLY_BULLET	include/TTX/Types.hpp	/^   FRIENDLY_BULLET = 0x0002,$/;"	e	enum:ObjectCategories
@@ -644,7 +649,7 @@ GroupID	ext_libs/include/MPE/Config.hpp	/^typedef unsigned char GroupID;$/;"	t	n
 Gyroscope	ext_libs/include/SFML/Window/Sensor.hpp	/^      Gyroscope,        \/\/\/< Measures the raw rotation rates (degrees\/s)$/;"	e	enum:sf::Sensor::Type
 HALF_PI	include/TTX/Types.hpp	/^const float HALF_PI = 3.14159265359f \/ 2;$/;"	v
 HEALTHSYSTEM_INC	include/TTX/systems/HealthSystem.hpp	7;"	d
-HEALTH_SYSTEM	include/TTX/Definition.hpp	44;"	d
+HEALTH_SYSTEM	include/TTX/Definition.hpp	46;"	d
 HEALTH	include/TTX/Definition.hpp	22;"	d
 HasBOM	ext_libs/include/TinyXML2/tinyxml2.h	/^    bool HasBOM() const {$/;"	f	class:tinyxml2::XMLDocument
 Head	ext_libs/include/SFML/Network/Http.hpp	/^         Head,  \/\/\/< Request a page's header only$/;"	e	enum:sf::Http::Request::Method
@@ -682,9 +687,13 @@ INDEPENDENT	include/TTX/Definition.hpp	9;"	d
 INFO_LEVEL	ext_libs/include/GQE/Core/Core_types.hpp	28;"	d
 INITIAL_IMPULSE	include/TTX/Definition.hpp	32;"	d
 INITIAL_POSITION	include/TTX/Definition.hpp	23;"	d
-INPUTSYSTEM_INC	include/TTX/systems/InputSystem.hpp	15;"	d
+INPUTLISTENER_INC	include/TTX/classes/listeners/InputListener.hpp	2;"	d
+INPUTSYSTEM_INC	include/TTX/systems/InputSystem.hpp	17;"	d
+INPUT_INC	include/TTX/classes/listeners/Input.hpp	2;"	d
+INPUT_LISTENER	include/TTX/Definition.hpp	40;"	d
 INPUT_SYSTEM_HPP_INCLUDED	ext_libs/include/GQE/Entity/systems/ActionSystem.hpp	9;"	d
-INPUT_SYSTEM	include/TTX/Definition.hpp	51;"	d
+INPUT_SYSTEM	include/TTX/Definition.hpp	53;"	d
+INPUT	include/TTX/Definition.hpp	39;"	d
 INSTANCE_HPP_INCLUDED	ext_libs/include/GQE/Entity/classes/Instance.hpp	12;"	d
 IPROPELLER_INC	include/TTX/classes/objects/IPropeller.hpp	2;"	d
 IPROPERTY_HPP_INCLUDED	ext_libs/include/GQE/Core/interfaces/IProperty.hpp	9;"	d
@@ -709,10 +718,12 @@ Image	ext_libs/include/SFML/Graphics/Image.hpp	/^class SFML_GRAPHICS_API Image$/
 I	ext_libs/include/Box2D/Collision/Shapes/b2Shape.h	/^	float32 I;$/;"	m	struct:b2MassData
 Info	ext_libs/include/SFML/Audio/SoundFileReader.hpp	/^   struct Info$/;"	s	class:sf::SoundFileReader
 Info	ext_libs/include/SFML/Graphics/Font.hpp	/^   struct Info$/;"	s	class:sf::Font
+InputListener	include/TTX/classes/listeners/InputListener.hpp	/^class InputListener$/;"	c
 InputSoundFile	ext_libs/include/SFML/Audio/InputSoundFile.hpp	/^class SFML_AUDIO_API InputSoundFile : NonCopyable$/;"	c	namespace:sf
 InputStream	ext_libs/include/SFML/System/InputStream.hpp	/^class SFML_SYSTEM_API InputStream$/;"	c	namespace:sf
 InputSystem	include/TTX/systems/InputSystem.hpp	/^class InputSystem : public ISystem$/;"	c
 InputSystem	src/TTX/systems/InputSystem.cpp	/^InputSystem::InputSystem(IActionState& theState):$/;"	f	class:InputSystem
+Input	include/TTX/classes/listeners/Input.hpp	/^class Input$/;"	c
 Input	include/TTX/classes/objects/WeaponManager.hpp	/^      Input():$/;"	f	struct:WeaponManager::Input
 Input	include/TTX/classes/objects/WeaponManager.hpp	/^   struct Input$/;"	s	class:WeaponManager
 Insert	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Insert,       \/\/\/< The Insert key$/;"	e	enum:sf::Keyboard::Key
@@ -822,7 +833,7 @@ Lock	ext_libs/include/SFML/System/Lock.hpp	/^class SFML_SYSTEM_API Lock : NonCop
 LoggedIn	ext_libs/include/SFML/Network/Ftp.hpp	/^         LoggedIn              = 230, \/\/\/< User logged in, proceed. Logged out if appropriate$/;"	e	enum:sf::Ftp::Response::Status
 LostFocus	ext_libs/include/SFML/Window/Event.hpp	/^      LostFocus,              \/\/\/< The window lost the focus (no data)$/;"	e	enum:sf::Event::EventType
 LowRange	ext_libs/include/GQE/Core/Core_types.hpp	/^    LowRange  = 0, \/\/\/< Recommend using LowRange graphics (32x32 pixels)$/;"	e	enum:GQE::GraphicRange
-MACHINEGUN_PROTO	include/TTX/Definition.hpp	67;"	d
+MACHINEGUN_PROTO	include/TTX/Definition.hpp	69;"	d
 MAP_H	ext_libs/include/MapLoader/map.hpp	2;"	d
 MAP_H	include/TTX/classes/mapLoader/MapLoader.hpp	2;"	d
 MAX_CHARS	ext_libs/include/GQE/Core/classes/ConfigReader.hpp	/^      static const unsigned short MAX_CHARS = 100;$/;"	m	class:GQE::ConfigReader
@@ -884,7 +895,7 @@ NEEDS_FLUSH	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_FLUSH = 0x100,$
 NEEDS_NEWLINE_NORMALIZATION	ext_libs/include/TinyXML2/tinyxml2.h	/^        NEEDS_NEWLINE_NORMALIZATION		= 0x02,$/;"	e	enum:tinyxml2::StrPair::__anon15
 NODESYSTEM_INC	include/TTX/systems/NodeSystem.hpp	15;"	d
 NODESYSTEM_INC	trashCode/FamilySystem.hpp	14;"	d
-NODE_SYSTEM	include/TTX/Definition.hpp	50;"	d
+NODE_SYSTEM	include/TTX/Definition.hpp	52;"	d
 NOMINMAX	ext_libs/include/GQE/Config.hpp	44;"	d
 NOMINMAX	ext_libs/include/SFML/Config.hpp	46;"	d
 NONE	include/TTX/Definition.hpp	4;"	d
@@ -944,7 +955,7 @@ Numpad6	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Numpad6,      \/\/\/< 
 Numpad7	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Numpad7,      \/\/\/< The numpad 7 key$/;"	e	enum:sf::Keyboard::Key
 Numpad8	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Numpad8,      \/\/\/< The numpad 8 key$/;"	e	enum:sf::Keyboard::Key
 Numpad9	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Numpad9,      \/\/\/< The numpad 9 key$/;"	e	enum:sf::Keyboard::Key
-OBJECTS	include/TTX/Definition.hpp	58;"	d
+OBJECTS	include/TTX/Definition.hpp	60;"	d
 OBJT_1	include/TTX/Types.hpp	/^   OBJT_1, OBJT_2,$/;"	e	enum:Layers
 OBJT_2	include/TTX/Types.hpp	/^   OBJT_1, OBJT_2,$/;"	e	enum:Layers
 OPEN	ext_libs/include/TinyXML2/tinyxml2.h	/^        OPEN,		\/\/ <foo>$/;"	e	enum:tinyxml2::XMLElement::__anon19
@@ -965,20 +976,20 @@ OutputSoundFile	ext_libs/include/SFML/Audio/OutputSoundFile.hpp	/^class SFML_AUD
 PARENT	include/TTX/Definition.hpp	36;"	d
 PARTICLECONTAINER_N3JXVU09	ext_libs/include/MPE/classes/ParticleContainer.hpp	2;"	d
 PARTICLESYSTEM_T69OX7N	include/TTX/classes/particles/Particles.hpp	9;"	d
-PARTICLES	include/TTX/Definition.hpp	57;"	d
+PARTICLES	include/TTX/Definition.hpp	59;"	d
 PARTICLE_INC	ext_libs/include/MPE/classes/Particle.hpp	8;"	d
 PART_1	include/TTX/Types.hpp	/^   PART_1, PART_2,$/;"	e	enum:Layers
 PART_2	include/TTX/Types.hpp	/^   PART_1, PART_2,$/;"	e	enum:Layers
 PBOX2_INC	include/TTX/prototypes/Box.hpp	2;"	d
 PHYSICPROTO_INC	include/TTX/prototypes/PhysicProto.hpp	2;"	d
-PHYSIC_SYSTEM	include/TTX/Definition.hpp	45;"	d
+PHYSIC_SYSTEM	include/TTX/Definition.hpp	47;"	d
 PI	ext_libs/include/GT/Angle.hpp	/^   const static Real PI;$/;"	m	class:gt::Angle
 PI	include/TTX/Types.hpp	/^const float PI = 3.14159265359f;$/;"	v
 PLAYERSYSTEM_INC	include/TTX/systems/PlayerSystem.hpp	7;"	d
 PLAYER_INC	include/TTX/prototypes/Player.hpp	2;"	d
 PLAYER_NAME	include/TTX/Definition.hpp	34;"	d
-PLAYER_PROTO	include/TTX/Definition.hpp	70;"	d
-PLAYER_SYSTEM	include/TTX/Definition.hpp	46;"	d
+PLAYER_PROTO	include/TTX/Definition.hpp	72;"	d
+PLAYER_SYSTEM	include/TTX/Definition.hpp	48;"	d
 PLAYER	include/TTX/Definition.hpp	35;"	d
 PMACHINEGUN_INC	include/TTX/prototypes/Machinegun.hpp	2;"	d
 POINTS	include/TTX/Definition.hpp	25;"	d
@@ -987,7 +998,7 @@ POSITION	include/TTX/Definition.hpp	8;"	d
 PRESERVE_WHITESPACE	ext_libs/include/TinyXML2/tinyxml2.h	/^    PRESERVE_WHITESPACE,$/;"	e	enum:tinyxml2::Whitespace
 PROPELLERSYSTEM_INC	include/TTX/systems/PropellerSystem.hpp	25;"	d
 PROPELLER_INC	include/TTX/classes/objects/Propeller.hpp	14;"	d
-PROPELLER_SYSTEM	include/TTX/Definition.hpp	47;"	d
+PROPELLER_SYSTEM	include/TTX/Definition.hpp	49;"	d
 PROPELLER	include/TTX/Definition.hpp	17;"	d
 PROPERTY_MANAGER_HPP_INCLUDED	ext_libs/include/GQE/Core/classes/PropertyManager.hpp	13;"	d
 PROTOTYPE_HPP_INCLUDED	ext_libs/include/GQE/Entity/classes/Prototype.hpp	15;"	d
@@ -1089,7 +1100,7 @@ RECTANGLE	ext_libs/include/MPE/classes/Emitter.hpp	/^   enum Shape {RECTANGLE, C
 REFLECT	ext_libs/include/MPE/classes/Emitter.hpp	/^   enum Dispersion {LINEAR, RADIAL, REFLECT, RANDOM, STATIC};$/;"	e	enum:mpe::Emitter::Dispersion
 RENDERMANAGER_YJUY1HTM	include/TTX/classes/render/RenderManager.hpp	9;"	d
 RENDER_SYSTEM_HPP_INCLUDED	ext_libs/include/GQE/Entity/systems/RenderSystem.hpp	13;"	d
-RENDER_SYSTEM	include/TTX/Definition.hpp	48;"	d
+RENDER_SYSTEM	include/TTX/Definition.hpp	50;"	d
 RESISTANCE	include/TTX/Definition.hpp	21;"	d
 ROOT	include/TTX/Definition.hpp	38;"	d
 RShift	ext_libs/include/SFML/Window/Keyboard.hpp	/^      RShift,       \/\/\/< The right Shift key$/;"	e	enum:sf::Keyboard::Key
@@ -1259,9 +1270,10 @@ SFML_WINDOW_API	ext_libs/include/SFML/Window/Export.hpp	43;"	d
 SFML_WINDOW_EXPORT_HPP	ext_libs/include/SFML/Window/Export.hpp	26;"	d
 SFML_WINDOW_HPP	ext_libs/include/SFML/Window/Window.hpp	26;"	d
 SHIPPROPELLER_INC	include/TTX/prototypes/ShipPropeller.hpp	2;"	d
-SHIP_PROPELLER_PROTO	include/TTX/Definition.hpp	68;"	d
+SHIP_PROPELLER_PROTO	include/TTX/Definition.hpp	70;"	d
 SIMPLEBULLET_INC	include/TTX/prototypes/SimpleBullet.hpp	2;"	d
-SIMPLE_BULLET_PROTO	include/TTX/Definition.hpp	71;"	d
+SIMPLEWEAPONLISTENER_INC	include/TTX/classes/listeners/weapons/SimpleWeaponListener.hpp	2;"	d
+SIMPLE_BULLET_PROTO	include/TTX/Definition.hpp	73;"	d
 SLOGE	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	307;"	d
 SLOGE	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	358;"	d
 SLOGRE	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	349;"	d
@@ -1273,9 +1285,9 @@ SLOG	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	356;"	d
 SOURCE_EXTENSIONS	.ycm_extra_conf.py	/^SOURCE_EXTENSIONS = [ '.cpp', '.cxx', '.cc', '.c', '.m', '.mm' ]$/;"	v
 SPACE_DOTS_APP_HPP_INCLUDED	include/TTX/app/TTXapp.hpp	11;"	d
 SPU	include/TTX/Types.hpp	/^const float SPU = 1.0f \/ UPDATE_RATE;$/;"	v
-STATE_1	include/TTX/Definition.hpp	62;"	d
+STATE_1	include/TTX/Definition.hpp	64;"	d
 STATIC	ext_libs/include/MPE/classes/Emitter.hpp	/^   enum Dispersion {LINEAR, RADIAL, REFLECT, RANDOM, STATIC};$/;"	e	enum:mpe::Emitter::Dispersion
-SUBMACHINEGUN	include/TTX/Definition.hpp	75;"	d
+SUBMACHINEGUN	include/TTX/Definition.hpp	77;"	d
 SYSTEM_INC	ext_libs/include/MPE/classes/System.hpp	7;"	d
 ScopeLogger	ext_libs/include/GQE/Core/loggers/ScopeLogger.hpp	/^  class GQE_API ScopeLogger : public ILogger$/;"	c	namespace:GQE
 S	ext_libs/include/SFML/Window/Keyboard.hpp	/^      S,            \/\/\/< The S key$/;"	e	enum:sf::Keyboard::Key
@@ -1357,6 +1369,8 @@ ShipPropeller	src/TTX/prototypes/ShipPropeller.cpp	/^ShipPropeller::ShipPropelle
 ShipPropeller	trashCode/ShipPropeller.cpp	/^ShipPropeller::ShipPropeller()$/;"	f	class:ShipPropeller
 SimpleBullet	include/TTX/prototypes/SimpleBullet.hpp	/^class SimpleBullet: public PhysicProto$/;"	c
 SimpleBullet	include/TTX/prototypes/SimpleBullet.hpp	/^   SimpleBullet():$/;"	f	class:SimpleBullet
+SimpleWeaponListener	include/TTX/classes/listeners/weapons/SimpleWeaponListener.hpp	/^class SimpleWeaponListener: public EntityInputListener$/;"	c
+SimpleWeaponListener	src/TTX/classes/listeners/weapons/SimpleWeaponListener.cpp	/^SimpleWeaponListener::SimpleWeaponListener():$/;"	f	class:SimpleWeaponListener
 SizeEvent	ext_libs/include/SFML/Window/Event.hpp	/^   struct SizeEvent$/;"	s	class:sf::Event
 SizeReceived	ext_libs/include/SFML/Network/TcpSocket.hpp	/^      std::size_t       SizeReceived; \/\/\/< Number of size bytes received so far$/;"	m	struct:sf::TcpSocket::PendingPacket
 Size	ext_libs/include/TinyXML2/tinyxml2.h	/^    int Size() const					{$/;"	f	class:tinyxml2::DynArray
@@ -1605,12 +1619,13 @@ Visit	ext_libs/include/TinyXML2/tinyxml2.h	/^    virtual bool Visit( const XMLDe
 Visit	ext_libs/include/TinyXML2/tinyxml2.h	/^    virtual bool Visit( const XMLText& \/*text*\/ )					{$/;"	f	class:tinyxml2::XMLVisitor
 Visit	ext_libs/include/TinyXML2/tinyxml2.h	/^    virtual bool Visit( const XMLUnknown& \/*unknown*\/ )				{$/;"	f	class:tinyxml2::XMLVisitor
 WARN_LEVEL	ext_libs/include/GQE/Core/Core_types.hpp	29;"	d
+WEAPONMANAGER_INC	include/TTX/classes/listeners/weapons/WeaponManagerListener.hpp	2;"	d
 WEAPONMANAGER_INC	include/TTX/classes/objects/WeaponManager.hpp	2;"	d
 WEAPONSYSTEM_INC	include/TTX/systems/WeaponSystem.hpp	7;"	d
 WEAPON_8FPXBSUG	include/TTX/classes/objects/Weapon.hpp	7;"	d
 WEAPON_MANAGER_INPUT	include/TTX/Definition.hpp	18;"	d
 WEAPON_MANAGER	include/TTX/Definition.hpp	31;"	d
-WEAPON_SYSTEM	include/TTX/Definition.hpp	49;"	d
+WEAPON_SYSTEM	include/TTX/Definition.hpp	51;"	d
 WEAPON	include/TTX/Definition.hpp	30;"	d
 WIN32_LEAN_AND_MEAN	ext_libs/include/GQE/Config.hpp	41;"	d
 WLOGM_IF	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	138;"	d
@@ -1623,6 +1638,8 @@ WLOG	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	125;"	d
 WLOG	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	152;"	d
 WeaponID	include/TTX/Types.hpp	/^typedef uint32_t WeaponID;$/;"	t
 WeaponManagerInput	include/TTX/Types.hpp	/^typedef std::vector<FireData> WeaponManagerInput;$/;"	t
+WeaponManagerListener	include/TTX/classes/listeners/weapons/WeaponManagerListener.hpp	/^class WeaponManagerListener: public EntityInputListener$/;"	c
+WeaponManagerListener	src/TTX/classes/listeners/weapons/WeaponManagerListener.cpp	/^WeaponManagerListener::WeaponManagerListener()$/;"	f	class:WeaponManagerListener
 WeaponManager	include/TTX/classes/objects/WeaponManager.hpp	/^class WeaponManager$/;"	c
 WeaponManager	src/TTX/classes/objects/WeaponManager.cpp	/^WeaponManager::WeaponManager()$/;"	f	class:WeaponManager
 WeaponManager	src/TTX/classes/objects/WeaponManager.cpp	/^WeaponManager::WeaponManager(IActionState* theState):$/;"	f	class:WeaponManager
@@ -1786,6 +1803,7 @@ addChild	include/TTX/classes/utils/Family.hpp	/^      void addChild(TYPE* theChi
 addCleanup	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      void addCleanup(const typeEventID theEventID, TCLASS& theEventClass,$/;"	f	class:GQE::StateManager
 addInstance	src/TTX/gameStates/IActionState.cpp	/^GQE::Instance* IActionState::addInstance(GQE::typePrototypeID thePrototype,$/;"	f	class:IActionState
 addLayer	include/TTX/classes/render/RenderManager.hpp	/^   void addLayer(Id theID, sf::Texture* theTexture)$/;"	f	class:RenderManager
+addListener	src/TTX/classes/listeners/Input.cpp	/^void Input::addListener(InputListener* theInputListener)$/;"	f	class:Input
 addPlayer	src/TTX/gameStates/IActionState.cpp	/^GQE::IEntity* IActionState::addPlayer(int                  theJoy,$/;"	f	class:IActionState
 addProperties	src/TTX/systems/ActorSystem.cpp	/^void ActorSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:ActorSystem
 addProperties	src/TTX/systems/AnimationSystem.cpp	/^void AnimationSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:AnimationSystem
@@ -1804,6 +1822,7 @@ addProperties	trashCode/B2WorldSystem.cpp	/^void B2WorldSystem::addProperties(GQ
 addProperties	trashCode/FamilySystem.cpp	/^void NodeSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:NodeSystem
 addProperties	trashCode/ObjectSystemOld.cpp	/^void ObjectSystem::addProperties(GQE::IEntity* theEntity)$/;"	f	class:ObjectSystem
 addVertex	include/TTX/classes/render/RenderManager.hpp	/^   void addVertex(Id theID, const sf::Vertex& theVertex)$/;"	f	class:RenderManager
+addWeapon	src/TTX/classes/listeners/weapons/WeaponManagerListener.cpp	/^void WeaponManagerListener::addWeapon(GQE::IEntity* theWeapon)$/;"	f	class:WeaponManagerListener
 addWeapon	src/TTX/classes/objects/WeaponManager.cpp	/^void WeaponManager::addWeapon(GQE::IEntity* theWeapon)$/;"	f	class:WeaponManager
 add	ext_libs/include/GQE/Core/classes/EventManager.hpp	/^      void add(const typeEventID theEventID, TCLASS& theEventClass,$/;"	f	class:GQE::EventManager
 add	ext_libs/include/GQE/Core/classes/PropertyManager.hpp	/^    void add(const typePropertyID thePropertyID, TYPE theValue)$/;"	f	class:GQE::PropertyManager
@@ -2247,6 +2266,9 @@ c0	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec2 c0, c;		\/\/\/< center world
 categoryBits	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	uint16 categoryBits;$/;"	m	struct:b2Filter
 center	ext_libs/include/Box2D/Collision/Shapes/b2Shape.h	/^	b2Vec2 center;$/;"	m	struct:b2MassData
 cf	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2ContactFeature cf;$/;"	m	union:b2ContactID
+changeNext	include/TTX/classes/listeners/Input.hpp	/^         bool changeNext,changePrevious;$/;"	m	struct:Input::Data
+changePrevious	include/TTX/classes/listeners/Input.hpp	/^         bool changeNext,changePrevious;$/;"	m	struct:Input::Data
+changeWeapon	src/TTX/classes/listeners/weapons/WeaponManagerListener.cpp	/^void WeaponManagerListener::changeWeapon()$/;"	f	class:WeaponManagerListener
 changeWeapon	src/TTX/classes/objects/WeaponManager.cpp	/^void WeaponManager::changeWeapon()$/;"	f	class:WeaponManager
 channelCount	ext_libs/include/SFML/Audio/SoundFileReader.hpp	/^      unsigned int channelCount; \/\/\/< Number of channels of the sound$/;"	m	struct:sf::SoundFileReader::Info
 check	ext_libs/include/SFML/Audio/SoundFileFactory.hpp	/^      bool (*check)(InputStream&);$/;"	m	struct:sf::SoundFileFactory::ReaderFactory
@@ -2342,8 +2364,10 @@ draw	trashCode/B2ObjectSystem.cpp	/^void B2ObjectSystem::draw(void)$/;"	f	class:
 draw	trashCode/FamilySystem.cpp	/^void NodeSystem::draw()$/;"	f	class:NodeSystem
 draw	trashCode/ObjectSystemOld.cpp	/^void ObjectSystem::draw(void)$/;"	f	class:ObjectSystem
 dropChild	include/TTX/classes/utils/Family.hpp	/^      void dropChild(TYPE* theChild)$/;"	f	class:Family
+dropListener	src/TTX/classes/listeners/Input.cpp	/^void Input::dropListener(InputListener* theInputListener)$/;"	f	class:Input
 dropReference	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual void dropReference(const typeAssetID theAssetID,$/;"	f	class:GQE::TAssetHandler
 dropTime	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        AssetDropTime  dropTime;  \/\/\/< Drop time at (Zero, Exit)$/;"	m	struct:GQE::TAssetHandler::typeAssetData
+drop	src/TTX/classes/listeners/InputListener.cpp	/^void InputListener::drop()$/;"	f	class:InputListener
 dtRatio	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 dtRatio;	\/\/ dt * inv_dt0$/;"	m	struct:b2TimeStep
 dt	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 dt;			\/\/ time step$/;"	m	struct:b2TimeStep
 e_aabbBit	ext_libs/include/Box2D/Common/b2Draw.h	/^		e_aabbBit				= 0x0004,	\/\/\/< draw axis aligned bounding boxes$/;"	e	enum:b2Draw::__anon7
@@ -2439,6 +2463,7 @@ filename	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        std::s
 filter	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	b2Filter filter;$/;"	m	struct:b2FixtureDef
 finger	ext_libs/include/SFML/Window/Event.hpp	/^      unsigned int finger; \/\/\/< Index of the finger in case of multi-touch events$/;"	m	struct:sf::Event::TouchEvent
 fire	src/TTX/classes/objects/Weapon.cpp	/^void Weapon::fire(Position2D thePosition, IActionState* theState,FireData theFireData)$/;"	f	class:Weapon
+fire	include/TTX/classes/listeners/Input.hpp	/^         Vec2 fire;$/;"	m	struct:Input::Data
 fixedRotation	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	bool fixedRotation;$/;"	m	struct:b2BodyDef
 fixture	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	b2Fixture* fixture;$/;"	m	struct:b2FixtureProxy
 flags	.ycm_extra_conf.py	/^flags = [$/;"	v
@@ -2470,6 +2495,7 @@ getFrame	include/TTX/classes/render/Animation.hpp	/^   sf::IntRect getFrame()$/;
 getHandler	ext_libs/include/GQE/Core/classes/AssetManager.hpp	/^      TAssetHandler<TYPE>& getHandler() const$/;"	f	class:GQE::AssetManager
 getID	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      const typeAssetID getID(void) const$/;"	f	class:GQE::TAsset
 getID	src/TTX/classes/objects/Weapon.cpp	/^WeaponID Weapon::getID()$/;"	f	class:Weapon
+getInput	src/TTX/classes/listeners/InputListener.cpp	/^Input* InputListener::getInput()$/;"	f	class:InputListener
 getLayer	include/TTX/classes/render/RenderManager.hpp	/^   Layer& getLayer(Id theID)$/;"	f	class:RenderManager
 getLoadStyle	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      AssetLoadStyle getLoadStyle(void) const$/;"	f	class:GQE::TAsset
 getLoadStyle	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual AssetLoadStyle getLoadStyle(const typeAssetID theAssetID) const$/;"	f	class:GQE::TAssetHandler
@@ -2598,12 +2624,15 @@ isLoaded	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      bool isLoaded(v
 isLoaded	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual bool isLoaded(const typeAssetID theAssetID) const$/;"	f	class:GQE::TAssetHandler
 isRoot	include/TTX/classes/utils/Family.hpp	/^      bool isRoot()$/;"	f	class:Family
 isSensor	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	bool isSensor;$/;"	m	struct:b2FixtureDef
+iterA	src/TTX/classes/listeners/weapons/WeaponManagerListener.cpp	/^      auto iterA = mWeaponMap.find(mActiveWeapon);$/;"	l
 iterA	src/TTX/classes/objects/WeaponManager.cpp	/^      auto iterA = mWeaponMap.find(mActiveWeapon);$/;"	l
+iterB	src/TTX/classes/listeners/weapons/WeaponManagerListener.cpp	/^      auto iterB = iterA;$/;"	l
 iterB	src/TTX/classes/objects/WeaponManager.cpp	/^      auto iterB = iterA;$/;"	l
 iterations	ext_libs/include/Box2D/Collision/b2Distance.h	/^	int32 iterations;	\/\/\/< number of GJK iterations used$/;"	m	struct:b2DistanceOutput
 iter	ext_libs/include/GQE/Core/classes/AssetManager.hpp	/^        std::map<const typeAssetHandlerID, IAssetHandler*>::const_iterator iter;$/;"	l
 iter	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        typename std::map<const typeAssetID, typeAssetData>::const_iterator iter;$/;"	l
 iter	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^        typename std::map<const typeAssetID, typeAssetData>::iterator iter;$/;"	l
+iter	src/TTX/classes/listeners/weapons/WeaponManagerListener.cpp	/^   auto iter = mWeaponMap.find(weaponID);$/;"	l
 iter	src/TTX/classes/objects/WeaponManager.cpp	/^   auto iter = mWeaponMap.find(weaponID);$/;"	l
 joint1	ext_libs/include/Box2D/Dynamics/Joints/b2GearJoint.h	/^	b2Joint* joint1;$/;"	m	struct:b2GearJointDef
 joint2	ext_libs/include/Box2D/Dynamics/Joints/b2GearJoint.h	/^	b2Joint* joint2;$/;"	m	struct:b2GearJointDef
@@ -2672,6 +2701,7 @@ lowerTranslation	ext_libs/include/Box2D/Dynamics/Joints/b2PrismaticJoint.h	/^	fl
 mActionID	ext_libs/include/GQE/Entity/interfaces/IAction.hpp	/^      const typeActionID mActionID;$/;"	m	class:GQE::IAction
 mActionSystem	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	/^      ActionSystem* mActionSystem;$/;"	m	class:GQE::ActionGroup
 mActions	ext_libs/include/GQE/Entity/systems/ActionSystem.hpp	/^      std::map<const typeActionID, IAction*> mActions;$/;"	m	class:GQE::ActionSystem
+mActiveWeapon	include/TTX/classes/listeners/weapons/WeaponManagerListener.hpp	/^   WeaponID mActiveWeapon;$/;"	m	class:WeaponManagerListener
 mActiveWeapon	include/TTX/classes/objects/WeaponManager.hpp	/^   WeaponID mActiveWeapon;$/;"	m	class:WeaponManager
 mActive	ext_libs/include/GQE/Core/interfaces/ILogger.hpp	/^      bool  mActive;$/;"	m	class:GQE::ILogger
 mActive	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	/^      std::map<const typeActionID, IAction*> mActive;$/;"	m	class:GQE::ActionGroup
@@ -2683,7 +2713,9 @@ mAge	ext_libs/include/MPE/components/Mortal.hpp	/^   Real mAge;$/;"	m	class:mpe:
 mAlive	ext_libs/include/MPE/classes/Mortal.hpp	/^   bool mAlive;$/;"	m	class:mpe::Mortal
 mAlive	ext_libs/include/MPE/components/Mortal.hpp	/^   bool mAlive;$/;"	m	class:mpe::Mortal
 mAmuLoaded	include/TTX/classes/objects/Weapon.hpp	/^   int           mAmuLoaded;$/;"	m	class:Weapon
+mAmunitionType	include/TTX/classes/listeners/weapons/SimpleWeaponListener.hpp	/^      AmunitionID   mAmunitionType;$/;"	m	class:SimpleWeaponListener
 mAmunitionType	include/TTX/classes/objects/Weapon.hpp	/^   AmunitionID   mAmunitionType;$/;"	m	class:Weapon
+mAmunition	include/TTX/classes/listeners/weapons/SimpleWeaponListener.hpp	/^      int           mAmunition;$/;"	m	class:SimpleWeaponListener
 mAmunition	include/TTX/classes/objects/Weapon.hpp	/^   int           mAmunition;$/;"	m	class:Weapon
 mAngle	ext_libs/include/MPE/classes/Focus.hpp	/^   Real      mAngle;$/;"	m	class:mpe::Focus
 mAngle	ext_libs/include/MPE/classes/Particle.hpp	/^   Real      mAngle;$/;"	m	class:mpe::Particle
@@ -2702,6 +2734,7 @@ mAssetManager	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      AssetManager
 mAsset	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      TYPE*                mAsset;$/;"	m	class:GQE::TAsset
 mAssets	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      std::map<const typeAssetID, typeAssetData> mAssets;$/;"	m	class:GQE::TAssetHandler
 mBodyDef	include/TTX/prototypes/PhysicProto.hpp	/^   b2BodyDef mBodyDef;$/;"	m	class:PhysicProto
+mCadency	include/TTX/classes/listeners/weapons/SimpleWeaponListener.hpp	/^      float         mCadency;$/;"	m	class:SimpleWeaponListener
 mCadency	include/TTX/classes/objects/Weapon.hpp	/^   float         mCadency;$/;"	m	class:Weapon
 mChange	include/TTX/classes/objects/WeaponManager.hpp	/^      bool mChange;$/;"	m	struct:WeaponManager::Input
 mChildren	include/TTX/classes/utils/Family.hpp	/^      std::forward_list<TYPE*> mChildren;$/;"	m	class:Family
@@ -2713,6 +2746,7 @@ mColorFactor	include/TTX/classes/particles/Affectors.hpp	/^   mpe::Real mColorFa
 mColor	ext_libs/include/MPE/classes/Particle.hpp	/^   Color     mColor;$/;"	m	class:mpe::Particle
 mContextSettings	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      sf::ContextSettings       mContextSettings;$/;"	m	class:GQE::IApp
 mCos	ext_libs/include/GT/Angle.hpp	/^   Real mCos;$/;"	m	class:gt::Angle
+mData	include/TTX/classes/listeners/Input.hpp	/^      Data mData;$/;"	m	class:Input
 mDead	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      std::vector<IState*>  mDead;$/;"	m	class:GQE::StateManager
 mDefaultFont	ext_libs/include/GQE/Core/classes/StatManager.hpp	/^      sf::Font    mDefaultFont;$/;"	m	class:GQE::StatManager
 mDisabled	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	/^      std::map<const typeActionID, IAction*> mDisabled;$/;"	m	class:GQE::ActionGroup
@@ -2728,6 +2762,7 @@ mEmitter	ext_libs/include/MPE/classes/Focus.hpp	/^   const Emitter&  mEmitter;$/
 mEmitters	ext_libs/include/MPE/classes/System.hpp	/^   std::map<EmitterID, Emitter>  mEmitters;$/;"	m	class:mpe::System
 mEntities	ext_libs/include/GQE/Entity/interfaces/ISystem.hpp	/^      std::map<const Uint32, std::deque<IEntity*> > mEntities;$/;"	m	class:GQE::ISystem
 mEntityID	ext_libs/include/GQE/Entity/interfaces/IEntity.hpp	/^      const typeEntityID  mEntityID;$/;"	m	class:GQE::IEntity
+mEntity	include/TTX/classes/listeners/EntityInputListener.hpp	/^      Entity* mEntity;$/;"	m	class:EntityInputListener
 mEventClass	ext_libs/include/GQE/Core/interfaces/TEvent.hpp	/^      TCLASS&       mEventClass;$/;"	m	class:GQE::TEvent
 mEventFunc	ext_libs/include/GQE/Core/interfaces/TEvent.hpp	/^      typeEventFunc mEventFunc;$/;"	m	class:GQE::TEvent
 mEventID	ext_libs/include/GQE/Core/interfaces/IEvent.hpp	/^      const typeEventID mEventID;$/;"	m	class:GQE::IEvent
@@ -2776,15 +2811,19 @@ mID	include/TTX/classes/render/Layer.hpp	/^   Id mID;$/;"	m	struct:Layer
 mImage	trashCode/B2Ground.hpp	/^   GQE::ImageAsset mImage;$/;"	m	class:B2Ground
 mInit	ext_libs/include/GQE/Core/interfaces/IState.hpp	/^      bool                  mInit;$/;"	m	class:GQE::IState
 mInput	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      const sf::Input&          mInput;$/;"	m	class:GQE::IApp
+mInput	include/TTX/classes/listeners/InputListener.hpp	/^      Input* mInput;$/;"	m	class:InputListener
+mInput	include/TTX/classes/listeners/weapons/WeaponManagerListener.hpp	/^   Input* mInput;$/;"	m	class:WeaponManagerListener
 mInstances	ext_libs/include/GQE/Entity/classes/Prototype.hpp	/^      std::map<const typeEntityID, Instance*> mInstances;$/;"	m	class:GQE::Prototype
 mJointDef	include/TTX/prototypes/Machinegun.hpp	/^   b2WeldJointDef mJointDef;$/;"	m	class:Machinegun
 mJointDef	include/TTX/prototypes/ShipPropeller.hpp	/^      b2WeldJointDef mJointDef;$/;"	m	class:ShipPropeller
+mLastTime	include/TTX/classes/listeners/weapons/SimpleWeaponListener.hpp	/^      float         mLastTime;$/;"	m	class:SimpleWeaponListener
 mLastTime	include/TTX/classes/objects/Weapon.hpp	/^   float         mLastTime;$/;"	m	class:Weapon
 mLayers	include/TTX/classes/render/RenderManager.hpp	/^   std::map<Id, Layer> mLayers;$/;"	m	class:RenderManager
 mLifetime	ext_libs/include/MPE/classes/Mortal.hpp	/^   Real mLifetime;$/;"	m	class:mpe::Mortal
 mLifetime	ext_libs/include/MPE/components/Mortal.hpp	/^   Real mLifetime;$/;"	m	class:mpe::Mortal
 mLinearPower	include/TTX/classes/objects/Propeller.hpp	/^   float          mLinearPower;$/;"	m	class:Propeller
 mLinearVelocity	ext_libs/include/MPE/classes/Particle.hpp	/^   Vec2      mLinearVelocity;$/;"	m	class:mpe::Particle
+mListeners	include/TTX/classes/listeners/Input.hpp	/^      std::set<InputListener*> mListeners;$/;"	m	class:Input
 mList	ext_libs/include/GQE/Core/classes/EventManager.hpp	/^      std::map<const typeEventID, IEvent*> mList;$/;"	m	class:GQE::EventManager
 mList	ext_libs/include/GQE/Core/classes/PropertyManager.hpp	/^    std::unordered_map<typePropertyID, IProperty*> mList;$/;"	m	class:GQE::PropertyManager
 mLoop	include/TTX/classes/render/Animation.hpp	/^   bool mLoop;$/;"	m	class:Animation
@@ -2818,6 +2857,7 @@ mPositionIterations	include/TTX/systems/PhysicSystem.hpp	/^   int32 mPositionIte
 mPosition	ext_libs/include/MPE/classes/Focus.hpp	/^   Vec2      mPosition;$/;"	m	class:mpe::Focus
 mPosition	ext_libs/include/MPE/classes/Particle.hpp	/^   Vec2      mPosition;$/;"	m	class:mpe::Particle
 mPosition	ext_libs/include/MPE/components/Position.hpp	/^   gt::Vec2D mPosition;$/;"	m	class:mpe::Position
+mPower	include/TTX/classes/listeners/weapons/SimpleWeaponListener.hpp	/^      float         mPower;$/;"	m	class:SimpleWeaponListener
 mPower	include/TTX/classes/objects/Weapon.hpp	/^   float         mPower;$/;"	m	class:Weapon
 mPropellerSystem	include/TTX/gameStates/GameStateOne.hpp	/^   GQE::ISystem* mPropellerSystem;$/;"	m	class:GameStateOne
 mProperties	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      PropertyManager           mProperties;$/;"	m	class:GQE::IApp
@@ -2863,6 +2903,7 @@ mStatManager	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      StatManager  
 mStatManager	include/TTX/gameStates/GameStateOne.hpp	/^   GQE::StatManager mStatManager;$/;"	m	class:GameStateOne
 mStateID	ext_libs/include/GQE/Core/interfaces/IState.hpp	/^      const typeStateID     mStateID;$/;"	m	class:GQE::IState
 mStateManager	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      StateManager              mStateManager;$/;"	m	class:GQE::IApp
+mState	include/TTX/classes/listeners/EntityInputListener.hpp	/^      IActionState* mState;$/;"	m	class:EntityInputListener
 mState	include/TTX/classes/objects/WeaponManager.hpp	/^   IActionState* mState;$/;"	m	class:WeaponManager
 mState	include/TTX/systems/ISystem.hpp	/^   IActionState& mState;$/;"	m	class:ISystem
 mStates	include/TTX/classes/render/Layer.hpp	/^   sf::RenderStates mStates;$/;"	m	struct:Layer
@@ -2899,6 +2940,7 @@ mVideoMode	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      sf::VideoMode  
 mView	include/TTX/gameStates/GameStateOne.hpp	/^   sf::View mView;$/;"	m	class:GameStateOne
 mView	include/TTX/systems/PlayerSystem.hpp	/^   sf::View& mView;$/;"	m	class:PlayerSystem
 mVisible	include/TTX/classes/render/Layer.hpp	/^   bool mVisible;$/;"	m	struct:Layer
+mWeaponMap	include/TTX/classes/listeners/weapons/WeaponManagerListener.hpp	/^   std::map<WeaponID,std::set<GQE::IEntity*>> mWeaponMap;$/;"	m	class:WeaponManagerListener
 mWeaponMap	include/TTX/classes/objects/WeaponManager.hpp	/^   std::map<WeaponID,std::set<GQE::IEntity*>> mWeaponMap;$/;"	m	class:WeaponManager
 mWeaponSystem	include/TTX/gameStates/GameStateOne.hpp	/^   GQE::ISystem* mWeaponSystem;$/;"	m	class:GameStateOne
 mWidth	ext_libs/include/MPE/classes/Focus.hpp	/^   Real      mWidth;$/;"	m	class:mpe::Focus
@@ -3473,6 +3515,7 @@ majorVersion	ext_libs/include/SFML/Window/ContextSettings.hpp	/^   unsigned int 
 major	ext_libs/include/Box2D/Common/b2Settings.h	/^	int32 major;		\/\/\/< significant changes$/;"	m	struct:b2Version
 makeClone	ext_libs/include/GQE/Core/interfaces/TProperty.hpp	/^      IProperty* makeClone()$/;"	f	class:GQE::TProperty
 manage	src/TTX/classes/objects/WeaponManager.cpp	/^void WeaponManager::manage(WeaponManager::Input theInputData)$/;"	f	class:WeaponManager
+mapIter	src/TTX/classes/listeners/weapons/WeaponManagerListener.cpp	/^   auto mapIter = mWeaponMap.find(weaponID);$/;"	l
 mapIter	src/TTX/classes/objects/WeaponManager.cpp	/^   auto mapIter = mWeaponMap.find(weaponID);$/;"	l
 maskBits	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	uint16 maskBits;$/;"	m	struct:b2Filter
 masses	ext_libs/include/Box2D/Rope/b2Rope.h	/^	float32* masses;$/;"	m	struct:b2RopeDef
@@ -3487,6 +3530,7 @@ maxMotorTorque	ext_libs/include/Box2D/Dynamics/Joints/b2RevoluteJoint.h	/^	float
 maxMotorTorque	ext_libs/include/Box2D/Dynamics/Joints/b2WheelJoint.h	/^	float32 maxMotorTorque;$/;"	m	struct:b2WheelJointDef
 maxTorque	ext_libs/include/Box2D/Dynamics/Joints/b2FrictionJoint.h	/^	float32 maxTorque;$/;"	m	struct:b2FrictionJointDef
 mem	ext_libs/include/TinyXML2/tinyxml2.h	/^        char    mem[SIZE];$/;"	m	union:tinyxml2::MemPoolT::Chunk
+menu	include/TTX/classes/listeners/Input.hpp	/^         bool pause,menu;$/;"	m	struct:Input::Data
 metric	ext_libs/include/Box2D/Collision/b2Distance.h	/^	float32 metric;		\/\/\/< length or area$/;"	m	struct:b2SimplexCache
 mg	src/TTX/systems/WeaponSystem.cpp	/^   Weapon* mg = theEntity->mProperties.getPointer<Weapon>(WEAPON);$/;"	l
 minorVersion	ext_libs/include/SFML/Window/ContextSettings.hpp	/^   unsigned int minorVersion;      \/\/\/< Minor number of the context version to create$/;"	m	struct:sf::ContextSettings
@@ -3503,6 +3547,7 @@ moveData	src/TTX/systems/PropellerSystem.cpp	/^         MoveData moveData = anEn
 move	ext_libs/include/MPE/components/Position.hpp	/^   void move(Real theXOffset, Real theYOffset)$/;"	f	class:mpe::Position
 move	ext_libs/include/MPE/components/Position.hpp	/^   void move(gt::Vec2D theOffset)$/;"	f	class:mpe::Position
 move	include/TTX/Types.hpp	/^   bool  move, turn;$/;"	m	struct:MoveData
+move	include/TTX/classes/listeners/Input.hpp	/^         Vec2 move;$/;"	m	struct:Input::Data
 mpe	ext_libs/include/MPE/Config.hpp	/^namespace mpe$/;"	n
 mpe	ext_libs/include/MPE/classes/Affector.hpp	/^namespace mpe$/;"	n
 mpe	ext_libs/include/MPE/classes/Emitter.hpp	/^namespace mpe$/;"	n
@@ -3592,6 +3637,8 @@ parent	src/TTX/systems/NodeSystem.cpp	/^   GQE::IEntity* parent = theEntity->mPr
 parent	trashCode/FamilySystem.cpp	/^   GQE::IEntity* parent = theEntity->mProperties.get<Entity*>(PARENT);$/;"	l
 parent	trashCode/FamilySystem.cpp	/^   GQE::IEntity* parent = theEntity->mProperties.get<IEntity*>(PARENT);$/;"	l
 parent	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^		int32 parent;$/;"	m	union:b2TreeNode::__anon4
+pause	include/TTX/classes/listeners/Input.hpp	/^         bool pause,menu;$/;"	m	struct:Input::Data
+pivot	include/TTX/classes/listeners/Input.hpp	/^         bool pivot,turn;$/;"	m	struct:Input::Data
 playerProto	src/TTX/gameStates/GameStateOne.cpp	/^   auto playerProto = new Player();$/;"	l
 player	src/TTX/gameStates/IActionState.cpp	/^    GQE::IEntity* player = 0;$/;"	l
 p	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec2 p;$/;"	m	struct:b2Transform
@@ -3603,6 +3650,7 @@ points	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2ManifoldPoint points[
 points	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2Vec2 points[b2_maxManifoldPoints];	\/\/\/< world contact point (point of intersection)$/;"	m	struct:b2WorldManifold
 points	ext_libs/include/Box2D/Dynamics/Contacts/b2ContactSolver.h	/^	b2VelocityConstraintPoint points[b2_maxManifoldPoints];$/;"	m	struct:b2ContactVelocityConstraint
 positionIterations	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	int32 positionIterations;$/;"	m	struct:b2TimeStep
+position	src/TTX/classes/listeners/weapons/SimpleWeaponListener.cpp	/^      auto position = mEntity->mProperties.get<Position2D>(POSITION);$/;"	l
 position	src/TTX/classes/objects/WeaponManager.cpp	/^            Position2D position = setIter->mProperties.get<Position2D>(POSITION);$/;"	l
 position	ext_libs/include/Box2D/Dynamics/b2Body.h	/^	b2Vec2 position;$/;"	m	struct:b2BodyDef
 position	ext_libs/include/SFML/Graphics/Vertex.hpp	/^   Vector2f  position;  \/\/\/< 2D position of the vertex$/;"	m	class:sf::Vertex
@@ -3637,6 +3685,7 @@ proxyB	ext_libs/include/Box2D/Collision/b2TimeOfImpact.h	/^	b2DistanceProxy prox
 proxyIdA	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^	int32 proxyIdA;$/;"	m	struct:b2Pair
 proxyIdB	ext_libs/include/Box2D/Collision/b2BroadPhase.h	/^	int32 proxyIdB;$/;"	m	struct:b2Pair
 proxyId	ext_libs/include/Box2D/Dynamics/b2Fixture.h	/^	int32 proxyId;$/;"	m	struct:b2FixtureProxy
+publish	src/TTX/classes/listeners/Input.cpp	/^void Input::publish()$/;"	f	class:Input
 px	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 px = v.x - T.p.x;$/;"	l
 py	ext_libs/include/Box2D/Common/b2Math.h	/^	float32 py = v.y - T.p.y;$/;"	l
 q	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Rot q;$/;"	m	struct:b2Transform
@@ -3650,6 +3699,8 @@ referenceAngle	ext_libs/include/Box2D/Dynamics/Joints/b2PrismaticJoint.h	/^	floa
 referenceAngle	ext_libs/include/Box2D/Dynamics/Joints/b2RevoluteJoint.h	/^	float32 referenceAngle;$/;"	m	struct:b2RevoluteJointDef
 referenceAngle	ext_libs/include/Box2D/Dynamics/Joints/b2WeldJoint.h	/^	float32 referenceAngle;$/;"	m	struct:b2WeldJointDef
 releaseAsset	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual void releaseAsset(const typeAssetID theAssetID, TYPE* theAsset)$/;"	f	class:GQE::TAssetHandler
+removeWeapon	src/TTX/classes/listeners/weapons/WeaponManagerListener.cpp	/^void WeaponManagerListener::removeWeapon(GQE::IEntity* theWeapon)$/;"	f	class:WeaponManagerListener
+removeWeapon	src/TTX/classes/listeners/weapons/WeaponManagerListener.cpp	/^void WeaponManagerListener::removeWeapon(WeaponID theWeapon)$/;"	f	class:WeaponManagerListener
 removeWeapon	src/TTX/classes/objects/WeaponManager.cpp	/^void WeaponManager::removeWeapon(GQE::IEntity* theWeapon)$/;"	f	class:WeaponManager
 removeWeapon	src/TTX/classes/objects/WeaponManager.cpp	/^void WeaponManager::removeWeapon(WeaponID theWeapon)$/;"	f	class:WeaponManager
 resetLife	ext_libs/include/MPE/classes/Mortal.hpp	/^   inline void resetLife(Real theLifetime)$/;"	f	class:mpe::Mortal
@@ -3686,15 +3737,20 @@ scale	ext_libs/include/MPE/classes/Vec2.hpp	/^   Vec2& scale(const Real& theScal
 segmentAABB	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^	b2AABB segmentAABB;$/;"	l
 sensor	ext_libs/include/SFML/Window/Event.hpp	/^      SensorEvent           sensor;            \/\/\/< Sensor event parameters (Event::SensorChanged)$/;"	m	union:sf::Event::__anon14
 separation	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^		float32 separation = b2Abs(b2Dot(v, p1 - c)) - b2Dot(abs_v, h);$/;"	l
+setAmmunitionType	src/TTX/classes/listeners/weapons/SimpleWeaponListener.cpp	/^void SimpleWeaponListener::setAmmunitionType(AmunitionID theAmmu)$/;"	f	class:SimpleWeaponListener
 setBody	src/TTX/systems/PhysicSystem.cpp	/^b2Body* PhysicSystem::setBody(GQE::IEntity* theEntity)$/;"	f	class:PhysicSystem
 setBody	trashCode/ShipPropeller.cpp	/^void ShipPropeller::setBody (b2Body* theBody)$/;"	f	class:ShipPropeller
+setCadency	src/TTX/classes/listeners/weapons/SimpleWeaponListener.cpp	/^void SimpleWeaponListener::setCadency(float theCadency)$/;"	f	class:SimpleWeaponListener
+setData	src/TTX/classes/listeners/Input.cpp	/^void Input::setData(Data theData)$/;"	f	class:Input
 setDropTime	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      void setDropTime(AssetDropTime theDropTime)$/;"	f	class:GQE::TAsset
 setDropTime	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual void setDropTime(const typeAssetID theAssetID,$/;"	f	class:GQE::TAssetHandler
 setEmitterID	src/TTX/classes/objects/Propeller.cpp	/^void Propeller::setEmitterID(mpe::EmitterID theEmitterID)$/;"	f	class:Propeller
+setEntity	include/TTX/classes/listeners/EntityInputListener.hpp	/^      void setEntity(Entity* theEntity){mEntity = theEntity;}$/;"	f	class:EntityInputListener
 setFilename	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      void setFilename(std::string theFilename)$/;"	f	class:GQE::TAsset
 setFilename	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual void setFilename(const typeAssetID theAssetID, std::string theFilename)$/;"	f	class:GQE::TAssetHandler
 setFocus	src/TTX/classes/objects/Propeller.cpp	/^void Propeller::setFocus(mpe::FocusPtr theFocus)$/;"	f	class:Propeller
 setID	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      void setID(const typeAssetID theAssetID,$/;"	f	class:GQE::TAsset
+setInput	src/TTX/classes/listeners/InputListener.cpp	/^void InputListener::setInput(Input* theInput)$/;"	f	class:InputListener
 setLinearPower	src/TTX/classes/objects/Propeller.cpp	/^void Propeller::setLinearPower(float theLinearPower)$/;"	f	class:Propeller
 setLoadStyle	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      void setLoadStyle(const typeAssetID theAssetID, AssetLoadStyle theLoadStyle)$/;"	f	class:GQE::TAssetHandler
 setLoadTime	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      void setLoadTime(AssetLoadStyle theLoadStyle)$/;"	f	class:GQE::TAsset
@@ -3702,8 +3758,10 @@ setLoadTime	ext_libs/include/GQE/Core/interfaces/TAsset.hpp	/^      void setLoad
 setLoadTime	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual void setLoadTime(const typeAssetID theAssetID, AssetLoadTime theLoadTime)$/;"	f	class:GQE::TAssetHandler
 setPosition	ext_libs/include/MPE/components/Position.hpp	/^   void setPosition(Real theX, Real theY)$/;"	f	class:mpe::Position
 setPosition	ext_libs/include/MPE/components/Position.hpp	/^   void setPosition(gt::Vec2D thePosition)$/;"	f	class:mpe::Position
+setPower	src/TTX/classes/listeners/weapons/SimpleWeaponListener.cpp	/^void SimpleWeaponListener::setPower(float thePower)$/;"	f	class:SimpleWeaponListener
 setPropellerModel	trashCode/VehicleProto.cpp	/^void VehicleProto::setPropellerModel(PropellerType theModel)$/;"	f	class:VehicleProto
 setRoot	include/TTX/classes/utils/Family.hpp	/^      void setRoot(TYPE* theRoot)$/;"	f	class:Family
+setState	include/TTX/classes/listeners/EntityInputListener.hpp	/^      void setState(IActionState* theState){mState = theState;}$/;"	f	class:EntityInputListener
 setTurnPower	src/TTX/classes/objects/Propeller.cpp	/^void Propeller::setTurnPower(float theTurnPower)$/;"	f	class:Propeller
 setValue	ext_libs/include/GQE/Core/interfaces/TProperty.hpp	/^      void setValue(TYPE& theValue)$/;"	f	class:GQE::TProperty
 setWeaponManager	src/TTX/classes/objects/Weapon.cpp	/^void Weapon::setWeaponManager(WeaponManager* theManager)$/;"	f	class:Weapon
@@ -3845,7 +3903,9 @@ touch	ext_libs/include/SFML/Window/Event.hpp	/^      TouchEvent            touch
 transformA	ext_libs/include/Box2D/Collision/b2Distance.h	/^	b2Transform transformA;$/;"	m	struct:b2DistanceInput
 transformB	ext_libs/include/Box2D/Collision/b2Distance.h	/^	b2Transform transformB;$/;"	m	struct:b2DistanceInput
 transform	ext_libs/include/SFML/Graphics/RenderStates.hpp	/^   Transform      transform; \/\/\/< Transform$/;"	m	class:sf::RenderStates
+turbo	include/TTX/classes/listeners/Input.hpp	/^         float turbo;$/;"	m	struct:Input::Data
 turn	include/TTX/Types.hpp	/^   bool  move, turn;$/;"	m	struct:MoveData
+turn	include/TTX/classes/listeners/Input.hpp	/^         bool pivot,turn;$/;"	m	struct:Input::Data
 typeActionID	ext_libs/include/GQE/Entity/Entity_types.hpp	/^  typedef uint32_t typeActionID;$/;"	t	namespace:GQE
 typeA	ext_libs/include/Box2D/Collision/b2Collision.h	/^	uint8 typeA;		\/\/\/< The feature type on shapeA$/;"	m	struct:b2ContactFeature
 typeAssetData	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      struct typeAssetData {$/;"	s	class:GQE::TAssetHandler
@@ -3908,6 +3968,8 @@ updateVariable	trashCode/ObjectSystemOld.cpp	/^void ObjectSystem::updateVariable
 update	ext_libs/include/GQE/Core/interfaces/TProperty.hpp	/^      void update()$/;"	f	class:GQE::TProperty
 update	ext_libs/include/MPE/classes/Affector.hpp	/^   virtual void update(Real theElapsedtime)$/;"	f	class:mpe::Affector
 update	include/TTX/classes/render/Animation.hpp	/^   void update(float theTime)$/;"	f	class:Animation
+update	src/TTX/classes/listeners/weapons/SimpleWeaponListener.cpp	/^void SimpleWeaponListener::update(Input::Data theInput)$/;"	f	class:SimpleWeaponListener
+update	src/TTX/classes/listeners/weapons/WeaponManagerListener.cpp	/^void WeaponManagerListener::update(Input::Data theInputData)$/;"	f	class:WeaponManagerListener
 update	src/TTX/classes/particles/Affectors.cpp	/^void DisolveAffector::update(mpe::Real theElapsedTime)$/;"	f	class:DisolveAffector
 update	trashCode/ShipPropeller.cpp	/^void ShipPropeller::update(float theElapsedTime)$/;"	f	class:ShipPropeller
 upperAngle	ext_libs/include/Box2D/Dynamics/Joints/b2RevoluteJoint.h	/^	float32 upperAngle;$/;"	m	struct:b2RevoluteJointDef
@@ -3941,6 +4003,7 @@ v	ext_libs/include/Box2D/Common/b2Math.h	/^	b2Vec3 operator -() const { b2Vec3 v
 v	ext_libs/include/Box2D/Collision/b2Collision.h	/^	b2Vec2 v;$/;"	m	struct:b2ClipVertex
 v	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	b2Vec2 v;$/;"	m	struct:b2Velocity
 warmStarting	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	bool warmStarting;$/;"	m	struct:b2TimeStep
+weaponID	src/TTX/classes/listeners/weapons/WeaponManagerListener.cpp	/^   auto weaponID = theWeapon->mProperties.get<EntityID>(NAME);$/;"	l
 weaponID	src/TTX/classes/objects/WeaponManager.cpp	/^   WeaponID weaponID = theWeapon->mProperties.getPointer<Weapon>(WEAPON)->getID();$/;"	l
 weaponManagerInput	src/TTX/systems/ActorSystem.cpp	/^         WeaponManager::Input weaponManagerInput = anEntity->mProperties.get<WeaponManager::Input>(WEAPON_MANAGER_INPUT);$/;"	l
 weaponManagerInput	src/TTX/systems/PlayerSystem.cpp	/^   WeaponManager::Input weaponManagerInput;$/;"	l
@@ -4010,6 +4073,7 @@ z	ext_libs/include/SFML/Window/Event.hpp	/^      float z;           \/\/\/< Curr
 ~IActionState	src/TTX/gameStates/IActionState.cpp	/^IActionState::~IActionState()$/;"	f	class:IActionState
 ~IPropeller	include/TTX/classes/objects/IPropeller.hpp	/^      virtual ~IPropeller() {};$/;"	f	class:IPropeller
 ~ISystem	src/TTX/systems/ISystem.cpp	/^ISystem::~ISystem() {}$/;"	f	class:ISystem
+~InputListener	src/TTX/classes/listeners/InputListener.cpp	/^InputListener::~InputListener()$/;"	f	class:InputListener
 ~InputStream	ext_libs/include/SFML/System/InputStream.hpp	/^   virtual ~InputStream() {}$/;"	f	class:sf::InputStream
 ~InputSystem	src/TTX/systems/InputSystem.cpp	/^InputSystem::~InputSystem()$/;"	f	class:InputSystem
 ~Layer	include/TTX/classes/render/Layer.hpp	/^   ~Layer () {};$/;"	f	struct:Layer

@@ -1,4 +1,5 @@
 #include <TTX/classes/listeners/Input.hpp>
+#include <TTX/classes/listeners/InputListener.hpp>
 
 void Input::addListener(InputListener* theInputListener)
 {

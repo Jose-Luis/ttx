@@ -2,8 +2,8 @@
 #define INPUTLISTENER_INC
 
 #include <TTX/Types.hpp>
+#include <TTX/classes/listeners/Input.hpp>
 
-class Input;
 
 class InputListener
 {

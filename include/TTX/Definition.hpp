@@ -36,6 +36,8 @@
 #define PARENT                30
 #define CHILDREN              31
 #define ROOT                  32
+#define INPUT                 33
+#define INPUT_LISTENER        34
 
 //SYSTEMS
 

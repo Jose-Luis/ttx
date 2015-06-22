@@ -23,16 +23,19 @@ void NodeSystem::addProperties(GQE::IEntity* theEntity)
 void NodeSystem::handleInit(GQE::IEntity* theEntity)
 {
    GQE::IEntity* parent = theEntity->mProperties.get<Entity*>(PARENT);
+   Entity* root = theEntity;
 
    if(parent)
    {
-      Entity* root = parent->mProperties.get<Entity*>(ROOT);
+      root = parent->mProperties.get<Entity*>(ROOT);
       theEntity->mProperties.set<Entity*>(ROOT,root);
       ChildrenContainer* children = parent->mProperties.getPointer<ChildrenContainer>(CHILDREN);
       children->push_front(theEntity);
       GQE::Uint32 order = parent->getOrder();
       theEntity->setOrder(order++); //Don't touch otherwise CRASH!!
    }
+
+   theEntity->mProperties.set<Entity*>(ROOT,root);
 }
 
 void NodeSystem::handleEvents(sf::Event theEvent)

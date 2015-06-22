@@ -6,6 +6,7 @@ set(SYSTEMS_FILES
    ${INCROOT}/systems/AnimationSystem.hpp
    ${INCROOT}/systems/HealthSystem.hpp
    ${INCROOT}/systems/PhysicSystem.hpp
+   ${INCROOT}/systems/NodeSystem.hpp
    ${SRCROOT}/systems/ISystem.cpp
    ${SRCROOT}/systems/RenderSystem.cpp
    ${SRCROOT}/systems/PlayerSystem.cpp
@@ -14,6 +15,7 @@ set(SYSTEMS_FILES
    ${SRCROOT}/systems/PhysicSystem.cpp
    ${SRCROOT}/systems/ActorSystem.cpp
    ${SRCROOT}/systems/WeaponSystem.cpp
+   ${SRCROOT}/systems/NodeSystem.cpp
    ${SRCROOT}/systems/AnimationSystem.cpp)
 
 add_library(systems ${SYSTEMS_FILES}) 
