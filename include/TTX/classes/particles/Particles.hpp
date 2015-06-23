@@ -10,6 +10,7 @@
 
 #include <MPE/MPE.hpp>
 #include <GQE/Core/utils/CRC32.hpp>
+#include <TTX/Definition.hpp>
 #include <TTX/classes/render/RenderManager.hpp>
 
 class Particles: public mpe::System

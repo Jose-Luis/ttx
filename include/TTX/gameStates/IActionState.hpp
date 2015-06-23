@@ -31,6 +31,7 @@ public:
 
    void activeEntity(GQE::IEntity* theEntity);
    void attachEntities(GQE::IEntity* theFather,GQE::IEntity* theChild,GQE::typePropertyID theChildName);
+   Particles& getParticles();
 
 
 protected:   //Members

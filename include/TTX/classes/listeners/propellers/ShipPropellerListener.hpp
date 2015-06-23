@@ -6,8 +6,17 @@
 
 class ShipPropellerListener: public EntityInputListener
 {
-   virtual void update(Input::Data theInputData);
-   virtual ShipPropellerListener* clone(); 
+   public:
+
+      virtual ~ShipPropellerListener();
+      virtual void update(Input::Data theInputData);
+      virtual ShipPropellerListener* clone(); 
+      virtual void init();
+
+   private:
+
+      mpe::FocusPtr mFocus;
+
 };
 
 #endif

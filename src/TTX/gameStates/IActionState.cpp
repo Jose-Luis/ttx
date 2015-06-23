@@ -117,3 +117,10 @@ void IActionState::attachEntities(GQE::IEntity* theFather,GQE::IEntity* theChild
       childBody->SetActive(true);
    }
 }
+
+
+Particles& IActionState::getParticles()
+{
+   return mParticles;
+}
+

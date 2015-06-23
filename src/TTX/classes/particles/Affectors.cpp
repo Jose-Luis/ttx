@@ -2,12 +2,14 @@
 
 DisolveAffector::DisolveAffector(mpe::Real theLifetime, mpe::Real theColorFactor):
    Affector(theLifetime),
-   mColorFactor(theColorFactor)
+   mColorFactor(theColorFactor),
+   mDistribution(0.5)
 {
 }
 void DisolveAffector::affect(mpe::Particle& theParticle, mpe::Real theElapsedTime)
 {
-   theParticle.modifyAlpha(-mColorFactor);
+   float random = mDistribution(mGenerator);
+   theParticle.modifyAlpha(-random * mColorFactor);
 
    if (theParticle.isTransparent())
    {

@@ -38,6 +38,7 @@ void InputSystem::handleInit(GQE::IEntity* theEntity)
          listener->setEntity(theEntity);
          listener->setState(&mState);
          input->addListener(listener);
+         listener->init();
          theEntity->mProperties.set<EntityInputListener*>(INPUT_LISTENER,listener);
       }
    }

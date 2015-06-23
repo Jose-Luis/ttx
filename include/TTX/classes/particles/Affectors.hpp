@@ -7,6 +7,8 @@
  */
 #ifndef AFFECTORS_INC
 #define AFFECTORS_INC
+
+#include <random>
 #include<MPE/MPE.hpp>
 
 class DisolveAffector: public mpe::Affector
@@ -20,5 +22,7 @@ public:
 
 private:
    mpe::Real mColorFactor;
+   std::default_random_engine mGenerator;
+   std::exponential_distribution<float> mDistribution;
 };
 #endif

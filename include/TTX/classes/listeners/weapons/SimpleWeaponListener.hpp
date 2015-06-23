@@ -11,6 +11,7 @@ class SimpleWeaponListener: public EntityInputListener
       SimpleWeaponListener();
       virtual SimpleWeaponListener* clone();
       virtual void update(Input::Data theInput);
+      virtual void init(){}
       void setAmmunitionType(AmunitionID theAmmu);
       void setCadency(float theCadency);
       void setPower(float thePower);

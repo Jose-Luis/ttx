@@ -49,7 +49,6 @@ void GameStateOne::doInit(void)
    mAnimationSystem = new AnimationSystem(*this);
    mHealthSystem = new HealthSystem(*this);
    mActorSystem = new ActorSystem(*this);
-   mWeaponSystem = new WeaponSystem(*this);
    mNodeSystem = new NodeSystem(*this);
    mInputSystem = new InputSystem(*this);
 
@@ -93,10 +92,12 @@ void GameStateOne::doInit(void)
    mRenderManager.addLayer(BACKGROUND, anTileTexture);
    mRenderManager.addLayer(FOREGROUND, anTileTexture);
    mRenderManager.addLayer(OBJECTS, anSpriteTexture);
-   mRenderManager.addLayer(PARTICLES, anSpriteTexture);
+   mRenderManager.addLayer(PARTICLES_1, anSpriteTexture);
+   mRenderManager.addLayer(PARTICLES_2, anSpriteTexture);
 
    mRenderManager.getLayer(OBJECTS).mUpdatable = true;
-   mRenderManager.getLayer(PARTICLES).mUpdatable = true;
+   mRenderManager.getLayer(PARTICLES_1).mUpdatable = true;
+   mRenderManager.getLayer(PARTICLES_2).mUpdatable = true;
    mRenderManager.getLayer(BACKGROUND).mUpdatable = false;
    mRenderManager.getLayer(FOREGROUND).mUpdatable = false;
    //Update Rate
@@ -110,6 +111,7 @@ void GameStateOne::doInit(void)
    mParticles.setXFactor(16);
    mParticles.setYFactor(16);
    mParticles.initFromFile("resources/Particles.xml");
+   mParticles.addAffector(DisolveAffector::create(2));
    //MapLoader
    MapLoader anMapLoader("resources/map1.tmx");
    anMapLoader.loadTiles(mRenderManager);
@@ -191,9 +193,10 @@ void GameStateOne::draw(void)
 {
    mApp.mWindow.clear();
    mRenderManager.drawLayer(BACKGROUND, mApp.mWindow);
-   mRenderManager.drawLayer(PARTICLES, mApp.mWindow);
+   mRenderManager.drawLayer(PARTICLES_1, mApp.mWindow);
    mRenderManager.drawLayer(OBJECTS, mApp.mWindow);
    mRenderManager.drawLayer(FOREGROUND, mApp.mWindow);
+   mRenderManager.drawLayer(PARTICLES_2, mApp.mWindow);
 #ifndef NDEBUG
    mStatManager.draw();
 #endif

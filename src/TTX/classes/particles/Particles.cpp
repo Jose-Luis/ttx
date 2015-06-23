@@ -38,10 +38,10 @@ Id Particles::getParticleLayer(const mpe::Particle& theParticle)
 {
    if(theParticle.belongToGroup(mpe::GROUP_A | mpe::GROUP_B | mpe::GROUP_C | mpe::GROUP_D))
    {
-      return ID32_("Par1");
+      return PARTICLES_1;
    }
    else
    {
-      return ID32_("Par2");
+      return PARTICLES_2;
    }
 }

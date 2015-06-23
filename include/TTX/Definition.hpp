@@ -62,8 +62,9 @@
 
 #define BACKGROUND            1
 #define FOREGROUND            2
-#define PARTICLES             3
-#define OBJECTS               4
+#define PARTICLES_1           3
+#define PARTICLES_2           4
+#define OBJECTS               5
 
 //GAMESTATES
  

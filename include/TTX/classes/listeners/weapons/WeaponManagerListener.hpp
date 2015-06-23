@@ -13,6 +13,7 @@ public:
    WeaponManagerListener();
 
    virtual void update(Input::Data theData);
+   virtual void init() {}
 
    void changeWeapon();
 

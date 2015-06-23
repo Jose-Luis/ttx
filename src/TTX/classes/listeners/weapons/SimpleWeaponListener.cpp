@@ -24,7 +24,7 @@ void SimpleWeaponListener::update(Input::Data theInput)
 
 SimpleWeaponListener::SimpleWeaponListener():
    mAmunitionType(SIMPLE_BULLET_PROTO),
-   mCadency(0.2),
+   mCadency(0.02),
    mPower(1024),
    mLastTime(0),
    mAmunition(1024)

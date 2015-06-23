@@ -130,11 +130,11 @@ BACKGROUND	include/TTX/Definition.hpp	63;"	d
 BACK_1	include/TTX/Types.hpp	/^   BACK_1, BACK_2,$/;"	e	enum:Layers
 BACK_2	include/TTX/Types.hpp	/^   BACK_1, BACK_2,$/;"	e	enum:Layers
 BACK_ANCHOR	include/TTX/Definition.hpp	45;"	d
-BASIC_SHIP_PROTO	include/TTX/Definition.hpp	74;"	d
+BASIC_SHIP_PROTO	include/TTX/Definition.hpp	75;"	d
 BODYDEF	include/TTX/Definition.hpp	11;"	d
 BODY	include/TTX/Definition.hpp	10;"	d
 BOX2D_H	ext_libs/include/Box2D/Box2D.h	20;"	d
-BOX_PROTO	include/TTX/Definition.hpp	77;"	d
+BOX_PROTO	include/TTX/Definition.hpp	78;"	d
 BUF_SIZE	ext_libs/include/TinyXML2/tinyxml2.h	/^        BUF_SIZE = 200$/;"	e	enum:tinyxml2::XMLPrinter::__anon20
 BUF_SIZE	ext_libs/include/TinyXML2/tinyxml2.h	/^    enum { BUF_SIZE = 200 };$/;"	e	enum:tinyxml2::XMLAttribute::__anon18
 BackSlash	ext_libs/include/SFML/Window/Keyboard.hpp	/^      BackSlash,    \/\/\/< The \\ key$/;"	e	enum:sf::Keyboard::Key
@@ -839,7 +839,7 @@ Lock	ext_libs/include/SFML/System/Lock.hpp	/^class SFML_SYSTEM_API Lock : NonCop
 LoggedIn	ext_libs/include/SFML/Network/Ftp.hpp	/^         LoggedIn              = 230, \/\/\/< User logged in, proceed. Logged out if appropriate$/;"	e	enum:sf::Ftp::Response::Status
 LostFocus	ext_libs/include/SFML/Window/Event.hpp	/^      LostFocus,              \/\/\/< The window lost the focus (no data)$/;"	e	enum:sf::Event::EventType
 LowRange	ext_libs/include/GQE/Core/Core_types.hpp	/^    LowRange  = 0, \/\/\/< Recommend using LowRange graphics (32x32 pixels)$/;"	e	enum:GQE::GraphicRange
-MACHINEGUN_PROTO	include/TTX/Definition.hpp	75;"	d
+MACHINEGUN_PROTO	include/TTX/Definition.hpp	76;"	d
 MAP_H	ext_libs/include/MapLoader/map.hpp	2;"	d
 MAP_H	include/TTX/classes/mapLoader/MapLoader.hpp	2;"	d
 MAX_CHARS	ext_libs/include/GQE/Core/classes/ConfigReader.hpp	/^      static const unsigned short MAX_CHARS = 100;$/;"	m	class:GQE::ConfigReader
@@ -961,7 +961,7 @@ Numpad6	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Numpad6,      \/\/\/< 
 Numpad7	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Numpad7,      \/\/\/< The numpad 7 key$/;"	e	enum:sf::Keyboard::Key
 Numpad8	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Numpad8,      \/\/\/< The numpad 8 key$/;"	e	enum:sf::Keyboard::Key
 Numpad9	ext_libs/include/SFML/Window/Keyboard.hpp	/^      Numpad9,      \/\/\/< The numpad 9 key$/;"	e	enum:sf::Keyboard::Key
-OBJECTS	include/TTX/Definition.hpp	66;"	d
+OBJECTS	include/TTX/Definition.hpp	67;"	d
 OBJT_1	include/TTX/Types.hpp	/^   OBJT_1, OBJT_2,$/;"	e	enum:Layers
 OBJT_2	include/TTX/Types.hpp	/^   OBJT_1, OBJT_2,$/;"	e	enum:Layers
 OPEN	ext_libs/include/TinyXML2/tinyxml2.h	/^        OPEN,		\/\/ <foo>$/;"	e	enum:tinyxml2::XMLElement::__anon19
@@ -982,7 +982,8 @@ OutputSoundFile	ext_libs/include/SFML/Audio/OutputSoundFile.hpp	/^class SFML_AUD
 PARENT	include/TTX/Definition.hpp	36;"	d
 PARTICLECONTAINER_N3JXVU09	ext_libs/include/MPE/classes/ParticleContainer.hpp	2;"	d
 PARTICLESYSTEM_T69OX7N	include/TTX/classes/particles/Particles.hpp	9;"	d
-PARTICLES	include/TTX/Definition.hpp	65;"	d
+PARTICLES_1	include/TTX/Definition.hpp	65;"	d
+PARTICLES_2	include/TTX/Definition.hpp	66;"	d
 PARTICLE_INC	ext_libs/include/MPE/classes/Particle.hpp	8;"	d
 PART_1	include/TTX/Types.hpp	/^   PART_1, PART_2,$/;"	e	enum:Layers
 PART_2	include/TTX/Types.hpp	/^   PART_1, PART_2,$/;"	e	enum:Layers
@@ -994,7 +995,7 @@ PI	include/TTX/Types.hpp	/^const float PI = 3.14159265359f;$/;"	v
 PLAYERSYSTEM_INC	include/TTX/systems/PlayerSystem.hpp	7;"	d
 PLAYER_INC	include/TTX/prototypes/Player.hpp	2;"	d
 PLAYER_NAME	include/TTX/Definition.hpp	34;"	d
-PLAYER_PROTO	include/TTX/Definition.hpp	78;"	d
+PLAYER_PROTO	include/TTX/Definition.hpp	79;"	d
 PLAYER_SYSTEM	include/TTX/Definition.hpp	54;"	d
 PLAYER	include/TTX/Definition.hpp	35;"	d
 PMACHINEGUN_INC	include/TTX/prototypes/Machinegun.hpp	2;"	d
@@ -1278,10 +1279,10 @@ SFML_WINDOW_EXPORT_HPP	ext_libs/include/SFML/Window/Export.hpp	26;"	d
 SFML_WINDOW_HPP	ext_libs/include/SFML/Window/Window.hpp	26;"	d
 SHIPPROPELLER_INC	include/TTX/prototypes/ShipPropeller.hpp	2;"	d
 SHIP_PROPELLER_LISTENER_INC	include/TTX/classes/listeners/propellers/ShipPropellerListener.hpp	2;"	d
-SHIP_PROPELLER_PROTO	include/TTX/Definition.hpp	76;"	d
+SHIP_PROPELLER_PROTO	include/TTX/Definition.hpp	77;"	d
 SIMPLEBULLET_INC	include/TTX/prototypes/SimpleBullet.hpp	2;"	d
 SIMPLEWEAPONLISTENER_INC	include/TTX/classes/listeners/weapons/SimpleWeaponListener.hpp	2;"	d
-SIMPLE_BULLET_PROTO	include/TTX/Definition.hpp	79;"	d
+SIMPLE_BULLET_PROTO	include/TTX/Definition.hpp	80;"	d
 SLOGE	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	307;"	d
 SLOGE	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	358;"	d
 SLOGRE	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	349;"	d
@@ -1293,9 +1294,9 @@ SLOG	ext_libs/include/GQE/Core/loggers/Log_macros.hpp	356;"	d
 SOURCE_EXTENSIONS	.ycm_extra_conf.py	/^SOURCE_EXTENSIONS = [ '.cpp', '.cxx', '.cc', '.c', '.m', '.mm' ]$/;"	v
 SPACE_DOTS_APP_HPP_INCLUDED	include/TTX/app/TTXapp.hpp	11;"	d
 SPU	include/TTX/Types.hpp	/^const float SPU = 1.0f \/ UPDATE_RATE;$/;"	v
-STATE_1	include/TTX/Definition.hpp	70;"	d
+STATE_1	include/TTX/Definition.hpp	71;"	d
 STATIC	ext_libs/include/MPE/classes/Emitter.hpp	/^   enum Dispersion {LINEAR, RADIAL, REFLECT, RANDOM, STATIC};$/;"	e	enum:mpe::Emitter::Dispersion
-SUBMACHINEGUN	include/TTX/Definition.hpp	83;"	d
+SUBMACHINEGUN	include/TTX/Definition.hpp	84;"	d
 SYSTEM_INC	ext_libs/include/MPE/classes/System.hpp	7;"	d
 ScopeLogger	ext_libs/include/GQE/Core/loggers/ScopeLogger.hpp	/^  class GQE_API ScopeLogger : public ILogger$/;"	c	namespace:GQE
 S	ext_libs/include/SFML/Window/Keyboard.hpp	/^      S,            \/\/\/< The S key$/;"	e	enum:sf::Keyboard::Key
@@ -1855,6 +1856,7 @@ a	ext_libs/include/Box2D/Dynamics/b2TimeStep.h	/^	float32 a;$/;"	m	struct:b2Posi
 a	ext_libs/include/MPE/Config.hpp	/^   Integer r, g, b, a;$/;"	m	struct:mpe::Color
 a	ext_libs/include/SFML/Graphics/Color.hpp	/^   Uint8 a; \/\/\/< Alpha (opacity) component$/;"	m	class:sf::Color
 anAffector	src/TTX/systems/PropellerSystem.cpp	/^   std::shared_ptr<DisolveAffector> anAffector;$/;"	l
+anAngle	src/TTX/classes/listeners/propellers/ShipPropellerListener.cpp	/^      float  anAngle = body->GetAngle() * TODEG;$/;"	l
 anAngle	src/TTX/classes/objects/Propeller.cpp	/^         float  anAngle = theBody->GetAngle() * TODEG;$/;"	l
 anAngle	src/TTX/systems/ParticleSystem.cpp	/^         float anAngle = anEntity->mProperties.get<float>(ID32_("fAngle"));$/;"	l
 anAngle	src/TTX/systems/ParticleSystem.cpp	/^   float anAngle = theEntity->mProperties.get<float>(ID32_("fAngle"));$/;"	l
@@ -1940,6 +1942,7 @@ anOpacity	src/TTX/classes/mapLoader/MapLoader.cpp	/^      float anOpacity = anLa
 anPointsArray	src/TTX/classes/mapLoader/MapLoader.cpp	/^      b2Vec2* anPointsArray = (b2Vec2*)malloc(nPoints * sizeof(b2Vec2));$/;"	l
 anPoints	src/TTX/classes/mapLoader/MapLoader.cpp	/^      tinyxml2::XMLElement* anPoints = anObject->FirstChildElement("polyline");$/;"	l
 anPosition2D	src/TTX/systems/PlayerSystem.cpp	/^            Position2D anPosition2D = actor->mProperties.get<Position2D>(POSITION);$/;"	l
+anPosition	src/TTX/classes/listeners/propellers/ShipPropellerListener.cpp	/^      b2Vec2 anPosition = body->GetWorldCenter();$/;"	l
 anPosition	src/TTX/classes/objects/Propeller.cpp	/^         b2Vec2 anPosition = theBody->GetWorldCenter();$/;"	l
 anPosition	src/TTX/classes/particles/Particles.cpp	/^      mpe::Vec2 anPosition = it->getPosition();$/;"	l
 anPosition	src/TTX/systems/ParticleSystem.cpp	/^         sf::Vector2f anPosition =$/;"	l
@@ -1951,6 +1954,7 @@ anPositions	src/TTX/classes/mapLoader/MapLoader.cpp	/^            sf::Vector2f a
 anPositions	src/TTX/classes/particles/Particles.cpp	/^      sf::Vector2f anPositions[4];$/;"	l
 anPositions	src/TTX/systems/PlayerSystem.cpp	/^   std::vector<sf::Vector2f> anPositions;$/;"	l
 anPositions	src/TTX/systems/RenderSystem.cpp	/^            sf::Vector2f anPositions[4];$/;"	l
+anPower	src/TTX/classes/listeners/propellers/ShipPropellerListener.cpp	/^   float anPower = anDirection.LengthSquared();$/;"	l
 anPower	src/TTX/classes/objects/Propeller.cpp	/^      float anPower = anDirection.LengthSquared();$/;"	l
 anProperty	ext_libs/include/GQE/Core/classes/PropertyManager.hpp	/^            TProperty<TYPE>* anProperty=new(std::nothrow) TProperty<TYPE>(thePropertyID);$/;"	l
 anProperty	ext_libs/include/GQE/Core/interfaces/TProperty.hpp	/^        TProperty<TYPE>* anProperty = new(std::nothrow) TProperty<TYPE>(getID());$/;"	l
@@ -2261,7 +2265,7 @@ bodyA	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	const b2Body* body
 bodyA	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	b2Body* bodyA;$/;"	m	struct:b2JointDef
 bodyB	ext_libs/include/Box2D/Dynamics/Contacts/b2Contact.h	/^	const b2Body* bodyB = m_fixtureB->GetBody();$/;"	l
 bodyB	ext_libs/include/Box2D/Dynamics/Joints/b2Joint.h	/^	b2Body* bodyB;$/;"	m	struct:b2JointDef
-body	src/TTX/classes/listeners/propellers/ShipPropellerListener.cpp	/^   b2Body* body = mEntity->mProperties.get<b2Body*>(BODY);$/;"	l
+body	src/TTX/classes/listeners/propellers/ShipPropellerListener.cpp	/^      b2Body* body = mEntity->mProperties.get<b2Body*>(BODY);$/;"	l
 body	src/TTX/gameStates/IActionState.cpp	/^      b2Body* body = theEntity->mProperties.get<b2Body*>(BODY);$/;"	l
 body	src/TTX/systems/PropellerSystem.cpp	/^         b2Body* body = anEntity->mProperties.get<b2Body*>(BODY);$/;"	l
 bounds	ext_libs/include/SFML/Graphics/Glyph.hpp	/^   FloatRect bounds;      \/\/\/< Bounding rectangle of the glyph, in coordinates relative to the baseline$/;"	m	class:sf::Glyph
@@ -2514,6 +2518,7 @@ getLoadTime	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtu
 getManager	include/TTX/classes/objects/Weapon.hpp	/^   WeaponManager* getManager(){return mManager;}$/;"	f	class:Weapon
 getMe	include/TTX/classes/utils/Family.hpp	/^      TYPE* getMe()$/;"	f	class:Family
 getParticleLayer	src/TTX/classes/particles/Particles.cpp	/^Id Particles::getParticleLayer(const mpe::Particle& theParticle)$/;"	f	class:Particles
+getParticles	src/TTX/gameStates/IActionState.cpp	/^Particles& IActionState::getParticles()$/;"	f	class:IActionState
 getPointer	ext_libs/include/GQE/Core/classes/PropertyManager.hpp	/^    TYPE* getPointer(const typePropertyID thePropertyID)$/;"	f	class:GQE::PropertyManager
 getPointer	ext_libs/include/GQE/Core/interfaces/TProperty.hpp	/^      TYPE* getPointer()$/;"	f	class:GQE::TProperty
 getPosition	ext_libs/include/MPE/components/Position.hpp	/^   gt::Vec2D getPosition() const$/;"	f	class:mpe::Position
@@ -2619,6 +2624,9 @@ initAssetHandlers	src/TTX/app/TTXapp.cpp	/^void TTXApp::initAssetHandlers(void)$
 initScreenFactory	src/TTX/app/TTXapp.cpp	/^void TTXApp::initScreenFactory(void)$/;"	f	class:TTXApp
 init	ext_libs/include/GT/Randomizer.hpp	/^   static void init()$/;"	f	class:gt::Randomizer
 init	ext_libs/include/MPE/classes/Vec2.hpp	/^   void init(Real theX, Real theY)$/;"	f	class:mpe::Vec2
+init	include/TTX/classes/listeners/weapons/SimpleWeaponListener.hpp	/^      virtual void init(){}$/;"	f	class:SimpleWeaponListener
+init	include/TTX/classes/listeners/weapons/WeaponManagerListener.hpp	/^   virtual void init() {}$/;"	f	class:WeaponManagerListener
+init	src/TTX/classes/listeners/propellers/ShipPropellerListener.cpp	/^void ShipPropellerListener::init()$/;"	f	class:ShipPropellerListener
 inputData	src/TTX/systems/PlayerSystem.cpp	/^   Input::Data inputData;$/;"	l
 input	src/TTX/systems/ActorSystem.cpp	/^         Input* input = anEntity->mProperties.get<Input*>(INPUT);$/;"	l
 input	src/TTX/systems/InputSystem.cpp	/^   Input* input = root->mProperties.get<Input*>(INPUT);$/;"	l
@@ -2765,6 +2773,7 @@ mDead	ext_libs/include/GQE/Core/classes/StateManager.hpp	/^      std::vector<ISt
 mDefaultFont	ext_libs/include/GQE/Core/classes/StatManager.hpp	/^      sf::Font    mDefaultFont;$/;"	m	class:GQE::StatManager
 mDisabled	ext_libs/include/GQE/Entity/classes/ActionGroup.hpp	/^      std::map<const typeActionID, IAction*> mDisabled;$/;"	m	class:GQE::ActionGroup
 mDispersion	ext_libs/include/MPE/classes/Emitter.hpp	/^   Dispersion  mDispersion;    \/\/\/< Type of paricles' dispersion.$/;"	m	class:mpe::Emitter
+mDistribution	include/TTX/classes/particles/Affectors.hpp	/^   std::geometric_distribution<int> mDistribution;$/;"	m	class:DisolveAffector
 mDummyAsset	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      TYPE mDummyAsset;$/;"	m	class:GQE::TAssetHandler
 mDummyRect	include/TTX/systems/RenderSystem.hpp	/^   static sf::IntRect mDummyRect;$/;"	m	class:RenderSystem
 mDummyRect	src/TTX/systems/RenderSystem.cpp	/^sf::IntRect RenderSystem::mDummyRect = sf::IntRect(0, 0, 0, 0);$/;"	m	class:RenderSystem	file:
@@ -2796,6 +2805,7 @@ mFire	include/TTX/Types.hpp	/^   bool mFire;$/;"	m	struct:FireData
 mFirstTileID	ext_libs/include/MapLoader/map.hpp	/^   int mWidth, mHeight, mTileWidth, mTileHeight, mSpacing, mMargin, mFirstTileID;$/;"	m	class:Map
 mFixedSize	ext_libs/include/MPE/classes/ParticleContainer.hpp	/^   bool mFixedSize;$/;"	m	class:mpe::ParticleContainer
 mFixturesDef	include/TTX/prototypes/PhysicProto.hpp	/^   std::vector<b2FixtureDef> mFixturesDef;$/;"	m	class:PhysicProto
+mFocus	include/TTX/classes/listeners/propellers/ShipPropellerListener.hpp	/^      mpe::FocusPtr mFocus;$/;"	m	class:ShipPropellerListener
 mFocus	include/TTX/classes/objects/Propeller.hpp	/^   mpe::FocusPtr  mFocus;$/;"	m	class:Propeller
 mFocusses	ext_libs/include/MPE/classes/System.hpp	/^   std::list<FocusPtr>           mFocusses;$/;"	m	class:mpe::System
 mFrameClock	ext_libs/include/GQE/Core/classes/StatManager.hpp	/^      sf::Clock   mFrameClock;$/;"	m	class:GQE::StatManager
@@ -2812,6 +2822,7 @@ mGenParLV	ext_libs/include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenParL
 mGenParSize	ext_libs/include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenParSize; \/\/\/< Generator of paricles width.$/;"	m	class:mpe::Emitter
 mGenParTOL	ext_libs/include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenParTOL;   \/\/\/< Generator of particles lifetime.$/;"	m	class:mpe::Emitter
 mGenerator	ext_libs/include/MPE/classes/Generator.hpp	/^   std::function<T()> mGenerator;$/;"	m	class:mpe::Generator
+mGenerator	include/TTX/classes/particles/Affectors.hpp	/^   std::default_random_engine mGenerator;$/;"	m	class:DisolveAffector
 mGraphicRange	ext_libs/include/GQE/Core/interfaces/IApp.hpp	/^      GraphicRange              mGraphicRange;$/;"	m	class:GQE::IApp
 mGroups	ext_libs/include/MPE/classes/Focus.hpp	/^   GroupID   mGroups;$/;"	m	class:mpe::Focus
 mGroups	ext_libs/include/MPE/classes/Particle.hpp	/^   GroupID   mGroups;$/;"	m	class:mpe::Particle
@@ -3651,6 +3662,7 @@ parent	src/TTX/systems/NodeSystem.cpp	/^   GQE::IEntity* parent = theEntity->mPr
 parent	trashCode/FamilySystem.cpp	/^   GQE::IEntity* parent = theEntity->mProperties.get<Entity*>(PARENT);$/;"	l
 parent	trashCode/FamilySystem.cpp	/^   GQE::IEntity* parent = theEntity->mProperties.get<IEntity*>(PARENT);$/;"	l
 parent	ext_libs/include/Box2D/Collision/b2DynamicTree.h	/^		int32 parent;$/;"	m	union:b2TreeNode::__anon4
+particles	src/TTX/classes/listeners/propellers/ShipPropellerListener.cpp	/^   Particles& particles = mState->getParticles();$/;"	l
 pause	include/TTX/classes/listeners/Input.hpp	/^         bool pause,menu;$/;"	m	struct:Input::Data
 pivot	include/TTX/classes/listeners/Input.hpp	/^         bool pivot,turn;$/;"	m	struct:Input::Data
 playerProto	src/TTX/gameStates/GameStateOne.cpp	/^   auto playerProto = new Player();$/;"	l
@@ -4102,6 +4114,7 @@ z	ext_libs/include/SFML/Window/Event.hpp	/^      float z;           \/\/\/< Curr
 ~Propeller	src/TTX/classes/objects/Propeller.cpp	/^Propeller::~Propeller()$/;"	f	class:Propeller
 ~RenderManager	include/TTX/classes/render/RenderManager.hpp	/^   ~RenderManager () {};$/;"	f	class:RenderManager
 ~RenderSystem	src/TTX/systems/RenderSystem.cpp	/^RenderSystem::~RenderSystem()$/;"	f	class:RenderSystem
+~ShipPropellerListener	src/TTX/classes/listeners/propellers/ShipPropellerListener.cpp	/^ShipPropellerListener::~ShipPropellerListener()$/;"	f	class:ShipPropellerListener
 ~SoundFileReader	ext_libs/include/SFML/Audio/SoundFileReader.hpp	/^   virtual ~SoundFileReader() {}$/;"	f	class:sf::SoundFileReader
 ~SoundFileWriter	ext_libs/include/SFML/Audio/SoundFileWriter.hpp	/^   virtual ~SoundFileWriter() {}$/;"	f	class:sf::SoundFileWriter
 ~TAssetHandler	ext_libs/include/GQE/Core/interfaces/TAssetHandler.hpp	/^      virtual ~TAssetHandler()$/;"	f	class:GQE::TAssetHandler
